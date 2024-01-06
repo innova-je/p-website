@@ -9,7 +9,7 @@ const Feed = () => {
         <ThemeProvider theme={useTheme}>
             <Box>
                 <Typography variant="h3" align="center" gutterBottom>
-                    We are made of people
+                    We are made of peoplesssss
                 </Typography>
                 <div className="image" style={{ maxWidth: '100%', overflow: 'hidden' }}>
                     <img
