@@ -1,8 +1,7 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, ListItemText, Menu, MenuItem, styled } from '@mui/material';
+import { AppBar, Toolbar, Button, Menu, MenuItem, styled } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import LogoImage from './innova.png'; // Change to a better res image?
-import { useTheme } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 
 
@@ -21,10 +20,11 @@ const JoinUs = styled('Box')(({ theme }) => ({
 const PageButton = styled(Button)(({ theme, selected }) => ({
   color: theme.palette.primary.main,
   display: 'flex',
-  fontSize: '0.8rem !important', // Adjust the font size here for all pages
+  fontSize: '0.8rem !important',
   alignItems: 'center',
   fontWeight: selected ? 'normal' : 'bold', // Change font weight based on selected
 }));
+
 
 const pageDropdowns = [
   {
@@ -62,7 +62,7 @@ const NavBar = () => {
 
   const handleMenuOpen = (event, index) => {
     setAnchorEl(event.currentTarget);
-    setSelectedPage(index);
+    setSelectedPage(index); 
   };
 
   const handleMenuClose = () => {
