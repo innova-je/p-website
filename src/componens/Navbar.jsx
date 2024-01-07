@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, Button, ListItemText, Menu, MenuItem, styl
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import LogoImage from './innova.png'; // Change to a better res image?
 import { useTheme } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 
 
 
@@ -28,30 +29,35 @@ const PageButton = styled(Button)(({ theme, selected }) => ({
 const pageDropdowns = [
   {
     title: 'About Us',
-    dropdownOptions: [],
+    route: '/about-us',
   },
   {
     title: 'Services',
-    dropdownOptions: [],
+    route: '/services',
   },
   {
     title: 'Our People',
-    dropdownOptions: ['Item X', 'Item Y', 'Item Z'],
+    route: '/our-people',
+    dropdownOptions: [
+      { title: 'Our Team', route: '/our-team' },
+      { title: 'Our Advisors', route: '/our-advisors' },
+    ],
   },
   {
     title: 'Events',
+    route: '/events',
     dropdownOptions: ['Apple', 'Banana', 'Orange'],
   },
   {
     title: 'Out Of Office',
-    dropdownOptions: [],
+    route: '/out-of-office',
   },
 ];
+
 
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedPage, setSelectedPage] = React.useState(null);
-  const currentTheme = useTheme();
 
   const handleMenuOpen = (event, index) => {
     setAnchorEl(event.currentTarget);
@@ -66,29 +72,34 @@ const NavBar = () => {
   return (
     <StyledAppBar position="static">
       <Toolbar>
-        {/* Logo Image */}
-        <img
-          src={LogoImage}
-          alt="Logo Innova"
-          style={{ height: 25, marginRight: 10 }}
-        />
+        <Link to="/">
+          <img
+            src={LogoImage}
+            alt="Logo Innova"
+            style={{ height: 25, marginRight: 10, cursor: 'pointer' }}
+          />
+        </Link>
 
         <div style={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
           {/* Pages with Dropdown */}
           {pageDropdowns.map((page, index) => (
             <div key={index}>
-              <PageButton
-                color="inherit"
-                selected={selectedPage === index} // Set selected state
-                aria-haspopup={page.dropdownOptions.length > 0 ? 'true' : undefined}
-                onClick={(event) => handleMenuOpen(event, index)}
-                endIcon={
-                  page.dropdownOptions.length > 0 ? <KeyboardArrowDownIcon /> : null
-                }
-              >
-                {page.title}
-              </PageButton>
-              {page.dropdownOptions.length > 0 && (
+              {page.dropdownOptions ? (
+                <PageButton
+                  color="inherit"
+                  selected={selectedPage === index}
+                  aria-haspopup={page.dropdownOptions.length > 0 ? 'true' : undefined}
+                  onClick={(event) => handleMenuOpen(event, index)}
+                  endIcon={page.dropdownOptions.length > 0 ? <KeyboardArrowDownIcon /> : null}
+                >
+                  {page.title}
+                </PageButton>
+              ) : (
+                <Link to={page.route} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <PageButton color="inherit">{page.title}</PageButton>
+                </Link>
+              )}
+              {page.dropdownOptions && page.dropdownOptions.length > 0 && (
                 <Menu
                   anchorEl={anchorEl}
                   open={selectedPage === index && Boolean(anchorEl)}
@@ -96,7 +107,9 @@ const NavBar = () => {
                 >
                   {page.dropdownOptions.map((option, i) => (
                     <MenuItem key={i} onClick={handleMenuClose}>
-                      <ListItemText primary={option} />
+                      <Link to={`${page.route}${option.route}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                        {option.title}
+                      </Link>
                     </MenuItem>
                   ))}
                 </Menu>
@@ -104,7 +117,6 @@ const NavBar = () => {
             </div>
           ))}
         </div>
-
         {/* Join Us Button */}
         <JoinUs>Join Us</JoinUs>
       </Toolbar>

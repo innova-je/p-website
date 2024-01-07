@@ -1,16 +1,31 @@
 import Navbar from "./componens/Navbar";
-import Feed from "./componens/Feed";
 import Footer from "./componens/Footer";
-import { Box, Stack } from "@mui/material";
+import Events from './Pages/Events'
+import Home from  "./Pages/Home";
+import JoinUs from  "./Pages/Join-Us";
+import OurAdvisors from  "./Pages/Our-Advisors";
+import OurTeam from  "./Pages/Our-Team";
+import OutOffice from  "./Pages/Out-of-Office";
+import Services from "./Pages/Services";
+import AboutUs from './Pages/About-Us'
+import { Box } from "@mui/material";
+import {Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
     <Box> 
       <Navbar/>
 
-      <Stack direction='row' spacing={2} justifyContent="center">
-        <Feed/>
-      </Stack>
+      <Routes>
+        <Route path='/about-us'  element={<AboutUs/>} />
+        <Route path='/events'  element={<Events/>} />
+        <Route path='/'  element={<Home/>} />
+        <Route path='/join-us'  element={<JoinUs/>} />
+        <Route path='/our-people/our-advisors'  element={<OurAdvisors/>} />
+        <Route path='/our-people/our-team'  element={<OurTeam/>} />
+        <Route path='/out-of-office'  element={<OutOffice/>} />
+        <Route path='/services'  element={<Services/>} />        
+      </Routes>
 
       <Footer/>
     
