@@ -55,6 +55,7 @@ const pageDropdowns = [
 ];
 
 
+
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedPage, setSelectedPage] = React.useState(null);
@@ -88,9 +89,9 @@ const NavBar = () => {
                 <PageButton
                   color="inherit"
                   selected={selectedPage === index}
-                  aria-haspopup={page.dropdownOptions.length > 0 ? 'true' : undefined}
+                  aria-haspopup={page.dropdownOptions ? 'true' : undefined}
                   onClick={(event) => handleMenuOpen(event, index)}
-                  endIcon={page.dropdownOptions.length > 0 ? <KeyboardArrowDownIcon /> : null}
+                  endIcon={page.dropdownOptions ? <KeyboardArrowDownIcon /> : null}
                 >
                   {page.title}
                 </PageButton>
