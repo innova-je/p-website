@@ -13,7 +13,7 @@ import {Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
-    <Box> 
+    <Box bgcolor="#F0F0F0"> 
       <Navbar/>
 
       <Routes>

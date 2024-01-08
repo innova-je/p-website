@@ -108,7 +108,7 @@ const NavBar = () => {
                 >
                   {page.dropdownOptions.map((option, i) => (
                     <MenuItem key={i} onClick={handleMenuClose}>
-                      <Link to={`${page.route}${option.route}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <Link to={`${page.route}${option.route}`} style={{ textDecoration: 'none', color: 'inherit'}}>
                         {option.title}
                       </Link>
                     </MenuItem>
