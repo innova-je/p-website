@@ -12,13 +12,33 @@ const CustomComponent = ({ title, text, image }) => {
         <ThemeProvider theme={theme}>
             <Box
                 borderRadius={5}
-                bgcolor="white"
-                p={0}
+                bgcolor="#FFFFFF"
                 position="relative"
                 overflow="show" // Change overflow to "hidden"
-                width={300}
+                width={350}
                 height={350}
             >
+                
+                {/* Image */}
+                <Box
+                    position="absolute"
+                    zIndex={1}
+                    width="100%"
+                    height="100%"
+                    borderRadius={5}
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'flex-end', // Align items to the bottom
+                    }}
+                    >
+                    <img
+                        src={image}
+                        alt="Informação sobre membro da In-Nova"
+                        style={{ width: '100%', objectFit: 'cover' }}
+                    />
+                </Box>
+
+
                 {/* Second Rectangle */}
                 <Box
                     position="absolute"
@@ -59,21 +79,10 @@ const CustomComponent = ({ title, text, image }) => {
                     </Box>
                 </Box>
 
-                {/* Image */}
-                <Box position="absolute" bottom={0} zIndex={1} width="100%">
-                    <img
-                        src={image}
-                        alt="Custom"
-                        style={{ width: '100%', objectFit: 'cover' }}
-                    />
-                </Box>
             </Box>
         </ThemeProvider>
     );
 };
-
-
-
 
 
 const OurTeam = () => {
@@ -130,7 +139,7 @@ const OurTeam = () => {
                     </Typography>                
             </Box>
 
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: '50px', p: 5, border: 1 }} >
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', p: 5, border: 1 }} >
                 <CustomComponent title='President' text='Inês Costa' image={PlaceHolder} />
                 <CustomComponent title='External Affairs Vice-President' text='Leonor Almeida' image={PlaceHolder} />
                 <CustomComponent title='Internal Affairs Vice-President' text='Carolina Maurício' image={PlaceHolder} />
