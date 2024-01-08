@@ -97,10 +97,10 @@ const OurTeam = () => {
                     style={{ width: '100%', height: 'auto' }}
                 />
                 <Typography
-                    variant="h3"
                     align="center"
                     gutterBottom
                     sx={{
+                        fontSize:"85px",
                         fontWeight: 'Regular',
                         position: 'absolute',
                         top: '15%',
@@ -118,7 +118,7 @@ const OurTeam = () => {
             
             <Box marginTop={4} marginBottom={4} textAlign="center">
                 <Typography
-                        variant="h5"
+                        variant="h3"
                         align="center"
                         sx={{
                             fontWeight: 'Medium',
@@ -129,6 +129,7 @@ const OurTeam = () => {
                         Our Board
                     </Typography>
                     <Typography
+                        variant="h4"
                         align="center"
                         sx={{
                             fontWeight: 'Regular',
