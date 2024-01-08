@@ -12,6 +12,7 @@ const StyledAppBar = styled(AppBar)({
 
 const JoinUs = styled('Box')(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
+  fontFamily: theme.typography.fontFamily,
   fontWeight: 'bold',
   padding: '2px 25px',
   borderRadius: '25px',
@@ -19,6 +20,7 @@ const JoinUs = styled('Box')(({ theme }) => ({
 
 const PageButton = styled(Button)(({ theme, selected }) => ({
   color: theme.palette.primary.main,
+  fontFamily: theme.typography.fontFamily,
   display: 'flex',
   fontSize: '0.8rem !important',
   alignItems: 'center',
