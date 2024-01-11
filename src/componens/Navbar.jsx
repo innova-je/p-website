@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Button, Menu, MenuItem, styled } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import LogoImage from './innova.png'; // Change to a better res image?
+import LogoImage from '../public/images/logos/logos-02.png'; 
 import { Link } from 'react-router-dom';
 
 

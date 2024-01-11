@@ -1,7 +1,7 @@
 import { Box, ImageList, ImageListItem, Typography } from '@mui/material';
 import React from 'react';
-import logoImage from '../images/logos/logos-03.png';
-import noiseImage from '../images/other/Noise.png';
+import logoImage from '../public/images/logos/logos-03.png';
+import noiseImage from '../public/images/logos/other/Noise.png';
 
 const Maintenance = () => {
   return (
