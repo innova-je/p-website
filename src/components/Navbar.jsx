@@ -10,19 +10,29 @@ const StyledAppBar = styled(AppBar)({
   backgroundColor: 'white', // Change the background color
 });
 
-const JoinUs = styled('Box')(({ theme }) => ({
+const JoinUs = styled(Button)(({ theme }) => ({
+
   backgroundColor: theme.palette.primary.main,
+  color: 'white', // Set text color to contrast with the background
   fontFamily: theme.typography.fontFamily,
   fontWeight: 'bold',
-  padding: '2px 25px',
+  marginRight: '70px',
+  padding: '5px 30px',
   borderRadius: '25px',
+  transition: 'transform 0.2s ease-in-out', // Add transition for smooth hover effect
+
+  '&:hover': {
+    backgroundColor: theme.palette.primary.main,
+    color: 'white', 
+    transform: 'scale(1.1)', // Enlarge the button on hover
+  },
 }));
 
 const PageButton = styled(Button)(({ theme, selected }) => ({
   color: theme.palette.primary.main,
   fontFamily: theme.typography.fontFamily,
   display: 'flex',
-  fontSize: '0.8rem !important',
+  fontSize: '1rem !important',
   alignItems: 'center',
   fontWeight: selected ? 'normal' : 'bold', // Change font weight based on selected
 }));
@@ -79,7 +89,7 @@ const NavBar = () => {
           <img
             src={LogoImage}
             alt="Logo Innova"
-            style={{ height: 50, marginRight: 10, cursor: 'pointer' }}
+            style={{ height: 60, marginLeft: 70, cursor: 'pointer' }}
           />
         </Link>
 
@@ -120,8 +130,10 @@ const NavBar = () => {
             </div>
           ))}
         </div>
-        {/* Join Us Button */}
-        <JoinUs>Join Us</JoinUs>
+
+        <Link to="/join-us" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <JoinUs>Join Us</JoinUs>
+        </Link>
       </Toolbar>
     </StyledAppBar>
   );

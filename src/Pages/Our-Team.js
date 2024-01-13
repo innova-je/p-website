@@ -13,7 +13,7 @@ const OurTeam = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box position="relative">
+           <Box position="relative" sx={{marginTop:"20px"}}>
                 <img
                     src={elements}
                     style={{ width: '100%', height: 'auto' }}
@@ -22,13 +22,13 @@ const OurTeam = () => {
                     align="center"
                     gutterBottom
                     sx={{
-                        fontSize:"85px",
+                        fontSize: "85px",
                         fontWeight: 'Regular',
                         position: 'absolute',
-                        top: '15%',
+                        top: '50%', // Adjusted to 50% to center vertically
                         left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        zIndex: 1,
+                        transform: 'translate(-50%, -50%)', // Adjusted to center horizontally and vertically
+                        zIndex: 2, // Increased zIndex for the Typography element
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         width: '100%',
@@ -38,15 +38,27 @@ const OurTeam = () => {
                 </Typography>
             </Box>
 
-            <Box position="relative">
+            <Box position="relative" style={{ top: '-60px', zIndex: 1 }}>
                 <img
                     src={HeroImage}
                     alt="Innova Tomada De Posse"
                     style={{ width: '100%', height: 'auto' }}
+                    />
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        bottom: -1,
+                        width: '100%',
+                        height: '70%',
+                        backgroundImage:
+                            'linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0))',
+                    }}
                 />
             </Box>
+
+
             
-            <Box marginTop={4} marginBottom={4} textAlign="center">
+            <Box marginTop={1} marginBottom={4} textAlign="center">
                 <Typography
                         variant="h3"
                         align="center"
