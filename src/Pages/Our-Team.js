@@ -130,11 +130,19 @@ const OurTeam = () => {
                     </Typography>                
             </Box>
 
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', p: 5, border: 1 }} >
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', p: 5}} >
                 <CustomComponent title='President' name='Inês Costa' image={PlaceHolder} />
                 <CustomComponent title='External Affairs Vice-President' name='Leonor Almeida' image={PlaceHolder} />
                 <CustomComponent title='Internal Affairs Vice-President' name='Carolina Maurício' image={PlaceHolder} />
                 <CustomComponent title='Financial Manager' name='Nuno Alves' image={PlaceHolder} />
+            </Box>
+
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', p: 5 }} >
+                <CustomComponent title='Sales Director' name='Inês Mendes' image={PlaceHolder} />
+                <CustomComponent title='Marketing Director' name='Matilde Azadinho' image={PlaceHolder} />
+                <CustomComponent title='Projects Director' name='Vicente Rodriques dos Santos' image={PlaceHolder} />
+                <CustomComponent title='Quality Director' name='Filipa Santos' image={PlaceHolder} />
+                <CustomComponent title='Human Resources Director' name='Rodrigo Marques' image={PlaceHolder} />
             </Box>
 
         </ThemeProvider>
