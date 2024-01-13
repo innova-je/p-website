@@ -1,5 +1,5 @@
-import Navbar from "./componens/Navbar";
-import Footer from "./componens/Footer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Events from './Pages/Events'
 import Home from  "./Pages/Home";
 import JoinUs from  "./Pages/Join-Us";
