@@ -10,8 +10,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <ThemeProvider theme={theme}>
-      {/*<App />*/}
-      <Maintenance/>
+      <App />
+      {/* <Maintenance/> */}
     </ThemeProvider>
   </BrowserRouter>
 );

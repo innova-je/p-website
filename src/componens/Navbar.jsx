@@ -79,7 +79,7 @@ const NavBar = () => {
           <img
             src={LogoImage}
             alt="Logo Innova"
-            style={{ height: 25, marginRight: 10, cursor: 'pointer' }}
+            style={{ height: 50, marginRight: 10, cursor: 'pointer' }}
           />
         </Link>
 

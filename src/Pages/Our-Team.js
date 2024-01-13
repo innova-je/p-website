@@ -5,84 +5,72 @@ import HeroImage from '../public/images/logos/other/TOMADA DE POSSE.png';
 import PlaceHolder from '../public/images/logos/other/placeholder.png';
 
 
-const CustomComponent = ({ title, text, image }) => {
+const CustomComponent = ({ title, name, image }) => {
     const theme = useTheme();
-
+  
+    const containerStyle = {
+      backgroundColor: 'white',
+      position: 'relative',
+      width: '250px',
+      height: '100%',
+      overflow: 'show',
+      borderRadius: 15,
+    };
+  
+    const imageContainerStyle = {
+      width: '100%',
+      paddingBottom: '100%',
+      position: 'relative',
+      overflow: 'hidden',
+      zIndex: 1,
+    };
+  
+    const imageStyle = {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+    };
+  
+    const overlayStyle = {
+      position: 'absolute',
+      bottom: -20, // Adjust as needed to control the amount of overflow
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '80%', 
+      backgroundColor: "#C7B7BE",
+      padding: "5px",
+      mx: "auto",
+      borderRadius: 15,
+      overflow: 'hidden',
+      zIndex: 2,
+    };
+  
     return (
-        <ThemeProvider theme={theme}>
-            <Box
-                borderRadius={5}
-                bgcolor="#FFFFFF"
-                position="relative"
-                overflow="show" // Change overflow to "hidden"
-                width={350}
-                height={350}
-            >
-                
-                {/* Image */}
-                <Box
-                    position="absolute"
-                    zIndex={1}
-                    width="100%"
-                    height="100%"
-                    borderRadius={5}
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'flex-end', // Align items to the bottom
-                    }}
-                    >
-                    <img
-                        src={image}
-                        alt="Informação sobre membro da In-Nova"
-                        style={{ width: '100%', objectFit: 'cover' }}
-                    />
-                </Box>
-
-
-                {/* Second Rectangle */}
-                <Box
-                    position="absolute"
-                    bottom={-30}
-                    width="100%"
-                    textAlign="center"
-                    zIndex={2}
-                    borderRadius={5}
-                >
-                    <Box
-                        borderRadius={3}
-                        bgcolor="#C7B7BE"
-                        p="3px"
-                        mx="auto"
-                        my={2}
-                        width="80%"
-                    >
-                        <Typography 
-                            variant="body2"
-                            align="center"
-                            sx={{ 
-                                fontWeight: 'bold',
-                            }}
-                        >
-                            {title}
-                        </Typography>
-
-                        <Typography 
-                            variant="body2"
-                            align="center"
-                            sx={{
+      <ThemeProvider theme={theme}>
+        <div style={containerStyle}>
+          <div style={imageContainerStyle}>
+            <img src={image} alt="Custom Image" style={imageStyle} />
+          </div>
+          <div style={overlayStyle}>
+            <Typography variant="body2" align="center" noWrap sx={{fontWeight: 'bold', fontSize:"13px"}}>
+              {title}
+            </Typography>
+            <Typography variant="body2" align="center" noWrap sx={{
+                                fontWeight: 'bold', fontSize:"13px",
                                 color: theme.palette.primary.main,
                                 fontFamily: theme.typography.fontFamily,
-                            }} 
-                        >
-                            {text}
-                        </Typography>
-                    </Box>
-                </Box>
-
-            </Box>
-        </ThemeProvider>
+                            }} >
+              {name}
+            </Typography>
+          </div>
+        </div>
+      </ThemeProvider>
     );
-};
+  };
+  
 
 
 const OurTeam = () => {
@@ -141,10 +129,10 @@ const OurTeam = () => {
             </Box>
 
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', p: 5, border: 1 }} >
-                <CustomComponent title='President' text='Inês Costa' image={PlaceHolder} />
-                <CustomComponent title='External Affairs Vice-President' text='Leonor Almeida' image={PlaceHolder} />
-                <CustomComponent title='Internal Affairs Vice-President' text='Carolina Maurício' image={PlaceHolder} />
-                <CustomComponent title='Financial Manager' text='Nuno Alves' image={PlaceHolder} />
+                <CustomComponent title='President' name='Inês Costa' image={PlaceHolder} />
+                <CustomComponent title='External Affairs Vice-President' name='Leonor Almeida' image={PlaceHolder} />
+                <CustomComponent title='Internal Affairs Vice-President' name='Carolina Maurício' image={PlaceHolder} />
+                <CustomComponent title='Financial Manager' name='Nuno Alves' image={PlaceHolder} />
             </Box>
 
         </ThemeProvider>
