@@ -13,7 +13,7 @@ const CustomComponent = ({ title, name, image }) => {
       position: 'relative',
       width: '250px',
       height: '100%',
-      overflow: 'show',
+      overflow: 'visible',
       borderRadius: 15,
     };
   
@@ -35,18 +35,20 @@ const CustomComponent = ({ title, name, image }) => {
     };
   
     const overlayStyle = {
-      position: 'absolute',
-      bottom: -20, // Adjust as needed to control the amount of overflow
-      left: '50%',
-      transform: 'translateX(-50%)',
-      width: '80%', 
-      backgroundColor: "#C7B7BE",
-      padding: "5px",
-      mx: "auto",
-      borderRadius: 15,
-      overflow: 'hidden',
-      zIndex: 2,
-    };
+        position: 'absolute',
+        bottom: -20,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '80%',
+        height: 'auto', 
+        backgroundColor: "#C7B7BE",
+        padding: "5px",
+        margin: "auto", 
+        borderRadius: 15,
+        overflow: 'hidden',
+        zIndex: 2,
+      };
+      
   
     return (
       <ThemeProvider theme={theme}>
