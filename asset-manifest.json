@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/website/static/js/main.14206e11.js",
-    "static/media/bottom3.jpg": "/website/static/media/bottom3.57530b4424e6184a831d.jpg",
-    "static/media/top2.jpg": "/website/static/media/top2.d4eea31105aca556b3e5.jpg",
-    "static/media/bottom2.jpg": "/website/static/media/bottom2.7f085893c922e6070da2.jpg",
-    "static/media/TOMADA DE POSSE.png": "/website/static/media/TOMADA DE POSSE.5986b9a9d74c7b6d572b.png",
-    "static/media/In.Nova_III JE Portugal-224.jpg": "/website/static/media/In.Nova_III JE Portugal-224.937062896975fd0fb161.jpg",
-    "static/media/IMG_0908 (1).jpg": "/website/static/media/IMG_0908 (1).f25f8a357b2f4fb60d2f.jpg",
-    "static/media/Noise.png": "/website/static/media/Noise.e09906631bbccccd844d.png",
-    "static/media/logos-03.png": "/website/static/media/logos-03.b65e1002843bc24fae45.png",
-    "static/media/placeholder.png": "/website/static/media/placeholder.21cf92f27b43b9d69e27.png",
-    "static/media/innova.png": "/website/static/media/innova.fc836ebfaa0c35035171.png",
-    "index.html": "/website/index.html",
-    "main.14206e11.js.map": "/website/static/js/main.14206e11.js.map"
+    "main.js": "/static/js/main.ef63a4d9.js",
+    "static/media/bottom3.jpg": "/static/media/bottom3.57530b4424e6184a831d.jpg",
+    "static/media/top2.jpg": "/static/media/top2.d4eea31105aca556b3e5.jpg",
+    "static/media/bottom2.jpg": "/static/media/bottom2.7f085893c922e6070da2.jpg",
+    "static/media/TOMADA DE POSSE.png": "/static/media/TOMADA DE POSSE.5986b9a9d74c7b6d572b.png",
+    "static/media/In.Nova_III JE Portugal-224.jpg": "/static/media/In.Nova_III JE Portugal-224.937062896975fd0fb161.jpg",
+    "static/media/IMG_0908 (1).jpg": "/static/media/IMG_0908 (1).f25f8a357b2f4fb60d2f.jpg",
+    "static/media/Noise.png": "/static/media/Noise.e09906631bbccccd844d.png",
+    "static/media/logos-03.png": "/static/media/logos-03.b65e1002843bc24fae45.png",
+    "static/media/placeholder.png": "/static/media/placeholder.21cf92f27b43b9d69e27.png",
+    "static/media/innova.png": "/static/media/innova.fc836ebfaa0c35035171.png",
+    "index.html": "/index.html",
+    "main.ef63a4d9.js.map": "/static/js/main.ef63a4d9.js.map"
   },
   "entrypoints": [
-    "static/js/main.14206e11.js"
+    "static/js/main.ef63a4d9.js"
   ]
 }
