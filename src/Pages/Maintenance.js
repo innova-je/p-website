@@ -1,4 +1,4 @@
-import { Box, ImageListItem, Typography, styled, ThemeProvider } from '@mui/material';
+import { Box, ImageListItem, Typography } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
 import React from 'react';
