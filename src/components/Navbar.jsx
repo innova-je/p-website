@@ -1,19 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AppBar, Toolbar, Button, Menu, MenuItem, styled } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import LogoImage from '../public/images/logos/logos-02.png'; 
-import { Link } from 'react-router-dom';
-
-
+import LogoImage from '../public/images/logos/logos-02.png';
+import { Link, useLocation } from 'react-router-dom';
 
 const StyledAppBar = styled(AppBar)({
   backgroundColor: 'white', // Change the background color
 });
 
 const JoinUs = styled(Button)(({ theme }) => ({
-
   backgroundColor: theme.palette.primary.main,
-  color: 'white', // Set text color to contrast with the background
+  color: 'white',
   fontFamily: theme.typography.fontFamily,
   fontWeight: 'bold',
   marginRight: '70px',
@@ -23,7 +20,7 @@ const JoinUs = styled(Button)(({ theme }) => ({
 
   '&:hover': {
     backgroundColor: theme.palette.primary.main,
-    color: 'white', 
+    color: 'white',
     transform: 'scale(1.1)', // Enlarge the button on hover
   },
 }));
@@ -35,8 +32,8 @@ const PageButton = styled(Button)(({ theme, selected }) => ({
   fontSize: '1rem !important',
   alignItems: 'center',
   fontWeight: selected ? 'normal' : 'bold', // Change font weight based on selected
+  textTransform: 'none',
 }));
-
 
 const pageDropdowns = [
   {
@@ -66,15 +63,29 @@ const pageDropdowns = [
   },
 ];
 
-
-
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedPage, setSelectedPage] = React.useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    const currentPageIndex = pageDropdowns.findIndex((page) => {
+      if (page.dropdownOptions) {
+        return page.dropdownOptions.some((option) =>
+          location.pathname === `${page.route}${option.route}`
+        );
+      } else {
+        return location.pathname === page.route;
+      }
+    });
+  
+    setSelectedPage(currentPageIndex);
+  }, [location.pathname]);
+  
 
   const handleMenuOpen = (event, index) => {
     setAnchorEl(event.currentTarget);
-    setSelectedPage(index); 
+    setSelectedPage(index);
   };
 
   const handleMenuClose = () => {
@@ -120,7 +131,7 @@ const NavBar = () => {
                 >
                   {page.dropdownOptions.map((option, i) => (
                     <MenuItem key={i} onClick={handleMenuClose}>
-                      <Link to={`${page.route}${option.route}`} style={{ textDecoration: 'none', color: 'inherit'}}>
+                      <Link to={`${page.route}${option.route}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                         {option.title}
                       </Link>
                     </MenuItem>

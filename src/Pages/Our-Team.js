@@ -5,17 +5,51 @@ import HeroImage from '../public/images/logos/other/TOMADA DE POSSE.png';
 import PlaceHolder from '../public/images/logos/other/placeholder.png';
 import elements from '../public/images/logos/other/Elements.png';
 import CustomComponent from '../components/MemberComponents';
+import CustomDepartment from '../components/CustomDepartment';
 
+const CustomTitle = ({ title, subtitle, theme }) => {
+           
+    return (
+        <>
+            <Typography
+                variant="h3"
+                align="center"
+                sx={{
+                    fontWeight: 'Medium',
+                    color: theme.palette.secondary.main,
+                    fontFamily: theme.typography.fontFamily,
+                    marginBottom: 1,
+                }}
+            >
+                {title}
+            </Typography>
+            <Typography
+                variant="h4"
+                align="center"
+                sx={{
+                    fontWeight: 'Regular',
+                    color: theme.palette.secondary.main,
+                    fontFamily: theme.typography.fontFamily,
+                }}
+            >
+                {subtitle}
+            </Typography>
+        </>
+    );
+};
 
 
 const OurTeam = () => {
     const theme = useTheme();
+    const sales_names = ['Inês Mendes', 'Leonor Almeida', 'Carolina Maurício', 'Nuno Alves', 'Nuno Alves', 'Nuno Alves', 'Nuno Alves'];
+    const sales_images = [{PlaceHolder},{PlaceHolder},{PlaceHolder},{PlaceHolder},{PlaceHolder},{PlaceHolder},{PlaceHolder}];
 
     return (
         <ThemeProvider theme={theme}>
            <Box position="relative" sx={{marginTop:"20px"}}>
                 <img
                     src={elements}
+                    alt='elements'
                     style={{ width: '100%', height: 'auto' }}
                 />
                 <Typography
@@ -27,8 +61,8 @@ const OurTeam = () => {
                         position: 'absolute',
                         top: '50%', // Adjusted to 50% to center vertically
                         left: '50%',
-                        transform: 'translate(-50%, -50%)', // Adjusted to center horizontally and vertically
-                        zIndex: 2, // Increased zIndex for the Typography element
+                        transform: 'translate(-50%, -50%)', 
+                        zIndex: 2, 
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         width: '100%',
@@ -59,27 +93,7 @@ const OurTeam = () => {
 
             
             <Box marginTop={1} marginBottom={4} textAlign="center">
-                <Typography
-                        variant="h3"
-                        align="center"
-                        sx={{
-                            fontWeight: 'Medium',
-                            color: theme.palette.secondary.main,
-                            fontFamily: theme.typography.fontFamily,
-                            marginBottom: 1, // Adding margin bottom between texts
-                        }}>
-                        Our Board
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        align="center"
-                        sx={{
-                            fontWeight: 'Regular',
-                            color: theme.palette.secondary.main,
-                            fontFamily: theme.typography.fontFamily,
-                        }}>
-                        our problem-solvers
-                    </Typography>                
+                <CustomTitle title="Our Board" subtitle="our problem-solvers" theme={theme} />                
             </Box>
 
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', p: 5}} >
@@ -89,13 +103,33 @@ const OurTeam = () => {
                 <CustomComponent title='Financial Manager' name='Nuno Alves' image={PlaceHolder} />
             </Box>
 
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', p: 5 }} >
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', p: 1 }} >
                 <CustomComponent title='Sales Director' name='Inês Mendes' image={PlaceHolder} />
                 <CustomComponent title='Marketing Director' name='Matilde Azadinho' image={PlaceHolder} />
                 <CustomComponent title='Projects Director' name='Vicente Rodriques dos Santos' image={PlaceHolder} />
                 <CustomComponent title='Quality Director' name='Filipa Santos' image={PlaceHolder} />
                 <CustomComponent title='Human Resources Director' name='Rodrigo Marques' image={PlaceHolder} />
             </Box>
+
+            <Box marginTop={10} marginBottom={10} textAlign="center">
+                <CustomTitle title="Our Departments" subtitle="who make the magic happen" theme={theme} />                
+            </Box>
+
+            
+            {/* SALES TEAM */}
+            <CustomDepartment Department='Sales Team' names={sales_names} images={sales_images} />
+
+            {/* MARKETING TEAM */}
+            <CustomDepartment Department='Marketing Team' names={sales_names} images={sales_images} />
+
+            {/* PROJECTS TEAM */}  
+            <CustomDepartment Department='Projects Team' names={sales_names} images={sales_images} />
+
+            {/* QUALITY TEAM */}
+            <CustomDepartment Department='Quality Team' names={sales_names} images={sales_images} />
+
+            {/* HUMAN RESOURCES TEAM */}
+            <CustomDepartment Department='Human Resources Team' names={sales_names} images={sales_images} />
 
         </ThemeProvider>
     );
