@@ -2,13 +2,13 @@ import { Box, ImageListItem, Typography, Link } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
 import React from 'react';
-import Logo from '../images/logos/logos-03.png';
-import noiseImage from '../images/other/Noise_1.webp';
-import top1Image from '../images/other/top1.webp';
-import top2Image from '../images/other/top2.webp';
-import bottom1Image from '../images/other/bottom1.webp';
-import bottom2Image from '../images/other/bottom2.webp';
-import bottom3Image from '../images/other/bottom3.webp';
+import Logo from '../public/images/logos/logos-03.png';
+import noiseImage from '../public/images/other/Noise_1.webp';
+import top1Image from '/images/other/top1.webp';
+import top2Image from '../../public/images/other/top2.webp';
+import bottom1Image from '../../public/images/other/bottom1.webp';
+import bottom2Image from '../../public/images/other/bottom2.webp';
+import bottom3Image from '../../public/images/other/bottom3.webp';
 
 import { useMediaQuery } from 'react-responsive';
 
