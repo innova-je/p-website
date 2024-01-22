@@ -1,0 +1,25 @@
+{
+    "short_name": "In-Nova",
+    "name": "In-Nova - Consultoria Júnior",
+    "icons": [
+      {
+        "src": "images/logos/logo64x64.png",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/png"
+      },
+      {
+        "src": "images/logos/logo192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "images/logos/logo512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#732044",
+    "background_color": "#ffffff"
+  }
