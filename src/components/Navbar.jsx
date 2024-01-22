@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { AppBar, Toolbar, Button, Menu, MenuItem, styled } from '@mui/material';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LogoImage from '../public/images/logos/logos-02.png';
-import { Link, useLocation } from 'react-router-dom';
 
-const StyledAppBar = styled(AppBar)({
-  backgroundColor: 'white', // Change the background color
-});
 
 const JoinUs = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -25,129 +22,109 @@ const JoinUs = styled(Button)(({ theme }) => ({
   },
 }));
 
-const PageButton = styled(Button)(({ theme, selected }) => ({
-  color: theme.palette.primary.main,
-  fontFamily: theme.typography.fontFamily,
-  display: 'flex',
-  fontSize: '1rem !important',
-  alignItems: 'center',
-  fontWeight: selected ? 'normal' : 'bold', // Change font weight based on selected
-  textTransform: 'none',
-}));
 
-const pageDropdowns = [
-  {
-    title: 'About Us',
-    route: '/about-us',
-  },
-  {
-    title: 'Services',
-    route: '/services',
-  },
-  {
-    title: 'Our People',
-    route: '/our-people',
-    dropdownOptions: [
-      { title: 'Our Team', route: '/our-team' },
-      { title: 'Our Advisors', route: '/our-advisors' },
-    ],
-  },
-  {
-    title: 'Events',
-    route: '/events',
-    dropdownOptions: ['Apple', 'Banana', 'Orange'],
-  },
-  {
-    title: 'Out Of Office',
-    route: '/out-of-office',
-  },
-];
 
-const NavBar = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [selectedPage, setSelectedPage] = React.useState(null);
-  const location = useLocation();
+const Navbar = () => {
+  const [anchorElDropdown1, setAnchorElDropdown1] = React.useState(null);
+  const [anchorElDropdown2, setAnchorElDropdown2] = React.useState(null);
 
-  useEffect(() => {
-    const currentPageIndex = pageDropdowns.findIndex((page) => {
-      if (page.dropdownOptions) {
-        return page.dropdownOptions.some((option) =>
-          location.pathname === `${page.route}${option.route}`
-        );
-      } else {
-        return location.pathname === page.route;
-      }
-    });
-  
-    setSelectedPage(currentPageIndex);
-  }, [location.pathname]);
-  
-
-  const handleMenuOpen = (event, index) => {
-    setAnchorEl(event.currentTarget);
-    setSelectedPage(index);
+  const handleMenuClick = (event, dropdown) => {
+    if (dropdown === 'dropdown1') {
+      setAnchorElDropdown1(event.currentTarget);
+    } else if (dropdown === 'dropdown2') {
+      setAnchorElDropdown2(event.currentTarget);
+    }
   };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    setSelectedPage(null);
+  const handleMenuClose = (dropdown) => {
+    if (dropdown === 'dropdown1') {
+      setAnchorElDropdown1(null);
+    } else if (dropdown === 'dropdown2') {
+      setAnchorElDropdown2(null);
+    }
+  };
+
+  const renderDropdownButton = (label, subPages, dropdown) => (
+    <React.Fragment>
+      <Button
+        color="inherit"
+        onClick={(event) => handleMenuClick(event, dropdown)}
+        style={{ color: '#732043', fontWeight: 'bold', textTransform: 'none' }}
+      >
+        {label} <ArrowDropDownIcon />
+      </Button>
+      <Menu
+        anchorEl={dropdown === 'dropdown1' ? anchorElDropdown1 : anchorElDropdown2}
+        open={Boolean(dropdown === 'dropdown1' ? anchorElDropdown1 : anchorElDropdown2)}
+        onClose={() => handleMenuClose(dropdown)}
+      >
+        {subPages.map((subPage) => (
+          <MenuItem
+            key={subPage.path}
+            onClick={() => handleMenuClose(dropdown)}
+            component={Link}
+            to={subPage.path}
+            style={{ color: '#732043' }}
+          >
+            {subPage.label}
+          </MenuItem>
+        ))}
+      </Menu>
+    </React.Fragment>
+  );
+
+  const linkStyles = {
+    textDecoration: 'none',
+    color: '#732043',
+    fontWeight: 'bold',
+    transition: 'font-weight 0.3s ease', // Add transition for smoother effect
+    textTransform: 'none'
+  };
+
+  const activeLinkStyles = {
+    fontWeight: 'normal',
   };
 
   return (
-    <StyledAppBar position="static">
+    <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none' }}>
       <Toolbar>
-        <Link to="/">
-          <img
-            src={LogoImage}
-            alt="Logo Innova"
-            style={{ height: 60, marginLeft: 70, cursor: 'pointer' }}
-          />
-        </Link>
+         <Link to="/">
+            <img
+              src={LogoImage}
+              alt="Logo Innova"
+              style={{ height: 60, marginLeft: 70, cursor: 'pointer' }}
+            />
+          </Link>
 
-        <div style={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
-          {/* Pages with Dropdown */}
-          {pageDropdowns.map((page, index) => (
-            <div key={index}>
-              {page.dropdownOptions ? (
-                <PageButton
-                  color="inherit"
-                  selected={selectedPage === index}
-                  aria-haspopup={page.dropdownOptions ? 'true' : undefined}
-                  onClick={(event) => handleMenuOpen(event, index)}
-                  endIcon={page.dropdownOptions ? <KeyboardArrowDownIcon /> : null}
-                >
-                  {page.title}
-                </PageButton>
-              ) : (
-                <Link to={page.route} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <PageButton color="inherit">{page.title}</PageButton>
-                </Link>
-              )}
-              {page.dropdownOptions && page.dropdownOptions.length > 0 && (
-                <Menu
-                  anchorEl={anchorEl}
-                  open={selectedPage === index && Boolean(anchorEl)}
-                  onClose={handleMenuClose}
-                >
-                  {page.dropdownOptions.map((option, i) => (
-                    <MenuItem key={i} onClick={handleMenuClose}>
-                      <Link to={`${page.route}${option.route}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                        {option.title}
-                      </Link>
-                    </MenuItem>
-                  ))}
-                </Menu>
-              )}
-            </div>
-          ))}
+        <div style={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
+          <NavLink to="/about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+            <Button color="inherit" style={linkStyles}>About Us</Button>
+          </NavLink>
+          <NavLink to="/services" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+            <Button color="inherit" style={linkStyles}>Services</Button>
+          </NavLink>
+
+          {renderDropdownButton("Our People", [
+            { label: "Our Team", path: "/our-people/our-team" },
+            { label: "Our Advisors", path: "/our-people/our-advisors" },
+          ], 'dropdown1')}
+
+          {renderDropdownButton("Events", [
+            { label: "test", path: "/our-people/test1" },
+            { label: "test2", path: "/our-people/test2" },
+          ], 'dropdown2')}
+
+          <NavLink to="/out-of-office" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+            <Button color="inherit" style={linkStyles}>Out of Office</Button>
+          </NavLink>
         </div>
 
         <Link to="/join-us" style={{ textDecoration: 'none', color: 'inherit' }}>
           <JoinUs>Join Us</JoinUs>
         </Link>
       </Toolbar>
-    </StyledAppBar>
+    </AppBar>
   );
 };
 
-export default NavBar;
+export default Navbar;
