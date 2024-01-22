@@ -1,20 +1,19 @@
-import { Box, ImageListItem, Typography } from '@mui/material';
+import { Box, ImageListItem, Typography, Link } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
 import React from 'react';
 import Logo from '../images/logos/logos-03.png';
-
-import noiseImage from '../images/other/Noise.png';
-import top1Image from '../images/other/In.Nova_III JE Portugal-224.jpg';
-import top2Image from '../images/other/top2.jpg';
-import bottom1Image from '../images/other/IMG_0908 (1).jpg';
-import bottom2Image from '../images/other/bottom2.jpg';
-import bottom3Image from '../images/other/bottom3.jpg';
+import noiseImage from '../images/other/Noise_1.webp';
+import top1Image from '../images/other/top1.webp';
+import top2Image from '../images/other/top2.webp';
+import bottom1Image from '../images/other/bottom1.webp';
+import bottom2Image from '../images/other/bottom2.webp';
+import bottom3Image from '../images/other/bottom3.webp';
 
 import { useMediaQuery } from 'react-responsive';
 
 const InNovaLogo = () => {
-  const mobile = useMediaQuery({ minHeight: 800, maxWidth: 1200 });
+  const mobile = useMediaQuery({ minHeight: 600, maxWidth: 1200 });
   const desktop = useMediaQuery({ minWidth: 1201 });
   if(mobile){
     return(
@@ -30,7 +29,7 @@ const InNovaLogo = () => {
           src={Logo}
           alt="Logo"
           style={{
-            maxWidth: "600px",
+            maxWidth: "500px",
             width: "145vw",
             height: "auto",
           }}
@@ -55,7 +54,7 @@ const MaintenanceText = () => {
   const desktop = useMediaQuery({ minWidth: 1201 });
   if(desktop){
     return(
-      <Typography variant='h3' color="white" sx={{
+      <Typography variant='h3' sx={{
         display:"flex",
         width:'42vw',
         height: "22vh",
@@ -64,8 +63,7 @@ const MaintenanceText = () => {
         textAlign: 'right', 
         color: '#D2D2D2', 
         fontSize: "60px", 
-        fontWeight: '600', 
-        wordWrap: 'break-word'
+        fontWeight: '600',
     }}>
         Oops! This website is currently under construction!
 </Typography>
@@ -80,13 +78,11 @@ const MaintenanceText = () => {
       }}>
         <Typography
       variant='h3'
-      color="white"
       sx={{
         textAlign: "center",
         fontSize: "65px",
         color: '#D2D2D2',  
-        fontWeight: '600', 
-        wordWrap: 'break-word',
+        fontWeight: '600',
         position: "relative",
         top: "18%",
         width: '100%',
@@ -95,17 +91,15 @@ const MaintenanceText = () => {
             Oops!
         </Typography>
         
-        <Typography variant='h2' color="white" sx={{
+        <Typography variant='h2' sx={{
             position: "relative",
             top: "25%",
             left: "50%",
             transform: "translateX(-50%)",
             textAlign: "center",
             fontSize: "35px",
-            fontFamily: 'Exo 2, sans-serif',
             color: '#D2D2D2',  
-            fontWeight: '500', 
-            wordWrap: 'break-word',
+            fontWeight: '500',
             width: "90%",
             zIndex: "2"
         }}>
@@ -125,18 +119,22 @@ const SocialMedia = () => {
           display: "flex",
           justifyContent: "right",
       }}>
+        
         <Box
           sx={{
             position: "absolute",
-            bottom:"14%",            
-            display: "flex",
-            flexDirection: "row",
-            gap: "15px",
-            zIndex: "999"
+            bottom:"14%",
+            zIndex: "999",
           }}>
+            <Link href='https://www.instagram.com/in.nova.pt' sx={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "15px",
+              textDecoration: "none"
+            }}>
             <InstagramIcon
               sx={{
-                color: "white",
+                color: "#D2D2D2",
                 width: "43px",
                 height: "auto",
               }}/>
@@ -144,41 +142,49 @@ const SocialMedia = () => {
               color="white"
               sx={{
                 height: "43px",
-                color: 'white',
+                color: "#D2D2D2",
                 fontSize: "24px",
                 fontWeight: '200',
                 wordWrap: 'break-word'
               }}>
               @in.nova.pt
             </Typography>
+          </Link>
+            
         </Box>
   
         <Box
           sx={{
             position: "absolute",
-            bottom:"20%",            
-            display: "flex",
-            flexDirection: "row",
-            gap: "15px",
+            bottom:"20%",
             zIndex: "999"
           }}>
-          <EmailIcon
+        <Link href="mailto:geral@innova.pt" sx={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "15px",
+              textDecoration: "none",
+            }}>
+              <EmailIcon
             sx={{
-              color: "white",
+              color: "#D2D2D2",
               width: "43px",
-              height: "auto"
+              height: "auto",
+              zIndex: "999"
             }}/>
           <Typography
             color="white"
             sx={{
               height: "43px",
-              color: 'white',
+              color: "#D2D2D2",
               fontSize: "24px",
               fontWeight: '200',
               wordWrap: 'break-word',
             }}>
             geral@innova.pt
           </Typography>
+        </Link>
+          
         </Box>
       </Box>
     )
@@ -188,39 +194,7 @@ const SocialMedia = () => {
         position: "relative",
         top: "30%"
       }}>
-        <Box
-      sx={{
-        alignItems: "center",
-        justifyContent: "center",
-        display: 'flex',
-        flexDirection: "row",
-        gap: "15px",
-        zIndex: "2",
-      }}
-    >
-      <InstagramIcon
-        sx={{
-          color: "white",
-          width: "27px",
-          height: "auto",
-        }}
-      />
-      <Typography
-        color="white"
-        sx={{
-          color: 'white',
-          fontSize: "21px",
-          fontWeight: '200',
-          wordWrap: 'break-word',
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
-        @in.nova.pt
-      </Typography>
-    </Box>
-    
-    <Box
+      <Box
       sx={{
         alignItems: "center",
         justifyContent: "center",
@@ -228,9 +202,14 @@ const SocialMedia = () => {
         flexDirection: "row",
         gap: "15px",
         zIndex: "2",
-      }}
-    >
-      <EmailIcon
+      }}>
+      <Link href="mailto:geral@innova.pt" sx={{
+        display: "flex",
+        flexDirection: "row",
+        gap: "15px",
+        textDecoration: "none",
+      }}>
+        <EmailIcon
         sx={{
           color: "white",
           width: "27px",
@@ -249,6 +228,44 @@ const SocialMedia = () => {
       >
         geral@innova.pt
       </Typography>
+      </Link>  
+    </Box>
+      <Box
+      sx={{
+        alignItems: "center",
+        justifyContent: "center",
+        display: 'flex',
+        flexDirection: "row",
+        gap: "15px",
+        zIndex: "2",
+      }}
+    >
+      <Link href='https://www.instagram.com/in.nova.pt' sx={{
+        display: "flex",
+        flexDirection: "row",
+        gap: "15px",
+        textDecoration: "none"
+      }}>
+        <InstagramIcon
+        sx={{
+          color: "white",
+          width: "27px",
+          height: "auto",
+        }}
+      />
+      <Typography
+        sx={{
+          color: 'white',
+          fontSize: "21px",
+          fontWeight: '200',
+          wordWrap: 'break-word',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        @in.nova.pt
+      </Typography>
+      </Link>
     </Box>
   </Box> 
   )
@@ -284,7 +301,7 @@ const Bars = () => {
             backgroundColor: "#732043",
             opacity: "0.85",
           }}>
-            <img src={top1Image} style={{
+            <img src={top1Image} alt='In-Nova Image 1' style={{
               opacity: "0.7",
               width: "100%",
               height: "auto",
@@ -314,7 +331,7 @@ const Bars = () => {
             backgroundColor: "#732043",
             opacity: "0.85",
           }}>
-            <img src={top2Image} style={{
+            <img src={top2Image} alt='In-Nova Image 2' style={{
               opacity: "0.7",
               width: "100%",
               height: "auto",
@@ -345,7 +362,7 @@ const Bars = () => {
             backgroundColor: "#732043",
             opacity: "0.85",
           }}>
-            <img src={bottom1Image} style={{
+            <img src={bottom1Image} alt='In-Nova Image 3' style={{
               opacity: "0.7",
               width: "100%",
               height: "auto",
@@ -375,7 +392,7 @@ const Bars = () => {
             backgroundColor: "#732043",
             opacity: "0.85",
           }}>
-            <img src={bottom2Image} style={{
+            <img src={bottom2Image} alt='In-Nova Image 4' style={{
               opacity: "0.7",
               width: "100%",
               height: "auto",
@@ -405,7 +422,7 @@ const Bars = () => {
             backgroundColor: "#732043",
             opacity: "0.85",
           }}>
-            <img src={bottom3Image} style={{
+            <img src={bottom3Image} alt='In-Nova Image 5' style={{
               opacity: "0.7",
               width: "100%",
               height: "auto",
@@ -433,9 +450,7 @@ const DesktopVersion = () => {
         backgroundImage: `url(${noiseImage})`,
         overflow:"hidden"
       }}>
-    <Box>
-      <Bars></Bars>
-    </Box>
+    <Bars></Bars>
     <Box sx={{
         display: "flex",
         justifyContent: "right",
