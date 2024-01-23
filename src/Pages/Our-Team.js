@@ -1,9 +1,9 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
-import HeroImage from '../public/images/logos/other/TOMADA DE POSSE.png';
-import PlaceHolder from '../public/images/logos/other/placeholder.png';
-import elements from '../public/images/logos/other/Elements.png';
+import HeroImage from '../images/other/TOMADA DE POSSE.png';
+import PlaceHolder from '../images/other/placeholder.png';
+import elements from '../images/other/Elements.png';
 import CustomComponent from '../components/MemberComponents';
 import CustomDepartment from '../components/CustomDepartment';
 
