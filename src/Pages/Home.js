@@ -3,8 +3,14 @@ import React from 'react'
 
 
 const Home = () => {
+
+    
+
     return (
-        <AppBar position= 'center'>Home</AppBar>
+        <AppBar position= 'center' sx={{
+            width: "100%",
+            height: "100%"
+        }}>Innovating with No Limits</AppBar>
     )
 }
 
