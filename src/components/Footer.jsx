@@ -1,40 +1,39 @@
 import { AppBar, Box, Button, styled, ImageListItem, Typography, Link } from '@mui/material';
 import React from 'react'
 
-import InstagramIcon from '@mui/icons-material/Instagram';
-import EmailIcon from '@mui/icons-material/Email';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
+
 
 import InNovaLogo from '../images/logos/logos-10.png'
 
 const Footer = () => {
 
     const FooterBar = styled(AppBar)(({ theme }) => ({
-        backgroundColor: "transparent",
+        backgroundColor: "#F0F0F0",
         position: "absolute",
-        bottom: "0px",
         width: "100%",
         height: "35%",
         justifyContent: "center",
         alignItems: "center",
-        boxShadow: "none"
+        boxShadow: "none",
       }));
 
     const Logo = styled(ImageListItem)(({ theme }) => ({
         position: "absolute",
         bottom: "0px",
         width: "20%",
+        height: "20%",
         margin: "6vh"
       }));
 
       const Pages = styled(Box)(({ theme }) => ({
         position: "relative",
-        top: "40%",
-        height: "50%",
+        top: "45%",
+        height: "40%",
         width: "100%",
         display: "grid",
         gridTemplateColumns: "2fr 2fr",
-        rowGap: "6px",
+        rowGap: "2px",
         columnGap: "20%"
     }));    
 
@@ -48,12 +47,18 @@ const Footer = () => {
         height: "6vh",
         fontFamily: theme.typography.fontFamily,
         fontWeight: 'bold',
+        border: "1px solid white",
         borderRadius: '25px',
-        transition: 'transform 0.2s ease-in-out',
+        display: "flex",
+        flexDirection: "row",
+        gap: "10%",
+        transition: 'transform 0.3s ease-in-out',
       
         '&:hover': {
           backgroundColor: "white",
-          color: 'black',
+          color: '#052533',
+          border: "1px solid #052533",
+          transform: 'scale(1.05)',
         },
       }));
 
@@ -72,8 +77,7 @@ const Footer = () => {
 
 
     return (
-        <FooterBar position='bottom-center'>
-            
+        <FooterBar position='bottom-center'>            
             <Box sx={{
                     position: "absolute",
                     display: "flex",
@@ -86,7 +90,7 @@ const Footer = () => {
                     width: "70%",
                     height: "100%",
                     backgroundColor: "#732043",
-                    borderRadius: "20px 0 0 0"
+                    borderRadius: "20px 0 0 0",
                 }}>
                 <Box sx={{
                     height: "100%",
@@ -103,7 +107,7 @@ const Footer = () => {
                     textAlign: "left",         
                  }}>Let's discuss and <br/> bring your vision to life.</Typography>
 
-                <Pages>
+                <Pages>{/*TODO: Adicionar os links para as páginas */}
                     <Typography style={PagesLinkStyle}>About Us</Typography>
                     <Typography style={PagesLinkStyle}>Events</Typography>
                     <Typography style={PagesLinkStyle}>Services</Typography>
@@ -129,29 +133,30 @@ const Footer = () => {
                 }}>
                 <LetsTalkButton>
                     <Typography>Let's Talk</Typography>
+                    <ArrowForward sx={{ height: "50%"}}></ArrowForward>
                 </LetsTalkButton>
 
                 <SocialMedia>
                     <Link href="mailto:geral@innova.pt">
-                    <EmailIcon sx={{
+                    <Email sx={{
                         width: "4vw",
                         height: "6vh",
                         color: "white"
-                    }}></EmailIcon>
+                    }}></Email>
                     </Link>
                     <Link href='https://www.instagram.com/in.nova.pt'>
-                        <InstagramIcon sx={{
+                        <Instagram sx={{
                         width: "4vw",
                         height: "6vh",
                         color: "white"
-                    }}></InstagramIcon>
+                    }}></Instagram>
                     </Link>
                     <Link href='https://www.linkedin.com/company/innova-consultoria-junior'>
-                    <LinkedInIcon sx={{
+                    <LinkedIn sx={{
                         width: "4vw",
                         height: "6vh",
                         color: "white"
-                    }}></LinkedInIcon>
+                    }}></LinkedIn>
                     </Link>
                 </SocialMedia>
                 <Typography sx={{
@@ -164,7 +169,7 @@ const Footer = () => {
                     flexDirection: "column",
                     position: "relative",
                     top: "12%"
-                }}>Faculdade de Ciências e Tecnologias
+                }}>Faculdade de Ciências e Tecnologia
                 Universidade Nova de Lisboa</Typography>
                 <Typography sx={{
                     fontSize: "18px",
@@ -187,25 +192,33 @@ const Footer = () => {
                 position: "absolute",
                 bottom: "0px",
                 left: "0px",
-                backgroundColor: "#732043",
+                backgroundColor: "#732043",// TODO: mudar para theme.pallete.primary.main
                 zIndex: "1000"
             }}>
                 <Box sx={{
                     width: "100%",
                     height: "34%",
-                    backgroundColor: "white",
+                    backgroundColor: "#F0F0F0",
                     borderRadius: "0 0px 20px 0"
                 }}>
                 </Box>                
                <Logo>
                     <img src={InNovaLogo}/>
                 </Logo>
-                <Typography sx={{
+                <Box
+                sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    height: "6%",
+                    width: "100%",
                     position: "absolute",
                     bottom: "0px",
                     margin: "3vh 4vw",
-                    fontWeight: "100"
-                }}>2024 In-Nova. All rights reserved.</Typography>
+                }}>
+                <Typography sx={{fontWeight: "300", fontSize: "80%"}}>
+                &#9426; 2024 In-Nova. All rights reserved.
+                </Typography>
+            </Box>     
             </Box>            
             
         </FooterBar>      

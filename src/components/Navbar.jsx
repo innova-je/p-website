@@ -86,7 +86,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none' }}>
+    <AppBar position="absolute" style={{ background: '#FFFFFF29', boxShadow: 'none'}}>
       <Toolbar>
          <Link to="/">
             <img
