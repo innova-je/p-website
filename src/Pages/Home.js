@@ -1,9 +1,12 @@
-import { AppBar, Box, Typography, styled, Button, ImageList, ImageListItem} from '@mui/material'
+import { Box, Typography, styled } from '@mui/material'
 import React from 'react'
 
 import BgVideo from '../videos/HomePageVideo.mp4'
 import HomePageImg from '../images/MaintenancePageImages/In.Nova_III-JE-Portugal-224_1.webp'
-import Logo from '../images/logos/logos-03.png'
+
+import CoreBusiness from '../components/CoreBusiness'
+import ClientsCarousel from '../components/ClientsCarousel'
+import OurPartners from '../components/OurPartners'
 
 const Home = () => {
 
@@ -25,68 +28,20 @@ const Home = () => {
         color: "#732043",
         fontWeight: "500",
         marginTop: "-5%"
-    }
-
-    const ServicesButton = styled(Button)(({ theme }) => ({
-        backgroundColor: "#732043",
-        color: 'white',
-        width: "10vw",
-        height: "6vh",
-        marginTop: "8%",
-        fontWeight: '400',
-        borderRadius: '16px',
-        display: "flex",
-        flexDirection: "row",
-        gap: "10%",
-        transition: 'transform 0.3s ease-in-out',
-      
-        '&:hover': {
-          backgroundColor: "white",
-          color: '#732043',
-          border: "1px solid #732043",
-          transform: 'scale(1.05)',
-        },
-      }));
-
-      const ClientsAndPartners = styled(Box)(({ theme }) => ({
-        position: "relative",
-        marginTop: "5%",
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-      }));
-
-      const ClientsLogosCarrousel = styled(ImageList)(({ theme }) => ({
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        marginTop: "2%"
-        
-      }));
-
-      const ClientsLogos = styled(ImageListItem)(({ theme }) => ({
-        width: "10%",
-        height: "10%",
-        margin: "0 50px"
-      }));
-
-      const ClientsAndPartnersStyle = {
-        textAlign: "center",
-        justifyContent: "center",
-        color: "#732043",
-        fontWeight: "700",
-        fontSize: "70px"
-      };
+    };
 
     return (
         
-        <Box>
+        <Box sx={{
+            backgroundColor: "#F0F0F0",
+
+        }}>
             <Box sx={{
-            width: "100%",
+            width: "100%",//TODO: Este título não está bem
             position: "absolute",
             top: "65%",
             transform: "translateY(-50%)",
-            zIndex: "1"
+            zIndex: "1",
         }}>
             <Typography sx={{
                 position: "relative",
@@ -257,92 +212,16 @@ const Home = () => {
             </StatsBox>
         </Box>
 
-        <Box className="Our Services" sx={{
-            width: "95%",
-            height: "100vh",
-            borderRadius: "0 30px 30px 0",
-            background: "linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))",
-        }}>
-            <Box sx={{
-                width: "40%",
-                height: "100%",
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                margin: "3% 0 0 7%",
-            }}>
-            <Typography sx={{
-                fontSize: "35px",
-                fontWeight: "300",
-                color: "#FFFFFF6E",
-                marginTop: "15%"
-            }}>What we do</Typography>
-            <Typography sx={{
-                fontSize: "125px",
-                fontWeight: "700",
-                color: "white",
-                lineHeight: "150px",
-                textShadow: "4px 4px 4px rgba(0, 0, 0, 0.3)"  // Adjust the values as needed
-            }}>Software Solutions</Typography>
-            <Typography sx={{
-                fontSize: "30px",
-                fontWeight: "300",
-                color: "white",
-                marginTop: "8%"
-            }}>With tailored solutions and cutting-edge technologies, we craft impactful
-            software that propels businesses forward.</Typography>
+        <CoreBusiness></CoreBusiness>
 
-            <ServicesButton>
-                <Typography>Services</Typography>
-                <Typography> &rarr;</Typography>
-            </ServicesButton>
-
-            </Box>
-            
+        <Box sx={{backgroundColor: "#F0F0F0"}}>
+            <ClientsCarousel></ClientsCarousel>
+            <OurPartners></OurPartners> 
         </Box>
-
-        <Box className='Who Trusted Us and Meet Our Partners' sx={{
-            width: "100%"
-        }}>
-            <ClientsAndPartners>
-                <Typography style={ClientsAndPartnersStyle}>Who Trusted Us</Typography>
-                <ClientsLogosCarrousel>
-                    <ClientsLogos>
-                        <img src={Logo}/>
-                    </ClientsLogos>
-                    <ClientsLogos>
-                        <img src={Logo}/>
-                    </ClientsLogos>
-                    <ClientsLogos>
-                        <img src={Logo}/>
-                    </ClientsLogos>
-                    <ClientsLogos>
-                        <img src={Logo}/>
-                    </ClientsLogos>
-                    <ClientsLogos>
-                        <img src={Logo}/>
-                    </ClientsLogos>
-                </ClientsLogosCarrousel>
-            </ClientsAndPartners>
-            
-            <ClientsAndPartners> 
-                <Typography style={ClientsAndPartnersStyle}>Meet Our Partners</Typography>
-            </ClientsAndPartners>
+               
 
         </Box>
-
-
-        </Box>
-
-        
-        
-        
-        
-
-        
-        
-        
+ 
     )
 }
 
