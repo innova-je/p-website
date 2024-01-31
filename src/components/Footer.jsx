@@ -203,7 +203,7 @@ const Footer = () => {
                 }}>
                 </Box>                
                <Logo>
-                    <img src={InNovaLogo}/>
+                    <img alt="Logo da In-Nova"src={InNovaLogo}/>
                 </Logo>
                 <Box
                 sx={{

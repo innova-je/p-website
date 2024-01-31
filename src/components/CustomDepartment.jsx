@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
 import CustomComponent from './MemberComponents';
-import PlaceHolder from '../images/other/placeholder.png';
 
 const CustomDepartment = ({ Department, names, images }) => {
   const theme = useTheme();
