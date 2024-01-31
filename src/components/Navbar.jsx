@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AppBar, Toolbar, Button, Menu, MenuItem, styled } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import LogoImage from '../images/logos/logos-02.png';
+import LogoImage from '../images/OurLogos/logos-02.png';
 
 
 const JoinUs = styled(Button)(({ theme }) => ({

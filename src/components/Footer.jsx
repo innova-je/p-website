@@ -4,7 +4,7 @@ import React from 'react'
 import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
 
 
-import InNovaLogo from '../images/logos/logos-10.png'
+import InNovaLogo from '../images/OurLogos/logos-10.png'
 
 const Footer = () => {
 
@@ -203,7 +203,7 @@ const Footer = () => {
                 }}>
                 </Box>                
                <Logo>
-                    <img alt="Logo da In-Nova"src={InNovaLogo}/>
+                    <img alt='In-Nova Logo' src={InNovaLogo}/>
                 </Logo>
                 <Box
                 sx={{
