@@ -2,7 +2,7 @@ import { Box, ImageListItem, Typography, Link } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
 import React from 'react';
-import Logo from '../images/logos/logos-03.png';
+import Logo from '../images/OurLogos/logos-03.png';
 import noiseImage from '../images/MaintenancePageImages/Noise_1.webp';
 import top1Image from '../images/MaintenancePageImages/top1.webp';
 import top2Image from '../images/MaintenancePageImages/top2.webp';

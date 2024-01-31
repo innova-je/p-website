@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
-import { ThemeProvider, useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 import HeroImage from '../images/other/TOMADA DE POSSE.png';
 import PlaceHolder from '../images/other/placeholder.png';
 import elements from '../images/other/Elements.png';
@@ -8,7 +8,7 @@ import CustomComponent from '../components/MemberComponents';
 import CustomDepartment from '../components/CustomDepartment';
 
 const CustomTitle = ({ title, subtitle, theme }) => {
-           
+
     return (
         <>
             <Typography
@@ -42,15 +42,15 @@ const CustomTitle = ({ title, subtitle, theme }) => {
 const OurTeam = () => {
     const theme = useTheme();
     const sales_names = ['Inês Mendes', 'Leonor Almeida', 'Carolina Maurício', 'Nuno Alves', 'Nuno Alves', 'Nuno Alves', 'Nuno Alves'];
-    const sales_images = [{PlaceHolder},{PlaceHolder},{PlaceHolder},{PlaceHolder},{PlaceHolder},{PlaceHolder},{PlaceHolder}];
+    const sales_images = [{ PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }];
 
     return (
-        <ThemeProvider theme={theme}>
-           <Box position="relative" sx={{marginTop:"20px"}}>
+        <>
+            <Box sx={{ position: "relative", top: "60px", height: "135vh" }}>
                 <img
+                    style={{ width: '100%', height: 'auto', position: 'absolute' }}
                     src={elements}
                     alt='elements'
-                    style={{ width: '100%', height: 'auto' }}
                 />
                 <Typography
                     align="center"
@@ -59,31 +59,25 @@ const OurTeam = () => {
                         fontSize: "85px",
                         fontWeight: 'Regular',
                         position: 'absolute',
-                        top: '50%', // Adjusted to 50% to center vertically
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)', 
-                        zIndex: 2, 
+                        top: '5rem',
+                        zIndex: 1,
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         width: '100%',
-                        textAlign: 'center',
                     }}>
                     We are made of people
                 </Typography>
-            </Box>
-
-            <Box position="relative" style={{ top: '-60px', zIndex: 1 }}>
                 <img
+                    style={{ width: '100%', height: 'auto', position: 'absolute', bottom: '0' }}
                     src={HeroImage}
                     alt="Innova Tomada De Posse"
-                    style={{ width: '100%', height: 'auto' }}
-                    />
+                />
                 <Box
                     sx={{
                         position: 'absolute',
-                        bottom: -1,
+                        bottom: "0",
                         width: '100%',
-                        height: '70%',
+                        height: '40%',
                         backgroundImage:
                             'linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0))',
                     }}
@@ -91,12 +85,11 @@ const OurTeam = () => {
             </Box>
 
 
-            
-            <Box marginTop={1} marginBottom={4} textAlign="center">
-                <CustomTitle title="Our Board" subtitle="our problem-solvers" theme={theme} />                
+            <Box marginTop={15} marginBottom={4} textAlign="center" position="relative" sx={{}}>
+                <CustomTitle title="Our Board" subtitle="our problem-solvers" theme={theme} />
             </Box>
 
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', p: 5}} >
+            <Box position="relative" sx={{ display: 'flex', justifyContent: 'center', gap: '30px', p: 5 }} >
                 <CustomComponent title='President' name='Inês Costa' image={PlaceHolder} />
                 <CustomComponent title='External Affairs Vice-President' name='Leonor Almeida' image={PlaceHolder} />
                 <CustomComponent title='Internal Affairs Vice-President' name='Carolina Maurício' image={PlaceHolder} />
@@ -112,17 +105,17 @@ const OurTeam = () => {
             </Box>
 
             <Box marginTop={10} marginBottom={10} textAlign="center">
-                <CustomTitle title="Our Departments" subtitle="who make the magic happen" theme={theme} />                
+                <CustomTitle title="Our Departments" subtitle="who make the magic happen" theme={theme} />
             </Box>
 
-            
+
             {/* SALES TEAM */}
             <CustomDepartment Department='Sales Team' names={sales_names} images={sales_images} />
 
             {/* MARKETING TEAM */}
             <CustomDepartment Department='Marketing Team' names={sales_names} images={sales_images} />
 
-            {/* PROJECTS TEAM */}  
+            {/* PROJECTS TEAM */}
             <CustomDepartment Department='Projects Team' names={sales_names} images={sales_images} />
 
             {/* QUALITY TEAM */}
@@ -131,7 +124,7 @@ const OurTeam = () => {
             {/* HUMAN RESOURCES TEAM */}
             <CustomDepartment Department='Human Resources Team' names={sales_names} images={sales_images} />
 
-        </ThemeProvider>
+        </>
     );
 };
 
