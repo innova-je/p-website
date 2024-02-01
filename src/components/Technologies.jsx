@@ -10,8 +10,8 @@ const circleStyle = {
 
 const imageStyle = {
     position: 'absolute',
-    width: '60px',
-    height: '60px',
+    width: '80px',
+    height: '80px',
     borderRadius: '50%',
     backgroundSize: 'cover',
     transition: 'transform 0.2s ease-in-out', 
@@ -62,32 +62,32 @@ const Technologies = () => {
             <div
                 style={{
                     ...circleStyle,
-                    width: '600px',
-                    height: '500px',
-                    top: '-8rem',
+                    width: '700px',
+                    height: '600px',
+                    top: '-11rem',
                 }}
             >
-                {distributeImages(600, 500, 10)}
+                {distributeImages(700, 600, 12)}
             </div>
             <div
                 style={{
                     ...circleStyle,
                     width: '1000px',
-                    height: '700px',
-                    top: '-13rem',
+                    height: '800px',
+                    top: '-15rem',
                 }}
             >
-                {distributeImages(1000, 700, 10)}
+                {distributeImages(1000, 800, 15)}
             </div>
             <div
                 style={{
                     ...circleStyle,
                     width: '1350px',
                     height: '900px',
-                    top: '-17rem',
+                    top: '-16rem',
                 }}
             >
-                {distributeImages(1350, 900, 10)}
+                {distributeImages(1350, 900, 20)}
             </div>
         </>
     );

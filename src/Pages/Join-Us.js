@@ -39,7 +39,7 @@ const JoinUs = () => {
                         width: '100%',
                         height: '100%',
                         backgroundColor: 'rgba(255,255,255,0.4)',
-                        zIndex: '-1',
+                        zIndex: '0',
 
                     }}
                 />
@@ -61,7 +61,7 @@ const JoinUs = () => {
                     variant="contained"
                     sx={{
                         marginTop: '20px',
-                        zIndex: '1',
+                        zIndex: '2', // problem with the button
                         borderRadius: '20px',
                         py: '10px',
                         px: '70px',
@@ -94,17 +94,17 @@ const JoinUs = () => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     padding: '20px', // Added padding to ensure space for the circles
-                    height: '50vh',
+                    height: '70vh',
                     overflow: 'hidden',
                     marginBottom: '30px',
-                    marginTop: '30px', 
-                  }}
+                    marginTop: '30px',
+                }}
             >
                 {/* Circles */}
                 <Technologies />
 
                 {/* Texts */}
-                <Typography variant="h5"
+                <Typography variant="h4"
                     sx={{
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
@@ -113,15 +113,15 @@ const JoinUs = () => {
                     }}>
                     You will
                 </Typography>
-                <Typography variant="h3"
+                <Typography variant="h2"
                     sx={{
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
-                        fontWeight: '500',
+                        fontWeight: 'Bold',
                     }}>
                     learn something
                 </Typography>
-                <Typography variant="h4"
+                <Typography variant="h3"
                     sx={{
                         marginBottom: '20px',
                         color: theme.palette.primary.main,
@@ -137,6 +137,7 @@ const JoinUs = () => {
                         textAlign: 'center',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
+                        opacity: '0.7',
 
                     }}>
                     These are some technologies we use.<br />
@@ -361,17 +362,80 @@ const JoinUs = () => {
             </Box>
 
             {/* 5th Section */}
-            {/* <Box
+            <Box
                 sx={{
                     position: 'relative',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: '100vh',
+                    height: '145vh',
 
                 }}>
+                <Typography
+                    variant="h1"
+                    sx={{
+                        position: 'absolute',
+                        top: '4rem',
+                        color: theme.palette.secondary.main,
+                        fontFamily: theme.typography.fontFamily,
+                        fontWeight: 'Bold',
+                    }}
+                >
+                    How to apply?
+                </Typography>
+                
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        top: '15rem',
+                        width: '60%',
+                        height: '60%',
+                        backgroundColor: 'white',
+                        borderRadius: '20px',
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}>
+                    {/* First Box */}
+                    <Box
+                        sx={{
+                            width: '14%', 
+                            height: '100%',
+                            backgroundColor: 'lightblue',
+                            border: '1px solid #000', 
+                        }}
+                    >
+                        
+                    </Box>
 
-            </Box> */}
+                    {/* Second Box */}
+                    <Box
+                        sx={{
+                            width: '65%',
+                            height: '100%',
+                            backgroundColor: 'lightgreen',
+                            border: '1px solid #000', 
+                        }}
+                    >
+                        
+                    </Box>
+
+                    {/* Third Box */}
+                    <Box
+                        sx={{
+                            width: '21%', 
+                            height: '100%',
+                            backgroundColor: 'lightcoral',
+                            border: '1px solid #000', 
+                        }}
+                    >
+                        
+                    </Box>
+                </Box>
+
+
+            </Box>
 
             {/* 6th Section */}
             <Box
