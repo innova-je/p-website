@@ -40,7 +40,6 @@ const ClientsLogosCarrousel = styled(ImageList)`
   width: 100%;
   transition: transform 0.5s ease;
   overflow: hidden;
-  ${animationStyles}
 `;
 
 
