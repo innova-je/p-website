@@ -1,11 +1,13 @@
 import { Box, Typography } from '@mui/material';
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTheme } from '@mui/material/styles';
 import HeroImage from '../images/other/TOMADA DE POSSE.png';
 import PlaceHolder from '../images/other/placeholder.png';
 import elements from '../images/other/Elements.png';
 import CustomComponent from '../components/MemberComponents';
 import CustomDepartment from '../components/CustomDepartment';
+import Lottie, { LottieRefCurrentProps } from 'lottie-react';
+import laso from '../Animations/laso-animation.json';
 
 const CustomTitle = ({ title, subtitle, theme }) => {
 
@@ -43,6 +45,8 @@ const OurTeam = () => {
     const theme = useTheme();
     const sales_names = ['Inês Mendes', 'Leonor Almeida', 'Carolina Maurício', 'Nuno Alves', 'Nuno Alves', 'Nuno Alves', 'Nuno Alves'];
     const sales_images = [{ PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }];
+
+    const lasoRef = useRef < LottieRefCurrentProps > (null);
 
     return (
         <>
@@ -82,6 +86,20 @@ const OurTeam = () => {
                             'linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0))',
                     }}
                 />
+                <Lottie
+                    lottieRef={lasoRef}
+                    loop={false}
+                    animationData={laso}
+                    style={{
+                        position: 'absolute',
+                        right: '18rem',
+                        top: '60px',
+                        width: '330px',
+                        zIndex: 1
+                    }}
+                    speed={2} // You can adjust the speed value as needed
+                />
+
             </Box>
 
 
