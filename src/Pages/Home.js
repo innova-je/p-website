@@ -7,6 +7,7 @@ import HomePageImg from '../images/MaintenancePageImages/In.Nova_III-JE-Portugal
 import CoreBusiness from '../components/CoreBusiness'
 import ClientsCarousel from '../components/ClientsCarousel'
 import OurPartners from '../components/OurPartners'
+import OurServices from '../components/OurServices'
 
 const Home = () => {
 
@@ -18,24 +19,28 @@ const Home = () => {
       }));
 
     const statsStyle = {
-        fontSize: "5.5rem",
+        fontSize: "4.5vw",
         color: "#732043",
         fontWeight: "700"
     };
 
     const underStatsStyle = {
-        fontSize: "2rem",
+        fontSize: "1.5vw",
         color: "#732043",
         fontWeight: "500",
         marginTop: "-5%"
     };
 
     return (
-        
+        <>
         <Box sx={{
             backgroundColor: "#F0F0F0",
-
         }}>
+
+        <video src={BgVideo} width='100%' autoPlay loop muted style={{
+            borderRadius: "0 0 30px 30px",
+            opacity: "50%",
+        }}/>
             <Box sx={{
             width: "100%",//TODO: Este título não está bem
             position: "absolute",
@@ -48,7 +53,7 @@ const Home = () => {
                 textAlign: "center",
                 height: "100%",
                 fontWeight: "853",
-                fontSize: "180px",
+                fontSize: "9vw",
                 lineHeight: "200px",
                 letterSpacing: "0.16em",
                 WebkitBackgroundClip: "text",
@@ -61,19 +66,19 @@ const Home = () => {
                 display: "flex",
                 flexDirection: "row",
                 gap: "35px",
-                width: "90%"
+                width: "95%"
             }}>
                 <Typography sx={{
                     marginLeft: "17%",
                     fontWeight: "500",
-                    fontSize: "80px",
+                    fontSize: "4vw",
                     letterSpacing: "0.16em",
                     color: "#052533",
                 }}>with </Typography>
                 <Typography sx={{
                     marginTop: "-3%",
                     fontWeight: "853",
-                    fontSize: "180px",
+                    fontSize: "9vw",
                     letterSpacing: "0.16em",
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
@@ -84,10 +89,7 @@ const Home = () => {
         </Box>
 
             
-        <video src={BgVideo} width='100%' autoPlay loop muted style={{
-            borderRadius: "0 0 30px 30px",
-            opacity: "50%",
-        }}/>
+        
 
         <Box sx={{
             position: "relative",
@@ -96,13 +98,13 @@ const Home = () => {
         }}>
             <Typography sx={{
                 color: "#052533",
-                fontSize: "3rem",
+                fontSize: "3vw",
                 fontWeight: "600"
             }}>Your Go-To</Typography>
             <Typography sx={{
                 marginTop: "-2%",
                 color: "#732043",
-                fontSize: "4.5rem",
+                fontSize: "4.5vw",
                 fontWeight: "700"
             }}>Technology Consultants</Typography>   
 
@@ -147,13 +149,21 @@ const Home = () => {
                 alignItems: "center",
                 zIndex: 3
             }}>
+                <Box sx={{
+                    width: "5px",
+                    height: "60%",
+                    background: "linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))",
+                    marginLeft: "5%",
+                    borderRadius: "5px"
+                }}>
+                </Box>
                 <Typography sx={{
-                    marginLeft: "8%",
+                    marginLeft: "4%",
                     textAlign: "left",
                     color: "white",
-                    fontSize: "40px",
-                    fontWeight: "400"
-                }}>We work to inspire people & businesses</Typography>
+                    fontSize: "2vw",
+                    fontWeight: "300",                    
+                }}>We work to <i>inspire</i> people & businesses</Typography>
             </div>
 
             <div style={{
@@ -169,12 +179,20 @@ const Home = () => {
                 textAlign: "center",
                 alignItems: "center",
             }}>
+                <Box sx={{
+                    width: "5px",
+                    height: "60%",
+                    background: "linear-gradient(to bottom, rgba(5, 37, 51, 1), rgba(5, 37, 51, 0))",
+                    marginLeft: "5%",
+                    borderRadius: "5px"
+                }}>
+                </Box>
                 <Typography sx={{
-                    marginLeft: "8%",
+                    marginLeft: "4%",
                     textAlign: "left",
                     color: "#052533",
-                    fontSize: "44px",
-                    fontWeight: "400"
+                    fontSize: "2vw",
+                    fontWeight: "300", 
                 }}>And we also take pride in what we do and aim to go beyond</Typography>
             </div>
             
@@ -191,6 +209,7 @@ const Home = () => {
             gap: "10%",
             margin: "0 auto",
             marginTop: "-5%",
+            marginBottom: "5%",
             alignItems: "center",
             justifyContent: "center",
         }}>
@@ -221,6 +240,8 @@ const Home = () => {
                
 
         </Box>
+        </>
+        
  
     )
 }

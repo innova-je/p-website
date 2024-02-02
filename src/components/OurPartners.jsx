@@ -1,6 +1,5 @@
 import { Box, Typography, styled} from '@mui/material'
 import React from 'react'
-
 import Fidelidade from '../images/HomePageImages/PartnersLogos/FidelidadeLogo.png'
 import Siemens from '../images/HomePageImages/PartnersLogos/SiemensLogo.png'
 import Cisco from '../images/HomePageImages/PartnersLogos/CiscoLogo.png'
@@ -8,7 +7,26 @@ import Magma from '../images/HomePageImages/PartnersLogos/MagmaLogo.png'
 import Meta from '../images/HomePageImages/PartnersLogos/MetaLogo.png'
 import OpenBB from '../images/HomePageImages/PartnersLogos/OpenBBLogo.png'
 
+import { useTheme } from '@mui/system';
+
+const partnerData = {
+  goldSponsors: [
+    { name: 'Fidelidade', logoSrc: Fidelidade, width: '80%'}
+  ],
+  silverSponsors: [
+    { name: 'Siemens Energy', logoSrc: Siemens, width: '80%', transform: 'scale(0.6)' },
+    { name: 'Cisco Systems', logoSrc: Cisco, width: '80%', transform: 'scale(0.6)' }
+  ],
+  learningPartners: [
+    { name: 'Magma Studios', logoSrc: Magma, width: '50%', transform: 'scale(0.8)' },
+    { name: 'Meta Consultoria Júnior', logoSrc: Meta, width: '50%', transform: 'scale(0.7)' },
+    { name: 'OpenBB', logoSrc: OpenBB, width: '60%', transform: 'scale(0.6)' }
+  ],
+};
+
+
 const OurPartners = () => {
+  const theme = useTheme();
 
     const ClientsAndPartnersStyle = {
         width: "100%",
@@ -16,21 +34,45 @@ const OurPartners = () => {
         justifyContent: "center",
         color: "#732043",
         fontWeight: "700",
-        fontSize: "70px"
+        fontSize: "3.5vw",
       };
 
       const PartnersBox = styled(Box)(({ theme }) => ({
         position: "relative",
-        marginTop: "3%",
-        marginBottom: "10%",
+        marginTop: "1%",
         width: "100%",
-        backgroundColor: "#F0F0F0"
-        
+        backgroundColor: "#F0F0F0",
+        [theme.breakpoints.down('sm')]: {
+          height: "100%",
+        },
+        height: "90vh",
+      }));
+
+      const SponsorsBox = styled(Box)(({ theme }) => ({
+        position: "relative",
+        marginTop: "5%",
+        width: "100%",
+        display: "flex",
+        [theme.breakpoints.down('sm')]: {
+          flexDirection: "column",
+          alignItems: "center"
+        },
+        [theme.breakpoints.up('md')]: {
+          flexDirection: "row",
+          alignItems: "flex-start",
+        },
+        justifyContent: "center",        
       }));
 
       const SponsorBox = styled(Box)(({ theme }) => ({
-        width: "25%",
-        display: "flex",
+        [theme.breakpoints.down('sm')]: {
+          width: "90%",
+          marginTop: "15%"
+        },
+        [theme.breakpoints.up('md')]: {
+          width: "25%",
+        },        
+        display: "flex",       
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
@@ -38,7 +80,13 @@ const OurPartners = () => {
       }));
 
       const LearningPartners = styled(Box)(({ theme }) => ({
-        width: "35%",
+        [theme.breakpoints.down('sm')]: {
+          width: "90%",
+          margin: "15% 0"
+        },
+        [theme.breakpoints.up('md')]: {
+          width: "35%",
+        },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -59,27 +107,30 @@ const OurPartners = () => {
       const SponsorTitleStyle = {
         color: "#052533",
         fontWeight: "600",
-        fontSize: "26px"
-      };
+        fontSize: {
+          xs: "4.5vw",
+          lg: "1.5vw"
+      }}
 
-      const SponsorsBox = styled(Box)(({ theme }) => ({
-        position: "relative",
-        marginTop: "5%",
-        width: "100%",
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "flex-start",
-      }));
+      
 
   return (
     <PartnersBox>
                 <Typography style={ClientsAndPartnersStyle}>Meet Our Partners</Typography>
                 <Typography sx={{
                     textAlign: "center",
+                    display: "flex",
+                    justifyContent: "center",
                     color: "#052533",
-                    fontWeight: "200",
-                    fontSize: "26px"
+                    [theme.breakpoints.down('sm')]: {
+                      fontSize: "16px",
+                      fontWeight: "400",
+                      marginBottom: "-5%",
+                    },
+                    [theme.breakpoints.up('md')]: {
+                      fontSize: "26px",
+                      fontWeight: "200"
+                    },
                 }}>Alone, we go fast. Together, we go further.</Typography>
                 <SponsorsBox>
                 <SponsorBox className='Gold Sponsors'>
@@ -138,11 +189,16 @@ const OurPartners = () => {
                         width: "100%",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "center",
-                        flexDirection: "row",
+                        justifyContent: "center",                        
+                        [theme.breakpoints.down('sm')]: {
+                          flexDirection: "column",
+                        },
+                        [theme.breakpoints.up('md')]: {
+                          flexDirection: "row",
+                        },
                     }}>
-                        <img src={Magma} alt='Magma Studios Logo' style={{width: "50%", height: "auto", transform: "scale(0.8)"}}/>
-                        <img src={Meta} alt='Meta Consultoria Júnior Logo' style={{width: "50%", height: "auto", transform: "scale(0.7)"}}/>
+                        <img src={Magma} alt='Magma Studios Logo' style={{width: "50%",  transform: "scale(0.8)"}}/>
+                        <img src={Meta} alt='Meta Consultoria Júnior Logo' style={{width: "50%",  transform: "scale(0.7)"}}/>
                     </Box>
                     
                     <img src={OpenBB} alt='OpenBB Logo' style={{width: "60%", transform: "scale(0.6)"}}/>
@@ -154,6 +210,6 @@ const OurPartners = () => {
                 
             </PartnersBox>
   )
-}
+};
 
 export default OurPartners

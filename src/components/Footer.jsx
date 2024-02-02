@@ -3,8 +3,11 @@ import React from 'react'
 
 import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
 
-
 import InNovaLogo from '../images/OurLogos/logos-10.png'
+
+import CustomButton from './CustomButton';
+
+import { keyframes, css } from 'styled-components';
 
 const Footer = () => {
 
@@ -12,7 +15,7 @@ const Footer = () => {
         backgroundColor: "#F0F0F0",
         position: "absolute",
         width: "100%",
-        height: "35%",
+        height: "32%",
         justifyContent: "center",
         alignItems: "center",
         boxShadow: "none",
@@ -21,46 +24,48 @@ const Footer = () => {
     const Logo = styled(ImageListItem)(({ theme }) => ({
         position: "absolute",
         bottom: "0px",
-        width: "20%",
-        height: "20%",
+        width: "17%",
+        height: "17%",
         margin: "6vh"
       }));
 
       const Pages = styled(Box)(({ theme }) => ({
         position: "relative",
         top: "45%",
-        height: "40%",
+        height: "auto",
         width: "100%",
         display: "grid",
         gridTemplateColumns: "2fr 2fr",
         rowGap: "2px",
         columnGap: "20%"
-    }));    
+    }));   
+    
 
-
-    const LetsTalkButton = styled(Button)(({ theme }) => ({
-        position: "absolute",
-        top: "10%",
-        backgroundColor: "#052533",
-        color: 'white',
-        width: "10vw",
-        height: "6vh",
-        fontFamily: theme.typography.fontFamily,
-        fontWeight: 'bold',
-        border: "1px solid white",
-        borderRadius: '25px',
-        display: "flex",
-        flexDirection: "row",
-        gap: "10%",
-        transition: 'transform 0.3s ease-in-out',
-      
-        '&:hover': {
-          backgroundColor: "white",
-          color: '#052533',
-          border: "1px solid #052533",
-          transform: 'scale(1.05)',
-        },
-      }));
+const LetsTalkButton = styled(Button)(({ theme }) => ({
+    position: "absolute",
+    overflow: "hidden",
+    top: "10%",
+    backgroundColor: "#052533",
+    color: 'white',
+    width: "10vw",
+    height: "6vh",
+    fontFamily: theme.typography.fontFamily,
+    fontWeight: 'bold',
+    border: "1px solid white",
+    borderRadius: '25px',
+    display: "flex",
+    flexDirection: "row",
+    gap: "10%",
+    transition: 'transform 0.3s ease-in-out',
+  
+    '&:hover': {
+      backgroundColor: "white",
+      color: '#052533',
+      border: "1px solid #052533",
+      transform: 'scale(1.05)',
+    },  
+    
+  }));
 
       const SocialMedia = styled(Box)(({ theme }) => ({
         display: "flex",
@@ -70,7 +75,7 @@ const Footer = () => {
       }));
 
       const PagesLinkStyle = {
-        fontSize: "20px",
+        fontSize: "1vw",
         color: "white",
         fontWeight: "400"
       };
@@ -100,7 +105,7 @@ const Footer = () => {
                     <Typography sx={{
                     position: "absolute",
                     top: "5%",
-                    fontSize: "2.5rem",
+                    fontSize: "1.9vw",
                     fontWeight: 200,
                     lineHeight: "40px",
                     letterSpacing: "-0.02em",
@@ -132,51 +137,49 @@ const Footer = () => {
                     zIndex: "999",
                 }}>
                 <LetsTalkButton>
-                    <Typography>Let's Talk</Typography>
-                    <ArrowForward sx={{ height: "50%"}}></ArrowForward>
+                    <Typography sx={{fontSize: "1vw"}}>Let's Talk</Typography>
+                    <ArrowForward sx={{height: "50%"}}></ArrowForward>
                 </LetsTalkButton>
 
                 <SocialMedia>
                     <Link href="mailto:geral@innova.pt">
                     <Email sx={{
                         width: "4vw",
-                        height: "6vh",
+                        height: "5vh",
                         color: "white"
                     }}></Email>
                     </Link>
                     <Link href='https://www.instagram.com/in.nova.pt'>
                         <Instagram sx={{
                         width: "4vw",
-                        height: "6vh",
+                        height: "5vh",
                         color: "white"
                     }}></Instagram>
                     </Link>
                     <Link href='https://www.linkedin.com/company/innova-consultoria-junior'>
                     <LinkedIn sx={{
                         width: "4vw",
-                        height: "6vh",
+                        height: "5vh",
                         color: "white"
                     }}></LinkedIn>
                     </Link>
                 </SocialMedia>
                 <Typography sx={{
-                    fontSize: "18px",
+                    fontSize: "1rem",
                     fontWeight: "100",
                     lineHeight: "25px",
                     display: "flex",
                     textAlign: "center",
-                    width: "80%",
                     flexDirection: "column",
                     position: "relative",
                     top: "12%"
                 }}>Faculdade de Ciências e Tecnologia
-                Universidade Nova de Lisboa</Typography>
+                <br/>Universidade Nova de Lisboa</Typography>
                 <Typography sx={{
-                    fontSize: "18px",
+                    fontSize: "1rem",
                     fontWeight: "100",
                     display: "flex",
                     textAlign: "center",
-                    width: "80%",
                     flexDirection: "column",
                     position: "relative",
                     top: "17%"
