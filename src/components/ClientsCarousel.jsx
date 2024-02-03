@@ -1,4 +1,4 @@
-import { Box, Typography, styled, ImageList} from '@mui/material'
+import { Box, Typography, styled, keyframes} from '@mui/material'
 
 import Futuralia from '../images/HomePageImages/ClientsLogos/FUTURALIA.webp'
 import Sucees from '../images/HomePageImages/ClientsLogos/SUCEES.png'
@@ -15,9 +15,16 @@ const clientsData = [
   { name: 'NovaID', logoSrc: NovaID, width: '15%', height: '15%', scale: 0.7 },
   { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '15%', scale: 0.6 },
   { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '15%', height: '15%', scale: 0.6 },
-  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 1.5 }
+  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 1.5 },
+  { name: 'Futurália', logoSrc: Futuralia, width: '15%', scale: 1 },
+  { name: 'Sucees', logoSrc: Sucees, width: '15%', scale: 1 },
+  { name: 'Orion', logoSrc: Orion, width: '30%', scale: 0.7 },
+  { name: 'NovaID', logoSrc: NovaID, width: '15%', height: '15%', scale: 0.7 },
+  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '15%', scale: 0.6 },
+  { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '15%', height: '15%', scale: 0.6 },
+  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 1.5 },
+  
 ];
-
 
 const ClientsCarousel = () => {
 
@@ -28,20 +35,28 @@ const ClientsCarousel = () => {
     justifyContent: "center",
     alignItems: "center",
     overflow: "hidden", 
-    whiteSpace: "nowrap",
-    
+    whiteSpace: "nowrap",    
   }));
 
-
-const ClientsLogosCarrousel = styled(ImageList)`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  transition: transform 0.5s ease;
-  overflow: hidden;
+  const slideAnimation = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 `;
 
+  const LogosSlide = styled('div')(({ theme }) => ({
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    animation: `${slideAnimation} 50s infinite linear`,
+    '&:hover': {
+      animationPlayState: 'paused',
+    },
+  }));
 
   const ClientsAndPartnersStyle = {
     width: "100%",
@@ -54,9 +69,9 @@ const ClientsLogosCarrousel = styled(ImageList)`
   
 
   return (
-    <ClientsBox>
+    <ClientsBox className='clients-box'>
       <Typography style={ClientsAndPartnersStyle}>Who Trusted Us</Typography>
-      <ClientsLogosCarrousel>
+      <LogosSlide className="logos-slide">
         {clientsData.map((client, index) => (
           <img
             key={index}
@@ -65,10 +80,10 @@ const ClientsLogosCarrousel = styled(ImageList)`
             style={{ width: client.width, transform: `scale(${client.scale})`, margin: '0 2%' }}
           />
         ))}
-      </ClientsLogosCarrousel>
-
+      </LogosSlide>
     </ClientsBox>
   );
 };
+
 
 export default ClientsCarousel;

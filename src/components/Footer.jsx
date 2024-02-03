@@ -5,10 +5,6 @@ import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
 
 import InNovaLogo from '../images/OurLogos/logos-10.png'
 
-import CustomButton from './CustomButton';
-
-import { keyframes, css } from 'styled-components';
-
 const Footer = () => {
 
     const FooterBar = styled(AppBar)(({ theme }) => ({

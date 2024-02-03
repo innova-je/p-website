@@ -108,6 +108,15 @@ const Home = () => {
                 fontWeight: "700"
             }}>Technology Consultants</Typography>   
 
+            <Typography sx={{
+                marginRight: "5%",
+                display: "flex",
+                justifyContent: "right",
+                marginTop: "-2%",
+                color: "#732043",
+                fontSize: "1.2vw",
+                fontWeight: "400"
+            }}>Find more about us &rarr;</Typography> 
         <Box sx={{
             position: "relative",
             height: "100vh",
