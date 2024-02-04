@@ -8,21 +8,29 @@ import NovaID from '../images/HomePageImages/ClientsLogos/NOVA_ID.webp'
 import FatiasDeCa from '../images/HomePageImages/ClientsLogos/FATIAS_DE_CA.webp'
 import CardioLeather from '../images/HomePageImages/ClientsLogos/CARDIO_LEATHER.webp'
 
-const clientsData = [
+const clientsData = [//TODO: arranjar maneira de nao ser preciso duplicar os dados
+  //Adicionar links para as páginas dos clientes
   { name: 'Futurália', logoSrc: Futuralia, width: '15%', scale: 1 },
-  { name: 'Sucees', logoSrc: Sucees, width: '15%', scale: 1 },
-  { name: 'Orion', logoSrc: Orion, width: '30%', scale: 0.7 },
+  { name: 'Sucees', logoSrc: Sucees, width: '13%', scale: 1 },
+  { name: 'Orion', logoSrc: Orion, width: '20%', scale: 1 },
   { name: 'NovaID', logoSrc: NovaID, width: '15%', height: '15%', scale: 0.7 },
-  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '15%', scale: 0.6 },
+  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '10%', scale: 0.6 },
   { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '15%', height: '15%', scale: 0.6 },
-  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 1.5 },
+  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 2 },
   { name: 'Futurália', logoSrc: Futuralia, width: '15%', scale: 1 },
-  { name: 'Sucees', logoSrc: Sucees, width: '15%', scale: 1 },
-  { name: 'Orion', logoSrc: Orion, width: '30%', scale: 0.7 },
+  { name: 'Sucees', logoSrc: Sucees, width: '13%', scale: 1 },
+  { name: 'Orion', logoSrc: Orion, width: '20%', scale: 1 },
   { name: 'NovaID', logoSrc: NovaID, width: '15%', height: '15%', scale: 0.7 },
-  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '15%', scale: 0.6 },
+  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '10%', scale: 0.6 },
   { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '15%', height: '15%', scale: 0.6 },
-  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 1.5 },
+  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 2 },
+  { name: 'Futurália', logoSrc: Futuralia, width: '15%', scale: 1 },
+  { name: 'Sucees', logoSrc: Sucees, width: '13%', scale: 1 },
+  { name: 'Orion', logoSrc: Orion, width: '20%', scale: 1 },
+  { name: 'NovaID', logoSrc: NovaID, width: '15%', height: '15%', scale: 0.7 },
+  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '10%', scale: 0.6 },
+  { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '15%', height: '15%', scale: 0.6 },
+  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 2 },
   
 ];
 
@@ -52,7 +60,7 @@ const ClientsCarousel = () => {
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
-    animation: `${slideAnimation} 50s infinite linear`,
+    animation: `${slideAnimation} 20s infinite linear`,
     '&:hover': {
       animationPlayState: 'paused',
     },

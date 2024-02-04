@@ -1,31 +1,53 @@
-/*
-import styled, { keyframes, css } from 'styled-components';
-import { Button } from '@mui/material';
 
-const snakeAnimation = keyframes`
+import { Button, styled, keyframes } from '@mui/material';
+
+
+const animate1 = keyframes`
   0% {
-    background-position: 100% 0;
+    transform: rotate(0deg);
   }
   100% {
-    background-position: 100% 100%;
+    transform: rotate(360deg);
+  }
+`;
+
+const animate2 = keyframes`
+  100% {
+    transform: rotate(360deg);
+  }
+  0% {
+    transform: rotate(0deg);
   }
 `;
 
 const CustomButton = styled(Button)(({ theme }) => ({
-  position: "relative",
-  overflow: "hidden",
 
   '&:before': {
     content: '""',
     position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
+    width: "1vw",
+    height: "25vh",
     zIndex: -1,
-    background: `linear-gradient(45deg, #052533, white, #052533)`,
-    backgroundSize: '200% 200%',
-    animation: css`${snakeAnimation} 3s linear infinite`,
+    background: `linear-gradient(#ffffff, #ffffff)`,
+    animation: `${animate1} 10s infinite linear`,
+  },
+
+  '&:before': {
+    content: '""',
+    position: 'absolute',
+    width: "1vw",
+    height: "25vh",
+    zIndex: -1,
+    background: `linear-gradient(#ffffff, #ffffff)`,
+    animation: `${animate2} 10s infinite linear`,
+  },
+
+  '&:after': {
+    content: '""',
+    position: 'absolute',
+    inset: "1px",
+    borderRadius: "16px",
+    backgroundColor: "#052533",
   },
 
   position: "absolute",
@@ -34,24 +56,11 @@ const CustomButton = styled(Button)(({ theme }) => ({
   color: 'white',
   width: "10vw",
   height: "6vh",
-  fontFamily: theme.typography.fontFamily,
-  fontWeight: 'bold',
-  border: "1px solid white",
-  borderRadius: '25px',
   display: "flex",
   flexDirection: "row",
   gap: "10%",
-  transition: 'transform 0.3s ease-in-out',
-
-  '&:hover': {
-    backgroundColor: "white",
-    color: '#052533',
-    border: "1px solid #052533",
-    transform: 'scale(1.05)',
-    background: `linear-gradient(45deg, #052533, white, #052533)`,
-    animation: css`${snakeAnimation} 3s linear infinite`,
-  },
+  borderRadius: "16px",
+  overflow: "hidden",
 }));
 
 export default CustomButton;
-*/

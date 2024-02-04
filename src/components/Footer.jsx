@@ -4,6 +4,7 @@ import React from 'react'
 import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
 
 import InNovaLogo from '../images/OurLogos/logos-10.png'
+import CustomButton from './CustomButton';
 
 const Footer = () => {
 
@@ -132,10 +133,10 @@ const LetsTalkButton = styled(Button)(({ theme }) => ({
                     height: "100%",
                     zIndex: "999",
                 }}>
-                <LetsTalkButton>
-                    <Typography sx={{fontSize: "1vw"}}>Let's Talk</Typography>
-                    <ArrowForward sx={{height: "50%"}}></ArrowForward>
-                </LetsTalkButton>
+                <CustomButton>
+                    <Typography sx={{fontSize: "1vw", zIndex: "2"}}>Let's Talk</Typography>
+                    <ArrowForward sx={{height: "50%", zIndex: "2"}}></ArrowForward>
+                </CustomButton>
 
                 <SocialMedia>
                     <Link href="mailto:geral@innova.pt">
@@ -161,9 +162,9 @@ const LetsTalkButton = styled(Button)(({ theme }) => ({
                     </Link>
                 </SocialMedia>
                 <Typography sx={{
-                    fontSize: "1rem",
+                    fontSize: "0.8rem",
                     fontWeight: "100",
-                    lineHeight: "25px",
+                    lineHeight: "17px",
                     display: "flex",
                     textAlign: "center",
                     flexDirection: "column",
@@ -172,7 +173,7 @@ const LetsTalkButton = styled(Button)(({ theme }) => ({
                 }}>Faculdade de Ciências e Tecnologia
                 <br/>Universidade Nova de Lisboa</Typography>
                 <Typography sx={{
-                    fontSize: "1rem",
+                    fontSize: "0.8rem",
                     fontWeight: "100",
                     display: "flex",
                     textAlign: "center",
