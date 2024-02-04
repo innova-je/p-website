@@ -22,7 +22,7 @@ const InNovaLogo = () => {
           position: "absolute",
           bottom: "-23vh",
           right: "-15vw",
-          zIndex: "1"
+          zIndex: "0"
         }}
       >
         <img
@@ -118,6 +118,7 @@ const SocialMedia = () => {
       <Box sx={{
           display: "flex",
           justifyContent: "right",
+          zIndex: "2"
       }}>
         
         <Box
@@ -184,7 +185,6 @@ const SocialMedia = () => {
             geral@innova.pt
           </Typography>
         </Link>
-          
         </Box>
       </Box>
     )
@@ -192,7 +192,8 @@ const SocialMedia = () => {
     return(
       <Box sx={{
         position: "relative",
-        top: "30%"
+        top: "30%",
+        zIndex: "2",
       }}>
       <Box
       sx={{
@@ -200,8 +201,7 @@ const SocialMedia = () => {
         justifyContent: "center",
         display: "flex",
         flexDirection: "row",
-        gap: "15px",
-        zIndex: "2",
+        gap: "15px",        
       }}>
       <Link href="mailto:geral@innova.pt" sx={{
         display: "flex",
@@ -478,8 +478,8 @@ const MobileVersion = () => {
       overflow: "hidden"
     }}>    
       <MaintenanceText></MaintenanceText>
-      <InNovaLogo></InNovaLogo>
       <SocialMedia></SocialMedia>
+      <InNovaLogo></InNovaLogo>
     </Box>
   )
 };
