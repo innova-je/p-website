@@ -372,7 +372,7 @@ const JoinUs = () => {
 
                 }}>
                 <Typography
-                    variant="h1"
+                    variant="h2"
                     sx={{
                         position: 'absolute',
                         top: '4rem',
@@ -387,7 +387,7 @@ const JoinUs = () => {
                 <Box
                     sx={{
                         position: 'absolute',
-                        top: '15rem',
+                        top: '13rem',
                         width: '60%',
                         height: '60%',
                         backgroundColor: 'white',
@@ -445,7 +445,7 @@ const JoinUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: '115vh',
+                    height: '120vh',
                     overflow: 'visible',
 
                 }}>
@@ -453,7 +453,7 @@ const JoinUs = () => {
                     variant="h4"
                     sx={{
                         position: 'absolute',
-                        top: '5rem',
+                        top: '4rem',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Light',
@@ -465,7 +465,7 @@ const JoinUs = () => {
                     variant="h2"
                     sx={{
                         position: 'absolute',
-                        top: '8rem',
+                        top: '7rem',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
@@ -517,7 +517,7 @@ const JoinUs = () => {
                     variant="body1"
                     sx={{
                         position: 'absolute',
-                        bottom: '5rem',
+                        bottom: '6rem',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Light',
@@ -529,7 +529,7 @@ const JoinUs = () => {
 
                 <Link href="mailto:geral@innova.pt" variant="body1" sx={{
                     position: 'absolute',
-                    bottom: '2.5rem',
+                    bottom: '3.5rem',
                     color: theme.palette.primary.main,
                     fontFamily: theme.typography.fontFamily,
                     fontWeight: 'Light',
@@ -537,16 +537,6 @@ const JoinUs = () => {
                 }}>
                     send us an-email
                 </Link>
-                {/* <Box
-                    sx={{
-                        position: 'absolute',
-                        bottom: '-6rem',
-                        width: '100%',
-                        height: '20%',
-                        backgroundColor: 'white',
-
-                    }} /> */}
-
 
             </Box>
         </>

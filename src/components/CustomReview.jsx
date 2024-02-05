@@ -12,6 +12,8 @@ const CustomReview = ({ image, name, department, text }) => {
             textAlign="center"
             bgcolor="white"
             width="21rem"
+            boxShadow={10}
+        
         >
             <Box
                 display="flex"

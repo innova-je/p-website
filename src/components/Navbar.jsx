@@ -10,15 +10,16 @@ const JoinUs = styled(Button)(({ theme }) => ({
   color: 'white',
   fontFamily: theme.typography.fontFamily,
   fontWeight: 'bold',
+  fontSize: '15px',
   marginRight: '70px',
-  padding: '5px 30px',
+  padding: '5px 50px',
   borderRadius: '25px',
-  transition: 'transform 0.2s ease-in-out', // Add transition for smooth hover effect
+  transition: 'transform 0.3s ease-in-out', 
 
   '&:hover': {
     backgroundColor: theme.palette.primary.main,
     color: 'white',
-    transform: 'scale(1.1)', // Enlarge the button on hover
+    transform: 'scale(1.1)', 
   },
 }));
 
@@ -49,7 +50,7 @@ const Navbar = () => {
       <Button
         color="inherit"
         onClick={(event) => handleMenuClick(event, dropdown)}
-        style={{ color: '#732043', fontWeight: 'bold', textTransform: 'none' }}
+        style={{ color: '#732043', fontWeight: 'bold', textTransform: 'none', fontSize: '18px'}}
       >
         {label} <ArrowDropDownIcon />
       </Button>
@@ -64,7 +65,7 @@ const Navbar = () => {
             onClick={() => handleMenuClose(dropdown)}
             component={Link}
             to={subPage.path}
-            style={{ color: '#732043' }}
+            style={{ color: '#732043', fontSize: '18px'}}
           >
             {subPage.label}
           </MenuItem>
@@ -77,7 +78,8 @@ const Navbar = () => {
     textDecoration: 'none',
     color: '#732043',
     fontWeight: 'bold',
-    transition: 'font-weight 0.3s ease', // Add transition for smoother effect
+    fontSize: '18px',
+    transition: 'font-weight 0.3s ease',
     textTransform: 'none'
   };
 
@@ -86,17 +88,19 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="absolute" style={{ background: '#FFFFFF29', boxShadow: 'none'}}>
-      <Toolbar>
-         <Link to="/">
+    <AppBar position="absolute" style={{ background: '#FFFFFF29', boxShadow: 'none', height: '80px' }}>
+      <Toolbar style={{ height: '100%', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Link to="/">
             <img
               src={LogoImage}
               alt="Logo Innova"
-              style={{ height: 60, marginLeft: 70, cursor: 'pointer' }}
+              style={{ height: 80, marginLeft: 70, cursor: 'pointer' }}
             />
           </Link>
+        </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexGrow: 1 }}>
           <NavLink to="/about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
             <Button color="inherit" style={linkStyles}>About Us</Button>
           </NavLink>
