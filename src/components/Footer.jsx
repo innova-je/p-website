@@ -6,6 +6,9 @@ import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
 import InNovaLogo from '../images/OurLogos/logos-10.png'
 import CustomButton from './CustomButton';
 
+import { NavLink, useNavigate } from 'react-router-dom';
+
+
 const Footer = () => {
 
     const FooterBar = styled(AppBar)(({ theme }) => ({
@@ -26,7 +29,7 @@ const Footer = () => {
         margin: "6vh"
       }));
 
-      const Pages = styled(Box)(({ theme }) => ({
+    const Pages = styled(Box)(({ theme }) => ({
         position: "relative",
         top: "45%",
         height: "auto",
@@ -36,47 +39,32 @@ const Footer = () => {
         rowGap: "2px",
         columnGap: "20%"
     }));   
-    
 
-const LetsTalkButton = styled(Button)(({ theme }) => ({
-    position: "absolute",
-    overflow: "hidden",
-    top: "10%",
-    backgroundColor: "#052533",
-    color: 'white',
-    width: "10vw",
-    height: "6vh",
-    fontFamily: theme.typography.fontFamily,
-    fontWeight: 'bold',
-    border: "1px solid white",
-    borderRadius: '25px',
-    display: "flex",
-    flexDirection: "row",
-    gap: "10%",
-    transition: 'transform 0.3s ease-in-out',
-  
-    '&:hover': {
-      backgroundColor: "white",
-      color: '#052533',
-      border: "1px solid #052533",
-      transform: 'scale(1.05)',
-    },  
-    
-  }));
-
-      const SocialMedia = styled(Box)(({ theme }) => ({
+    const SocialMedia = styled(Box)(({ theme }) => ({
         display: "flex",
         flexDirection: "row",
         position: "relative",
         top: "3vh",
       }));
 
-      const PagesLinkStyle = {
+    const PagesLinkStyle = {
         fontSize: "1vw",
         color: "white",
         fontWeight: "400"
       };
 
+
+    const NavLinkStyle = {
+        textDecoration : "none",
+      };
+
+
+    const navigate = useNavigate();
+
+    const handleNavLinkClick = (path) => {
+        navigate.push(path);
+        window.scrollTo(0, 0);
+      };
 
     return (
         <FooterBar position='bottom-center'>            
@@ -109,19 +97,32 @@ const LetsTalkButton = styled(Button)(({ theme }) => ({
                     textAlign: "left",         
                  }}>Let's discuss and <br/> bring your vision to life.</Typography>
 
-                <Pages>{/*TODO: Adicionar os links para as páginas */}
+                <Pages>
+                <NavLink to="/about-us" style={NavLinkStyle} onClick={() => handleNavLinkClick('/about-us')}>
                     <Typography style={PagesLinkStyle}>About Us</Typography>
-                    <Typography style={PagesLinkStyle}>Events</Typography>
-                    <Typography style={PagesLinkStyle}>Services</Typography>
-                    <Typography style={PagesLinkStyle}>Out of Office</Typography>
-                    <Typography style={PagesLinkStyle}>Our Team</Typography>
-                    <Typography style={PagesLinkStyle}>Recruitment</Typography>
-                    <Typography style={PagesLinkStyle}>Our Advisors</Typography>             
+                </NavLink>
+                    <NavLink to="/events" style={NavLinkStyle} onClick={() => handleNavLinkClick('/events')}>
+                        <Typography style={PagesLinkStyle}>Events</Typography>
+                    </NavLink> 
+                    <NavLink to="/services" style={NavLinkStyle} onClick={() => handleNavLinkClick('/services')}>
+                        <Typography style={PagesLinkStyle}>Services</Typography>
+                    </NavLink>
+                    <NavLink to="/out-of-office" style={NavLinkStyle} onClick={() => handleNavLinkClick('/out-of-office')}>
+                        <Typography style={PagesLinkStyle}>Out of Office</Typography>
+                    </NavLink>
+                    <NavLink to="/our-people/our-team" style={NavLinkStyle} onClick={() => handleNavLinkClick('/our-people/our-team')}>
+                        <Typography style={PagesLinkStyle}>Our Team</Typography>
+                    </NavLink>
+                    <NavLink to="/join-us" style={NavLinkStyle} onClick={() => handleNavLinkClick('/join-us')}>{/* nao ha pagina de recrutamento*/}
+                        <Typography style={PagesLinkStyle}>Recruitment</Typography>
+                    </NavLink>
+                    <NavLink to="/our-people/our-advisors" style={NavLinkStyle} onClick={() => handleNavLinkClick('/our-people/our-advisors')}>
+                        <Typography style={PagesLinkStyle}>Our Advisors</Typography>    
+                    </NavLink>                             
                 </Pages>
 
                 </Box>
                 
-
                 <Box sx={{
                     position: "absolute",
                     right: "5%",
@@ -133,7 +134,10 @@ const LetsTalkButton = styled(Button)(({ theme }) => ({
                     height: "100%",
                     zIndex: "999",
                 }}>
-                <CustomButton>
+                <CustomButton customBackgroundColor = "#052533" sx={{
+                    position: "absolute",
+                    top: "10%",
+                }}>
                     <Typography sx={{fontSize: "1vw", zIndex: "2"}}>Let's Talk</Typography>
                     <ArrowForward sx={{height: "50%", zIndex: "2"}}></ArrowForward>
                 </CustomButton>

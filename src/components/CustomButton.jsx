@@ -20,7 +20,7 @@ const animate2 = keyframes`
   }
 `;
 
-const CustomButton = styled(Button)(({ theme }) => ({
+const CustomButton = styled(Button)(({ customBackgroundColor }) => ({
 
   '&:before': {
     content: '""',
@@ -47,12 +47,9 @@ const CustomButton = styled(Button)(({ theme }) => ({
     position: 'absolute',
     inset: "1px",
     borderRadius: "16px",
-    backgroundColor: "#052533",
+    backgroundColor: customBackgroundColor,
   },
 
-  position: "absolute",
-  top: "10%",
-  backgroundColor: "#052533",
   color: 'white',
   width: "10vw",
   height: "6vh",
@@ -61,6 +58,7 @@ const CustomButton = styled(Button)(({ theme }) => ({
   gap: "10%",
   borderRadius: "16px",
   overflow: "hidden",
+  backgroundColor: customBackgroundColor
 }));
 
 export default CustomButton;

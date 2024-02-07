@@ -108,7 +108,9 @@ const OurPartners = () => {
         color: "#052533",
         fontWeight: "600",
         fontSize: {
-          xs: "4.5vw",
+          xs: "4vw",
+          sm: "2vw",
+          md: "2vw",
           lg: "1.5vw"
       }}
 

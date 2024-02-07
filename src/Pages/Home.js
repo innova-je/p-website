@@ -1,5 +1,5 @@
 import { Box, Typography, styled } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react';
 
 import BgVideo from '../videos/HomePageVideo.mp4'
 import HomePageImg from '../images/MaintenancePageImages/In.Nova_III-JE-Portugal-224_1.webp'
@@ -9,7 +9,9 @@ import ClientsCarousel from '../components/ClientsCarousel'
 import OurPartners from '../components/OurPartners'
 import OurServices from '../components/OurServices'
 
-const Home = () => {
+
+
+const Home = ({id}) => {
 
     const StatsBox = styled(Box)(({ theme }) => ({
         display: "flex",
@@ -30,6 +32,8 @@ const Home = () => {
         fontWeight: "500",
         marginTop: "-5%"
     };
+
+    
 
     return (
         <>
@@ -88,8 +92,6 @@ const Home = () => {
             </Box>
         </Box>
 
-            
-        
 
         <Box sx={{
             position: "relative",
@@ -239,8 +241,31 @@ const Home = () => {
                 <Typography style={underStatsStyle}>Members</Typography>
             </StatsBox>
         </Box>
+          
+        {/*
+        <html id={`${id}Content`} style={{
+            height: "301vh",  
+            borderRadius: '0 30px 30px 0',
+            overflow: "hidden",
+        }}>
+        <body style={{height: "303vh", overflow: "hidden"}} id={`${id}Body`}>
+        <div id={`${id}Idk`} style={{
+            maxHeight: "101vh",
+            width: "101vw"
+            }}>
+            <OurServices></OurServices>
+        </div>
+        </body>
+      
+        </html>           
+        
+        */}
+        
+        <OurServices></OurServices>
 
-        <CoreBusiness></CoreBusiness>
+        
+        
+        
 
         <Box sx={{backgroundColor: "#F0F0F0"}}>
             <ClientsCarousel></ClientsCarousel>

@@ -1,118 +1,168 @@
-import React from 'react';
-import { Box, Typography, styled, Button } from '@mui/material';
+import React, { useEffect, useState, useRef } from 'react';
+import { Box, Typography } from '@mui/material';
+import CustomButton from './CustomButton';
+import { useParallax } from "react-scroll-parallax";
 
-const StyledButton = styled(Button)(({ theme }) => ({
-  backgroundColor: '#732043',
-  color: 'white',
-  width: '10vw',
-  height: '6vh',
-  marginTop: '8%',
-  fontWeight: '400',
-  borderRadius: '16px',
-  display: 'flex',
-  flexDirection: 'row',
-  gap: '10%',
-  transition: 'transform 0.3s ease-in-out',
+const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textWidth, id , innerStyle, parallax}) => {  
 
-  '&:hover': {
-    backgroundColor: 'white',
-    color: '#732043',
-    border: '1px solid #732043',
-    transform: 'scale(1.05)',
-  },
-}));
 
-const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textWidth }) => (
-  <Box className="Our Services" sx={{
-    display: 'flex',
-    width: '95%',
-    height: '101vh',
-    borderRadius: '0 30px 30px 0',
-    background: 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))',
-  }}>
-    <Box sx={{
-      position: 'absolute',
-      left: '0',
-      width: '95%',
-      height: '100%',
-      alignItems: 'center',
-      overflow: 'hidden',
-      display: 'flex',
-      justifyContent: 'right',
-    }}>
-      <img src={imgSrc} style={imageStyle} />
-    </Box>
+  const boxRef = useRef(null);
+  const [fontSize, setFontSize] = useState('1.5vw'); // Default font size
 
-    <Box sx={{
-      width: textWidth,
-      height: '100%',
-      position: 'relative',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'flex-start',
-      margin: '0 0 0 7%',
-    }}>
-      <Typography sx={{
-        fontSize: '2vw',//Not sure about this
-        fontWeight: '300',
-        color: '#FFFFFF6E',
-        marginTop: '12%',
-      }}>What we do</Typography>
-      <Typography sx={{
-        fontSize: '7vw',
-        fontWeight: '700',
-        color: 'white',
-        lineHeight: '18vh',//Not sure about this
-        textShadow: '4px 4px 4px rgba(0, 0, 0, 0.3)',
-      }}>{title}</Typography>
-      <Typography sx={{
-        fontSize: '1.8vw',//Not sure about this
-        fontWeight: '300',
-        color: 'white',
-        marginTop: '5%',
+  useEffect(() => {
+    const handleResize = () => {
+      const boxElement = boxRef.current;
+
+      if (boxElement) {
+        const boxWidth = boxElement.offsetWidth;
+
+        const calculatedFontSize = `${(boxWidth / 100) * 2}vw`;
+
+        setFontSize(calculatedFontSize);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+
+      <Box  className="Our Services" id="canva" style={innerStyle}>
+
+      <Box ref={parallax.ref} >
+      <Box sx={{
+        position: 'absolute',
+        left: '0',
         width: '100%',
-      }}>{description}</Typography>
+        height: '100%',
+        alignItems: 'center',
+        display: 'flex',
+        justifyContent: 'right',
+      }}>
+        {<img src={imgSrc} style={imageStyle} />} 
+      </Box>
 
-      <StyledButton>
-        <Typography>{buttonLabel}</Typography>
-        <Typography> &rarr;</Typography>
-      </StyledButton>
-    </Box>
-  </Box>
-);
+      <Box  sx={{
+        width: textWidth,
+        height: '100%',
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        margin: '0 0 0 7%',
+        overflow: 'hidden',
+      }}>
+        <Typography sx={{
+          fontSize: '2vw',
+          fontWeight: '300',
+          color: '#FFFFFF6E',
+          marginTop: '12%',
+        }}>What we do</Typography>
+        <Typography sx={{
+          fontSize: '7vw',
+          fontWeight: '700',
+          color: 'white',
+          lineHeight: '18vh',
+          textShadow: '4px 4px 4px rgba(0, 0, 0, 0.3)',
+        }}>{title}</Typography>
+        <Typography sx={{
+          fontSize: fontSize,
+          fontWeight: '300',
+          color: 'white',
+          marginTop: '5%',
+          width: '100%',
+        }}>{description}</Typography>
+
+        <CustomButton customBackgroundColor="#732043" sx={{marginTop: '8%'}}>
+          <Typography sx={{zIndex: "2"}}>{buttonLabel}</Typography>
+          <Typography sx={{zIndex: "2"}}> &rarr;</Typography>
+        </CustomButton>
+      </Box>
+      </Box>
+      
+    </Box>      
+    
+  );
+};
 
 const SoftwareSolutions = () => (
   <ServiceBox
+    id="softwareSolutions"
     imgSrc={require('../images/HomePageImages/SoftwareSolutions.png')}
     title="Software Solutions"
     description="With tailored solutions and cutting-edge technologies, we craft impactful software that propels businesses forward."
     buttonLabel="Services"
-    imageStyle={{ width: '50%' }}
+    imageStyle={{ width: '70%', marginRight:" -20%"}}
     textWidth="40%"
+    innerStyle={{
+      height: "101vh",
+      overflow: "hidden",
+      position: "absolute",
+      width: "95%",
+      background: 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))',
+      scrollSnapType: "y mandatory"
+    }}
+    parallax={useParallax({
+      translateY: [40, -30],
+      rotate: [25, -20],
+      scale: [0.5, 1.5],
+    })}
   />
 );
 
 const MobileDevelopment = () => (
   <ServiceBox
+    id="mobileDevelopment"
     imgSrc={require('../images/HomePageImages/MobileDevelopment.png')}
     title="Mobile Development"
     description="In-Nova creates intuitive apps that redefine user experiences and drive seamless interactions on various devices, empowering businesses in the digital realm."
     buttonLabel="Services"
     imageStyle={{ width: '35%', marginRight: '5%' }}
-    textWidth="46%"
+    textWidth="48%"
+    innerStyle={{
+      display: 'flex',
+      height: "101vh",
+      overflow: "hidden",
+      position: "relative",
+      background: 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))',
+      scrollSnapType: "y mandatory"
+    }}
+    parallax={useParallax({
+      translateY: [40, -40],
+      rotate: [20, -20],
+      scale: [0.5, 1.5], 
+    })}
   />
 );
 
 const RoboticsPrototyping = () => (
   <ServiceBox
+    id="roboticsPrototyping"
     imgSrc={require('../images/HomePageImages/RoboticsPrototyping.png')}
     title="Robotics & Prototyping"
     description="Exploring the frontier of robotics and prototyping, In-Nova pioneers innovative solutions, blending expertise and creativity to push the boundaries of technology and bring futuristic concepts to life."
     buttonLabel="Services"
     imageStyle={{ width: '60%', marginRight: '-5%' }}
     textWidth="55%"
+    innerStyle={{
+      display: 'flex',
+      height: "101vh",
+      overflow: "hidden",
+      position: "relative",
+      background: 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))',
+      scrollSnapType: "y mandatory"
+    }}
+    parallax={useParallax({
+      translateY: [40, -40],
+      rotate: [20, -20],
+      scale: [0.5, 1.5], 
+    })}
   />
 );
 
-
-export default SoftwareSolutions;
+export { SoftwareSolutions, MobileDevelopment, RoboticsPrototyping };
