@@ -11,6 +11,7 @@
     "@mui/material": "^5.15.2",
     "@react-email/components": "0.0.14",
     "@react-email/link": "0.0.7",
+    "@react-spring/parallax": "^9.7.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
