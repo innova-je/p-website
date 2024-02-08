@@ -22,13 +22,13 @@ const OurServices = () => {
       background: 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))',
 
       //css para nao haver snap scroll e para haver parallax effect
-      //height:"315vh",
-      //overflow: "hidden"
+      height:"315vh",
+      overflow: "hidden"
       //css para o snap scroll
-      overflow: "scroll", 
-      height: "105vh",
-      msScrollSnapPointsY: "repeat(105vh)",
-      scrollSnapType: "y mandatory",
+      //overflow: "scroll", 
+      //height: "105vh",
+      //msScrollSnapPointsY: "repeat(105vh)",
+      //scrollSnapType: "y mandatory",
       
   }}>
 
