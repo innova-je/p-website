@@ -18,17 +18,15 @@ function App() {
       <Navbar/>
 
       <Routes>
-        <Route path='/about-us'  element={<AboutUs/>} />
-        <Route path='/events'  element={<Events/>} />
         <Route path='/'  element={<Home/>} />
+        <Route path='/about-us'  element={<AboutUs/>} />
+        <Route path='/events'  element={<Events/>} />        
         <Route path='/join-us'  element={<JoinUs/>} />
         <Route path='/our-people/our-advisors'  element={<OurAdvisors/>} />
         <Route path='/our-people/our-team'  element={<OurTeam/>} />
         <Route path='/out-of-office'  element={<OutOffice/>} />
         <Route path='/services'  element={<Services/>} />        
       </Routes>
-
-      <Home/>
 
       <Footer/>
     
