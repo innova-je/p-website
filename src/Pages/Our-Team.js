@@ -46,7 +46,8 @@ const OurTeam = () => {
     const sales_names = ['Inês Mendes', 'Leonor Almeida', 'Carolina Maurício', 'Nuno Alves', 'Nuno Alves', 'Nuno Alves', 'Nuno Alves'];
     const sales_images = [{ PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }];
 
-    const lasoRef = useRef < LottieRefCurrentProps > (null);
+    const lasoRef = useRef<LottieRefCurrentProps>(null);
+
 
     return (
         <>
@@ -83,9 +84,10 @@ const OurTeam = () => {
                         width: '100%',
                         height: '40%',
                         backgroundImage:
-                            'linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0))',
+                            'linear-gradient(to top, rgba(255,255,255,0.9), rgba(255,255,255,0))',
                     }}
                 />
+                
                 <Lottie
                     lottieRef={lasoRef}
                     loop={false}

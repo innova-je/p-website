@@ -1,9 +1,12 @@
-import React from 'react';
-import { Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Typography, IconButton } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
+import {Email, LinkedIn } from '@mui/icons-material';
+
 
 const CustomComponent = ({ title, name, image }) => {
   const theme = useTheme();
+  const [isHovered, setIsHovered] = useState(false);
 
   const containerStyle = {
     backgroundColor: 'white',
@@ -30,6 +33,8 @@ const CustomComponent = ({ title, name, image }) => {
     position: 'absolute',
     top: 0,
     left: 0,
+    filter: isHovered ? 'grayscale(0%)' : 'grayscale(100%)',
+    transition: 'filter 0.4s ease-in-out',
   };
 
   let overlayStyle = {
@@ -57,9 +62,30 @@ const CustomComponent = ({ title, name, image }) => {
     };
   }
 
+  const iconsContainerStyle = {
+    position: 'absolute',
+    top: 0,
+    right: 10,
+    display: isHovered ? 'flex' : 'none',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '8px',
+    zIndex: 3,
+  };
+
+
   return (
     <ThemeProvider theme={theme}>
-      <div style={containerStyle}>
+      <div
+        style={containerStyle}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div style={iconsContainerStyle}>
+          <Email sx={{color:theme.palette.primary.main}}></Email>
+          <LinkedIn sx={{color:'#0077B5'}}></LinkedIn>
+        </div>
         <div style={imageContainerStyle}>
           <img src={image} alt="imagem de perfil" style={imageStyle} />
         </div>

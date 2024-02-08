@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Box, Button, Link, Typography, useTheme } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import HeroImage from '../images/other/joinus_img.png';
@@ -7,11 +7,72 @@ import joinus_elements from '../images/other/joinus-elements.png';
 import CustomReview from '../components/CustomReview';
 import guiadocandidato from '../images/other/GuiaDoCandidato.png';
 import Technologies from '../components/Technologies';
-
+import HowToApply from '../components/HowToApply';
 
 
 const JoinUs = () => {
     const theme = useTheme();
+
+    const [isScrollingDisabled, setScrollingDisabled] = useState(false);
+    const [progress, setProgress] = useState(0);
+    const [animationCompleted, setAnimationCompleted] = useState(false);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = (event) => {
+            if (!animationCompleted) {
+                if (isScrollingDisabled) {
+                    event.preventDefault();
+
+                    // Update the progress while scrolling is disabled
+                    setProgress((prevProgress) => {
+                        const newProgress = Math.min(prevProgress + 10, 100);
+                        console.log(`Progress: ${newProgress}%`);
+                        return newProgress;
+                    });
+
+                    // Log the message indicating the user is trying to scroll
+                    console.log('User is trying to scroll.');
+
+                    // Check if progress has reached 100% and enable scrolling
+                    if (progress === 100) {
+                        setScrollingDisabled(false);
+                        document.body.style.overflow = 'auto';
+
+                        // Set animationCompleted to true when the animation is completed
+                        setAnimationCompleted(true);
+                    }
+                } else {
+                    // Check if the middle of the section is in the viewport
+                    const sectionRect = sectionRef.current.getBoundingClientRect();
+                    const sectionMiddle = (sectionRect.top + sectionRect.bottom) / 2;
+
+                    if (sectionMiddle <= window.innerHeight / 2 && sectionMiddle >= -window.innerHeight / 2) {
+                        setScrollingDisabled(true);
+                        document.body.style.overflow = 'hidden';
+                        console.log('Section reached. Scrolling disabled.');
+                    }
+                }
+            }
+        };
+
+        // Add event listener when scrolling is disabled
+        window.addEventListener('wheel', handleScroll, { passive: false });
+
+        return () => {
+            // Remove event listener when component unmounts or scrolling is re-enabled
+            window.removeEventListener('wheel', handleScroll);
+        };
+    }, [isScrollingDisabled, progress, animationCompleted]);
+
+    const toggleScrolling = () => {
+        setScrollingDisabled(!isScrollingDisabled);
+
+        // Reset progress to 0% when scrolling is enabled
+        if (!isScrollingDisabled) {
+            setProgress(0);
+        }
+    };
 
     return (
         <>
@@ -46,12 +107,13 @@ const JoinUs = () => {
                 <Typography
                     variant="h2"
                     sx={{
-                        fontWeight: 'Regular',
+                        fontWeight: 'Medium',
+                        fontSize: '5rem',
                         position: 'absolute',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         zIndex: '1',
-                        top: "67%",
+                        top: "63%",
                     }}
                 >
                     Want to become one of us?
@@ -61,13 +123,14 @@ const JoinUs = () => {
                     variant="contained"
                     sx={{
                         marginTop: '20px',
-                        zIndex: '2', // problem with the button
+                        zIndex: '3', // problem with the button
                         borderRadius: '20px',
                         py: '10px',
                         px: '70px',
                         fontSize: '1rem',
                         textTransform: 'none',
                         top: "78%",
+                        opacity: '0.9',
                     }}
                 >
                     Apply Now!
@@ -79,7 +142,7 @@ const JoinUs = () => {
                         zIndex: '2',
                         bottom: -1,
                         width: '100%',
-                        height: '28%',
+                        height: '35%',
                         backgroundImage:
                             'linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0))',
                     }}
@@ -363,14 +426,16 @@ const JoinUs = () => {
 
             {/* 5th Section */}
             <Box
+                ref={sectionRef}
                 sx={{
                     position: 'relative',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: '145vh',
+                    height: '150vh',
 
-                }}>
+                }}
+            >
                 <Typography
                     variant="h2"
                     sx={{
@@ -383,57 +448,8 @@ const JoinUs = () => {
                 >
                     How to apply?
                 </Typography>
-                
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        top: '13rem',
-                        width: '60%',
-                        height: '60%',
-                        backgroundColor: 'white',
-                        borderRadius: '20px',
-                        display: 'flex',
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                    }}>
-                    {/* First Box */}
-                    <Box
-                        sx={{
-                            width: '14%', 
-                            height: '100%',
-                            backgroundColor: 'lightblue',
-                            border: '1px solid #000', 
-                        }}
-                    >
-                        
-                    </Box>
 
-                    {/* Second Box */}
-                    <Box
-                        sx={{
-                            width: '65%',
-                            height: '100%',
-                            backgroundColor: 'lightgreen',
-                            border: '1px solid #000', 
-                        }}
-                    >
-                        
-                    </Box>
-
-                    {/* Third Box */}
-                    <Box
-                        sx={{
-                            width: '21%', 
-                            height: '100%',
-                            backgroundColor: 'lightcoral',
-                            border: '1px solid #000', 
-                        }}
-                    >
-                        
-                    </Box>
-                </Box>
-
+                <HowToApply progress={progress * 6.5} />
 
             </Box>
 
