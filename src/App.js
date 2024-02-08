@@ -14,13 +14,12 @@ import {Routes, Route} from 'react-router-dom'
 function App() {
   return (
     <Box bgcolor="#F0F0F0"> 
-    
       <Navbar/>
 
       <Routes>
-        <Route path='/'  element={<Home/>} />
         <Route path='/about-us'  element={<AboutUs/>} />
-        <Route path='/events'  element={<Events/>} />        
+        <Route path='/events'  element={<Events/>} />
+        <Route path='/'  element={<Home/>} />
         <Route path='/join-us'  element={<JoinUs/>} />
         <Route path='/our-people/our-advisors'  element={<OurAdvisors/>} />
         <Route path='/our-people/our-team'  element={<OurTeam/>} />
