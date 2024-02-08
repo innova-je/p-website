@@ -14,6 +14,7 @@ import {Routes, Route} from 'react-router-dom'
 function App() {
   return (
     <Box bgcolor="#F0F0F0"> 
+    
       <Navbar/>
 
       <Routes>
@@ -26,6 +27,8 @@ function App() {
         <Route path='/out-of-office'  element={<OutOffice/>} />
         <Route path='/services'  element={<Services/>} />        
       </Routes>
+
+      <Home/>
 
       <Footer/>
     

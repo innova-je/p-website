@@ -1,15 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Box, Typography } from '@mui/material';
 import CustomButton from './CustomButton';
-import { Parallax, useParallax } from "react-scroll-parallax";
-import CircleIcon from '@mui/icons-material/Circle';
 
-
-const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textWidth, innerStyle, parallax, circle1, circle2, circle3}) => {  
+const ServiceBox = ({ title, description, buttonLabel, textWidth , innerStyle}) => {  
 
 
   const boxRef = useRef(null);
-  const [fontSize, setFontSize] = useState('1.5vw');
+  const [fontSize, setFontSize] = useState('1.5vw'); // Default font size
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,7 +31,7 @@ const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textW
 
   return (
 
-      <Box  className="Our Services" id="canva" style={innerStyle} ref={parallax.ref} >
+      <Box  className="Our Services" id="canva" style={innerStyle}>
 
       <Box>
       <Box sx={{
@@ -46,7 +43,7 @@ const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textW
         display: 'flex',
         justifyContent: 'right',
       }}>
-        {<img src={imgSrc} style={imageStyle} />} 
+        
       </Box>
 
       <Box  sx={{
@@ -84,13 +81,6 @@ const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textW
           <Typography sx={{zIndex: "2"}}>{buttonLabel}</Typography>
           <Typography sx={{zIndex: "2"}}> &rarr;</Typography>
         </CustomButton>
-        <Box sx={{
-          margin: "5% 0 0 0"
-        }}>
-          <CircleIcon sx={{height: "40%", color: circle1}}></CircleIcon>
-          <CircleIcon sx={{height: "40%", color: circle2}}></CircleIcon>
-          <CircleIcon sx={{height: "40%", color: circle3}}></CircleIcon>
-        </Box>
       </Box>
       </Box>
       
@@ -100,7 +90,6 @@ const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textW
 };
 
 const SoftwareSolutions = () => (
-  
   <ServiceBox
     id="softwareSolutions"
     imgSrc={require('../images/HomePageImages/SoftwareSolutions.png')}
@@ -110,96 +99,32 @@ const SoftwareSolutions = () => (
     imageStyle={{ width: '70%', marginRight:" -20%"}}
     textWidth="40%"
     innerStyle={{
-      display: 'flex',
-      height: "105vh",
+      height: "101vh",
+      overflow: "hidden",
+      background: 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))',
+      scrollSnapType: "y mandatory"
     }}
-    parallax={useParallax({
-      translateY: [40, -40],
-      //rotate: [20, -20],
-      scale: [0.5, 1.5],
-      opacity: [5, 0],       
-    })}
-    circle1="grey"
-    circle2="white"
-    circle3="white"
   />
 );
 
-const MobileDevelopment = () => {
-  let parallaxRef = useRef({
-    translateY: [10, 0],
-    translateX: [-50, 50],
-    scale: [0.5, 1.5],
-    opacity: [100, 0],
-  });
-
-  let prevScrollY = 0;
-
-  function setPrevScrollY(scrollY) {
-    prevScrollY = scrollY;
-  }
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const isScrollingUp = scrollY < prevScrollY;
-      const isScrollingDown = scrollY > prevScrollY;
-
-      if (isScrollingUp) {
-        parallaxRef.current = {
-          translateY: [10, 0],
-          translateX: [-50, 50],
-          scale: [0.5, 1.5],
-          opacity: [100, 0],
-        };
-      } else if (isScrollingDown) {
-        parallaxRef.current = {
-          translateY: [10, 0],
-          translateX: [0, 50],
-          scale: [2.5, 1.5],
-          opacity: [100, 0],
-        };
-      }
-
-      setPrevScrollY(scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [prevScrollY]);
-
-  //let parallaxToUse = useParallax(parallaxRef.current);
-
-
-  return (
+const MobileDevelopment = () => (
   <ServiceBox
-      id="mobileDevelopment"
-      imgSrc={require('../images/HomePageImages/MobileDevelopment.png')}
-      title="Mobile Development"
-      description="In-Nova creates intuitive apps that redefine user experiences and drive seamless interactions on various devices, empowering businesses in the digital realm."
-      buttonLabel="Services"
-      imageStyle={{ width: '35%', marginRight: '5%' }}
-      textWidth="48%"
-      innerStyle={{
-        display: 'flex',
-        height: "105vh",
-      }}
-      parallax={useParallax({
-        translateX: [-30, 40],
-        translateY: [0, -40],
-        //rotate: [20, -20],
-        scale: [0.5, 1.5],
-        opacity: [5, 0],       
-      })}
-      circle1="white"
-      circle2="grey"
-      circle3="white"
-  />);
-}
-  
+    id="mobileDevelopment"
+    imgSrc={require('../images/HomePageImages/MobileDevelopment.png')}
+    title="Mobile Development"
+    description="In-Nova creates intuitive apps that redefine user experiences and drive seamless interactions on various devices, empowering businesses in the digital realm."
+    buttonLabel="Services"
+    imageStyle={{ width: '35%', marginRight: '5%' }}
+    textWidth="48%"
+    innerStyle={{
+      display: 'flex',
+      height: "101vh",
+      overflow: "hidden",
+      background: 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))',
+      scrollSnapType: "y mandatory"
+    }}
+  />
+);
 
 const RoboticsPrototyping = () => (
   <ServiceBox
@@ -212,18 +137,11 @@ const RoboticsPrototyping = () => (
     textWidth="55%"
     innerStyle={{
       display: 'flex',
-      height: "105vh",
+      height: "101vh",
+      overflow: "hidden",
+      background: 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))',
+      scrollSnapType: "y mandatory"
     }}
-    parallax={useParallax({
-      translateX: [-30, 40],
-      translateY: [0, -40],
-      //rotate: [20, -20],
-      scale: [0.5, 1.5],
-      opacity: [5, 0],       
-    })}
-    circle1="white"
-    circle2="white"
-    circle3="grey"
   />
 );
 

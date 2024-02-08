@@ -8,6 +8,8 @@ import CoreBusiness from '../components/CoreBusiness'
 import ClientsCarousel from '../components/ClientsCarousel'
 import OurPartners from '../components/OurPartners'
 import OurServices from '../components/OurServices'
+import OurServicesAnimated from '../components/OurServicesAnimated';
+import Accomplishments from '../components/Accomplishments';
 
 
 
@@ -39,7 +41,11 @@ const Home = ({id}) => {
         <>
         <Box sx={{
             backgroundColor: "#F0F0F0",
+            height: "100%",
+            scrollSnapType: "y mandatory",
+            overflow: "hidden",
         }}>
+
 
         <video src={BgVideo} width='100%' autoPlay loop muted style={{
             borderRadius: "0 0 30px 30px",
@@ -241,33 +247,14 @@ const Home = ({id}) => {
                 <Typography style={underStatsStyle}>Members</Typography>
             </StatsBox>
         </Box>
-          
-        {/*
-        <html id={`${id}Content`} style={{
-            height: "301vh",  
-            borderRadius: '0 30px 30px 0',
-            overflow: "hidden",
-        }}>
-        <body style={{height: "303vh", overflow: "hidden"}} id={`${id}Body`}>
-        <div id={`${id}Idk`} style={{
-            maxHeight: "101vh",
-            width: "101vw"
-            }}>
+        
+        <section style={{ scrollSnapAlign: "start", scrollSnapStop: "always"}}>
             <OurServices></OurServices>
-        </div>
-        </body>
-      
-        </html>           
-        
-        */}
-        
-        <OurServices></OurServices>
+        </section>
 
-        
-        
-        
+        <Accomplishments></Accomplishments>        
 
-        <Box sx={{backgroundColor: "#F0F0F0"}}>
+        <Box sx={{backgroundColor: "#F0F0F0", scrollSnapAlign: "start", scrollSnapStop: "always"}}>
             <ClientsCarousel></ClientsCarousel>
             <OurPartners></OurPartners> 
         </Box>
