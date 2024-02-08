@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/p-website/static/js/main.8143a7f0.js",
+    "main.js": "/p-website/static/js/main.5fa4b7c7.js",
     "static/media/bottom3.webp": "/p-website/static/media/bottom3.fe6536270cb65474ad97.webp",
     "static/media/HomePageVideo.mp4": "/p-website/static/media/HomePageVideo.498fcc393bf628847b66.mp4",
     "static/media/joinus_img.png": "/p-website/static/media/joinus_img.2266c38cebf169e3a544.png",
@@ -9,8 +9,13 @@
     "static/media/bottom2.webp": "/p-website/static/media/bottom2.82bff8cdb8d92eef22c0.webp",
     "static/media/RoboticsPrototyping.png": "/p-website/static/media/RoboticsPrototyping.29ab2e7379201fd6a50c.png",
     "static/media/In.Nova_III-JE-Portugal-224_1.webp": "/p-website/static/media/In.Nova_III-JE-Portugal-224_1.cbf3ff1a2aa569a29d8a.webp",
+    "static/media/group-img.png": "/p-website/static/media/group-img.8d7acf2bded5b0bb2fea.png",
+    "static/media/interview-img.jpg": "/p-website/static/media/interview-img.10bedfee68d896f41601.jpg",
+    "static/media/placeholder.png": "/p-website/static/media/placeholder.b8fd1e6c1489cccc8b0f.png",
+    "static/media/congrats-img.png": "/p-website/static/media/congrats-img.321505a1836227c611a4.png",
+    "static/media/SoftwareSolutions.png": "/p-website/static/media/SoftwareSolutions.e56db40ab875165eba83.png",
     "static/media/top2.webp": "/p-website/static/media/top2.c0847ce672e19a35b6c7.webp",
-    "static/media/SoftwareSolutions.png": "/p-website/static/media/SoftwareSolutions.f47be81c2c9814f6a68f.png",
+    "static/media/fill-img.png": "/p-website/static/media/fill-img.8253dad3e29d76009800.png",
     "static/media/Noise_1.webp": "/p-website/static/media/Noise_1.3b57325209a6e4ff3073.webp",
     "static/media/MobileDevelopment.png": "/p-website/static/media/MobileDevelopment.7556c8d6da63b55611fd.png",
     "static/media/NOVA_SST.webp": "/p-website/static/media/NOVA_SST.b4c1624ff5939fd8ca03.webp",
@@ -19,8 +24,8 @@
     "static/media/GuiaDoCandidato.png": "/p-website/static/media/GuiaDoCandidato.cf84e8329f208fec1400.png",
     "static/media/top1.webp": "/p-website/static/media/top1.2a9d31dc4268e9c3e689.webp",
     "static/media/bottom1.webp": "/p-website/static/media/bottom1.ea8f3266a984acfb414a.webp",
+    "static/media/record-img.png": "/p-website/static/media/record-img.5d38ba4f5ef3948b240d.png",
     "static/media/logos-02.png": "/p-website/static/media/logos-02.ef409e83fc7890f07259.png",
-    "static/media/placeholder.png": "/p-website/static/media/placeholder.21cf92f27b43b9d69e27.png",
     "static/media/MagmaLogo.png": "/p-website/static/media/MagmaLogo.e8f23ae09702c420ee9c.png",
     "static/media/SiemensLogo.png": "/p-website/static/media/SiemensLogo.9e6e4917a9b7248fa887.png",
     "static/media/FidelidadeLogo.png": "/p-website/static/media/FidelidadeLogo.074dcede5728f5ad5466.png",
@@ -34,10 +39,15 @@
     "static/media/CARDIO_LEATHER.webp": "/p-website/static/media/CARDIO_LEATHER.d836b63191d230fb8542.webp",
     "static/media/SUCEES.png": "/p-website/static/media/SUCEES.ee50486732be1df0ba82.png",
     "static/media/FUTURALIA.webp": "/p-website/static/media/FUTURALIA.c58e0b6e5e32de698416.webp",
+    "static/media/chat-icon.svg": "/p-website/static/media/chat-icon.1ed59b377c7cdf11b3b61e832c7431d1.svg",
+    "static/media/innova-icon.svg": "/p-website/static/media/innova-icon.0cad8ff151c74d07f94a01b60cc70839.svg",
+    "static/media/group-icon.svg": "/p-website/static/media/group-icon.1c55018f2837e2574bfbaa41d6ecabae.svg",
+    "static/media/camera-icon.svg": "/p-website/static/media/camera-icon.0d574b04558bd96cd4eeee3fc4efd6b6.svg",
+    "static/media/write-icon.svg": "/p-website/static/media/write-icon.94c9151042e055f5c8790adf8f872fcf.svg",
     "index.html": "/p-website/index.html",
-    "main.8143a7f0.js.map": "/p-website/static/js/main.8143a7f0.js.map"
+    "main.5fa4b7c7.js.map": "/p-website/static/js/main.5fa4b7c7.js.map"
   },
   "entrypoints": [
-    "static/js/main.8143a7f0.js"
+    "static/js/main.5fa4b7c7.js"
   ]
 }
