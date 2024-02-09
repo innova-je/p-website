@@ -46,7 +46,6 @@ const Home = ({id}) => {
             overflow: "hidden",
         }}>
 
-
         <video src={BgVideo} width='100%' autoPlay loop muted style={{
             borderRadius: "0 0 30px 30px",
             opacity: "50%",
@@ -54,8 +53,7 @@ const Home = ({id}) => {
             <Box sx={{
             width: "100%",//TODO: Este título não está bem
             position: "absolute",
-            top: "65%",
-            transform: "translateY(-50%)",
+            top: "45%",
             zIndex: "1",
         }}>
             <Typography sx={{
@@ -97,6 +95,7 @@ const Home = ({id}) => {
                 }}>NO LIMITS </Typography>
             </Box>
         </Box>
+        
 
 
         <Box sx={{
