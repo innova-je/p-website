@@ -19,8 +19,13 @@ const CustomTitle = ({ title, theme }) => {
                     fontWeight: '500',
                     color: theme.palette.secondary.main,
                     fontFamily: theme.typography.fontFamily,
-                    marginBottom: 1,
-                    marginTop: "5%"
+                    backgroundColor: "#F0F0F0",
+                    height: "15vh",
+                    width: "30%",
+                    margin: "0 auto",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
                 }}
             >
                 {title}
@@ -31,15 +36,14 @@ const CustomTitle = ({ title, theme }) => {
 
 
 const backgroundTextStyle = {
-    fontSize: '14.5rem',
-    width: "100%",
-    WebkitTextFillColor: 'transparent',
-    WebkitTextStroke: '2px #73204340',
-    position: "absolute",
-    marginTop: "35%",
-    zIndex: "0",
-    textAlign: "center"
+    fontSize: '12vw',
+    width: '100%',
+    color: '#F0F0F0',
+    textShadow: '1px 1px #73204340, -1px -1px #73204340, 1px -1px #73204340, -1px 1px #73204340',
+    zIndex: '0',
+    textAlign: 'center',
   };
+  
   
 
 const advisorsBoardData = [
@@ -59,7 +63,6 @@ const alumniBoardData = [
     { name: 'Ana Rita Rebelo', description: "Head of Partnerships and Engagement at NOVA SST Senior Consultant at MACGROUP" , image: PlaceHolder},
   ];
 
-const VascoMatosDescription = "Associate Professor at NOVA SST Researcher at NOVA LINCS - NOVA Laboratory for Computer Science and Informatics"
 
 const OurAdvisors = () => {
     const theme = useTheme();
@@ -68,7 +71,7 @@ const OurAdvisors = () => {
         <>
         <Box sx={{ position: "relative", top: "60px", height: "20vh" }}>
                 <img
-                    style={{ width: '100%', height: 'auto', position: 'relative' }}
+                    style={{ width: '100%', height: 'auto', position: 'absolute', top: "10%"}}
                     src={elements}
                     alt='elements'
                 />
@@ -78,8 +81,8 @@ const OurAdvisors = () => {
                     sx={{
                         fontSize: "85px",
                         fontWeight: 'Regular',
-                        position: 'absolute',
-                        top: '5rem',
+                        position: 'relative',
+                        top: '50%',
                         zIndex: 1,
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
@@ -90,18 +93,34 @@ const OurAdvisors = () => {
                 
             </Box>
 
-            <Typography style={backgroundTextStyle} noWrap>ADVISORY BOARD</Typography>
+            
+
+            <Typography style={backgroundTextStyle} sx={{
+                position: "absolute",
+                top: "95%"
+            }} noWrap>ADVISORY BOARD</Typography>
+
+            <Typography style={backgroundTextStyle} sx={{
+                position: "absolute",
+                top: "145%"
+            }} noWrap>ADVISORY BOARD</Typography>
+
 
 
             <Box marginTop={15} marginBottom={4} textAlign="center" position="relative">
                 <CustomTitle title="Advisory Board"  theme={theme} />
             </Box>
 
+            <Typography style={backgroundTextStyle} sx={{
+                position: "relative",
+                top: "0%"
+            }} noWrap>ADVISORY BOARD</Typography>
+
             <Box sx={{
                 display: "flex",
                 justifyContent: "center",
                 position: "relative",
-                marginTop: "5%",
+                marginTop: "-15%",
             }}>
                 <Box position="relative" sx={{ display: 'grid', justifyContent: 'center', columnGap: "5%", rowGap: "10%", gridTemplateColumns: "repeat(3, 1fr)", gridTemplateRows: "repeat(2, 1fr)" }}>
             {advisorsBoardData.map((advisor, index) => (
@@ -118,26 +137,48 @@ const OurAdvisors = () => {
             <Box sx={{
                 height: "160vh",
             }}>
-              <Box marginTop={25} marginBottom={4} textAlign="center" position="relative">
+              <Box marginTop={30} marginBottom={4} textAlign="center" position="relative">
                 <CustomTitle title="Alumni Board"  theme={theme} />
             </Box>
+            <Typography style={backgroundTextStyle} sx={{
+                position: "relative",
+                top: "-5%"
+            }} noWrap>ALUMNI BOARD</Typography> 
+
             <Box sx={{
-                display: "flex",
+                display: "grid",
+                rowGap: "10%",
                 justifyContent: "center",
                 position: "relative",
-                marginTop: "5%",
+                marginTop: "-15%",
             }}>
-                <Box position="relative" sx={{ display: 'grid', justifyContent: 'center', columnGap: "5%", rowGap: "10%", gridTemplateColumns: "repeat(3, 1fr)", gridTemplateRows: "repeat(2, 1fr)" }}>
-            {alumniBoardData.map((advisor, index) => (
-                <CustomComponent
-                key={index}
-                name={advisor.name}
-                description={advisor.description}
-                image={advisor.image}
-                />
-            ))}
+
+            <Box sx={{ display: 'grid', justifyContent: 'center', columnGap: "5%", gridTemplateColumns: "repeat(3, 1fr)"}} >
+                <CustomComponent name='Inês Mendes' image={PlaceHolder} />
+                <CustomComponent name='Matilde Azadinho' image={PlaceHolder} />
+                <CustomComponent name='Matilde Azadinho' image={PlaceHolder} />
             </Box>
+            
+            <Box sx={{ display: 'flex', justifyContent: 'center', columnGap: "5%"}} >
+                <CustomComponent title='Sales Director' name='Inês Mendes' image={PlaceHolder} />
+                <CustomComponent title='Marketing Director' name='Matilde Azadinho' image={PlaceHolder} />
+            </Box>
+                
             </Box>  
+
+            <Typography style={backgroundTextStyle} sx={{
+                position: "relative",
+                top: "-40%",
+                zIndex: "0"
+            }} noWrap>ALUMNI BOARD</Typography>
+
+            <Typography style={backgroundTextStyle} sx={{
+                position: "relative",
+                top: "-30%"
+            }} noWrap>ALUMNI BOARD</Typography>
+            
+
+
             </Box>
             
 

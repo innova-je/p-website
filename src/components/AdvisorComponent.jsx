@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography, IconButton } from '@mui/material';
+import { Typography, IconButton, Link } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
 import {Email, LinkedIn } from '@mui/icons-material';
 
@@ -11,11 +11,12 @@ const CustomComponent = ({ name, description, image }) => {
   const containerStyle = {
     backgroundColor: theme.palette.primary.main,
     position: 'relative',
-    width: '20vw',
-    height: '55vh',
+    width: '18vw',
+    height: '22vw',
     overflow: 'visible',
     borderRadius: 15,
     marginBottom: 35,
+    zIndex: "2"
   };
 
   const imageContainerStyle = {
@@ -43,7 +44,7 @@ const CustomComponent = ({ name, description, image }) => {
     left: '50%',
     transform: 'translateX(-50%)',
     width: '100%',
-    height: isHovered ? '40%' : '30%',  // Conditionally set the height based on hover state
+    height: isHovered ? '40%' : '30%',
     backgroundColor: 'white',
     padding: '5px',
     margin: 'auto',
@@ -54,7 +55,8 @@ const CustomComponent = ({ name, description, image }) => {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    transition: 'height 0.3s ease-in-out',
+    transition: 'height 0.3s ease-in-out',    
+    boxShadow: "5px 5px 5px 5px #06253321"
   };
 
   const iconsContainerStyle = {
@@ -63,7 +65,7 @@ const CustomComponent = ({ name, description, image }) => {
     right: 10,
     display: "flex",
     opacity: isHovered ? 1 : 0,
-    transition: 'opacity 0.4s ease-in-out',
+    transition: 'opacity 0.6s ease-in-out',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -73,7 +75,7 @@ const CustomComponent = ({ name, description, image }) => {
 
   const nameStyle = {
     fontWeight: 'bold',
-    fontSize: '1.4rem',
+    fontSize: '1.5vw',
     color: theme.palette.primary.main,
     fontFamily: theme.typography.fontFamily,
     display: "flex",
@@ -111,14 +113,15 @@ const CustomComponent = ({ name, description, image }) => {
       >
         <div style={iconsContainerStyle}>
           <Email sx={{color:theme.palette.primary.main}}></Email>
-          <LinkedIn sx={{color:'#0077B5'}}></LinkedIn>
+          <Link>
+            <LinkedIn sx={{color:'white', height: "5vh", width: "auto"}}></LinkedIn>
+          </Link>          
         </div>
         <div style={imageContainerStyle}>
           <img src={image} alt="imagem de perfil" style={imageStyle} />
         </div>
         <div style={overlayStyle}>
           <Typography
-            variant="body2"
             align="center"
             noWrap
             style={nameStyle}
