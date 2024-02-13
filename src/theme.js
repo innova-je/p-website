@@ -5,6 +5,7 @@ import { createTheme } from "@mui/material";
 export const theme = createTheme({
     typography: {
         fontFamily: 'Exo 2, sans-serif',
+        fontSize: 16
     },
     palette:{
         primary:{

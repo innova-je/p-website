@@ -75,7 +75,7 @@ const CustomComponent = ({ name, description, image }) => {
 
   const nameStyle = {
     fontWeight: 'bold',
-    fontSize: '1.5vw',
+    fontSize: '1.4vw',
     color: theme.palette.primary.main,
     fontFamily: theme.typography.fontFamily,
     display: "flex",
@@ -91,7 +91,7 @@ const CustomComponent = ({ name, description, image }) => {
   
 
   const descriptionStyle = {
-    fontSize: '1.1rem',
+    fontSize: '0.9vw',
     color: "#062533",
     fontFamily: theme.typography.fontFamily,
     width: "80%",
@@ -129,7 +129,6 @@ const CustomComponent = ({ name, description, image }) => {
             {name}
           </Typography>
           <Typography
-            variant="body2"
             align="center"
             style={descriptionStyle}
           >

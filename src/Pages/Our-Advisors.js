@@ -6,14 +6,11 @@ import elements from '../images/other/Elements.png';
 import CustomComponent from '../components/AdvisorComponent';
 
 
-
-
 const CustomTitle = ({ title, theme }) => {
 
     return (
         <>
             <Typography
-                variant="h3"
                 align="center"
                 sx={{
                     fontWeight: '500',
@@ -25,7 +22,8 @@ const CustomTitle = ({ title, theme }) => {
                     margin: "0 auto",
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center"
+                    justifyContent: "center",
+                    fontSize: "3vw"
                 }}
             >
                 {title}
@@ -79,7 +77,7 @@ const OurAdvisors = () => {
                     align="center"
                     gutterBottom
                     sx={{
-                        fontSize: "85px",
+                        fontSize: "5vw",
                         fontWeight: 'Regular',
                         position: 'relative',
                         top: '50%',
@@ -154,14 +152,25 @@ const OurAdvisors = () => {
             }}>
 
             <Box sx={{ display: 'grid', justifyContent: 'center', columnGap: "5%", gridTemplateColumns: "repeat(3, 1fr)"}} >
-                <CustomComponent name='Inês Mendes' image={PlaceHolder} />
-                <CustomComponent name='Matilde Azadinho' image={PlaceHolder} />
-                <CustomComponent name='Matilde Azadinho' image={PlaceHolder} />
+            {alumniBoardData.slice(0,3).map((advisor, index) => (
+                <CustomComponent
+                key={index}
+                name={advisor.name}
+                description={advisor.description}
+                image={advisor.image}
+                />
+            ))}
             </Box>
             
             <Box sx={{ display: 'flex', justifyContent: 'center', columnGap: "5%"}} >
-                <CustomComponent title='Sales Director' name='Inês Mendes' image={PlaceHolder} />
-                <CustomComponent title='Marketing Director' name='Matilde Azadinho' image={PlaceHolder} />
+            {alumniBoardData.slice(3,5).map((advisor, index) => (
+                <CustomComponent
+                key={index}
+                name={advisor.name}
+                description={advisor.description}
+                image={advisor.image}
+                />
+            ))}
             </Box>
                 
             </Box>  
