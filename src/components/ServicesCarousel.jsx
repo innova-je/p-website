@@ -5,9 +5,9 @@ const ServicesCarousel = () => {
   const initializeWheel = () => {
     const wheel = document.querySelector('.wheel');
     const cards = document.querySelectorAll('.card');
-    const wheelRadius = 1000.0;
-    let theta = 0.0;
-    const angleBetweenCards = (Math.PI) / cards.length;
+    const wheelRadius = 1300.0;
+    let theta = 0;
+    const angleBetweenCards = Math.PI/2;
 
     const center = {
       x: parseFloat(getComputedStyle(wheel).width) / 2.0,
@@ -16,7 +16,7 @@ const ServicesCarousel = () => {
 
     cards.forEach((card, index) => {
       theta = angleBetweenCards * index;
-      const cardAngle = theta + (2 * Math.PI / 3); // Adjust the starting angle to 120 degrees (2 * Math.PI / 3)
+      const cardAngle = theta + (2 * Math.PI / 3);
       const x = Math.cos(cardAngle) * wheelRadius;
       const y = -1.0 * Math.sin(cardAngle) * wheelRadius;
 
@@ -26,14 +26,16 @@ const ServicesCarousel = () => {
 
     const handleWheel = (event) => {
       event.preventDefault();
-      theta = theta + (event.deltaY * 0.001);
+      theta = theta - (event.deltaY * 0.001);
       
-      theta = Math.max( 2*Math.PI/3, Math.min(theta, 4*Math.PI/3));
+      theta = Math.max( 4*Math.PI/3, Math.min(theta, 7*Math.PI/3));
+
+      console.log(theta)
 
       wheel.style.transform = `translate(-50%, -50%) rotate(-${theta * (180 / Math.PI)}deg)`;
 
       cards.forEach((card, index) => {
-        const cardAngle = theta + angleBetweenCards * index + (2 * Math.PI / 3);
+        const cardAngle = theta + angleBetweenCards * index + (-2 * Math.PI / 3);
         card.style.transform = `rotate(${theta * (180 / Math.PI)}deg)`;
       });
     };
@@ -52,13 +54,17 @@ const ServicesCarousel = () => {
   return (
     <div className='wheel' style={{
       position: "relative",
-      top: "50%",
-      left: "-5%",
-      height: "50vh",
+      top: "-120%",
+      left: "25%",
+      height: "5vh",
+      background: "green",
     }}>
+
+    <div className='card' style={{ position: "absolute" }}>
+        </div>
       <div className='card' style={{ position: "absolute" }}>
         <div style={{ transform: "scale(1)" }}>
-          <RoboticsPrototyping></RoboticsPrototyping>
+        <SoftwareSolutions></SoftwareSolutions>
         </div>
       </div>
       <div className='card' style={{ position: "absolute" }}>
@@ -68,9 +74,11 @@ const ServicesCarousel = () => {
       </div>
       <div className='card' style={{ position: "absolute" }}>
         <div style={{ transform: "scale(1)" }}>
-          <SoftwareSolutions></SoftwareSolutions>
+          
+          <RoboticsPrototyping></RoboticsPrototyping>
         </div>
       </div>
+
     </div>
   );
 };

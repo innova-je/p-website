@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import ServicesCarousel from './ServicesCarousel';
+import { Parallax, useParallax } from "react-scroll-parallax";
 
 const OurServices = () => {
+
   const servicesRef = useRef(null);
 
   useEffect(() => {
@@ -39,6 +41,8 @@ const OurServices = () => {
       overflow: "hidden",
       msScrollSnapPointsY: "repeat(105vh)",
       scrollSnapType: "mandatory",
+      transform: "scale(1)",
+
     }}>
       <ServicesCarousel></ServicesCarousel>
     </div>

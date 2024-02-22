@@ -111,10 +111,13 @@ const SoftwareSolutions = () => (
     textWidth="40%"
     innerStyle={{
       display: 'flex',
-      height: "105dvh",
-      width: "95vw",
+      height: "120dvh",
+      width: "95dvw",
+      position: "relative",
+      left: "30%"
     }}
     parallax={useParallax({
+      
     })}
     circle1="grey"
     circle2="white"
@@ -135,8 +138,10 @@ const MobileDevelopment = () => {
       textWidth="48%"
       innerStyle={{
         display: 'flex',
-        height: "105dvh",
-        width: "95vw",
+        height: "120dvh",
+        width: "95dvw",
+        position: "relative",
+        left: "30%"
       }}
       parallax={useParallax({
       })}
@@ -158,8 +163,10 @@ const RoboticsPrototyping = () => (
     textWidth="55%"
     innerStyle={{
       display: 'flex',
-      height: "105dvh",
-      width: "95vw",
+      height: "120dvh",
+      width: "95dvw",
+      position: "relative",
+      left: "30%"
     }}
     parallax={useParallax({
     })}
