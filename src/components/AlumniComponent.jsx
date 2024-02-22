@@ -4,7 +4,7 @@ import { ThemeProvider, useTheme } from '@mui/material/styles';
 import {Email, LinkedIn } from '@mui/icons-material';
 
 
-const AdvisorComponent = ({ name, description, image }) => {
+const CustomComponent = ({ name, description, image }) => {
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
 
@@ -34,17 +34,17 @@ const AdvisorComponent = ({ name, description, image }) => {
     position: 'absolute',
     top: 0,
     left: 0,
-    filter: isHovered ? 'grayscale(0%)' : 'grayscale(100%)',
-    transition: 'filter 0.4s ease-in-out',
+    opacity: isHovered ? 0 : 1,
+    transition: 'opacity 0.3s ease-in-out',
   };
 
   const overlayStyle = {
     position: 'absolute',
-    bottom: -20,
+    bottom: -40,
     left: '50%',
     transform: 'translateX(-50%)',
     width: '100%',
-    height: isHovered ? '40%' : '30%',
+    height: isHovered ? '80%' : '50%',
     backgroundColor: 'white',
     padding: '5px',
     margin: 'auto',
@@ -59,20 +59,6 @@ const AdvisorComponent = ({ name, description, image }) => {
     boxShadow: "5px 5px 5px 5px #06253321"
   };
 
-  const iconsContainerStyle = {
-    position: 'absolute',
-    top: 0,
-    right: 10,
-    display: "flex",
-    opacity: isHovered ? 1 : 0,
-    transition: 'opacity 0.6s ease-in-out',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '8px',
-    zIndex: 3,
-  };
-
   const nameStyle = {
     fontWeight: 'bold',
     fontSize: '1.4vw',
@@ -85,8 +71,26 @@ const AdvisorComponent = ({ name, description, image }) => {
     height: "100%",
     zIndex: "100",
     position: "absolute",
-    transition: 'transform 0.3s ease-in-out',
-    transform: isHovered ? 'translateY(-30%)' : 'translateY(0)',
+    top: "-30%",
+    opacity: isHovered ? 0 : 1,
+    transition: 'opacity 0.3s ease-in-out',
+  };
+
+  const otherNameStyle = {
+    fontWeight: 'bold',
+    fontSize: '1.4vw',
+    color: "white",
+    fontFamily: theme.typography.fontFamily,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    height: "100%",
+    zIndex: "100",
+    position: "absolute",
+    top: "-30%",
+    opacity: isHovered ? 1 : 0,
+    transition: 'opacity 0.3s ease-in-out',
   };
   
 
@@ -96,11 +100,11 @@ const AdvisorComponent = ({ name, description, image }) => {
     fontFamily: theme.typography.fontFamily,
     width: "80%",
     position: "absolute",
-    marginTop: "10%",
+    bottom: "0",
+    height: isHovered ? '90%' : '65%',
+    transition: 'height 0.3s ease-in-out',  
     wordWrap: "break-word",
     overflowWrap: 'break-word',
-    opacity: isHovered ? 1 : 0,
-    transition: 'opacity 0.4s ease-in-out',
   };
 
 
@@ -111,14 +115,16 @@ const AdvisorComponent = ({ name, description, image }) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div style={iconsContainerStyle}>
-          <Email sx={{color:theme.palette.primary.main}}></Email>
-          <Link>{/*TODO: adicionar os links do linkedin */}
-            <LinkedIn sx={{color:'white', height: "5vh", width: "auto"}}></LinkedIn>
-          </Link>          
-        </div>
+        
         <div style={imageContainerStyle}>
           <img src={image} alt="imagem de perfil" style={imageStyle} />
+          <Typography
+            align="center"
+            noWrap
+            style={otherNameStyle}
+          >
+            {name}
+          </Typography>
         </div>
         <div style={overlayStyle}>
           <Typography
@@ -140,4 +146,4 @@ const AdvisorComponent = ({ name, description, image }) => {
   );
 };
 
-export default AdvisorComponent;
+export default CustomComponent;

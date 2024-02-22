@@ -1,21 +1,31 @@
 import { Box, Typography, styled } from '@mui/material'
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import BgVideo from '../videos/HomePageVideo.mp4'
 import HomePageImg from '../images/MaintenancePageImages/In.Nova_III-JE-Portugal-224_1.webp'
+import newsImage from '../images/MaintenancePageImages/In.Nova_III-JE-Portugal-224_1.webp'
 
 import CoreBusiness from '../components/CoreBusiness'
 import ClientsCarousel from '../components/ClientsCarousel'
 import OurPartners from '../components/OurPartners'
 import OurServices from '../components/OurServices'
 import OurServicesAnimated from '../components/OurServicesAnimated';
-import Accomplishments from '../components/Accomplishments';
+import Accomplishment from '../components/AccomplishmentComponent';
+
+import { NavLink, useNavigate } from 'react-router-dom';
+import ServicesCarousel from '../components/ServicesCarousel';
 
 
+const accomplishmentsData = [
+    { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "janeiro 2024"},
+    { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "fevereiro 2024"},
+    { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "março 2024"},
+  ];
 
-const Home = ({id}) => {
 
-    const StatsBox = styled(Box)(({ theme }) => ({
+const Home = () => {
+
+    const StatsBox = styled(Box)(() => ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -35,7 +45,39 @@ const Home = ({id}) => {
         marginTop: "-5%"
     };
 
+    const navigate = useNavigate();
+
+    const handleNavLinkClick = (path) => {
+        navigate.push(path);
+        window.scrollTo(0, 0);
+      };
+
+
+      const ourServicesRef = useRef();
+
+      useEffect(() => {
+        const handleScroll = () => {
+          const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     
+          const threshold = ourServicesRef.current.offsetTop + window.innerHeight/10;
+    
+          if (scrollPosition >= threshold && scrollPosition <= 2*threshold) {
+            // Disable page scroll
+            document.body.style.overflow = 'auto';
+            //alert("chegaste")
+          } else {
+            // Enable page scroll
+            document.body.style.overflow = 'auto';
+          }
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          // Cleanup the event listener on component unmount
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
 
     return (
         <>
@@ -115,15 +157,18 @@ const Home = ({id}) => {
                 fontWeight: "700"
             }}>Technology Consultants</Typography>   
 
-            <Typography sx={{
+            <NavLink to="/about-us" style={{textDecoration: "none"}} onClick={() => handleNavLinkClick('/about-us')}>
+                <Typography sx={{
                 marginRight: "5%",
                 display: "flex",
                 justifyContent: "right",
                 marginTop: "-2%",
                 color: "#732043",
                 fontSize: "1.2vw",
-                fontWeight: "400"
-            }}>Find more about us &rarr;</Typography> 
+                fontWeight: "400",
+            }}>Find more about us &rarr;</Typography>         
+            </NavLink>     
+            
         <Box sx={{
             position: "relative",
             height: "100vh",
@@ -247,11 +292,40 @@ const Home = ({id}) => {
             </StatsBox>
         </Box>
         
-        <section style={{ scrollSnapAlign: "start", scrollSnapStop: "always"}}>
+        <section ref={ourServicesRef} style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always' }}>
             <OurServices></OurServices>
         </section>
 
-        <Accomplishments></Accomplishments>        
+        <Box sx={{marginTop: "5%"}}>   
+
+            <Typography style={{
+                width: "100%",
+                textAlign: "center",
+                justifyContent: "center",
+                color: "#732043",
+                fontWeight: "700",
+                fontSize: "3.5vw",
+            }}>Our Latest Accomplishments</Typography>
+            <Box sx={{
+                width: "100vw",
+                height: "70vh",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                gap: "5%",
+                marginTop: "3%"
+            }}>
+                
+            {accomplishmentsData.map((accomplishment) => (
+                <Accomplishment
+                description={accomplishment.description}
+                image={accomplishment.image}
+                date={accomplishment.date}
+                />
+            ))}
+            </Box>
+            
+        </Box>             
 
         <Box sx={{backgroundColor: "#F0F0F0", scrollSnapAlign: "start", scrollSnapStop: "always"}}>
             <ClientsCarousel></ClientsCarousel>

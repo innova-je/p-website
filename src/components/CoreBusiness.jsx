@@ -111,13 +111,10 @@ const SoftwareSolutions = () => (
     textWidth="40%"
     innerStyle={{
       display: 'flex',
-      height: "105vh",
+      height: "105dvh",
+      width: "95vw",
     }}
     parallax={useParallax({
-      translateY: [40, -40],
-      //rotate: [20, -20],
-      scale: [0.5, 1.5],
-      opacity: [5, 0],       
     })}
     circle1="grey"
     circle2="white"
@@ -126,53 +123,6 @@ const SoftwareSolutions = () => (
 );
 
 const MobileDevelopment = () => {
-  let parallaxRef = useRef({
-    translateY: [10, 0],
-    translateX: [-50, 50],
-    scale: [0.5, 1.5],
-    opacity: [100, 0],
-  });
-
-  let prevScrollY = 0;
-
-  function setPrevScrollY(scrollY) {
-    prevScrollY = scrollY;
-  }
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const isScrollingUp = scrollY < prevScrollY;
-      const isScrollingDown = scrollY > prevScrollY;
-
-      if (isScrollingUp) {
-        parallaxRef.current = {
-          translateY: [10, 0],
-          translateX: [-50, 50],
-          scale: [0.5, 1.5],
-          opacity: [100, 0],
-        };
-      } else if (isScrollingDown) {
-        parallaxRef.current = {
-          translateY: [10, 0],
-          translateX: [0, 50],
-          scale: [2.5, 1.5],
-          opacity: [100, 0],
-        };
-      }
-
-      setPrevScrollY(scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [prevScrollY]);
-
-  //let parallaxToUse = useParallax(parallaxRef.current);
-
 
   return (
   <ServiceBox
@@ -185,14 +135,10 @@ const MobileDevelopment = () => {
       textWidth="48%"
       innerStyle={{
         display: 'flex',
-        height: "105vh",
+        height: "105dvh",
+        width: "95vw",
       }}
       parallax={useParallax({
-        translateX: [-30, 40],
-        translateY: [0, -40],
-        //rotate: [20, -20],
-        scale: [0.5, 1.5],
-        opacity: [5, 0],       
       })}
       circle1="white"
       circle2="grey"
@@ -212,14 +158,10 @@ const RoboticsPrototyping = () => (
     textWidth="55%"
     innerStyle={{
       display: 'flex',
-      height: "105vh",
+      height: "105dvh",
+      width: "95vw",
     }}
     parallax={useParallax({
-      translateX: [-30, 40],
-      translateY: [0, -40],
-      //rotate: [20, -20],
-      scale: [0.5, 1.5],
-      opacity: [5, 0],       
     })}
     circle1="white"
     circle2="white"

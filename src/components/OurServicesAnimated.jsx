@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SoftwareSolutions, MobileDevelopment, RoboticsPrototyping } from '../components/CoreBusinessAnimated';
+import { SoftwareSolutions, MobileDevelopment, RoboticsPrototyping } from '../components/CoreBusiness';
 
 
 

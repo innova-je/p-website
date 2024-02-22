@@ -1,10 +1,10 @@
 import { Box, Typography } from '@mui/material';
-import React, { useRef } from 'react';
+import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import PlaceHolder from '../images/other/placeholder.png';
 import elements from '../images/other/Elements.png';
-import CustomComponent from '../components/AdvisorComponent';
-
+import AdvisorComponent from '../components/AdvisorComponent';
+import AlumniComponent from '../components/AlumniComponent';
 
 const CustomTitle = ({ title, theme }) => {
 
@@ -93,6 +93,8 @@ const OurAdvisors = () => {
 
             
 
+            {/*
+            
             <Typography style={backgroundTextStyle} sx={{
                 position: "absolute",
                 top: "95%"
@@ -102,6 +104,10 @@ const OurAdvisors = () => {
                 position: "absolute",
                 top: "145%"
             }} noWrap>ADVISORY BOARD</Typography>
+            
+            
+            */}
+            
 
 
 
@@ -109,20 +115,22 @@ const OurAdvisors = () => {
                 <CustomTitle title="Advisory Board"  theme={theme} />
             </Box>
 
+            {/*
             <Typography style={backgroundTextStyle} sx={{
                 position: "relative",
                 top: "0%"
-            }} noWrap>ADVISORY BOARD</Typography>
-
+            }} noWrap>ADVISORY BOARD</Typography>            
+            */}
+            
             <Box sx={{
                 display: "flex",
                 justifyContent: "center",
                 position: "relative",
-                marginTop: "-15%",
+                marginTop: "5%",
             }}>
                 <Box position="relative" sx={{ display: 'grid', justifyContent: 'center', columnGap: "5%", rowGap: "10%", gridTemplateColumns: "repeat(3, 1fr)", gridTemplateRows: "repeat(2, 1fr)" }}>
             {advisorsBoardData.map((advisor, index) => (
-                <CustomComponent
+                <AdvisorComponent
                 key={index}
                 name={advisor.name}
                 description={advisor.description}
@@ -135,25 +143,29 @@ const OurAdvisors = () => {
             <Box sx={{
                 height: "160vh",
             }}>
-              <Box marginTop={30} marginBottom={4} textAlign="center" position="relative">
+              <Box marginTop={20} marginBottom={4} textAlign="center" position="relative">
                 <CustomTitle title="Alumni Board"  theme={theme} />
             </Box>
+
+            {/*
             <Typography style={backgroundTextStyle} sx={{
                 position: "relative",
                 top: "-5%"
             }} noWrap>ALUMNI BOARD</Typography> 
+            */}
+            
 
             <Box sx={{
                 display: "grid",
                 rowGap: "10%",
                 justifyContent: "center",
                 position: "relative",
-                marginTop: "-15%",
+                marginTop: "5%",
             }}>
 
             <Box sx={{ display: 'grid', justifyContent: 'center', columnGap: "5%", gridTemplateColumns: "repeat(3, 1fr)"}} >
             {alumniBoardData.slice(0,3).map((advisor, index) => (
-                <CustomComponent
+                <AlumniComponent
                 key={index}
                 name={advisor.name}
                 description={advisor.description}
@@ -164,7 +176,7 @@ const OurAdvisors = () => {
             
             <Box sx={{ display: 'flex', justifyContent: 'center', columnGap: "5%"}} >
             {alumniBoardData.slice(3,5).map((advisor, index) => (
-                <CustomComponent
+                <AlumniComponent
                 key={index}
                 name={advisor.name}
                 description={advisor.description}
@@ -175,6 +187,7 @@ const OurAdvisors = () => {
                 
             </Box>  
 
+            {/*
             <Typography style={backgroundTextStyle} sx={{
                 position: "relative",
                 top: "-40%",
@@ -185,9 +198,8 @@ const OurAdvisors = () => {
                 position: "relative",
                 top: "-30%"
             }} noWrap>ALUMNI BOARD</Typography>
+            */}
             
-
-
             </Box>
             
 
