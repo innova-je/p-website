@@ -87,11 +87,30 @@ const Home = () => {
             scrollSnapType: "y mandatory",
             overflow: "hidden",
         }}>
-
-        <video src={BgVideo} width='100%' autoPlay loop muted style={{
-            borderRadius: "0 0 30px 30px",
-            opacity: "50%",
+        
+        <div style={{
+            height: "100vh",
+            width: "100vw",
+            position: "relative",
+            overflow: "hidden",
+            borderRadius: "0 0 30px 30px"
+        }}>
+        <video 
+            src={BgVideo} 
+            autoPlay 
+            loop 
+            muted 
+            style={{
+                objectFit: "cover",
+                opacity: "50%",
+                height: "100%",
+                width: "100%",
+                position: "absolute",
+                top: 0,
+                left: 0
         }}/>
+        </div>
+        
             <Box sx={{
             width: "100%",//TODO: Este título não está bem
             position: "absolute",

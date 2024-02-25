@@ -51,6 +51,7 @@ const ClientsCarousel = () => {
     alignItems: "center",
     overflow: "hidden", 
     whiteSpace: "nowrap",    
+    transform: "scale(1)"
   }));
 
   const slideAnimation = keyframes`

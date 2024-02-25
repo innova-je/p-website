@@ -53,10 +53,6 @@ const ServicesCarousel = () => {
 
   return (
     <div className='wheel' style={{
-      position: "relative",
-      top: "-120%",
-      left: "25%",
-      height: "5vh",
       background: "green",
     }}>
 
