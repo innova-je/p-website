@@ -128,7 +128,7 @@ const Navbar = () => {
 
       </div>
 
-        <div style={{ display: desktop ? "flex" : "none", justifyContent: 'center', alignItems: 'center', flexGrow: 1}}>
+        <div style={{ display: desktop ? "flex" : "none", justifyContent: 'center', alignItems: 'center', flexGrow: 1, zIndex: 9999}}>
           <NavLink to="/about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
             <Button color="inherit" style={linkStyles}>About Us</Button>
           </NavLink>
