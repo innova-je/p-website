@@ -121,14 +121,14 @@ const Navbar = () => {
         <Link to="/" style={{
           position: "relative",
           height: "100%",
-          zIndex: "20",
+          zIndex: 2
         }}>
           <img src={LogoImage} style={{ height: "100%", marginLeft: desktop || tablet ? "15%" : "10%"}} />
         </Link>
 
       </div>
 
-        <div style={{ display: desktop ? "flex" : "none", justifyContent: 'center', alignItems: 'center', flexGrow: 1, zIndex: 9999}}>
+        <div style={{ display: desktop ? "flex" : "none", justifyContent: 'center', alignItems: 'center', flexGrow: 1, zIndex: 1}}>
           <NavLink to="/about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
             <Button color="inherit" style={linkStyles}>About Us</Button>
           </NavLink>
@@ -174,7 +174,8 @@ const Navbar = () => {
             position: "relative",
             display: tablet || desktop ? "flex" : "none",
             marginRight: desktop ? "7%" : "15%",
-            textDecoration: "none"
+            textDecoration: "none",
+            zIndex: 2
           }}>
             <JoinUsButton>Join Us</JoinUsButton>
           </Link>
