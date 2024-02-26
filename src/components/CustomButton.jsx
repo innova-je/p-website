@@ -11,15 +11,6 @@ const animate1 = keyframes`
   }
 `;
 
-const animate2 = keyframes`
-  100% {
-    transform: rotate(360deg);
-  }
-  0% {
-    transform: rotate(0deg);
-  }
-`;
-
 const CustomButton = styled(Button)(({ customBackgroundColor }) => ({
 
   '&:before': {
@@ -30,16 +21,6 @@ const CustomButton = styled(Button)(({ customBackgroundColor }) => ({
     zIndex: -1,
     background: `linear-gradient(#ffffff, #ffffff)`,
     animation: `${animate1} 10s infinite linear`,
-  },
-
-  '&:before': {
-    content: '""',
-    position: 'absolute',
-    width: "1vw",
-    height: "25vh",
-    zIndex: -1,
-    background: `linear-gradient(#ffffff, #ffffff)`,
-    animation: `${animate2} 10s infinite linear`,
   },
 
   '&:after': {

@@ -28,14 +28,14 @@ const partnerData = {
 const OurPartners = () => {
   const theme = useTheme();
 
-    const ClientsAndPartnersStyle = {
-        width: "100%",
-        textAlign: "center",
-        justifyContent: "center",
-        color: "#732043",
-        fontWeight: "700",
-        fontSize: "3.5vw",
-      };
+  const ClientsAndPartnersStyle = {
+    width: "100%",
+    textAlign: "center",
+    justifyContent: "center",
+    color: "#732043",
+    fontWeight: "700",
+    fontSize: "3.5vw",
+  };
 
       const PartnersBox = styled(Box)(({ theme }) => ({
         position: "relative",

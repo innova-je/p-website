@@ -31,6 +31,13 @@ const clientsData = [//TODO: arranjar maneira de nao ser preciso duplicar os dad
   { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '10%', scale: 0.6 },
   { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '15%', height: '15%', scale: 0.6 },
   { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 2 },
+  { name: 'Futurália', logoSrc: Futuralia, width: '15%', scale: 1 },
+  { name: 'Sucees', logoSrc: Sucees, width: '13%', scale: 1 },
+  { name: 'Orion', logoSrc: Orion, width: '20%', scale: 1 },
+  { name: 'NovaID', logoSrc: NovaID, width: '15%', height: '15%', scale: 0.7 },
+  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '10%', scale: 0.6 },
+  { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '15%', height: '15%', scale: 0.6 },
+  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 2 },
   
 ];
 
@@ -44,6 +51,7 @@ const ClientsCarousel = () => {
     alignItems: "center",
     overflow: "hidden", 
     whiteSpace: "nowrap",    
+    transform: "scale(1)"
   }));
 
   const slideAnimation = keyframes`
@@ -79,7 +87,7 @@ const ClientsCarousel = () => {
   return (
     <ClientsBox className='clients-box'>
       <Typography style={ClientsAndPartnersStyle}>Who Trusted Us</Typography>
-      <LogosSlide className="logos-slide">
+        <LogosSlide className="logos-slide">
         {clientsData.map((client, index) => (
           <img
             key={index}

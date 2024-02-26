@@ -3,10 +3,9 @@ import { Box, Typography } from '@mui/material';
 import CustomButton from './CustomButton';
 import { Parallax, useParallax } from "react-scroll-parallax";
 import CircleIcon from '@mui/icons-material/Circle';
-
+import { interpolate } from 'react-native-reanimated';
 
 const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textWidth, innerStyle, parallax, circle1, circle2, circle3}) => {  
-
 
   const boxRef = useRef(null);
   const [fontSize, setFontSize] = useState('1.5vw');
@@ -34,7 +33,8 @@ const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textW
 
   return (
 
-      <Box  className="Our Services" id="canva" style={innerStyle} ref={parallax.ref} >
+    
+      <Box  className="Our Services" id="canva" style={innerStyle} ref={parallax.ref}>
 
       <Box>
       <Box sx={{
@@ -111,13 +111,14 @@ const SoftwareSolutions = () => (
     textWidth="40%"
     innerStyle={{
       display: 'flex',
-      height: "120dvh",
-      width: "95dvw",
-      position: "relative",
-      left: "30%"
+      height: "105vh",
     }}
     parallax={useParallax({
-      
+      translateY: [40, -40],
+      translateX: [50, -50],
+      //rotate: [20, -20],
+      scale: [0.5, 1.5],
+      opacity: [5, 0],       
     })}
     circle1="grey"
     circle2="white"
@@ -126,6 +127,53 @@ const SoftwareSolutions = () => (
 );
 
 const MobileDevelopment = () => {
+  let parallaxRef = useRef({
+    translateY: [10, 0],
+    translateX: [-50, 50],
+    scale: [0.5, 1.5],
+    opacity: [100, 0],
+  });
+
+  let prevScrollY = 0;
+
+  function setPrevScrollY(scrollY) {
+    prevScrollY = scrollY;
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const isScrollingUp = scrollY < prevScrollY;
+      const isScrollingDown = scrollY > prevScrollY;
+
+      if (isScrollingUp) {
+        parallaxRef.current = {
+          translateY: [10, 0],
+          translateX: [-50, 50],
+          scale: [0.5, 1.5],
+          opacity: [100, 0],
+        };
+      } else if (isScrollingDown) {
+        parallaxRef.current = {
+          translateY: [10, 0],
+          translateX: [0, 50],
+          scale: [2.5, 1.5],
+          opacity: [100, 0],
+        };
+      }
+
+      setPrevScrollY(scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollY]);
+
+  //let parallaxToUse = useParallax(parallaxRef.current);
+
 
   return (
   <ServiceBox
@@ -138,12 +186,14 @@ const MobileDevelopment = () => {
       textWidth="48%"
       innerStyle={{
         display: 'flex',
-        height: "120dvh",
-        width: "95dvw",
-        position: "relative",
-        left: "30%"
+        height: "105vh",
       }}
       parallax={useParallax({
+        translateX: [-30, 40],
+        translateY: [0, -40],
+        //rotate: [20, -20],
+        scale: [0.5, 1.5],
+        opacity: [5, 0],       
       })}
       circle1="white"
       circle2="grey"
@@ -163,12 +213,14 @@ const RoboticsPrototyping = () => (
     textWidth="55%"
     innerStyle={{
       display: 'flex',
-      height: "120dvh",
-      width: "95dvw",
-      position: "relative",
-      left: "30%"
+      height: "105vh",
     }}
     parallax={useParallax({
+      translateX: [-30, 40],
+      translateY: [0, -40],
+      //rotate: [20, -20],
+      scale: [0.5, 1.5],
+      opacity: [5, 0],       
     })}
     circle1="white"
     circle2="white"

@@ -1,20 +1,24 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { AppBar, Toolbar, Button, Menu, MenuItem, styled } from '@mui/material';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { AppBar, Toolbar, Button, Menu, MenuItem, styled  } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LogoImage from '../images/OurLogos/logos-02.png';
+import { useMediaQuery } from 'react-responsive';
+import BgMenu from './BgMenu';
 
-
-const JoinUs = styled(Button)(({ theme }) => ({
+const JoinUsButton = styled('button')(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   color: 'white',
   fontFamily: theme.typography.fontFamily,
   fontWeight: 'bold',
-  fontSize: '15px',
-  marginRight: '70px',
-  padding: '5px 50px',
-  borderRadius: '25px',
+  fontSize: '1rem',
+  borderRadius: "20px",
+  border: "none",
+  maxHeight: "40px",
+  height: "40px",
+  width: "200px",
   transition: 'transform 0.3s ease-in-out', 
+  textDecoration: "none",
 
   '&:hover': {
     backgroundColor: theme.palette.primary.main,
@@ -24,8 +28,14 @@ const JoinUs = styled(Button)(({ theme }) => ({
 }));
 
 
-
 const Navbar = () => {
+  const mobile = useMediaQuery({ maxWidth: 600 });
+  const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+  const desktop = useMediaQuery({ minWidth: 1081 });
+
+  console.log(window.innerWidth)
+
+
   const [anchorElDropdown1, setAnchorElDropdown1] = React.useState(null);
   const [anchorElDropdown2, setAnchorElDropdown2] = React.useState(null);
 
@@ -87,20 +97,38 @@ const Navbar = () => {
     fontWeight: 'normal',
   };
 
-  return (
-    <AppBar position="absolute" style={{ background: '#FFFFFF29', boxShadow: 'none', height: '80px' }}>
-      <Toolbar style={{ height: '100%', justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Link to="/">
-            <img
-              src={LogoImage}
-              alt="Logo Innova"
-              style={{ height: 80, marginLeft: 70, cursor: 'pointer' }}
-            />
-          </Link>
-        </div>
+  const navigate = useNavigate();
 
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexGrow: 1 }}>
+  const handleNavLinkClick = (path) => {
+    navigate.push(path);
+    window.scrollTo(0, 0);
+  };
+
+    return (
+    <AppBar position="absolute" style={{left: "0", background: '#FFFFFF29', width: "100%", boxShadow: 'none', height: '10vh' }}>
+      <Toolbar style={{ height: '100%', justifyContent: 'space-between'}}>
+        
+      <div style={{
+        height: "100%",
+        width: "100%",
+        position: "absolute",
+        left: 0,
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "row",
+      }}>
+        
+        <Link to="/" style={{
+          position: "relative",
+          height: "100%",
+          zIndex: 2
+        }}>
+          <img src={LogoImage} style={{ height: "100%", marginLeft: desktop || tablet ? "15%" : "10%"}} />
+        </Link>
+
+      </div>
+
+        <div style={{ display: desktop ? "flex" : "none", justifyContent: 'center', alignItems: 'center', flexGrow: 1, zIndex: 1}}>
           <NavLink to="/about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
             <Button color="inherit" style={linkStyles}>About Us</Button>
           </NavLink>
@@ -123,12 +151,46 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        <Link to="/join-us" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <JoinUs>Join Us</JoinUs>
-        </Link>
+        <div style={{
+          position: "absolute",
+          right: 0,
+          top: 0,
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+        }}>
+        
+        <div style={{
+          width: "100%",
+          position: "absolute",
+          right: "0",
+          display: "flex",
+          justifyContent: "right"
+        }}>
+        
+          <Link to="/join-us" onClick={() => handleNavLinkClick('/join-us')} style={{
+            position: "relative",
+            display: tablet || desktop ? "flex" : "none",
+            marginRight: desktop ? "7%" : "15%",
+            textDecoration: "none",
+            zIndex: 2
+          }}>
+            <JoinUsButton>Join Us</JoinUsButton>
+          </Link>
+          
+        </div>
+        <div style={{display: desktop ? "none" : "flex"}}>
+          <BgMenu></BgMenu>
+        </div>
+
+        </div>
+        
       </Toolbar>
     </AppBar>
   );
+
 };
 
 export default Navbar;
