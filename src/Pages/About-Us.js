@@ -15,7 +15,6 @@ const AboutUs = () => {
 
     const handleButtonClick = (title, currentState) => {
         if (currentState === 'expanded') {
-            // If the button is already expanded, collapse it
             setSelectedButton(null);
         } else {
             setSelectedButton(title);
@@ -63,7 +62,7 @@ const AboutUs = () => {
                         top: '55%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
-                        width: '70%',
+                        width: '75%',
                         height: '65%',
                         zIndex: '1',
                     }}
@@ -109,6 +108,7 @@ const AboutUs = () => {
                             color: theme.palette.primary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
+                            fontSize: '3.3rem',
                         }}
                     >
                         Junior Enterpreneurs.
@@ -123,6 +123,7 @@ const AboutUs = () => {
                             color: theme.palette.secondary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Light',
+                            fontSize: '1.7rem',
                         }}
                     >
                         Engineering Students <br />
@@ -150,15 +151,16 @@ const AboutUs = () => {
                             right: '0',
                             transform: 'translate(25%, 50%)',
                             width: '80%',
-                            height: '25%',
+                            height: '20%',
                             zIndex: '1',
                             pl: '5rem',
-                            pt: '1.3rem',
+                            pt: '1rem',
+                            pb: '0.5rem',
                             pr: '20rem',
                             justifyContent: 'center',
                             textAlign: 'justify',
                             fontWeight: 'light',
-                            fontSize: '18px',
+                            fontSize: '16px',
                         }}
                     > In-Nova is the Junior Enterprise of NOVA School of Science and Technology. Founded with the aim of promoting the capabilities of its students by integrating them into real projects, it aims to bring students closer to the professional reality. In-Nova is focused on creating a limitless workspace, in the most varied areas of knowledge. Specialized in robotics, full stack development, electronics, and prototyping.
                     </Box>
@@ -178,7 +180,7 @@ const AboutUs = () => {
                 }}
             >
                 {/* Expandable boxes */}
-                <Container maxWidth="160vh" sx={{ position: "absolute", top: 80, display: 'flex', justifyContent: 'center', zIndex: "3" }}>
+                <Container maxWidth="160vh" sx={{ position: "absolute", top: 75, display: 'flex', justifyContent: 'center', zIndex: "3" }}>
                     <Box sx={{ display: 'flex', gap: 5 }}>
                         <Values
                             title="Mission"

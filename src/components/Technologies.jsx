@@ -18,6 +18,13 @@ import premier from '../images/Icons/premier-icon.png';
 import raspberrypi from '../images/Icons/raspberrypi-icon.png';
 import react from '../images/Icons/react-icon.png';
 import wordpress from '../images/Icons/wordpress-icon.png';
+import html from '../images/Icons/html-icon.png';
+import css from '../images/Icons/css-icon.png';
+import c from '../images/Icons/c-icon.png';
+import googlefirebase from '../images/Icons/googlefirebase-icon.png';
+import teams from '../images/Icons/teams-icon.png';
+import postman from '../images/Icons/postman-icon.png';
+import solidworks from '../images/Icons/solidworks-icon.png';
 
 const circleStyle = {
     position: 'absolute',
@@ -28,11 +35,11 @@ const circleStyle = {
 
 const imageStyle = {
     position: 'absolute',
-    width: '80px',
-    height: '80px',
+    width: '60px',
+    height: '60px',
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     transition: 'transform 0.2s ease-in-out',
     filter: 'grayscale(100%)',
     zIndex: 1,
@@ -73,16 +80,15 @@ const Technologies = () => {
     };
 
     const circle1Images = [
-        wordpress, canva, illustrator, linkedin, react, excel, excel, excel, notion, notion, notion, notion
+        html, wordpress, teams,postman , linkedin, illustrator, react, canva, excel, excel, excel  
     ];
 
     const circle2Images = [
-        // Specify URLs of images for the second circle
-        // Example: 'image3.jpg', 'image4.jpg', ...
+        googlefirebase, photoshop, raspberrypi, javascript, javascript, excel, excel, java, notion, c, apple, excel, excel, excel, excel, excel, excel, excel, instagram,
     ];
 
     const circle3Images = [
-        excel, figma, premier
+        github, excel, solidworks, postman, postman, postman, postman, postman, arduino, premier, figma, css, postman, postman, postman, postman, postman, postman, postman, android
     ];
 
     return (

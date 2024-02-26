@@ -4,7 +4,6 @@ import HeroImage2 from '../images/other/map2.png';
 import HeroImage3 from '../images/other/map3.png';
 
 import { ParallaxLayer, Parallax } from '@react-spring/parallax';
-import { Box } from '@mui/material';
 
 const parallaxStyle = {
     overflowY: 'scroll',
