@@ -6,44 +6,40 @@ const CustomReview = ({ image, name, department, text }) => {
     return (
         <Box
             border="1px solid #ddd"
-            borderRadius="30px"
+            borderRadius="15px"
             overflow="hidden"
-            p={2}
+            p={1}
             textAlign="center"
             bgcolor="white"
-            width="21rem"
-            boxShadow={10}
-        
+            width="15rem"
+            boxShadow={3}
         >
             <Box
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
                 flexDirection="column"
-                sx={{ margin: 2 }}
+                sx={{ margin: 1 }}
             >
                 <Box
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        marginBottom: 1,
+                        marginBottom: 0.5,
                     }}
                 >
-                    <Avatar src={image} alt={name}
-                        sx={{ width: 60, height: 60}} />
-                    <Box textAlign="left" paddingLeft={2}>
-                        <Typography variant="h6"
-                            sx={{ fontWeight: "Medium", mb: -0.5, }}>
+                    <Avatar src={image} alt={name} sx={{ width: 30, height: 30 }} />
+                    <Box textAlign="left" paddingLeft={0.5}>
+                        <Typography variant="body2" sx={{ fontWeight: "Medium", mb: -0.5 }}>
                             {name}
                         </Typography>
-                        <Typography variant="subtitle2"
-                            sx={{color: theme.palette.primary.main, }}>
+                        <Typography variant="caption" sx={{ color: theme.palette.primary.main }}>
                             {department}
                         </Typography>
                     </Box>
                 </Box>
 
-                <Typography variant="body1" align="center">
+                <Typography variant="body2" align="center" sx={{fontSize:"12px"}}>
                     {text}
                 </Typography>
             </Box>

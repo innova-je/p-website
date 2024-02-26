@@ -333,7 +333,7 @@ const JoinUs = () => {
                     display: 'flex',
                     justifyContent: 'flex-start',
                     alignItems: 'flex-start',
-                    height: '150vh',
+                    height: '120vh',
                     backgroundImage: `linear-gradient(to top, ${theme.palette.primary.main}, rgba(255,255,255,0))`,
                 }}
             >
@@ -360,9 +360,10 @@ const JoinUs = () => {
                         alignItems: 'center',
                         gap: '2.5rem',
                         position: 'absolute',
-                        top: '16rem',
+                        top: '30%',
                         width: '100%',
-                        height: 'auto', // ver melhor
+                        height: '38vh',
+                        border: '1px solid red',
 
                     }}>
                     <CustomReview
@@ -395,15 +396,18 @@ const JoinUs = () => {
                     />
                 </Box>
 
-                {/* First second of reviews */}
+                {/* Second row of reviews */}
                 <Box
                     sx={{
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '2.5rem',
                         position: 'absolute',
-                        top: '38rem',
+                        top: '63%',
                         width: '100%',
+                        height: '38vh',
+                        border: '1px solid red',
+
                     }}>
                     <CustomReview
                         image={HeroImage}
@@ -414,16 +418,16 @@ const JoinUs = () => {
                     />
                     <CustomReview
                         image={HeroImage}
-                        name="John Doe"
+                        name="John SDoe"
                         department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit"
                         sx={{ position: "absolute", left: "50%", zIndex: 2 }}
                     />
                     <CustomReview
                         image={HeroImage}
                         name="John Doe"
                         department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
                         sx={{ position: "absolute", left: "50%", zIndex: 2 }}
                     />
                     <CustomReview

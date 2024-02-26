@@ -328,7 +328,6 @@ const MiddleBox = ({ barheight }) => {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     opacity: '0.5',
-                    // make the transtion of the bgImg smoother
                     transition: 'background-image 0.3s ease-in-out',
                 }}
             >
@@ -347,7 +346,7 @@ const HowToApply = ({ progress }) => {
             sx={{
                 position: 'absolute',
                 top: '12rem',
-                width: '70%',
+                width: '65%',
                 height: '68%',
                 backgroundColor: 'white',
                 borderRadius: '20px',
