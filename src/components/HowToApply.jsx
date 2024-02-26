@@ -78,7 +78,7 @@ const MiddleBox = ({ barheight }) => {
             {/* First Box */}
             <Box
                 sx={{
-                    width: '14%',
+                    width: '20%',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
@@ -114,17 +114,17 @@ const MiddleBox = ({ barheight }) => {
 
 
                 <CustomCircle icon={WriteIcon} posTop="12px" bgcolor={theme.palette.primary.main} fill="white" />
-                <CustomCircle icon={CameraIcon} posTop="150px" bgcolor={cameraBG} fill={cameraFill} />
-                <CustomCircle icon={GroupIcon} posTop="288px" bgcolor={groupBG} fill={groupFill} />
-                <CustomCircle icon={ChatIcon} posTop="426px" bgcolor={chatBG} fill={chatFill} />
-                <CustomCircle icon={InnovaIcon} posTop="564px" bgcolor={innovaBG} fill={innovaFill} />
+                <CustomCircle icon={CameraIcon} posTop="130px" bgcolor={cameraBG} fill={cameraFill} />
+                <CustomCircle icon={GroupIcon} posTop="248px" bgcolor={groupBG} fill={groupFill} />
+                <CustomCircle icon={ChatIcon} posTop="366px" bgcolor={chatBG} fill={chatFill} />
+                <CustomCircle icon={InnovaIcon} posTop="484px" bgcolor={innovaBG} fill={innovaFill} />
 
             </Box>
 
             {/* Second Box */}
             <Box
                 sx={{
-                    width: '65%',
+                    width: '59%',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
@@ -146,7 +146,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            marginTop: 0.5,
+                            marginTop: 0,
                             fontSize: "30px",
                         }}
                     >
@@ -158,7 +158,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Medium',
-                            marginTop: 0.5,
+                            marginTop: 0,
                             fontSize: "15px",
                         }}
                     >
@@ -187,7 +187,7 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: 25,
+                        top: 20,
                     }}
                 >
                     <Typography
@@ -196,7 +196,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            marginTop: 0.5,
+                            marginTop: 0,
                             fontSize: "30px",
                         }}
                     >
@@ -208,7 +208,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Medium',
-                            marginTop: 0.5,
+                            marginTop: 0,
                             fontSize: "15px",
                         }}
                     >
@@ -221,8 +221,7 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: 25,
-                        marginTop: 6,
+                        top: 50,
                     }}
                 >
                     <Typography
@@ -231,7 +230,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            marginTop: 0.5,
+                            marginTop: 0,
                             fontSize: "30px",
                         }}
                     >
@@ -243,7 +242,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Medium',
-                            marginTop: 0.5,
+                            marginTop: 0,
                             fontSize: "15px",
                         }}
                     >
@@ -255,8 +254,7 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: 10,
-                        marginTop: 9.5,
+                        top: 100,
                     }}
                 >
                     <Typography
@@ -265,7 +263,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            marginTop: 0.5,
+                            marginTop: 0,
                             fontSize: "30px",
                         }}
                     >
@@ -277,7 +275,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Medium',
-                            marginTop: 0.5,
+                            marginTop: 0,
                             fontSize: "15px",
                         }}
                     >
@@ -289,8 +287,7 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: 10,
-                        marginTop: 9.5,
+                        top: 160,
                     }}
                 >
                     <Typography
@@ -311,7 +308,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Medium',
-                            marginTop: 0.5,
+                            marginTop: 0,
                             fontSize: "15px",
                         }}
                     >
@@ -349,9 +346,9 @@ const HowToApply = ({ progress }) => {
         <Box
             sx={{
                 position: 'absolute',
-                top: '13rem',
-                width: '60%',
-                height: '63%',
+                top: '12rem',
+                width: '70%',
+                height: '68%',
                 backgroundColor: 'white',
                 borderRadius: '20px',
                 display: 'flex',

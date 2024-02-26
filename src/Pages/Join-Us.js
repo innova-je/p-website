@@ -444,7 +444,7 @@ const JoinUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: '150vh',
+                    height: '120vh',
 
                 }}
             >
