@@ -8,7 +8,7 @@ import { Box } from '@mui/material';
 
 const parallaxStyle = {
     overflowY: 'scroll',
-    border: '1px solid red',
+    // border: '1px solid red',
     scrollbarWidth: 'none',  // For Firefox
     '&::-webkit-scrollbar': {
         display: 'none',  // For Chrome, Safari, and Edge
