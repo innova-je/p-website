@@ -84,7 +84,7 @@ const OurTeam = () => {
                         width: '100%',
                         height: '40%',
                         backgroundImage:
-                            'linear-gradient(to top, rgba(255,255,255,0.9), rgba(255,255,255,0))',
+                            'linear-gradient(to top, rgba(240,240,240,1), rgba(240,240,240,0))',
                     }}
                 />
                 

@@ -144,7 +144,7 @@ const JoinUs = () => {
                         width: '100%',
                         height: '35%',
                         backgroundImage:
-                            'linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0))',
+                            'linear-gradient(to top, rgba(240,240,240,1), rgba(240,240,240,0))',
                     }}
                 />
             </Box>
@@ -289,16 +289,28 @@ const JoinUs = () => {
                 >
                     Out of Office
                 </Button>
-                <img
-                    src={joinus_oof}
-                    alt='joinus_oof'
-                    style={{
-                        maxWidth: '65%',
-                        maxHeight: '100%',
-                        objectFit: 'cover',
+                <div style={{ position: 'relative', maxWidth: '65%', maxHeight: '100%' }}>
+                    <img
+                        src={joinus_oof}
+                        alt='joinus_oof'
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                        }}
+                    />
+                    <div
+                        style={{
+                            position: 'absolute',
+                            bottom: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '35%',
+                            backgroundImage: 'linear-gradient(to top, rgba(240,240,240,1), rgba(240,240,240,0))',
+                        }}
+                    />
+                </div>
 
-                    }}
-                />
                 <img
                     src={joinus_elements}
                     alt='joinus_elements'
