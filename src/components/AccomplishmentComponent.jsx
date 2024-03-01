@@ -1,9 +1,13 @@
 import { styled, Box, Typography } from '@mui/material'
 import React, { useState, useEffect } from 'react';
 import randomLogo from '../images/OurLogos/logos-03.png'
-
+import { useMediaQuery } from 'react-responsive';
 
 const Accomplishments = ({ image, description, date }) => {
+
+  const mobile = useMediaQuery({ maxWidth: 600 });
+  const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+  const desktop = useMediaQuery({ minWidth: 1081 });
 
   const [isHovered, setIsHovered] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
@@ -12,11 +16,12 @@ const Accomplishments = ({ image, description, date }) => {
     display: "flex",
     flexDirection: isSelected ? "row" : "column",
     width: isSelected ? "60vw" : "25vw",
-    height: "70vh",
+    width: (desktop ? "25dvw" : (tablet ? "30dvw" : "50dvw")),
+    height: (desktop ? "70dvh" : (tablet ? "50dvh" : "30dvh")),
     borderRadius: "20px",
     overflow: "hidden",
     boxShadow: "10px 10px 40px #73204340",
-    transition: "width 0.3s ease-in-out, transform 0.5s linear", // Combine transitions
+    transition: "width 0.3s ease-in-out, transform 0.5s linear",
     cursor: isSelected ? "auto" : "pointer",
     transform: isHovered && !isSelected ? "scale(1.05)" : "scale(1)",
   }));

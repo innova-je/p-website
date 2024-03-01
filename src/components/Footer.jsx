@@ -280,32 +280,11 @@ const Footer = () => {
                         }}></LinkedIn>
                         </Link>
                     </SocialMedia>
-                    <Typography sx={{
-                        fontSize: "0.8rem",
-                        fontWeight: "100",
-                        lineHeight: "17px",
-                        display: "flex",
-                        textAlign: "center",
-                        flexDirection: "column",
-                        position: "relative",
-                        top: "12%"
-                    }}>Faculdade de Ciências e Tecnologia
-                    <br/>Universidade Nova de Lisboa</Typography>
-                    <Typography sx={{
-                        fontSize: "0.8rem",
-                        fontWeight: "100",
-                        display: "flex",
-                        textAlign: "center",
-                        flexDirection: "column",
-                        position: "relative",
-                        top: "17%"
-                    }}>Quinta da Torre, Caparica</Typography>
     
                     </Box>
             </div>
         </FooterBar>
-        )
-        
+        )        
     }
     
 }

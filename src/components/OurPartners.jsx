@@ -8,6 +8,7 @@ import Meta from '../images/HomePageImages/PartnersLogos/MetaLogo.png'
 import OpenBB from '../images/HomePageImages/PartnersLogos/OpenBBLogo.png'
 
 import { useTheme } from '@mui/system';
+import { useMediaQuery } from 'react-responsive';
 
 const partnerData = {
   goldSponsors: [
@@ -26,6 +27,10 @@ const partnerData = {
 
 
 const OurPartners = () => {
+
+  const mobile = useMediaQuery({ maxWidth: 600 });
+  const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+  const desktop = useMediaQuery({ minWidth: 1081 });
   const theme = useTheme();
 
   const ClientsAndPartnersStyle = {
@@ -34,7 +39,7 @@ const OurPartners = () => {
     justifyContent: "center",
     color: "#732043",
     fontWeight: "700",
-    fontSize: "3.5vw",
+    fontSize: (desktop ? "3.5dvw" : (tablet ? "4dvw" : "6dvw")),
   };
 
       const PartnersBox = styled(Box)(({ theme }) => ({

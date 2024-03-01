@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import { Typography, Link } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
 import {Email, LinkedIn } from '@mui/icons-material';
-
+import { useMediaQuery } from 'react-responsive';
 
 const AdvisorComponent = ({ name, description, image }) => {
+
+  const mobile = useMediaQuery({ maxWidth: 600 });
+    const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+    const desktop = useMediaQuery({ minWidth: 1081 });
+
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
 
@@ -14,7 +19,7 @@ const AdvisorComponent = ({ name, description, image }) => {
     width: '18vw',
     height: '22vw',
     overflow: 'visible',
-    borderRadius: 15,
+    borderRadius: "8%",
     marginBottom: 35,
     zIndex: "2"
   };
@@ -33,9 +38,7 @@ const AdvisorComponent = ({ name, description, image }) => {
     objectFit: 'cover',
     position: 'absolute',
     top: 0,
-    left: 0,
-    filter: isHovered ? 'grayscale(0%)' : 'grayscale(100%)',
-    transition: 'filter 0.4s ease-in-out',
+    left: 0
   };
 
   const overlayStyle = {
@@ -48,7 +51,7 @@ const AdvisorComponent = ({ name, description, image }) => {
     backgroundColor: 'white',
     padding: '5px',
     margin: 'auto',
-    borderRadius: 15,
+    borderRadius: desktop ? 15 : 10,
     overflow: 'hidden',
     zIndex: 2,
     display: "flex",

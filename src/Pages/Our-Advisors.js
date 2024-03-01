@@ -5,8 +5,13 @@ import PlaceHolder from '../images/other/placeholder.png';
 import elements from '../images/other/Elements.png';
 import AdvisorComponent from '../components/AdvisorComponent';
 import AlumniComponent from '../components/AlumniComponent';
+import { useMediaQuery } from 'react-responsive';
 
 const CustomTitle = ({ title, theme }) => {
+
+    const mobile = useMediaQuery({ maxWidth: 600 });
+    const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+    const desktop = useMediaQuery({ minWidth: 1081 });
 
     return (
         <>
@@ -18,30 +23,18 @@ const CustomTitle = ({ title, theme }) => {
                     fontFamily: theme.typography.fontFamily,
                     backgroundColor: "#F0F0F0",
                     height: "15vh",
-                    width: "30%",
                     margin: "0 auto",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "3vw"
+                    fontSize: (desktop ? "3dvw" : (tablet ? "4dvw" : "6dvw")),
                 }}
             >
                 {title}
             </Typography>
         </>
     );
-};
-
-
-const backgroundTextStyle = {
-    fontSize: '12vw',
-    width: '100%',
-    color: '#F0F0F0',
-    textShadow: '1px 1px #73204340, -1px -1px #73204340, 1px -1px #73204340, -1px 1px #73204340',
-    zIndex: '0',
-    textAlign: 'center',
-  };
-  
+}; 
   
 
 const advisorsBoardData = [
@@ -63,6 +56,11 @@ const alumniBoardData = [
 
 
 const OurAdvisors = () => {
+
+    const mobile = useMediaQuery({ maxWidth: 600 });
+    const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+    const desktop = useMediaQuery({ minWidth: 1081 });
+
     const theme = useTheme();
     
     return (
@@ -77,7 +75,7 @@ const OurAdvisors = () => {
                     align="center"
                     gutterBottom
                     sx={{
-                        fontSize: "5vw",
+                        fontSize: (desktop ? "5dvw" : (tablet ? "6dvw" : "8dvw")),
                         fontWeight: 'Regular',
                         position: 'relative',
                         top: '50%',
@@ -89,38 +87,16 @@ const OurAdvisors = () => {
                     We are not alone
                 </Typography>             
                 
-            </Box>
+            </Box>           
 
-            
-
-            {/*
-            
-            <Typography style={backgroundTextStyle} sx={{
-                position: "absolute",
-                top: "95%"
-            }} noWrap>ADVISORY BOARD</Typography>
-
-            <Typography style={backgroundTextStyle} sx={{
-                position: "absolute",
-                top: "145%"
-            }} noWrap>ADVISORY BOARD</Typography>
-            
-            
-            */}
-            
-
-
-
-            <Box marginTop={15} marginBottom={4} textAlign="center" position="relative">
+            <Box sx={{
+                marginTop: (desktop ? 15 : (tablet ? 6 : 0)),
+                marginBottom: 4,
+                textAlign: "center",
+                position: "relative"
+            }}>
                 <CustomTitle title="Advisory Board"  theme={theme} />
             </Box>
-
-            {/*
-            <Typography style={backgroundTextStyle} sx={{
-                position: "relative",
-                top: "0%"
-            }} noWrap>ADVISORY BOARD</Typography>            
-            */}
             
             <Box sx={{
                 display: "flex",
@@ -143,17 +119,14 @@ const OurAdvisors = () => {
             <Box sx={{
                 height: "160vh",
             }}>
-              <Box marginTop={20} marginBottom={4} textAlign="center" position="relative">
+              <Box sx={{
+                marginTop: (desktop ? 20 : (tablet ? 6 : 2)),
+                marginBottom: 4,
+                textAlign: "center",
+                position: "relative"
+            }}>
                 <CustomTitle title="Alumni Board"  theme={theme} />
             </Box>
-
-            {/*
-            <Typography style={backgroundTextStyle} sx={{
-                position: "relative",
-                top: "-5%"
-            }} noWrap>ALUMNI BOARD</Typography> 
-            */}
-            
 
             <Box sx={{
                 display: "grid",
@@ -186,19 +159,6 @@ const OurAdvisors = () => {
             </Box>
                 
             </Box>  
-
-            {/*
-            <Typography style={backgroundTextStyle} sx={{
-                position: "relative",
-                top: "-40%",
-                zIndex: "0"
-            }} noWrap>ALUMNI BOARD</Typography>
-
-            <Typography style={backgroundTextStyle} sx={{
-                position: "relative",
-                top: "-30%"
-            }} noWrap>ALUMNI BOARD</Typography>
-            */}
             
             </Box>
             

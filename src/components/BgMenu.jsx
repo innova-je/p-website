@@ -16,11 +16,11 @@ const BgMenu = () => {
       setMenuClass("menu visible");
       setMenuButtonStyle({
         ...MenuButtonStyle,
-        height: "200dvh",
-        width: "100vw",
+        height: "400dvh",
+        width: "100dvw",
         right: 0,
         marginRight: 0,
-        borderRadius: 0,
+        borderRadius: "20%",
         zIndex: 50,
         transition: "right 0.4s ease-in-out, marginRight 0.4s ease-in-out, height 0.4s ease-in-out, width 0.4s ease-in-out, border-radius 0.4s ease-in-out",
       });
@@ -79,27 +79,26 @@ const BgMenu = () => {
     height: "2px",
     borderRadius: "5px",
     backgroundColor: "white",
-    transform: isMenuClicked ? "rotate(45deg) translate(0.3em, 0.2em)" : "none",
+    transform: isMenuClicked ? "rotate(45deg) translate(0.3em, 0.4em)" : "none",
     transition: "transform ease-in-out 0.5s",
   };
   
   const BgBar2 = {
-    width: isMenuClicked ? "25px" : "20px",
-    height: "2px",
-    borderRadius: "5px",
-    backgroundColor: "white",
-    transform: isMenuClicked ? "rotate(-45deg) translate(0.1em, 0.0em)" : "none",
-    transition: "transform ease-in-out 0.5s",
-  };
-  
-
-  const BgBar3 = {
     width: "20px",
     height: "2px",
     borderRadius: "5px",
     backgroundColor: "white",
     opacity: isMenuClicked ? "0%" : "100%",
-    transition: "opacity 0.3s ease-in-out"
+    transition: "opacity 0.3s ease-in-out",
+  };
+
+  const BgBar3 = {    
+    width: isMenuClicked ? "25px" : "20px",
+    height: "2px",
+    borderRadius: "5px",
+    backgroundColor: "white",    
+    transform: isMenuClicked ? "rotate(-45deg) translate(0.2em, -0.3em)" : "none",
+    transition: "transform ease-in-out 0.5s",
   }
 
   const NavLinkStyle = {
