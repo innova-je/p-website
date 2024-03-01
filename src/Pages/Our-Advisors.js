@@ -104,7 +104,15 @@ const OurAdvisors = () => {
                 position: "relative",
                 marginTop: "5%",
             }}>
-                <Box position="relative" sx={{ display: 'grid', justifyContent: 'center', columnGap: "5%", rowGap: "10%", gridTemplateColumns: "repeat(3, 1fr)", gridTemplateRows: "repeat(2, 1fr)" }}>
+                <Box position="relative" sx={{ 
+                    display: (desktop ? "grid" : (tablet ? "grid" : "grid")),
+                    flexDirection:"column",
+                    justifyContent: 'center', 
+                    columnGap: mobile ? "10%" : "5%", 
+                    rowGap: mobile ? "5%" : "10%", 
+                    gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)")),                    
+                    gridTemplateRows: "repeat(2, 1fr)" 
+                    }}>
             {advisorsBoardData.map((advisor, index) => (
                 <AdvisorComponent
                 key={index}
@@ -117,11 +125,11 @@ const OurAdvisors = () => {
             </Box>
             
             <Box sx={{
-                height: "160vh",
+                height: mobile ? "100%" : "160vh",
             }}>
               <Box sx={{
-                marginTop: (desktop ? 20 : (tablet ? 6 : 2)),
-                marginBottom: 4,
+                marginTop: (desktop ? 20 : (tablet ? 6 : 6)),
+                marginBottom: (desktop ? 4 : (tablet ? 2 : 0)),
                 textAlign: "center",
                 position: "relative"
             }}>
@@ -136,7 +144,13 @@ const OurAdvisors = () => {
                 marginTop: "5%",
             }}>
 
-            <Box sx={{ display: 'grid', justifyContent: 'center', columnGap: "5%", gridTemplateColumns: "repeat(3, 1fr)"}} >
+            <Box sx={{ 
+                display: 'grid', 
+                justifyContent: 'center', 
+                columnGap: "5%", 
+                rowGap: "10%",
+                gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)")),
+                }} >
             {alumniBoardData.slice(0,3).map((advisor, index) => (
                 <AlumniComponent
                 key={index}

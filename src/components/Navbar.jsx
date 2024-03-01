@@ -75,7 +75,7 @@ const Navbar = () => {
             onClick={() => handleMenuClose(dropdown)}
             component={Link}
             to={subPage.path}
-            style={{ color: '#732043', fontSize: '18px'}}
+            style={{ color: '#732043', fontSize: '18px', textAlign: "center", justifyContent: "center"}}
           >
             {subPage.label}
           </MenuItem>

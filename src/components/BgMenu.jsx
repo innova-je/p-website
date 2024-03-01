@@ -152,7 +152,7 @@ const BgMenu = () => {
       <NavLink to="/out-of-office" style={NavLinkStyle} onClick={() => handleNavLinkClick('/our-people/our-team')}>
           <Typography style={PagesLinkStyle}>Our Team</Typography>
       </NavLink>
-      <NavLink to="/our-people/our-team" style={NavLinkStyle} onClick={() => handleNavLinkClick('/our-people/our-team')}>
+      <NavLink to="/our-people/our-advisors" style={NavLinkStyle} onClick={() => handleNavLinkClick('/our-people/our-advisors')}>
           <Typography style={PagesLinkStyle}>Our Advisors</Typography>
       </NavLink>
       <NavLink to="/join-us" style={NavLinkStyle} onClick={() => handleNavLinkClick('/events')}>

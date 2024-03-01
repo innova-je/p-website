@@ -30,8 +30,8 @@ const Footer = () => {
     const Logo = styled(ImageListItem)(({ theme }) => ({
         position: "absolute",
         bottom: "0px",
-        width: "17%",
-        height: "17%",
+        width: mobile ? "12%" : "17%",
+        height: mobile ? "12%" : "17%",
         margin: "6vh"
       }));
 
@@ -49,8 +49,12 @@ const Footer = () => {
     const SocialMedia = styled(Box)(({ theme }) => ({
         display: "flex",
         flexDirection: "row",
+        columnGap: mobile ? "10%" : "none",
         position: "relative",
-        top: "3vh",
+        top: mobile ? "none" : "3vh",
+        height: mobile ? "100%" : "none",
+        alignItems: "center",
+        justifyContent: "center"
       }));
 
     const PagesLinkStyle = {
@@ -245,6 +249,9 @@ const Footer = () => {
                 position: "absolute",
                 bottom: 0
             }}>
+                <Logo>
+                    <img alt='In-Nova Logo' src={InNovaLogo}/>
+                </Logo>
                 <Box sx={{
                         position: "absolute",
                         right: "5%",
@@ -260,21 +267,21 @@ const Footer = () => {
                     <SocialMedia>
                         <Link href="mailto:geral@innova.pt">
                         <Email sx={{
-                            width: "4vw",
+                            width: mobile ? "7vw" : "4vw",
                             height: "5vh",
                             color: "white"
                         }}></Email>
                         </Link>
                         <Link href='https://www.instagram.com/in.nova.pt'>
                             <Instagram sx={{
-                            width: "4vw",
+                            width: mobile ? "7vw" : "4vw",
                             height: "5vh",
                             color: "white"
                         }}></Instagram>
                         </Link>
                         <Link href='https://www.linkedin.com/company/innova-consultoria-junior'>
                         <LinkedIn sx={{
-                            width: "4vw",
+                            width: mobile ? "7vw" : "4vw",
                             height: "5vh",
                             color: "white"
                         }}></LinkedIn>

@@ -16,10 +16,10 @@ const AdvisorComponent = ({ name, description, image }) => {
   const containerStyle = {
     backgroundColor: theme.palette.primary.main,
     position: 'relative',
-    width: '18vw',
-    height: '22vw',
+    width: (desktop ? "18vw" : (tablet ? "20vw" : "35vw")),
+    height: (desktop ? "22vw" : (tablet ? "24vw" : "39vw")),
     overflow: 'visible',
-    borderRadius: "8%",
+    borderRadius: "5%",
     marginBottom: 35,
     zIndex: "2"
   };
@@ -51,7 +51,7 @@ const AdvisorComponent = ({ name, description, image }) => {
     backgroundColor: 'white',
     padding: '5px',
     margin: 'auto',
-    borderRadius: desktop ? 15 : 10,
+    borderRadius: desktop ? 15 : 8,
     overflow: 'hidden',
     zIndex: 2,
     display: "flex",
@@ -78,7 +78,7 @@ const AdvisorComponent = ({ name, description, image }) => {
 
   const nameStyle = {
     fontWeight: 'bold',
-    fontSize: '1.4vw',
+    fontSize: (desktop ? "1.4vw" : (tablet ? "1.8vw" : "3vw")),
     color: theme.palette.primary.main,
     fontFamily: theme.typography.fontFamily,
     display: "flex",
