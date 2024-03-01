@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, styled, ImageListItem, Typography, Link } from '@mui/material';
+import { AppBar, Box, styled, ImageListItem, Typography, Link } from '@mui/material';
 import React from 'react'
 
 import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';

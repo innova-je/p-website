@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Typography, Link } from '@mui/material';
+import { Typography } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
-import {Email, LinkedIn } from '@mui/icons-material';
 import { useMediaQuery } from 'react-responsive';
 
 const CustomComponent = ({ name, description, image }) => {
