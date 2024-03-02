@@ -121,8 +121,10 @@ const Home = () => {
             position: "absolute",
             top: "45%",
             zIndex: "1",
+            backgroundColor: "red"
         }}>
-            <Typography sx={{
+            <div style={{backgroundColor: "green", width: "100%"}}>
+                <Typography sx={{
                 position: "relative",
                 textAlign: "center",
                 height: "100%",
@@ -135,6 +137,8 @@ const Home = () => {
                 color: "transparent",
                 backgroundImage: "radial-gradient(circle, #052533, #631436)",
             }}>INNOVATING </Typography>
+            </div>
+            
 
             <Box sx={{
                 display: "flex",

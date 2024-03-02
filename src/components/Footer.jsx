@@ -6,49 +6,51 @@ import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
 import InNovaLogo from '../images/OurLogos/logos-10.png'
 import CustomButton from './CustomButton';
 
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 import { useMediaQuery } from 'react-responsive';
 
 
 const Footer = () => {
 
+    const location = useLocation();
+    const isJoinUsPage = location.pathname === '/join-us';
+
     const mobile = useMediaQuery({ maxWidth: 600 });
     const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
     const desktop = useMediaQuery({ minWidth: 1081 });
 
-    const FooterBar = styled(AppBar)(({ theme }) => ({
-        backgroundColor: "#F0F0F0",
+    const FooterBar = styled(AppBar)(() => ({
+        backgroundColor: isJoinUsPage ? "#FFFFFF" : "#F0F0F0",
         position: "absolute",
         width: "100%",
-        height: "32%",
+        height: mobile ? "20vh" : "32%",
         justifyContent: "center",
         alignItems: "center",
         boxShadow: "none",
       }));
 
-    const Logo = styled(ImageListItem)(({ theme }) => ({
+    const Logo = styled(ImageListItem)(() => ({
         position: "absolute",
-        bottom: "0px",
-        width: mobile ? "12%" : "17%",
-        height: mobile ? "12%" : "17%",
-        margin: "6vh"
+        width: mobile ? "50%" : "17%",
+        height: mobile ? "50%" : "17%",
+        marginLeft: mobile ? "" : "10%",
+        marginTop: mobile ? "" : "6%"
       }));
 
-    const Pages = styled(Box)(({ theme }) => ({
+    const Pages = styled(Box)(() => ({
         position: "relative",
-        top: "45%",
-        height: "auto",
+        top: mobile ? "none" : "45%",
         width: "100%",
         display: "grid",
         gridTemplateColumns: "2fr 2fr",
         rowGap: "2px",
-        columnGap: "20%"
+        columnGap: mobile ? "5%" : "20%",
     }));   
 
-    const SocialMedia = styled(Box)(({ theme }) => ({
+    const SocialMedia = styled(Box)(() => ({
         display: "flex",
-        flexDirection: "row",
+        flexDirection: mobile ? "column" : "row",
         columnGap: mobile ? "10%" : "none",
         position: "relative",
         top: mobile ? "none" : "3vh",
@@ -58,7 +60,7 @@ const Footer = () => {
       }));
 
     const PagesLinkStyle = {
-        fontSize: "1vw",
+        fontSize: mobile ? "3.5vw" : "1vw",
         color: "white",
         fontWeight: "400"
       };
@@ -76,38 +78,62 @@ const Footer = () => {
         window.scrollTo(0, 0);
       };
 
-    if(desktop){
         return (
             <FooterBar position='bottom-center'>            
                 <Box sx={{
                         position: "absolute",
                         display: "flex",
                         flexDirection: "row",
-                        gap: "50px",
+                        gap: mobile ? "none" : "50px",
                         justifyContent: "flex-start",
                         alignItems: "center",
                         top: "0",
                         right: "0",
-                        width: "70%",
+                        width: mobile ? "100%" : "70%",
                         height: "100%",
                         backgroundColor: "#732043",
-                        borderRadius: "20px 0 0 0",
+                        borderRadius: mobile ? "none" : "20px 0 0 0",
                     }}>
+
+                <div style={{
+                    position: "relative",
+                    height: "100%",
+                    width: "30%",
+                    display: mobile ? "flex" : "none",
+                    alignItems: "center",
+                    justifyContent: "center",
+                }}>
+                   <Logo>
+                    <img alt='In-Nova Logo' src={InNovaLogo} />
+                    </Logo> 
+                </div>
+
                     <Box sx={{
+                        position: "relative",
                         height: "100%",
-                        width: "35%",
-                        margin: "0 0 0 6vw",
+                        width: mobile ? "50%" : "35%",
+                        margin: mobile ? "none" : "0 0 0 6vw",
+                        display: "flex",
                     }}>
-                        <Typography sx={{
+
+                    <Typography sx={{
                         position: "absolute",
                         top: "5%",
                         fontSize: "1.9vw",
                         fontWeight: 200,
                         lineHeight: "40px",
                         letterSpacing: "-0.02em",
-                        textAlign: "left",         
+                        textAlign: "left",
+                        display: mobile ? "none" : ""  
                      }}>Let's discuss and <br/> bring your vision to life.</Typography>
     
+                    <div style={{
+                        width: "100%",
+                        height: mobile ? "" : "100%",
+                        display: mobile ? "flex" : "",
+                        alignItems: mobile ? "center" : "",
+                        justifyContent: mobile ? "center" : ""
+                    }}>
                     <Pages>
                     <NavLink to="/about-us" style={NavLinkStyle} onClick={() => handleNavLinkClick('/about-us')}>
                         <Typography style={PagesLinkStyle}>About Us</Typography>
@@ -131,52 +157,70 @@ const Footer = () => {
                             <Typography style={PagesLinkStyle}>Our Advisors</Typography>    
                         </NavLink>                             
                     </Pages>
-    
+                    </div>
+                    
                     </Box>
                     
-                    <Box sx={{
-                        position: "absolute",
-                        right: "5%",
-                        width: "20vw",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        height: "100%",
-                        zIndex: "999",
-                    }}>
-                    <CustomButton customBackgroundColor = "#052533" sx={{
-                        position: "absolute",
+                <div style={{
+                    position: "absolute",
+                    right: mobile ? "0%" : "5%",
+                    width: "20%",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center"           
+                }}>
+                    <div style={{
+                        position: "relative",
                         top: "10%",
+                        display: mobile ? "none" : "flex",
+                        justifyContent: "center",
+                        alignItems: "center"
+                    }}>
+                        <CustomButton customBackgroundColor = "#052533" sx={{
                     }}>
                         <Typography sx={{fontSize: "1vw", zIndex: "2"}}>Let's Talk</Typography>
                         <ArrowForward sx={{height: "50%", zIndex: "2"}}></ArrowForward>
                     </CustomButton>
-    
-                    <SocialMedia>
+                    </div>
+
+                    <div style={{
+                        height: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}>
+                       <SocialMedia>
                         <Link href="mailto:geral@innova.pt">
                         <Email sx={{
-                            width: "4vw",
+                            width: mobile ? "7vw" : "4vw",
                             height: "5vh",
                             color: "white"
                         }}></Email>
                         </Link>
                         <Link href='https://www.instagram.com/in.nova.pt'>
                             <Instagram sx={{
-                            width: "4vw",
+                            width: mobile ? "7vw" : "4vw",
                             height: "5vh",
                             color: "white"
                         }}></Instagram>
                         </Link>
                         <Link href='https://www.linkedin.com/company/innova-consultoria-junior'>
                         <LinkedIn sx={{
-                            width: "4vw",
+                            width: mobile ? "7vw" : "4vw",
                             height: "5vh",
                             color: "white"
                         }}></LinkedIn>
                         </Link>
-                    </SocialMedia>
-                    <Typography sx={{
+                    </SocialMedia> 
+                    </div>
+                    
+                    <div style={{
+                        height: "100%",
+                        display: mobile ? "none" : ""
+                    }}>
+                        <Typography sx={{
                         fontSize: "0.8rem",
                         fontWeight: "100",
                         lineHeight: "17px",
@@ -196,10 +240,11 @@ const Footer = () => {
                         position: "relative",
                         top: "17%"
                     }}>Quinta da Torre, Caparica</Typography>
-    
-                    </Box>
+                    </div>
                     
-                    </Box>
+                </div> 
+                    
+                </Box>
     
                 <Box sx={{
                     height: "100%",
@@ -207,19 +252,23 @@ const Footer = () => {
                     position: "absolute",
                     bottom: "0px",
                     left: "0px",
-                    backgroundColor: "#732043",// TODO: mudar para theme.pallete.primary.main
-                    zIndex: "1000"
+                    backgroundColor: "#732043",
+                    zIndex: "1000",
+                    display: mobile ? "none" : "",
+                    flexDirection: "row"
                 }}>
                     <Box sx={{
                         width: "100%",
                         height: "34%",
-                        backgroundColor: "#F0F0F0",
+                        backgroundColor: isJoinUsPage ? "#FFFFFF" : "#F0F0F0",
                         borderRadius: "0 0px 20px 0",
                     }}>
-                    </Box>                
-                   <Logo>
+                    </Box>
+
+                    <Logo>
                         <img alt='In-Nova Logo' src={InNovaLogo}/>
-                    </Logo>
+                    </Logo>       
+                   
                     <Box
                     sx={{
                         display: "flex",
@@ -239,61 +288,6 @@ const Footer = () => {
             </FooterBar>      
     
         )
-    }else if(mobile){
-        return(
-            <FooterBar position='bottom-center'>
-            <div style={{
-                width: "100%",
-                height: "20vh",
-                backgroundColor: "#732043",
-                position: "absolute",
-                bottom: 0
-            }}>
-                <Logo>
-                    <img alt='In-Nova Logo' src={InNovaLogo}/>
-                </Logo>
-                <Box sx={{
-                        position: "absolute",
-                        right: "5%",
-                        width: "20vw",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        height: "100%",
-                        zIndex: "999",
-                    }}>
-    
-                    <SocialMedia>
-                        <Link href="mailto:geral@innova.pt">
-                        <Email sx={{
-                            width: mobile ? "7vw" : "4vw",
-                            height: "5vh",
-                            color: "white"
-                        }}></Email>
-                        </Link>
-                        <Link href='https://www.instagram.com/in.nova.pt'>
-                            <Instagram sx={{
-                            width: mobile ? "7vw" : "4vw",
-                            height: "5vh",
-                            color: "white"
-                        }}></Instagram>
-                        </Link>
-                        <Link href='https://www.linkedin.com/company/innova-consultoria-junior'>
-                        <LinkedIn sx={{
-                            width: mobile ? "7vw" : "4vw",
-                            height: "5vh",
-                            color: "white"
-                        }}></LinkedIn>
-                        </Link>
-                    </SocialMedia>
-    
-                    </Box>
-            </div>
-        </FooterBar>
-        )        
     }
-    
-}
 
 export default Footer
