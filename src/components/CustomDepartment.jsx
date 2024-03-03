@@ -6,6 +6,8 @@ import CustomComponent from './MemberComponents';
 const CustomDepartment = ({ Department, names, images }) => {
   const theme = useTheme();
 
+  const directorTitle = Department + " Director"
+
   return (
     <ThemeProvider theme={theme}>
       <Typography 
@@ -18,7 +20,7 @@ const CustomDepartment = ({ Department, names, images }) => {
           marginLeft: 15,
         }}
       >
-        {Department}
+        {Department + " Team"}
       </Typography>
             
       <Box
@@ -36,10 +38,10 @@ const CustomDepartment = ({ Department, names, images }) => {
         }}
       >
         {/* First CustomComponent with specific props */}
-        <CustomComponent title='Sales Director' name={names[0]} image={images[0]} />
+        <CustomComponent title={directorTitle} name={names[0]} image={images[0]} />
 
         {/* Remaining CustomComponent instances */}
-        {names.slice(1).map((name, index) => (
+        {names.slice(1).map((name, index) => (          
           <CustomComponent key={index + 1} title='' name={name} image={images[index + 1]} />
         ))}
       </Box>

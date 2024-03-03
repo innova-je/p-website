@@ -9,6 +9,8 @@ import CustomDepartment from '../components/CustomDepartment';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import laso from '../Animations/laso-animation.json';
 
+import Members from '../Members.json'
+
 const CustomTitle = ({ title, subtitle, theme }) => {
 
     return (
@@ -40,11 +42,31 @@ const CustomTitle = ({ title, subtitle, theme }) => {
     );
 };
 
+const getMemberNames = (departmentName) => {
+    const department = Members.departments.find((dept) => dept.name === departmentName);
+    return department ? department.members.map((member) => member.name) : [];
+};
+
+const getMemberImages = (departmentName) => {
+    const department = Members.departments.find((dept) => dept.name === departmentName);
+    return department ? department.members.map((member) => member.imgDirectory) : [];
+};
+
 
 const OurTeam = () => {
     const theme = useTheme();
-    const sales_names = ['Inês Mendes', 'Leonor Almeida', 'Carolina Maurício', 'Nuno Alves', 'Nuno Alves', 'Nuno Alves', 'Nuno Alves'];
-    const sales_images = [{ PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }, { PlaceHolder }];
+    
+    const sales_members_names = getMemberNames('Comercial');
+    const marketing_members_names = getMemberNames('Marketing');
+    const projects_members_names = getMemberNames('Projetos');
+    const quality_members_names = getMemberNames('Qualidade');
+    const hr_members_names = getMemberNames('Recursos Humanos');
+
+    const sales_members_images = getMemberImages('Comercial');
+    const marketing_members_images = getMemberImages('Marketing');
+    const projects_members_images = getMemberImages('Projetos');
+    const quality_members_images = getMemberImages('Qualidade');
+    const hr_members_images = getMemberImages('Recursos Humanos');
 
     const lasoRef = useRef<LottieRefCurrentProps>(null);
 
@@ -117,11 +139,11 @@ const OurTeam = () => {
             </Box>
 
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', p: 1 }} >
-                <CustomComponent title='Sales Director' name='Inês Mendes' image={PlaceHolder} />
-                <CustomComponent title='Marketing Director' name='Matilde Azadinho' image={PlaceHolder} />
-                <CustomComponent title='Projects Director' name='Vicente Rodriques dos Santos' image={PlaceHolder} />
-                <CustomComponent title='Quality Director' name='Filipa Santos' image={PlaceHolder} />
-                <CustomComponent title='Human Resources Director' name='Rodrigo Marques' image={PlaceHolder} />
+                <CustomComponent title='Sales Director' name={sales_members_names[0]} image={sales_members_images[0]} />
+                <CustomComponent title='Marketing Director' name={marketing_members_names[0]} image={marketing_members_images[0]} />
+                <CustomComponent title='Projects Director' name={projects_members_names[0]} image={projects_members_images[0]} />
+                <CustomComponent title='Quality Director' name={quality_members_names[0]} image={quality_members_images[0]} />
+                <CustomComponent title='Human Resources Director' name={hr_members_names[0]} image={hr_members_images[0]} />
             </Box>
 
             <Box marginTop={10} marginBottom={10} textAlign="center">
@@ -130,19 +152,19 @@ const OurTeam = () => {
 
 
             {/* SALES TEAM */}
-            <CustomDepartment Department='Sales Team' names={sales_names} images={sales_images} />
+            <CustomDepartment Department='Sales' names={sales_members_names} images={sales_members_images} />
 
             {/* MARKETING TEAM */}
-            <CustomDepartment Department='Marketing Team' names={sales_names} images={sales_images} />
+            <CustomDepartment Department='Marketing' names={marketing_members_names} images={marketing_members_images} />
 
             {/* PROJECTS TEAM */}
-            <CustomDepartment Department='Projects Team' names={sales_names} images={sales_images} />
+            <CustomDepartment Department='Projects' names={projects_members_names} images={projects_members_images} />
 
             {/* QUALITY TEAM */}
-            <CustomDepartment Department='Quality Team' names={sales_names} images={sales_images} />
+            <CustomDepartment Department='Quality' names={quality_members_names} images={quality_members_images} />
 
             {/* HUMAN RESOURCES TEAM */}
-            <CustomDepartment Department='Human Resources Team' names={sales_names} images={sales_images} />
+            <CustomDepartment Department='Human Resources' names={hr_members_names} images={hr_members_images} />
 
         </>
     );

@@ -7,7 +7,9 @@ import AdvisorComponent from '../components/AdvisorComponent';
 import AlumniComponent from '../components/AlumniComponent';
 import { useMediaQuery } from 'react-responsive';
 
-const CustomTitle = ({ title, theme }) => {
+import Advisors from '../Advisors.json'
+
+const CustomTitle = ({ title, theme }) => { 
 
     const mobile = useMediaQuery({ maxWidth: 600 });
     const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
@@ -37,22 +39,8 @@ const CustomTitle = ({ title, theme }) => {
 }; 
   
 
-const advisorsBoardData = [
-  { name: 'Cláudia Quaresma', description: "Assistant Professor at NOVA SST Coordinator of 3D Printing Center for Health Researcher at LIBPhys" , image: PlaceHolder},
-  { name: 'André Carvalho', description: "Assistant Professor at NOVA SST Researcher at 2Ai IPCA Researcher at Centro ALGORITMI" , image: PlaceHolder},
-  { name: 'Rui Gonçalves', description: "PhD Student of Mechanical Engineering In-Nova Alumni" , image: PlaceHolder},
-  { name: 'João Leitão', description: "Associate Professor at NOVA SST Researcher at NOVA LINCS - NOVA Laboratory for Computer Science and Informatics" , image: PlaceHolder},
-  { name: 'Ana Rodrigo Gonçalves', description: "Head of Partnerships and Engagement at NOVA SST Senior Consultant at MACGROUP" , image: PlaceHolder},
-  { name: 'Daniel Aelenei', description: "Associate Professor at NOVA SST" , image: PlaceHolder},
-];
-
-const alumniBoardData = [
-    { name: 'Vasco Matos', description: "Associate Professor at NOVA SST Researcher at NOVA LINCS - NOVA Laboratory for Computer Science and Informatics" , image: PlaceHolder},
-    { name: 'Ema Paulo', description: "Assistant Professor at NOVA SST Researcher at 2Ai IPCA Researcher at Centro ALGORITMI" , image: PlaceHolder},
-    { name: 'Pedro Mirão', description: "PhD Student of Mechanical Engineering In-Nova Alumni" , image: PlaceHolder},
-    { name: 'Guilherme Salvador', description: "Associate Professor at NOVA SST Researcher at NOVA LINCS - NOVA Laboratory for Computer Science and Informatics" , image: PlaceHolder},
-    { name: 'Ana Rita Rebelo', description: "Head of Partnerships and Engagement at NOVA SST Senior Consultant at MACGROUP" , image: PlaceHolder},
-  ];
+const advisoryBoardData = Advisors.advisoryBoard[0]?.advisors;
+const alumniBoardData = Advisors.alumniBoard[0]?.alumnis;
 
 
 const OurAdvisors = () => {
@@ -113,12 +101,12 @@ const OurAdvisors = () => {
                     gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)")),                    
                     gridTemplateRows: "repeat(2, 1fr)" 
                     }}>
-            {advisorsBoardData.map((advisor, index) => (
+            {advisoryBoardData.map((advisor, index) => (
                 <AdvisorComponent
                 key={index}
                 name={advisor.name}
                 description={advisor.description}
-                image={advisor.image}
+                image={advisor.imgDirectory}
                 />
             ))}
             </Box>
@@ -151,23 +139,25 @@ const OurAdvisors = () => {
                 rowGap: "10%",
                 gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)")),
                 }} >
-            {alumniBoardData.slice(0,3).map((advisor, index) => (
+            {alumniBoardData.slice(0,3).map((alumni, index) => (
                 <AlumniComponent
                 key={index}
-                name={advisor.name}
-                description={advisor.description}
-                image={advisor.image}
+                name={alumni.name}
+                description={alumni.description}
+                testimony={alumni.testimony}
+                image={alumni.imgDirectory}
                 />
             ))}
             </Box>
             
             <Box sx={{ display: 'flex', justifyContent: 'center', columnGap: "5%"}} >
-            {alumniBoardData.slice(3,5).map((advisor, index) => (
+            {alumniBoardData.slice(3,5).map((alumni, index) => (
                 <AlumniComponent
                 key={index}
-                name={advisor.name}
-                description={advisor.description}
-                image={advisor.image}
+                name={alumni.name}
+                description={alumni.description}
+                testimony={alumni.testimony}
+                image={alumni.imgDirectory}
                 />
             ))}
             </Box>

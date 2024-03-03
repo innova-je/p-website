@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Typography, Link } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
 import {Email, LinkedIn } from '@mui/icons-material';
@@ -12,6 +12,21 @@ const AdvisorComponent = ({ name, description, image }) => {
 
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
+
+  const [dynamicImage, setDynamicImage] = useState(null);
+
+  useEffect(() => {
+    const loadImage = async () => {
+      try {
+        const { default: dynamicImage } = await import(`../images/MemberImages/${image}`);
+        setDynamicImage(dynamicImage);
+      } catch (error) {
+        console.error('Error loading image:', error);
+      }
+    };
+
+    loadImage();
+  }, [image]);
 
   const containerStyle = {
     backgroundColor: theme.palette.primary.main,
@@ -121,7 +136,7 @@ const AdvisorComponent = ({ name, description, image }) => {
           </Link>          
         </div>
         <div style={imageContainerStyle}>
-          <img src={image} alt="imagem de perfil" style={imageStyle} />
+          <img src={dynamicImage} alt="imagem de perfil" style={imageStyle} />
         </div>
         <div style={overlayStyle}>
           <Typography

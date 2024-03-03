@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Typography } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
 import { useMediaQuery } from 'react-responsive';
@@ -11,6 +11,21 @@ const CustomComponent = ({ name, description, image }) => {
 
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
+
+  const [dynamicImage, setDynamicImage] = useState(null);
+
+  useEffect(() => {
+    const loadImage = async () => {
+      try {
+        const { default: dynamicImage } = await import(`../images/MemberImages/${image}`);
+        setDynamicImage(dynamicImage);
+      } catch (error) {
+        console.error('Error loading image:', error);
+      }
+    };
+
+    loadImage();
+  }, [image]);
 
   const containerStyle = {
     backgroundColor: theme.palette.primary.main,
@@ -121,7 +136,7 @@ const CustomComponent = ({ name, description, image }) => {
       >
         
         <div style={imageContainerStyle}>
-          <img src={image} alt="imagem de perfil" style={imageStyle} />
+          <img src={dynamicImage} alt="imagem de perfil" style={imageStyle} />
           <Typography
             align="center"
             noWrap
@@ -142,7 +157,7 @@ const CustomComponent = ({ name, description, image }) => {
             align="center"
             style={descriptionStyle}
           >
-            {description}
+            {description}{/*Aqui quando se da hover tem que se mudar para testimony */}
           </Typography>
         </div>
       </div>
