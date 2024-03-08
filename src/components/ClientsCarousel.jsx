@@ -1,4 +1,5 @@
 import { Box, Typography, styled, keyframes} from '@mui/material'
+import { useMediaQuery } from 'react-responsive';
 
 import Futuralia from '../images/HomePageImages/ClientsLogos/FUTURALIA.webp'
 import Sucees from '../images/HomePageImages/ClientsLogos/SUCEES.png'
@@ -43,15 +44,17 @@ const clientsData = [//TODO: arranjar maneira de nao ser preciso duplicar os dad
 
 const ClientsCarousel = () => {
 
+  const mobile = useMediaQuery({ maxWidth: 600 });
+  const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+  const desktop = useMediaQuery({ minWidth: 1081 });
+
   const ClientsBox = styled(Box)(({ theme }) => ({
     position: "relative",
     marginTop: "5%",
-    width: "100%",
     justifyContent: "center",
     alignItems: "center",
     overflow: "hidden", 
-    whiteSpace: "nowrap",    
-    transform: "scale(1)"
+    whiteSpace: "nowrap",
   }));
 
   const slideAnimation = keyframes`
@@ -67,7 +70,6 @@ const ClientsCarousel = () => {
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    width: "100%",
     animation: `${slideAnimation} 20s infinite linear`,
     '&:hover': {
       animationPlayState: 'paused',
@@ -80,7 +82,7 @@ const ClientsCarousel = () => {
     justifyContent: "center",
     color: "#732043",
     fontWeight: "700",
-    fontSize: "3.5vw",
+    fontSize: (desktop ? "3.5dvw" : (tablet ? "4dvw" : "6dvw")),
   };
   
 

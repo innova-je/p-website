@@ -1,20 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Typography, Link } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
 import {Email, LinkedIn } from '@mui/icons-material';
-
+import { useMediaQuery } from 'react-responsive';
 
 const AdvisorComponent = ({ name, description, image }) => {
+
+  const mobile = useMediaQuery({ maxWidth: 600 });
+    const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+    const desktop = useMediaQuery({ minWidth: 1081 });
+
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
+
+  const [dynamicImage, setDynamicImage] = useState(null);
+
+  useEffect(() => {
+    const loadImage = async () => {
+      try {
+        const { default: dynamicImage } = await import(`../images/MemberImages/${image}`);
+        setDynamicImage(dynamicImage);
+      } catch (error) {
+        console.error('Error loading image:', error);
+      }
+    };
+
+    loadImage();
+  }, [image]);
 
   const containerStyle = {
     backgroundColor: theme.palette.primary.main,
     position: 'relative',
-    width: '18vw',
-    height: '22vw',
+    width: (desktop ? "18vw" : (tablet ? "20vw" : "35vw")),
+    height: (desktop ? "22vw" : (tablet ? "24vw" : "39vw")),
     overflow: 'visible',
-    borderRadius: 15,
+    borderRadius: "5%",
     marginBottom: 35,
     zIndex: "2"
   };
@@ -33,9 +53,7 @@ const AdvisorComponent = ({ name, description, image }) => {
     objectFit: 'cover',
     position: 'absolute',
     top: 0,
-    left: 0,
-    filter: isHovered ? 'grayscale(0%)' : 'grayscale(100%)',
-    transition: 'filter 0.4s ease-in-out',
+    left: 0
   };
 
   const overlayStyle = {
@@ -48,7 +66,7 @@ const AdvisorComponent = ({ name, description, image }) => {
     backgroundColor: 'white',
     padding: '5px',
     margin: 'auto',
-    borderRadius: 15,
+    borderRadius: desktop ? 15 : 8,
     overflow: 'hidden',
     zIndex: 2,
     display: "flex",
@@ -75,7 +93,7 @@ const AdvisorComponent = ({ name, description, image }) => {
 
   const nameStyle = {
     fontWeight: 'bold',
-    fontSize: '1.4vw',
+    fontSize: (desktop ? "1.4vw" : (tablet ? "1.8vw" : "3vw")),
     color: theme.palette.primary.main,
     fontFamily: theme.typography.fontFamily,
     display: "flex",
@@ -118,7 +136,7 @@ const AdvisorComponent = ({ name, description, image }) => {
           </Link>          
         </div>
         <div style={imageContainerStyle}>
-          <img src={image} alt="imagem de perfil" style={imageStyle} />
+          <img src={dynamicImage} alt="imagem de perfil" style={imageStyle} />
         </div>
         <div style={overlayStyle}>
           <Typography

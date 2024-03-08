@@ -14,7 +14,7 @@ import Accomplishment from '../components/AccomplishmentComponent';
 
 import { NavLink, useNavigate } from 'react-router-dom';
 import ServicesCarousel from '../components/ServicesCarousel';
-
+import { useMediaQuery } from 'react-responsive';
 
 const accomplishmentsData = [
     { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "janeiro 2024"},
@@ -25,21 +25,26 @@ const accomplishmentsData = [
 
 const Home = () => {
 
+    const mobile = useMediaQuery({ maxWidth: 600 });
+    const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+    const desktop = useMediaQuery({ minWidth: 1081 });
+
     const StatsBox = styled(Box)(() => ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        textAlign: "center",
         alignItems: "center",
       }));
 
     const statsStyle = {
-        fontSize: "4.5vw",
+        fontSize: mobile ? "9vw" : "4.5vw",
         color: "#732043",
         fontWeight: "700"
     };
 
     const underStatsStyle = {
-        fontSize: "1.5vw",
+        fontSize: mobile ? "4vw" : "1.5vw",
         color: "#732043",
         fontWeight: "500",
         marginTop: "-5%"
@@ -116,26 +121,29 @@ const Home = () => {
             position: "absolute",
             top: "45%",
             zIndex: "1",
+            backgroundColor: "red"
         }}>
-            <Typography sx={{
+            <div style={{backgroundColor: "green", width: "100%"}}>
+                <Typography sx={{
                 position: "relative",
                 textAlign: "center",
                 height: "100%",
                 fontWeight: "853",
-                fontSize: "9vw",
-                lineHeight: "200px",
+                fontSize: (desktop ? "9dvw" : (tablet ? "9dvw" : "11dvw")),
+                lineHeight: (desktop ? "200px" : (tablet ? "125px" : "50px")),
                 letterSpacing: "0.16em",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 color: "transparent",
                 backgroundImage: "radial-gradient(circle, #052533, #631436)",
             }}>INNOVATING </Typography>
+            </div>
+            
 
             <Box sx={{
                 display: "flex",
                 flexDirection: "row",
-                gap: "35px",
-                width: "95%"
+                gap: "35px"
             }}>
                 <Typography sx={{
                     marginLeft: "17%",
@@ -147,7 +155,7 @@ const Home = () => {
                 <Typography sx={{
                     marginTop: "-3%",
                     fontWeight: "853",
-                    fontSize: "9vw",
+                    fontSize: (desktop ? "9dvw" : (tablet ? "9dvw" : "11dvw")),
                     letterSpacing: "0.16em",
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
@@ -166,13 +174,13 @@ const Home = () => {
         }}>
             <Typography sx={{
                 color: "#052533",
-                fontSize: "3vw",
+                fontSize: (desktop ? "3dvw" : (tablet ? "3.5dvw" : "6dvw")),
                 fontWeight: "600"
             }}>Your Go-To</Typography>
             <Typography sx={{
                 marginTop: "-2%",
                 color: "#732043",
-                fontSize: "4.5vw",
+                fontSize: (desktop ? "4.5dvw" : (tablet ? "5.5dvw" : "7dvw")),
                 fontWeight: "700"
             }}>Technology Consultants</Typography>   
 
@@ -271,7 +279,7 @@ const Home = () => {
                     marginLeft: "4%",
                     textAlign: "left",
                     color: "#052533",
-                    fontSize: "2vw",
+                    fontSize: (desktop ? "2vw" : (tablet ? "2.5dvw" : "3.5dvw")),
                     fontWeight: "300", 
                 }}>And we also take pride in what we do and aim to go beyond</Typography>
             </div>
@@ -284,9 +292,9 @@ const Home = () => {
         <Box sx={{
             width: "85%",
             height: "30vh",
-            display: "flex",
-            flexDirection: "row",
-            gap: "10%",
+            display: mobile ? "grid" : "flex",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: mobile ? "0%" : "10%",
             margin: "0 auto",
             marginTop: "-5%",
             marginBottom: "5%",
@@ -323,14 +331,14 @@ const Home = () => {
                 justifyContent: "center",
                 color: "#732043",
                 fontWeight: "700",
-                fontSize: "3.5vw",
+                fontSize: (desktop ? "3.5dvw" : (tablet ? "4dvw" : "6dvw")),
             }}>Our Latest Accomplishments</Typography>
             <Box sx={{
                 width: "100vw",
-                height: "70vh",
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: mobile ? "column" : "row",//Aqui se calhar é melhor ter um slider com setas
                 justifyContent: "center",
+                alignItems: "center",
                 gap: "5%",
                 marginTop: "3%"
             }}>

@@ -5,8 +5,15 @@ import PlaceHolder from '../images/other/placeholder.png';
 import elements from '../images/other/Elements.png';
 import AdvisorComponent from '../components/AdvisorComponent';
 import AlumniComponent from '../components/AlumniComponent';
+import { useMediaQuery } from 'react-responsive';
 
-const CustomTitle = ({ title, theme }) => {
+import Advisors from '../Advisors.json'
+
+const CustomTitle = ({ title, theme }) => { 
+
+    const mobile = useMediaQuery({ maxWidth: 600 });
+    const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+    const desktop = useMediaQuery({ minWidth: 1081 });
 
     return (
         <>
@@ -18,51 +25,30 @@ const CustomTitle = ({ title, theme }) => {
                     fontFamily: theme.typography.fontFamily,
                     backgroundColor: "#F0F0F0",
                     height: "15vh",
-                    width: "30%",
                     margin: "0 auto",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "3vw"
+                    fontSize: (desktop ? "3dvw" : (tablet ? "4dvw" : "6dvw")),
                 }}
             >
                 {title}
             </Typography>
         </>
     );
-};
-
-
-const backgroundTextStyle = {
-    fontSize: '12vw',
-    width: '100%',
-    color: '#F0F0F0',
-    textShadow: '1px 1px #73204340, -1px -1px #73204340, 1px -1px #73204340, -1px 1px #73204340',
-    zIndex: '0',
-    textAlign: 'center',
-  };
-  
+}; 
   
 
-const advisorsBoardData = [
-  { name: 'Cláudia Quaresma', description: "Assistant Professor at NOVA SST Coordinator of 3D Printing Center for Health Researcher at LIBPhys" , image: PlaceHolder},
-  { name: 'André Carvalho', description: "Assistant Professor at NOVA SST Researcher at 2Ai IPCA Researcher at Centro ALGORITMI" , image: PlaceHolder},
-  { name: 'Rui Gonçalves', description: "PhD Student of Mechanical Engineering In-Nova Alumni" , image: PlaceHolder},
-  { name: 'João Leitão', description: "Associate Professor at NOVA SST Researcher at NOVA LINCS - NOVA Laboratory for Computer Science and Informatics" , image: PlaceHolder},
-  { name: 'Ana Rodrigo Gonçalves', description: "Head of Partnerships and Engagement at NOVA SST Senior Consultant at MACGROUP" , image: PlaceHolder},
-  { name: 'Daniel Aelenei', description: "Associate Professor at NOVA SST" , image: PlaceHolder},
-];
-
-const alumniBoardData = [
-    { name: 'Vasco Matos', description: "Associate Professor at NOVA SST Researcher at NOVA LINCS - NOVA Laboratory for Computer Science and Informatics" , image: PlaceHolder},
-    { name: 'Ema Paulo', description: "Assistant Professor at NOVA SST Researcher at 2Ai IPCA Researcher at Centro ALGORITMI" , image: PlaceHolder},
-    { name: 'Pedro Mirão', description: "PhD Student of Mechanical Engineering In-Nova Alumni" , image: PlaceHolder},
-    { name: 'Guilherme Salvador', description: "Associate Professor at NOVA SST Researcher at NOVA LINCS - NOVA Laboratory for Computer Science and Informatics" , image: PlaceHolder},
-    { name: 'Ana Rita Rebelo', description: "Head of Partnerships and Engagement at NOVA SST Senior Consultant at MACGROUP" , image: PlaceHolder},
-  ];
+const advisoryBoardData = Advisors.advisoryBoard[0]?.advisors;
+const alumniBoardData = Advisors.alumniBoard[0]?.alumnis;
 
 
 const OurAdvisors = () => {
+
+    const mobile = useMediaQuery({ maxWidth: 600 });
+    const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+    const desktop = useMediaQuery({ minWidth: 1081 });
+
     const theme = useTheme();
     
     return (
@@ -77,7 +63,7 @@ const OurAdvisors = () => {
                     align="center"
                     gutterBottom
                     sx={{
-                        fontSize: "5vw",
+                        fontSize: (desktop ? "5dvw" : (tablet ? "6dvw" : "8dvw")),
                         fontWeight: 'Regular',
                         position: 'relative',
                         top: '50%',
@@ -89,38 +75,16 @@ const OurAdvisors = () => {
                     We are not alone
                 </Typography>             
                 
-            </Box>
+            </Box>           
 
-            
-
-            {/*
-            
-            <Typography style={backgroundTextStyle} sx={{
-                position: "absolute",
-                top: "95%"
-            }} noWrap>ADVISORY BOARD</Typography>
-
-            <Typography style={backgroundTextStyle} sx={{
-                position: "absolute",
-                top: "145%"
-            }} noWrap>ADVISORY BOARD</Typography>
-            
-            
-            */}
-            
-
-
-
-            <Box marginTop={15} marginBottom={4} textAlign="center" position="relative">
+            <Box sx={{
+                marginTop: (desktop ? 15 : (tablet ? 6 : 0)),
+                marginBottom: 4,
+                textAlign: "center",
+                position: "relative"
+            }}>
                 <CustomTitle title="Advisory Board"  theme={theme} />
             </Box>
-
-            {/*
-            <Typography style={backgroundTextStyle} sx={{
-                position: "relative",
-                top: "0%"
-            }} noWrap>ADVISORY BOARD</Typography>            
-            */}
             
             <Box sx={{
                 display: "flex",
@@ -128,32 +92,37 @@ const OurAdvisors = () => {
                 position: "relative",
                 marginTop: "5%",
             }}>
-                <Box position="relative" sx={{ display: 'grid', justifyContent: 'center', columnGap: "5%", rowGap: "10%", gridTemplateColumns: "repeat(3, 1fr)", gridTemplateRows: "repeat(2, 1fr)" }}>
-            {advisorsBoardData.map((advisor, index) => (
+                <Box position="relative" sx={{ 
+                    display: (desktop ? "grid" : (tablet ? "grid" : "grid")),
+                    flexDirection:"column",
+                    justifyContent: 'center', 
+                    columnGap: mobile ? "10%" : "5%", 
+                    rowGap: mobile ? "5%" : "10%", 
+                    gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)")),                    
+                    gridTemplateRows: "repeat(2, 1fr)" 
+                    }}>
+            {advisoryBoardData.map((advisor, index) => (
                 <AdvisorComponent
                 key={index}
                 name={advisor.name}
                 description={advisor.description}
-                image={advisor.image}
+                image={advisor.imgDirectory}
                 />
             ))}
             </Box>
             </Box>
             
             <Box sx={{
-                height: "160vh",
+                height: mobile ? "100%" : "160vh",
             }}>
-              <Box marginTop={20} marginBottom={4} textAlign="center" position="relative">
+              <Box sx={{
+                marginTop: (desktop ? 20 : (tablet ? 6 : 6)),
+                marginBottom: (desktop ? 4 : (tablet ? 2 : 0)),
+                textAlign: "center",
+                position: "relative"
+            }}>
                 <CustomTitle title="Alumni Board"  theme={theme} />
             </Box>
-
-            {/*
-            <Typography style={backgroundTextStyle} sx={{
-                position: "relative",
-                top: "-5%"
-            }} noWrap>ALUMNI BOARD</Typography> 
-            */}
-            
 
             <Box sx={{
                 display: "grid",
@@ -163,42 +132,37 @@ const OurAdvisors = () => {
                 marginTop: "5%",
             }}>
 
-            <Box sx={{ display: 'grid', justifyContent: 'center', columnGap: "5%", gridTemplateColumns: "repeat(3, 1fr)"}} >
-            {alumniBoardData.slice(0,3).map((advisor, index) => (
+            <Box sx={{ 
+                display: 'grid', 
+                justifyContent: 'center', 
+                columnGap: "5%", 
+                rowGap: "10%",
+                gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)")),
+                }} >
+            {alumniBoardData.slice(0,3).map((alumni, index) => (
                 <AlumniComponent
                 key={index}
-                name={advisor.name}
-                description={advisor.description}
-                image={advisor.image}
+                name={alumni.name}
+                description={alumni.description}
+                testimony={alumni.testimony}
+                image={alumni.imgDirectory}
                 />
             ))}
             </Box>
             
             <Box sx={{ display: 'flex', justifyContent: 'center', columnGap: "5%"}} >
-            {alumniBoardData.slice(3,5).map((advisor, index) => (
+            {alumniBoardData.slice(3,5).map((alumni, index) => (
                 <AlumniComponent
                 key={index}
-                name={advisor.name}
-                description={advisor.description}
-                image={advisor.image}
+                name={alumni.name}
+                description={alumni.description}
+                testimony={alumni.testimony}
+                image={alumni.imgDirectory}
                 />
             ))}
             </Box>
                 
             </Box>  
-
-            {/*
-            <Typography style={backgroundTextStyle} sx={{
-                position: "relative",
-                top: "-40%",
-                zIndex: "0"
-            }} noWrap>ALUMNI BOARD</Typography>
-
-            <Typography style={backgroundTextStyle} sx={{
-                position: "relative",
-                top: "-30%"
-            }} noWrap>ALUMNI BOARD</Typography>
-            */}
             
             </Box>
             

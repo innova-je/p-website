@@ -16,7 +16,7 @@ const JoinUsButton = styled('button')(({ theme }) => ({
   border: "none",
   maxHeight: "40px",
   height: "40px",
-  width: "200px",
+  width: "150px",
   transition: 'transform 0.3s ease-in-out', 
   textDecoration: "none",
 
@@ -75,7 +75,7 @@ const Navbar = () => {
             onClick={() => handleMenuClose(dropdown)}
             component={Link}
             to={subPage.path}
-            style={{ color: '#732043', fontSize: '18px'}}
+            style={{ color: '#732043', fontSize: '18px', textAlign: "center", justifyContent: "center"}}
           >
             {subPage.label}
           </MenuItem>
@@ -123,7 +123,7 @@ const Navbar = () => {
           height: "100%",
           zIndex: 2
         }}>
-          <img src={LogoImage} style={{ height: "100%", marginLeft: desktop || tablet ? "15%" : "10%"}} />
+          <img src={LogoImage} style={{ height: mobile ? "100%" : "100%", width: mobile ? "100%" : "100%", marginLeft: desktop || tablet ? "15%" : "10%"}} />
         </Link>
 
       </div>

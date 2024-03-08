@@ -1,20 +1,39 @@
-import React, { useState } from 'react';
-import { Typography, Link } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Typography } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
-import {Email, LinkedIn } from '@mui/icons-material';
-
+import { useMediaQuery } from 'react-responsive';
 
 const CustomComponent = ({ name, description, image }) => {
+
+  const mobile = useMediaQuery({ maxWidth: 600 });
+    const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+    const desktop = useMediaQuery({ minWidth: 1081 });
+
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
+
+  const [dynamicImage, setDynamicImage] = useState(null);
+
+  useEffect(() => {
+    const loadImage = async () => {
+      try {
+        const { default: dynamicImage } = await import(`../images/MemberImages/${image}`);
+        setDynamicImage(dynamicImage);
+      } catch (error) {
+        console.error('Error loading image:', error);
+      }
+    };
+
+    loadImage();
+  }, [image]);
 
   const containerStyle = {
     backgroundColor: theme.palette.primary.main,
     position: 'relative',
-    width: '18vw',
-    height: '22vw',
+    width: (desktop ? "18vw" : (tablet ? "20vw" : "35vw")),
+    height: (desktop ? "22vw" : (tablet ? "24vw" : "39vw")),
     overflow: 'visible',
-    borderRadius: 15,
+    borderRadius: "5%",
     marginBottom: 35,
     zIndex: "2"
   };
@@ -48,7 +67,7 @@ const CustomComponent = ({ name, description, image }) => {
     backgroundColor: 'white',
     padding: '5px',
     margin: 'auto',
-    borderRadius: 15,
+    borderRadius: desktop ? 15 : 8,
     overflow: 'hidden',
     zIndex: 2,
     display: "flex",
@@ -61,7 +80,7 @@ const CustomComponent = ({ name, description, image }) => {
 
   const nameStyle = {
     fontWeight: 'bold',
-    fontSize: '1.4vw',
+    fontSize: (desktop ? "1.4vw" : (tablet ? "1.8vw" : "3vw")),
     color: theme.palette.primary.main,
     fontFamily: theme.typography.fontFamily,
     display: "flex",
@@ -95,7 +114,7 @@ const CustomComponent = ({ name, description, image }) => {
   
 
   const descriptionStyle = {
-    fontSize: '0.9vw',
+    fontSize: (desktop ? "0.9vw" : (tablet ? "1.2vw" : "2vw")),
     color: "#062533",
     fontFamily: theme.typography.fontFamily,
     width: "80%",
@@ -117,7 +136,7 @@ const CustomComponent = ({ name, description, image }) => {
       >
         
         <div style={imageContainerStyle}>
-          <img src={image} alt="imagem de perfil" style={imageStyle} />
+          <img src={dynamicImage} alt="imagem de perfil" style={imageStyle} />
           <Typography
             align="center"
             noWrap
@@ -138,7 +157,7 @@ const CustomComponent = ({ name, description, image }) => {
             align="center"
             style={descriptionStyle}
           >
-            {description}
+            {description}{/*Aqui quando se da hover tem que se mudar para testimony */}
           </Typography>
         </div>
       </div>
