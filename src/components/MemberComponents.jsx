@@ -105,7 +105,7 @@ const CustomComponent = ({ title, name, image }) => {
           <img src={dynamicImage} alt="imagem de perfil" style={imageStyle} />
         </div>
         <div style={overlayStyle}>
-          {title !== '' && (
+          {title !== null && (
             <Typography
               variant="body2"
               align="center"

@@ -6,6 +6,9 @@ import LogoImage from '../images/OurLogos/logos-02.png';
 import { useMediaQuery } from 'react-responsive';
 import BgMenu from './BgMenu';
 
+//quando o dropdown menu abre, o scroll fica desativado e issso faz com que a navbar se mexa
+//TODO: dar fix nisto
+
 const JoinUsButton = styled('button')(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   color: 'white',
@@ -32,9 +35,6 @@ const Navbar = () => {
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
   const desktop = useMediaQuery({ minWidth: 1081 });
-
-  console.log(window.innerWidth)
-
 
   const [anchorElDropdown1, setAnchorElDropdown1] = React.useState(null);
   const [anchorElDropdown2, setAnchorElDropdown2] = React.useState(null);
@@ -105,7 +105,7 @@ const Navbar = () => {
   };
 
     return (
-    <AppBar position="absolute" style={{left: "0", background: '#FFFFFF29', width: "100%", boxShadow: 'none', height: '10vh' }}>
+    <AppBar position="absolute" style={{left: "0", background: '#FFFFFF29', width: "100%", boxShadow: 'none', height: '10vh'}}>
       <Toolbar style={{ height: '100%', justifyContent: 'space-between'}}>
         
       <div style={{

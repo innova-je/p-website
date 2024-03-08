@@ -6,9 +6,11 @@ const OurServices = () => {
 
   const servicesRef = useRef(null);
 
+  /*
   useEffect(() => {
+    
     const handleWheel = (event) => {
-      event.preventDefault();
+      //event.preventDefault();
 
       // Customize the scrolling behavior within the specified section
       // You can use this section to trigger the ServicesCarousel scrolling logic or any other desired effect.
@@ -23,10 +25,10 @@ const OurServices = () => {
     servicesRef.current.addEventListener('wheel', handleWheel);
 
     return () => {
-      servicesRef.current.removeEventListener('wheel', handleWheel);
+      //servicesRef.current.removeEventListener('wheel', handleWheel);
     };
   }, []);
-
+*/
   return (
     <div ref={servicesRef} style={{
       borderRadius: '0 30px 30px 0',
@@ -37,7 +39,7 @@ const OurServices = () => {
       scrollbarWidth: "none",
       paddingRight: "17px",
       background: 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))',
-      height: "105vh",
+      height: "315vh",
       overflow: "hidden",
       msScrollSnapPointsY: "repeat(105vh)",
       scrollSnapType: "mandatory",

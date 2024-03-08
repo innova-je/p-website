@@ -60,6 +60,7 @@ const Home = () => {
 
       const ourServicesRef = useRef();
 
+      /*
       useEffect(() => {
         const handleScroll = () => {
           const scrollPosition = window.scrollY || document.documentElement.scrollTop;
@@ -80,9 +81,10 @@ const Home = () => {
     
         return () => {
           // Cleanup the event listener on component unmount
-          window.removeEventListener('scroll', handleScroll);
+          //window.removeEventListener('scroll', handleScroll);
         };
       }, []);
+      */
 
     return (
         <>
@@ -121,9 +123,9 @@ const Home = () => {
             position: "absolute",
             top: "45%",
             zIndex: "1",
-            backgroundColor: "red"
+            //backgroundColor: "red"
         }}>
-            <div style={{backgroundColor: "green", width: "100%"}}>
+            <div style={{backgroundColor: "transparent", width: "100%"}}>
                 <Typography sx={{
                 position: "relative",
                 textAlign: "center",

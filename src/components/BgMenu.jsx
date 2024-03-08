@@ -18,11 +18,12 @@ const BgMenu = () => {
         ...MenuButtonStyle,
         height: "400dvh",
         width: "100dvw",
+        backgroundColor: "#732043",
         right: 0,
         marginRight: 0,
         borderRadius: "20%",
         zIndex: 50,
-        transition: "right 0.4s ease-in-out, marginRight 0.4s ease-in-out, height 0.4s ease-in-out, width 0.4s ease-in-out, border-radius 0.4s ease-in-out",
+        transition: "right 0.4s ease-in-out, marginRight 0.4s ease-in-out, height 0.4s ease-in-out, width 0.4s ease-in-out, border-radius 0.4s ease-in-out, backgroundColor 0.4s ease-in-out",
       });
     } else {
       document.body.style.overflow = 'auto';
@@ -30,10 +31,17 @@ const BgMenu = () => {
       setMenuClass("menu hidden");
       setMenuButtonStyle({
         ...MenuButtonStyle,
-        height: "40px",
-        width: "40px",
+        height: "0px",
+        width: "0px",
+        position: "absolute",
         right: "7%",
         borderRadius: "50%",
+        backgroundColor: "#732043"
+      });
+      setBgMenuStyle({
+        ...BgMenuStyle,
+        backgroundColor: "transparent",
+
       });
     }
     setIsMenuClicked(!isMenuClicked);
@@ -41,25 +49,24 @@ const BgMenu = () => {
   
   const [MenuButtonStyle, setMenuButtonStyle] = useState({
     color: 'white',
-    height: "40px",
-    width: "40px",
+    height: "0px",
+    width: "0px",
     aspectRatio: "1/1",
-    backgroundColor: "#732043",
+    backgroundColor: "transparent",
     borderRadius: "50%",
     boxShadow: "none",
     border: "none",
     overflow: "hidden",
     position: "absolute",
-    right: 0,
-    marginRight: "7%",
+    right: "7%",
   });
 
-  const BgMenuStyle ={
+  const [BgMenuStyle, setBgMenuStyle] = useState({
     color: 'white',
     height: "40px",
     width: "40px",
     aspectRatio: "1/1",
-    backgroundColor: "#732043",
+    backgroundColor: "transparent",
     borderRadius: "50%",
     boxShadow: "none",
     border: "none",
@@ -71,34 +78,34 @@ const BgMenu = () => {
     zIndex: 100,
     position: "absolute",
     right: "7%",
-  };
+  });
   
 
   const BgBar1 = {
     width: isMenuClicked ? "25px" : "20px",
-    height: "2px",
+    height: "3px",
     borderRadius: "5px",
-    backgroundColor: "white",
-    transform: isMenuClicked ? "rotate(45deg) translate(0.3em, 0.4em)" : "none",
-    transition: "transform ease-in-out 0.5s",
+    backgroundColor: isMenuClicked ? "white" : "#732043",
+    transform: isMenuClicked ? "rotate(45deg) translate(0em, 0.7em)" : "none",
+    transition: "transform ease-in-out 0.5s, backgroundColor ease-in-out 0.5s",
   };
   
   const BgBar2 = {
     width: "20px",
-    height: "2px",
+    height: "3px",
     borderRadius: "5px",
-    backgroundColor: "white",
+    backgroundColor: isMenuClicked ? "white" : "#732043",
     opacity: isMenuClicked ? "0%" : "100%",
     transition: "opacity 0.3s ease-in-out",
   };
 
   const BgBar3 = {    
     width: isMenuClicked ? "25px" : "20px",
-    height: "2px",
+    height: "3px",
     borderRadius: "5px",
-    backgroundColor: "white",    
-    transform: isMenuClicked ? "rotate(-45deg) translate(0.2em, -0.3em)" : "none",
-    transition: "transform ease-in-out 0.5s",
+    backgroundColor: isMenuClicked ? "white" : "#732043",   
+    transform: isMenuClicked ? "rotate(-45deg) translate(0em, -0.7em)" : "none",
+    transition: "transform ease-in-out 0.5s, backgroundColor ease-in-out 0.5s",
   }
 
   const NavLinkStyle = {
@@ -119,7 +126,7 @@ const BgMenu = () => {
   };
 
   return (
-    <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center"}}>
+    <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", overflow: "hidden"}}>
           <div className="burger-menu" onClick={updateMenu} style={BgMenuStyle}>
             <div className={burger_class} style={BgBar1}></div>
             <div className={burger_class} style={BgBar2}></div>
