@@ -267,7 +267,7 @@ const MiddleBox = ({ barheight }) => {
                             fontSize: "30px",
                         }}
                     >
-                        Do an 1:1 Interview
+                        Do a 1:1 Interview
                     </Typography>
                     <Typography
                         variant="body2"

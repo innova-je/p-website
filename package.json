@@ -31,9 +31,11 @@
     "react-scroll-snap": "^1.0.0",
     "react-slick": "^0.30.1",
     "react-snap-scroll": "^0.0.5",
+    "react-spring": "^9.7.3",
     "react-use-scroll-snap": "^1.0.0",
     "scroll-snap": "^4.0.5",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
