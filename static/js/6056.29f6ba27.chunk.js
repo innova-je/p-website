@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[6056],{6056:(e,t,s)=>{e.exports=s.p+"static/media/joao_perleques.7bb2226dd2418f22f980.webp"}}]);

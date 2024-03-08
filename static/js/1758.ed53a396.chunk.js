@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[1758],{1758:(e,a,t)=>{e.exports=t.p+"static/media/margarida_sacramento.ebd418214e1ff41ae84d.webp"}}]);

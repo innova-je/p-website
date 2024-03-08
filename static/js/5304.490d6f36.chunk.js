@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[5304],{5304:(e,t,s)=>{e.exports=s.p+"static/media/vicente_santos.80c282cadd232aeb2440.webp"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[2612],{2612:(e,t,a)=>{e.exports=a.p+"static/media/bruna_torgal.8a8de7d8baa7c5483281.webp"}}]);

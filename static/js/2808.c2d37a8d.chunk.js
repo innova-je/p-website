@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[2808],{2808:(e,c,s)=>{e.exports=s.p+"static/media/vasco_deusdado.c0c436dcd9614c53fa3b.webp"}}]);
