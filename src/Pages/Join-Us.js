@@ -4,10 +4,10 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import HeroImage from '../images/other/joinus_img.png';
 import joinus_oof from '../images/other/joinus-outofoffice.png'; // change this image 
 import joinus_elements from '../images/other/joinus-elements.png';
-import CustomReview from '../components/CustomReview';
 import guiadocandidato from '../images/other/GuiaDoCandidato.png';
 import Technologies from '../components/Technologies';
 import HowToApply from '../components/HowToApply';
+import Carousel from '../components/CarouselReviews';
 
 
 const JoinUs = () => {
@@ -65,14 +65,94 @@ const JoinUs = () => {
         };
     }, [isScrollingDisabled, progress, animationCompleted]);
 
-    const toggleScrolling = () => {
-        setScrollingDisabled(!isScrollingDisabled);
+    const reviews1 = [
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "test",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+        {
+            image: HeroImage,
+            name: "John Doe",
+            department: "Human Resources",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
+            sx: { position: "absolute", left: "50%", zIndex: 2 }
+        },
+    ];
 
-        // Reset progress to 0% when scrolling is enabled
-        if (!isScrollingDisabled) {
-            setProgress(0);
-        }
-    };
+
 
     return (
         <>
@@ -296,7 +376,6 @@ const JoinUs = () => {
                         style={{
                             width: '100%',
                             height: '100%',
-                            objectFit: 'cover',
                         }}
                     />
                     <div
@@ -363,37 +442,9 @@ const JoinUs = () => {
                         top: '30%',
                         width: '100%',
                         height: '38vh',
-                        border: '1px solid red',
-
+                        overflow: 'hidden',
                     }}>
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
+                    <Carousel reviews={reviews1} duration='30s' direction='left' />
                 </Box>
 
                 {/* Second row of reviews */}
@@ -403,41 +454,14 @@ const JoinUs = () => {
                         alignItems: 'center',
                         gap: '2.5rem',
                         position: 'absolute',
-                        top: '63%',
+                        top: '60%',
                         width: '100%',
                         height: '38vh',
-                        border: '1px solid red',
-
+                        overflow: 'hidden',
                     }}>
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John SDoe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
+                    <Carousel reviews={[...reviews1].reverse()} direction='left' />
                 </Box>
+
             </Box>
 
             {/* 5th Section */}
