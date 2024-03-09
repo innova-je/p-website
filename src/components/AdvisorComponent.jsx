@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Link } from '@mui/material';
+import { Typography } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
-import {Email, LinkedIn } from '@mui/icons-material';
+import { LinkedIn } from '@mui/icons-material';
 import { useMediaQuery } from 'react-responsive';
 
-const AdvisorComponent = ({ name, description, image }) => {
+const AdvisorComponent = ({ name, description, image, linkedin }) => {
 
   const mobile = useMediaQuery({ maxWidth: 600 });
     const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
@@ -82,7 +82,7 @@ const AdvisorComponent = ({ name, description, image }) => {
     top: 0,
     right: 10,
     display: "flex",
-    opacity: isHovered ? 1 : 0,
+    opacity: isHovered ? 1 : (mobile || tablet ? 1 : 0),
     transition: 'opacity 0.6s ease-in-out',
     flexDirection: 'column',
     alignItems: 'center',
@@ -93,7 +93,7 @@ const AdvisorComponent = ({ name, description, image }) => {
 
   const nameStyle = {
     fontWeight: 'bold',
-    fontSize: (desktop ? "1.4vw" : (tablet ? "1.8vw" : "3vw")),
+    fontSize: (desktop ? "1.3vw" : (tablet ? "1.8vw" : "3vw")),
     color: theme.palette.primary.main,
     fontFamily: theme.typography.fontFamily,
     display: "flex",
@@ -109,7 +109,7 @@ const AdvisorComponent = ({ name, description, image }) => {
   
 
   const descriptionStyle = {
-    fontSize: '0.9vw',
+    fontSize: (desktop ? "1.2vw" : (tablet ? "1.7vw" : "2.5vw")),
     color: "#062533",
     fontFamily: theme.typography.fontFamily,
     width: "80%",
@@ -121,6 +121,12 @@ const AdvisorComponent = ({ name, description, image }) => {
     transition: 'opacity 0.4s ease-in-out',
   };
 
+  const handleClick = () => {
+    if (mobile || tablet) {
+      setIsHovered(!isHovered);
+    }
+  };
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -128,12 +134,19 @@ const AdvisorComponent = ({ name, description, image }) => {
         style={containerStyle}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={handleClick}
       >
         <div style={iconsContainerStyle}>
-          <Email sx={{color:theme.palette.primary.main}}></Email>
-          <Link>{/*TODO: adicionar os links do linkedin */}
-            <LinkedIn sx={{color:'white', height: "5vh", width: "auto"}}></LinkedIn>
-          </Link>          
+          <a href={linkedin}>
+            <LinkedIn sx={{
+              color:'white', 
+              height: mobile ? "3vh" : (tablet ? "2.8vh" : "5vh"), 
+              width: "auto",
+              position: "absolute",
+              top: desktop ? 15 : (tablet ? 10 : 6),
+              right: desktop ? 5 : (tablet ? 0 : -4)
+              }}></LinkedIn>
+          </a>          
         </div>
         <div style={imageContainerStyle}>
           <img src={dynamicImage} alt="imagem de perfil" style={imageStyle} />

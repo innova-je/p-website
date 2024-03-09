@@ -1,10 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import ServicesCarousel from './ServicesCarousel';
 import { Parallax, useParallax } from "react-scroll-parallax";
+import { useMediaQuery } from 'react-responsive';
 
 const OurServices = () => {
 
   const servicesRef = useRef(null);
+
+  const mobile = useMediaQuery({ maxWidth: 600 });
+  const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+  const desktop = useMediaQuery({ minWidth: 1081 });
 
   /*
   useEffect(() => {
@@ -39,7 +44,7 @@ const OurServices = () => {
       scrollbarWidth: "none",
       paddingRight: "17px",
       background: 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))',
-      height: "315vh",
+      height: mobile ? "105dvh" : "315vh",
       overflow: "hidden",
       msScrollSnapPointsY: "repeat(105vh)",
       scrollSnapType: "mandatory",

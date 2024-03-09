@@ -9,38 +9,27 @@ import NovaID from '../images/HomePageImages/ClientsLogos/NOVA_ID.webp'
 import FatiasDeCa from '../images/HomePageImages/ClientsLogos/FATIAS_DE_CA.webp'
 import CardioLeather from '../images/HomePageImages/ClientsLogos/CARDIO_LEATHER.webp'
 
-const clientsData = [//TODO: arranjar maneira de nao ser preciso duplicar os dados
+import Slider from 'react-infinite-logo-slider'
+import React, { useEffect, useRef } from 'react';
+
+const clientsData = [
   //Adicionar links para as páginas dos clientes
-  { name: 'Futurália', logoSrc: Futuralia, width: '15%', scale: 1 },
-  { name: 'Sucees', logoSrc: Sucees, width: '13%', scale: 1 },
-  { name: 'Orion', logoSrc: Orion, width: '20%', scale: 1 },
-  { name: 'NovaID', logoSrc: NovaID, width: '15%', height: '15%', scale: 0.7 },
-  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '10%', scale: 0.6 },
-  { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '15%', height: '15%', scale: 0.6 },
-  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 2 },
-  { name: 'Futurália', logoSrc: Futuralia, width: '15%', scale: 1 },
-  { name: 'Sucees', logoSrc: Sucees, width: '13%', scale: 1 },
-  { name: 'Orion', logoSrc: Orion, width: '20%', scale: 1 },
-  { name: 'NovaID', logoSrc: NovaID, width: '15%', height: '15%', scale: 0.7 },
-  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '10%', scale: 0.6 },
-  { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '15%', height: '15%', scale: 0.6 },
-  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 2 },
-  { name: 'Futurália', logoSrc: Futuralia, width: '15%', scale: 1 },
-  { name: 'Sucees', logoSrc: Sucees, width: '13%', scale: 1 },
-  { name: 'Orion', logoSrc: Orion, width: '20%', scale: 1 },
-  { name: 'NovaID', logoSrc: NovaID, width: '15%', height: '15%', scale: 0.7 },
-  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '10%', scale: 0.6 },
-  { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '15%', height: '15%', scale: 0.6 },
-  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 2 },
-  { name: 'Futurália', logoSrc: Futuralia, width: '15%', scale: 1 },
-  { name: 'Sucees', logoSrc: Sucees, width: '13%', scale: 1 },
-  { name: 'Orion', logoSrc: Orion, width: '20%', scale: 1 },
-  { name: 'NovaID', logoSrc: NovaID, width: '15%', height: '15%', scale: 0.7 },
-  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, width: '10%', scale: 0.6 },
-  { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '15%', height: '15%', scale: 0.6 },
-  { name: 'CardioLeather', logoSrc: CardioLeather, width: '15%', scale: 2 },
-  
+  { name: 'Futurália', logoSrc: Futuralia,  scale: 0.5 },
+  { name: 'Sucees', logoSrc: Sucees,  scale: 1 },
+  { name: 'Orion', logoSrc: Orion, scale: 0.7 },
+  { name: 'NovaID', logoSrc: NovaID, width: '100%', scale: 1 },
+  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, scale: 0.6 },
+  { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '100%', scale: 1 },
+  { name: 'CardioLeather', logoSrc: CardioLeather, width: '100%', scale: 3 },
+  { name: 'Futurália', logoSrc: Futuralia,  scale: 0.5 },
+  { name: 'Sucees', logoSrc: Sucees,  scale: 1 },
+  { name: 'Orion', logoSrc: Orion, scale: 0.7 },
+  { name: 'NovaID', logoSrc: NovaID, width: '100%', scale: 1 },
+  { name: 'Fatias de Cá', logoSrc: FatiasDeCa, scale: 0.6 },
+  { name: 'Nova School of Science and Technology', logoSrc: NovaSST, width: '100%', scale: 1 },
+  { name: 'CardioLeather', logoSrc: CardioLeather, width: '100%', scale: 3 },
 ];
+
 
 const ClientsCarousel = () => {
 
@@ -50,30 +39,11 @@ const ClientsCarousel = () => {
 
   const ClientsBox = styled(Box)(({ theme }) => ({
     position: "relative",
-    marginTop: "5%",
+    marginTop: mobile ? "15%" : "5%",
     justifyContent: "center",
     alignItems: "center",
     overflow: "hidden", 
-    whiteSpace: "nowrap",
-  }));
-
-  const slideAnimation = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-`;
-
-  const LogosSlide = styled('div')(({ theme }) => ({
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    animation: `${slideAnimation} 20s infinite linear`,
-    '&:hover': {
-      animationPlayState: 'paused',
-    },
+    whiteSpace: "nowrap"
   }));
 
   const ClientsAndPartnersStyle = {
@@ -82,24 +52,80 @@ const ClientsCarousel = () => {
     justifyContent: "center",
     color: "#732043",
     fontWeight: "700",
-    fontSize: (desktop ? "3.5dvw" : (tablet ? "4dvw" : "6dvw")),
+    fontSize: (desktop ? "3.5dvw" : (tablet ? "4dvw" : "6.5dvw")),
   };
-  
 
   return (
-    <ClientsBox className='clients-box'>
+    /*
+    <div style={{
+      position: "relative",
+      marginTop: mobile ? "15%" : "5%",
+      justifyContent: "center",
+      alignItems: "center",
+      overflow: "hidden", 
+      whiteSpace: "nowrap"
+    }}>
       <Typography style={ClientsAndPartnersStyle}>Who Trusted Us</Typography>
-        <LogosSlide className="logos-slide">
+      <div style={{
+      width: "100%", 
+      display: "inline-flex", 
+      flexWrap: "nowrap",
+      overflow: "hidden",
+      flexDirection: "row-reverse"      
+      }}>
+      <ul className='animate-infinite-scroll-left' style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        maxWidth: "none"
+      }}>
         {clientsData.map((client, index) => (
-          <img
+          <li key={index} style={{listStyle: "none"}}>
+            <a>
+              <img
             key={index}
             alt={`${client.name} Logo`}
             src={client.logoSrc}
-            style={{ width: client.width, transform: `scale(${client.scale})`, margin: '0 2%' }}
+            style={{width: client.width, transform: `scale(${client.scale})`}}
+          />      
+            </a>
+          </li>               
+        ))}        
+      </ul>
+    </div>
+    </div>
+    
+*/
+    
+    <ClientsBox className='clients-box'>
+      <Typography style={ClientsAndPartnersStyle}>Who Trusted Us</Typography>
+      <Box sx={{marginTop: "5%", height: "20dvh", display: "flex", flexDirection: "row", width: "100%", alignItems: "center"}}>
+        <Slider duration={10} pauseOnHover={true} blurBorder={true}>        
+        {clientsData.map((client, index) => (
+          <div style={{
+            background: "green", 
+            display: "flex", 
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "relative",
+            //margin: "0 2%"
+            }}>
+            <Slider.Slide>
+            <img
+            key={index}
+            alt={`${client.name} Logo`}
+            src={client.logoSrc}
+            style={{width: client.width, transform: `scale(${client.scale})`}}
           />
+          </Slider.Slide>       
+          </div>
+             
         ))}
-      </LogosSlide>
+      </Slider>
+      </Box>
     </ClientsBox>
+
   );
 };
 

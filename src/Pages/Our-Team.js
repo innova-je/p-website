@@ -2,7 +2,6 @@ import { Box, Typography } from '@mui/material';
 import React, { useRef } from 'react';
 import { useTheme } from '@mui/material/styles';
 import HeroImage from '../images/other/TOMADA DE POSSE.png';
-import PlaceHolder from '../images/other/placeholder.png';
 import elements from '../images/other/Elements.png';
 import CustomComponent from '../components/MemberComponents';
 import CustomDepartment from '../components/CustomDepartment';
@@ -49,11 +48,11 @@ const OurTeam = () => {
     const theme = useTheme();
 
     const cexDepartment = Members.departments.find((dept) => dept.name === "Conselho Executivo");
-    const salesDepartment = Members.departments.find((dept) => dept.name === "Comercial");
+    const salesDepartment = Members.departments.find((dept) => dept.name === "Sales");
     const marketingDepartment = Members.departments.find((dept) => dept.name === "Marketing");
-    const projectsDepartment = Members.departments.find((dept) => dept.name === "Projetos");
-    const qualityDepartment = Members.departments.find((dept) => dept.name === "Qualidade");
-    const humanResourcesDepartment = Members.departments.find((dept) => dept.name === "Recursos Humanos");
+    const projectsDepartment = Members.departments.find((dept) => dept.name === "Projects");
+    const qualityDepartment = Members.departments.find((dept) => dept.name === "Quality");
+    const humanResourcesDepartment = Members.departments.find((dept) => dept.name === "Human Resources");
 
     const lasoRef = useRef<LottieRefCurrentProps>(null);
 

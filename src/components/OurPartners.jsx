@@ -39,66 +39,50 @@ const OurPartners = () => {
     justifyContent: "center",
     color: "#732043",
     fontWeight: "700",
-    fontSize: (desktop ? "3.5dvw" : (tablet ? "4dvw" : "6dvw")),
+    fontSize: (desktop ? "3.5dvw" : (tablet ? "4dvw" : "6.5dvw")),
   };
 
-      const PartnersBox = styled(Box)(({ theme }) => ({
+      const PartnersBox = styled(Box)(() => ({
         position: "relative",
-        marginTop: "1%",
-        width: "100%",
+        margin: mobile ? "5% 0 10% 0" : "0 auto",
+        transform: "scale(0.9)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
         backgroundColor: "#F0F0F0",
-        [theme.breakpoints.down('sm')]: {
-          height: "100%",
-        },
-        height: "90vh",
+        height: mobile ? "100%" : "90vh",
       }));
 
-      const SponsorsBox = styled(Box)(({ theme }) => ({
+      const SponsorsBox = styled(Box)(() => ({
         position: "relative",
-        marginTop: "5%",
+        marginTop: mobile ? "0%" : "5%",
         width: "100%",
         display: "flex",
-        [theme.breakpoints.down('sm')]: {
-          flexDirection: "column",
-          alignItems: "center"
-        },
-        [theme.breakpoints.up('md')]: {
-          flexDirection: "row",
-          alignItems: "flex-start",
-        },
-        justifyContent: "center",        
+        flexDirection: mobile ? "column" : "row",
+        justifyContent: "center",  
+        alignItems: tablet ? "flex-start" : ""              
       }));
 
-      const SponsorBox = styled(Box)(({ theme }) => ({
-        [theme.breakpoints.down('sm')]: {
-          width: "90%",
-          marginTop: "15%"
-        },
-        [theme.breakpoints.up('md')]: {
-          width: "25%",
-        },        
+      const SponsorBox = styled(Box)(() => ({
         display: "flex",       
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "top",
         alignItems: "center",
-        margin: "0 20px"
+        margin: mobile  ? "none" : "0 20px",
+        marginTop: mobile ? "10%" : "0%",
+        width: desktop ? "55%" : ""
       }));
 
-      const LearningPartners = styled(Box)(({ theme }) => ({
-        [theme.breakpoints.down('sm')]: {
-          width: "90%",
-          margin: "15% 0"
-        },
-        [theme.breakpoints.up('md')]: {
-          width: "35%",
-        },
+      const LearningPartners = styled(Box)(() => ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        marginTop: mobile ? "10%" : "0"
       }));
+      
 
-      const SponsorBoxTitle = styled(Box)(({ theme }) => ({
+      const SponsorBoxTitle = styled(Box)(() => ({
         width: "80%",
         height: "7vh",
         borderRadius: "50px",
@@ -112,14 +96,8 @@ const OurPartners = () => {
       const SponsorTitleStyle = {
         color: "#052533",
         fontWeight: "600",
-        fontSize: {
-          xs: "4vw",
-          sm: "2vw",
-          md: "2vw",
-          lg: "1.5vw"
-      }}
-
-      
+        fontSize: (desktop ? "1.5dvw" : (tablet ? "2dvw" : "4.5dvw"))
+    }
 
   return (
     <PartnersBox>
@@ -129,15 +107,7 @@ const OurPartners = () => {
                     display: "flex",
                     justifyContent: "center",
                     color: "#052533",
-                    [theme.breakpoints.down('sm')]: {
-                      fontSize: "16px",
-                      fontWeight: "400",
-                      marginBottom: "-5%",
-                    },
-                    [theme.breakpoints.up('md')]: {
-                      fontSize: "26px",
-                      fontWeight: "200"
-                    },
+                    fontSize: (desktop ? "2dvw" : (tablet ? "2dvw" : "4.5dvw"))
                 }}>Alone, we go fast. Together, we go further.</Typography>
                 <SponsorsBox>
                 <SponsorBox className='Gold Sponsors'>

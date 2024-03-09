@@ -32,7 +32,7 @@
             }
         },        
         {
-            "name": "Comercial",
+            "name": "Sales",
             "director" : 
                 {
                     "title" : "Sales Director",
@@ -124,7 +124,7 @@
             ]
         },
         {
-            "name": "Projetos",
+            "name": "Projects",
             "director" : 
                 {
                     "title" : "Projects Director",
@@ -293,7 +293,7 @@
             ]
         },
         {
-            "name": "Qualidade",
+            "name": "Quality",
             "director" : 
                 {
                     "title" : "Quality Director",
@@ -330,7 +330,7 @@
             ]
         },
         {
-            "name": "Recursos Humanos",
+            "name": "Human Resources",
             "director" : 
                 {
                     "title" : "Human Resources Director",

@@ -7,15 +7,16 @@ import { BrowserRouter } from 'react-router-dom';
 import Maintenance from './Pages/Maintenance';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <ThemeProvider theme={theme}>
       <ParallaxProvider>
         <App />
+        
       </ParallaxProvider>      
       {/* <Maintenance/> */}
     </ThemeProvider>
   </BrowserRouter>
 );
-
