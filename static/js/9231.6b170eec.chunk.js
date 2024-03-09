@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[9231],{9231:(e,t,a)=>{e.exports=a.p+"static/media/bravo_mota.c70e95909d0a4d058ab0.webp"}}]);

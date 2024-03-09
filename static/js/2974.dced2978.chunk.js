@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[2974],{2974:(e,s,t)=>{e.exports=t.p+"static/media/rui_verissimo.4baffb9e3096c2d12744.webp"}}]);

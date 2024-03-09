@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[8744],{8744:(e,a,s)=>{e.exports=s.p+"static/media/pedro_mascarenhas.ba54a137c7446b8ad223.webp"}}]);

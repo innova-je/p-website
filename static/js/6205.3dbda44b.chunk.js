@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[6205],{6205:(e,t,a)=>{e.exports=a.p+"static/media/rodrigo_rosa.be4aac4f71ac339b325c.webp"}}]);

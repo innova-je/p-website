@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[5746],{5746:(e,t,s)=>{e.exports=s.p+"static/media/arthur_chaves.e6511b65d1637eb1d1be.webp"}}]);

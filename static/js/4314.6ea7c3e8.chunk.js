@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[4314],{4314:(e,t,s)=>{e.exports=s.p+"static/media/ines_costa.1d4acf9123cbf8346edc.webp"}}]);
