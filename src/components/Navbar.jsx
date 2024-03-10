@@ -5,6 +5,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LogoImage from '../images/OurLogos/logos-02.png';
 import { useMediaQuery } from 'react-responsive';
 import BgMenu from './BgMenu';
+import { ReactDOM } from 'react-dom/client';
 
 //quando o dropdown menu abre, o scroll fica desativado e issso faz com que a navbar se mexa
 //TODO: dar fix nisto
@@ -129,7 +130,7 @@ const Navbar = () => {
       </div>
 
         <div style={{ display: desktop ? "flex" : "none", justifyContent: 'center', alignItems: 'center', flexGrow: 1, zIndex: 1}}>
-          <NavLink to="/about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+          <NavLink to="about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
             <Button color="inherit" style={linkStyles}>About Us</Button>
           </NavLink>
           <NavLink to="/services" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
@@ -170,7 +171,7 @@ const Navbar = () => {
           justifyContent: "right"
         }}>
         
-          <Link to="/join-us" onClick={() => handleNavLinkClick('/join-us')} style={{
+        <Link to="/join-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles} style={{
             position: "relative",
             display: tablet || desktop ? "flex" : "none",
             marginRight: desktop ? "7%" : "15%",
@@ -178,7 +179,7 @@ const Navbar = () => {
             zIndex: 2
           }}>
             <JoinUsButton>Join Us</JoinUsButton>
-          </Link>
+          </Link>{/*Aqui se calhar devia ser NavLink */}
           
         </div>
         <div style={{display: desktop ? "none" : "flex"}}>

@@ -21,7 +21,7 @@ const BgMenu = () => {
         backgroundColor: "#732043",
         right: 0,
         marginRight: 0,
-        borderRadius: "20%",
+        borderRadius: "25%",
         zIndex: 50,
         transition: "right 0.4s ease-in-out, marginRight 0.4s ease-in-out, height 0.4s ease-in-out, width 0.4s ease-in-out, border-radius 0.4s ease-in-out, backgroundColor 0.4s ease-in-out",
       });
@@ -34,7 +34,7 @@ const BgMenu = () => {
         height: "0px",
         width: "0px",
         position: "absolute",
-        right: "7%",
+        right: "10%",
         borderRadius: "50%",
         backgroundColor: "#732043"
       });

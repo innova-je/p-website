@@ -1,4 +1,4 @@
-import { AppBar, Box, styled, ImageListItem, Typography, Link } from '@mui/material';
+import { AppBar, Box, Button, styled, ImageListItem, Typography, Link } from '@mui/material';
 import React from 'react'
 
 import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
@@ -74,6 +74,19 @@ const Footer = () => {
         textDecoration : "none",
       };
 
+      const linkStyles = {
+        textDecoration: 'none',
+        color: '#732043',
+        fontWeight: 'bold',
+        fontSize: '18px',
+        transition: 'font-weight 0.3s ease',
+        textTransform: 'none'
+      };
+    
+      const activeLinkStyles = {
+        fontWeight: 'normal',
+      };
+
 
     const navigate = useNavigate();
 
@@ -143,8 +156,8 @@ const Footer = () => {
                         //marginLeft: "10%"
                     }}>
                     <Pages>
-                    <NavLink to="/about-us" style={NavLinkStyle} onClick={() => handleNavLinkClick('/about-us')}>
-                        <Typography style={PagesLinkStyle}>About Us</Typography>
+                    <NavLink to="about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+                        <Button color="inherit" style={linkStyles}>About Us</Button>
                     </NavLink>
                         <NavLink to="/events" style={NavLinkStyle} onClick={() => handleNavLinkClick('/events')}>
                             <Typography style={PagesLinkStyle}>Events</Typography>
