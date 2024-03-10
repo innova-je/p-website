@@ -3,8 +3,8 @@ import React from 'react'
 
 import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
 
-import InNovaLogo from '../images/OurLogos/logos-10.png'
-import LogoMobile from '../images/OurLogos/logos-08.png'
+import InNovaLogo1 from '../images/OurLogos/logos-10.png'
+import InNovaLogo2 from '../images/OurLogos/logos-08.png'
 import CustomButton from './CustomButton';
 
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
@@ -33,20 +33,19 @@ const Footer = () => {
 
     const Logo = styled(ImageListItem)(() => ({
         position: "relative",
-        width: "17%",
-        height: "17%",
+        width: "45%",
+        height: "50%",
+        background: "green",
         marginLeft: "10%",
-        marginTop: "6%",
       }));
 
     const Pages = styled(Box)(() => ({
         position: "relative",
-        top: "45%",
-        width: "65%",        
+        width: "100%",        
         display: "grid",
         flexDirection: "column",
         gridTemplateColumns: "repeat(3, 3fr)",
-        marginTop: desktop ? "5%" : ""
+        marginTop: "3%"
     }));   
 
     const SocialMedia = styled(Box)(() => ({
@@ -60,7 +59,7 @@ const Footer = () => {
       }));
 
     const PagesLinkStyle = {
-        fontSize: mobile ? "2.5vw" : (tablet ? "1.7vw" : "" ),
+        fontSize: mobile ? "3vw" : (tablet ? "2vw" : "1.25vw" ),
         color: "white",
         fontWeight: "400"
       };
@@ -95,20 +94,8 @@ const Footer = () => {
                         height: "100%",
                         backgroundColor: "#732043",
                         borderRadius: "20px 0 0 0",
+                        overflow:"hidden"
                     }}>
-
-                <div style={{
-                    position: "absolute",
-                    left: 0,
-                    height: "30%",
-                    width:"30%",
-                    display: "none",
-                    alignItems: "center",
-                }}>
-                   <Logo>
-                    <img alt='In-Nova Logo' src={InNovaLogo} />
-                    </Logo> 
-                </div>
 
                     <Box sx={{
                         position: "relative",
@@ -116,21 +103,26 @@ const Footer = () => {
                         width: "100%",
                         margin: "0 0 0 6vw",
                         display: "flex",
-                        alignItems: "center"
+                        flexDirection: "column"
                     }}>
-
-                    <Typography sx={{
-                        position: "absolute",
-                        top: "5%",
+                    <div style={{
+                        height: "35%", 
+                        width: "70%", 
+                        display: "flex",
+                        alignItems: "center"
+                        }}>
+                      <Typography sx={{
+                        position: "relative",
                         fontSize: "1.9vw",
                         fontWeight: 200,
                         lineHeight: "40px",
-                        letterSpacing: "-0.02em",
-                        textAlign: "left",
-                     }}>Let's discuss and <br/> bring your vision to life.</Typography>
+                        textAlign: "left"
+                     }}>Let's discuss and bring your vision to life.</Typography>  
+                    </div>                    
     
                     <div style={{
-                        width: "100%",
+                        width: "70%",
+                        height: "65%"
                     }}>
                     <Pages>
                         <NavLink to="about-us" style={linkStyles} onClick={handleNavLinkClick}>
@@ -251,19 +243,20 @@ const Footer = () => {
                     left: "0px",
                     backgroundColor: "#732043",
                     zIndex: "1000",
-                    flexDirection: "row"
+                    flexDirection: "row",
+                    overflow: "hidden"
                 }}>
                     <Box sx={{
                         width: "100%",
                         height: "34%",
                         backgroundColor: isJoinUsPage ? "#FFFFFF" : "#F0F0F0",
-                        borderRadius: "0 0px 20px 0",
+                        borderRadius: "0 0px 20px 0"
                     }}>
                     </Box>
 
-                    <Logo>
-                        <img alt='In-Nova Logo' src={InNovaLogo}/>
-                    </Logo>       
+                    <NavLink to="/">
+                        <img alt='In-Nova Logo' src={InNovaLogo2} style={{height: "100%", position: "relative", bottom: "20%", left: "10%"}}/>
+                    </NavLink>       
                    
                     <Box
                     sx={{
@@ -297,7 +290,7 @@ const Footer = () => {
                 }}>
                 <div style={{ width: "25%", display: "flex", flexDirection:"column", alignItems:"center", justifyContent: "center"}}>                    
                     <NavLink to="/" style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
-                        <img src={InNovaLogo} style={{ width: mobile ? "70%" : "50%" }}/>
+                        <img src={InNovaLogo1} style={{ width: mobile ? "70%" : "50%" }}/>
                     </NavLink>
                     
                 </div>
