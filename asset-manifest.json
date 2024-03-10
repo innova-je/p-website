@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/p-website/static/js/main.15631cc0.js",
+    "main.js": "/p-website/static/js/main.b0a34b0f.js",
     "static/js/9676.6fcdc8ed.chunk.js": "/p-website/static/js/9676.6fcdc8ed.chunk.js",
     "static/js/6568.d3341a1b.chunk.js": "/p-website/static/js/6568.d3341a1b.chunk.js",
     "static/js/3816.08adee40.chunk.js": "/p-website/static/js/3816.08adee40.chunk.js",
@@ -99,6 +99,7 @@
     "static/media/NOVA_SST.webp": "/p-website/static/media/NOVA_SST.b4c1624ff5939fd8ca03.webp",
     "static/media/beatriz_rolao.webp": "/p-website/static/media/beatriz_rolao.cf731c04b80cb87db14b.webp",
     "static/media/react-icon.png": "/p-website/static/media/react-icon.8a6fc0a24a800d1e0f4a.png",
+    "static/media/logos-10.png": "/p-website/static/media/logos-10.818ecafca7726e7e6517.png",
     "static/media/logos-03.png": "/p-website/static/media/logos-03.b65e1002843bc24fae45.png",
     "static/media/GuiaDoCandidato.png": "/p-website/static/media/GuiaDoCandidato.cf84e8329f208fec1400.png",
     "static/media/top1.webp": "/p-website/static/media/top1.2a9d31dc4268e9c3e689.webp",
@@ -195,9 +196,9 @@
     "static/media/camera-icon.svg": "/p-website/static/media/camera-icon.0d574b04558bd96cd4eeee3fc4efd6b6.svg",
     "static/media/write-icon.svg": "/p-website/static/media/write-icon.94c9151042e055f5c8790adf8f872fcf.svg",
     "index.html": "/p-website/index.html",
-    "main.15631cc0.js.map": "/p-website/static/js/main.15631cc0.js.map"
+    "main.b0a34b0f.js.map": "/p-website/static/js/main.b0a34b0f.js.map"
   },
   "entrypoints": [
-    "static/js/main.15631cc0.js"
+    "static/js/main.b0a34b0f.js"
   ]
 }
