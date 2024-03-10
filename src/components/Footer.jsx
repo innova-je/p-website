@@ -156,25 +156,25 @@ const Footer = () => {
                         //marginLeft: "10%"
                     }}>
                     <Pages>
-                    <NavLink to="about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
-                        <Button color="inherit" style={linkStyles}>About Us</Button>
-                    </NavLink>
-                        <NavLink to="/events" style={NavLinkStyle} onClick={() => handleNavLinkClick('/events')}>
+                        <NavLink to="about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+                            <Typography style={PagesLinkStyle}>About Us</Typography>
+                        </NavLink>
+                        <NavLink to="/events" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
                             <Typography style={PagesLinkStyle}>Events</Typography>
                         </NavLink> 
-                        <NavLink to="/services" style={NavLinkStyle} onClick={() => handleNavLinkClick('/services')}>
+                        <NavLink to="/services" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
                             <Typography style={PagesLinkStyle}>Services</Typography>
                         </NavLink>
-                        <NavLink to="/out-of-office" style={NavLinkStyle} onClick={() => handleNavLinkClick('/out-of-office')}>
+                        <NavLink to="/out-of-office" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
                             <Typography style={PagesLinkStyle}>Out of Office</Typography>
                         </NavLink>
-                        <NavLink to="/our-people/our-team" style={NavLinkStyle} onClick={() => handleNavLinkClick('/our-people/our-team')}>
+                        <NavLink to="/our-people/our-team" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
                             <Typography style={PagesLinkStyle}>Our Team</Typography>
                         </NavLink>
-                        <NavLink to="/join-us" style={NavLinkStyle} onClick={() => handleNavLinkClick('/join-us')}>{/* nao ha pagina de recrutamento*/}
+                        <NavLink to="/join-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>{/* nao ha pagina de recrutamento*/}
                             <Typography style={PagesLinkStyle}>Recruitment</Typography>
                         </NavLink>
-                        <NavLink to="/our-people/our-advisors" style={NavLinkStyle} onClick={() => handleNavLinkClick('/our-people/our-advisors')}>
+                        <NavLink to="/our-people/our-advisors" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
                             <Typography style={PagesLinkStyle}>Our Advisors</Typography>    
                         </NavLink>                             
                     </Pages>
