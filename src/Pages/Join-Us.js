@@ -8,62 +8,63 @@ import guiadocandidato from '../images/other/GuiaDoCandidato.png';
 import Technologies from '../components/Technologies';
 import HowToApply from '../components/HowToApply';
 import Carousel from '../components/CarouselReviews';
+import CustomReview from '../components/CustomReview';
 
 
 const JoinUs = () => {
     const theme = useTheme();
 
-    const [isScrollingDisabled, setScrollingDisabled] = useState(false);
-    const [progress, setProgress] = useState(0);
-    const [animationCompleted, setAnimationCompleted] = useState(false);
-    const sectionRef = useRef(null);
+    // const [isScrollingDisabled, setScrollingDisabled] = useState(false);
+    // const [progress, setProgress] = useState(0);
+    // const [animationCompleted, setAnimationCompleted] = useState(false);
+    // const sectionRef = useRef(null);
 
-    useEffect(() => {
-        const handleScroll = (event) => {
-            if (!animationCompleted) {
-                if (isScrollingDisabled) {
-                    event.preventDefault();
+    // useEffect(() => {
+    //     const handleScroll = (event) => {
+    //         if (!animationCompleted) {
+    //             if (isScrollingDisabled) {
+    //                 event.preventDefault();
 
-                    // Update the progress while scrolling is disabled
-                    setProgress((prevProgress) => {
-                        const newProgress = Math.min(prevProgress + 10, 100);
-                        console.log(`Progress: ${newProgress}%`);
-                        return newProgress;
-                    });
+    //                 // Update the progress while scrolling is disabled
+    //                 setProgress((prevProgress) => {
+    //                     const newProgress = Math.min(prevProgress + 10, 100);
+    //                     console.log(`Progress: ${newProgress}%`);
+    //                     return newProgress;
+    //                 });
 
-                    // Log the message indicating the user is trying to scroll
-                    console.log('User is trying to scroll.');
+    //                 // Log the message indicating the user is trying to scroll
+    //                 console.log('User is trying to scroll.');
 
-                    // Check if progress has reached 100% and enable scrolling
-                    if (progress === 100) {
-                        setScrollingDisabled(false);
-                        document.body.style.overflow = 'auto';
+    //                 // Check if progress has reached 100% and enable scrolling
+    //                 if (progress === 100) {
+    //                     setScrollingDisabled(false);
+    //                     document.body.style.overflow = 'auto';
 
-                        // Set animationCompleted to true when the animation is completed
-                        setAnimationCompleted(true);
-                    }
-                } else {
-                    // Check if the middle of the section is in the viewport
-                    const sectionRect = sectionRef.current.getBoundingClientRect();
-                    const sectionMiddle = (sectionRect.top + sectionRect.bottom) / 2;
+    //                     // Set animationCompleted to true when the animation is completed
+    //                     setAnimationCompleted(true);
+    //                 }
+    //             } else {
+    //                 // Check if the middle of the section is in the viewport
+    //                 const sectionRect = sectionRef.current.getBoundingClientRect();
+    //                 const sectionMiddle = (sectionRect.top + sectionRect.bottom) / 2;
 
-                    if (sectionMiddle <= window.innerHeight / 2 && sectionMiddle >= -window.innerHeight / 2) {
-                        setScrollingDisabled(true);
-                        document.body.style.overflow = 'hidden';
-                        console.log('Section reached. Scrolling disabled.');
-                    }
-                }
-            }
-        };
+    //                 if (sectionMiddle <= window.innerHeight / 2 && sectionMiddle >= -window.innerHeight / 2) {
+    //                     setScrollingDisabled(true);
+    //                     document.body.style.overflow = 'hidden';
+    //                     console.log('Section reached. Scrolling disabled.');
+    //                 }
+    //             }
+    //         }
+    //     };
 
-        // Add event listener when scrolling is disabled
-        window.addEventListener('wheel', handleScroll, { passive: false });
+    //     // Add event listener when scrolling is disabled
+    //     window.addEventListener('wheel', handleScroll, { passive: false });
 
-        return () => {
-            // Remove event listener when component unmounts or scrolling is re-enabled
-            window.removeEventListener('wheel', handleScroll);
-        };
-    }, [isScrollingDisabled, progress, animationCompleted]);
+    //     return () => {
+    //         // Remove event listener when component unmounts or scrolling is re-enabled
+    //         window.removeEventListener('wheel', handleScroll);
+    //     };
+    // }, [isScrollingDisabled, progress, animationCompleted]);
 
     const reviews1 = [
         {
@@ -152,6 +153,29 @@ const JoinUs = () => {
         },
     ];
 
+    const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0 });
+
+    // Calculate the remaining time until the event and update the countdown state
+    const calculateCountdown = () => {
+        const today = new Date();
+        const eventDate = new Date('2024-03-22 23:59:59');
+        const timeDifference = eventDate.getTime() - today.getTime();
+
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+        setCountdown({ days, hours, minutes });
+    };
+
+    // Calculate the countdown on component mount and then update it every minute
+    useEffect(() => {
+        calculateCountdown();
+
+        const intervalId = setInterval(calculateCountdown, 60000);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
 
     return (
@@ -187,13 +211,13 @@ const JoinUs = () => {
                 <Typography
                     variant="h2"
                     sx={{
-                        fontWeight: 'Medium',
-                        fontSize: '5rem',
+                        fontWeight: '600',
+                        fontSize: '3rem',
                         position: 'absolute',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         zIndex: '1',
-                        top: "63%",
+                        top: "46%",
                     }}
                 >
                     Want to become one of us?
@@ -215,6 +239,107 @@ const JoinUs = () => {
                 >
                     Apply Now!
                 </Button>
+
+                <Box
+                    sx={{
+                        width: '45%',
+                        height: '15vh',
+                        backgroundColor: '#fff',
+                        borderRadius: '25px',
+                        position: 'absolute',
+                        zIndex: '1',
+                        top: '55%',
+                        opacity: '0.85',
+                        padding: '20px',
+                    }}
+                >
+                    <Typography
+                        variant="h6"
+                        sx={{
+                            position: 'absolute',
+                            top: '20%',
+                            fontWeight: 'Light',
+                            color: theme.palette.primary.main,
+                            textTransform: 'uppercase',
+                        }}
+                    >
+                        Recruitment <br /> Closes in
+                    </Typography>
+                    <Typography
+                        variant="h4"
+                        sx={{
+                            position: 'absolute',
+                            left: '32%',
+                            fontWeight: '700',
+                            color: theme.palette.primary.main,
+                        }}
+                    >
+                        {countdown.days}
+                    </Typography>
+                    <Typography
+                        variant="h4"
+                        sx={{
+                            position: 'absolute',
+                            left: '42%',
+                            fontWeight: '700',
+                            color: theme.palette.primary.main,
+                            marginLeft: '90px', // Adjust the spacing as needed
+                        }}
+                    >
+                        {countdown.hours}
+                    </Typography>
+                    <Typography
+                        variant="h4"
+                        sx={{
+                            position: 'absolute',
+                            left: '52%',
+                            fontWeight: '700',
+                            color: theme.palette.primary.main,
+                            marginLeft: '200px', // Adjust the spacing as needed
+                        }}
+                    >
+                        {countdown.minutes}
+                    </Typography>
+                    <Typography
+                        variant="h4"
+                        sx={{
+                            position: 'absolute',
+                            left: '29%',
+                            fontWeight: 'Light',
+                            color: theme.palette.primary.main,
+                            top: '42%'
+                        }}
+                    >
+                        Days
+                    </Typography>
+                    <Typography
+                        variant="h4"
+                        sx={{
+                            position: 'absolute',
+                            left: '37%',
+                            fontWeight: 'Light',
+                            color: theme.palette.primary.main,
+                            marginLeft: '90px', // Adjust the spacing as needed
+                            top: '42%'
+                        }}
+                    >
+                        Hours
+                    </Typography>
+                    <Typography
+                        variant="h4"
+                        sx={{
+                            position: 'absolute',
+                            left: '46%',
+                            fontWeight: 'Light',
+                            color: theme.palette.primary.main,
+                            marginLeft: '200px', // Adjust the spacing as needed
+                            top: '42%'
+                        }}
+                    >
+                        Minutes
+                    </Typography>
+                </Box>
+
 
                 <Box
                     sx={{
@@ -331,7 +456,7 @@ const JoinUs = () => {
                     sx={{
                         position: 'absolute',
                         left: '15rem',
-                        top: '37%',
+                        top: '38%',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'regular',
@@ -357,7 +482,7 @@ const JoinUs = () => {
                     endIcon={<ArrowForwardIcon />}
                     sx={{
                         position: 'absolute',
-                        left: '15rem',
+                        left: '17rem',
                         top: '60%',
                         borderRadius: '10px',
                         py: '10px',
@@ -437,14 +562,51 @@ const JoinUs = () => {
                     sx={{
                         display: 'inline-flex',
                         alignItems: 'center',
+                        justifyContent: 'center',
                         gap: '2.5rem',
                         position: 'absolute',
                         top: '30%',
                         width: '100%',
                         height: '38vh',
-                        overflow: 'hidden',
+                        overflow: 'visible',
+
                     }}>
-                    <Carousel reviews={reviews1} duration='30s' direction='left' />
+                    {/* <Carousel reviews={reviews1} duration='30s' direction='left' /> */}
+                    <CustomReview
+                        image={HeroImage}
+                        name="John Doe"
+                        department="Human Resources"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
+                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                    />
+                    <CustomReview
+                        image={HeroImage}
+                        name="John Doe"
+                        department="Human Resources"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor consectetur adipiscing elit Lorem ipsum dolor sit amet consectetur adipiscing elit Lorem ipsum dolor sit amet"
+                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                    />
+                    <CustomReview
+                        image={HeroImage}
+                        name="John Doe"
+                        department="Human Resources"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
+                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                    />
+                    <CustomReview
+                        image={HeroImage}
+                        name="John Doe"
+                        department="Human Resources"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor consectetur adipiscing elit Lorem ipsum dolor sit amet consectetur adipiscing elit Lorem ipsum dolor sit amet"
+                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                    />
+                    <CustomReview
+                        image={HeroImage}
+                        name="John Doe"
+                        department="Human Resources"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
+                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                    />
                 </Box>
 
                 {/* Second row of reviews */}
@@ -452,21 +614,57 @@ const JoinUs = () => {
                     sx={{
                         display: 'inline-flex',
                         alignItems: 'center',
+                        justifyContent: 'center',
                         gap: '2.5rem',
                         position: 'absolute',
-                        top: '60%',
+                        top: '62%',
                         width: '100%',
                         height: '38vh',
-                        overflow: 'hidden',
+                        overflow: 'visible',
                     }}>
-                    <Carousel reviews={[...reviews1].reverse()} direction='left' />
+                    {/* <Carousel reviews={[...reviews1].reverse()} direction='left' /> */}
+                    <CustomReview
+                        image={HeroImage}
+                        name="John Doe"
+                        department="Human Resources"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
+                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                    />
+                    <CustomReview
+                        image={HeroImage}
+                        name="John Doe"
+                        department="Human Resources"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
+                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                    />
+                    <CustomReview
+                        image={HeroImage}
+                        name="John Doe"
+                        department="Human Resources"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor consectetur adipiscing elit Lorem ipsum dolor sit amet consectetur adipiscing elit Lorem ipsum dolor sit amet"
+                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                    />
+                    <CustomReview
+                        image={HeroImage}
+                        name="John Doe"
+                        department="Human Resources"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
+                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                    />
+                    <CustomReview
+                        image={HeroImage}
+                        name="John Doe"
+                        department="Human Resources"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
+                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                    />
                 </Box>
 
             </Box>
 
             {/* 5th Section */}
             <Box
-                ref={sectionRef}
+                // ref={sectionRef}
                 sx={{
                     position: 'relative',
                     display: 'flex',
@@ -489,7 +687,8 @@ const JoinUs = () => {
                     How to apply?
                 </Typography>
 
-                <HowToApply progress={progress * 6.5} />
+                {/* progress * 6.5 */}
+                <HowToApply progress={190} />
 
             </Box>
 
@@ -531,11 +730,11 @@ const JoinUs = () => {
                 </Typography>
                 <img src={guiadocandidato} alt='guiadocandidato' style={{
                     position: 'absolute',
-                    maxWidth: '50%',
+                    maxWidth: '55%',
                     maxHeight: '100%',
                     objectFit: 'cover',
-                    top: '15rem',
-                    left: '15rem',
+                    top: '14rem',
+                    left: '10rem',
                 }} />
 
                 <Typography

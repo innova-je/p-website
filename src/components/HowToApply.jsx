@@ -69,9 +69,6 @@ const MiddleBox = ({ barheight }) => {
         bgImg = congrats;
     }
 
-    // Use console.log to check the value of bgImg
-    console.log(bgImg);
-
     return (
         console.log('asdasda', barheight),
         <>

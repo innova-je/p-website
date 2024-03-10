@@ -10,6 +10,7 @@ import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import laso from '../Animations/laso-animation.json';
 
 import Members from '../Members.json'
+import { useMediaQuery } from 'react-responsive';
 
 const CustomTitle = ({ title, subtitle, theme }) => {
 
@@ -55,7 +56,7 @@ const getMemberImages = (departmentName) => {
 
 const OurTeam = () => {
     const theme = useTheme();
-    
+
     const sales_members_names = getMemberNames('Comercial');
     const marketing_members_names = getMemberNames('Marketing');
     const projects_members_names = getMemberNames('Projetos');
@@ -68,25 +69,32 @@ const OurTeam = () => {
     const quality_members_images = getMemberImages('Qualidade');
     const hr_members_images = getMemberImages('Recursos Humanos');
 
-    const lasoRef = useRef<LottieRefCurrentProps>(null);
+    const mobile = useMediaQuery({ maxWidth: 600 });
+    const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
+    const desktop = useMediaQuery({ minWidth: 1081 });
+
+    const lasoRef = useRef < LottieRefCurrentProps > (null);
 
 
     return (
         <>
-            <Box sx={{ position: "relative", top: "60px", height: "135vh" }}>
+            <Box sx={{ position: "relative", top: "60px", minHeight: '135vh' }}>
                 <img
-                    style={{ width: '100%', height: 'auto', position: 'absolute' }}
+                    style={{
+                        width: '100%',
+                        position: 'absolute',
+                        top: desktop ? '3%' : tablet ? '4vw' : '6vw',
+                    }}
                     src={elements}
                     alt='elements'
                 />
                 <Typography
                     align="center"
-                    gutterBottom
                     sx={{
-                        fontSize: "85px",
-                        fontWeight: 'Regular',
+                        fontSize:  desktop ? '120px' : tablet ? '4vw' : '6vw',
+                        fontWeight: 'Medium',
                         position: 'absolute',
-                        top: '5rem',
+                        top:  desktop ? '14rem' : tablet ? '4vw' : '6vw',
                         zIndex: 1,
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
@@ -109,20 +117,24 @@ const OurTeam = () => {
                             'linear-gradient(to top, rgba(240,240,240,1), rgba(240,240,240,0))',
                     }}
                 />
-                
+
                 <Lottie
                     lottieRef={lasoRef}
                     loop={false}
                     animationData={laso}
                     style={{
                         position: 'absolute',
-                        right: '18rem',
+                        left: '50%',
+                        transform: 'translateX(calc(50% - 20px))', // Adjust the offset as needed
                         top: '60px',
                         width: '330px',
-                        zIndex: 1
+                        zIndex: 1,
                     }}
-                    speed={2} // You can adjust the speed value as needed
+                    speed={2}
                 />
+
+
+
 
             </Box>
 

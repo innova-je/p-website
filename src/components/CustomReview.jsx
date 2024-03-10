@@ -13,6 +13,12 @@ const CustomReview = ({ image, name, department, text }) => {
             bgcolor="white"
             width="15rem"
             boxShadow={3}
+            sx={{
+                transition: 'transform 0.2s ease-in-out',
+                '&:hover': {
+                    transform: 'scale(1.1)', 
+                },
+            }}
         >
             <Box
                 display="flex"
@@ -39,7 +45,7 @@ const CustomReview = ({ image, name, department, text }) => {
                     </Box>
                 </Box>
 
-                <Typography variant="body2" align="center" sx={{fontSize:"12px"}}>
+                <Typography variant="body2" align="center" sx={{ fontSize: "12px" }}>
                     {text}
                 </Typography>
             </Box>
