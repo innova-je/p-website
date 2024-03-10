@@ -55,6 +55,10 @@ const OurTeam = () => {
     const qualityDepartment = Members.departments.find((dept) => dept.name === "Quality");
     const humanResourcesDepartment = Members.departments.find((dept) => dept.name === "Human Resources");
 
+    const mobile = useMediaQuery({ maxWidth: 600 });
+    const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+    const desktop = useMediaQuery({ minWidth: 1081 });
+
     const lasoRef = useRef<LottieRefCurrentProps>(null);
 
     return (
