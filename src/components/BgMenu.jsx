@@ -150,22 +150,22 @@ const BgMenu = () => {
     bottom: 0
   }}>
     
-      <NavLink to="/about-us" style={NavLinkStyle} onClick={() => handleNavLinkClick('/about-us')}>
+      <NavLink to="/about-us" style={NavLinkStyle}>
           <Typography style={PagesLinkStyle}>About Us</Typography>
       </NavLink> 
-      <NavLink to="/services" style={NavLinkStyle} onClick={() => handleNavLinkClick('/services')}>
+      <NavLink to="/services" style={NavLinkStyle} >
           <Typography style={PagesLinkStyle}>Services</Typography>
       </NavLink>
-      <NavLink to="/our-people/our-team" style={NavLinkStyle} onClick={() => handleNavLinkClick('/our-people/our-team')}>
+      <NavLink to="/our-people/our-team" style={NavLinkStyle} >
           <Typography style={PagesLinkStyle}>Our Team</Typography>
       </NavLink>
-      <NavLink to="/our-people/our-advisors" style={NavLinkStyle} onClick={() => handleNavLinkClick('/our-people/our-advisors')}>
+      <NavLink to="/our-people/our-advisors" style={NavLinkStyle} >
           <Typography style={PagesLinkStyle}>Our Advisors</Typography>
       </NavLink>
-      <NavLink to="/join-us" style={NavLinkStyle} onClick={() => handleNavLinkClick('/events')}>
+      <NavLink to="/join-us" style={NavLinkStyle} >
           <Typography style={PagesLinkStyle}>Events</Typography>
       </NavLink>
-      <NavLink to="/out-of-office" style={NavLinkStyle} onClick={() => handleNavLinkClick('/out-of-office')}>
+      <NavLink to="/out-of-office" style={NavLinkStyle} >
           <Typography style={PagesLinkStyle}>Out of Office</Typography>    
       </NavLink>              
     
