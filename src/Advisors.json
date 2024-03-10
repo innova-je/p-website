@@ -5,37 +5,37 @@
                 {
                     "name": "Cláudia Quaresma",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "uywudhanca",
+                    "description": "Description",
                     "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
                 },
                 {
                     "name": "André Carvalho",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "uywudhanca",
+                    "description": "Description",
                     "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
                 },
                 {
                     "name": "Rui Gonçalves",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "ines.mendes@innova.pt",
+                    "description": "Description",
                     "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
                 },
                 {
                     "name": "João Leitão",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "uywudhanca",
+                    "description": "Description",
                     "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
                 },
                 {
                     "name": "Ana Rodrigo Gonçalves",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "uywudhanca",
+                    "description": "Description",
                     "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
                 },
                 {
                     "name": "Daniel Aelenei",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "uywudhanca",
+                    "description": "Description",
                     "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
                 }
             ]
@@ -47,32 +47,37 @@
                 {
                     "name": "Vasco Matos",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "uywudhanca",
-                    "testimony": "gadvhad hna"
+                    "description": "Description",
+                    "testimony": "Testimony",
+                    "linkedin": ""
                 },
                 {
                     "name": "Ema Paulo",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "uywudhanca",
-                    "testimony": "gadvhad hna"
+                    "description": "Description",
+                    "testimony": "Testimony",
+                    "linkedin": ""
                 },
                 {
                     "name": "Pedro Mirão",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "uywudhanca",
-                    "testimony": "gadvhad hna"
+                    "description": "Description",
+                    "testimony": "Testimony",
+                    "linkedin": ""
                 },
                 {
                     "name": "Guilherme Salvador",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "uywudhanca",
-                    "testimony": "gadvhad hna"
+                    "description": "Description",
+                    "testimony": "Testimony",
+                    "linkedin": ""
                 },
                 {
                     "name": "Ana Rita Rebelo",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "uywudhanca",
-                    "testimony": "gadvhad hna"
+                    "description": "Description",
+                    "testimony": "Testimony",
+                    "linkedin": ""
                 }
             ]
         }

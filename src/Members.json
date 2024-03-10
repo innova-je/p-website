@@ -1,44 +1,47 @@
 {
     "departments": [
         {
-            "name": "Executive Council",
-            "members": [
-                {
-                    "name": "Inês Costa",
-                    "imgDirectory": "Conselho Executivo/ines_costa.webp",
-                    "email": "ines.costa@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/ineesmcosta/"
-                },
-                {
-                    "name": "Leonor Almeida",
-                    "imgDirectory": "Conselho Executivo/leonor_almeida.webp",
-                    "email": "leonor.almeida@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/leonoraalmeida/"
-                },
-                {
-                    "name": "Carolina Maurício",
-                    "imgDirectory": "Conselho Executivo/carolina_mauricio.webp",
-                    "email": "carolina.mauricio@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/carolina-maur%C3%ADcio-83a18b218/"
-                },
-                {
-                    "name": "Nuno Alves",
-                    "imgDirectory": "Conselho Executivo/nuno_alves.webp",
-                    "email": "nuno.alves@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/nuno-alves-928631211/"
-                }
-
-            ]
-        },
+            "name": "Conselho Executivo",
+            "president": {
+                "name": "Inês Costa",
+                "title": "President",
+                "imgDirectory": "Conselho Executivo/ines_costa.webp",
+                "email": "ines.mendes@innova.pt",
+                "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
+            },
+            "externalAffairsVicePresident":{
+                "name": "Leonor Almeida",
+                "title": "External Affairs Vice-President",
+                "imgDirectory": "Conselho Executivo/leonor_almeida.webp",
+                "email": "catarina.santos@innova.pt",
+                "linkedin": "www.linkedin.com/in/catarina-santos17"
+            },
+            "internalAffairsVicePresident":{
+                "name": "Carolina Maurício",
+                "title": "Internal Affairs Vice-President",
+                "imgDirectory": "Conselho Executivo/carolina_mauricio.webp",
+                "email": "diogo.mota@innova.pt",
+                "linkedin": "https://www.linkedin.com/in/diogo-mota23/"
+            },
+            "financialManager":{
+                "name": "Nuno Alves",
+                "title": "Financial Manager",
+                "imgDirectory": "Conselho Executivo/nuno_alves.webp",
+                "email": "maria.pessoa@innova.pt",
+                "linkedin": "https://www.example.com/john_doe"
+            }
+        },        
         {
-            "name": "Comercial",
-            "members": [
+            "name": "Sales",
+            "director" : 
                 {
+                    "title" : "Sales Director",
                     "name": "Inês Mendes",
                     "imgDirectory": "Comercial/ines_mendes.webp",
                     "email": "ines.mendes@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
-                },
+                },            
+            "members": [
                 {
                     "name": "Catarina Santos",
                     "imgDirectory": "Comercial/catarina_santos.webp",
@@ -73,13 +76,15 @@
         },
         {
             "name": "Marketing",
-            "members": [
+            "director" : 
                 {
+                    "title" : "Marketing Director",
                     "name": "Matilde Azadinho",
                     "imgDirectory": "Marketing/matilde_azadinho.webp",
                     "email": "matilde.azadinho@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/matilde-azadinho-463057231"
                 },
+            "members": [
                 {
                     "name": "Bruna Torgal",
                     "imgDirectory": "Marketing/bruna_torgal.webp",
@@ -119,14 +124,16 @@
             ]
         },
         {
-            "name": "Projetos",
-            "members": [
+            "name": "Projects",
+            "director" : 
                 {
+                    "title" : "Projects Director",
                     "name": "Vicente Santos",
                     "imgDirectory": "Projetos/vicente_santos.webp",
                     "email": "vicente.santos@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/vicenters1/"
                 },
+            "members": [
                 {
                     "name": "Ana Rita Galhardo",
                     "imgDirectory": "Projetos/ana_rita_galhardo.webp",
@@ -286,14 +293,16 @@
             ]
         },
         {
-            "name": "Qualidade",
-            "members": [
+            "name": "Quality",
+            "director" : 
                 {
+                    "title" : "Quality Director",
                     "name": "Filipa Santos",
                     "imgDirectory": "Qualidade/filipa_santos.webp",
                     "email": "filipa.santos@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/filipa-santos-5a949620b/"
                 },
+            "members": [
                 {
                     "name": "Laura Filipe",
                     "imgDirectory": "Qualidade/laura_filipe.webp",
@@ -321,14 +330,16 @@
             ]
         },
         {
-            "name": "Recursos Humanos",
-            "members": [
+            "name": "Human Resources",
+            "director" : 
                 {
+                    "title" : "Human Resources Director",
                     "name": "Maria Francisca Franco", 
                     "imgDirectory": "RH/maria_francisca_franco.webp",
                     "email": "francisca.franco@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/francisca-franco-a6bb14221"
                 },
+            "members": [
                 {
                     "name": "Beatriz Infante",
                     "imgDirectory": "RH/beatriz_infante.webp",

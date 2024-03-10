@@ -16,14 +16,16 @@ const Accomplishments = ({ image, description, date }) => {
     display: "flex",
     flexDirection: isSelected ? "row" : "column",
     width: isSelected ? "60vw" : "25vw",
-    width: (desktop ? "25dvw" : (tablet ? "30dvw" : "50dvw")),
-    height: (desktop ? "70dvh" : (tablet ? "50dvh" : "30dvh")),
+    width: (desktop ? "25dvw" : (tablet ? "30dvw" : "70dvw")),
+    height: (desktop ? "70dvh" : (tablet ? "50dvh" : "50dvh")),
     borderRadius: "20px",
     overflow: "hidden",
     boxShadow: "10px 10px 40px #73204340",
-    transition: "width 0.3s ease-in-out, transform 0.5s linear",
+    transition: "width 0.3s ease-in-out, transform 0.3s linear",
     cursor: isSelected ? "auto" : "pointer",
-    transform: isHovered && !isSelected ? "scale(1.05)" : "scale(1)",
+    '&:hover': {
+      transform: 'scale(1.05)', 
+    },
   }));
 
 
@@ -37,7 +39,6 @@ const Accomplishments = ({ image, description, date }) => {
     display: "flex",
     justifyContent: "center",
     clipPath: isSelected ? "" : "polygon(0 18%, 100% 0%, 100% 100%, 0% 100%)",
-
   }));
 
   const Circle = styled(Box)(() => ({
@@ -72,8 +73,10 @@ const Accomplishments = ({ image, description, date }) => {
     top: isSelected ? "0%" : "15%",
     overflow: "hidden", 
     objectFit: "cover", 
-    filter: isHovered ? 'grayscale(0%)' : 'grayscale(100%)',
-    transition: 'filter 0.5s ease-in-out',
+    transition: "filter 0.3s ease-in-out",
+    '&:hover': {
+      filter: 'grayscale(0%)', 
+    },
   };
 
   const newsTextStyle = {

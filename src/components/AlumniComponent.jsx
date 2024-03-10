@@ -6,8 +6,8 @@ import { useMediaQuery } from 'react-responsive';
 const CustomComponent = ({ name, description, image }) => {
 
   const mobile = useMediaQuery({ maxWidth: 600 });
-    const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
-    const desktop = useMediaQuery({ minWidth: 1081 });
+  const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+  const desktop = useMediaQuery({ minWidth: 1081 });
 
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
@@ -97,7 +97,7 @@ const CustomComponent = ({ name, description, image }) => {
 
   const otherNameStyle = {
     fontWeight: 'bold',
-    fontSize: '1.4vw',
+    fontSize: (desktop ? "1.4vw" : (tablet ? "1.8vw" : "3vw")),
     color: "white",
     fontFamily: theme.typography.fontFamily,
     display: "flex",
@@ -114,7 +114,7 @@ const CustomComponent = ({ name, description, image }) => {
   
 
   const descriptionStyle = {
-    fontSize: (desktop ? "0.9vw" : (tablet ? "1.2vw" : "2vw")),
+    fontSize: (desktop ? "1.2vw" : (tablet ? "1.7vw" : "2.5vw")),
     color: "#062533",
     fontFamily: theme.typography.fontFamily,
     width: "80%",
@@ -126,6 +126,12 @@ const CustomComponent = ({ name, description, image }) => {
     overflowWrap: 'break-word',
   };
 
+  const handleClick = () => {
+    if (mobile || tablet) {
+      setIsHovered(!isHovered);
+    }
+  };  
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -133,6 +139,7 @@ const CustomComponent = ({ name, description, image }) => {
         style={containerStyle}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={handleClick}
       >
         
         <div style={imageContainerStyle}>

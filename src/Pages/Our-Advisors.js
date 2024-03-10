@@ -1,7 +1,6 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react';
 import { useTheme } from '@mui/material/styles';
-import PlaceHolder from '../images/other/placeholder.png';
 import elements from '../images/other/Elements.png';
 import AdvisorComponent from '../components/AdvisorComponent';
 import AlumniComponent from '../components/AlumniComponent';
@@ -23,11 +22,8 @@ const CustomTitle = ({ title, theme }) => {
                     fontWeight: '500',
                     color: theme.palette.secondary.main,
                     fontFamily: theme.typography.fontFamily,
-                    backgroundColor: "#F0F0F0",
-                    height: "15vh",
-                    margin: "0 auto",
+                    width: "100dvw",
                     display: "flex",
-                    alignItems: "center",
                     justifyContent: "center",
                     fontSize: (desktop ? "3dvw" : (tablet ? "4dvw" : "6dvw")),
                 }}
@@ -52,122 +48,116 @@ const OurAdvisors = () => {
     const theme = useTheme();
     
     return (
-        <>
-        <Box sx={{ position: "relative", top: "60px", height: "20vh" }}>
-                <img
-                    style={{ width: '100%', height: 'auto', position: 'absolute', top: "10%"}}
+        <div style={{position: "relative", 
+        top: 0, 
+        background: "#F0F0F0", 
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+
+        }}>
+            <div style={{position: "relative", top: "10vh", width: "100%"}}>
+               <img
+                    style={{ width: '100%', top: 0, position: 'relative', overflow: "hidden", zIndex: 0}}
                     src={elements}
                     alt='elements'
-                />
+                /> 
+                
                 <Typography
                     align="center"
                     gutterBottom
                     sx={{
                         fontSize: (desktop ? "5dvw" : (tablet ? "6dvw" : "8dvw")),
-                        fontWeight: 'Regular',
-                        position: 'relative',
-                        top: '50%',
-                        zIndex: 1,
+                        marginTop: mobile ? "-13%" : "-15%",
+                        zIndex: 2,
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         width: '100%',
+                        background: "#F0F0F0"
                     }}>
                     We are not alone
-                </Typography>             
-                
-            </Box>           
+                </Typography>
 
-            <Box sx={{
-                marginTop: (desktop ? 15 : (tablet ? 6 : 0)),
-                marginBottom: 4,
-                textAlign: "center",
-                position: "relative"
-            }}>
-                <CustomTitle title="Advisory Board"  theme={theme} />
-            </Box>
-            
-            <Box sx={{
+            <div className='Advisors' style={{position: "relative", zIndex: 1}}>
+                <CustomTitle title="Advisory Board" theme={theme} />
+            <div className='AdvisorsBoard' style={{
                 display: "flex",
-                justifyContent: "center",
+                flexDirection: "column",
+                alignItems: "center",
+                placeItems: "center",
                 position: "relative",
-                marginTop: "5%",
+                marginTop: "5%"
             }}>
-                <Box position="relative" sx={{ 
-                    display: (desktop ? "grid" : (tablet ? "grid" : "grid")),
-                    flexDirection:"column",
-                    justifyContent: 'center', 
-                    columnGap: mobile ? "10%" : "5%", 
-                    rowGap: mobile ? "5%" : "10%", 
-                    gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)")),                    
-                    gridTemplateRows: "repeat(2, 1fr)" 
-                    }}>
-            {advisoryBoardData.map((advisor, index) => (
-                <AdvisorComponent
-                key={index}
-                name={advisor.name}
-                description={advisor.description}
-                image={advisor.imgDirectory}
-                />
-            ))}
-            </Box>
-            </Box>
-            
-            <Box sx={{
-                height: mobile ? "100%" : "160vh",
-            }}>
-              <Box sx={{
-                marginTop: (desktop ? 20 : (tablet ? 6 : 6)),
-                marginBottom: (desktop ? 4 : (tablet ? 2 : 0)),
-                textAlign: "center",
-                position: "relative"
-            }}>
-                <CustomTitle title="Alumni Board"  theme={theme} />
-            </Box>
-
-            <Box sx={{
-                display: "grid",
-                rowGap: "10%",
-                justifyContent: "center",
-                position: "relative",
-                marginTop: "5%",
-            }}>
-
-            <Box sx={{ 
-                display: 'grid', 
-                justifyContent: 'center', 
-                columnGap: "5%", 
-                rowGap: "10%",
-                gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)")),
-                }} >
-            {alumniBoardData.slice(0,3).map((alumni, index) => (
-                <AlumniComponent
-                key={index}
-                name={alumni.name}
-                description={alumni.description}
-                testimony={alumni.testimony}
-                image={alumni.imgDirectory}
-                />
-            ))}
-            </Box>
-            
-            <Box sx={{ display: 'flex', justifyContent: 'center', columnGap: "5%"}} >
-            {alumniBoardData.slice(3,5).map((alumni, index) => (
-                <AlumniComponent
-                key={index}
-                name={alumni.name}
-                description={alumni.description}
-                testimony={alumni.testimony}
-                image={alumni.imgDirectory}
-                />
-            ))}
-            </Box>
                 
-            </Box>  
-            
-            </Box>
-            
+            <div style={{
+                display: "grid",
+                justifyContent: "center",
+                columnGap: "10%",
+                rowGap: "5%",
+                gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)")),
+                gridTemplateRows: "repeat(2, 1fr)",
+            }}>
+                {advisoryBoardData.map((advisor, index) => (
+                    <AdvisorComponent
+                        key={index}
+                        name={advisor.name}
+                        description={advisor.description}
+                        image={advisor.imgDirectory}
+                        linkedin={advisor.linkedin}
+                    />
+                ))}
+            </div>
+        </div>
 
-        </>
+        </div>
+
+        <div className='Alumnis' style={{
+            position: "relative", 
+            height: "auto", 
+            margin: mobile ? "25% 0 0 0" : "8% 0 0 0", 
+            zIndex: 1
+            }}>
+            
+            <CustomTitle title="Alumni Board"  theme={theme} />
+                
+            <div className='AlumnisBoard' style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                placeItems: "center",
+                marginTop: mobile ? "15%" : "0%",
+                height: "auto",
+                marginBottom: mobile ? "30%" : "0%"
+            }}>
+            <div style={{
+                display: "grid",
+                placeContent: "center",
+                placeItems: "center",
+                rowGap: (mobile ? "7%" : (tablet ? "10%" : "5%")),
+                marginTop: "5%",
+                columnGap: "10%",
+                height: "auto",
+                marginBottom: (mobile ? "20%" : (tablet ? "20%" : "15%")),
+                gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)"))
+            }}>
+                {alumniBoardData.map((alumni, index) => (
+                    <AlumniComponent
+                        key={index}
+                        name={alumni.name}
+                        description={alumni.description}
+                        image={alumni.imgDirectory}
+                    />
+                ))}
+            </div>
+        </div>
+
+        </div>
+        
+    </div>
+            
+    </div>
+            
     );
 };
 

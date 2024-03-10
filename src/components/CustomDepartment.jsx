@@ -3,10 +3,14 @@ import { Box, Typography } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
 import CustomComponent from './MemberComponents';
 
-const CustomDepartment = ({ Department, names, images }) => {
-  const theme = useTheme();
+const CustomDepartment = ({ department }) => {
 
-  const directorTitle = Department + " Director"
+
+  const getMembers = (department) => {
+    return department ? department.members.map((member) => member) : [];
+  }
+
+  const theme = useTheme();
 
   return (
     <ThemeProvider theme={theme}>
@@ -20,7 +24,7 @@ const CustomDepartment = ({ Department, names, images }) => {
           marginLeft: 15,
         }}
       >
-        {Department + " Team"}
+        {department.name + " Team"}
       </Typography>
             
       <Box
@@ -38,11 +42,11 @@ const CustomDepartment = ({ Department, names, images }) => {
         }}
       >
         {/* First CustomComponent with specific props */}
-        <CustomComponent title={directorTitle} name={names[0]} image={images[0]} />
+        <CustomComponent title={department.director.title} name={department.director.name} image={department.director.imgDirectory} />
 
         {/* Remaining CustomComponent instances */}
-        {names.slice(1).map((name, index) => (          
-          <CustomComponent key={index + 1} title='' name={name} image={images[index + 1]} />
+        {getMembers(department).map((member, index) => (            
+          <CustomComponent key={index + 1} title='' name={member.name} image={member.imgDirectory} />
         ))}
       </Box>
     </ThemeProvider>

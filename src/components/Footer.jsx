@@ -1,9 +1,9 @@
-import { AppBar, Box, styled, ImageListItem, Typography, Link } from '@mui/material';
+import { AppBar, Box, Button, styled, ImageListItem, Typography, Link } from '@mui/material';
 import React from 'react'
 
 import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
 
-import InNovaLogo from '../images/OurLogos/logos-10.png'
+import InNovaLogo from '../images/OurLogos/logos-08.png'
 import CustomButton from './CustomButton';
 
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
@@ -24,28 +24,32 @@ const Footer = () => {
         backgroundColor: isJoinUsPage ? "#FFFFFF" : "#F0F0F0",
         position: "absolute",
         width: "100%",
-        height: mobile ? "20vh" : "32%",
+        height: mobile ? "45vh" : "32%",
         justifyContent: "center",
         alignItems: "center",
         boxShadow: "none",
       }));
 
     const Logo = styled(ImageListItem)(() => ({
-        position: "absolute",
+        position: "relative",
         width: mobile ? "50%" : "17%",
         height: mobile ? "50%" : "17%",
-        marginLeft: mobile ? "" : "10%",
-        marginTop: mobile ? "" : "6%"
+        marginLeft: mobile ? "10%" : "10%",
+        marginTop: mobile ? "" : "6%",
+        backgroundColor: "blue"
       }));
 
     const Pages = styled(Box)(() => ({
         position: "relative",
         top: mobile ? "none" : "45%",
         width: "100%",
-        display: "grid",
+        display: mobile ? "flex" : "grid",
+        flexDirection: "column",
         gridTemplateColumns: "2fr 2fr",
         rowGap: "2px",
         columnGap: mobile ? "5%" : "20%",
+        backgroundColor: "green",
+        marginLeft: "10%"
     }));   
 
     const SocialMedia = styled(Box)(() => ({
@@ -68,6 +72,19 @@ const Footer = () => {
 
     const NavLinkStyle = {
         textDecoration : "none",
+      };
+
+      const linkStyles = {
+        textDecoration: 'none',
+        color: '#732043',
+        fontWeight: 'bold',
+        fontSize: '18px',
+        transition: 'font-weight 0.3s ease',
+        textTransform: 'none'
+      };
+    
+      const activeLinkStyles = {
+        fontWeight: 'normal',
       };
 
 
@@ -96,12 +113,13 @@ const Footer = () => {
                     }}>
 
                 <div style={{
-                    position: "relative",
-                    height: "100%",
-                    width: "30%",
+                    position: "absolute",
+                    top: mobile ? "0" : "",
+                    left: 0,
+                    height: "30%",
+                    width: mobile ? "100%" : "30%",
                     display: mobile ? "flex" : "none",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    alignItems: mobile ? "" : "center",
                 }}>
                    <Logo>
                     <img alt='In-Nova Logo' src={InNovaLogo} />
@@ -114,6 +132,7 @@ const Footer = () => {
                         width: mobile ? "50%" : "35%",
                         margin: mobile ? "none" : "0 0 0 6vw",
                         display: "flex",
+                        alignItems: "center"
                     }}>
 
                     <Typography sx={{
@@ -129,31 +148,33 @@ const Footer = () => {
     
                     <div style={{
                         width: "100%",
-                        height: mobile ? "" : "100%",
+                        height: mobile ? "50%" : "100%",
                         display: mobile ? "flex" : "",
                         alignItems: mobile ? "center" : "",
-                        justifyContent: mobile ? "center" : ""
+                        justifyContent: mobile ? "center" : "",
+                        //backgroundColor: "green",
+                        //marginLeft: "10%"
                     }}>
                     <Pages>
-                    <NavLink to="/about-us" style={NavLinkStyle} onClick={() => handleNavLinkClick('/about-us')}>
-                        <Typography style={PagesLinkStyle}>About Us</Typography>
-                    </NavLink>
-                        <NavLink to="/events" style={NavLinkStyle} onClick={() => handleNavLinkClick('/events')}>
+                        <NavLink to="about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+                            <Typography style={PagesLinkStyle}>About Us</Typography>
+                        </NavLink>
+                        <NavLink to="/events" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
                             <Typography style={PagesLinkStyle}>Events</Typography>
                         </NavLink> 
-                        <NavLink to="/services" style={NavLinkStyle} onClick={() => handleNavLinkClick('/services')}>
+                        <NavLink to="/services" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
                             <Typography style={PagesLinkStyle}>Services</Typography>
                         </NavLink>
-                        <NavLink to="/out-of-office" style={NavLinkStyle} onClick={() => handleNavLinkClick('/out-of-office')}>
+                        <NavLink to="/out-of-office" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
                             <Typography style={PagesLinkStyle}>Out of Office</Typography>
                         </NavLink>
-                        <NavLink to="/our-people/our-team" style={NavLinkStyle} onClick={() => handleNavLinkClick('/our-people/our-team')}>
+                        <NavLink to="/our-people/our-team" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
                             <Typography style={PagesLinkStyle}>Our Team</Typography>
                         </NavLink>
-                        <NavLink to="/join-us" style={NavLinkStyle} onClick={() => handleNavLinkClick('/join-us')}>{/* nao ha pagina de recrutamento*/}
+                        <NavLink to="/join-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>{/* nao ha pagina de recrutamento*/}
                             <Typography style={PagesLinkStyle}>Recruitment</Typography>
                         </NavLink>
-                        <NavLink to="/our-people/our-advisors" style={NavLinkStyle} onClick={() => handleNavLinkClick('/our-people/our-advisors')}>
+                        <NavLink to="/our-people/our-advisors" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
                             <Typography style={PagesLinkStyle}>Our Advisors</Typography>    
                         </NavLink>                             
                     </Pages>

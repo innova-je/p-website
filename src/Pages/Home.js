@@ -15,6 +15,7 @@ import Accomplishment from '../components/AccomplishmentComponent';
 import { NavLink, useNavigate } from 'react-router-dom';
 import ServicesCarousel from '../components/ServicesCarousel';
 import { useMediaQuery } from 'react-responsive';
+import AccomplishmentSlider from '../components/AccomplishmentSlider';
 
 const accomplishmentsData = [
     { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "janeiro 2024"},
@@ -60,6 +61,7 @@ const Home = () => {
 
       const ourServicesRef = useRef();
 
+      /*
       useEffect(() => {
         const handleScroll = () => {
           const scrollPosition = window.scrollY || document.documentElement.scrollTop;
@@ -80,9 +82,10 @@ const Home = () => {
     
         return () => {
           // Cleanup the event listener on component unmount
-          window.removeEventListener('scroll', handleScroll);
+          //window.removeEventListener('scroll', handleScroll);
         };
       }, []);
+      */
 
     return (
         <>
@@ -121,9 +124,9 @@ const Home = () => {
             position: "absolute",
             top: "45%",
             zIndex: "1",
-            backgroundColor: "red"
+            //backgroundColor: "red"
         }}>
-            <div style={{backgroundColor: "green", width: "100%"}}>
+            <div style={{backgroundColor: "transparent", width: "100%"}}>
                 <Typography sx={{
                 position: "relative",
                 textAlign: "center",
@@ -323,7 +326,7 @@ const Home = () => {
             <OurServices></OurServices>
         </section>
 
-        <Box sx={{marginTop: "5%"}}>   
+        <Box sx={{marginTop: mobile ? "15%" : "5%"}}>   
 
             <Typography style={{
                 width: "100%",
@@ -331,32 +334,15 @@ const Home = () => {
                 justifyContent: "center",
                 color: "#732043",
                 fontWeight: "700",
-                fontSize: (desktop ? "3.5dvw" : (tablet ? "4dvw" : "6dvw")),
+                fontSize: (desktop ? "3.5dvw" : (tablet ? "4dvw" : "6.5dvw")),
             }}>Our Latest Accomplishments</Typography>
-            <Box sx={{
-                width: "100vw",
-                display: "flex",
-                flexDirection: mobile ? "column" : "row",//Aqui se calhar é melhor ter um slider com setas
-                justifyContent: "center",
-                alignItems: "center",
-                gap: "5%",
-                marginTop: "3%"
-            }}>
-                
-            {accomplishmentsData.map((accomplishment) => (
-                <Accomplishment
-                description={accomplishment.description}
-                image={accomplishment.image}
-                date={accomplishment.date}
-                />
-            ))}
-            </Box>
+            <AccomplishmentSlider accomplishmentsData={accomplishmentsData}></AccomplishmentSlider>
             
         </Box>             
 
         <Box sx={{backgroundColor: "#F0F0F0", scrollSnapAlign: "start", scrollSnapStop: "always"}}>
-            <ClientsCarousel></ClientsCarousel>
-            <OurPartners></OurPartners> 
+            <ClientsCarousel/>
+            <OurPartners/>
         </Box>
                
 
