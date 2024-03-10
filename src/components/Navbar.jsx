@@ -171,7 +171,7 @@ const Navbar = () => {
           justifyContent: "right"
         }}>
         
-        <Link to="/join-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles} style={{
+        <Link to="/join-us" onClick={() => handleNavLinkClick('/join-us')} style={{
             position: "relative",
             display: tablet || desktop ? "flex" : "none",
             marginRight: desktop ? "7%" : "15%",
