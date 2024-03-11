@@ -1,7 +1,9 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Typography, IconButton } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
+import { ExpandMore as ExpandMoreIcon } from '@mui/icons-material';
 import CustomComponent from './MemberComponents';
+import { useMediaQuery } from 'react-responsive';
 
 const CustomDepartment = ({ department }) => {
   const getMembers = (department) => {
@@ -9,25 +11,52 @@ const CustomDepartment = ({ department }) => {
   }
 
   const theme = useTheme();
+  const desktop = useMediaQuery({ minWidth: 1081 });
+  const mobile = useMediaQuery({ maxWidth: 609 });
+  const [expanded, setExpanded] = useState(!desktop); // Start expanded if not on desktop
+
+  const handleToggle = () => {
+    setExpanded(!expanded);
+  };
 
   return (
     <ThemeProvider theme={theme}>
-      <Typography 
-        variant="h4" 
-        align="left" 
-        sx={{
-          fontWeight: 'Bold', 
-          color: theme.palette.primary.main, 
-          fontFamily: theme.typography.fontFamily, 
-          marginLeft: 15,
-        }}
-      >
-        {department.name + " Team"}
-      </Typography>
-            
       <Box
         sx={{
           display: 'flex',
+          alignItems: 'center',
+          paddingBottom: desktop ? 3: 10,
+        }}
+      >
+        <Typography 
+          variant= {desktop ? "h4": "h5"}
+          onClick={handleToggle} 
+          sx={{
+            position: 'absolute',
+            fontWeight: 'Bold', 
+            color: theme.palette.primary.main, 
+            fontFamily: theme.typography.fontFamily, 
+            left: mobile ? '20dvw': '10dvw',
+          }}
+        >
+          {department.name + " Team"}
+        </Typography>
+
+        {!desktop && (
+          <IconButton
+            onClick={handleToggle}
+            color="primary"
+            aria-label="toggle-list"
+            sx={{ position: 'absolute', left: mobile? '9dvw': '4dvw' }}
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        )}
+      </Box>
+            
+      <Box
+        sx={{
+          display: expanded || desktop ? 'flex' : 'none',
           justifyContent: 'center',
           flexWrap: 'wrap',
           gap: '30px',
@@ -44,13 +73,15 @@ const CustomDepartment = ({ department }) => {
           <CustomComponent 
             title={department.director.title} 
             name={department.director.name} 
-            image={department.director.imgDirectory} 
+            image={department.director.imgDirectory}
+            emailAddress={department.director.email}
+            linkedinLink={department.director.linkedin} 
           />
         )}
 
         {/* Remaining CustomComponent instances */}
         {getMembers(department).map((member, index) => (            
-          <CustomComponent key={index + 1} title='' name={member.name} image={member.imgDirectory} />
+          <CustomComponent key={index + 1} title='' name={member.name} image={member.imgDirectory} emailAddress={member.email} linkedinLink={member.linkedin}/>
         ))}
       </Box>
     </ThemeProvider>

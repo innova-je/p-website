@@ -6,29 +6,29 @@
                 "name": "Inês Costa",
                 "title": "President",
                 "imgDirectory": "Conselho Executivo/ines_costa.webp",
-                "email": "ines.mendes@innova.pt",
-                "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
+                "email": "ines.costa@innova.pt",
+                "linkedin": "https://www.linkedin.com/in/ineesmcosta/"
             },
             "externalAffairsVicePresident":{
                 "name": "Leonor Almeida",
                 "title": "External Affairs Vice-President",
                 "imgDirectory": "Conselho Executivo/leonor_almeida.webp",
-                "email": "catarina.santos@innova.pt",
-                "linkedin": "www.linkedin.com/in/catarina-santos17"
+                "email": "leonor.almeida@innova.pt",
+                "linkedin": "https://www.linkedin.com/in/leonoraalmeida"
             },
             "internalAffairsVicePresident":{
                 "name": "Carolina Maurício",
                 "title": "Internal Affairs Vice-President",
                 "imgDirectory": "Conselho Executivo/carolina_mauricio.webp",
-                "email": "diogo.mota@innova.pt",
-                "linkedin": "https://www.linkedin.com/in/diogo-mota23/"
+                "email": "carolina.mauricio@innova.pt",
+                "linkedin": "https://www.linkedin.com/in/carolina-maur%C3%ADcio-83a18b218/"
             },
             "financialManager":{
                 "name": "Nuno Alves",
                 "title": "Financial Manager",
                 "imgDirectory": "Conselho Executivo/nuno_alves.webp",
-                "email": "maria.pessoa@innova.pt",
-                "linkedin": "https://www.example.com/john_doe"
+                "email": "nuno.alves@innova.pt",
+                "linkedin": "https://www.linkedin.com/in/nuno-alves-928631211"
             }
         },        
         {
@@ -46,7 +46,7 @@
                     "name": "Catarina Santos",
                     "imgDirectory": "Comercial/catarina_santos.webp",
                     "email": "catarina.santos@innova.pt",
-                    "linkedin": "www.linkedin.com/in/catarina-santos17"
+                    "linkedin": "https://www.linkedin.com/in/catarina-santos17"
                 },
                 {
                     "name": "Diogo Mota",
@@ -144,7 +144,7 @@
                     "name": "Arthur Chaves",
                     "imgDirectory": "Projetos/arthur_chaves.webp",
                     "email": "arthur.chaves@innova.pt",
-                    "linkedin": "www.linkedin.com/in/arthur-alexandre-lannes-de-paiva-chaves-a22661263"
+                    "linkedin": "https://www.linkedin.com/in/arthur-alexandre-lannes-de-paiva-chaves-a22661263"
                 },
                 {
                     "name": "Beatriz Santos",
@@ -186,7 +186,7 @@
                     "name": "Gonçalo Duarte",
                     "imgDirectory": "Projetos/goncalo_duarte.webp",
                     "email": "goncalo.duarte@innova.pt",
-                    "linkedin": "www.linkedin.com/in/gonçalo-duarte-718564293"
+                    "linkedin": "https://www.linkedin.com/in/gonçalo-duarte-718564293"
                 },
                 {
                     "name": "Guilherme Pires",

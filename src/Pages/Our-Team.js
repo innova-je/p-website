@@ -140,21 +140,29 @@ const OurTeam = () => {
                     title={cexDepartment.president.title}
                     name={cexDepartment.president.name}
                     image={cexDepartment.president.imgDirectory}
+                    emailAddress={cexDepartment.president.email}
+                    linkedinLink={cexDepartment.president.linkedin}
                 />
                 <CustomComponent
                     title={cexDepartment.externalAffairsVicePresident.title}
                     name={cexDepartment.externalAffairsVicePresident.name}
                     image={cexDepartment.externalAffairsVicePresident.imgDirectory}
+                    emailAddress={cexDepartment.externalAffairsVicePresident.email}
+                    linkedinLink={cexDepartment.externalAffairsVicePresident.linkedin}
                 />
                 <CustomComponent
                     title={cexDepartment.internalAffairsVicePresident.title}
                     name={cexDepartment.internalAffairsVicePresident.name}
                     image={cexDepartment.internalAffairsVicePresident.imgDirectory}
+                    emailAddress={cexDepartment.internalAffairsVicePresident.email}
+                    linkedinLink={cexDepartment.internalAffairsVicePresident.linkedin}
                 />
                 <CustomComponent
                     title={cexDepartment.financialManager.title}
                     name={cexDepartment.financialManager.name}
                     image={cexDepartment.financialManager.imgDirectory}
+                    emailAddress={cexDepartment.financialManager.email}
+                    linkedinLink={cexDepartment.financialManager.linkedin}
                 />
             </Box>
 
@@ -169,11 +177,11 @@ const OurTeam = () => {
                     margin: '0 auto',
                 }}
             >
-                <CustomComponent title={salesDepartment.director.title} name={salesDepartment.director.name} image={salesDepartment.director.imgDirectory} />
-                <CustomComponent title={marketingDepartment.director.title} name={marketingDepartment.director.name} image={marketingDepartment.director.imgDirectory} />
-                <CustomComponent title={projectsDepartment.director.title} name={projectsDepartment.director.name} image={projectsDepartment.director.imgDirectory} />
-                <CustomComponent title={qualityDepartment.director.title} name={qualityDepartment.director.name} image={qualityDepartment.director.imgDirectory} />
-                <CustomComponent title={humanResourcesDepartment.director.title} name={humanResourcesDepartment.director.name} image={humanResourcesDepartment.director.imgDirectory} />
+                <CustomComponent title={salesDepartment.director.title} name={salesDepartment.director.name} image={salesDepartment.director.imgDirectory} emailAddress={salesDepartment.director.email} linkedinLink={salesDepartment.director.linkedin}/>
+                <CustomComponent title={marketingDepartment.director.title} name={marketingDepartment.director.name} image={marketingDepartment.director.imgDirectory} emailAddress={marketingDepartment.director.email} linkedinLink={marketingDepartment.director.linkedin}/>
+                <CustomComponent title={projectsDepartment.director.title} name={projectsDepartment.director.name} image={projectsDepartment.director.imgDirectory} emailAddress={projectsDepartment.director.email} linkedinLink={projectsDepartment.director.linkedin}/>
+                <CustomComponent title={qualityDepartment.director.title} name={qualityDepartment.director.name} image={qualityDepartment.director.imgDirectory} emailAddress={qualityDepartment.director.email} linkedinLink={qualityDepartment.director.linkedin}/>
+                <CustomComponent title={humanResourcesDepartment.director.title} name={humanResourcesDepartment.director.name} image={humanResourcesDepartment.director.imgDirectory} emailAddress={humanResourcesDepartment.director.email} linkedinLink={humanResourcesDepartment.director.linkedin}/>
             </Box>
 
             <Box marginTop={5} marginBottom={10} textAlign="center">

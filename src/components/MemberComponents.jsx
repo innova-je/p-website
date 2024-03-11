@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Typography } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
-import {Email, LinkedIn } from '@mui/icons-material';
+import { Email, LinkedIn } from '@mui/icons-material';
 
 
-const CustomComponent = ({ title, name, image }) => {
+const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => {
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
 
@@ -89,6 +89,13 @@ const CustomComponent = ({ title, name, image }) => {
     zIndex: 3,
   };
 
+  const handleEmailClick = () => {
+    window.location.href = `mailto:${emailAddress}`;
+  };
+
+  const handleLinkedInClick = () => {
+    window.open(linkedinLink, '_blank');
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -98,8 +105,12 @@ const CustomComponent = ({ title, name, image }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div style={iconsContainerStyle}>
-          <Email sx={{color:theme.palette.primary.main}}></Email>
-          <LinkedIn sx={{color:'#0077B5'}}></LinkedIn>
+          <a href={`mailto:${emailAddress}`} onClick={handleEmailClick}>
+            <Email sx={{ color: theme.palette.primary.main }} />
+          </a>
+          <a href={linkedinLink} target="_blank" rel="noopener noreferrer" onClick={handleLinkedInClick}>
+            <LinkedIn sx={{ color: '#0077B5' }} />
+          </a>
         </div>
         <div style={imageContainerStyle}>
           <img src={dynamicImage} alt="imagem de perfil" style={imageStyle} />
