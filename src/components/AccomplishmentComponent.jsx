@@ -24,7 +24,7 @@ const Accomplishments = ({ image, description, date }) => {
     transition: "width 0.3s ease-in-out, transform 0.3s linear",
     cursor: isSelected ? "auto" : "pointer",
     '&:hover': {
-      transform: 'scale(1.05)', 
+      transform: 'scale(1.03)', 
     },
   }));
 
@@ -144,7 +144,7 @@ const Accomplishments = ({ image, description, date }) => {
             justifyContent: "center",
             alignItems: "center",
             zIndex: 1000,
-            backdropFilter: "blur(5px)", // Adjust the blur strength
+            backdropFilter: "blur(5px)",
           }}
         >
           <AccomplishmentBox isSelected={isSelected} onClick={handleBoxClick}>

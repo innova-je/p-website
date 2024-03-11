@@ -49,9 +49,12 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
         justifyContent: "center",
         alignItems: "center",
         gap: mobile ? "10%" : "5%",
-        marginTop: mobile ? "10%" : "3%"
+        marginTop: mobile ? "10%" : "3%",
+        overflow: "hidden"
       }}
     >
+      <button onClick={handlePrevClick} style={{}}>Previous</button>
+
       {accomplishmentsData.map((accomplishment, index) => (
         <Accomplishment
           key={index}
@@ -62,7 +65,7 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
         />
       ))}
 
-      <button onClick={handlePrevClick}>Previous</button>
+      
       <button onClick={handleNextClick}>Next</button>
     </Box>
   );

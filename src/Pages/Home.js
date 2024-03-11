@@ -21,6 +21,7 @@ const accomplishmentsData = [
     { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "janeiro 2024"},
     { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "fevereiro 2024"},
     { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "março 2024"},
+    { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "abril 2024"},
   ];
 
 
@@ -54,7 +55,6 @@ const Home = () => {
     const navigate = useNavigate();
 
     const handleNavLinkClick = (path) => {
-        navigate.push(path);
         window.scrollTo(0, 0);
       };
 
@@ -172,51 +172,57 @@ const Home = () => {
 
         <Box sx={{
             position: "relative",
-            margin: "3% 0 0 8%",
-            height: "100%",
+            margin: desktop ? "3% 0 0 8%" : "10% 0 0 8%",
         }}>
-            <Typography sx={{
-                color: "#052533",
-                fontSize: (desktop ? "3dvw" : (tablet ? "3.5dvw" : "6dvw")),
-                fontWeight: "600"
-            }}>Your Go-To</Typography>
-            <Typography sx={{
-                marginTop: "-2%",
-                color: "#732043",
-                fontSize: (desktop ? "4.5dvw" : (tablet ? "5.5dvw" : "7dvw")),
-                fontWeight: "700"
-            }}>Technology Consultants</Typography>   
 
-            <NavLink to="/about-us" style={{textDecoration: "none"}} onClick={() => handleNavLinkClick('/about-us')}>
+        <div style={{display: "flex", flexDirection: desktop ? "row" : "column"}}>
+            <div style={{display: "flex", flexDirection: "column", width: desktop ? "75%" : "100%"}}>
                 <Typography sx={{
-                marginRight: "5%",
+                    color: "#052533",
+                    fontSize: (desktop ? "3dvw" : (tablet ? "3.5dvw" : "6.5dvw")),
+                    fontWeight: "600"
+                }}>Your Go-To</Typography>
+                <Typography sx={{
+                    marginTop: "-2%",
+                    color: "#732043",
+                    fontSize: (desktop ? "4.5dvw" : (tablet ? "5.5dvw" : "7.5dvw")),
+                    fontWeight: "700"
+                }}>Technology Consultants</Typography>   
+            </div>
+
+            <div style={{width: desktop ? "25%" : "100%", display: "flex", justifyContent: desktop ? "center" : "left",  alignItems: "end"}}>
+               <NavLink to="/about-us" style={{textDecoration: "none"}} onClick={() => handleNavLinkClick()}>
+                <Typography sx={{
                 display: "flex",
-                justifyContent: "right",
-                marginTop: "-2%",
                 color: "#732043",
-                fontSize: "1.2vw",
+                fontSize: desktop ? "1.8vw" : (tablet ? "2.5vw" : ""),
                 fontWeight: "400",
+                marginBottom: "8%"
             }}>Find more about us &rarr;</Typography>         
-            </NavLink>     
+            </NavLink> 
+            </div>         
+   
+        </div>
             
-        <Box sx={{
+        <div>
+           <Box sx={{
             position: "relative",
-            height: "100vh",
+            height: desktop ? "85vh" : "50vh",
             marginTop: "3%",
             overflow: "hidden"
         }}>
-            <Box
-            sx={{
+            <div className='gradientLayer' 
+            style={{
                 position: "absolute",
                 width: "100%",
                 height: "70%",
                 background: "linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0))",
-                borderRadius: "30px",
+                borderRadius: "30px 0 0 30px",
                 zIndex: 1,
             }}
             />
-            <img src={HomePageImg} style={{
-                borderRadius: "30px",
+            <img className='homePageImg' src={HomePageImg} style={{
+                borderRadius: "20px 0 0 20px",
                 marginLeft: "auto",
                 height: "70%",
                 width: "100%",
@@ -225,23 +231,22 @@ const Home = () => {
                 right: 0,
             }}/>
 
-            <div style={{
+            <div style={{display: "flex", flexDirection: "column", position: "relative", top: "65%", height: desktop ? "30%" : (tablet ? "40%" : "40%" )}}>
+               <div style={{
                 position: "relative",
-                top: "65%",
-                right: "-2%",
+                right: "-5%",
                 width: "95%",
-                height: "10%",
+                height: "30%",
                 backgroundColor: "#052533",
-                borderRadius: "30px",
-                border: "9px solid #F0F0F0",
-                margin: "-1% 0 0 auto",
+                borderRadius: "20px 0 0 20px",
+                border: desktop ? "9px solid #F0F0F0" : "6px solid #F0F0F0",
                 display: "flex",
                 textAlign: "center",
                 alignItems: "center",
                 zIndex: 3
             }}>
                 <Box sx={{
-                    width: "5px",
+                    width: desktop ? "5px" : "2px",
                     height: "60%",
                     background: "linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))",
                     marginLeft: "5%",
@@ -252,26 +257,26 @@ const Home = () => {
                     marginLeft: "4%",
                     textAlign: "left",
                     color: "white",
-                    fontSize: "2vw",
+                    fontSize: (desktop ? "2vw" : (tablet ? "2.5dvw" : "3dvw")),
                     fontWeight: "300",                    
                 }}>We work to <i>inspire</i> people & businesses</Typography>
             </div>
 
             <div style={{
                 position: "relative",
-                top: "70%",
-                right: "-2%",
-                width: "85%",
-                height: "10%",
+                right: "-10%",
+                width: "95%",
+                height: "30%",
                 backgroundColor: "white",
-                borderRadius: "30px",
-                margin: "-1% 0 0 auto",
+                borderRadius: "20px 0 0 20px",
+                border: desktop ? "9px solid #F0F0F0" : "6px solid #F0F0F0",
                 display: "flex",
                 textAlign: "center",
                 alignItems: "center",
+                zIndex: 3
             }}>
                 <Box sx={{
-                    width: "5px",
+                    width: desktop ? "5px" : "2px",
                     height: "60%",
                     background: "linear-gradient(to bottom, rgba(5, 37, 51, 1), rgba(5, 37, 51, 0))",
                     marginLeft: "5%",
@@ -282,13 +287,17 @@ const Home = () => {
                     marginLeft: "4%",
                     textAlign: "left",
                     color: "#052533",
-                    fontSize: (desktop ? "2vw" : (tablet ? "2.5dvw" : "3.5dvw")),
+                    fontSize: (desktop ? "2vw" : (tablet ? "2.5dvw" : "3dvw")),
                     fontWeight: "300", 
+                    lineHeight: "12px"
                 }}>And we also take pride in what we do and aim to go beyond</Typography>
-            </div>
-            
+            </div> 
 
-        </Box>
+            </div>            
+            
+        </Box> 
+        </div>
+        
 
         </Box>
              
@@ -299,7 +308,7 @@ const Home = () => {
             gridTemplateColumns: "repeat(2, 1fr)",
             gap: mobile ? "0%" : "10%",
             margin: "0 auto",
-            marginTop: "-5%",
+            marginTop: desktop ? "-5%" : "2%",
             marginBottom: "5%",
             alignItems: "center",
             justifyContent: "center",
