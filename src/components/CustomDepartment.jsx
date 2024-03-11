@@ -4,8 +4,6 @@ import { ThemeProvider, useTheme } from '@mui/material/styles';
 import CustomComponent from './MemberComponents';
 
 const CustomDepartment = ({ department }) => {
-
-
   const getMembers = (department) => {
     return department ? department.members.map((member) => member) : [];
   }
@@ -41,8 +39,14 @@ const CustomDepartment = ({ department }) => {
           },
         }}
       >
-        {/* First CustomComponent with specific props */}
-        <CustomComponent title={department.director.title} name={department.director.name} image={department.director.imgDirectory} />
+        {/* Render CustomComponent for director only if it exists */}
+        {department.director && (
+          <CustomComponent 
+            title={department.director.title} 
+            name={department.director.name} 
+            image={department.director.imgDirectory} 
+          />
+        )}
 
         {/* Remaining CustomComponent instances */}
         {getMembers(department).map((member, index) => (            
