@@ -3,7 +3,8 @@ import React from 'react'
 
 import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
 
-import InNovaLogo from '../images/OurLogos/logos-08.png'
+import InNovaLogo1 from '../images/OurLogos/logos-10.png'
+import InNovaLogo2 from '../images/OurLogos/logos-08.png'
 import CustomButton from './CustomButton';
 
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
@@ -15,7 +16,6 @@ const Footer = () => {
 
     const location = useLocation();
     const isJoinUsPage = location.pathname === '/join-us';
-
     const mobile = useMediaQuery({ maxWidth: 600 });
     const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
     const desktop = useMediaQuery({ minWidth: 1081 });
@@ -24,159 +24,118 @@ const Footer = () => {
         backgroundColor: isJoinUsPage ? "#FFFFFF" : "#F0F0F0",
         position: "absolute",
         width: "100%",
-        height: mobile ? "45vh" : "32%",
+        height: "32%",
         justifyContent: "center",
         alignItems: "center",
         boxShadow: "none",
       }));
 
-    const Logo = styled(ImageListItem)(() => ({
+      const Pages = styled(Box)(() => ({
         position: "relative",
-        width: mobile ? "50%" : "17%",
-        height: mobile ? "50%" : "17%",
-        marginLeft: mobile ? "10%" : "10%",
-        marginTop: mobile ? "" : "6%",
-        backgroundColor: "blue"
-      }));
-
-    const Pages = styled(Box)(() => ({
-        position: "relative",
-        top: mobile ? "none" : "45%",
-        width: "100%",
-        display: mobile ? "flex" : "grid",
+        width: "100%",        
+        display: "grid",
         flexDirection: "column",
-        gridTemplateColumns: "2fr 2fr",
-        rowGap: "2px",
-        columnGap: mobile ? "5%" : "20%",
-        backgroundColor: "green",
-        marginLeft: "10%"
-    }));   
-
+        gridTemplateColumns: "repeat(3, 3fr)",
+        marginTop: "3%"
+    })); 
+        
     const SocialMedia = styled(Box)(() => ({
         display: "flex",
-        flexDirection: mobile ? "column" : "row",
-        columnGap: mobile ? "10%" : "none",
+        flexDirection: "row",
         position: "relative",
-        top: mobile ? "none" : "3vh",
-        height: mobile ? "100%" : "none",
+        top: "3vh",
+        height: "none",
         alignItems: "center",
         justifyContent: "center"
       }));
 
-    const PagesLinkStyle = {
-        fontSize: mobile ? "3.5vw" : "1vw",
+      const PagesLinkStyle = {
+        fontSize: mobile ? "3.5vw" : (tablet ? "2.5vw" : "1.25vw" ),
         color: "white",
         fontWeight: "400"
       };
-
-
-    const NavLinkStyle = {
-        textDecoration : "none",
-      };
-
+    
       const linkStyles = {
         textDecoration: 'none',
         color: '#732043',
         fontWeight: 'bold',
         fontSize: '18px',
         transition: 'font-weight 0.3s ease',
-        textTransform: 'none'
-      };
+        textTransform: 'none',
+      };    
     
-      const activeLinkStyles = {
-        fontWeight: 'normal',
-      };
-
-
-    const navigate = useNavigate();
-
-    const handleNavLinkClick = (path) => {
-        navigate.push(path);
+        const handleNavLinkClick = () => {
         window.scrollTo(0, 0);
       };
 
-        return (
+        if(desktop){
+            return (
             <FooterBar position='bottom-center'>            
                 <Box sx={{
                         position: "absolute",
                         display: "flex",
                         flexDirection: "row",
-                        gap: mobile ? "none" : "50px",
+                        gap: "50px",
                         justifyContent: "flex-start",
                         alignItems: "center",
                         top: "0",
                         right: "0",
-                        width: mobile ? "100%" : "70%",
+                        width: "70%",
                         height: "100%",
                         backgroundColor: "#732043",
-                        borderRadius: mobile ? "none" : "20px 0 0 0",
+                        borderRadius: "20px 0 0 0",
+                        overflow:"hidden"
                     }}>
-
-                <div style={{
-                    position: "absolute",
-                    top: mobile ? "0" : "",
-                    left: 0,
-                    height: "30%",
-                    width: mobile ? "100%" : "30%",
-                    display: mobile ? "flex" : "none",
-                    alignItems: mobile ? "" : "center",
-                }}>
-                   <Logo>
-                    <img alt='In-Nova Logo' src={InNovaLogo} />
-                    </Logo> 
-                </div>
 
                     <Box sx={{
                         position: "relative",
                         height: "100%",
-                        width: mobile ? "50%" : "35%",
-                        margin: mobile ? "none" : "0 0 0 6vw",
+                        width: "100%",
+                        margin: "0 0 0 6vw",
+                        display: "flex",
+                        flexDirection: "column"
+                    }}>
+                    <div style={{
+                        height: "35%", 
+                        width: "70%", 
                         display: "flex",
                         alignItems: "center"
-                    }}>
-
-                    <Typography sx={{
-                        position: "absolute",
-                        top: "5%",
+                        }}>
+                      <Typography sx={{
+                        position: "relative",
                         fontSize: "1.9vw",
                         fontWeight: 200,
                         lineHeight: "40px",
-                        letterSpacing: "-0.02em",
-                        textAlign: "left",
-                        display: mobile ? "none" : ""  
-                     }}>Let's discuss and <br/> bring your vision to life.</Typography>
+                        textAlign: "left"
+                     }}>Let's discuss and bring your vision to life.</Typography>  
+                    </div>                    
     
                     <div style={{
-                        width: "100%",
-                        height: mobile ? "50%" : "100%",
-                        display: mobile ? "flex" : "",
-                        alignItems: mobile ? "center" : "",
-                        justifyContent: mobile ? "center" : "",
-                        //backgroundColor: "green",
-                        //marginLeft: "10%"
+                        width: "70%",
+                        height: "65%"
                     }}>
                     <Pages>
-                        <NavLink to="about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+                        <NavLink to="about-us" style={linkStyles} onClick={handleNavLinkClick}>
                             <Typography style={PagesLinkStyle}>About Us</Typography>
                         </NavLink>
-                        <NavLink to="/events" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+                        <NavLink to="/events" style={linkStyles} onClick={handleNavLinkClick}>
                             <Typography style={PagesLinkStyle}>Events</Typography>
                         </NavLink> 
-                        <NavLink to="/services" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+                        <NavLink to="/services" style={linkStyles} onClick={handleNavLinkClick}>
                             <Typography style={PagesLinkStyle}>Services</Typography>
                         </NavLink>
-                        <NavLink to="/out-of-office" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+                        <NavLink to="/out-of-office" style={linkStyles} onClick={handleNavLinkClick}>
                             <Typography style={PagesLinkStyle}>Out of Office</Typography>
                         </NavLink>
-                        <NavLink to="/our-people/our-team" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+                        <NavLink to="/our-people/our-team" style={linkStyles} onClick={handleNavLinkClick}>
                             <Typography style={PagesLinkStyle}>Our Team</Typography>
                         </NavLink>
-                        <NavLink to="/join-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>{/* nao ha pagina de recrutamento*/}
-                            <Typography style={PagesLinkStyle}>Recruitment</Typography>
+                        <NavLink to="/join-us" style={linkStyles} onClick={handleNavLinkClick}>
+                            <Typography style={PagesLinkStyle}>Join Us</Typography>
                         </NavLink>
-                        <NavLink to="/our-people/our-advisors" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+                        <NavLink to="/our-people/our-advisors" style={linkStyles} onClick={handleNavLinkClick}>
                             <Typography style={PagesLinkStyle}>Our Advisors</Typography>    
-                        </NavLink>                             
+                        </NavLink>                   
                     </Pages>
                     </div>
                     
@@ -184,18 +143,18 @@ const Footer = () => {
                     
                 <div style={{
                     position: "absolute",
-                    right: mobile ? "0%" : "5%",
-                    width: "20%",
+                    right: "0%",
+                    width: "30%",
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    justifyContent: "center"           
+                    justifyContent: "center",
                 }}>
                     <div style={{
                         position: "relative",
                         top: "10%",
-                        display: mobile ? "none" : "flex",
+                        display: "flex",
                         justifyContent: "center",
                         alignItems: "center"
                     }}>
@@ -215,21 +174,21 @@ const Footer = () => {
                        <SocialMedia>
                         <Link href="mailto:geral@innova.pt">
                         <Email sx={{
-                            width: mobile ? "7vw" : "4vw",
+                            width: "4vw",
                             height: "5vh",
                             color: "white"
                         }}></Email>
                         </Link>
                         <Link href='https://www.instagram.com/in.nova.pt'>
                             <Instagram sx={{
-                            width: mobile ? "7vw" : "4vw",
+                            width: "4vw",
                             height: "5vh",
                             color: "white"
                         }}></Instagram>
                         </Link>
                         <Link href='https://www.linkedin.com/company/innova-consultoria-junior'>
                         <LinkedIn sx={{
-                            width: mobile ? "7vw" : "4vw",
+                            width: "4vw",
                             height: "5vh",
                             color: "white"
                         }}></LinkedIn>
@@ -239,7 +198,6 @@ const Footer = () => {
                     
                     <div style={{
                         height: "100%",
-                        display: mobile ? "none" : ""
                     }}>
                         <Typography sx={{
                         fontSize: "0.8rem",
@@ -275,20 +233,20 @@ const Footer = () => {
                     left: "0px",
                     backgroundColor: "#732043",
                     zIndex: "1000",
-                    display: mobile ? "none" : "",
-                    flexDirection: "row"
+                    flexDirection: "row",
+                    overflow: "hidden"
                 }}>
                     <Box sx={{
                         width: "100%",
                         height: "34%",
                         backgroundColor: isJoinUsPage ? "#FFFFFF" : "#F0F0F0",
-                        borderRadius: "0 0px 20px 0",
+                        borderRadius: "0 0px 20px 0"
                     }}>
                     </Box>
 
-                    <Logo>
-                        <img alt='In-Nova Logo' src={InNovaLogo}/>
-                    </Logo>       
+                    <NavLink to="/" onClick={handleNavLinkClick}>
+                        <img alt='In-Nova Logo' src={InNovaLogo2} style={{height: "100%", position: "relative", bottom: "20%", left: "10%"}}/>
+                    </NavLink>       
                    
                     <Box
                     sx={{
@@ -309,6 +267,102 @@ const Footer = () => {
             </FooterBar>      
     
         )
+        }else if(mobile || tablet){
+            return(
+               <footer style={{
+                background: "#732043",
+                position: "relative",
+                bottom: 0,
+                width: "100dvw",
+                height: mobile ? "40dvw" : "30dvw",
+                display: "flex",
+                flexDirection: "row"
+                }}>
+                <div style={{ width: "25%", display: "flex", flexDirection:"column", alignItems:"center", justifyContent: "center"}}>                    
+                    <NavLink to="/" style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
+                        <img src={InNovaLogo1} style={{ width: "100%", transform: mobile ? "scale(0.7)" : "scale(0.6)" }} onClick={handleNavLinkClick}/>
+                    </NavLink>
+                    
+                </div>
+
+                <div style={{ width: "55%",  display: "flex", alignItems: "center"}}>
+                    <div style={{ height: "55%", width: mobile ? "100%" : "80%", display: "grid", gridTemplateColumns: "repeat(2, 1fr)", columnGap: mobile ? "5%" : "15%", marginLeft: "10%"}}>
+                        <NavLink to="about-us" style={linkStyles} onClick={handleNavLinkClick}>
+                            <Typography style={PagesLinkStyle}>About Us</Typography>
+                        </NavLink>
+                        <NavLink to="/events" style={linkStyles} onClick={handleNavLinkClick}>
+                            <Typography style={PagesLinkStyle}>Events</Typography>
+                        </NavLink> 
+                        <NavLink to="/services" style={linkStyles} onClick={handleNavLinkClick}>
+                            <Typography style={PagesLinkStyle}>Services</Typography>
+                        </NavLink>
+                        <NavLink to="/out-of-office" style={linkStyles} onClick={handleNavLinkClick}>
+                            <Typography style={PagesLinkStyle}>Out of Office</Typography>
+                        </NavLink>
+                        <NavLink to="/our-people/our-team" style={linkStyles} onClick={handleNavLinkClick}>
+                            <Typography style={PagesLinkStyle}>Our Team</Typography>
+                        </NavLink>
+                        <NavLink to="/join-us" style={linkStyles} onClick={handleNavLinkClick}>
+                            <Typography style={PagesLinkStyle}>Join Us</Typography>
+                        </NavLink>
+                        <NavLink to="/our-people/our-advisors" style={linkStyles} onClick={handleNavLinkClick}>
+                            <Typography style={PagesLinkStyle}>Our Advisors</Typography>    
+                        </NavLink>    
+                    </div>
+                    
+                </div>
+
+                <div style={{width: mobile ? "20%" : "40%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>                    
+                <div style={{gap: "3%", marginTop: tablet ? "-10%" : "", width: mobile ? "40%" : "100%", height: mobile ? "100%" : "", display: "flex", flexDirection: mobile ? "column" : "row", columnGap: mobile ? "none" : "5%", alignItems: "center", justifyContent: "center"}}>
+                    <Link href="mailto:geral@innova.pt">
+                        <Email sx={{
+                            color: "white",
+                            width: mobile ? "6dvw" : "5dvw",
+                            height: mobile ? "6dvw" : "5dvw",
+                        }}></Email>
+                        </Link>
+                        <Link href='https://www.instagram.com/in.nova.pt'>
+                            <Instagram sx={{
+                            color: "white",
+                            width: mobile ? "6dvw" : "5dvw",
+                            height: mobile ? "6dvw" : "5dvw",
+                        }}></Instagram>
+                        </Link>
+                        <Link href='https://www.linkedin.com/company/innova-consultoria-junior'>
+                        <LinkedIn sx={{
+                            color: "white",
+                            width: mobile ? "6dvw" : "5dvw",
+                            height: mobile ? "6dvw" : "5dvw",
+                        }}></LinkedIn>
+                        </Link>
+                </div>
+                {tablet && (
+                    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", position: "relative", top: "5%"}}>
+                        <Typography sx={{
+                        fontSize: "1.8dvw",
+                        fontWeight: "100",
+                        lineHeight: "17px",
+                        display: "flex",
+                        textAlign: "center",
+                        position: "relative",
+                        color: "white"
+                    }}>Faculdade de Ciências e Tecnologia
+                    <br/>Universidade Nova de Lisboa</Typography>
+                    <Typography sx={{
+                        fontSize: "1.8dvw",
+                        fontWeight: "100",
+                        display: "flex",
+                        textAlign: "center",
+                        flexDirection: "column",
+                        color: "white"
+                    }}>Quinta da Torre, Caparica</Typography>
+                    </div>
+                )}
+                </div>
+                
+            </footer> 
+            )
+        }
     }
 
 export default Footer
