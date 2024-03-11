@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[683],{683:(e,t,s)=>{e.exports=s.p+"static/media/carolina_mendes.6a2de1e657283712020e.webp"}}]);
