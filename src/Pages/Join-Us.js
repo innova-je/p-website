@@ -212,12 +212,12 @@ const JoinUs = () => {
                     variant="h2"
                     sx={{
                         fontWeight: '600',
-                        fontSize: '3rem',
+                        fontSize: '5rem',
                         position: 'absolute',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         zIndex: '1',
-                        top: "46%",
+                        top: "30%",
                     }}
                 >
                     Want to become one of us?
@@ -248,9 +248,10 @@ const JoinUs = () => {
                         borderRadius: '25px',
                         position: 'absolute',
                         zIndex: '1',
-                        top: '55%',
+                        top: '53%',
                         opacity: '0.85',
                         padding: '20px',
+                        zIndex: '3',
                     }}
                 >
                     <Typography
@@ -283,7 +284,7 @@ const JoinUs = () => {
                             left: '42%',
                             fontWeight: '700',
                             color: theme.palette.primary.main,
-                            marginLeft: '90px', // Adjust the spacing as needed
+                            marginLeft: '90px', 
                         }}
                     >
                         {countdown.hours}
@@ -295,7 +296,7 @@ const JoinUs = () => {
                             left: '52%',
                             fontWeight: '700',
                             color: theme.palette.primary.main,
-                            marginLeft: '200px', // Adjust the spacing as needed
+                            marginLeft: '200px', 
                         }}
                     >
                         {countdown.minutes}
@@ -319,7 +320,7 @@ const JoinUs = () => {
                             left: '37%',
                             fontWeight: 'Light',
                             color: theme.palette.primary.main,
-                            marginLeft: '90px', // Adjust the spacing as needed
+                            marginLeft: '90px',
                             top: '42%'
                         }}
                     >
@@ -332,7 +333,7 @@ const JoinUs = () => {
                             left: '46%',
                             fontWeight: 'Light',
                             color: theme.palette.primary.main,
-                            marginLeft: '200px', // Adjust the spacing as needed
+                            marginLeft: '200px', 
                             top: '42%'
                         }}
                     >
@@ -347,7 +348,7 @@ const JoinUs = () => {
                         zIndex: '2',
                         bottom: -1,
                         width: '100%',
-                        height: '35%',
+                        height: '70%',
                         backgroundImage:
                             'linear-gradient(to top, rgba(240,240,240,1), rgba(240,240,240,0))',
                     }}
