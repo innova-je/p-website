@@ -16,7 +16,6 @@ const Footer = () => {
 
     const location = useLocation();
     const isJoinUsPage = location.pathname === '/join-us';
-
     const mobile = useMediaQuery({ maxWidth: 600 });
     const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
     const desktop = useMediaQuery({ minWidth: 1081 });
@@ -25,29 +24,21 @@ const Footer = () => {
         backgroundColor: isJoinUsPage ? "#FFFFFF" : "#F0F0F0",
         position: "absolute",
         width: "100%",
-        height: mobile ? "45vh" : "32%",
+        height: "32%",
         justifyContent: "center",
         alignItems: "center",
         boxShadow: "none",
       }));
 
-    const Logo = styled(ImageListItem)(() => ({
-        position: "relative",
-        width: "45%",
-        height: "50%",
-        background: "green",
-        marginLeft: "10%",
-      }));
-
-    const Pages = styled(Box)(() => ({
+      const Pages = styled(Box)(() => ({
         position: "relative",
         width: "100%",        
         display: "grid",
         flexDirection: "column",
         gridTemplateColumns: "repeat(3, 3fr)",
         marginTop: "3%"
-    }));   
-
+    })); 
+        
     const SocialMedia = styled(Box)(() => ({
         display: "flex",
         flexDirection: "row",
@@ -58,12 +49,12 @@ const Footer = () => {
         justifyContent: "center"
       }));
 
-    const PagesLinkStyle = {
-        fontSize: mobile ? "3vw" : (tablet ? "2vw" : "1.25vw" ),
+      const PagesLinkStyle = {
+        fontSize: mobile ? "3.5vw" : (tablet ? "2.5vw" : "1.25vw" ),
         color: "white",
         fontWeight: "400"
       };
-
+    
       const linkStyles = {
         textDecoration: 'none',
         color: '#732043',
@@ -71,9 +62,8 @@ const Footer = () => {
         fontSize: '18px',
         transition: 'font-weight 0.3s ease',
         textTransform: 'none',
-      };
+      };    
     
-
         const handleNavLinkClick = () => {
         window.scrollTo(0, 0);
       };
@@ -145,7 +135,7 @@ const Footer = () => {
                         </NavLink>
                         <NavLink to="/our-people/our-advisors" style={linkStyles} onClick={handleNavLinkClick}>
                             <Typography style={PagesLinkStyle}>Our Advisors</Typography>    
-                        </NavLink>                             
+                        </NavLink>                   
                     </Pages>
                     </div>
                     
@@ -254,7 +244,7 @@ const Footer = () => {
                     }}>
                     </Box>
 
-                    <NavLink to="/">
+                    <NavLink to="/" onClick={handleNavLinkClick}>
                         <img alt='In-Nova Logo' src={InNovaLogo2} style={{height: "100%", position: "relative", bottom: "20%", left: "10%"}}/>
                     </NavLink>       
                    
@@ -284,13 +274,13 @@ const Footer = () => {
                 position: "relative",
                 bottom: 0,
                 width: "100dvw",
-                height: mobile ? "30dvw" : "20dvw",
+                height: mobile ? "40dvw" : "30dvw",
                 display: "flex",
                 flexDirection: "row"
                 }}>
                 <div style={{ width: "25%", display: "flex", flexDirection:"column", alignItems:"center", justifyContent: "center"}}>                    
                     <NavLink to="/" style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
-                        <img src={InNovaLogo1} style={{ width: mobile ? "70%" : "50%" }}/>
+                        <img src={InNovaLogo1} style={{ width: "100%", transform: mobile ? "scale(0.7)" : "scale(0.6)" }} onClick={handleNavLinkClick}/>
                     </NavLink>
                     
                 </div>
@@ -318,16 +308,12 @@ const Footer = () => {
                         <NavLink to="/our-people/our-advisors" style={linkStyles} onClick={handleNavLinkClick}>
                             <Typography style={PagesLinkStyle}>Our Advisors</Typography>    
                         </NavLink>    
-                        <NavLink to="/our-people/our-advisors" style={linkStyles} onClick={handleNavLinkClick}>
-                            <Typography style={PagesLinkStyle}>Our Advisors</Typography>    
-                        </NavLink>     
                     </div>
-                    
                     
                 </div>
 
                 <div style={{width: mobile ? "20%" : "40%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>                    
-                <div style={{gap: "3%", width: mobile ? "40%" : "100%", display: "flex", flexDirection: mobile ? "column" : "row", columnGap: mobile ? "none" : "5%", alignItems: "center", justifyContent: "center"}}>
+                <div style={{gap: "3%", marginTop: tablet ? "-10%" : "", width: mobile ? "40%" : "100%", height: mobile ? "100%" : "", display: "flex", flexDirection: mobile ? "column" : "row", columnGap: mobile ? "none" : "5%", alignItems: "center", justifyContent: "center"}}>
                     <Link href="mailto:geral@innova.pt">
                         <Email sx={{
                             color: "white",
@@ -353,7 +339,7 @@ const Footer = () => {
                 {tablet && (
                     <div style={{display: "flex", flexDirection: "column", justifyContent: "center", position: "relative", top: "5%"}}>
                         <Typography sx={{
-                        fontSize: "1.4dvw",
+                        fontSize: "1.8dvw",
                         fontWeight: "100",
                         lineHeight: "17px",
                         display: "flex",
@@ -363,7 +349,7 @@ const Footer = () => {
                     }}>Faculdade de Ciências e Tecnologia
                     <br/>Universidade Nova de Lisboa</Typography>
                     <Typography sx={{
-                        fontSize: "1.4dvw",
+                        fontSize: "1.8dvw",
                         fontWeight: "100",
                         display: "flex",
                         textAlign: "center",
@@ -371,16 +357,12 @@ const Footer = () => {
                         color: "white"
                     }}>Quinta da Torre, Caparica</Typography>
                     </div>
-                    
-
                 )}
                 </div>
                 
             </footer> 
             )
-            
         }
-        
     }
 
 export default Footer
