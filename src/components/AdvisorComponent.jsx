@@ -163,7 +163,8 @@ const AdvisorComponent = ({ name, description, image, linkedin }) => {
             align="center"
             style={descriptionStyle}
           >
-            {description}
+              {description}
+            
           </Typography>
         </div>
       </div>

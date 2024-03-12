@@ -15,9 +15,8 @@ const Accomplishments = ({ image, description, date }) => {
   const AccomplishmentBox = styled(Box)(({ isSelected }) => ({
     display: "flex",
     flexDirection: isSelected ? "row" : "column",
-    width: isSelected ? "60vw" : "25vw",
-    width: (desktop ? "25dvw" : (tablet ? "30dvw" : "70dvw")),
-    height: (desktop ? "70dvh" : (tablet ? "50dvh" : "50dvh")),
+    width: isSelected ? "60vw" : (desktop ? "25dvw" : (tablet ? "30dvw" : "60dvw")),
+    height: (desktop ? "30dvw" : (tablet ? "40dvw" : "70dvw")),
     borderRadius: "20px",
     overflow: "hidden",
     boxShadow: "10px 10px 40px #73204340",
@@ -25,6 +24,7 @@ const Accomplishments = ({ image, description, date }) => {
     cursor: isSelected ? "auto" : "pointer",
     '&:hover': {
       transform: 'scale(1.03)', 
+      transition: "width 0.3s ease-in-out, transform 0.3s linear",
     },
   }));
 
@@ -99,6 +99,8 @@ const Accomplishments = ({ image, description, date }) => {
     setIsSelected(!isSelected);
     setIsHovered(!isHovered)
   };
+
+  console.log(isSelected)
 
   useEffect(() => {
     const handleKeyPress = (event) => {

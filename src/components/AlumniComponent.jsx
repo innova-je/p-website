@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
 import { useMediaQuery } from 'react-responsive';
 
-const CustomComponent = ({ name, description, image }) => {
+const CustomComponent = ({ name, description, testimony, image }) => {
 
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
@@ -54,7 +54,7 @@ const CustomComponent = ({ name, description, image }) => {
     top: 0,
     left: 0,
     opacity: isHovered ? 0 : 1,
-    transition: 'opacity 0.3s ease-in-out',
+    transition: 'opacity 0.4s ease-in-out',
   };
 
   const overlayStyle = {
@@ -121,9 +121,24 @@ const CustomComponent = ({ name, description, image }) => {
     position: "absolute",
     bottom: "0",
     height: isHovered ? '90%' : '65%',
-    transition: 'height 0.3s ease-in-out',  
+    opacity: isHovered ? 0 : 1,
+    transition: 'height 0.3s ease-in-out, opacity 0.3s ease-in-out', 
     wordWrap: "break-word",
     overflowWrap: 'break-word',
+  };
+
+  const testimonyStyle = {
+    fontSize: (desktop ? "1vw" : (tablet ? "1.7vw" : "2.5vw")),
+    color: "#062533",
+    fontFamily: theme.typography.fontFamily,
+    width: "80%",
+    position: "absolute",
+    bottom: "0",
+    height: isHovered ? '95%' : '65%',
+    opacity: isHovered ? 1 : 0,    
+    transition: 'height 0.3s ease-in-out, opacity 0.3s ease-in-out',
+    textJustify: "auto",
+    textAlign: "justify"
   };
 
   const handleClick = () => {
@@ -131,7 +146,6 @@ const CustomComponent = ({ name, description, image }) => {
       setIsHovered(!isHovered);
     }
   };  
-
 
   return (
     <ThemeProvider theme={theme}>
@@ -164,7 +178,14 @@ const CustomComponent = ({ name, description, image }) => {
             align="center"
             style={descriptionStyle}
           >
-            {description}{/*Aqui quando se da hover tem que se mudar para testimony */}
+            {description}
+          </Typography>
+
+          <Typography
+            align="center"
+            style={testimonyStyle}
+          >
+            {testimony}
           </Typography>
         </div>
       </div>

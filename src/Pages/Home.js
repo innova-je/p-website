@@ -21,7 +21,6 @@ const accomplishmentsData = [
     { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "janeiro 2024"},
     { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "fevereiro 2024"},
     { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "março 2024"},
-    { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "abril 2024"},
   ];
 
 
@@ -40,19 +39,17 @@ const Home = () => {
       }));
 
     const statsStyle = {
-        fontSize: mobile ? "9vw" : "4.5vw",
+        fontSize: mobile ? "9vw" : (tablet ? "5vw" : "5vw"),
         color: "#732043",
         fontWeight: "700"
     };
 
     const underStatsStyle = {
-        fontSize: mobile ? "4vw" : "1.5vw",
+        fontSize: mobile ? "4vw" : (tablet ? "1.9vw" : "1.8vw"),
         color: "#732043",
         fontWeight: "500",
         marginTop: "-5%"
     };
-
-    const navigate = useNavigate();
 
     const handleNavLinkClick = (path) => {
         window.scrollTo(0, 0);
@@ -300,18 +297,19 @@ const Home = () => {
         
 
         </Box>
+
+        <div style={{marginTop: desktop ? "-2%" : (tablet ? "0%" : "-2%")}}>
              
         <Box sx={{
             width: "85%",
             height: "30vh",
-            display: mobile ? "grid" : "flex",
+            display: mobile ? "grid" : (tablet ? "flex" : "flex"),
             gridTemplateColumns: "repeat(2, 1fr)",
-            gap: mobile ? "0%" : "10%",
+            gap: mobile ? "0%" : (tablet ? "10%" : "10%"),
             margin: "0 auto",
-            marginTop: desktop ? "-5%" : "2%",
             marginBottom: "5%",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "center"
         }}>
             <StatsBox>
                 <Typography style={statsStyle}>3</Typography>
@@ -330,6 +328,8 @@ const Home = () => {
                 <Typography style={underStatsStyle}>Members</Typography>
             </StatsBox>
         </Box>
+        </div>
+        
         
         <section ref={ourServicesRef} style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always' }}>
             <OurServices></OurServices>
@@ -353,8 +353,7 @@ const Home = () => {
             <ClientsCarousel/>
             <OurPartners/>
         </Box>
-               
-
+            
         </Box>
         </>
         

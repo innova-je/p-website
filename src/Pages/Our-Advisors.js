@@ -147,6 +147,7 @@ const OurAdvisors = () => {
                         name={alumni.name}
                         description={alumni.description}
                         image={alumni.imgDirectory}
+                        testimony={alumni.testimony}
                     />
                 ))}
             </div>

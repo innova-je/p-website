@@ -7,7 +7,6 @@ import Magma from '../images/HomePageImages/PartnersLogos/MagmaLogo.png'
 import Meta from '../images/HomePageImages/PartnersLogos/MetaLogo.png'
 import OpenBB from '../images/HomePageImages/PartnersLogos/OpenBBLogo.png'
 
-import { useTheme } from '@mui/system';
 import { useMediaQuery } from 'react-responsive';
 
 const partnerData = {
@@ -31,7 +30,6 @@ const OurPartners = () => {
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
   const desktop = useMediaQuery({ minWidth: 1081 });
-  const theme = useTheme();
 
   const ClientsAndPartnersStyle = {
     width: "100%",
@@ -44,13 +42,12 @@ const OurPartners = () => {
 
       const PartnersBox = styled(Box)(() => ({
         position: "relative",
-        margin: mobile ? "5% 0 10% 0" : "0 auto",
+        margin: mobile ? "2% 0 10% 0" : (tablet ? "2% 0 10% 0" : "0 auto"),
         transform: "scale(0.9)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        backgroundColor: "#F0F0F0",
-        height: mobile ? "100%" : "90vh",
+        backgroundColor: "#F0F0F0"
       }));
 
       const SponsorsBox = styled(Box)(() => ({
