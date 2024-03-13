@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Box, Avatar, useTheme } from '@mui/material';
 
-const CustomReview = ({ image, name, department, text }) => {
+const MemberReview = ({ image, name, department, text }) => {
     const theme = useTheme();
     return (
         <Box
@@ -32,10 +32,11 @@ const CustomReview = ({ image, name, department, text }) => {
                         display: 'flex',
                         alignItems: 'center',
                         marginBottom: 0.5,
+                        paddingRight: 1.5
                     }}
                 >
-                    <Avatar src={image} alt={name} sx={{ width: 30, height: 30 }} />
-                    <Box textAlign="left" paddingLeft={0.5}>
+                    <Avatar src={image} alt={name} sx={{ width: 40, height: 40 }} />
+                    <Box textAlign="left" paddingLeft={1.5}>
                         <Typography variant="body2" sx={{ fontWeight: "Medium", mb: -0.5 }}>
                             {name}
                         </Typography>
@@ -45,7 +46,7 @@ const CustomReview = ({ image, name, department, text }) => {
                     </Box>
                 </Box>
 
-                <Typography variant="body2" align="center" sx={{ fontSize: "12px" }}>
+                <Typography variant="body2" align="justify" sx={{ fontSize: "12px", paddingTop:"5px"}}>
                     {text}
                 </Typography>
             </Box>
@@ -53,4 +54,4 @@ const CustomReview = ({ image, name, department, text }) => {
     );
 };
 
-export default CustomReview;
+export default MemberReview;
