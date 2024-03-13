@@ -225,6 +225,7 @@ const JoinUs = () => {
 
                 <Button
                     variant="contained"
+                    href='https://forms.gle/NP4Eo4RUftMv4LFq7'
                     sx={{
                         marginTop: '20px',
                         zIndex: '3', // problem with the button
@@ -413,7 +414,7 @@ const JoinUs = () => {
                     If you have something new to teach us, join the team!
                 </Typography>
 
-
+                {/*
                 <Button
                     variant="contained"
                     endIcon={<ArrowForwardIcon />}
@@ -428,6 +429,8 @@ const JoinUs = () => {
                 >
                     See our Portfolio
                 </Button>
+                */}
+                
             </Box>
 
             {/* 3rd Section */}
@@ -531,32 +534,36 @@ const JoinUs = () => {
                 />
             </Box>
 
-            {/* 4th Section */}
+            <div style={{display: "flex", flexDirection: "column"}}>
+                {/* 4th Section */}
             <Box
                 sx={{
                     position: 'relative',
                     display: 'flex',
+                    flexDirection: "column",
                     justifyContent: 'flex-start',
                     alignItems: 'flex-start',
-                    height: '120vh',
+                    height: '120dvh',
                     backgroundImage: `linear-gradient(to top, ${theme.palette.primary.main}, rgba(255,255,255,0))`,
                 }}
             >
-                <Typography
+                <div style={{width: "100%", zIndex: '1', }}>
+                   <Typography
                     variant="h3"
-                    sx={{
-                        position: 'absolute',
-                        zIndex: '1',
-                        left: '6rem',
+                    sx={{                        
+                        //marginLeft: '6rem',
                         top: '10%',
                         color: "#FFFFFF",
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 500,
+                        background: "green"
                     }}
                 >
                     Our members love being here,<br />
                     and so will you!
-                </Typography>
+                </Typography> 
+                </div>
+                
                 
                 <Box
                     sx={{
@@ -566,10 +573,9 @@ const JoinUs = () => {
                         justifyContent: 'center',
                         gap: '2.5rem',
                         position: 'relative',
-                        top: '30%',
-                        width: '100%',
-                        height: '38vh',
+                        height: 'auto',
                         overflow: 'visible',
+                        background: "red"
 
                     }}> 
                     {/* <Carousel reviews={reviews1} duration='30s' direction='left' /> */}
@@ -590,6 +596,7 @@ const JoinUs = () => {
                 // ref={sectionRef}
                 sx={{
                     position: 'relative',
+                    background: "blue",
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -614,6 +621,8 @@ const JoinUs = () => {
                 <HowToApply progress={190} />
 
             </Box>
+            </div>
+            
 
             {/* 6th Section */}
             <Box
@@ -675,22 +684,26 @@ const JoinUs = () => {
                     Read the<br />
                     candidate guide
                 </Typography>
-                <Button
-                    variant="contained"
-                    sx={{
-                        position: 'absolute',
-                        right: '19rem',
-                        top: '31rem',
-                        borderRadius: '10px',
-                        py: '10px',
-                        px: '75px',
-                        fontSize: '1rem',
-                        textTransform: 'none',
-                        marginTop: '20px',
-                    }}
-                >
-                    Download
-                </Button>
+                <a href = "../otherFiles" download = "guia_do_candidato_2024">
+                    <Button
+                        variant="contained"
+                        
+                        sx={{
+                            position: 'absolute',
+                            right: '19rem',
+                            top: '31rem',
+                            borderRadius: '10px',
+                            py: '10px',
+                            px: '75px',
+                            fontSize: '1rem',
+                            textTransform: 'none',
+                            marginTop: '20px',
+                        }}
+                    >
+                        Download
+                    </Button>
+                </a>
+                
                 <Typography
                     variant="body1"
                     sx={{

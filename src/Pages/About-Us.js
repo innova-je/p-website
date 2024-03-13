@@ -327,8 +327,10 @@ const AboutUs = () => {
 
 
                 {/* add a Button */}
+                
                 <Button
                     variant="contained"
+                    href='https://jeportugal.pt/en/je-network/'
                     sx={{
                         position: 'absolute',
                         bottom: '10%',
