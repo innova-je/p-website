@@ -16,6 +16,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import ServicesCarousel from '../components/ServicesCarousel';
 import { useMediaQuery } from 'react-responsive';
 import AccomplishmentSlider from '../components/AccomplishmentSlider';
+import ServicesSlider from '../components/ServicesSlider';
 
 const accomplishmentsData = [
     { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "janeiro 2024"},
@@ -51,38 +52,9 @@ const Home = () => {
         marginTop: "-5%"
     };
 
-    const handleNavLinkClick = (path) => {
+    const handleNavLinkClick = () => {
         window.scrollTo(0, 0);
       };
-
-
-      const ourServicesRef = useRef();
-
-      /*
-      useEffect(() => {
-        const handleScroll = () => {
-          const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    
-          const threshold = ourServicesRef.current.offsetTop + window.innerHeight/10;
-    
-          if (scrollPosition >= threshold && scrollPosition <= 2*threshold) {
-            // Disable page scroll
-            document.body.style.overflow = 'auto';
-            //alert("chegaste")
-          } else {
-            // Enable page scroll
-            document.body.style.overflow = 'auto';
-          }
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-    
-        return () => {
-          // Cleanup the event listener on component unmount
-          //window.removeEventListener('scroll', handleScroll);
-        };
-      }, []);
-      */
 
     return (
         <>
@@ -205,7 +177,7 @@ const Home = () => {
         <div>
            <Box sx={{
             position: "relative",
-            height: desktop ? "85vh" : "50vh",
+            height: desktop ? "85dvh" : (tablet ? "70dvh" : "50dvh"),
             marginTop: "3%",
             overflow: "hidden"
         }}>
@@ -213,7 +185,7 @@ const Home = () => {
             style={{
                 position: "absolute",
                 width: "100%",
-                height: "70%",
+                height: desktop ? "70%" : (tablet ? "90%" : "70%"),
                 background: "linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0))",
                 borderRadius: "30px 0 0 30px",
                 zIndex: 1,
@@ -299,16 +271,15 @@ const Home = () => {
 
         </Box>
 
-        <div style={{marginTop: desktop ? "-2%" : (tablet ? "0%" : "-2%")}}>
+        <div style={{marginTop: desktop ? "0%" : (tablet ? "0%" : "3%")}}>
              
         <Box sx={{
-            width: "85%",
-            height: "30vh",
+            width: mobile ? "77%" : "85%",
+            height: "auto",
             display: mobile ? "grid" : (tablet ? "flex" : "flex"),
             gridTemplateColumns: "repeat(2, 1fr)",
-            gap: mobile ? "0%" : (tablet ? "10%" : "10%"),
+            gap: mobile ? "2%" : (tablet ? "10%" : "10%"),            
             margin: "0 auto",
-            marginBottom: "5%",
             alignItems: "center",
             justifyContent: "center"
         }}>
@@ -331,30 +302,12 @@ const Home = () => {
         </Box>
         </div>
 
-        <div>
-           <div style={{background: desktop ? 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))'
-      : 'linear-gradient(to bottom, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0))'}}>
-            <div style={{overflow: "hidden"}}>
-           {(mobile || tablet) && (
-                <div style={{ width: "300vw", height: "auto"}}>
-                    <OurServices></OurServices>
-                </div>
-                
-            )}
-            {desktop && (
-                <OurServices></OurServices>
-            )} 
-        </div>  
-
-        <div style={{ marginTop: mobile ? "12%" : (tablet ? "10%" : "10%")}}>
-            <AccomplishmentSlider accomplishmentsData={accomplishmentsData}></AccomplishmentSlider>
+        <div style={{background:'linear-gradient(to bottom, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0))', marginTop: mobile ? "3%" : ""}}>
+            <ServicesSlider/>  
+            <div style={{ marginTop: mobile ? "12%" : (tablet ? "15%" : "15%")}}>
+                <AccomplishmentSlider accomplishmentsData={accomplishmentsData}></AccomplishmentSlider>
+            </div>        
         </div>
-            
-
-        </div> 
-
-        </div>
-        
 
         <ClientsCarousel/>
         <OurPartners/> 

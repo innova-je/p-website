@@ -9,7 +9,7 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
   const desktop = useMediaQuery({ minWidth: 1081 });
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '5%' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Typography
           style={{
@@ -24,8 +24,8 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
         </Typography>
       </div>
 
-      <div style={{width: "300vw", msOverflowStyle: "scrollbar", scrollbarWidth: "none"}}>
-      <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row", gap: "5%", marginTop: "3%"}}>
+      <div style={{width: "300vw"}}>
+      <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row", gap: "2%", marginTop: "2%"}}>
         {accomplishmentsData.map((accomplishment, index) => (
           <Accomplishment
             key={index}

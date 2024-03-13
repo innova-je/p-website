@@ -1,26 +1,32 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
+import { useMediaQuery } from 'react-responsive';
 
 const ServiceBox = ({ imgSrc, title, textWidth, description, imageStyle, bgColor}) => {  
 
+  const mobile = useMediaQuery({ maxWidth: 600 });
+  const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+  const desktop = useMediaQuery({ minWidth: 1081 });
+
   return (
-    <div style={{display: "flex", alignItems: "center", flexDirection: "row", width: "120vw", columnGap: "20%"}}>
+    <div style={{display: "flex", alignItems: "center", flexDirection: "row", width: desktop ? "100vw" : "120vw", columnGap: "20%"}}>
       <Box  sx={{
         width: "70%",
         position: 'relative',
+        height: "auto",
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        margin: '0 0 0 7%'
+        margin: '0 0 0 6%'
       }}>
         <Typography sx={{
-          fontSize: '3.5vw',
+          fontSize: mobile ? '3.5vw' : (tablet ? "3.5vw" : "2vw"),
           fontWeight: '300',
           color: '#FFFFFF6E',
           marginTop: '10%',
         }}>What we do</Typography>
         <Typography sx={{
-          fontSize: '8vw',
+          fontSize: mobile ? '8vw' : (tablet ? "7vw" : "6vw"),
           fontWeight: '700',
           color: 'white',
           lineHeight: "110%",
@@ -28,7 +34,7 @@ const ServiceBox = ({ imgSrc, title, textWidth, description, imageStyle, bgColor
           textShadow: '4px 4px 4px rgba(0, 0, 0, 0.3)',
         }}>{title}</Typography>
         <Typography sx={{
-          fontSize: "3.5vw",
+          fontSize: mobile ? "4vw" : (tablet ? "3vw" : "2vw"),
           fontWeight: '300',
           color: 'white',
           marginTop: '5%',
@@ -39,9 +45,7 @@ const ServiceBox = ({ imgSrc, title, textWidth, description, imageStyle, bgColor
       </Box>
 
       <Box sx={{
-        position: 'relative',
-        height: '100%',
-        width: "40%",
+        width: mobile ? "40%" : (tablet ? "40%" : "30%"),
         display: 'flex',
         justifyContent: 'right'
       }}>
@@ -61,9 +65,8 @@ const SoftwareSolutionsMobile = () => (
     title="Software Solutions"
     description="With tailored solutions and cutting-edge technologies, we craft impactful software that propels businesses forward."
     buttonLabel="Services"
-    imageStyle={{ width: '100%', marginRight: "10%", transform: "scale(2.5)"}}
+    imageStyle={{ width: '100%', marginRight: "10%", marginTop: "15%", transform: "scale(2.6)"}}
     textWidth="90%"
-    bgColor ="purple"
   />
 );
 
@@ -74,11 +77,10 @@ const MobileDevelopmentMobile = () => {
   id="MobileDevelopment"
   imgSrc={require('../images/HomePageImages/MobileDevelopment.png')}
   title="Mobile Development"
-  description="In-Nova creates intuitive apps that redefine user experiences and drive seamless interactions on various devices, empowering businesses in the digital realm."
+  description="In-Nova creates intuitive apps that redefine user experiences and seamless interactions on various devices, empowering digital businesses."
   buttonLabel="Services"
-  imageStyle={{ width: '100%', marginRight: "40%", marginTop: "20%", transform: "scale(1.4)"}}
-  textWidth="92%"
-  bgColor ="green"
+  imageStyle={{ width: '100%', marginRight: "40%", marginTop: "25%", transform: "scale(1.5)"}}
+  textWidth="93%"
   />);
 }
   
