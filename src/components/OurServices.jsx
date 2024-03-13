@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import ServicesCarousel from './ServicesCarousel';
 import { Parallax, useParallax } from "react-scroll-parallax";
 import { useMediaQuery } from 'react-responsive';
+import ServicesSlider from './ServicesSlider';
 
 const OurServices = () => {
 
@@ -36,22 +37,31 @@ const OurServices = () => {
 */
   return (
     <div ref={servicesRef} style={{
-      borderRadius: '0 30px 30px 0',
+      borderRadius: desktop ? '0 30px 30px 0' : "0",
       width: "95%",
       display: "flex",
       flexDirection: "column",
       msOverflowStyle: "none",
       scrollbarWidth: "none",
       paddingRight: "17px",
-      background: 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))',
-      height: mobile ? "105dvh" : "315vh",
-      overflow: "hidden",
+      background: desktop ? 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))'
+      : '',
+      height: mobile ? "auto" : (tablet ? "auto" : "105vh"),
+      overflow: mobile || tablet ? "scroll" : "hidden",
       msScrollSnapPointsY: "repeat(105vh)",
-      scrollSnapType: "mandatory",
+      msScrollSnapPointsX: "repeat(205vh)",
+      scrollSnapType: " x mandatory",
       transform: "scale(1)",
+      marginTop: "1%"
 
     }}>
-      <ServicesCarousel></ServicesCarousel>
+      {(mobile || tablet) && (
+        <ServicesSlider></ServicesSlider>
+      )}
+      {desktop && (
+        <ServicesCarousel></ServicesCarousel>
+      )}
+      
     </div>
   );
 };

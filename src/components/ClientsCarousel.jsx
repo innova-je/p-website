@@ -28,7 +28,7 @@ const ClientsCarousel = () => {
 
   const ClientsBox = styled(Box)(() => ({
     position: "relative",
-    marginTop: desktop ? "5%" : (tablet ? "7%" : "10%"),
+    marginTop: desktop ? "5%" : (tablet ? "7%" : "15%"),
     justifyContent: "center",
     alignItems: "center",
     overflow: "hidden", 

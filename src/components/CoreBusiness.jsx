@@ -3,10 +3,13 @@ import { Box, Typography } from '@mui/material';
 import CustomButton from './CustomButton';
 import { Parallax, useParallax } from "react-scroll-parallax";
 import CircleIcon from '@mui/icons-material/Circle';
-
+import { useMediaQuery } from 'react-responsive';
 
 const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textWidth, innerStyle, parallax, circle1, circle2, circle3}) => {  
 
+  const mobile = useMediaQuery({ maxWidth: 600 });
+  const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+  const desktop = useMediaQuery({ minWidth: 1081 });
 
   const boxRef = useRef(null);
   const [fontSize, setFontSize] = useState('1.5vw');
@@ -44,7 +47,7 @@ const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textW
         height: '100%',
         alignItems: 'center',
         display: 'flex',
-        justifyContent: 'right',
+        justifyContent: 'right'
       }}>
         {<img src={imgSrc} style={imageStyle} />} 
       </Box>

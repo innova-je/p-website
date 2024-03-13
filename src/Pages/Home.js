@@ -5,7 +5,7 @@ import BgVideo from '../videos/HomePageVideo.mp4'
 import HomePageImg from '../images/MaintenancePageImages/In.Nova_III-JE-Portugal-224_1.webp'
 import newsImage from '../images/MaintenancePageImages/In.Nova_III-JE-Portugal-224_1.webp'
 
-import CoreBusiness from '../components/CoreBusiness'
+import CoreBusiness, { MobileDevelopment, RoboticsPrototyping, SoftwareSolutions } from '../components/CoreBusiness'
 import ClientsCarousel from '../components/ClientsCarousel'
 import OurPartners from '../components/OurPartners'
 import OurServices from '../components/OurServices'
@@ -329,30 +329,34 @@ const Home = () => {
             </StatsBox>
         </Box>
         </div>
-        
-        
-        <section ref={ourServicesRef} style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always' }}>
-            <OurServices></OurServices>
-        </section>
 
-        <Box sx={{marginTop: mobile ? "15%" : "5%"}}>   
+        <div>
+           <div style={{background: desktop ? 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))'
+      : 'linear-gradient(to bottom, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0))'}}>
+            <div style={{overflow: "hidden"}}>
+           {(mobile || tablet) && (
+                <div style={{ width: "300vw", height: "auto"}}>
+                    <OurServices></OurServices>
+                </div>
+                
+            )}
+            {desktop && (
+                <OurServices></OurServices>
+            )} 
+        </div>  
 
-            <Typography style={{
-                width: "100%",
-                textAlign: "center",
-                justifyContent: "center",
-                color: "#732043",
-                fontWeight: "700",
-                fontSize: (desktop ? "3.5dvw" : (tablet ? "4dvw" : "6.5dvw")),
-            }}>Our Latest Accomplishments</Typography>
+        <div style={{overflow: "hidden"}}>
             <AccomplishmentSlider accomplishmentsData={accomplishmentsData}></AccomplishmentSlider>
+        </div>
             
-        </Box>             
 
-        <Box sx={{backgroundColor: "#F0F0F0", scrollSnapAlign: "start", scrollSnapStop: "always"}}>
-            <ClientsCarousel/>
-            <OurPartners/>
-        </Box>
+        </div> 
+
+        </div>
+        
+
+        <ClientsCarousel/>
+        <OurPartners/> 
             
         </Box>
         </>

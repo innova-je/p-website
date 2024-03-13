@@ -6,6 +6,7 @@ import LogoImage from '../images/OurLogos/logos-02.png';
 import { useMediaQuery } from 'react-responsive';
 import BgMenu from './BgMenu';
 import { ReactDOM } from 'react-dom/client';
+import CustomButton from './CustomButton';
 
 //quando o dropdown menu abre, o scroll fica desativado e issso faz com que a navbar se mexa
 //TODO: dar fix nisto
@@ -27,7 +28,9 @@ const JoinUsButton = styled('button')(({ theme }) => ({
   '&:hover': {
     backgroundColor: theme.palette.primary.main,
     color: 'white',
-    transform: 'scale(1.1)', 
+    transform: 'scale(1.05)', 
+
+    cursor: "pointer"
   },
 }));
 
@@ -98,15 +101,12 @@ const Navbar = () => {
     fontWeight: 'normal',
   };
 
-  const navigate = useNavigate();
-
-  const handleNavLinkClick = (path) => {
-    navigate.push(path);
+  const handleNavLinkClick = () => {
     window.scrollTo(0, 0);
   };
 
     return (
-    <AppBar position="absolute" style={{left: "0", background: '#FFFFFF29', width: "100%", boxShadow: 'none', height: '10vh'}}>
+    <AppBar position="absolute" style={{left: "0", background: '#FFFFFF29', width: "100%", boxShadow: 'none', height: '70px'}}>
       <Toolbar style={{ height: '100%', justifyContent: 'space-between'}}>
         
       <div style={{
@@ -124,7 +124,7 @@ const Navbar = () => {
           height: "100%",
           zIndex: 2
         }}>
-          <img src={LogoImage} style={{ height: mobile ? "100%" : "100%", width: mobile ? "100%" : "100%", marginLeft: desktop || tablet ? "15%" : "10%"}} />
+          <img src={LogoImage} style={{ height: "100%", width: "100%", marginLeft: desktop || tablet ? "15%" : "10%"}} />
         </Link>
 
       </div>
@@ -142,10 +142,16 @@ const Navbar = () => {
             { label: "Our Advisors", path: "/our-people/our-advisors" },
           ], 'dropdown1')}
 
+          {/*
           {renderDropdownButton("Events", [
             { label: "test", path: "/our-people/test1" },
             { label: "test2", path: "/our-people/test2" },
           ], 'dropdown2')}
+          */}          
+
+          <NavLink to="/events" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
+            <Button color="inherit" style={linkStyles}>Events</Button>
+          </NavLink>
 
           <NavLink to="/out-of-office" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
             <Button color="inherit" style={linkStyles}>Out of Office</Button>
@@ -171,7 +177,7 @@ const Navbar = () => {
           justifyContent: "right"
         }}>
         
-        <Link to="/join-us" onClick={() => handleNavLinkClick('/join-us')} style={{
+        <NavLink to="/join-us" onClick={() => handleNavLinkClick()} style={{
             position: "relative",
             display: tablet || desktop ? "flex" : "none",
             marginRight: desktop ? "7%" : "15%",
@@ -179,7 +185,7 @@ const Navbar = () => {
             zIndex: 2
           }}>
             <JoinUsButton>Join Us</JoinUsButton>
-          </Link>{/*Aqui se calhar devia ser NavLink */}
+          </NavLink>
           
         </div>
         <div style={{display: desktop ? "none" : "flex"}}>

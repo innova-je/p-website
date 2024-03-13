@@ -15,8 +15,8 @@ const Accomplishments = ({ image, description, date }) => {
   const AccomplishmentBox = styled(Box)(({ isSelected }) => ({
     display: "flex",
     flexDirection: isSelected ? "row" : "column",
-    width: isSelected ? "60vw" : (desktop ? "25dvw" : (tablet ? "30dvw" : "60dvw")),
-    height: (desktop ? "30dvw" : (tablet ? "40dvw" : "70dvw")),
+    width: isSelected ? "60vw" : (desktop ? "25dvw" : (tablet ? "40dvw" : "55dvw")),
+    height: (desktop ? "30dvw" : (tablet ? "50dvw" : "70dvw")),
     borderRadius: "20px",
     overflow: "hidden",
     boxShadow: "10px 10px 40px #73204340",
@@ -33,7 +33,7 @@ const Accomplishments = ({ image, description, date }) => {
     backgroundColor: "white",
     position:"relative",
     width: isSelected ? "150vw" : "100%",
-    height: isSelected ? "70vh" : "60vh",
+    height: isSelected ? "70vh" : (mobile ? "30vh" : (tablet ? "30vh" : "60vh")),
     zIndex:"9",
     overflow:"hidden",
     display: "flex",
@@ -80,19 +80,20 @@ const Accomplishments = ({ image, description, date }) => {
   };
 
   const newsTextStyle = {
-    fontSize: "1.2vw",
-    fontWeight: "400",
+    fontSize: (mobile ? "3.4vw" : (tablet ? "2.2vw" : "1.2vw")),
+    fontWeight: mobile || tablet ? "500" : "400",
     textAlign: "justify",
     textJustify: "center",
-    marginTop: "10%"
+    marginTop: mobile ? "10%" : (tablet ? "15%" : "10%"),
+    lineHeight: "120%"
   };
 
   const dateStyle = {
-    fontSize: "1rem",
-    fontWeight: "400",
-    textAlign: "justify",
+    fontSize: (mobile ? "2.5vw" : (tablet ? "1.8vw" : "1rem")),
+    fontWeight: "600",
+    textAlign: "right",
     textJustify: "center",
-    marginTop: "3%"
+    marginTop: mobile ? "5%" : "3%"
   };
 
   const handleBoxClick = () => {

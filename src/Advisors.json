@@ -12,7 +12,7 @@
                     "name": "André Carvalho",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
                     "description": "Description",
-                    "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
+                    "linkedin": "https://www.linkedin.com/in/andremc/"
                 },
                 {
                     "name": "Cláudia Quaresma",
@@ -36,11 +36,12 @@
                     "name": "Rui Gonçalves ",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
                     "description": "Description",
-                    "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
+                    "linkedin": "https://www.linkedin.com/in/rmgoncalves07/"
                 }
             ]
         }
     ],
+      
     "alumniBoard": [
         {            
             "alumnis": [
@@ -48,14 +49,14 @@
                     "name": "Ana Rita Rebelo",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
                     "description": " PhD in Computer Science, Non-Euclidean Spaces in Virtual Reality. Co-founder of eBreathie and Super Save",
-                    "testimony": " As Director of the Projects Department during In-Nova's founding period, the most challenging but rewarding part of my role was leading a diverse team. Learning to navigate through different personalities and harness each person's strengths was a constant, mutual learning experience. In-Nova, from the very beggining, has been distinguished by its welcoming atmosphere, fostering creativity and innovation. It's an invaluable platform that has provided experiences that have perfectly complemented my academic career - such as teamwork, leadership and, of course, innovation.",
+                    "testimony": "As Director of the Projects Department during In-Nova's founding period, part of my role was leading a diverse team, which was a constant and mutual learning experience. It offers experiences - such as teamwork, leadership and, of course, innovation - with a cosy atmosphere that fosters creativity.",
                     "linkedin": " https://www.linkedin.com/in/ana-rita-rebelo/"
                 },
                 {
                     "name": "Ema Paulo",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
                     "description": " Borgwarner's Global Team, Lean Product and Process Development",
-                    "testimony": "In-Nova was a game-changer for my university journey! From Marketing Member to President, I not only gained hard skills but also learned how to manage teams. The lessons learnt from In-Nova are still visible, influencing how I approach challenges and find innovative solutions. Joining In-Nova is not just a step - it's a journey of personal and professional growth waiting for you.",
+                    "testimony": "From a member of the marketing department to president, I acquired technical skills and also learnt how to manage teams. The lessons learnt at In-Nova influence the way I approach challenges and find innovative solutions. Joining In-Nova is a journey of personal and professional growth waiting for you.",
                     "linkedin": " https://www.linkedin.com/in/emapaulo/"
                 },
                 {
@@ -76,7 +77,7 @@
                     "name": " Vasco Matos ",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
                     "description": " Production Supervisor at Tabaqueira's Factory (Philip Morris) ",
-                    "testimony": "In-Nova allowed me to integrate multidisciplinary teams, develop work skills that I use on a daily basis and explore multiple business areas, allowing me to better understand my professional preferences. In-Nova was a differentiating factor when I entered the job market and made my adaptation to this new environment easier.",
+                    "testimony": "In-Nova allowed me to integrate multidisciplinary teams, develop work skills that I use on a daily basis and explore multiple business areas, allowing me to understand my professional preferences. It was a differentiating factor when I entered the job market and made my adaptation to this new environment easier.",
                     "linkedin": " https://www.linkedin.com/in/vasconunesmatos"
                 }
             ]
