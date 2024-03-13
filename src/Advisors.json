@@ -47,36 +47,36 @@
             "alumnis": [
                 {
                     "name": "Ana Rita Rebelo",
-                    "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": " PhD in Computer Science, Non-Euclidean Spaces in Virtual Reality. Co-founder of eBreathie and Super Save",
+                    "imgDirectory": "Adv - Alumni/rita_rebelo.webp",
+                    "description": " PhD in Computer Science in Virtual Reality & Co-founder of eBreathie and Super Save",
                     "testimony": "As Director of the Projects Department during In-Nova's founding period, part of my role was leading a diverse team, which was a constant and mutual learning experience. It offers experiences - such as teamwork, leadership and, of course, innovation - with a cosy atmosphere that fosters creativity.",
                     "linkedin": " https://www.linkedin.com/in/ana-rita-rebelo/"
                 },
                 {
                     "name": "Ema Paulo",
-                    "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": " Borgwarner's Global Team, Lean Product and Process Development",
+                    "imgDirectory": "Adv - Alumni/pedro_mirao.webp",
+                    "description": " Borgwarner's Global Team, Lean Product & Process Development",
                     "testimony": "From a member of the marketing department to president, I acquired technical skills and also learnt how to manage teams. The lessons learnt at In-Nova influence the way I approach challenges and find innovative solutions. Joining In-Nova is a journey of personal and professional growth waiting for you.",
                     "linkedin": " https://www.linkedin.com/in/emapaulo/"
                 },
                 {
                     "name": "Guilherme Salvador",
-                    "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "Description",
-                    "testimony": "Testimony",
+                    "imgDirectory": "Adv - Alumni/guilherme_salvador.webp",
+                    "description": "Technology Strategy & Advisory @ Accenture",
+                    "testimony": "During my time at In-Nova, I was part of and led the Sales Department. This experience gave me a different view of what it means to have responsibilities, be proactive, manage teams and lead people. You have to be proactive and responsible if you want to make a difference.",
                     "linkedin": " https://www.linkedin.com/in/guilherme-salvador-/"
                 },
                 {
                     "name": "Pedro Mirão",
-                    "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": "Description",
-                    "testimony": "Testimony",
+                    "imgDirectory": "Adv - Alumni/pedro_mirao.webp",
+                    "description": "Product Owner @ Novorésumé & Master's in Electrical Engineering",
+                    "testimony": "I like to say that In-Nova is the best place at Nova University for growth, finding your future startup partners, and learning how to apply your problem-solving skills. As a Vice President, I have honed my abilities in determining the best path to our goals, whether it involves leading the team and applying our engineering skills.",
                     "linkedin": " https://www.linkedin.com/in/pedro-mirao/"
                 },
                 {
-                    "name": " Vasco Matos ",
-                    "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "description": " Production Supervisor at Tabaqueira's Factory (Philip Morris) ",
+                    "name": "Vasco Matos",
+                    "imgDirectory": "Adv - Alumni/vasco_matos.webp",
+                    "description": " Production Supervisor @ Tabaqueira's Factory (Philip Morris) ",
                     "testimony": "In-Nova allowed me to integrate multidisciplinary teams, develop work skills that I use on a daily basis and explore multiple business areas, allowing me to understand my professional preferences. It was a differentiating factor when I entered the job market and made my adaptation to this new environment easier.",
                     "linkedin": " https://www.linkedin.com/in/vasconunesmatos"
                 }
