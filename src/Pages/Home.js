@@ -105,6 +105,7 @@ const Home = () => {
             autoPlay 
             loop 
             muted 
+            playsInline
             style={{
                 objectFit: "cover",
                 opacity: "50%",
