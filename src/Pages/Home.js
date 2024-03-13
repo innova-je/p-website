@@ -346,7 +346,7 @@ const Home = () => {
             )} 
         </div>  
 
-        <div style={{overflow: "hidden"}}>
+        <div style={{ marginTop: mobile ? "12%" : (tablet ? "10%" : "10%")}}>
             <AccomplishmentSlider accomplishmentsData={accomplishmentsData}></AccomplishmentSlider>
         </div>
             

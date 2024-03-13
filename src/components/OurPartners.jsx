@@ -42,7 +42,7 @@ const OurPartners = () => {
 
       const PartnersBox = styled(Box)(() => ({
         position: "relative",
-        margin: mobile ? "2% 0 10% 0" : (tablet ? "2% 0 10% 0" : "0 auto"),
+        margin: mobile ? "2% 0 10% 0" : (tablet ? "2% 0 10% 0" : "5% 0 8% 0"),
         transform: "scale(0.9)",
         display: "flex",
         flexDirection: "column",

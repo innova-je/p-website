@@ -1,18 +1,17 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 
-const ServiceBox = ({ imgSrc, title, textWidth, description, imageStyle}) => {  
+const ServiceBox = ({ imgSrc, title, textWidth, description, imageStyle, bgColor}) => {  
 
   return (
-    <div style={{display: "flex", flexDirection: "row", width: "120vw"}}>
+    <div style={{display: "flex", alignItems: "center", flexDirection: "row", width: "120vw", columnGap: "20%"}}>
       <Box  sx={{
-        width: "60%",
+        width: "70%",
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        margin: '0 0 0 7%',
-        overflow: 'hidden',
+        margin: '0 0 0 7%'
       }}>
         <Typography sx={{
           fontSize: '3.5vw',
@@ -42,8 +41,7 @@ const ServiceBox = ({ imgSrc, title, textWidth, description, imageStyle}) => {
       <Box sx={{
         position: 'relative',
         height: '100%',
-        width: "35%",
-        alignItems: 'center',
+        width: "40%",
         display: 'flex',
         justifyContent: 'right'
       }}>
@@ -63,8 +61,9 @@ const SoftwareSolutionsMobile = () => (
     title="Software Solutions"
     description="With tailored solutions and cutting-edge technologies, we craft impactful software that propels businesses forward."
     buttonLabel="Services"
-    imageStyle={{ width: '100%', marginRight: "-10%", transform: "scale(2)"}}
-    textWidth="75%"
+    imageStyle={{ width: '100%', marginRight: "10%", transform: "scale(2.5)"}}
+    textWidth="90%"
+    bgColor ="purple"
   />
 );
 
@@ -77,8 +76,9 @@ const MobileDevelopmentMobile = () => {
   title="Mobile Development"
   description="In-Nova creates intuitive apps that redefine user experiences and drive seamless interactions on various devices, empowering businesses in the digital realm."
   buttonLabel="Services"
-  imageStyle={{ width: '100%', marginRight: "0%", transform: "scale(1.2)"}}
-  textWidth="80%"
+  imageStyle={{ width: '100%', marginRight: "40%", marginTop: "20%", transform: "scale(1.4)"}}
+  textWidth="92%"
+  bgColor ="green"
   />);
 }
   
@@ -88,10 +88,11 @@ const RoboticsPrototypingMobile = () => (
     id="roboticsPrototyping"
     imgSrc={require('../images/HomePageImages/RoboticsPrototyping.png')}
     title="Robotics & Prototyping"
-    description="Exploring the frontier of robotics and prototyping, In-Nova pioneers innovative solutions, blending expertise and creativity to push the boundaries of technology and bring futuristic concepts to life."
+    description="Exploring the frontier of robotics and prototyping. In-Nova pioneers innovative solutions, bringing futuristic concepts to life."
     buttonLabel="Services"
-    imageStyle={{ width: '100%', marginRight: "20%", transform: "scale(2.4)"}}
-    textWidth="85%"
+    imageStyle={{ width: '100%', marginRight: "60%", marginTop: "30%", transform: "scale(2.5)"}}
+    textWidth="97%"
+    bgColor= "red"
   />
 );
 

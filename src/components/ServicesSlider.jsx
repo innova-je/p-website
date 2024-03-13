@@ -4,14 +4,17 @@ import { MobileDevelopmentMobile, RoboticsPrototypingMobile, SoftwareSolutionsMo
 const ServicesSlider = () => {
 
   return (
-        <div style={{overflowX: "scroll", width: "582vw"}}>
-            <div style={{display: "flex", flexDirection: "row", gap: "5%"}}>
-                <SoftwareSolutionsMobile></SoftwareSolutionsMobile>
-                <MobileDevelopmentMobile></MobileDevelopmentMobile>
-                <RoboticsPrototypingMobile></RoboticsPrototypingMobile>
-            </div>
-            
+    <div style={{ width: "100vw" }}>
+        <div style={{ marginTop: "10%" }}>
+          <SoftwareSolutionsMobile />
         </div>
+        <div style={{ marginTop: "10%" }}>
+          <MobileDevelopmentMobile />
+        </div>
+        <div style={{ marginTop: "10%" }}>
+          <RoboticsPrototypingMobile />
+        </div>
+    </div>
   );
 };
 

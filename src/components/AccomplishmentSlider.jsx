@@ -24,7 +24,7 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
         </Typography>
       </div>
 
-      <div style={{width: "300vw", overflowX: "scroll"}}>
+      <div style={{width: "300vw", msOverflowStyle: "scrollbar", scrollbarWidth: "none"}}>
       <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row", gap: "5%", marginTop: "3%"}}>
         {accomplishmentsData.map((accomplishment, index) => (
           <Accomplishment

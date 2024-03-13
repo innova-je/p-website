@@ -50,9 +50,7 @@ const OurServices = () => {
       overflow: mobile || tablet ? "scroll" : "hidden",
       msScrollSnapPointsY: "repeat(105vh)",
       msScrollSnapPointsX: "repeat(205vh)",
-      scrollSnapType: " x mandatory",
-      transform: "scale(1)",
-      marginTop: "1%"
+      scrollSnapType: " x mandatory"
 
     }}>
       {(mobile || tablet) && (

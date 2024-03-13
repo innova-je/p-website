@@ -33,20 +33,18 @@ const Accomplishments = ({ image, description, date }) => {
     backgroundColor: "white",
     position:"relative",
     width: isSelected ? "150vw" : "100%",
-    height: isSelected ? "70vh" : (mobile ? "30vh" : (tablet ? "30vh" : "60vh")),
+    height: isSelected ? "70vh" : (mobile ? "50vh" : (tablet ? "30vh" : "60vh")),
     zIndex:"9",
     overflow:"hidden",
     display: "flex",
-    justifyContent: "center",
-    clipPath: isSelected ? "" : "polygon(0 18%, 100% 0%, 100% 100%, 0% 100%)",
+    justifyContent: "center"
   }));
 
   const Circle = styled(Box)(() => ({
     position: "relative",
-    top: "10%",
-    left: "70%",
-    width: "6vw",
-    height: "6vw",
+    left: "60%",
+    width: mobile ? "10vw" : (tablet ? "8vw" : "6vw"),
+    width: mobile ? "10vw" : (tablet ? "8vw" : "6vw"),
     borderRadius: "100%",
     backgroundColor: "white",
     boxShadow: "5px 5px 40px #00000040",
@@ -57,13 +55,17 @@ const Accomplishments = ({ image, description, date }) => {
   }));
 
   const NewsText = styled(Box)(() => ({
-    position:"relative",
+    position:"absolute",
+    bottom: "5%",
     zIndex:"2",
     overflow:"hidden",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    width: "80%"
+    alignItems: "flex-end",
+    justifyContent: "flex-end",
+    width: "80%",
+    height: "75%",
+    background: "red"
   }));
 
   const newsImageStyle = {
@@ -85,7 +87,7 @@ const Accomplishments = ({ image, description, date }) => {
     textAlign: "justify",
     textJustify: "center",
     marginTop: mobile ? "10%" : (tablet ? "15%" : "10%"),
-    lineHeight: "120%"
+    lineHeight: "100%"
   };
 
   const dateStyle = {
@@ -122,10 +124,16 @@ const Accomplishments = ({ image, description, date }) => {
     <Box onClick={handleBoxClick}>
         {!isSelected && (
         <AccomplishmentBox onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onClick={handleBoxClick}>
-          <img src={image} style={newsImageStyle} />
-          <Circle>
-            <img src={randomLogo} style={{ width: "100%", transform: "scale(1)", overflow: "hidden", objectFit: "cover" }} />
-          </Circle>
+          <div style={{display: "flex"}}>
+            <img src={image} style={newsImageStyle} />
+          </div>
+
+          <div style={{background: "white", width: "150%", marginLeft: "-20%", rotate: "-10deg", height: "20%", zIndex: 100, display: "flex", alignItems: "center"}}>
+            <Circle>
+              <img src={randomLogo} style={{ width: "100%", transform: "scale(1)", overflow: "hidden", objectFit: "cover" }} />
+            </Circle>
+          </div>        
+          
           <TextBox>
             <NewsText>
               <Typography style={newsTextStyle}>{description}</Typography>
