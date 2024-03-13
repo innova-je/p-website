@@ -127,8 +127,9 @@ const AboutUs = () => {
                         }}
                     >
                         Engineering Students <br />
-                        Engineering Students <br />
-                        Engineering Students
+                        Problem Solvers <br />
+                        Creative Minds <br />
+                        Next-Gen Leaders 
                     </Typography>
                     <img src={HeroImage} alt="Hero Image"
                         style={{
@@ -160,9 +161,11 @@ const AboutUs = () => {
                             justifyContent: 'center',
                             textAlign: 'justify',
                             fontWeight: 'light',
-                            fontSize: '16px',
+                            fontSize: '17px',
                         }}
-                    > In-Nova is the Junior Enterprise of NOVA School of Science and Technology. Founded with the aim of promoting the capabilities of its students by integrating them into real projects, it aims to bring students closer to the professional reality. In-Nova is focused on creating a limitless workspace, in the most varied areas of knowledge. Specialized in robotics, full stack development, electronics, and prototyping.
+                    >
+                        In-Nova is the Junior Enterprise of NOVA School of Science and Technology, founded with the aim of promoting the capabilities of its students by integrating them into real projects. <br/>
+                        In-Nova is focused on creating a limitless workspace, in the most varied areas of knowledge. Specialized in robotics, full stack development, electronics, and prototyping. 
                     </Box>
                 </Box>
             </Box>
