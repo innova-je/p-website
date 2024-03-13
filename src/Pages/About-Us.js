@@ -127,8 +127,9 @@ const AboutUs = () => {
                         }}
                     >
                         Engineering Students <br />
-                        Engineering Students <br />
-                        Engineering Students
+                        Problem Solvers <br />
+                        Creative Minds <br />
+                        Next-Gen Leaders 
                     </Typography>
                     <img src={HeroImage} alt="Hero Image"
                         style={{
@@ -160,9 +161,11 @@ const AboutUs = () => {
                             justifyContent: 'center',
                             textAlign: 'justify',
                             fontWeight: 'light',
-                            fontSize: '16px',
+                            fontSize: '17px',
                         }}
-                    > In-Nova is the Junior Enterprise of NOVA School of Science and Technology. Founded with the aim of promoting the capabilities of its students by integrating them into real projects, it aims to bring students closer to the professional reality. In-Nova is focused on creating a limitless workspace, in the most varied areas of knowledge. Specialized in robotics, full stack development, electronics, and prototyping.
+                    >
+                        In-Nova is the Junior Enterprise of NOVA School of Science and Technology, founded with the aim of promoting the capabilities of its students by integrating them into real projects. <br/>
+                        In-Nova is focused on creating a limitless workspace, in the most varied areas of knowledge. Specialized in robotics, full stack development, electronics, and prototyping. 
                     </Box>
                 </Box>
             </Box>
@@ -185,21 +188,21 @@ const AboutUs = () => {
                         <Values
                             title="Mission"
                             subtitle="What impact do we <br>want to create?"
-                            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula viverra leo id aliquam. Sed ullamcorper nulla nibh, id pulvinar eros ultrices maximus."
+                            content="Promote the interaction of students in the business environment, training them in the latest scientific and technological techniques that enable them to develop creative and innovative solutions applied to real problems."
                             currentState={selectedButton === 'Mission' ? 'expanded' : selectedButton ? 'collapsed' : 'normal'}
                             onButtonClick={handleButtonClick}
                         />
                         <Values
                             title="Vision"
                             subtitle="What impact do we <br>want to create?"
-                            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula viverra leo id aliquam. Sed ullamcorper nulla nibh, id pulvinar eros ultrices maximus."
+                            content="In-Nova aims to involve the academic and technology communities, highlighting the quality and excellence that characterize NOVA SST and ultimately making university students more competent, entrepreneurial and critical."
                             currentState={selectedButton === 'Vision' ? 'expanded' : selectedButton ? 'collapsed' : 'normal'}
                             onButtonClick={handleButtonClick}
                         />
                         <Values
                             title="Values"
                             subtitle="What impact do we <br>want to create?"
-                            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula viverra leo id aliquam. Sed ullamcorper nulla nibh, id pulvinar eros ultrices maximus."
+                            content="Empowering the entrepreneurial spirit, giving priority to creativity, prioritizing critical thinking and encouraging proactivity and teamwork."
                             currentState={selectedButton === 'Values' ? 'expanded' : selectedButton ? 'collapsed' : 'normal'}
                             onButtonClick={handleButtonClick}
                         />

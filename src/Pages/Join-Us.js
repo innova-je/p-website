@@ -7,8 +7,8 @@ import joinus_elements from '../images/other/joinus-elements.png';
 import guiadocandidato from '../images/other/GuiaDoCandidato.png';
 import Technologies from '../components/Technologies';
 import HowToApply from '../components/HowToApply';
-import Carousel from '../components/CarouselReviews';
-import CustomReview from '../components/CustomReview';
+import MemberReview from '../components/MemberReview';
+import Testimonials from '../Testimonials.json'
 
 
 const JoinUs = () => {
@@ -557,110 +557,32 @@ const JoinUs = () => {
                     Our members love being here,<br />
                     and so will you!
                 </Typography>
-
-                {/* First row of reviews */}
+                
                 <Box
                     sx={{
                         display: 'inline-flex',
+                        flexWrap: 'wrap',
                         alignItems: 'center',
                         justifyContent: 'center',
                         gap: '2.5rem',
-                        position: 'absolute',
+                        position: 'relative',
                         top: '30%',
                         width: '100%',
                         height: '38vh',
                         overflow: 'visible',
 
-                    }}>
+                    }}> 
                     {/* <Carousel reviews={reviews1} duration='30s' direction='left' /> */}
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
+                    {Testimonials.testimonials.map((testimonial, index) => (
+                    <MemberReview
+                        image={testimonial.image}
+                        name={testimonial.name}
+                        department={testimonial.department}
+                        text={testimonial.quote}
                         sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor consectetur adipiscing elit Lorem ipsum dolor sit amet consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor consectetur adipiscing elit Lorem ipsum dolor sit amet consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
+                />
+                ))}
                 </Box>
-
-                {/* Second row of reviews */}
-                <Box
-                    sx={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '2.5rem',
-                        position: 'absolute',
-                        top: '62%',
-                        width: '100%',
-                        height: '38vh',
-                        overflow: 'visible',
-                    }}>
-                    {/* <Carousel reviews={[...reviews1].reverse()} direction='left' /> */}
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor consectetur adipiscing elit Lorem ipsum dolor sit amet consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                </Box>
-
             </Box>
 
             {/* 5th Section */}
