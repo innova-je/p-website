@@ -1,0 +1,24 @@
+{
+    "mandates": [
+        {"title": "Mandato I", 
+        "year": "2020-2021",
+        "mainAccomplishments": ["In-Nova's Foundation", "First Recruitment", "Registration in RNAJ"],
+        "image":"MandatoI.webp"
+        },
+        {"title": "Mandato II", 
+        "year": "2021-2022",
+        "mainAccomplishments": ["1st edition of Innovation Week", "We became a Junior Enterprise!"],
+        "image":"MandatoII.webp"
+        },
+        {"title": "Mandato III", 
+        "year": "2022-2023",
+        "mainAccomplishments": ["Establishment of a Robotics lab", "Launch of Innovation Valley", "Created a mobile app for IW"],
+        "image":"MandatoIII.webp"
+        },
+        {"title": "Mandato IV", 
+        "year": "2023-2024",
+        "mainAccomplishments": ["1st participation on an international event", "Organization of the III Junior Enterprise National Congress", "Nomination in JeniAL Awards - Most Promising Junior Enterprise", "Certified Junior Enterprise"],
+        "image":"MandatoIV.webp"
+    }
+    ]
+}

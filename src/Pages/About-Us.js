@@ -3,9 +3,8 @@ import { Box, Button, Link, Typography, useTheme, Container } from '@mui/materia
 import HeroImage from '../images/other/about-us.png'
 
 import Values from '../components/Values';
-import Mandatos from '../components/Mandatos';
+import MandatesSection from '../components/MandatesSection';
 import MapParallax from '../components/MapParallax';
-
 
 
 const AboutUs = () => {
@@ -20,7 +19,6 @@ const AboutUs = () => {
             setSelectedButton(title);
         }
     };
-
 
     return (
         <>
@@ -239,7 +237,7 @@ const AboutUs = () => {
                 </Typography>
 
                 <Box sx={{ position: 'absolute', top: '40%', zIndex: 4 }}>
-                    <Mandatos />
+                    <MandatesSection/>
                 </Box>
 
                 <Box
