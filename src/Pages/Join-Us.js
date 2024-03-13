@@ -684,7 +684,7 @@ const JoinUs = () => {
                     Read the<br />
                     candidate guide
                 </Typography>
-                <a href = "../otherFiles" download = "guia_do_candidato_2024">
+                <a href = "https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
                     <Button
                         variant="contained"
                         
