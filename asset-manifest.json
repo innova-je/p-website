@@ -1,6 +1,10 @@
 {
   "files": {
-    "main.js": "/p-website/static/js/main.9e28ef9c.js",
+    "main.js": "/p-website/static/js/main.ce732a68.js",
+    "static/js/1464.c3a929c9.chunk.js": "/p-website/static/js/1464.c3a929c9.chunk.js",
+    "static/js/6542.340367b5.chunk.js": "/p-website/static/js/6542.340367b5.chunk.js",
+    "static/js/1997.fb71092f.chunk.js": "/p-website/static/js/1997.fb71092f.chunk.js",
+    "static/js/9696.daac5ca6.chunk.js": "/p-website/static/js/9696.daac5ca6.chunk.js",
     "static/js/9676.6fcdc8ed.chunk.js": "/p-website/static/js/9676.6fcdc8ed.chunk.js",
     "static/js/6568.d3341a1b.chunk.js": "/p-website/static/js/6568.d3341a1b.chunk.js",
     "static/js/3816.08adee40.chunk.js": "/p-website/static/js/3816.08adee40.chunk.js",
@@ -72,14 +76,18 @@
     "static/media/map1.png": "/p-website/static/media/map1.72aa81d05d4815c87fa0.png",
     "static/media/map3.png": "/p-website/static/media/map3.d5aad2fb8f7d0009613e.png",
     "static/media/carolina_mendes.webp": "/p-website/static/media/carolina_mendes.6a2de1e657283712020e.webp",
+    "static/media/guilherme_salvador.webp": "/p-website/static/media/guilherme_salvador.6a202d18364d82f7e931.webp",
     "static/media/TOMADA DE POSSE.png": "/p-website/static/media/TOMADA DE POSSE.893da6d059ec9b1912ad.png",
     "static/media/bottom2.webp": "/p-website/static/media/bottom2.82bff8cdb8d92eef22c0.webp",
+    "static/media/pedro_mirao.webp": "/p-website/static/media/pedro_mirao.25cc2d231abb5306e38f.webp",
+    "static/media/rita_rebelo.webp": "/p-website/static/media/rita_rebelo.f52734b4f6b28e4b2434.webp",
     "static/media/RoboticsPrototyping.png": "/p-website/static/media/RoboticsPrototyping.29ab2e7379201fd6a50c.png",
     "static/media/In.Nova_III-JE-Portugal-224_1.webp": "/p-website/static/media/In.Nova_III-JE-Portugal-224_1.cbf3ff1a2aa569a29d8a.webp",
     "static/media/group-img.png": "/p-website/static/media/group-img.8d7acf2bded5b0bb2fea.png",
     "static/media/instagram-icon.png": "/p-website/static/media/instagram-icon.ac31e22207e23b7186e8.png",
     "static/media/maria_carolina_soares.webp": "/p-website/static/media/maria_carolina_soares.dcb02315ac95928229ae.webp",
     "static/media/interview-img.jpg": "/p-website/static/media/interview-img.10bedfee68d896f41601.jpg",
+    "static/media/vasco_matos.webp": "/p-website/static/media/vasco_matos.b6170cec9452a1f3a48f.webp",
     "static/media/filipa_santos.webp": "/p-website/static/media/filipa_santos.59da5c260e39d58583d1.webp",
     "static/media/laura_filipe.webp": "/p-website/static/media/laura_filipe.6c0c03958fd4ed8eb3c4.webp",
     "static/media/congrats-img.png": "/p-website/static/media/congrats-img.321505a1836227c611a4.png",
@@ -192,9 +200,9 @@
     "static/media/camera-icon.svg": "/p-website/static/media/camera-icon.0d574b04558bd96cd4eeee3fc4efd6b6.svg",
     "static/media/write-icon.svg": "/p-website/static/media/write-icon.94c9151042e055f5c8790adf8f872fcf.svg",
     "index.html": "/p-website/index.html",
-    "main.9e28ef9c.js.map": "/p-website/static/js/main.9e28ef9c.js.map"
+    "main.ce732a68.js.map": "/p-website/static/js/main.ce732a68.js.map"
   },
   "entrypoints": [
-    "static/js/main.9e28ef9c.js"
+    "static/js/main.ce732a68.js"
   ]
 }

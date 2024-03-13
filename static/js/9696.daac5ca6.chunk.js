@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[9696],{9696:(e,t,s)=>{e.exports=s.p+"static/media/vasco_matos.b6170cec9452a1f3a48f.webp"}}]);
