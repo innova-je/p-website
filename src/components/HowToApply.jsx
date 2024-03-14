@@ -109,8 +109,8 @@ const MiddleBox = ({ barheight }) => {
                 />
 
 
-
-                <CustomCircle icon={WriteIcon} posTop="12px" bgcolor={theme.palette.primary.main} fill="white" />
+                {/* <CustomCircle icon={WriteIcon} posTop="12px" bgcolor={theme.palette.primary.main} fill="white" /> */}
+                <CustomCircle icon={WriteIcon} posTop="12px" bgcolor={'#F0F0F0'} fill={theme.palette.primary.main} />  
                 <CustomCircle icon={CameraIcon} posTop="130px" bgcolor={cameraBG} fill={cameraFill} />
                 <CustomCircle icon={GroupIcon} posTop="248px" bgcolor={groupBG} fill={groupFill} />
                 <CustomCircle icon={ChatIcon} posTop="366px" bgcolor={chatBG} fill={chatFill} />

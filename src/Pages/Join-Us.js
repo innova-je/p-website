@@ -7,8 +7,7 @@ import joinus_elements from '../images/other/joinus-elements.png';
 import guiadocandidato from '../images/other/GuiaDoCandidato.png';
 import Technologies from '../components/Technologies';
 import HowToApply from '../components/HowToApply';
-import MemberReview from '../components/MemberReview';
-import Testimonials from '../Testimonials.json'
+import Carousel from '../components/CarouselReviews';
 import { useMediaQuery } from 'react-responsive';
 
 
@@ -312,12 +311,12 @@ const JoinUs = () => {
             >
                 {/* Circles */}
                 {smallMobile || mobile || tablet ? (
-                        <>  
-                        </>
-                    ) : (
-                        <Technologies />
-                    )}
-                
+                    <>
+                    </>
+                ) : (
+                    <Technologies />
+                )}
+
 
                 {/* Texts */}
                 <Typography variant="h4"
@@ -325,7 +324,7 @@ const JoinUs = () => {
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Semi-Bold',
-                        fontSize: tablet ? '4.5dvw' : mobile ? '5dvw' : smallMobile ? '5.7dvw' :'2.5dvw',
+                        fontSize: tablet ? '4.5dvw' : mobile ? '5dvw' : smallMobile ? '5.7dvw' : '2.5dvw',
                         marginTop: tablet ? undefined : mobile ? undefined : smallMobile ? undefined : '30px',
                     }}>
                     You will
@@ -335,7 +334,7 @@ const JoinUs = () => {
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Bold',
-                        fontSize: tablet ? '6dvw' : mobile ? '6.5dvw' : smallMobile ? '7dvw' :'4.5dvw',
+                        fontSize: tablet ? '6dvw' : mobile ? '6.5dvw' : smallMobile ? '7dvw' : '4.5dvw',
                     }}>
                     learn something
                 </Typography>
@@ -345,7 +344,7 @@ const JoinUs = () => {
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
-                        fontSize: tablet ? '5dvw' : mobile ? '5.5dvw' : smallMobile ? '6dvw' :'3.5dvw',
+                        fontSize: tablet ? '5dvw' : mobile ? '5.5dvw' : smallMobile ? '6dvw' : '3.5dvw',
                         opacity: '0.66',
                     }}>
                     every.single.day
@@ -356,7 +355,7 @@ const JoinUs = () => {
                         textAlign: 'center',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
-                        fontSize: tablet ? '1.8dvw' : mobile ? '2.2dvw' : smallMobile ? '3dvw' :'1.2dvw',
+                        fontSize: tablet ? '1.8dvw' : mobile ? '2.2dvw' : smallMobile ? '3dvw' : '1.2dvw',
                         opacity: '0.7',
 
                     }}>
@@ -380,7 +379,7 @@ const JoinUs = () => {
                     See our Portfolio
                 </Button>
                 */}
-                
+
             </Box>
 
             {/* 3rd Section */}
@@ -489,125 +488,125 @@ const JoinUs = () => {
                 />
             </Box>
 
-            <div style={{display: "flex", flexDirection: "column"}}>
+            <div style={{ display: "flex", flexDirection: "column" }}>
                 {/* 4th Section */}
-            <Box
-                sx={{
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: "column",
-                    justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-start',
-                    alignItems: 'flex-start',
-                    height: mobile ? '65vh' : smallMobile ? '65vh' : '120vh',
-                    overflow: 'hidden',
-                    backgroundImage: `linear-gradient(to top, ${theme.palette.primary.main} ${gradientPercentage}, rgba(255,255,255,0))`,
-
-                }}
-            >
-                {smallMobile || mobile ? (
-                    <>
-                        <Typography
-                            variant="h3"
-                            sx={{
-                                position: 'absolute',
-                                zIndex: '1',
-                                left: '29dvw',
-                                top: '5dvw',
-                                fontSize: mobile ? '6dvw' : smallMobile ? '6dvw' : '4dvw',
-                                color: "#FFFFFF",
-                                fontFamily: theme.typography.fontFamily,
-                                fontWeight: 'Bold',
-                            }}
-                        >
-                            Our members
-                        </Typography>
-                        <Typography
-                            variant="h3"
-                            sx={{
-                                position: 'absolute',
-                                zIndex: '1',
-                                left: '23dvw',
-                                top: '13dvw',
-                                fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '4dvw',
-                                color: "#FFFFFF",
-                                fontFamily: theme.typography.fontFamily,
-                                fontWeight: 'Bold',
-                            }}
-                        >
-                            love being here,
-                        </Typography>
-                        <Typography
-                            variant="h3"
-                            sx={{
-                                position: 'absolute',
-                                zIndex: '1',
-                                left: '17dvw',
-                                top: '24dvw',
-                                fontSize: mobile ? '8dvw' : smallMobile ? '9dvw' : '4dvw',
-                                color: "#FFFFFF",
-                                fontFamily: theme.typography.fontFamily,
-                                fontWeight: 'Bold',
-                            }}
-                        >
-                            and so will you!
-                        </Typography>
-                    </>
-                ) : (
-                    <Typography
-                        variant="h3"
-                        sx={{
-                            position: 'relative',
-                            zIndex: '1',
-                            left: '6dvw',
-                            top: '5dvw',
-                            fontSize: '3.5dvw',
-                            color: "#FFFFFF",
-                            fontFamily: theme.typography.fontFamily,
-                            fontWeight: 500,
-                        }}
-                    >
-                        Our members love being here,<br />
-                        and so will you!
-                    </Typography>
-                )}
-
-                <Carousel></Carousel>
-
-            </Box>
-
-            {/* 5th Section */}
-            <Box
-                // ref={sectionRef}
-                sx={{
-                    position: 'relative',
-                    background: "blue",
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    height: '120vh',
-
-                }}
-            >
-                <Typography
-                    variant="h2"
+                <Box
                     sx={{
-                        position: 'absolute',
-                        top: '8dvw',
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'Bold',
-                        fontSize: tablet ? "7dvw" : mobile ? "10dvw" : smallMobile ? '12dvw' :  '6dvw',
+                        position: 'relative',
+                        display: 'flex',
+                        flexDirection: "column",
+                        justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-start',
+                        alignItems: 'flex-start',
+                        height: mobile ? '80vh' : smallMobile ? '80vh' : '120vh',
+                        overflow: 'hidden',
+                        backgroundImage: `linear-gradient(to top, ${theme.palette.primary.main} ${gradientPercentage}, rgba(255,255,255,0))`,
+
                     }}
                 >
-                    How to apply?
-                </Typography>
+                    {smallMobile || mobile ? (
+                        <>
+                            <Typography
+                                variant="h3"
+                                sx={{
+                                    position: 'absolute',
+                                    zIndex: '1',
+                                    left: '29dvw',
+                                    top: '5dvw',
+                                    fontSize: mobile ? '6dvw' : smallMobile ? '6dvw' : '4dvw',
+                                    color: "#FFFFFF",
+                                    fontFamily: theme.typography.fontFamily,
+                                    fontWeight: 'Bold',
+                                }}
+                            >
+                                Our members
+                            </Typography>
+                            <Typography
+                                variant="h3"
+                                sx={{
+                                    position: 'absolute',
+                                    zIndex: '1',
+                                    left: '23dvw',
+                                    top: '13dvw',
+                                    fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '4dvw',
+                                    color: "#FFFFFF",
+                                    fontFamily: theme.typography.fontFamily,
+                                    fontWeight: 'Bold',
+                                }}
+                            >
+                                love being here,
+                            </Typography>
+                            <Typography
+                                variant="h3"
+                                sx={{
+                                    position: 'absolute',
+                                    zIndex: '1',
+                                    left: '17dvw',
+                                    top: '24dvw',
+                                    fontSize: mobile ? '8dvw' : smallMobile ? '9dvw' : '4dvw',
+                                    color: "#FFFFFF",
+                                    fontFamily: theme.typography.fontFamily,
+                                    fontWeight: 'Bold',
+                                }}
+                            >
+                                and so will you!
+                            </Typography>
+                        </>
+                    ) : (
+                        <Typography
+                            variant="h3"
+                            sx={{
+                                position: 'relative',
+                                zIndex: '1',
+                                left: '6dvw',
+                                top: '5dvw',
+                                fontSize: '3.5dvw',
+                                color: "#FFFFFF",
+                                fontFamily: theme.typography.fontFamily,
+                                fontWeight: 500,
+                            }}
+                        >
+                            Our members love being here,<br />
+                            and so will you!
+                        </Typography>
+                    )}
 
-                {/* progress * 6.5 */}
-                <HowToApply progress={190} />
+                    <Carousel></Carousel>
 
-            </Box>
+                </Box>
+
+                {/* 5th Section */}
+                <Box
+                    // ref={sectionRef}
+                    sx={{
+                        position: 'relative',
+                        background: "blue",
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        height: '120vh',
+
+                    }}
+                >
+                    <Typography
+                        variant="h2"
+                        sx={{
+                            position: 'absolute',
+                            top: '8dvw',
+                            color: theme.palette.secondary.main,
+                            fontFamily: theme.typography.fontFamily,
+                            fontWeight: 'Bold',
+                            fontSize: tablet ? "7dvw" : mobile ? "10dvw" : smallMobile ? '12dvw' : '6dvw',
+                        }}
+                    >
+                        How to apply?
+                    </Typography>
+
+                    {/* progress * 6.5 */}
+                    <HowToApply progress={0} />
+
+                </Box>
             </div>
-            
+
 
             {/* 6th Section */}
             <Box
@@ -617,7 +616,7 @@ const JoinUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: tablet ? "65dvw" : mobile ? "70dvw" : smallMobile ? '69dvw' :  '60dvw',
+                    height: tablet ? "65dvw" : mobile ? "70dvw" : smallMobile ? '69dvw' : '60dvw',
                     overflow: 'visible',
 
                 }}>
@@ -652,7 +651,7 @@ const JoinUs = () => {
                     maxWidth: '55%',
                     maxHeight: '100%',
                     objectFit: 'cover',
-                    top: tablet ? "8dvw" : mobile ? "9dvw" : smallMobile ? '10dvw' :'10dvw',
+                    top: tablet ? "8dvw" : mobile ? "9dvw" : smallMobile ? '10dvw' : '10dvw',
                     left: tablet ? "-9dvw" : mobile ? "-9dvw" : smallMobile ? '-15dvw' : '-9dvw',
                 }} />
 
@@ -672,24 +671,24 @@ const JoinUs = () => {
                     Read the<br />
                     candidate guide
                 </Typography>
-                <a href = "https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
+                <a href="https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
                     <Button
-                        variant="contained"  
+                        variant="contained"
                         sx={{
                             position: 'absolute',
                             right: tablet ? "20dvw" : mobile ? "19dvw" : smallMobile ? '17dvw' : '21dvw',
                             top: tablet ? "35dvw" : mobile ? "40dvw" : smallMobile ? '42dvw' : '33dvw',
                             borderRadius: '10px',
-                            py: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '1.5dvw' :'1dvw',
+                            py: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '1.5dvw' : '1dvw',
                             px: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '4dvw',
                             fontSize: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '2.5dvw' : '1.2dvw',
                             textTransform: 'none',
-                            }}
-                >
+                        }}
+                    >
                         Download
                     </Button>
                 </a>
-                
+
                 <Typography
                     variant="body1"
                     sx={{
