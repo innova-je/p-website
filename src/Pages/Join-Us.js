@@ -434,11 +434,10 @@ const JoinUs = () => {
                     // ref={sectionRef}
                     sx={{
                         position: 'relative',
-                        // background: "blue",
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                        height: '120vh',
+                        height: tablet ? '100dvh' : mobile ? '110vh' : smallMobile ? '80vh' : '70dvw',
 
                     }}
                 >
