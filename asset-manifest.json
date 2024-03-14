@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/p-website/static/css/main.2f7ab4be.css",
-    "main.js": "/p-website/static/js/main.ece0b0d4.js",
+    "main.js": "/p-website/static/js/main.8cacedce.js",
     "static/js/3411.798ae6a9.chunk.js": "/p-website/static/js/3411.798ae6a9.chunk.js",
     "static/js/5762.81931c89.chunk.js": "/p-website/static/js/5762.81931c89.chunk.js",
     "static/js/477.78aa1b2d.chunk.js": "/p-website/static/js/477.78aa1b2d.chunk.js",
@@ -83,6 +83,7 @@
     "static/media/HomePageVideo.mp4": "/p-website/static/media/HomePageVideo.498fcc393bf628847b66.mp4",
     "static/media/maintenance_single_page.png": "/p-website/static/media/maintenance_single_page.4ce9ab34fb01ad725a5c.png",
     "static/media/joinus-outofoffice.png": "/p-website/static/media/joinus-outofoffice.80afb0661cfee1ab6d8a.png",
+    "static/media/joinus-outofoffice2.png": "/p-website/static/media/joinus-outofoffice2.1761c5cb692e73ea5c62.png",
     "static/media/accomplishment3.webp": "/p-website/static/media/accomplishment3.d2c0e6e1cfa5e0852b4c.webp",
     "static/media/MandatoIV.webp": "/p-website/static/media/MandatoIV.2a1c60012da917da8525.webp",
     "static/media/map2.png": "/p-website/static/media/map2.dd65a94c5943902fb65d.png",
@@ -225,10 +226,10 @@
     "static/media/slick.woff": "/p-website/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/p-website/index.html",
     "main.2f7ab4be.css.map": "/p-website/static/css/main.2f7ab4be.css.map",
-    "main.ece0b0d4.js.map": "/p-website/static/js/main.ece0b0d4.js.map"
+    "main.8cacedce.js.map": "/p-website/static/js/main.8cacedce.js.map"
   },
   "entrypoints": [
     "static/css/main.2f7ab4be.css",
-    "static/js/main.ece0b0d4.js"
+    "static/js/main.8cacedce.js"
   ]
 }
