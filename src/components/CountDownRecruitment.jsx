@@ -44,7 +44,7 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
         textAlign: 'center',
         color: theme.palette.primary.main,
         fontWeight: 400,
-        fontSize: '1.5rem',
+        fontSize: '2vw',
         opacity: 0.7,
         boxShadow: 'none'
     }));
@@ -52,13 +52,12 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
     return (<>
         <Box
             sx={{
-                width: '65%',
+                width: '50%',
+                height: "15vh",
                 backgroundColor: '#fff',
                 borderRadius: '25px',
-                position: 'absolute',
-                top: '53%',
                 opacity: '0.85',
-                padding: '20px',
+                padding: '1.5rem 4rem',
                 zIndex: '3',
                 display: 'flex',
                 alignItems: 'center',
@@ -70,46 +69,74 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                 direction={['column', 'row']}
                 justifyContent="center"
                 alignItems={'center'}
-                spacing={2}
+                spacing={0}
             >
-                <Grid item xs={12} md={4}>
-                    <Typography
+                <div style={{display: "flex", flexDirection: "row", alignItems: "center", width: "100%", justifyContent: "right", gap: "10%"}}>
+                    <div style={{width: "40%", height: "100%", display: "flex", alignItems:" center"}}>
+                        <Typography
                         variant="h6"
                         sx={{
-                            fontWeight: 'Light',
+                            fontWeight: 'Bold',
                             color: theme.palette.primary.main,
                             textTransform: 'uppercase',
+                            fontSize: "2vw"
                         }}
                     >
                         Recruitment <br /> Closes in
                     </Typography>
-                </Grid>
-                <Grid item container direction="row" columnGap={12} xs={12} md={6}>
-                    <Stack spacing={2} xs={12} md={4}>
+                    </div>
+                
+
+                    <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "row", gap: "10%",  alignItems: "center", justifyContent: "center"}}>
+                        <div style={{width:"20%"}}>
+                            <ItemCountDown>
+                                {countdown.days}
+                            </ItemCountDown>
+                            <ItemCountDownTitle>
+                                DAYS
+                            </ItemCountDownTitle>
+                        </div>
+                        <div style={{background: "green", display: "flex", height: "100%", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+                           <Typography sx={{textAlign: 'center',
+                            color: theme.palette.primary.main,
+                            fontWeight: 400,
+                            fontSize: '6vw',
+                            opacity: 0.7,
+                            boxShadow: 'none'
+                        }}>:</Typography> 
+                        </div>
+                        
+                        <div style={{width:"20%"}}>
                         <ItemCountDown>
-                            {countdown.days}
-                        </ItemCountDown>
-                        <ItemCountDownTitle>
-                            DAYS
-                        </ItemCountDownTitle>
-                    </Stack>
-                    <Stack spacing={2} xs={12} md={4}>
+                                {countdown.hours}
+                            </ItemCountDown>
+                            <ItemCountDownTitle>
+                                HOURS
+                            </ItemCountDownTitle>
+                        </div>
+
+                        <div style={{background: "green", display: "flex", height: "100%", flexDirection: "column", justifyContent: "center", alignItems: "flex-end"}}>
+                           <Typography sx={{textAlign: 'center',
+                            color: theme.palette.primary.main,
+                            fontWeight: 400,
+                            fontSize: '6vw',
+                            opacity: 0.7,
+                            boxShadow: 'none'
+                        }}>:</Typography> 
+                        </div>
+
+                        <div style={{width:"20%"}}>
                         <ItemCountDown>
-                            {countdown.hours}
-                        </ItemCountDown>
-                        <ItemCountDownTitle>
-                            HOURS
-                        </ItemCountDownTitle>
-                    </Stack>
-                    <Stack spacing={2} xs={12} md={4}>
-                        <ItemCountDown>
-                            {countdown.minutes}
-                        </ItemCountDown>
-                        <ItemCountDownTitle>
-                            MINUTES
-                        </ItemCountDownTitle>
-                    </Stack>
-                </Grid>
+                                {countdown.minutes}
+                            </ItemCountDown>
+                            <ItemCountDownTitle>
+                                MINUTES
+                            </ItemCountDownTitle>
+                        </div>
+                </div>
+
+                </div>
+                
             </Grid>
 
         </Box >

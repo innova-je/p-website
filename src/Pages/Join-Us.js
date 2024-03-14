@@ -87,9 +87,9 @@ const JoinUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: tablet ? "60dvw" : mobile ? "80dvw" : smallMobile ? '90dvw' : "50dvw",
+                    height: "auto",
                     width: '100%',
-                    backgroundImage: `url(${HeroImage})`,
+                    //backgroundImage: `url(${HeroImage})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -97,73 +97,67 @@ const JoinUs = () => {
                     zIndex: '0',
                 }}
             >
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        top: '0',
-                        left: '0',
-                        width: '100%',
-                        height: '100%',
-                        backgroundColor: 'rgba(255,255,255,0.6)',
-                        zIndex: '0',
+                <div style={{width: "100vw", height: "100vh", overflow: "hidden"}}>
+                    <div style={{width: "100%", height: "100%", zIndex: 2, background: "linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5))"}}>
+                    <div style={{height: "100vh", width: "100vw", overflow: "hidden", zIndex: -1, position: "absolute"}}>
+                        <img src={HeroImage} style={{ width: "100%", height: "100%", objectFit: "cover"}}/>
+                    </div>
 
-                    }}
-                />
-                <Typography
-                    variant="h2"
-                    sx={{
-                        fontWeight: '600',
-                        fontSize: tablet ? "6dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : '5dvw',
-                        position: 'relative',
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        zIndex: '1',
-                        top: "32%",
-                    }}
-                >
-                    Want to become one of us?
-                </Typography>
+                    <div style={{height: "100%", width: "100%", display: "flex", zIndex: 1, justifyContent: "center"}}>
+                
+                            <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems:"center", justifyContent: "center"}}>
+                                <div style={{width: "100%", height: "100%",  display: "flex", flexDirection: "column", gap: "5%", alignItems: "center", justifyContent:"center"}}>
+                                   <Typography
+                                variant="h2"
+                                sx={{
+                                    fontWeight: '600',
+                                    fontSize: tablet ? "6dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : '5dvw',
+                                    position: 'relative',
+                                    color: theme.palette.secondary.main,
+                                    fontFamily: theme.typography.fontFamily,
+                                    zIndex: '1',
+                                }}
+                            >
+                                Want to become one of us?
+                            </Typography> 
+                            
+                            <CountDownRecruitment />
 
-                <Button
-                    variant="contained"
-                    href='https://forms.gle/NP4Eo4RUftMv4LFq7'
-                    sx={{
-                        marginTop: '20px',
-                        zIndex: '3',
-                        borderRadius: '20px',
-                        py: '1dvw',
-                        px: '5dvw',
-                        fontSize: tablet ? "3dvw" : mobile ? "3dvw" : smallMobile ? '3dvw' : '1.5dvw',
-                        textTransform: 'none',
-                        top: smallMobile ? "75%" : "65%",
-                        opacity: '0.9',
-                    }}
-                >
-                    Apply Now!
-                </Button>
-                <CountDownRecruitment />
+                            <Button
+                                variant="contained"
+                                href='https://forms.gle/NP4Eo4RUftMv4LFq7'
+                                sx={{
+                                    zIndex: '3',
+                                    borderRadius: '20px',
+                                    py: '1dvw',
+                                    px: '5dvw',
+                                    fontSize: tablet ? "3dvw" : mobile ? "3dvw" : smallMobile ? '3dvw' : '1.5dvw',
+                                    textTransform: 'none',
+                                }}
+                            >
+                                Apply Now!
+                            </Button>
+                            
+                            </div>
+                                
+                        </div>
+                            
+                        </div> 
+                    </div>
+                    
+                </div>                
 
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        zIndex: '2',
-                        bottom: -1,
-                        width: '100%',
-                        height: '70%',
-                        backgroundImage:
-                            'linear-gradient(to top, rgba(240,240,240,1), rgba(240,240,240,0))',
-                    }}
-                />
-            </Box>
-
-            {/* 2nd Section*/}
+            
+            {/*----------------------------------------------------*/}
+        
+            <div style={{height: "auto", width: "100%", position: "relative", top: 0, background: "red"}}>
+                {/* 2nd Section*/}
             <Box
                 sx={{
                     position: 'relative', // Make the box a positioning context for absolute positioning inside
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: smallDesktop ? '25dvw' : tablet ? '35dvw' : mobile ? '40dvw' : smallMobile ? '45dvw' : '31dvw',
                     overflow: 'hidden',
                 }}
             >
@@ -173,14 +167,18 @@ const JoinUs = () => {
                     </>
                 ) : (
                     <Technologies />
-                )}
+                )}  
 
-                {/* Texts */}
+                <Technologies/>              
+
+                    {/* Texts */}
                 <Typography variant="h4"
                     sx={{
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Semi-Bold',
+                        width: "100%", 
+                        textAlign: "center",
                         fontSize: smallDesktop ? '4dvw' : tablet ? '4.5dvw' : mobile ? '5dvw' : smallMobile ? '5.7dvw' : '2.5dvw',
                         marginTop: tablet ? undefined : mobile ? undefined : smallMobile ? undefined : '30px',
                     }}>
@@ -191,6 +189,7 @@ const JoinUs = () => {
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Bold',
+                        textAlign: "center",
                         fontSize: smallDesktop ? '5.5dvw' : tablet ? '6dvw' : mobile ? '6.5dvw' : smallMobile ? '7dvw' : '4.5dvw',
                     }}>
                     learn something
@@ -202,6 +201,7 @@ const JoinUs = () => {
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
                         opacity: '0.66',
+                        textAlign: "center",
                         fontSize: smallDesktop ? '4.5dvw' : tablet ? '5dvw' : mobile ? '5.5dvw' : smallMobile ? '6dvw' : '3.5dvw',
                     }}>
                     every.single.day
@@ -213,12 +213,14 @@ const JoinUs = () => {
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         opacity: '0.7',
+                        textAlign: "center",
                         fontSize: smallDesktop ? '1.3dvw' : tablet ? '1.8dvw' : mobile ? '2.2dvw' : smallMobile ? '3dvw' : '1.2dvw',
 
                     }}>
                     These are some technologies we use.<br />
                     If you have something new to teach us, join the team!
                 </Typography>
+                
 
 
                 {/* <Button
@@ -237,40 +239,45 @@ const JoinUs = () => {
                 </Button> */}
             </Box>
 
-            {/* 3rd Section */}
-            <Box
-                sx={{
-                    position: 'relative',
-                    display: 'flex',
-                    height: mobile ? '110dvw' : smallMobile ? '110dvw' : undefined,
-                    justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-end',
-                    alignItems: mobile ? 'flex-start' : smallMobile ? 'flex-start' : 'flex-end',
-                }}
-            >
-                <Typography
-                    variant="h3"
-                    sx={{
-                        position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '5dvw',
-                        top: mobile ? '60%' : smallMobile ? '57%' : '28%',
+        </div>
+
+
+        {/*----------------------------------------------------*/}
+
+
+        <div style={{display: "flex", 
+        alignItems:"center", 
+        position:"relative", 
+        flexDirection: mobile || smallMobile ? 'column' : 'row',  
+        width: "100dvw", 
+        height: "auto",  
+        background: `linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url(${joinus_elements})`,
+        marginTop: mobile || smallMobile ? "10%" : "0%"
+        }}>
+                {/* 3rd Section */}
+            <div style={{position: "relative",padding:"0 2rem", display: "flex", flexDirection: "column", width: "100%", height: "100%", justifyContent: "center", alignItems: "center"}}>
+                <h3
+                    style={{
+                        width: "fit-content",
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
                         fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '3.5dvw',
+                        textAlign: "center",
+                        whiteSpace: "nowrap"
                     }}
                 >
                     We don’t just work here,
-                </Typography>
+                </h3>
                 <Typography
                     variant="h4"
                     sx={{
-                        position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '15dvw',
-                        top: mobile ? '67%' : smallMobile ? '65%' : '38%',
+                        position: 'relative',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'regular',
                         fontSize: mobile ? '7dvw' : smallMobile ? '6dvw' : '2.5dvw',
+                        textAlign: "center"
                     }}
                 >
                     we also have
@@ -278,9 +285,6 @@ const JoinUs = () => {
                 <Typography
                     variant="h3"
                     sx={{
-                        position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '13dvw',
-                        top: mobile ? '75%' : smallMobile ? '71%' : '47%',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
@@ -293,57 +297,36 @@ const JoinUs = () => {
                     variant="contained"
                     endIcon={<ArrowForwardIcon />}
                     sx={{
-                        position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '17dvw',
-                        top: mobile ? '83%' : smallMobile ? '79%' : '60%',
                         borderRadius: '10px',
                         py: '10px',
                         px: '25px',
                         fontSize: mobile ? '3dvw' : smallMobile ? '3dvw' : '1dvw',
                         textTransform: 'none',
-                        marginTop: '20px',
+                        mt: '1.5rem'
                     }}
                 >
                     Out of Office
                 </Button>
-                <div style={{ position: 'relative', maxWidth: (mobile ? '100%' : smallMobile ? '100%' : '65%'), maxHeight: '100%' }}>
+                </div>
+                <div style={{height: "auto", width: "100%", position: 'relative' }}>
                     <img
                         src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
                         alt='joinus_oof'
                         style={{
                             width: '100%',
-                            height: '100%',
+                            height: 'auto',
                         }}
                     />
-                    <div
-                        style={{
-                            position: 'absolute',
-                            bottom: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '35%',
-                            backgroundImage: 'linear-gradient(to top, rgba(240,240,240,1), rgba(240,240,240,0))',
-                        }}
-                    />
+
                 </div>
 
-                <img
-                    src={joinus_elements}
-                    alt='joinus_elements'
-                    style={{
-                        border: 4,
-                        position: 'absolute',
-                        left: '2rem',
-                        top: '10%',
-                        maxWidth: '100%',
-                        maxHeight: '50%',
-                        objectFit: 'cover',
-                        opacity: mobile ? 0 : smallMobile ? 0 : 1,
-                    }}
-                />
-            </Box>
+            </div>
 
-            <div style={{ display: "flex", flexDirection: "column" }}>
+
+            {/*----------------------------------------------------*/}
+
+
+            <div style={{ display: "flex", flexDirection: "column", height: "auto" }}>
                 {/* 4th Section */}
                 <Box
                     sx={{
@@ -352,7 +335,7 @@ const JoinUs = () => {
                         flexDirection: "column",
                         justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-start',
                         alignItems: 'flex-start',
-                        height: mobile ? '80vh' : smallMobile ? '80vh' : '120vh',
+                        height: "auto",
                         overflow: 'hidden',
                         backgroundImage: `linear-gradient(to top, ${theme.palette.primary.main} ${gradientPercentage}, rgba(255,255,255,0))`,
 
@@ -425,11 +408,17 @@ const JoinUs = () => {
                         </Typography>
                     )}
 
-                    <Carousel></Carousel>
+                    <Carousel></Carousel>                    
 
                 </Box>
+                </div>
 
-                {/* 5th Section */}
+
+                {/*----------------------------------------------------*/}
+
+
+                <div style={{height: "auto", width: "100vw"}}>
+                    {/* 5th Section */}
                 <Box
                     // ref={sectionRef}
                     sx={{
@@ -438,8 +427,7 @@ const JoinUs = () => {
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                        height: '120vh',
-
+                        height: '120vh'
                     }}
                 >
                     <Typography
@@ -460,9 +448,17 @@ const JoinUs = () => {
                     <HowToApply progress={0} />
 
                 </Box>
-            </div>
+                </div>
+
+
+                {/*----------------------------------------------------*/}            
+
+
+            <div>
 
             {/* 6th Section */}
+            <div style={{width: "100vw"}}>
+
             <Box
                 bgcolor="white"
                 sx={{
@@ -569,8 +565,13 @@ const JoinUs = () => {
                 </Link>
 
             </Box>
-        </>
+            </div>
 
+            </div>
+
+    </Box>
+            
+    </>
 
 
     );

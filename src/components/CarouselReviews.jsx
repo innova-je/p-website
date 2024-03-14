@@ -119,6 +119,7 @@ const LogosSlider = () => {
             top: '10%',
             width: '100%',
             height: 'auto',
+            paddingBottom: "50px",
             overflow: 'visible',
           }}
         >
@@ -172,7 +173,7 @@ const LogosSlider = () => {
             position: "relative",
             overflow: "visible",
             width: "50%",
-            top: mobile ? "20dvw" : smallMobile ? '15dvw' : "45%",
+            height: "auto",
             touchAction: "none",
             display: "flex",
             justifyContent: "flex-start",

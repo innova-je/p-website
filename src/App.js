@@ -11,6 +11,7 @@ import AboutUs from './Pages/About-Us'
 import { Box } from "@mui/material";
 import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import React, { useState } from 'react'
+import MaintenanceSinglePage from "./Pages/MaintenanceSinglePage";
 
 function App() {
   const location = useLocation();
@@ -39,6 +40,7 @@ function App() {
         <Route path='/our-people/our-team' element={<OurTeam />} />
         <Route path='/out-of-office' element={<OutOffice/>} />
         <Route path='/services' element={<Services/>} />
+        <Route path='/maintenance_page' element={<MaintenanceSinglePage />} />
         <Route path='*' element={<NoMatch />} />
 
       </Routes>
