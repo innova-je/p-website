@@ -117,9 +117,9 @@ const Navbar = () => {
   }
 
     return (
-    <AppBar position="absolute" style={{left: "0", background: '#FFFFFF29', width: "100%", boxShadow: 'none', height: '70px'}}>
-      <Toolbar style={{ height: '100%', justifyContent: 'space-between'}}>
-        
+    <AppBar position="absolute" style={{left: "0",  background: '#FFFFFF10', boxShadow: 'none', height: '70px'}}>
+      
+    <Toolbar style={{ height: '100%', justifyContent: 'space-between'}}>
       <div style={{
         height: "100%",
         width: "100%",
@@ -128,7 +128,8 @@ const Navbar = () => {
         display: "flex",
         alignItems: "center",
         flexDirection: "row",
-        overflow: "hidden"
+        overflow: "hidden",
+        
       }}>
         
         <Link to="/" style={{
@@ -207,6 +208,7 @@ const Navbar = () => {
         </div>
         
       </Toolbar>
+      
     </AppBar>
   );
 

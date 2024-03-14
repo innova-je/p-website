@@ -13,8 +13,7 @@ root.render(
   <BrowserRouter>
     <ThemeProvider theme={theme}>
       <ParallaxProvider>
-        <App />
-        
+        <App />        
       </ParallaxProvider>      
       {/* <Maintenance/> */}
     </ThemeProvider>
