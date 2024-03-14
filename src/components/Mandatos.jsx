@@ -5,6 +5,7 @@ import test from '../images/other/about-us.png';
 import test2 from '../images/other/joinus-outofoffice.png';
 import test3 from '../images/other/joinus_img.png';
 import { IconButton, Typography } from '@mui/material';
+import { useMediaQuery } from 'react-responsive';
 
 const images = [test, test2, test3];
 
@@ -36,27 +37,33 @@ const ImageCarousel = () => {
         ];
     }
 
+    const mobile = useMediaQuery({ maxWidth: 767 });
+    const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+    const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
+    const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
+    const largeDesktop = useMediaQuery({ minWidth: 1400 })
+
     return (
         <>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', border:"2px solid red"}}>
                 {visibleImages.map((image, index) => (
-                    <div key={index} style={{ textAlign: 'center', height: '250px', margin: '0 70px' }}>
+                    <div key={index} style={{ textAlign: 'center', height: '18dvw', margin: '0 4dvw', border:"2px solid blue" }}>
                         {image ? (
                             <>
                                 <img
                                     src={image}
                                     alt={`Image ${currentImageIndex + index - 1}`}
                                     style={{
-                                        width: index === 1 ? '400px' : '340px',
-                                        height: index === 1 ? '300px' : '260px',
+                                        width: index === 1 ? (tablet ? '35dvw' : mobile ? '35dvw' : '30dvw') : "22dvw",
+                                        height: index === 1 ? (tablet ? '23dvw' : mobile ? '23dvw' : '18dvw') : '18dvw',
                                         opacity: index === 1 ? 1 : 0.6,
-                                        borderRadius: '25px',
+                                        borderRadius: '1dvw',
                                         transition: 'opacity 0.3s ease-in-out',
                                     }}
                                 />
                                 {index === 1 && (
-                                    <div>
-                                        <Typography variant="h3" color="white" style={{ fontWeight: 'bold', marginTop: "40px", marginBottom: "25px" }}>
+                                    <div style={{border:"2px solid red", marginTop: "3dvw"}}>
+                                        <Typography variant="h3" color="white" style={{ fontWeight: 'bold', marginTop: "20px", marginBottom: "25px" }}>
                                             {imageContent[currentImageIndex].title}
                                         </Typography>
                                         <Typography variant="h5" color="secondary" style={{ fontWeight: 'bold', marginTop: "30px", marginBottom: "25px" }}>
@@ -80,9 +87,9 @@ const ImageCarousel = () => {
                 variant="contained"
                 onClick={handlePrevClick}
                 sx={{
-                    position: "absolute",
-                    left: 450,
-                    top: 133,
+                    position: "relative",
+                    left: "27dvw",
+                    top: '-11dvw',
                     color: 'primary.main',
                     '&:hover': {
                         color: 'white',
@@ -95,9 +102,9 @@ const ImageCarousel = () => {
                 variant="contained"
                 onClick={handleNextClick}
                 sx={{
-                    position: "absolute",
-                    right: 445,
-                    top: 133,
+                    position: "relative",
+                    right:"-60dvw",
+                    top: '-11dvw',
                     color: 'primary.main',
                     '&:hover': {
                         color: 'white',

@@ -9,6 +9,7 @@ import Technologies from '../components/Technologies';
 import HowToApply from '../components/HowToApply';
 import Carousel from '../components/CarouselReviews';
 import CustomReview from '../components/CustomReview';
+import { useMediaQuery } from 'react-responsive';
 
 
 const JoinUs = () => {
@@ -66,96 +67,9 @@ const JoinUs = () => {
     //     };
     // }, [isScrollingDisabled, progress, animationCompleted]);
 
-    const reviews1 = [
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "test",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-    ];
-
     const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0 });
 
-    // Calculate the remaining time until the event and update the countdown state
+
     const calculateCountdown = () => {
         const today = new Date();
         const eventDate = new Date('2024-03-22 23:59:59');
@@ -168,7 +82,7 @@ const JoinUs = () => {
         setCountdown({ days, hours, minutes });
     };
 
-    // Calculate the countdown on component mount and then update it every minute
+
     useEffect(() => {
         calculateCountdown();
 
@@ -177,6 +91,24 @@ const JoinUs = () => {
         return () => clearInterval(intervalId);
     }, []);
 
+    const downloadGuia = () => {
+        const aTag = document.createElement('a');
+        aTag.href = '../PDFs/Guia do Candidato_marco_2024.pdf';
+        aTag.setAttribute('download', 'Guia do Candidato_marco_2024.pdf');
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
+    }
+
+
+    const smallMobile = useMediaQuery({ maxWidth: 550 });
+    const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
+    const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+    const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
+    const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
+    const largeDesktop = useMediaQuery({ minWidth: 1400 })
+
+    const gradientPercentage = mobile ? '55%' : smallMobile ? '55%' : '0%';
 
     return (
         <>
@@ -186,7 +118,7 @@ const JoinUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: '100vh',
+                    height: tablet ? "60dvw" : mobile ? "80dvw" : smallMobile ? '90dvw' : "50dvw",
                     width: '100%',
                     backgroundImage: `url(${HeroImage})`,
                     backgroundRepeat: 'no-repeat',
@@ -212,12 +144,12 @@ const JoinUs = () => {
                     variant="h2"
                     sx={{
                         fontWeight: '600',
-                        fontSize: '5rem',
-                        position: 'absolute',
+                        fontSize: tablet ? "6dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : '5dvw',
+                        position: 'relative',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         zIndex: '1',
-                        top: "30%",
+                        top: "32%",
                     }}
                 >
                     Want to become one of us?
@@ -226,14 +158,13 @@ const JoinUs = () => {
                 <Button
                     variant="contained"
                     sx={{
-                        marginTop: '20px',
-                        zIndex: '3', // problem with the button
+                        zIndex: '3',
                         borderRadius: '20px',
-                        py: '10px',
-                        px: '70px',
-                        fontSize: '1rem',
+                        py: '1dvw',
+                        px: '5dvw',
+                        fontSize: tablet ? "3dvw" : mobile ? "3dvw" : smallMobile ? '3dvw' : '1.5dvw',
                         textTransform: 'none',
-                        top: "78%",
+                        top: smallMobile ? "75%" : "70%",
                         opacity: '0.9',
                     }}
                 >
@@ -242,10 +173,10 @@ const JoinUs = () => {
 
                 <Box
                     sx={{
-                        width: '45%',
-                        height: '15vh',
+                        width: smallDesktop ? '54dvw' : tablet ? "60dvw" : mobile ? "60dvw" : smallMobile ? '70dvw' : '45dvw',
+                        height: '7dvw',
                         backgroundColor: '#fff',
-                        borderRadius: '25px',
+                        borderRadius: '2dvw',
                         position: 'absolute',
                         zIndex: '1',
                         top: '53%',
@@ -260,6 +191,7 @@ const JoinUs = () => {
                             position: 'absolute',
                             top: '20%',
                             fontWeight: 'Light',
+                            fontSize: smallDesktop ? '1.5dvw' : tablet ? "1.7dvw" : mobile ? "2dvw" : smallMobile ? '3dvw' : '1.5dvw',
                             color: theme.palette.primary.main,
                             textTransform: 'uppercase',
                         }}
@@ -270,9 +202,11 @@ const JoinUs = () => {
                         variant="h4"
                         sx={{
                             position: 'absolute',
-                            left: '32%',
+                            left: smallDesktop ? '18dvw' : tablet ? "20dvw" : mobile ? "23dvw" : smallMobile ? '30dvw' : '15.5dvw',
                             fontWeight: '700',
+                            fontSize: smallDesktop ? '2.5dvw' : tablet ? "3dvw" : mobile ? "3.5dvw" : smallMobile ? '4.5dvw' : '2.5dvw',
                             color: theme.palette.primary.main,
+                            top: '20%'
                         }}
                     >
                         {countdown.days}
@@ -281,10 +215,12 @@ const JoinUs = () => {
                         variant="h4"
                         sx={{
                             position: 'absolute',
-                            left: '42%',
+                            left: smallDesktop ? '23dvw' : tablet ? "25dvw" : mobile ? "23dvw" : smallMobile ? '25dvw' : '20dvw',
                             fontWeight: '700',
+                            fontSize: smallDesktop ? '2.5dvw' : tablet ? "3dvw" : mobile ? "3.5dvw" : smallMobile ? '4.5dvw' : '2.5dvw',
                             color: theme.palette.primary.main,
-                            marginLeft: '90px', 
+                            marginLeft: '90px',
+                            top: '20%'
                         }}
                     >
                         {countdown.hours}
@@ -293,10 +229,12 @@ const JoinUs = () => {
                         variant="h4"
                         sx={{
                             position: 'absolute',
-                            left: '52%',
+                            left: smallDesktop ? '28dvw' : tablet ? "30dvw" : mobile ? "23dvw" : smallMobile ? '18dvw' : '25dvw',
                             fontWeight: '700',
+                            fontSize: smallDesktop ? '2.5dvw' : tablet ? "3dvw" : mobile ? "3.5dvw" : smallMobile ? '4.5dvw' : '2.5dvw',
                             color: theme.palette.primary.main,
-                            marginLeft: '200px', 
+                            marginLeft: '200px',
+                            top: '20%'
                         }}
                     >
                         {countdown.minutes}
@@ -305,10 +243,11 @@ const JoinUs = () => {
                         variant="h4"
                         sx={{
                             position: 'absolute',
-                            left: '29%',
+                            left: smallDesktop ? '16dvw' : tablet ? "18dvw" : mobile ? "21dvw" : smallMobile ? '28dvw' : '14dvw',
                             fontWeight: 'Light',
+                            fontSize: '2.5dvw',
                             color: theme.palette.primary.main,
-                            top: '42%'
+                            top: '50%'
                         }}
                     >
                         Days
@@ -317,11 +256,12 @@ const JoinUs = () => {
                         variant="h4"
                         sx={{
                             position: 'absolute',
-                            left: '37%',
+                            left: smallDesktop ? '21dvw' : tablet ? "23dvw" : mobile ? "21dvw" : smallMobile ? '23dvw' : '18dvw',
                             fontWeight: 'Light',
+                            fontSize: '2.5dvw',
                             color: theme.palette.primary.main,
                             marginLeft: '90px',
-                            top: '42%'
+                            top: '50%'
                         }}
                     >
                         Hours
@@ -330,11 +270,12 @@ const JoinUs = () => {
                         variant="h4"
                         sx={{
                             position: 'absolute',
-                            left: '46%',
+                            left: smallDesktop ? '25dvw' : tablet ? "27dvw" : mobile ? "20dvw" : smallMobile ? '15dvw' : '22dvw',
                             fontWeight: 'Light',
+                            fontSize: '2.5dvw',
                             color: theme.palette.primary.main,
-                            marginLeft: '200px', 
-                            top: '42%'
+                            marginLeft: '200px',
+                            top: '50%'
                         }}
                     >
                         Minutes
@@ -358,19 +299,24 @@ const JoinUs = () => {
             {/* 2nd Section*/}
             <Box
                 sx={{
-                    position: 'relative', // Make the box a positioning context for absolute positioning inside
+                    position: 'relative',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    padding: '20px', // Added padding to ensure space for the circles
-                    height: '70vh',
+                    padding: '20px',
+                    height: tablet ? '35dvw' : mobile ? '40dvw' : smallMobile ? '45dvw' : '31dvw',
                     overflow: 'hidden',
-                    marginBottom: '30px',
-                    marginTop: '30px',
+                    overflow: 'hidden',
                 }}
             >
                 {/* Circles */}
-                <Technologies />
+                {smallMobile || mobile || tablet ? (
+                        <>  
+                        </>
+                    ) : (
+                        <Technologies />
+                    )}
+                
 
                 {/* Texts */}
                 <Typography variant="h4"
@@ -378,7 +324,8 @@ const JoinUs = () => {
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Semi-Bold',
-                        marginTop: '30px',
+                        fontSize: tablet ? '4.5dvw' : mobile ? '5dvw' : smallMobile ? '5.7dvw' :'2.5dvw',
+                        marginTop: tablet ? undefined : mobile ? undefined : smallMobile ? undefined : '30px',
                     }}>
                     You will
                 </Typography>
@@ -387,6 +334,7 @@ const JoinUs = () => {
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Bold',
+                        fontSize: tablet ? '6dvw' : mobile ? '6.5dvw' : smallMobile ? '7dvw' :'4.5dvw',
                     }}>
                     learn something
                 </Typography>
@@ -396,6 +344,7 @@ const JoinUs = () => {
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
+                        fontSize: tablet ? '5dvw' : mobile ? '5.5dvw' : smallMobile ? '6dvw' :'3.5dvw',
                         opacity: '0.66',
                     }}>
                     every.single.day
@@ -406,6 +355,7 @@ const JoinUs = () => {
                         textAlign: 'center',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
+                        fontSize: tablet ? '1.8dvw' : mobile ? '2.2dvw' : smallMobile ? '3dvw' :'1.2dvw',
                         opacity: '0.7',
 
                     }}>
@@ -419,9 +369,9 @@ const JoinUs = () => {
                     endIcon={<ArrowForwardIcon />}
                     sx={{
                         borderRadius: '10px',
-                        py: '5px',
+                        // py: '5px',
                         px: '20px',
-                        fontSize: '0.8rem',
+                        fontSize: tablet ? '1.8dvw' : mobile ? '2.2dvw' : smallMobile ? '3dvw' : '1.2dvw',
                         textTransform: 'none',
                         marginBottom: '40px',
                     }}
@@ -435,19 +385,21 @@ const JoinUs = () => {
                 sx={{
                     position: 'relative',
                     display: 'flex',
-                    justifyContent: 'flex-end',
-                    alignItems: 'flex-end',
+                    height: mobile ? '110dvw' : smallMobile ? '110dvw' : undefined,
+                    justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-end',
+                    alignItems: mobile ? 'flex-start' : smallMobile ? 'flex-start' : 'flex-end',
                 }}
             >
                 <Typography
                     variant="h3"
                     sx={{
                         position: 'absolute',
-                        left: '5rem',
-                        top: '28%',
+                        left: mobile ? undefined : smallMobile ? undefined : '5dvw',
+                        top: mobile ? '60%' : smallMobile ? '57%' : '28%',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
+                        fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '3.5dvw',
                     }}
                 >
                     We don’t just work here,
@@ -456,11 +408,12 @@ const JoinUs = () => {
                     variant="h4"
                     sx={{
                         position: 'absolute',
-                        left: '15rem',
-                        top: '38%',
+                        left: mobile ? undefined : smallMobile ? undefined : '15dvw',
+                        top: mobile ? '67%' : smallMobile ? '65%' : '38%',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'regular',
+                        fontSize: mobile ? '7dvw' : smallMobile ? '6dvw' : '2.5dvw',
                     }}
                 >
                     we also have
@@ -469,11 +422,12 @@ const JoinUs = () => {
                     variant="h3"
                     sx={{
                         position: 'absolute',
-                        left: '13rem',
-                        top: '47%',
+                        left: mobile ? undefined : smallMobile ? undefined : '13dvw',
+                        top: mobile ? '75%' : smallMobile ? '71%' : '47%',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
+                        fontSize: mobile ? '7dvw' : smallMobile ? '7.5dvw' : '3.5dvw',
                     }}
                 >
                     a lot of fun!
@@ -483,19 +437,19 @@ const JoinUs = () => {
                     endIcon={<ArrowForwardIcon />}
                     sx={{
                         position: 'absolute',
-                        left: '17rem',
-                        top: '60%',
+                        left: mobile ? undefined : smallMobile ? undefined : '17dvw',
+                        top: mobile ? '83%' : smallMobile ? '79%' : '60%',
                         borderRadius: '10px',
                         py: '10px',
                         px: '25px',
-                        fontSize: '1rem',
+                        fontSize: mobile ? '3dvw' : smallMobile ? '3dvw' : '1dvw',
                         textTransform: 'none',
                         marginTop: '20px',
                     }}
                 >
                     Out of Office
                 </Button>
-                <div style={{ position: 'relative', maxWidth: '65%', maxHeight: '100%' }}>
+                <div style={{ position: 'relative', maxWidth: (mobile ? '100%' : smallMobile ? '100%' : '65%'), maxHeight: '100%' }}>
                     <img
                         src={joinus_oof}
                         alt='joinus_oof'
@@ -527,6 +481,7 @@ const JoinUs = () => {
                         maxWidth: '100%',
                         maxHeight: '50%',
                         objectFit: 'cover',
+                        opacity: mobile ? 0 : smallMobile ? 0 : 1,
                     }}
                 />
             </Box>
@@ -536,130 +491,82 @@ const JoinUs = () => {
                 sx={{
                     position: 'relative',
                     display: 'flex',
-                    justifyContent: 'flex-start',
+                    justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-start',
                     alignItems: 'flex-start',
-                    height: '120vh',
-                    backgroundImage: `linear-gradient(to top, ${theme.palette.primary.main}, rgba(255,255,255,0))`,
+                    height: mobile ? '65vh' : smallMobile ? '65vh' : '120vh',
+                    overflow: 'hidden',
+                    backgroundImage: `linear-gradient(to top, ${theme.palette.primary.main} ${gradientPercentage}, rgba(255,255,255,0))`,
+
                 }}
             >
-                <Typography
-                    variant="h3"
-                    sx={{
-                        position: 'absolute',
-                        zIndex: '1',
-                        left: '6rem',
-                        top: '10%',
-                        color: "#FFFFFF",
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 500,
-                    }}
-                >
-                    Our members love being here,<br />
-                    and so will you!
-                </Typography>
+                {smallMobile || mobile ? (
+                    <>
+                        <Typography
+                            variant="h3"
+                            sx={{
+                                position: 'absolute',
+                                zIndex: '1',
+                                left: '29dvw',
+                                top: '5dvw',
+                                fontSize: mobile ? '6dvw' : smallMobile ? '6dvw' : '4dvw',
+                                color: "#FFFFFF",
+                                fontFamily: theme.typography.fontFamily,
+                                fontWeight: 'Bold',
+                            }}
+                        >
+                            Our members
+                        </Typography>
+                        <Typography
+                            variant="h3"
+                            sx={{
+                                position: 'absolute',
+                                zIndex: '1',
+                                left: '23dvw',
+                                top: '13dvw',
+                                fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '4dvw',
+                                color: "#FFFFFF",
+                                fontFamily: theme.typography.fontFamily,
+                                fontWeight: 'Bold',
+                            }}
+                        >
+                            love being here,
+                        </Typography>
+                        <Typography
+                            variant="h3"
+                            sx={{
+                                position: 'absolute',
+                                zIndex: '1',
+                                left: '17dvw',
+                                top: '24dvw',
+                                fontSize: mobile ? '8dvw' : smallMobile ? '9dvw' : '4dvw',
+                                color: "#FFFFFF",
+                                fontFamily: theme.typography.fontFamily,
+                                fontWeight: 'Bold',
+                            }}
+                        >
+                            and so will you!
+                        </Typography>
+                    </>
+                ) : (
+                    <Typography
+                        variant="h3"
+                        sx={{
+                            position: 'relative',
+                            zIndex: '1',
+                            left: '6dvw',
+                            top: '5dvw',
+                            fontSize: '3.5dvw',
+                            color: "#FFFFFF",
+                            fontFamily: theme.typography.fontFamily,
+                            fontWeight: 500,
+                        }}
+                    >
+                        Our members love being here,<br />
+                        and so will you!
+                    </Typography>
+                )}
 
-                {/* First row of reviews */}
-                <Box
-                    sx={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '2.5rem',
-                        position: 'absolute',
-                        top: '30%',
-                        width: '100%',
-                        height: '38vh',
-                        overflow: 'visible',
-
-                    }}>
-                    {/* <Carousel reviews={reviews1} duration='30s' direction='left' /> */}
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor consectetur adipiscing elit Lorem ipsum dolor sit amet consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor consectetur adipiscing elit Lorem ipsum dolor sit amet consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                </Box>
-
-                {/* Second row of reviews */}
-                <Box
-                    sx={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '2.5rem',
-                        position: 'absolute',
-                        top: '62%',
-                        width: '100%',
-                        height: '38vh',
-                        overflow: 'visible',
-                    }}>
-                    {/* <Carousel reviews={[...reviews1].reverse()} direction='left' /> */}
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor consectetur adipiscing elit Lorem ipsum dolor sit amet consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                    <CustomReview
-                        image={HeroImage}
-                        name="John Doe"
-                        department="Human Resources"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor"
-                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
-                    />
-                </Box>
+                <Carousel></Carousel>
 
             </Box>
 
@@ -679,10 +586,11 @@ const JoinUs = () => {
                     variant="h2"
                     sx={{
                         position: 'absolute',
-                        top: '4rem',
+                        top: '8dvw',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Bold',
+                        fontSize: tablet ? "7dvw" : mobile ? "10dvw" : smallMobile ? '12dvw' :  '6dvw',
                     }}
                 >
                     How to apply?
@@ -701,18 +609,19 @@ const JoinUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: '120vh',
+                    height: tablet ? "65dvw" : mobile ? "70dvw" : smallMobile ? '69dvw' :  '60dvw',
                     overflow: 'visible',
 
                 }}>
                 <Typography
                     variant="h4"
                     sx={{
-                        position: 'absolute',
-                        top: '4rem',
+                        position: 'relative',
+                        top: '5dvw',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Light',
+                        fontSize: tablet ? "3.5dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : '2.5dvw',
                     }}
                 >
                     One important rule...
@@ -720,33 +629,35 @@ const JoinUs = () => {
                 <Typography
                     variant="h2"
                     sx={{
-                        position: 'absolute',
-                        top: '7rem',
+                        position: 'relative',
+                        top: '6dvw',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
+                        fontSize: tablet ? "5.5dvw" : mobile ? "7dvw" : smallMobile ? '7dvw' : '4dvw',
                     }}
                 >
                     Always be prepared!
                 </Typography>
                 <img src={guiadocandidato} alt='guiadocandidato' style={{
-                    position: 'absolute',
+                    position: 'relative',
                     maxWidth: '55%',
                     maxHeight: '100%',
                     objectFit: 'cover',
-                    top: '14rem',
-                    left: '10rem',
+                    top: tablet ? "8dvw" : mobile ? "9dvw" : smallMobile ? '10dvw' :'10dvw',
+                    left: tablet ? "-9dvw" : mobile ? "-9dvw" : smallMobile ? '-15dvw' : '-9dvw',
                 }} />
 
                 <Typography
                     variant="h2"
                     sx={{
                         position: 'absolute',
-                        right: '13rem',
-                        top: '21rem',
+                        right: '13dvw',
+                        top: tablet ? "24dvw" : mobile ? "28dvw" : smallMobile ? '30dvw' : '22dvw',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Regular',
+                        fontSize: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '4dvw',
                         textAlign: 'center'
                     }}
                 >
@@ -757,15 +668,15 @@ const JoinUs = () => {
                     variant="contained"
                     sx={{
                         position: 'absolute',
-                        right: '19rem',
-                        top: '31rem',
+                        right: tablet ? "20dvw" : mobile ? "19dvw" : smallMobile ? '17dvw' : '21dvw',
+                        top: tablet ? "35dvw" : mobile ? "40dvw" : smallMobile ? '42dvw' : '33dvw',
                         borderRadius: '10px',
-                        py: '10px',
-                        px: '75px',
-                        fontSize: '1rem',
+                        py: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '1.5dvw' :'1dvw',
+                        px: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '4dvw',
+                        fontSize: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '2.5dvw' : '1.2dvw',
                         textTransform: 'none',
-                        marginTop: '20px',
                     }}
+                    onClick={() => { downloadGuia() }}
                 >
                     Download
                 </Button>
@@ -773,11 +684,11 @@ const JoinUs = () => {
                     variant="body1"
                     sx={{
                         position: 'absolute',
-                        bottom: '6rem',
+                        bottom: '6dvw',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Light',
-                        fontSize: 24,
+                        fontSize: '3dvw',
                     }}
                 >
                     And if you have any further questions,
@@ -785,11 +696,11 @@ const JoinUs = () => {
 
                 <Link href="mailto:geral@innova.pt" variant="body1" sx={{
                     position: 'absolute',
-                    bottom: '3.5rem',
+                    bottom: '2.5dvw',
                     color: theme.palette.primary.main,
                     fontFamily: theme.typography.fontFamily,
                     fontWeight: 'Light',
-                    fontSize: 24,
+                    fontSize: '3dvw',
                 }}>
                     send us an-email
                 </Link>

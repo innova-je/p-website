@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@mui/material';
+import { useMediaQuery } from 'react-responsive';
 
 const ButtonComponent = ({ title, subtitle, content, currentState, onButtonClick }) => {
   const [isTitleVisible, setIsTitleVisible] = useState(false);
   const [isSubtitleVisible, setIsSubtitleVisible] = useState(false);
   const [isContentVisible, setIsContentVisible] = useState(false);
+
+  const smallMobile = useMediaQuery({ maxWidth: 650 });
+  const mobile = useMediaQuery({ minWidth: 651, maxWidth: 767 });
+  const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+  const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
+  const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
+  const largeDesktop = useMediaQuery({ minWidth: 1400 })
+
 
   useEffect(() => {
     if (currentState === 'expanded') {
@@ -51,15 +60,15 @@ const ButtonComponent = ({ title, subtitle, content, currentState, onButtonClick
       fullWidth
       size="large"
       sx={{
-        width: currentState === 'expanded' ? '500px' : currentState === 'collapsed' ? '250px' : '350px',
-        borderRadius: '25px',
+        width: currentState === 'expanded' ? (tablet ? '55dvw' : mobile ? '60dvw' : smallMobile ? "75dvw" : '40dvw') : currentState === 'collapsed' ? (tablet ? '25dvw' : mobile ? '30dvw' : smallMobile ? "35dvw" : '20dvw') : (tablet ? '40dvw' : mobile ? '35dvw' :smallMobile ? "50dvw" : '25dvw'),
+        borderRadius: tablet ?'4dvw' : mobile ? '5dvw' :smallMobile ? "5.5dvw" : "2dvw",
         textAlign: currentState === 'expanded' ? 'left' : 'center',
         backgroundColor: currentState === 'expanded' ? 'white' : 'primary.main',
         color: currentState === 'expanded' ? 'primary.main' : 'white',
         display: 'flex',
         flexDirection: currentState === 'expanded' ? 'row' : 'column',
         justifyContent: currentState === 'expanded' ? 'flex-start' : 'center',
-        minHeight: '170px',
+        minHeight: (tablet ? '18dvw' : mobile ? '23dvw' : smallMobile ? "30dvw" : '13dvw') ,
         boxSizing: 'border-box',
         '&:hover': {
           backgroundColor: currentState === 'expanded' ? 'white' : 'primary',
@@ -71,15 +80,15 @@ const ButtonComponent = ({ title, subtitle, content, currentState, onButtonClick
         }),
         '& strong': {
           position: currentState === 'expanded' ? 'absolute' : 'relative',
-          top: currentState === 'expanded' ? '20px' : 'auto',
-          left: currentState === 'expanded' ? '20px' : 'auto',
+          top: currentState === 'expanded' ? (tablet ? '2dvw' : mobile ? '3dvw' : smallMobile ? "2dvw" : '1.2dvw')  : 'auto',
+          left: currentState === 'expanded' ? (tablet ? '2.3dvw' : mobile ? '3dvw' : smallMobile ? "5.5dvw" : '1.5dvw') : 'auto',
         },
       }}
       onClick={handleButtonClick}
     >
       <div>
         <strong style={{
-          fontSize: currentState === 'normal' ? '30px' : currentState === 'collapsed' ? '35px' : currentState === 'expanded' ? '20px' : 'inherit',
+          fontSize: currentState === 'normal' ? (tablet ? '3dvw' : mobile ? '3.5dvw' : smallMobile ? "4.5dvw" : '2.2dvw') : currentState === 'collapsed' ? (tablet ? '3dvw' : mobile ? '3.5dvw' : smallMobile ? "4.5dvw" : '3dvw') : currentState === 'expanded' ? (tablet ? '2dvw' : mobile ? '2.7dvw' : smallMobile ? "3.5dvw" : '1.7dvw') : 'inherit',
           margin: currentState === 'normal' ? '10px 0' : 'inherit',
           opacity: isTitleVisible ? '1' : '0',
           transition: 'opacity 0.5s'
@@ -87,10 +96,10 @@ const ButtonComponent = ({ title, subtitle, content, currentState, onButtonClick
           {currentState === 'expanded' ? title : currentState === 'collapsed' ? title : title}
         </strong>
         {currentState === 'normal' && (
-          <div style={{ color: 'white', opacity: isSubtitleVisible ? '0.6' : '0', transition: 'opacity 0.5s', textTransform: 'none' }} dangerouslySetInnerHTML={{ __html: subtitle }} />
+          <div style={{ fontSize :(tablet ? '2dvw' : mobile ? '2.5dvw' :smallMobile ? "3.2dvw" : '1.5dvw') ,color: 'white', opacity: isSubtitleVisible ? '0.6' : '0', transition: 'opacity 0.5s', textTransform: 'none' }} dangerouslySetInnerHTML={{ __html: subtitle }} />
         )}
         {currentState === 'expanded' && isContentVisible && (
-          <div style={{ fontSize: '12px', textAlign: 'justify', marginTop: '10px', opacity: '1', transition: 'opacity 0.5s' }}>{content}</div>
+          <div style={{ fontSize: (tablet ? '1.4dvw' : mobile ? '1.7dvw' : smallMobile ? "2.7dvw" : '1dvw') , textAlign: 'justify', marginTop: '10px', opacity: '1', transition: 'opacity 0.5s' }}>{content}</div>
         )}
       </div>
 

@@ -124,7 +124,7 @@ const Navbar = () => {
           height: "100%",
           zIndex: 2
         }}>
-          <img src={LogoImage} style={{ height: mobile ? "100%" : "100%", width: mobile ? "100%" : "100%", marginLeft: desktop || tablet ? "15%" : "10%"}} />
+          <img src={LogoImage} style={{ height: mobile ? "100%" : "100%", width: mobile ? "50%" : "100%", marginLeft: desktop || tablet ? "15%" : "10%"}} />
         </Link>
 
       </div>

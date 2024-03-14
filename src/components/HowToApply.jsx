@@ -13,7 +13,7 @@ import fill from '../images/other/fill-img.png';
 import record from '../images/other/record-img.png';
 import group from '../images/other/group-img.png';
 import congrats from '../images/other/congrats-img.png';
-import interview from '../images/other/interview-img.jpg';
+import interview from '../images/other/interview-img.png';
 
 
 
