@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Box, Button, Link, Typography, useTheme } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import HeroImage from '../images/other/joinus_img.png';
-import joinus_oof from '../images/other/joinus-outofoffice.png'; // change this image 
+import joinus_oof from '../images/other/joinus-outofoffice.png'; 
+import joinus_oof2 from '../images/other/joinus-outofoffice2.png';
 import joinus_elements from '../images/other/joinus-elements.png';
 import guiadocandidato from '../images/other/GuiaDoCandidato.png';
 import Technologies from '../components/Technologies';
@@ -453,7 +454,7 @@ const JoinUs = () => {
                 </Button>
                 <div style={{ position: 'relative', maxWidth: (mobile ? '100%' : smallMobile ? '100%' : '65%'), maxHeight: '100%' }}>
                     <img
-                        src={joinus_oof}
+                        src= {mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
                         alt='joinus_oof'
                         style={{
                             width: '100%',
