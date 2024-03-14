@@ -15,8 +15,8 @@ const Accomplishments = ({ image, description, date }) => {
   const AccomplishmentBox = styled(Box)(({ isSelected }) => ({
     display: "flex",
     flexDirection: isSelected ? "row" : "column",
-    width: isSelected ? "60vw" : (desktop ? "22dvw" : (tablet ? "40dvw" : "55dvw")),
-    height: (desktop ? "30dvw" : (tablet ? "50dvw" : "70dvw")),
+    width: isSelected ? "60vw" : (desktop ? "22dvw" : (tablet ? "27dvw" : "65dvw")),
+    height: (desktop ? "30dvw" : (tablet ? "40dvw" : "80dvw")),
     borderRadius: "20px",
     overflow: "hidden",
     boxShadow: "10px 10px 40px #73204340",
@@ -37,7 +37,7 @@ const Accomplishments = ({ image, description, date }) => {
     overflow:"hidden",
     display: "flex",
     justifyContent: "center",
-    marginTop: "-16%",
+    marginTop: tablet ? "-20%" : "-16%",
     background: "white"
   }));
 
@@ -81,7 +81,7 @@ const Accomplishments = ({ image, description, date }) => {
   };
 
   const newsTextStyle = {
-    fontSize: (mobile ? "3.4vw" : (tablet ? "2.3vw" : "1.5vw")),
+    fontSize: (mobile ? "4vw" : (tablet ? "2.1vw" : "1.8vw")),
     fontWeight: mobile || tablet ? "500" : "400",
     textAlign: "justify",
     textJustify: "center",
@@ -90,38 +90,16 @@ const Accomplishments = ({ image, description, date }) => {
   };
 
   const dateStyle = {
-    fontSize: (mobile ? "2.5vw" : (tablet ? "1.8vw" : "1rem")),
-    fontWeight: "600",
+    fontSize: (mobile ? "3vw" : (tablet ? "1.8vw" : "1rem")),
+    fontWeight: "700",
     textAlign: "right",
     textJustify: "center",
   };
 
-  const handleBoxClick = () => {
-    setIsSelected(!isSelected);
-    setIsHovered(!isHovered)
-  };
-
-  console.log(isSelected)
-
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      if (event.key === 'Escape') {
-        setIsSelected(false);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyPress);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyPress);
-    };
-  }, []); 
-
-
   return (
-    <Box onClick={handleBoxClick}>
+    <Box>
         {!isSelected && (
-        <AccomplishmentBox onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onClick={handleBoxClick}>
+        <AccomplishmentBox onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
           <div style={{display: "flex"}}>
             <img src={image} style={newsImageStyle} />
           </div>
@@ -165,7 +143,7 @@ const Accomplishments = ({ image, description, date }) => {
             backdropFilter: "blur(5px)",
           }}
         >
-          <AccomplishmentBox isSelected={isSelected} onClick={handleBoxClick}>
+          <AccomplishmentBox isSelected={isSelected}>
           <img src={image} style={newsImageStyle} />
           <Circle>
             <img src={randomLogo} style={{ width: "100%", transform: "scale(1)", overflow: "hidden", objectFit: "cover" }} />

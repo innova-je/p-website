@@ -60,14 +60,12 @@ const Home = () => {
         <>
         <Box sx={{
             backgroundColor: "#F0F0F0",
-            height: "100%",
-            scrollSnapType: "y mandatory",
             overflow: "hidden",
         }}>
         
         <div style={{
-            height: "100vh",
-            width: "100vw",
+            height: mobile ? "50dvh" : "100dvh",
+            width: "100dvw",
             position: "relative",
             overflow: "hidden",
             borderRadius: "0 0 30px 30px"
@@ -87,24 +85,25 @@ const Home = () => {
                 top: 0,
                 left: 0
         }}/>
-        </div>
-        
-            <Box sx={{
+
+        <Box sx={{
             width: "100%",//TODO: Este título não está bem
-            position: "absolute",
-            top: "45%",
+            position: "relative",
+            top: "40%",
+            display: "flex",
+            flexDirection: "column",
             zIndex: "1",
-            //backgroundColor: "red"
-        }}>
+            }}>
             <div style={{backgroundColor: "transparent", width: "100%"}}>
                 <Typography sx={{
                 position: "relative",
                 textAlign: "center",
+                width: mobile ? "95%" : (tablet ? "95%" : "95%"),
                 height: "100%",
                 fontWeight: "853",
-                fontSize: (desktop ? "9dvw" : (tablet ? "9dvw" : "11dvw")),
-                lineHeight: (desktop ? "200px" : (tablet ? "125px" : "50px")),
-                letterSpacing: "0.16em",
+                fontSize: (desktop ? "9dvw" : (tablet ? "10dvw" : "11dvw")),
+                lineHeight: (desktop ? "130%" : (tablet ? "100%" : "110%")),
+                letterSpacing: desktop ? "1.8vw" : (tablet ? "1.5vw" : "1vw"),
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 color: "transparent",
@@ -116,19 +115,21 @@ const Home = () => {
             <Box sx={{
                 display: "flex",
                 flexDirection: "row",
-                gap: "35px"
             }}>
                 <Typography sx={{
-                    marginLeft: "17%",
+                    marginLeft: desktop ? "17%" : (tablet ? "15%" : "9%"),
                     fontWeight: "500",
-                    fontSize: "4vw",
+                    fontSize: (desktop ? "4dvw" : (tablet ? "3.5dvw" : "5dvw")),
                     letterSpacing: "0.16em",
                     color: "#052533",
+                    paddingRight: mobile ? 1 : 2
                 }}>with </Typography>
                 <Typography sx={{
                     marginTop: "-3%",
+                    width: "100%",
+                    zIndex: 5,
                     fontWeight: "853",
-                    fontSize: (desktop ? "9dvw" : (tablet ? "9dvw" : "11dvw")),
+                    fontSize: (desktop ? "9dvw" : (tablet ? "10dvw" : "11dvw")),
                     letterSpacing: "0.16em",
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
@@ -137,9 +138,10 @@ const Home = () => {
                 }}>NO LIMITS </Typography>
             </Box>
         </Box>
+
+        </div>
         
-
-
+            
         <Box sx={{
             position: "relative",
             margin: desktop ? "3% 0 0 8%" : "10% 0 0 8%",
@@ -302,7 +304,7 @@ const Home = () => {
         </Box>
         </div>
 
-        <div style={{background:'linear-gradient(to bottom, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0))', marginTop: mobile ? "3%" : ""}}>
+        <div style={{height: "auto", background:'linear-gradient(to bottom, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0))', marginTop: mobile ? "3%" : ""}}>
             <ServicesSlider/>  
             <div style={{ marginTop: mobile ? "12%" : (tablet ? "15%" : "15%")}}>
                 <AccomplishmentSlider accomplishmentsData={accomplishmentsData}></AccomplishmentSlider>

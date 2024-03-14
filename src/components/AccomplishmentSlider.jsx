@@ -1,15 +1,27 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import Accomplishment from '../components/AccomplishmentComponent';
+import Slider from 'react-slick';
 import { useMediaQuery } from 'react-responsive';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
   const desktop = useMediaQuery({ minWidth: 1081 });
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: "auto"}}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Typography
           style={{
@@ -24,20 +36,51 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
         </Typography>
       </div>
 
-      <div style={{width: "300vw"}}>
-      <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row", gap: "2%", marginTop: "2%"}}>
-        {accomplishmentsData.map((accomplishment, index) => (
-          <Accomplishment
-            key={index}
-            description={accomplishment.description}
-            image={accomplishment.image}
-            date={accomplishment.date}
-          />
-        ))}
-      </div>
-      </div>
+      {desktop && (
+        <div style={{width: "300vw"}}>
+        <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row", gap: "2%", marginTop: "2%"}}>
+          {accomplishmentsData.map((accomplishment, index) => (
+            <Accomplishment
+              key={index}
+              description={accomplishment.description}
+              image={accomplishment.image}
+              date={accomplishment.date}
+            />
+          ))}
+        </div>
+        </div>
+      )}
 
-      
+      {mobile && (
+        <Slider {...settings} style={{ width: "100%", marginTop: "5%", background: "transparent"}}>
+        {accomplishmentsData.map((accomplishment, index) => (
+          <div key={index}>
+            <div style={{width: "100%",  display: "flex", justifyContent: "center"}}>
+              <Accomplishment
+                description={accomplishment.description}
+                image={accomplishment.image}
+                date={accomplishment.date}
+              />
+            </div>
+          </div>
+        ))}
+      </Slider>
+      )}
+
+      {tablet && (
+        <div style={{width: "100vw"}}>
+        <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row", gap: "5%", marginTop: "5%"}}>
+          {accomplishmentsData.map((accomplishment, index) => (
+            <Accomplishment
+              key={index}
+              description={accomplishment.description}
+              image={accomplishment.image}
+              date={accomplishment.date}
+            />
+          ))}
+        </div>
+        </div>
+      )}      
     </div>
   );
 };

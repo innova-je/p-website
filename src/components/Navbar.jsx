@@ -128,15 +128,13 @@ const Navbar = () => {
         display: "flex",
         alignItems: "center",
         flexDirection: "row",
-        background: "red",
         overflow: "hidden"
       }}>
         
         <Link to="/" style={{
           position: "relative",
           height: "100%",
-          zIndex: 2,
-          background: "green",
+          zIndex: 2
         }}>
           <img src={LogoImage} style={{ height: "100%", width: isIOS ? "auto" :  "100%", maxWidth: "100%", marginLeft: desktop || tablet ? "15%" : "10%"}} />
         </Link>
