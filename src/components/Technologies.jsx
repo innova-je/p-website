@@ -25,6 +25,7 @@ import googlefirebase from '../images/Icons/googlefirebase-icon.png';
 import teams from '../images/Icons/teams-icon.png';
 import postman from '../images/Icons/postman-icon.png';
 import solidworks from '../images/Icons/solidworks-icon.png';
+import { useMediaQuery } from 'react-responsive';
 
 const circleStyle = {
     position: 'absolute',
@@ -46,6 +47,14 @@ const imageStyle = {
 };
 
 const Technologies = () => {
+
+    const smallMobile = useMediaQuery({ maxWidth: 550 });
+    const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
+    const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+    const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
+    const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
+    const largeDesktop = useMediaQuery({ minWidth: 1400 })
+
     const distributeImages = (circleWidth, circleHeight, imageUrls) => {
         const imagesArray = [];
         const numImages = imageUrls.length;
