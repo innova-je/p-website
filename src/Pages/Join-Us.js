@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Button, Link, Typography, useTheme } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import HeroImage from '../images/other/joinus_img.png';
+import HeroImage from '../images/other/Join_us_image.webp';
 import joinus_oof from '../images/other/joinus-outofoffice.png'; // change this image 
 import joinus_elements from '../images/other/joinus-elements.png';
 import guiadocandidato from '../images/other/GuiaDoCandidato.png';
@@ -9,6 +9,7 @@ import Technologies from '../components/Technologies';
 import HowToApply from '../components/HowToApply';
 import MemberReview from '../components/MemberReview';
 import Testimonials from '../Testimonials.json'
+import CountDownRecruitment from '../components/CountDownRecruitment';
 
 
 const JoinUs = () => {
@@ -66,117 +67,6 @@ const JoinUs = () => {
     //     };
     // }, [isScrollingDisabled, progress, animationCompleted]);
 
-    const reviews1 = [
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "test",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-        {
-            image: HeroImage,
-            name: "John Doe",
-            department: "Human Resources",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  consectetur adipiscing elit Lorem ipsum dolor",
-            sx: { position: "absolute", left: "50%", zIndex: 2 }
-        },
-    ];
-
-    const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0 });
-
-    // Calculate the remaining time until the event and update the countdown state
-    const calculateCountdown = () => {
-        const today = new Date();
-        const eventDate = new Date('2024-03-22 23:59:59');
-        const timeDifference = eventDate.getTime() - today.getTime();
-
-        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-
-        setCountdown({ days, hours, minutes });
-    };
-
-    // Calculate the countdown on component mount and then update it every minute
-    useEffect(() => {
-        calculateCountdown();
-
-        const intervalId = setInterval(calculateCountdown, 60000);
-
-        return () => clearInterval(intervalId);
-    }, []);
-
 
     return (
         <>
@@ -203,7 +93,7 @@ const JoinUs = () => {
                         left: '0',
                         width: '100%',
                         height: '100%',
-                        backgroundColor: 'rgba(255,255,255,0.4)',
+                        backgroundColor: 'rgba(255,255,255,0.6)',
                         zIndex: '0',
 
                     }}
@@ -239,108 +129,7 @@ const JoinUs = () => {
                 >
                     Apply Now!
                 </Button>
-
-                <Box
-                    sx={{
-                        width: '45%',
-                        height: '15vh',
-                        backgroundColor: '#fff',
-                        borderRadius: '25px',
-                        position: 'absolute',
-                        zIndex: '1',
-                        top: '53%',
-                        opacity: '0.85',
-                        padding: '20px',
-                        zIndex: '3',
-                    }}
-                >
-                    <Typography
-                        variant="h6"
-                        sx={{
-                            position: 'absolute',
-                            top: '20%',
-                            fontWeight: 'Light',
-                            color: theme.palette.primary.main,
-                            textTransform: 'uppercase',
-                        }}
-                    >
-                        Recruitment <br /> Closes in
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: '32%',
-                            fontWeight: '700',
-                            color: theme.palette.primary.main,
-                        }}
-                    >
-                        {countdown.days}
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: '42%',
-                            fontWeight: '700',
-                            color: theme.palette.primary.main,
-                            marginLeft: '90px', 
-                        }}
-                    >
-                        {countdown.hours}
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: '52%',
-                            fontWeight: '700',
-                            color: theme.palette.primary.main,
-                            marginLeft: '200px', 
-                        }}
-                    >
-                        {countdown.minutes}
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: '29%',
-                            fontWeight: 'Light',
-                            color: theme.palette.primary.main,
-                            top: '42%'
-                        }}
-                    >
-                        Days
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: '37%',
-                            fontWeight: 'Light',
-                            color: theme.palette.primary.main,
-                            marginLeft: '90px',
-                            top: '42%'
-                        }}
-                    >
-                        Hours
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: '46%',
-                            fontWeight: 'Light',
-                            color: theme.palette.primary.main,
-                            marginLeft: '200px', 
-                            top: '42%'
-                        }}
-                    >
-                        Minutes
-                    </Typography>
-                </Box>
-
+                <CountDownRecruitment/>
 
                 <Box
                     sx={{
