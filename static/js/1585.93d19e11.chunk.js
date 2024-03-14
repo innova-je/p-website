@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[1585],{1585:(e,t,a)=>{e.exports=a.p+"static/media/mafalda_ribeiro.403388328c0b1f1dae1c.webp"}}]);

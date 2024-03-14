@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[3040],{53040:(e,t,a)=>{e.exports=a.p+"static/media/beatriz_infante.74fb2224eaaf35c802f1.webp"}}]);

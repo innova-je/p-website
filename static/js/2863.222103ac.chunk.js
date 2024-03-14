@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[2863],{2863:(e,t,a)=>{e.exports=a.p+"static/media/sofia_pedro.a25de0040a38fdd53a45.webp"}}]);

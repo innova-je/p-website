@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[1172],{11172:(e,t,a)=>{e.exports=a.p+"static/media/joao_mota.f2ab72b70be8c2ae3548.webp"}}]);

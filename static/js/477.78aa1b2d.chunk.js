@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[477],{40477:(e,t,c)=>{e.exports=c.p+"static/media/accomplishment3.d2c0e6e1cfa5e0852b4c.webp"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[5762],{15762:(e,t,s)=>{e.exports=s.p+"static/media/accomplishment2.d2025a0477b87fde3dfd.webp"}}]);

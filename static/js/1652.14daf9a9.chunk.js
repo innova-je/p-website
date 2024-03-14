@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[1652],{1652:(e,t,a)=>{e.exports=a.p+"static/media/mafalda_pinto.be19be8801a4fafce9b5.webp"}}]);

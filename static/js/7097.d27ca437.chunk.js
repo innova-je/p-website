@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[7097],{7097:(e,t,s)=>{e.exports=s.p+"static/media/antonio_benoliel.314230090d8715c70bf9.webp"}}]);

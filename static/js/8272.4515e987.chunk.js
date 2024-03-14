@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[8272],{8272:(e,t,a)=>{e.exports=a.p+"static/media/goncalo_duarte.2a7208d71374f041df61.webp"}}]);

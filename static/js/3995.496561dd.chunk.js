@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[3995],{3995:(e,t,s)=>{e.exports=s.p+"static/media/joao_cristovao.68083b79dc5b09b748a3.webp"}}]);

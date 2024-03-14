@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[8979],{18979:(e,t,a)=>{e.exports=a.p+"static/media/miguel_durao.063a1765faa481d3d730.webp"}}]);

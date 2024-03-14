@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[8968],{8968:(e,t,a)=>{e.exports=a.p+"static/media/matilde_azadinho.71beeb85362fb9a7e222.webp"}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[6239],{6239:(e,t,c)=>{e.exports=c.p+"static/media/beatriz_rolao.cf731c04b80cb87db14b.webp"}}]);
