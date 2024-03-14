@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/p-website/static/css/main.2f7ab4be.css",
-    "main.js": "/p-website/static/js/main.7da27585.js",
+    "main.js": "/p-website/static/js/main.7f3eee75.js",
     "static/js/9838.95a65281.chunk.js": "/p-website/static/js/9838.95a65281.chunk.js",
     "static/js/1464.c3a929c9.chunk.js": "/p-website/static/js/1464.c3a929c9.chunk.js",
     "static/js/6542.340367b5.chunk.js": "/p-website/static/js/6542.340367b5.chunk.js",
@@ -70,21 +70,28 @@
     "static/js/6096.033e5492.chunk.js": "/p-website/static/js/6096.033e5492.chunk.js",
     "static/js/281.b73fcff1.chunk.js": "/p-website/static/js/281.b73fcff1.chunk.js",
     "static/js/2868.925af544.chunk.js": "/p-website/static/js/2868.925af544.chunk.js",
+    "static/js/5298.92cd0075.chunk.js": "/p-website/static/js/5298.92cd0075.chunk.js",
+    "static/js/7969.19a24c48.chunk.js": "/p-website/static/js/7969.19a24c48.chunk.js",
+    "static/js/4516.8136b983.chunk.js": "/p-website/static/js/4516.8136b983.chunk.js",
+    "static/js/7168.c377190e.chunk.js": "/p-website/static/js/7168.c377190e.chunk.js",
+    "static/media/MandatoI.webp": "/p-website/static/media/MandatoI.f72ca33f20757732585f.webp",
     "static/media/bottom3.webp": "/p-website/static/media/bottom3.fe6536270cb65474ad97.webp",
     "static/media/about-us.png": "/p-website/static/media/about-us.794e2d8e560848177dfa.png",
     "static/media/HomePageVideo.mp4": "/p-website/static/media/HomePageVideo.498fcc393bf628847b66.mp4",
     "static/media/joinus-outofoffice.png": "/p-website/static/media/joinus-outofoffice.80afb0661cfee1ab6d8a.png",
-    "static/media/joinus_img.png": "/p-website/static/media/joinus_img.2266c38cebf169e3a544.png",
-    "static/media/joinus-outofoffice2.png": "/p-website/static/media/joinus-outofoffice2.1761c5cb692e73ea5c62.png",
+    "static/media/MandatoIV.webp": "/p-website/static/media/MandatoIV.2a1c60012da917da8525.webp",
     "static/media/map2.png": "/p-website/static/media/map2.dd65a94c5943902fb65d.png",
     "static/media/map1.png": "/p-website/static/media/map1.72aa81d05d4815c87fa0.png",
     "static/media/map3.png": "/p-website/static/media/map3.d5aad2fb8f7d0009613e.png",
+    "static/media/MandatoIII.webp": "/p-website/static/media/MandatoIII.10e66f0a47b4f099bb23.webp",
+    "static/media/Join_us_image.webp": "/p-website/static/media/Join_us_image.653d1ec3a9903db0928d.webp",
     "static/media/carolina_mendes.webp": "/p-website/static/media/carolina_mendes.6a2de1e657283712020e.webp",
     "static/media/guilherme_salvador.webp": "/p-website/static/media/guilherme_salvador.6a202d18364d82f7e931.webp",
     "static/media/TOMADA DE POSSE.png": "/p-website/static/media/TOMADA DE POSSE.893da6d059ec9b1912ad.png",
     "static/media/bottom2.webp": "/p-website/static/media/bottom2.82bff8cdb8d92eef22c0.webp",
     "static/media/pedro_mirao.webp": "/p-website/static/media/pedro_mirao.25cc2d231abb5306e38f.webp",
     "static/media/rita_rebelo.webp": "/p-website/static/media/rita_rebelo.f52734b4f6b28e4b2434.webp",
+    "static/media/MandatoII.webp": "/p-website/static/media/MandatoII.a9b724e33f08e0bd4749.webp",
     "static/media/RoboticsPrototyping.png": "/p-website/static/media/RoboticsPrototyping.29ab2e7379201fd6a50c.png",
     "static/media/In.Nova_III-JE-Portugal-224_1.webp": "/p-website/static/media/In.Nova_III-JE-Portugal-224_1.cbf3ff1a2aa569a29d8a.webp",
     "static/media/group-img.png": "/p-website/static/media/group-img.8d7acf2bded5b0bb2fea.png",
@@ -211,10 +218,10 @@
     "static/media/slick.woff": "/p-website/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/p-website/index.html",
     "main.2f7ab4be.css.map": "/p-website/static/css/main.2f7ab4be.css.map",
-    "main.7da27585.js.map": "/p-website/static/js/main.7da27585.js.map"
+    "main.7f3eee75.js.map": "/p-website/static/js/main.7f3eee75.js.map"
   },
   "entrypoints": [
     "static/css/main.2f7ab4be.css",
-    "static/js/main.7da27585.js"
+    "static/js/main.7f3eee75.js"
   ]
 }

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[4516],{4516:(e,t,a)=>{e.exports=a.p+"static/media/MandatoIII.10e66f0a47b4f099bb23.webp"}}]);
