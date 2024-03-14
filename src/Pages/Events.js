@@ -1,9 +1,13 @@
-import { AppBar} from '@mui/material'
+import { AppBar } from '@mui/material'
 import React from 'react'
+import MaintenanceSinglePage from './MaintenanceSinglePage'
 
 const Events = () => {
+    
     return (
-        <AppBar position= 'center'>Events</AppBar>
+        <>
+            <MaintenanceSinglePage/>
+        </>
     )
 }
 
