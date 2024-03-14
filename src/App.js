@@ -19,7 +19,7 @@ function App() {
 
   // Set the showFooter state based on the current path
   React.useEffect(() => {
-    if (location.pathname === '/' || maintenance_pages.includes(location.pathname)) {
+    if (maintenance_pages.includes(location.pathname)) {
       setShowFooter(false);
     } else {
       setShowFooter(true);
@@ -27,7 +27,7 @@ function App() {
   }, [location]);
 
   return (
-    <Box bgcolor="#F0F0F0">
+    <Box bgcolor="#F0F0F0" overflow="hidden">
       <Navbar />
 
       <Routes>
@@ -43,7 +43,7 @@ function App() {
 
       </Routes>
 
-      {showFooter && <Footer />}
+      {showFooter && (<Footer/>)}
 
     </Box>
   );

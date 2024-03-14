@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import randomLogo from '../images/OurLogos/logos-03.png'
 import { useMediaQuery } from 'react-responsive';
 
-const Accomplishments = ({ image, description, date }) => {
+const Accomplishments = ({ image, description, date, style1, style2 }) => {
 
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
@@ -11,6 +11,21 @@ const Accomplishments = ({ image, description, date }) => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
+
+  const [dynamicImage, setDynamicImage] = useState(null);
+
+  useEffect(() => {
+    const loadImage = async () => {
+      try {
+        const { default: dynamicImage } = await import(`../images/HomePageImages/${image}`);
+        setDynamicImage(dynamicImage);
+      } catch (error) {
+        console.error('Error loading image:', error);
+      }
+    };
+
+    loadImage();
+  }, [image]);
 
   const AccomplishmentBox = styled(Box)(({ isSelected }) => ({
     display: "flex",
@@ -23,7 +38,7 @@ const Accomplishments = ({ image, description, date }) => {
     transition: "width 0.3s ease-in-out, transform 0.3s linear",
     cursor: isSelected ? "auto" : "pointer",
     '&:hover': {
-      transform: 'scale(1.03)', 
+      transform: desktop ? 'scale(1.05)' : "none", 
       transition: "width 0.3s ease-in-out, transform 0.3s linear",
     },
   }));
@@ -33,12 +48,12 @@ const Accomplishments = ({ image, description, date }) => {
     position:"relative",
     width: isSelected ? "150vw" : "100%",
     height: isSelected ? "70vh" : "100%",
-    zIndex:1,
+    zIndex:10,
     overflow:"hidden",
     display: "flex",
     justifyContent: "center",
-    marginTop: tablet ? "-20%" : "-16%",
-    background: "white"
+    background: "white",
+    marginTop: "-15%"
   }));
 
   const Circle = styled(Box)(() => ({
@@ -48,8 +63,8 @@ const Accomplishments = ({ image, description, date }) => {
     width: mobile ? "12vw" : (tablet ? "9vw" : "6vw"),
     height: mobile ? "12vw" : (tablet ? "9vw" : "6vw"),
     borderRadius: "100%",
-    backgroundColor: "white",
-    boxShadow: "5px 5px 40px #00000040",
+    backgroundColor: "#f7f7f7",
+    //boxShadow: "5px 5px 40px #00000040",
     display: isSelected ? "none" : "flex",
     justifyContent: "center",
     alignItems: "center"
@@ -67,30 +82,24 @@ const Accomplishments = ({ image, description, date }) => {
 
   const newsImageStyle = {
     width: "100%", 
-    height: "60%",
-    transform: isSelected ? "scale(1)" : "scale(2)", 
-    position: "relative",
-    top: isSelected ? "0%" : "15%",
+    height: "auto",
     overflow: "hidden", 
     objectFit: "cover", 
-    zIndex: 2,
     transition: "filter 0.3s ease-in-out",
-    '&:hover': {
-      filter: 'grayscale(0%)', 
-    },
+    transform: "scale(1.2)"//criar scale no json e neviar para o component
   };
 
   const newsTextStyle = {
-    fontSize: (mobile ? "4vw" : (tablet ? "2.1vw" : "1.8vw")),
+    fontSize: (mobile ? "3.5vw" : (tablet ? "1.5vw" : "1.2vw")),
     fontWeight: mobile || tablet ? "500" : "400",
     textAlign: "justify",
     textJustify: "center",
-    marginTop: "2%",
-    lineHeight: "120%"
+    marginTop: "0%",
+    lineHeight: desktop ? "100%" : (tablet ? "100%" : "100%")
   };
 
   const dateStyle = {
-    fontSize: (mobile ? "3vw" : (tablet ? "1.8vw" : "1rem")),
+    fontSize: (mobile ? "3vw" : (tablet ? "1.8vw" : "0.9vw")),
     fontWeight: "700",
     textAlign: "right",
     textJustify: "center",
@@ -99,27 +108,30 @@ const Accomplishments = ({ image, description, date }) => {
   return (
     <Box>
         {!isSelected && (
-        <AccomplishmentBox onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-          <div style={{display: "flex"}}>
-            <img src={image} style={newsImageStyle} />
+        <AccomplishmentBox>
+          <div style={{display: "flex", width: "100%", height: "50%"}}>
+            <img src={dynamicImage} style={newsImageStyle} />
           </div>
 
-          <div style={{height: "60%", marginTop: "-10%", zIndex: 10}}>
-            <div style={{background: "white", width: "150%", height: "40%", marginLeft: "-20%", rotate: "-10deg", zIndex: -1, display: "flex", alignItems: "center"}}>
-            <Circle>
-              <img src={randomLogo} style={{ width: "100%", transform: "scale(1)", overflow: "hidden", objectFit: "cover" }} />
-            </Circle>
-            
-          </div>        
+          <div style={{height: "50%", zIndex: 10, display: "flex", flexDirection: "column", gap: "-10%"}}>
+            <div style={{background: "white", width: "150%", height: "50%", marginLeft: "-20%", rotate: "-7deg", zIndex: -1, display: "flex", alignItems: "center"}}>
+              <Circle>
+                <img src={randomLogo} style={{ width: "100%", transform: "scale(1)", overflow: "hidden", objectFit: "cover", display: "flex", alignItems:"center", justifyContent: "center" }} />
+              </Circle>            
+            </div>        
           
           <TextBox>
           <NewsText>
-              <div style={{ height: "65%"}}>
+              <div style={{ height: "100%"}}>
                 <Typography style={newsTextStyle}>{description}</Typography>
-              </div>              
-              <div style={{ position: "relative"}}>
+              </div>
+              {/**
+               * 
+               * <div style={{ position: "absolute", bottom: 2}}>
                 <Typography style={dateStyle}>{date}</Typography>
-              </div>              
+              </div>    
+               */}            
+                        
             </NewsText>
           </TextBox>
           </div>
