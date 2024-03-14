@@ -3,10 +3,10 @@ import { Box, Button, Link, Typography, useTheme, Container } from '@mui/materia
 import HeroImage from '../images/other/about-us.png'
 
 import Values from '../components/Values';
-import Mandatos from '../components/Mandatos';
 import MapParallax from '../components/MapParallax';
 import { useMediaQuery } from 'react-responsive';
 import { tab } from '@testing-library/user-event/dist/tab';
+import MandatesSection from '../components/MandatesSection';
 
 
 
@@ -273,7 +273,7 @@ const AboutUs = () => {
                 </Typography>
 
                 <Box sx={{ position: 'absolute', top: tablet ? "57%" : mobile ? "57%" :smallMobile ? '57%' : '40%', zIndex: 4 }}>
-                    <Mandatos />
+                    <MandatesSection />
                 </Box>
 
                 <Box
