@@ -100,7 +100,7 @@ const MaintenanceSinglePage = () => {
               marginTop: desktop ? 20 : 0,
               color: "#732043",
               width: "100%",
-              fontSize: desktop ? "4.5dvw" : (tablet ? "5vw" : "7vw"),
+              fontSize: desktop ? "4.5dvw" : (tablet ? "5vw" : "7.5vw"),
               fontWeight: '600',
               opacity: 1,
               zIndex: 100
