@@ -105,6 +105,17 @@ const Navbar = () => {
     window.scrollTo(0, 0);
   };
 
+  function isIOS() {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test(userAgent);
+  }
+
+  if (isIOS()) {
+    console.log("This website is being opened on an iOS device.");
+  } else {
+    console.log("This website is not being opened on an iOS device.");
+  }
+
     return (
     <AppBar position="absolute" style={{left: "0", background: '#FFFFFF29', width: "100%", boxShadow: 'none', height: '70px'}}>
       <Toolbar style={{ height: '100%', justifyContent: 'space-between'}}>
@@ -117,14 +128,17 @@ const Navbar = () => {
         display: "flex",
         alignItems: "center",
         flexDirection: "row",
+        background: "red",
+        overflow: "hidden"
       }}>
         
         <Link to="/" style={{
           position: "relative",
           height: "100%",
-          zIndex: 2
+          zIndex: 2,
+          background: "green",
         }}>
-          <img src={LogoImage} style={{ height: "100%", width: "100%", marginLeft: desktop || tablet ? "15%" : "10%"}} />
+          <img src={LogoImage} style={{ height: "100%", width: isIOS ? "auto" :  "100%", maxWidth: "100%", marginLeft: desktop || tablet ? "15%" : "10%"}} />
         </Link>
 
       </div>
