@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Button, Link, Typography, useTheme } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import HeroImage from '../images/other/joinus_img.png';
-import joinus_oof from '../images/other/joinus-outofoffice.png'; 
-import joinus_oof2 from '../images/other/joinus-outofoffice2.png';
+import HeroImage from '../images/other/Join_us_image.webp';
+import joinus_oof from '../images/other/joinus-outofoffice.png'; // change this image 
 import joinus_elements from '../images/other/joinus-elements.png';
 import guiadocandidato from '../images/other/GuiaDoCandidato.png';
 import Technologies from '../components/Technologies';
 import HowToApply from '../components/HowToApply';
-import Carousel from '../components/CarouselReviews';
-import { useMediaQuery } from 'react-responsive';
+import MemberReview from '../components/MemberReview';
+import Testimonials from '../Testimonials.json'
+import CountDownRecruitment from '../components/CountDownRecruitment';
 
 
 const JoinUs = () => {
@@ -67,48 +67,6 @@ const JoinUs = () => {
     //     };
     // }, [isScrollingDisabled, progress, animationCompleted]);
 
-    const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0 });
-
-
-    const calculateCountdown = () => {
-        const today = new Date();
-        const eventDate = new Date('2024-03-22 23:59:59');
-        const timeDifference = eventDate.getTime() - today.getTime();
-
-        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-
-        setCountdown({ days, hours, minutes });
-    };
-
-
-    useEffect(() => {
-        calculateCountdown();
-
-        const intervalId = setInterval(calculateCountdown, 60000);
-
-        return () => clearInterval(intervalId);
-    }, []);
-
-    const downloadGuia = () => {
-        const aTag = document.createElement('a');
-        aTag.href = '../PDFs/Guia do Candidato_marco_2024.pdf';
-        aTag.setAttribute('download', 'Guia do Candidato_marco_2024.pdf');
-        document.body.appendChild(aTag);
-        aTag.click();
-        aTag.remove();
-    }
-
-
-    const smallMobile = useMediaQuery({ maxWidth: 550 });
-    const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
-    const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
-    const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
-    const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
-    const largeDesktop = useMediaQuery({ minWidth: 1400 })
-
-    const gradientPercentage = mobile ? '55%' : smallMobile ? '55%' : '0%';
 
     return (
         <>
@@ -118,7 +76,7 @@ const JoinUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: tablet ? "60dvw" : mobile ? "80dvw" : smallMobile ? '90dvw' : "50dvw",
+                    height: '100vh',
                     width: '100%',
                     backgroundImage: `url(${HeroImage})`,
                     backgroundRepeat: 'no-repeat',
@@ -135,7 +93,7 @@ const JoinUs = () => {
                         left: '0',
                         width: '100%',
                         height: '100%',
-                        backgroundColor: 'rgba(255,255,255,0.4)',
+                        backgroundColor: 'rgba(255,255,255,0.6)',
                         zIndex: '0',
 
                     }}
@@ -144,12 +102,12 @@ const JoinUs = () => {
                     variant="h2"
                     sx={{
                         fontWeight: '600',
-                        fontSize: tablet ? "6dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : '5dvw',
-                        position: 'relative',
+                        fontSize: '5rem',
+                        position: 'absolute',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         zIndex: '1',
-                        top: "32%",
+                        top: "30%",
                     }}
                 >
                     Want to become one of us?
@@ -157,132 +115,21 @@ const JoinUs = () => {
 
                 <Button
                     variant="contained"
-                    href='https://forms.gle/NP4Eo4RUftMv4LFq7'
                     sx={{
-                        zIndex: '3',
+                        marginTop: '20px',
+                        zIndex: '3', // problem with the button
                         borderRadius: '20px',
-                        py: '1dvw',
-                        px: '5dvw',
-                        fontSize: tablet ? "3dvw" : mobile ? "3dvw" : smallMobile ? '3dvw' : '1.5dvw',
+                        py: '10px',
+                        px: '70px',
+                        fontSize: '1rem',
                         textTransform: 'none',
-                        top: smallMobile ? "75%" : "70%",
+                        top: "78%",
                         opacity: '0.9',
                     }}
                 >
                     Apply Now!
                 </Button>
-
-                <Box
-                    sx={{
-                        width: smallDesktop ? '54dvw' : tablet ? "60dvw" : mobile ? "60dvw" : smallMobile ? '70dvw' : '45dvw',
-                        height: '7dvw',
-                        backgroundColor: '#fff',
-                        borderRadius: '2dvw',
-                        position: 'absolute',
-                        zIndex: '1',
-                        top: '53%',
-                        opacity: '0.85',
-                        padding: '20px',
-                        zIndex: '3',
-                    }}
-                >
-                    <Typography
-                        variant="h6"
-                        sx={{
-                            position: 'absolute',
-                            top: '20%',
-                            fontWeight: 'Light',
-                            fontSize: smallDesktop ? '1.5dvw' : tablet ? "1.7dvw" : mobile ? "2dvw" : smallMobile ? '3dvw' : '1.5dvw',
-                            color: theme.palette.primary.main,
-                            textTransform: 'uppercase',
-                        }}
-                    >
-                        Recruitment <br /> Closes in
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: smallDesktop ? '18dvw' : tablet ? "20dvw" : mobile ? "23dvw" : smallMobile ? '30dvw' : '15.5dvw',
-                            fontWeight: '700',
-                            fontSize: smallDesktop ? '2.5dvw' : tablet ? "3dvw" : mobile ? "3.5dvw" : smallMobile ? '4.5dvw' : '2.5dvw',
-                            color: theme.palette.primary.main,
-                            top: '20%'
-                        }}
-                    >
-                        {countdown.days}
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: smallDesktop ? '23dvw' : tablet ? "25dvw" : mobile ? "23dvw" : smallMobile ? '25dvw' : '20dvw',
-                            fontWeight: '700',
-                            fontSize: smallDesktop ? '2.5dvw' : tablet ? "3dvw" : mobile ? "3.5dvw" : smallMobile ? '4.5dvw' : '2.5dvw',
-                            color: theme.palette.primary.main,
-                            marginLeft: '90px',
-                            top: '20%'
-                        }}
-                    >
-                        {countdown.hours}
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: smallDesktop ? '28dvw' : tablet ? "30dvw" : mobile ? "23dvw" : smallMobile ? '18dvw' : '25dvw',
-                            fontWeight: '700',
-                            fontSize: smallDesktop ? '2.5dvw' : tablet ? "3dvw" : mobile ? "3.5dvw" : smallMobile ? '4.5dvw' : '2.5dvw',
-                            color: theme.palette.primary.main,
-                            marginLeft: '200px',
-                            top: '20%'
-                        }}
-                    >
-                        {countdown.minutes}
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: smallDesktop ? '16dvw' : tablet ? "18dvw" : mobile ? "21dvw" : smallMobile ? '28dvw' : '14dvw',
-                            fontWeight: 'Light',
-                            fontSize: '2.5dvw',
-                            color: theme.palette.primary.main,
-                            top: '50%'
-                        }}
-                    >
-                        Days
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: smallDesktop ? '21dvw' : tablet ? "23dvw" : mobile ? "21dvw" : smallMobile ? '23dvw' : '18dvw',
-                            fontWeight: 'Light',
-                            fontSize: '2.5dvw',
-                            color: theme.palette.primary.main,
-                            marginLeft: '90px',
-                            top: '50%'
-                        }}
-                    >
-                        Hours
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            position: 'absolute',
-                            left: smallDesktop ? '25dvw' : tablet ? "27dvw" : mobile ? "20dvw" : smallMobile ? '15dvw' : '22dvw',
-                            fontWeight: 'Light',
-                            fontSize: '2.5dvw',
-                            color: theme.palette.primary.main,
-                            marginLeft: '200px',
-                            top: '50%'
-                        }}
-                    >
-                        Minutes
-                    </Typography>
-                </Box>
-
+                <CountDownRecruitment/>
 
                 <Box
                     sx={{
@@ -300,24 +147,19 @@ const JoinUs = () => {
             {/* 2nd Section*/}
             <Box
                 sx={{
-                    position: 'relative',
+                    position: 'relative', // Make the box a positioning context for absolute positioning inside
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    padding: '20px',
-                    height: tablet ? '35dvw' : mobile ? '40dvw' : smallMobile ? '45dvw' : '31dvw',
+                    padding: '20px', // Added padding to ensure space for the circles
+                    height: '70vh',
                     overflow: 'hidden',
-                    overflow: 'hidden',
+                    marginBottom: '30px',
+                    marginTop: '30px',
                 }}
             >
                 {/* Circles */}
-                {smallMobile || mobile || tablet ? (
-                    <>
-                    </>
-                ) : (
-                    <Technologies />
-                )}
-
+                <Technologies />
 
                 {/* Texts */}
                 <Typography variant="h4"
@@ -325,8 +167,7 @@ const JoinUs = () => {
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Semi-Bold',
-                        fontSize: tablet ? '4.5dvw' : mobile ? '5dvw' : smallMobile ? '5.7dvw' : '2.5dvw',
-                        marginTop: tablet ? undefined : mobile ? undefined : smallMobile ? undefined : '30px',
+                        marginTop: '30px',
                     }}>
                     You will
                 </Typography>
@@ -335,7 +176,6 @@ const JoinUs = () => {
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Bold',
-                        fontSize: tablet ? '6dvw' : mobile ? '6.5dvw' : smallMobile ? '7dvw' : '4.5dvw',
                     }}>
                     learn something
                 </Typography>
@@ -345,7 +185,6 @@ const JoinUs = () => {
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
-                        fontSize: tablet ? '5dvw' : mobile ? '5.5dvw' : smallMobile ? '6dvw' : '3.5dvw',
                         opacity: '0.66',
                     }}>
                     every.single.day
@@ -356,7 +195,6 @@ const JoinUs = () => {
                         textAlign: 'center',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
-                        fontSize: tablet ? '1.8dvw' : mobile ? '2.2dvw' : smallMobile ? '3dvw' : '1.2dvw',
                         opacity: '0.7',
 
                     }}>
@@ -364,23 +202,21 @@ const JoinUs = () => {
                     If you have something new to teach us, join the team!
                 </Typography>
 
-                {/*
+
                 <Button
                     variant="contained"
                     endIcon={<ArrowForwardIcon />}
                     sx={{
                         borderRadius: '10px',
-                        // py: '5px',
+                        py: '5px',
                         px: '20px',
-                        fontSize: tablet ? '1.8dvw' : mobile ? '2.2dvw' : smallMobile ? '3dvw' : '1.2dvw',
+                        fontSize: '0.8rem',
                         textTransform: 'none',
                         marginBottom: '40px',
                     }}
                 >
                     See our Portfolio
                 </Button>
-                */}
-
             </Box>
 
             {/* 3rd Section */}
@@ -388,21 +224,19 @@ const JoinUs = () => {
                 sx={{
                     position: 'relative',
                     display: 'flex',
-                    height: mobile ? '110dvw' : smallMobile ? '110dvw' : undefined,
-                    justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-end',
-                    alignItems: mobile ? 'flex-start' : smallMobile ? 'flex-start' : 'flex-end',
+                    justifyContent: 'flex-end',
+                    alignItems: 'flex-end',
                 }}
             >
                 <Typography
                     variant="h3"
                     sx={{
                         position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '5dvw',
-                        top: mobile ? '60%' : smallMobile ? '57%' : '28%',
+                        left: '5rem',
+                        top: '28%',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
-                        fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '3.5dvw',
                     }}
                 >
                     We don’t just work here,
@@ -411,12 +245,11 @@ const JoinUs = () => {
                     variant="h4"
                     sx={{
                         position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '15dvw',
-                        top: mobile ? '67%' : smallMobile ? '65%' : '38%',
+                        left: '15rem',
+                        top: '38%',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'regular',
-                        fontSize: mobile ? '7dvw' : smallMobile ? '6dvw' : '2.5dvw',
                     }}
                 >
                     we also have
@@ -425,12 +258,11 @@ const JoinUs = () => {
                     variant="h3"
                     sx={{
                         position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '13dvw',
-                        top: mobile ? '75%' : smallMobile ? '71%' : '47%',
+                        left: '13rem',
+                        top: '47%',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
-                        fontSize: mobile ? '7dvw' : smallMobile ? '7.5dvw' : '3.5dvw',
                     }}
                 >
                     a lot of fun!
@@ -440,21 +272,21 @@ const JoinUs = () => {
                     endIcon={<ArrowForwardIcon />}
                     sx={{
                         position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '17dvw',
-                        top: mobile ? '83%' : smallMobile ? '79%' : '60%',
+                        left: '17rem',
+                        top: '60%',
                         borderRadius: '10px',
                         py: '10px',
                         px: '25px',
-                        fontSize: mobile ? '3dvw' : smallMobile ? '3dvw' : '1dvw',
+                        fontSize: '1rem',
                         textTransform: 'none',
                         marginTop: '20px',
                     }}
                 >
                     Out of Office
                 </Button>
-                <div style={{ position: 'relative', maxWidth: (mobile ? '100%' : smallMobile ? '100%' : '65%'), maxHeight: '100%' }}>
+                <div style={{ position: 'relative', maxWidth: '65%', maxHeight: '100%' }}>
                     <img
-                        src= {mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
+                        src={joinus_oof}
                         alt='joinus_oof'
                         style={{
                             width: '100%',
@@ -484,130 +316,93 @@ const JoinUs = () => {
                         maxWidth: '100%',
                         maxHeight: '50%',
                         objectFit: 'cover',
-                        opacity: mobile ? 0 : smallMobile ? 0 : 1,
                     }}
                 />
             </Box>
 
-            <div style={{ display: "flex", flexDirection: "column" }}>
-                {/* 4th Section */}
-                <Box
+            {/* 4th Section */}
+            <Box
+                sx={{
+                    position: 'relative',
+                    display: 'flex',
+                    justifyContent: 'flex-start',
+                    alignItems: 'flex-start',
+                    height: '120vh',
+                    backgroundImage: `linear-gradient(to top, ${theme.palette.primary.main}, rgba(255,255,255,0))`,
+                }}
+            >
+                <Typography
+                    variant="h3"
                     sx={{
-                        position: 'relative',
-                        display: 'flex',
-                        flexDirection: "column",
-                        justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-start',
-                        alignItems: 'flex-start',
-                        height: mobile ? '80vh' : smallMobile ? '80vh' : '120vh',
-                        overflow: 'hidden',
-                        backgroundImage: `linear-gradient(to top, ${theme.palette.primary.main} ${gradientPercentage}, rgba(255,255,255,0))`,
-
+                        position: 'absolute',
+                        zIndex: '1',
+                        left: '6rem',
+                        top: '10%',
+                        color: "#FFFFFF",
+                        fontFamily: theme.typography.fontFamily,
+                        fontWeight: 500,
                     }}
                 >
-                    {smallMobile || mobile ? (
-                        <>
-                            <Typography
-                                variant="h3"
-                                sx={{
-                                    position: 'absolute',
-                                    zIndex: '1',
-                                    left: '29dvw',
-                                    top: '5dvw',
-                                    fontSize: mobile ? '6dvw' : smallMobile ? '6dvw' : '4dvw',
-                                    color: "#FFFFFF",
-                                    fontFamily: theme.typography.fontFamily,
-                                    fontWeight: 'Bold',
-                                }}
-                            >
-                                Our members
-                            </Typography>
-                            <Typography
-                                variant="h3"
-                                sx={{
-                                    position: 'absolute',
-                                    zIndex: '1',
-                                    left: '23dvw',
-                                    top: '13dvw',
-                                    fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '4dvw',
-                                    color: "#FFFFFF",
-                                    fontFamily: theme.typography.fontFamily,
-                                    fontWeight: 'Bold',
-                                }}
-                            >
-                                love being here,
-                            </Typography>
-                            <Typography
-                                variant="h3"
-                                sx={{
-                                    position: 'absolute',
-                                    zIndex: '1',
-                                    left: '17dvw',
-                                    top: '24dvw',
-                                    fontSize: mobile ? '8dvw' : smallMobile ? '9dvw' : '4dvw',
-                                    color: "#FFFFFF",
-                                    fontFamily: theme.typography.fontFamily,
-                                    fontWeight: 'Bold',
-                                }}
-                            >
-                                and so will you!
-                            </Typography>
-                        </>
-                    ) : (
-                        <Typography
-                            variant="h3"
-                            sx={{
-                                position: 'relative',
-                                zIndex: '1',
-                                left: '6dvw',
-                                top: '5dvw',
-                                fontSize: '3.5dvw',
-                                color: "#FFFFFF",
-                                fontFamily: theme.typography.fontFamily,
-                                fontWeight: 500,
-                            }}
-                        >
-                            Our members love being here,<br />
-                            and so will you!
-                        </Typography>
-                    )}
-
-                    <Carousel></Carousel>
-
-                </Box>
-
-                {/* 5th Section */}
+                    Our members love being here,<br />
+                    and so will you!
+                </Typography>
+                
                 <Box
-                    // ref={sectionRef}
                     sx={{
-                        position: 'relative',
-                        background: "blue",
-                        display: 'flex',
-                        flexDirection: 'column',
+                        display: 'inline-flex',
+                        flexWrap: 'wrap',
                         alignItems: 'center',
-                        height: '120vh',
+                        justifyContent: 'center',
+                        gap: '2.5rem',
+                        position: 'relative',
+                        top: '30%',
+                        width: '100%',
+                        height: '38vh',
+                        overflow: 'visible',
 
+                    }}> 
+                    {/* <Carousel reviews={reviews1} duration='30s' direction='left' /> */}
+                    {Testimonials.testimonials.map((testimonial, index) => (
+                    <MemberReview
+                        image={testimonial.image}
+                        name={testimonial.name}
+                        department={testimonial.department}
+                        text={testimonial.quote}
+                        sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                />
+                ))}
+                </Box>
+            </Box>
+
+            {/* 5th Section */}
+            <Box
+                // ref={sectionRef}
+                sx={{
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    height: '120vh',
+
+                }}
+            >
+                <Typography
+                    variant="h2"
+                    sx={{
+                        position: 'absolute',
+                        top: '4rem',
+                        color: theme.palette.secondary.main,
+                        fontFamily: theme.typography.fontFamily,
+                        fontWeight: 'Bold',
                     }}
                 >
-                    <Typography
-                        variant="h2"
-                        sx={{
-                            position: 'absolute',
-                            top: '8dvw',
-                            color: theme.palette.secondary.main,
-                            fontFamily: theme.typography.fontFamily,
-                            fontWeight: 'Bold',
-                            fontSize: tablet ? "7dvw" : mobile ? "10dvw" : smallMobile ? '12dvw' : '6dvw',
-                        }}
-                    >
-                        How to apply?
-                    </Typography>
+                    How to apply?
+                </Typography>
 
-                    {/* progress * 6.5 */}
-                    <HowToApply progress={0} />
+                {/* progress * 6.5 */}
+                <HowToApply progress={190} />
 
-                </Box>
-            </div>
-
+            </Box>
 
             {/* 6th Section */}
             <Box
@@ -617,19 +412,18 @@ const JoinUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: tablet ? "65dvw" : mobile ? "70dvw" : smallMobile ? '69dvw' : '60dvw',
+                    height: '120vh',
                     overflow: 'visible',
 
                 }}>
                 <Typography
                     variant="h4"
                     sx={{
-                        position: 'relative',
-                        top: '5dvw',
+                        position: 'absolute',
+                        top: '4rem',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Light',
-                        fontSize: tablet ? "3.5dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : '2.5dvw',
                     }}
                 >
                     One important rule...
@@ -637,68 +431,64 @@ const JoinUs = () => {
                 <Typography
                     variant="h2"
                     sx={{
-                        position: 'relative',
-                        top: '6dvw',
+                        position: 'absolute',
+                        top: '7rem',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
-                        fontSize: tablet ? "5.5dvw" : mobile ? "7dvw" : smallMobile ? '7dvw' : '4dvw',
                     }}
                 >
                     Always be prepared!
                 </Typography>
                 <img src={guiadocandidato} alt='guiadocandidato' style={{
-                    position: 'relative',
+                    position: 'absolute',
                     maxWidth: '55%',
                     maxHeight: '100%',
                     objectFit: 'cover',
-                    top: tablet ? "8dvw" : mobile ? "9dvw" : smallMobile ? '10dvw' : '10dvw',
-                    left: tablet ? "-9dvw" : mobile ? "-9dvw" : smallMobile ? '-15dvw' : '-9dvw',
+                    top: '14rem',
+                    left: '10rem',
                 }} />
 
                 <Typography
                     variant="h2"
                     sx={{
                         position: 'absolute',
-                        right: '13dvw',
-                        top: tablet ? "24dvw" : mobile ? "28dvw" : smallMobile ? '30dvw' : '22dvw',
+                        right: '13rem',
+                        top: '21rem',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Regular',
-                        fontSize: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '4dvw',
                         textAlign: 'center'
                     }}
                 >
                     Read the<br />
                     candidate guide
                 </Typography>
-                <a href="https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
-                    <Button
-                        variant="contained"
-                        sx={{
-                            position: 'absolute',
-                            right: tablet ? "20dvw" : mobile ? "19dvw" : smallMobile ? '17dvw' : '21dvw',
-                            top: tablet ? "35dvw" : mobile ? "40dvw" : smallMobile ? '42dvw' : '33dvw',
-                            borderRadius: '10px',
-                            py: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '1.5dvw' : '1dvw',
-                            px: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '4dvw',
-                            fontSize: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '2.5dvw' : '1.2dvw',
-                            textTransform: 'none',
-                        }}
-                    >
-                        Download
-                    </Button>
-                </a>
-
+                <Button
+                    variant="contained"
+                    sx={{
+                        position: 'absolute',
+                        right: '19rem',
+                        top: '31rem',
+                        borderRadius: '10px',
+                        py: '10px',
+                        px: '75px',
+                        fontSize: '1rem',
+                        textTransform: 'none',
+                        marginTop: '20px',
+                    }}
+                >
+                    Download
+                </Button>
                 <Typography
                     variant="body1"
                     sx={{
                         position: 'absolute',
-                        bottom: '6dvw',
+                        bottom: '6rem',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Light',
-                        fontSize: '3dvw',
+                        fontSize: 24,
                     }}
                 >
                     And if you have any further questions,
@@ -706,11 +496,11 @@ const JoinUs = () => {
 
                 <Link href="mailto:geral@innova.pt" variant="body1" sx={{
                     position: 'absolute',
-                    bottom: '2.5dvw',
+                    bottom: '3.5rem',
                     color: theme.palette.primary.main,
                     fontFamily: theme.typography.fontFamily,
                     fontWeight: 'Light',
-                    fontSize: '3dvw',
+                    fontSize: 24,
                 }}>
                     send us an-email
                 </Link>
