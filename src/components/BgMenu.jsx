@@ -20,7 +20,7 @@ const BgMenu = () => {
       setMenuClass("menu visible");
       setMenuButtonStyle({
         ...MenuButtonStyle,
-        height: "400dvh",
+        height: "100dvh",
         width: "100dvw",
         backgroundColor: "#732043",
         top: 0,
@@ -162,7 +162,7 @@ const BgMenu = () => {
       <NavLink to="/our-people/our-advisors" style={NavLinkStyle} onClick={updateMenu}>
           <Typography style={PagesLinkStyle}>Our Advisors</Typography>
       </NavLink>
-      <NavLink to="/join-us" style={NavLinkStyle} onClick={updateMenu}>
+      <NavLink to="/events" style={NavLinkStyle} onClick={updateMenu}>
           <Typography style={PagesLinkStyle}>Events</Typography>
       </NavLink>
       <NavLink to="/out-of-office" style={NavLinkStyle} onClick={updateMenu}>

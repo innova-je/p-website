@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import { Typography } from '@mui/material';
 import Accomplishment from '../components/AccomplishmentComponent';
 import Slider from 'react-slick';
@@ -7,10 +8,14 @@ import { useMediaQuery } from 'react-responsive';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import AccomplishmentsData from '../Accomplishments.json'
+
 const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
   const desktop = useMediaQuery({ minWidth: 1081 });
+
+  const accomplishments = AccomplishmentsData.accomplishments;
 
   const settings = {
     dots: true,
@@ -39,12 +44,14 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
       {desktop && (
         <div style={{width: "300vw"}}>
         <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row", gap: "2%", marginTop: "2%"}}>
-          {accomplishmentsData.map((accomplishment, index) => (
+          {accomplishments.map((accomplishment, index) => (
             <Accomplishment
               key={index}
               description={accomplishment.description}
-              image={accomplishment.image}
+              image={accomplishment.imgDirectory}
               date={accomplishment.date}
+              style1={accomplishment.style1}
+              style2={accomplishment.style2}
             />
           ))}
         </div>
@@ -53,13 +60,16 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
 
       {mobile && (
         <Slider {...settings} style={{ width: "100%", marginTop: "5%", background: "transparent"}}>
-        {accomplishmentsData.map((accomplishment, index) => (
+        {accomplishments.map((accomplishment, index) => (
           <div key={index}>
             <div style={{width: "100%",  display: "flex", justifyContent: "center"}}>
               <Accomplishment
+                key={index}
                 description={accomplishment.description}
-                image={accomplishment.image}
+                image={accomplishment.imgDirectory}
                 date={accomplishment.date}
+                style1={accomplishment.style1}
+                style2={accomplishment.style2}
               />
             </div>
           </div>
@@ -70,12 +80,14 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
       {tablet && (
         <div style={{width: "100vw"}}>
         <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row", gap: "5%", marginTop: "5%"}}>
-          {accomplishmentsData.map((accomplishment, index) => (
+          {accomplishments.map((accomplishment, index) => (
             <Accomplishment
-              key={index}
-              description={accomplishment.description}
-              image={accomplishment.image}
-              date={accomplishment.date}
+            key={index}
+            description={accomplishment.description}
+            image={accomplishment.imgDirectory}
+            date={accomplishment.date}
+            style1={accomplishment.style1}
+            style2={accomplishment.style2}
             />
           ))}
         </div>
