@@ -7,7 +7,6 @@ import Magma from '../images/HomePageImages/PartnersLogos/MagmaLogo.png'
 import Meta from '../images/HomePageImages/PartnersLogos/MetaLogo.png'
 import OpenBB from '../images/HomePageImages/PartnersLogos/OpenBBLogo.png'
 
-import { useTheme } from '@mui/system';
 import { useMediaQuery } from 'react-responsive';
 
 const partnerData = {
@@ -31,7 +30,6 @@ const OurPartners = () => {
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
   const desktop = useMediaQuery({ minWidth: 1081 });
-  const theme = useTheme();
 
   const ClientsAndPartnersStyle = {
     width: "100%",
@@ -44,13 +42,12 @@ const OurPartners = () => {
 
       const PartnersBox = styled(Box)(() => ({
         position: "relative",
-        margin: mobile ? "5% 0 10% 0" : "0 auto",
+        margin: mobile ? "2% 0 10% 0" : (tablet ? "2% 0 10% 0" : "5% 0 8% 0"),
         transform: "scale(0.9)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        backgroundColor: "#F0F0F0",
-        height: mobile ? "100%" : "90vh",
+        backgroundColor: "#F0F0F0"
       }));
 
       const SponsorsBox = styled(Box)(() => ({
@@ -68,7 +65,7 @@ const OurPartners = () => {
         flexDirection: "column",
         justifyContent: "top",
         alignItems: "center",
-        margin: mobile  ? "none" : "0 20px",
+        margin: mobile  ? "none" : "0 3%",
         marginTop: mobile ? "10%" : "0%",
         width: desktop ? "55%" : ""
       }));
@@ -83,7 +80,7 @@ const OurPartners = () => {
       
 
       const SponsorBoxTitle = styled(Box)(() => ({
-        width: "80%",
+        width: desktop ? "100%" : (tablet ? "100%" : "90%"),
         height: "7vh",
         borderRadius: "50px",
         backgroundColor: "white",
@@ -107,7 +104,7 @@ const OurPartners = () => {
                     display: "flex",
                     justifyContent: "center",
                     color: "#052533",
-                    fontSize: (desktop ? "2dvw" : (tablet ? "2dvw" : "4.5dvw"))
+                    fontSize: (desktop ? "2dvw" : (tablet ? "2.5dvw" : "4.5dvw"))
                 }}>Alone, we go fast. Together, we go further.</Typography>
                 <SponsorsBox>
                 <SponsorBox className='Gold Sponsors'>
@@ -115,8 +112,8 @@ const OurPartners = () => {
                       <Typography sx={SponsorTitleStyle}>Gold Sponsor</Typography>  
                     </SponsorBoxTitle>                    
                     <Box sx={{
-                        width: "80%",
-                        height: "20vh",
+                        width: desktop ? "100%" : (tablet ? "100%" : "90%"),
+                        height: desktop ? "20vh" : (tablet ? "30vh" : "35vh"),
                         marginTop: "5%",
                         borderRadius: "30px",
                         backgroundColor: "#FFFFFF29",
@@ -132,18 +129,20 @@ const OurPartners = () => {
                         <Typography sx={SponsorTitleStyle}>Silver Sponsor</Typography>
                     </SponsorBoxTitle>
                     <Box sx={{
-                        width: "80%",
-                        height: "35vh",
+                        width: desktop ? "100%" : (tablet ? "100%" : "90%"),
+                        height: desktop ? "35vh" : (tablet ? "30vh" : "40vh"),
                         marginTop: "5%",
                         borderRadius: "30px",
                         backgroundColor: "#FFFFFF29",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
-                        alignItems: "center"
+                        alignItems: "center",
+                        overflow: "hidden",
+                        rowGap: "10%"
                     }}>
-                    <img src={Siemens} alt='Siemens Energy Logo' style={{width: "80%", transform: "scale(0.6)"}}/>
-                    <img src={Cisco} alt='Cisco Systems Logo' style={{width: "80%", transform: "scale(0.6)"}}/>
+                    <img src={Siemens} alt='Siemens Energy Logo' style={{width: desktop ? "50%" : (tablet ? "60%" : "40%")}}/>
+                    <img src={Cisco} alt='Cisco Systems Logo' style={{width: desktop ? "50%" : (tablet ? "60%" : "40%")}}/>
                     </Box>                  
                     
                 </SponsorBox>
@@ -152,8 +151,8 @@ const OurPartners = () => {
                       <Typography sx={SponsorTitleStyle}>Learning Partners</Typography>  
                     </SponsorBoxTitle>
                     <Box sx={{
-                        width: "80%",
-                        height: "35vh",
+                        width: desktop ? "100%" : (tablet ? "100%" : "90%"),
+                        height: desktop ? "35vh" : (tablet ? "30vh" : "45vh"),
                         marginTop: "5%",
                         borderRadius: "30px",
                         backgroundColor: "#FFFFFF29",
@@ -166,19 +165,15 @@ const OurPartners = () => {
                         width: "100%",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "center",                        
-                        [theme.breakpoints.down('sm')]: {
-                          flexDirection: "column",
-                        },
-                        [theme.breakpoints.up('md')]: {
-                          flexDirection: "row",
-                        },
+                        justifyContent: "center",
+                        flexDirection: desktop ? "row" : "column",
+                        gap: desktop ? "10%" : (tablet ? "20%" : "10%")
                     }}>
-                        <img src={Magma} alt='Magma Studios Logo' style={{width: "50%",  transform: "scale(0.8)"}}/>
-                        <img src={Meta} alt='Meta Consultoria Júnior Logo' style={{width: "50%",  transform: "scale(0.7)"}}/>
+                        <img src={Magma} alt='Magma Studios Logo' style={{width: desktop ? "35%" : (tablet ? "60%": "40%")}}/>
+                        <img src={Meta} alt='Meta Consultoria Júnior Logo' style={{width: desktop ? "35%" : (tablet ? "60%": "40%")}}/>
                     </Box>
                     
-                    <img src={OpenBB} alt='OpenBB Logo' style={{width: "60%", transform: "scale(0.6)"}}/>
+                    <img src={OpenBB} alt='OpenBB Logo' style={{width: desktop ? "40%" : (tablet ? "60%": "40%") }}/>
                     </Box>                  
                     
                 </LearningPartners>

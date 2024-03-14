@@ -91,9 +91,9 @@ const BgMenu = () => {
     width: isMenuClicked ? "25px" : "20px",
     height: "3px",
     borderRadius: "5px",
-    backgroundColor: isMenuClicked ? "white" : "#732043",
+    background: isMenuClicked ? "white" : "#732043",
     transform: isMenuClicked ? "rotate(45deg) translate(0.2em, 0.5em)" : "none",
-    transition: "transform ease-in-out 0.5s, backgroundColor ease-in-out 0.5s",
+    transition: "transform ease-in-out 0.5s, background ease-in-out 0.3s",
   };
   
   const BgBar2 = {
@@ -109,9 +109,9 @@ const BgMenu = () => {
     width: isMenuClicked ? "25px" : "20px",
     height: "3px",
     borderRadius: "5px",
-    backgroundColor: isMenuClicked ? "white" : "#732043",   
+    background: isMenuClicked ? "white" : "#732043",   
     transform: isMenuClicked ? "rotate(-45deg) translate(0.2em, -0.5em)" : "none",
-    transition: "transform ease-in-out 0.5s, backgroundColor ease-in-out 0.5s",
+    transition: "transform ease-in-out 0.5s, background ease-in-out 0.3s",
   }
 
   const NavLinkStyle = {
@@ -124,12 +124,6 @@ const BgMenu = () => {
     fontWeight: "400"
   };
 
-  const handleNavLinkClick = () => {
-    //updateMenu();
-    setIsMenuClicked(false)   
-  };
-
-
   return (
     <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", overflow: "hidden"}}>
           <div className="burger-menu" onClick={updateMenu} style={BgMenuStyle}>
@@ -140,20 +134,21 @@ const BgMenu = () => {
 
           <div style={{...MenuButtonStyle, overflow: "hidden"}}>
 
-<div style={{
-    width: "100%",
-    height: "100%",
-    overflow: "hidden",
-    alignItems: "center",
-    justifyContent: "center",
-    display: "flex",
-    flexDirection: "column",
-    gap: "20px",
-    opacity: isMenuClicked ? "100%" : "0%",
-    transition: "opacity 0.4s ease-in-out",
-    position: "fixed",
-    bottom: 0
-  }}>
+      <div style={{
+          width: "100%",
+          height: "100%",
+          overflow: "hidden",
+          alignItems: "center",
+          justifyContent: "center",
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px",
+          opacity: isMenuClicked ? "100%" : "0%",
+          //right: isMenuClicked ? "0%" : "-100%",
+          transition: "opacity 0.2s ease-in-out, right 0.5s ease-in-out",
+          position: "fixed",
+          bottom: 0
+      }}>
     
       <NavLink to="/about-us" style={NavLinkStyle} onClick={updateMenu}>
           <Typography style={PagesLinkStyle}>About Us</Typography>

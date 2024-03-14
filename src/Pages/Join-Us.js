@@ -7,8 +7,8 @@ import joinus_elements from '../images/other/joinus-elements.png';
 import guiadocandidato from '../images/other/GuiaDoCandidato.png';
 import Technologies from '../components/Technologies';
 import HowToApply from '../components/HowToApply';
-import Carousel from '../components/CarouselReviews';
-import CustomReview from '../components/CustomReview';
+import MemberReview from '../components/MemberReview';
+import Testimonials from '../Testimonials.json'
 import { useMediaQuery } from 'react-responsive';
 
 
@@ -157,6 +157,7 @@ const JoinUs = () => {
 
                 <Button
                     variant="contained"
+                    href='https://forms.gle/NP4Eo4RUftMv4LFq7'
                     sx={{
                         zIndex: '3',
                         borderRadius: '20px',
@@ -363,7 +364,7 @@ const JoinUs = () => {
                     If you have something new to teach us, join the team!
                 </Typography>
 
-
+                {/*
                 <Button
                     variant="contained"
                     endIcon={<ArrowForwardIcon />}
@@ -378,6 +379,8 @@ const JoinUs = () => {
                 >
                     See our Portfolio
                 </Button>
+                */}
+                
             </Box>
 
             {/* 3rd Section */}
@@ -486,11 +489,13 @@ const JoinUs = () => {
                 />
             </Box>
 
-            {/* 4th Section */}
+            <div style={{display: "flex", flexDirection: "column"}}>
+                {/* 4th Section */}
             <Box
                 sx={{
                     position: 'relative',
                     display: 'flex',
+                    flexDirection: "column",
                     justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-start',
                     alignItems: 'flex-start',
                     height: mobile ? '65vh' : smallMobile ? '65vh' : '120vh',
@@ -575,6 +580,7 @@ const JoinUs = () => {
                 // ref={sectionRef}
                 sx={{
                     position: 'relative',
+                    background: "blue",
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -600,6 +606,8 @@ const JoinUs = () => {
                 <HowToApply progress={190} />
 
             </Box>
+            </div>
+            
 
             {/* 6th Section */}
             <Box
@@ -664,22 +672,26 @@ const JoinUs = () => {
                     Read the<br />
                     candidate guide
                 </Typography>
-                <Button
-                    variant="contained"
-                    sx={{
-                        position: 'absolute',
-                        right: tablet ? "20dvw" : mobile ? "19dvw" : smallMobile ? '17dvw' : '21dvw',
-                        top: tablet ? "35dvw" : mobile ? "40dvw" : smallMobile ? '42dvw' : '33dvw',
-                        borderRadius: '10px',
-                        py: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '1.5dvw' :'1dvw',
-                        px: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '4dvw',
-                        fontSize: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '2.5dvw' : '1.2dvw',
-                        textTransform: 'none',
-                    }}
-                    onClick={() => { downloadGuia() }}
+                <a href = "https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
+                    <Button
+                        variant="contained"
+                        
+                        sx={{
+                            position: 'absolute',
+                            right: tablet ? "20dvw" : mobile ? "19dvw" : smallMobile ? '17dvw' : '21dvw',
+                            top: tablet ? "35dvw" : mobile ? "40dvw" : smallMobile ? '42dvw' : '33dvw',
+                            borderRadius: '10px',
+                            py: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '1.5dvw' :'1dvw',
+                            px: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '4dvw',
+                            fontSize: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '2.5dvw' : '1.2dvw',
+                            textTransform: 'none',
+                            }}
+                        onClick={() => { downloadGuia() }}
                 >
-                    Download
-                </Button>
+                        Download
+                    </Button>
+                </a>
+                
                 <Typography
                     variant="body1"
                     sx={{

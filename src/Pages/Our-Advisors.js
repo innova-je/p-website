@@ -79,6 +79,8 @@ const OurAdvisors = () => {
                     We are not alone
                 </Typography>
 
+            {/*
+            
             <div className='Advisors' style={{position: "relative", zIndex: 1}}>
                 <CustomTitle title="Advisory Board" theme={theme} />
             <div className='AdvisorsBoard' style={{
@@ -111,11 +113,13 @@ const OurAdvisors = () => {
         </div>
 
         </div>
+            */}
 
+            
         <div className='Alumnis' style={{
             position: "relative", 
             height: "auto", 
-            margin: mobile ? "25% 0 0 0" : "8% 0 0 0", 
+            margin: "5% 0 0 0", 
             zIndex: 1
             }}>
             
@@ -126,7 +130,7 @@ const OurAdvisors = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 placeItems: "center",
-                marginTop: mobile ? "15%" : "0%",
+                marginTop: mobile ? "15%" : (tablet ? "5%" : "0%") ,
                 height: "auto",
                 marginBottom: mobile ? "30%" : "0%"
             }}>
@@ -147,6 +151,7 @@ const OurAdvisors = () => {
                         name={alumni.name}
                         description={alumni.description}
                         image={alumni.imgDirectory}
+                        testimony={alumni.testimony}
                     />
                 ))}
             </div>

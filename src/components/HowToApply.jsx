@@ -163,6 +163,7 @@ const MiddleBox = ({ barheight }) => {
                     </Typography>
                     <Button
                         variant="contained"
+                        href='https://forms.gle/NP4Eo4RUftMv4LFq7'
                         endIcon={<ArrowForwardIcon />}
                         sx={{
                             position: 'relative',

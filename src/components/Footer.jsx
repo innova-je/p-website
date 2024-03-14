@@ -158,10 +158,14 @@ const Footer = () => {
                         justifyContent: "center",
                         alignItems: "center"
                     }}>
-                        <CustomButton customBackgroundColor = "#052533" sx={{
+                    <CustomButton href="mailto:geral@innova.pt" customBackgroundColor = "#052533" sx={{
+                        transition: "zIndex 0.2s ease-in-out",
+                        '&:hover': {
+                            zIndex: 1                            
+                            },
                     }}>
-                        <Typography sx={{fontSize: "1vw", zIndex: "2"}}>Let's Talk</Typography>
-                        <ArrowForward sx={{height: "50%", zIndex: "2"}}></ArrowForward>
+                        <Typography sx={{fontSize: "1vw", zIndex: 1}}>Let's Talk</Typography>
+                        <ArrowForward sx={{height: "50%", zIndex: 1}}></ArrowForward>
                     </CustomButton>
                     </div>
 

@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
 import { useMediaQuery } from 'react-responsive';
 
-const CustomComponent = ({ name, description, image }) => {
+const CustomComponent = ({ name, description, testimony, image }) => {
 
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
@@ -30,8 +30,8 @@ const CustomComponent = ({ name, description, image }) => {
   const containerStyle = {
     backgroundColor: theme.palette.primary.main,
     position: 'relative',
-    width: (desktop ? "18vw" : (tablet ? "20vw" : "35vw")),
-    height: (desktop ? "22vw" : (tablet ? "24vw" : "39vw")),
+    width: (desktop ? "18vw" : (tablet ? "25vw" : "40vw")),
+    height: (desktop ? "22vw" : (tablet ? "32vw" : "50vw")),
     overflow: 'visible',
     borderRadius: "5%",
     marginBottom: 35,
@@ -54,7 +54,7 @@ const CustomComponent = ({ name, description, image }) => {
     top: 0,
     left: 0,
     opacity: isHovered ? 0 : 1,
-    transition: 'opacity 0.3s ease-in-out',
+    transition: 'opacity 0.4s ease-in-out',
   };
 
   const overlayStyle = {
@@ -63,7 +63,7 @@ const CustomComponent = ({ name, description, image }) => {
     left: '50%',
     transform: 'translateX(-50%)',
     width: '100%',
-    height: isHovered ? '80%' : '50%',
+    height: isHovered ? '90%' : '50%',
     backgroundColor: 'white',
     padding: '5px',
     margin: 'auto',
@@ -107,7 +107,7 @@ const CustomComponent = ({ name, description, image }) => {
     height: "100%",
     zIndex: "100",
     position: "absolute",
-    top: "-30%",
+    top: desktop ? "-36%" : (tablet ? "-36%" : "-30%"),
     opacity: isHovered ? 1 : 0,
     transition: 'opacity 0.3s ease-in-out',
   };
@@ -121,9 +121,25 @@ const CustomComponent = ({ name, description, image }) => {
     position: "absolute",
     bottom: "0",
     height: isHovered ? '90%' : '65%',
-    transition: 'height 0.3s ease-in-out',  
+    opacity: isHovered ? 0 : 1,
+    transition: 'height 0.3s ease-in-out, opacity 0.3s ease-in-out', 
     wordWrap: "break-word",
     overflowWrap: 'break-word',
+  };
+
+  const testimonyStyle = {
+    fontSize: (desktop ? "1vw" : (tablet ? "1.5vw" : "2.6vw")),
+    color: "#062533",
+    fontFamily: theme.typography.fontFamily,
+    width: "80%",
+    position: "absolute",
+    bottom: "0",
+    height: isHovered ? '95%' : '65%',
+    opacity: isHovered ? 1 : 0,    
+    transition: 'height 0.3s ease-in-out, opacity 0.3s ease-in-out',
+    textJustify: "auto",
+    textAlign: "justify",
+    lineHeight: "130%"
   };
 
   const handleClick = () => {
@@ -131,7 +147,6 @@ const CustomComponent = ({ name, description, image }) => {
       setIsHovered(!isHovered);
     }
   };  
-
 
   return (
     <ThemeProvider theme={theme}>
@@ -164,7 +179,14 @@ const CustomComponent = ({ name, description, image }) => {
             align="center"
             style={descriptionStyle}
           >
-            {description}{/*Aqui quando se da hover tem que se mudar para testimony */}
+            {description}
+          </Typography>
+
+          <Typography
+            align="center"
+            style={testimonyStyle}
+          >
+            {testimony}
           </Typography>
         </div>
       </div>

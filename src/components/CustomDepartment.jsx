@@ -11,9 +11,12 @@ const CustomDepartment = ({ department }) => {
   }
 
   const theme = useTheme();
+  const mobile = useMediaQuery({ maxWidth: 600 });
+  const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
   const desktop = useMediaQuery({ minWidth: 1081 });
-  const mobile = useMediaQuery({ maxWidth: 609 });
-  const [expanded, setExpanded] = useState(!desktop); // Start expanded if not on desktop
+
+  let notMobile = (tablet || desktop)
+  const [expanded, setExpanded] = useState(notMobile);
 
   const handleToggle = () => {
     setExpanded(!expanded);
