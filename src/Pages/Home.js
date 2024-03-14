@@ -64,7 +64,7 @@ const Home = () => {
         }}>
         
         <div style={{
-            height: mobile ? "50dvh" : "100dvh",
+            height: mobile ? "50vh" : "100dvh",
             width: "100dvw",
             position: "relative",
             overflow: "hidden",
