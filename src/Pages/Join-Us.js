@@ -106,19 +106,20 @@ const JoinUs = () => {
                         <div style={{ height: "100%", width: "100%", display: "flex", zIndex: 1, justifyContent: "center" }}>
 
                             <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                                <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", gap: "5%", alignItems: "center", justifyContent: "center" }}>
+                                <div style={{ width: (mobile || smallMobile) ? "80%" : "100%", height: "100%", display: "flex", flexDirection: "column", gap: "5%", alignItems: "center", justifyContent: "center" }}>
                                     <Typography
                                         variant="h2"
                                         sx={{
                                             fontWeight: '600',
-                                            fontSize: tablet ? "6dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : '5dvw',
+                                            fontSize: tablet ? "4.5dvw" : mobile ? "6dvw" : smallMobile ? '8dvw' : '4dvw',
                                             position: 'relative',
-                                            color: theme.palette.secondary.main,
+                                            color: theme.palette.primary.main,
                                             fontFamily: theme.typography.fontFamily,
                                             zIndex: '1',
+                                            textAlign: "center"
                                         }}
                                     >
-                                        Want to become one of us?
+                                        Want to {(smallMobile) && (<br/>)} become one of us?
                                     </Typography>
 
                                     <CountDownRecruitment />
@@ -129,8 +130,8 @@ const JoinUs = () => {
                                         sx={{
                                             zIndex: '3',
                                             borderRadius: '20px',
-                                            py: '1dvw',
-                                            px: '5dvw',
+                                            py: (mobile) ? "2dvw" : (smallMobile ? "3dvw" : "1dvw"),
+                                            px: (mobile) ? "8dvw" : (smallMobile ? "10dvw" : "5dvw"),
                                             fontSize: tablet ? "3dvw" : mobile ? "3dvw" : smallMobile ? '3dvw' : '1.5dvw',
                                             textTransform: 'none',
                                         }}

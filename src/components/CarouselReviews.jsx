@@ -140,7 +140,7 @@ const LogosSlider = () => {
             height: 'auto',
             overflow: 'visible',
             marginBottom: '5rem',
-            marginTop: '6rem',
+            marginTop: '10%',
           }}>
           <Box sx={{ display: 'flex', gap: '1.5rem' }}>
             {divideIntoRows(testimonials, numColumns).map((row, rowIndex) => (
