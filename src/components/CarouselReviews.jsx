@@ -100,17 +100,19 @@ const LogosSlider = () => {
     }
   };
 
-
   const smallMobile = useMediaQuery({ maxWidth: 550 });
   const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
+  const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+  const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
+  const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
 
   const testimonials = Testimonials.testimonials;
   const [numColumns, setNumColumns] = useState(1);
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
-    const desiredWidthPercentage = 0.5; // 80% of screen width
-    const columnWidth = 230; // Width of each column in pixels (adjust as needed)
+    const desiredWidthPercentage = desktop ? 0.8: smallDesktop ? 0.8 : tablet ? 1 : 0.5; // 80% of screen width
+    const columnWidth = 230; 
     const calculatedColumns = Math.floor(screenWidth * desiredWidthPercentage / columnWidth);
     setNumColumns(calculatedColumns > 0 ? calculatedColumns : 1);
   }, []);

@@ -3,31 +3,31 @@
         {
             "image": "Comercial/ines_mendes.webp",
             "name": "Inês Mendes",
-            "department": "Diretora de Comercial",
+            "department": "Sales Diretor",
             "quote": "Iniciei este grande percurso como membro do departamento de Recursos Humanos. Posteriormente, descobri uma nova vocação e uma preferência pela área de comercial, tendo tido a oportunidade de mudar de departamento. A In-Nova é isto, permite-nos descobrir as nossas áreas de interesse ou até mesmo desafiarmo-nos a trabalhar noutras."
         },
         {
             "image": "Qualidade/laura_filipe.webp",
             "name": "Laura Filipe",
-            "department": "Dep. Qualidade",
+            "department": "Quality Dep.",
             "quote": "No curto período de tempo, desde que integrei a In-Nova, a aprendizagem foi remarcante! Aprendo um bocadinho todos os dias, tanto com o meu trabalho, como com os restantes membros. Ganhei uma perceção e experiência que não seria possível através do percurso académico “comum”, por si só. A entreajuda, o espírito de equipa e a proatividade dos membros são também fatores que marcaram a minha experiência na Júnior Empresa pela positiva. A In-Nova abre portas a inúmeras oportunidades, candidatar-me foi a melhor decisão."
         },
         {
             "image": "Projetos/joao_lopes.webp",
             "name": "João Ricardo Lopes",
-            "department": "Dep. Projetos",
+            "department": "Projects Dep.",
             "quote": "A In-Nova proporciona a cada um dos Júnior empresários um enriquecimento académico e pessoal, permitindo o desenvolvimento de competências que nos preparam para a entrada no mercado de trabalho. É uma experiência desafiante que nos faz evoluir a cada dia que passa."
         },
         {
             "image": "Comercial/catarina_santos.webp",
             "name": "Catarina Santos",
-            "department": "Dep. Comercial",
+            "department": "Sales Dep.",
             "quote": "A In-Nova é o ecossistema perfeito que me tem permitido crescer junto de pessoas incríveis que transformam o ambiente profissional numa família especial e única. O contacto com projetos desafiantes e clientes de excelência é, verdadeiramente, estimulante!"
         },
         {
             "image": "Marketing/catarina_rito.webp",
             "name": "Catarina Rito",
-            "department": "Dep. Marketing",
+            "department": "Marketing Dep.",
             "quote": "Fazer parte da In-Nova é sinónimo de constante aprendizagem em diferentes áreas, de nos querermos sempre superar e procurar evoluir. É um orgulho enorme fazer parte de um grupo de jovens motivados e com ambição de querer sempre fazer mais e melhor."
         },
         {
@@ -39,37 +39,37 @@
         {
             "image": "Qualidade/rafael_abegao.webp",
             "name": "Rafael Abegão",
-            "department": "Dep. Qualidade",
+            "department": "Quality Dep.",
             "quote": "Super interessante, com diversos desafios e vários momentos de descontração, que por norma são os meu favoritos"
         },
         {
             "image": "Projetos/bravo_mota.webp",
             "name": "Bravo Mota",
-            "department": "Dep. Projetos",
+            "department": " Projects Dep.",
             "quote": "Estar na In-Nova permite-me ganhar experiência desenvolvendo projetos para clientes reais fazendo com que quando me lançar para o mercado de trabalho esteja um passo à frente. Enriqueço também o meu conhecimento através de formações que nos são proporcionadas e em eventos do Movimento Júnior onde tenho oportunidade de estar em workshops e talks de pessoas ilustres, além do excelente networking e convívio, tanto com pessoas de outras JEs como outros membros da In-Nova que considero família."
         },
         {
             "image": "",
             "name": "Beatriz Infante",
-            "department": "Dep. Recursos Humanos",
+            "department": "Human Resources Dep.",
             "quote": "A In-Nova tem sido uma das minhas melhores experiências. Conviver com um grupo talentoso de colegas e sentir que estamos a trabalhar para o mesmo tem sido incrível. Já desenvolvi diversas soft skills importantes para o mundo do trabalho e temos também vários momentos de convívio e team building onde podem criar imensas amizades."
         },
         {
             "image": "Conselho Executivo/nuno_alves.webp",
             "name": "Nuno Alves",
-            "department": "Gestor Financeiro",
+            "department": "Finance Manager",
             "quote": "Entrar na In-Nova fez com que desenvolvesse um pensamento estratégico e uma abordagem mais eficaz para resolver problemas. Conheci colegas com quem pretendo manter contacto a longo prazo e, acima de tudo, sinto que esta experiência preencheu uma lacuna no meu percurso académico ao aproximar-me do mundo empresarial."
         },
         {
             "image": "Projetos/vicente_santos.webp",
-            "name": "Vicente Rodrigues dos Santos",
-            "department": "Diretor Projetos",
+            "name": "Vicente Santos",
+            "department": "Projects Diretor",
             "quote": "Fazer parte da In-Nova é ter a oportunidade única de conviver e aprender com pessoas inspiradoras, interessadas e altamente motivadas, determinadas a alcançar o sucesso. É expandir horizontes, ser ouvido e fazer a diferença ao inovar e ambicionar objetivos que poucos têm a oportunidade de experimentar. Quem não passa por este tipo de experiência jamais vai compreender o que estou a dizer, mas se te identificas minimamente com esta mensagem, então não hesites e junta-te ao Movimento Júnior Português para viver os anos da tua vida."
         },
         {
             "image": "../images/MemberImages/Projetos/tiago_martinho.webp",
             "name": "Tiago Martinho",
-            "department": "Dep. Projetos",
+            "department": "Projects Dep.",
             "quote": " A In-Nova deu-me a possibilidade de participar em inúmeros projetos no mercado de trabalho. Cresci tanto a nível profissional, como a nível pessoal. Melhorei as minhas skills de desenvolvimento de software, gestão de tempo e pensamento crítico, proporcionando-me ainda momentos únicos de convívio."
         }
     ]
