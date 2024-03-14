@@ -674,8 +674,7 @@ const JoinUs = () => {
                 </Typography>
                 <a href = "https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
                     <Button
-                        variant="contained"
-                        
+                        variant="contained"  
                         sx={{
                             position: 'absolute',
                             right: tablet ? "20dvw" : mobile ? "19dvw" : smallMobile ? '17dvw' : '21dvw',
@@ -686,7 +685,6 @@ const JoinUs = () => {
                             fontSize: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '2.5dvw' : '1.2dvw',
                             textTransform: 'none',
                             }}
-                        onClick={() => { downloadGuia() }}
                 >
                         Download
                     </Button>
