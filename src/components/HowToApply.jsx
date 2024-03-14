@@ -14,6 +14,7 @@ import record from '../images/other/record-img.png';
 import group from '../images/other/group-img.png';
 import congrats from '../images/other/congrats-img.png';
 import interview from '../images/other/interview-img.png';
+import { useMediaQuery } from 'react-responsive';
 
 
 
@@ -56,26 +57,41 @@ const MiddleBox = ({ barheight }) => {
     let innovaFill = barheight >= 520 ? 'white' : theme.palette.primary.main;
 
     let bgImg = fill;
-    
+
     if (barheight < 130) {
         bgImg = fill;
     } else if (barheight >= 130 && barheight < 260) {
         bgImg = record;
     } else if (barheight >= 260 && barheight < 390) {
-        bgImg = group ;
+        bgImg = group;
     } else if (barheight >= 390 && barheight < 520) {
         bgImg = interview;
     } else {
         bgImg = congrats;
     }
 
+    const smallMobile = useMediaQuery({ maxWidth: 550 });
+    const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
+    const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+    const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
+    const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
+    const largeDesktop = useMediaQuery({ minWidth: 1400 })
+
+    const fontTitle = {
+        fontSize: tablet ? '3dvw' : mobile ? '3.5dvw' : smallMobile ? '3.8dvw' : "2dvw",
+    };
+
+    const fontText = {
+        fontSize: tablet ? '1.5dvw' : mobile ? '2dvw' : smallMobile ? '2.3dvw' : "1dvw",
+    };
+
     return (
-        console.log('asdasda', barheight),
+        // console.log('asdasda', barheight),
         <>
             {/* First Box */}
             <Box
                 sx={{
-                    width: '20%',
+                    width: tablet ? '25%' : mobile ? '25%' : smallMobile ? '25%' :'20%',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
@@ -110,18 +126,18 @@ const MiddleBox = ({ barheight }) => {
 
 
                 {/* <CustomCircle icon={WriteIcon} posTop="12px" bgcolor={theme.palette.primary.main} fill="white" /> */}
-                <CustomCircle icon={WriteIcon} posTop="12px" bgcolor={'#F0F0F0'} fill={theme.palette.primary.main} />  
-                <CustomCircle icon={CameraIcon} posTop="130px" bgcolor={cameraBG} fill={cameraFill} />
-                <CustomCircle icon={GroupIcon} posTop="248px" bgcolor={groupBG} fill={groupFill} />
-                <CustomCircle icon={ChatIcon} posTop="366px" bgcolor={chatBG} fill={chatFill} />
-                <CustomCircle icon={InnovaIcon} posTop="484px" bgcolor={innovaBG} fill={innovaFill} />
+                <CustomCircle icon={WriteIcon} posTop="1dvw" bgcolor={'#F0F0F0'} fill={theme.palette.primary.main} />
+                <CustomCircle icon={CameraIcon} posTop="9dvw" bgcolor={cameraBG} fill={cameraFill} />
+                <CustomCircle icon={GroupIcon} posTop="17dvw" bgcolor={groupBG} fill={groupFill} />
+                <CustomCircle icon={ChatIcon} posTop="25dvw" bgcolor={chatBG} fill={chatFill} />
+                <CustomCircle icon={InnovaIcon} posTop="33dvw" bgcolor={innovaBG} fill={innovaFill} />
 
             </Box>
 
             {/* Second Box */}
             <Box
                 sx={{
-                    width: '59%',
+                    width: tablet ? '70%' : mobile ? '70%' : smallMobile ? '70%' : '59%',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
@@ -134,7 +150,7 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: 10,
+                        top: '3%',
                     }}
                 >
                     <Typography
@@ -143,8 +159,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            marginTop: 0,
-                            fontSize: "30px",
+                            fontSize: fontTitle.fontSize,
                         }}
                     >
                         Fill out the Application Form
@@ -155,37 +170,43 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Medium',
-                            marginTop: 0,
-                            fontSize: "15px",
+                            fontSize: fontText.fontSize,
                         }}
                     >
                         We really want to know you!
                     </Typography>
-                    <Button
-                        variant="contained"
-                        href='https://forms.gle/NP4Eo4RUftMv4LFq7'
-                        endIcon={<ArrowForwardIcon />}
-                        sx={{
-                            position: 'relative',
-                            borderRadius: '10px',
-                            py: '3px',
-                            px: '25px',
-                            fontSize: '15px',
-                            fontWeight: 'Light',
-                            textTransform: 'none',
-                            marginTop: '20px',
-                            marginLeft: '15px',
-                        }}
-                    >
-                        Apply here
-                    </Button>
+
+                    {smallMobile || mobile || tablet ? (
+                        <>
+                        </>
+                    ) : (
+                        <Button
+                            variant="contained"
+                            href='https://forms.gle/NP4Eo4RUftMv4LFq7'
+                            endIcon={<ArrowForwardIcon />}
+                            sx={{
+                                position: 'relative',
+                                borderRadius: '10px',
+                                py: '3px',
+                                px: '25px',
+                                fontSize: '15px',
+                                fontWeight: 'Light',
+                                textTransform: 'none',
+                                marginTop: '1dvw',
+                                marginLeft: '15px',
+                            }}
+                        >
+                            Apply here
+                        </Button>
+                    )}
+
                 </Box>
 
                 <Box
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: 20,
+                        top: '5%',
                     }}
                 >
                     <Typography
@@ -194,8 +215,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            marginTop: 0,
-                            fontSize: "30px",
+                            fontSize: fontTitle.fontSize,
                         }}
                     >
                         Record yourself & tell us about you
@@ -206,8 +226,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Medium',
-                            marginTop: 0,
-                            fontSize: "15px",
+                            fontSize: fontText.fontSize,
                         }}
                     >
                         It is now the time to tell us more about yourself, your hobbies, your dreams... <br />
@@ -219,7 +238,7 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: 50,
+                        top: '10%',
                     }}
                 >
                     <Typography
@@ -228,8 +247,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            marginTop: 0,
-                            fontSize: "30px",
+                            fontSize: fontTitle.fontSize,
                         }}
                     >
                         Attend the Group Dynamics
@@ -240,8 +258,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Medium',
-                            marginTop: 0,
-                            fontSize: "15px",
+                            fontSize: fontText.fontSize,
                         }}
                     >
                         ... and have fun! Halfway there!
@@ -252,7 +269,7 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: 100,
+                        top: '15%',
                     }}
                 >
                     <Typography
@@ -261,8 +278,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            marginTop: 0,
-                            fontSize: "30px",
+                            fontSize: fontTitle.fontSize,
                         }}
                     >
                         Do a 1:1 Interview
@@ -273,8 +289,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Medium',
-                            marginTop: 0,
-                            fontSize: "15px",
+                            fontSize: fontText.fontSize,
                         }}
                     >
                         Now we can focus on your chosen department!
@@ -285,7 +300,7 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: 160,
+                        top: '23%',
                     }}
                 >
                     <Typography
@@ -294,8 +309,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            marginTop: -0.5,
-                            fontSize: "30px",
+                            fontSize: fontTitle.fontSize,
                         }}
                     >
                         Congrats!
@@ -306,8 +320,7 @@ const MiddleBox = ({ barheight }) => {
                             color: "#101010",
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Medium',
-                            marginTop: 0,
-                            fontSize: "15px",
+                            fontSize: fontText.fontSize,
                         }}
                     >
                         You are finally one of us!
@@ -318,7 +331,7 @@ const MiddleBox = ({ barheight }) => {
             {/* Third Box */}
             <Box
                 sx={{
-                    width: '21%',
+                    width: tablet ? '0%' : mobile ? '0%' : smallMobile ? '0%' : '21%',
                     height: '100%',
                     borderTopRightRadius: '20px',
                     borderBottomRightRadius: '20px',
@@ -338,14 +351,22 @@ const MiddleBox = ({ barheight }) => {
 
 const HowToApply = ({ progress }) => {
     const theme = useTheme();
+
+    const smallMobile = useMediaQuery({ maxWidth: 550 });
+    const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
+    const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+    const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
+    const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
+    const largeDesktop = useMediaQuery({ minWidth: 1400 })
+
     return (
 
         <Box
             sx={{
                 position: 'absolute',
                 top: '12rem',
-                width: '65%',
-                height: '68%',
+                width: tablet ? '75dvw' : mobile ? '75dvw' : smallMobile ? '75dvw' : '65dvw',
+                height: tablet ? '50dvw' : mobile ? '65dvw' : smallMobile ? '80dvw' : '41dvw',
                 backgroundColor: 'white',
                 borderRadius: '20px',
                 display: 'flex',

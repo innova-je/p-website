@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import CustomReview from './MemberReview';
 import { Box } from '@mui/material';
-import HeroImage from '../images/other/joinus_img.png';
 import MemberReview from '../components/MemberReview';
 import Testimonials from '../Testimonials.json'
 import { useMediaQuery } from 'react-responsive';
@@ -109,30 +108,62 @@ const LogosSlider = () => {
     <>
       {isDesktopOrLaptop ? (
         <>
-          {/* First row of reviews */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '2.5rem',
+            position: 'relative',
+            top: '10%',
+            width: '100%',
+            height: 'auto',
+            overflow: 'visible',
+          }}
+        >
+          {/* First Row */}
           <Box
             sx={{
-              display: 'inline-flex',
-              alignItems: 'center',
+              display: 'flex',
               justifyContent: 'center',
               gap: '2.5rem',
-              position: 'relative',
-              top: '30%',
-              width: '100%',
-              height: '38vh',
-              overflow: 'visible',
-            }}>
-            {Testimonials.testimonials.map((testimonial, index) => (
+            }}
+          >
+            {Testimonials.testimonials.slice(0, Math.ceil(Testimonials.testimonials.length / 2)).map((testimonial, index) => (
               <MemberReview
+                key={index}
                 image={testimonial.image}
                 name={testimonial.name}
                 department={testimonial.department}
                 text={testimonial.quote}
-                sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                sx={{ position: "relative", zIndex: 2 }}
               />
             ))}
           </Box>
-        </>
+      
+          {/* Second Row */}
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '2.5rem',
+            }}
+          >
+            {Testimonials.testimonials.slice(Math.ceil(Testimonials.testimonials.length / 2)).map((testimonial, index) => (
+              <MemberReview
+                key={index}
+                image={testimonial.image}
+                name={testimonial.name}
+                department={testimonial.department}
+                text={testimonial.quote}
+                sx={{ position: "relative", zIndex: 2 }}
+              />
+            ))}
+          </Box>
+        </Box>
+      </>
+      
       ) : (
 
         <div
@@ -141,9 +172,7 @@ const LogosSlider = () => {
             position: "relative",
             overflow: "visible",
             width: "50%",
-            // maxHeight: "250px",
-            top: mobile ? "20dvw" : smallMobile ? '20dvw' : "45%",
-            // left: "-20dvw",
+            top: mobile ? "20dvw" : smallMobile ? '15dvw' : "45%",
             touchAction: "none",
             display: "flex",
             justifyContent: "flex-start",

@@ -1,22 +1,28 @@
 import React from 'react';
 import { Typography, Box, Avatar, useTheme } from '@mui/material';
+import { useMediaQuery } from 'react-responsive';
 
 const MemberReview = ({ image, name, department, text }) => {
     const theme = useTheme();
+    const smallMobile = useMediaQuery({ maxWidth: 550 });
+    const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
+
     return (
         <Box
             border="1px solid #ddd"
             borderRadius="15px"
             overflow="hidden"
             p={1}
+            width= {mobile ? '55dvw' : (smallMobile ? '75dvw' : '30dvw')}
             textAlign="center"
             bgcolor="white"
-            width="15rem"
             boxShadow={3}
+            height="auto"
             sx={{
+
                 transition: 'transform 0.2s ease-in-out',
                 '&:hover': {
-                    transform: 'scale(1.1)', 
+                    transform: mobile ? undefined : smallMobile ? undefined : 'scale(1.1)', 
                 },
             }}
         >
@@ -25,7 +31,7 @@ const MemberReview = ({ image, name, department, text }) => {
                 alignItems="center"
                 justifyContent="center"
                 flexDirection="column"
-                sx={{ margin: 1 }}
+                sx={{ margin: 1}}
             >
                 <Box
                     sx={{
