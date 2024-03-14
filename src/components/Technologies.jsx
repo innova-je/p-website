@@ -96,9 +96,9 @@ const Technologies = () => {
             <div
                 style={{
                     ...circleStyle,
-                    width: '700px',
-                    height: '600px',
-                    top: '-11rem',
+                    width: '45dvw',
+                    height: '40dvw',
+                    top: '-11dvw',
                 }}
             >
                 {distributeImages(700, 600, circle1Images)}
@@ -106,9 +106,9 @@ const Technologies = () => {
             <div
                 style={{
                     ...circleStyle,
-                    width: '1000px',
-                    height: '800px',
-                    top: '-15rem',
+                    width: '65dvw',
+                    height: '50dvw',
+                    top: '-15dvw',
                 }}
             >
                 {distributeImages(1000, 800, circle2Images)}
@@ -116,9 +116,9 @@ const Technologies = () => {
             <div
                 style={{
                     ...circleStyle,
-                    width: '1350px',
-                    height: '900px',
-                    top: '-16rem',
+                    width: '88dvw',
+                    height: '58dvw',
+                    top: '-17dvw',
                 }}
             >
                 {distributeImages(1350, 900, circle3Images)}

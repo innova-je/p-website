@@ -15,8 +15,8 @@ const Accomplishments = ({ image, description, date }) => {
   const AccomplishmentBox = styled(Box)(({ isSelected }) => ({
     display: "flex",
     flexDirection: isSelected ? "row" : "column",
-    width: isSelected ? "60vw" : (desktop ? "25dvw" : (tablet ? "40dvw" : "55dvw")),
-    height: (desktop ? "30dvw" : (tablet ? "50dvw" : "70dvw")),
+    width: isSelected ? "60vw" : (desktop ? "22dvw" : (tablet ? "27dvw" : "65dvw")),
+    height: (desktop ? "30dvw" : (tablet ? "40dvw" : "80dvw")),
     borderRadius: "20px",
     overflow: "hidden",
     boxShadow: "10px 10px 40px #73204340",
@@ -30,51 +30,50 @@ const Accomplishments = ({ image, description, date }) => {
 
 
   const TextBox = styled(Box)(() => ({
-    backgroundColor: "white",
     position:"relative",
     width: isSelected ? "150vw" : "100%",
-    height: isSelected ? "70vh" : (mobile ? "50vh" : (tablet ? "30vh" : "60vh")),
-    zIndex:"9",
+    height: isSelected ? "70vh" : "100%",
+    zIndex:1,
     overflow:"hidden",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginTop: tablet ? "-20%" : "-16%",
+    background: "white"
   }));
 
   const Circle = styled(Box)(() => ({
     position: "relative",
+    top: "-50%",
     left: "60%",
-    width: mobile ? "10vw" : (tablet ? "8vw" : "6vw"),
-    width: mobile ? "10vw" : (tablet ? "8vw" : "6vw"),
+    width: mobile ? "12vw" : (tablet ? "9vw" : "6vw"),
+    height: mobile ? "12vw" : (tablet ? "9vw" : "6vw"),
     borderRadius: "100%",
     backgroundColor: "white",
     boxShadow: "5px 5px 40px #00000040",
-    zIndex: "999",
     display: isSelected ? "none" : "flex",
     justifyContent: "center",
     alignItems: "center"
   }));
 
   const NewsText = styled(Box)(() => ({
-    position:"absolute",
-    bottom: "5%",
-    zIndex:"2",
     overflow:"hidden",
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-end",
-    justifyContent: "flex-end",
+    justifyContent: "flex-start",
     width: "80%",
-    height: "75%",
-    background: "red"
+    height: "100%"
   }));
 
   const newsImageStyle = {
     width: "100%", 
+    height: "60%",
     transform: isSelected ? "scale(1)" : "scale(2)", 
     position: "relative",
     top: isSelected ? "0%" : "15%",
     overflow: "hidden", 
     objectFit: "cover", 
+    zIndex: 2,
     transition: "filter 0.3s ease-in-out",
     '&:hover': {
       filter: 'grayscale(0%)', 
@@ -82,64 +81,50 @@ const Accomplishments = ({ image, description, date }) => {
   };
 
   const newsTextStyle = {
-    fontSize: (mobile ? "3.4vw" : (tablet ? "2.2vw" : "1.2vw")),
+    fontSize: (mobile ? "4vw" : (tablet ? "2.1vw" : "1.8vw")),
     fontWeight: mobile || tablet ? "500" : "400",
     textAlign: "justify",
     textJustify: "center",
-    marginTop: mobile ? "10%" : (tablet ? "15%" : "10%"),
-    lineHeight: "100%"
+    marginTop: "2%",
+    lineHeight: "120%"
   };
 
   const dateStyle = {
-    fontSize: (mobile ? "2.5vw" : (tablet ? "1.8vw" : "1rem")),
-    fontWeight: "600",
+    fontSize: (mobile ? "3vw" : (tablet ? "1.8vw" : "1rem")),
+    fontWeight: "700",
     textAlign: "right",
     textJustify: "center",
-    marginTop: mobile ? "5%" : "3%"
   };
-
-  const handleBoxClick = () => {
-    setIsSelected(!isSelected);
-    setIsHovered(!isHovered)
-  };
-
-  console.log(isSelected)
-
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      if (event.key === 'Escape') {
-        setIsSelected(false);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyPress);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyPress);
-    };
-  }, []); 
-
 
   return (
-    <Box onClick={handleBoxClick}>
+    <Box>
         {!isSelected && (
-        <AccomplishmentBox onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onClick={handleBoxClick}>
+        <AccomplishmentBox onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
           <div style={{display: "flex"}}>
             <img src={image} style={newsImageStyle} />
           </div>
 
-          <div style={{background: "white", width: "150%", marginLeft: "-20%", rotate: "-10deg", height: "20%", zIndex: 100, display: "flex", alignItems: "center"}}>
+          <div style={{height: "60%", marginTop: "-10%", zIndex: 10}}>
+            <div style={{background: "white", width: "150%", height: "40%", marginLeft: "-20%", rotate: "-10deg", zIndex: -1, display: "flex", alignItems: "center"}}>
             <Circle>
               <img src={randomLogo} style={{ width: "100%", transform: "scale(1)", overflow: "hidden", objectFit: "cover" }} />
             </Circle>
+            
           </div>        
           
           <TextBox>
-            <NewsText>
-              <Typography style={newsTextStyle}>{description}</Typography>
-              <Typography style={dateStyle}>{date}</Typography>
+          <NewsText>
+              <div style={{ height: "65%"}}>
+                <Typography style={newsTextStyle}>{description}</Typography>
+              </div>              
+              <div style={{ position: "relative"}}>
+                <Typography style={dateStyle}>{date}</Typography>
+              </div>              
             </NewsText>
           </TextBox>
+          </div>
+
+          
         </AccomplishmentBox>
       )}
 
@@ -158,15 +143,19 @@ const Accomplishments = ({ image, description, date }) => {
             backdropFilter: "blur(5px)",
           }}
         >
-          <AccomplishmentBox isSelected={isSelected} onClick={handleBoxClick}>
+          <AccomplishmentBox isSelected={isSelected}>
           <img src={image} style={newsImageStyle} />
           <Circle>
             <img src={randomLogo} style={{ width: "100%", transform: "scale(1)", overflow: "hidden", objectFit: "cover" }} />
           </Circle>
           <TextBox>
             <NewsText>
-              <Typography style={newsTextStyle}>{description}</Typography>
-              <Typography style={dateStyle}>{date}</Typography>
+              <div>
+                <Typography style={newsTextStyle}>{description}</Typography>
+              </div>              
+              <div>
+                <Typography style={dateStyle}>{date}</Typography>
+              </div>              
             </NewsText>
           </TextBox>
           </AccomplishmentBox>

@@ -16,6 +16,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import ServicesCarousel from '../components/ServicesCarousel';
 import { useMediaQuery } from 'react-responsive';
 import AccomplishmentSlider from '../components/AccomplishmentSlider';
+import ServicesSlider from '../components/ServicesSlider';
 
 const accomplishmentsData = [
     { image: newsImage, description: "Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia." , date: "janeiro 2024"},
@@ -51,51 +52,20 @@ const Home = () => {
         marginTop: "-5%"
     };
 
-    const handleNavLinkClick = (path) => {
+    const handleNavLinkClick = () => {
         window.scrollTo(0, 0);
       };
-
-
-      const ourServicesRef = useRef();
-
-      /*
-      useEffect(() => {
-        const handleScroll = () => {
-          const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    
-          const threshold = ourServicesRef.current.offsetTop + window.innerHeight/10;
-    
-          if (scrollPosition >= threshold && scrollPosition <= 2*threshold) {
-            // Disable page scroll
-            document.body.style.overflow = 'auto';
-            //alert("chegaste")
-          } else {
-            // Enable page scroll
-            document.body.style.overflow = 'auto';
-          }
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-    
-        return () => {
-          // Cleanup the event listener on component unmount
-          //window.removeEventListener('scroll', handleScroll);
-        };
-      }, []);
-      */
 
     return (
         <>
         <Box sx={{
             backgroundColor: "#F0F0F0",
-            height: "100%",
-            scrollSnapType: "y mandatory",
             overflow: "hidden",
         }}>
         
         <div style={{
-            height: "100vh",
-            width: "100vw",
+            height: mobile ? "50dvh" : "100dvh",
+            width: "100dvw",
             position: "relative",
             overflow: "hidden",
             borderRadius: "0 0 30px 30px"
@@ -115,24 +85,25 @@ const Home = () => {
                 top: 0,
                 left: 0
         }}/>
-        </div>
-        
-            <Box sx={{
+
+        <Box sx={{
             width: "100%",//TODO: Este título não está bem
-            position: "absolute",
-            top: "45%",
+            position: "relative",
+            top: "40%",
+            display: "flex",
+            flexDirection: "column",
             zIndex: "1",
-            //backgroundColor: "red"
-        }}>
+            }}>
             <div style={{backgroundColor: "transparent", width: "100%"}}>
                 <Typography sx={{
                 position: "relative",
                 textAlign: "center",
+                width: mobile ? "95%" : (tablet ? "95%" : "95%"),
                 height: "100%",
                 fontWeight: "853",
-                fontSize: (desktop ? "9dvw" : (tablet ? "9dvw" : "11dvw")),
-                lineHeight: (desktop ? "200px" : (tablet ? "125px" : "50px")),
-                letterSpacing: "0.16em",
+                fontSize: (desktop ? "9dvw" : (tablet ? "10dvw" : "11dvw")),
+                lineHeight: (desktop ? "130%" : (tablet ? "100%" : "110%")),
+                letterSpacing: desktop ? "1.8vw" : (tablet ? "1.5vw" : "1vw"),
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 color: "transparent",
@@ -144,19 +115,21 @@ const Home = () => {
             <Box sx={{
                 display: "flex",
                 flexDirection: "row",
-                gap: "35px"
             }}>
                 <Typography sx={{
-                    marginLeft: "17%",
+                    marginLeft: desktop ? "17%" : (tablet ? "15%" : "9%"),
                     fontWeight: "500",
-                    fontSize: "4vw",
+                    fontSize: (desktop ? "4dvw" : (tablet ? "3.5dvw" : "5dvw")),
                     letterSpacing: "0.16em",
                     color: "#052533",
+                    paddingRight: mobile ? 1 : 2
                 }}>with </Typography>
                 <Typography sx={{
                     marginTop: "-3%",
+                    width: "100%",
+                    zIndex: 5,
                     fontWeight: "853",
-                    fontSize: (desktop ? "9dvw" : (tablet ? "9dvw" : "11dvw")),
+                    fontSize: (desktop ? "9dvw" : (tablet ? "10dvw" : "11dvw")),
                     letterSpacing: "0.16em",
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
@@ -165,9 +138,10 @@ const Home = () => {
                 }}>NO LIMITS </Typography>
             </Box>
         </Box>
+
+        </div>
         
-
-
+            
         <Box sx={{
             position: "relative",
             margin: desktop ? "3% 0 0 8%" : "10% 0 0 8%",
@@ -205,7 +179,7 @@ const Home = () => {
         <div>
            <Box sx={{
             position: "relative",
-            height: desktop ? "85vh" : "50vh",
+            height: desktop ? "85dvh" : (tablet ? "70dvh" : "50dvh"),
             marginTop: "3%",
             overflow: "hidden"
         }}>
@@ -213,7 +187,7 @@ const Home = () => {
             style={{
                 position: "absolute",
                 width: "100%",
-                height: "70%",
+                height: desktop ? "70%" : (tablet ? "90%" : "70%"),
                 background: "linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0))",
                 borderRadius: "30px 0 0 30px",
                 zIndex: 1,
@@ -299,16 +273,15 @@ const Home = () => {
 
         </Box>
 
-        <div style={{marginTop: desktop ? "-2%" : (tablet ? "0%" : "-2%")}}>
+        <div style={{marginTop: desktop ? "0%" : (tablet ? "0%" : "3%")}}>
              
         <Box sx={{
-            width: "85%",
-            height: "30vh",
+            width: mobile ? "77%" : "85%",
+            height: "auto",
             display: mobile ? "grid" : (tablet ? "flex" : "flex"),
             gridTemplateColumns: "repeat(2, 1fr)",
-            gap: mobile ? "0%" : (tablet ? "10%" : "10%"),
+            gap: mobile ? "2%" : (tablet ? "10%" : "10%"),            
             margin: "0 auto",
-            marginBottom: "5%",
             alignItems: "center",
             justifyContent: "center"
         }}>
@@ -331,30 +304,12 @@ const Home = () => {
         </Box>
         </div>
 
-        <div>
-           <div style={{background: desktop ? 'linear-gradient(to right, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0.5))'
-      : 'linear-gradient(to bottom, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0))'}}>
-            <div style={{overflow: "hidden"}}>
-           {(mobile || tablet) && (
-                <div style={{ width: "300vw", height: "auto"}}>
-                    <OurServices></OurServices>
-                </div>
-                
-            )}
-            {desktop && (
-                <OurServices></OurServices>
-            )} 
-        </div>  
-
-        <div style={{ marginTop: mobile ? "12%" : (tablet ? "10%" : "10%")}}>
-            <AccomplishmentSlider accomplishmentsData={accomplishmentsData}></AccomplishmentSlider>
+        <div style={{height: "auto", background:'linear-gradient(to bottom, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0))', marginTop: mobile ? "3%" : ""}}>
+            <ServicesSlider/>  
+            <div style={{ marginTop: mobile ? "12%" : (tablet ? "15%" : "15%")}}>
+                <AccomplishmentSlider accomplishmentsData={accomplishmentsData}></AccomplishmentSlider>
+            </div>        
         </div>
-            
-
-        </div> 
-
-        </div>
-        
 
         <ClientsCarousel/>
         <OurPartners/> 

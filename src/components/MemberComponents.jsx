@@ -131,7 +131,7 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
             align="center"
             noWrap
             sx={{
-              fontWeight: 'bold',
+              fontWeight: 'Medium',
               fontSize: '13px',
               color: theme.palette.primary.main,
               fontFamily: theme.typography.fontFamily,

@@ -3,8 +3,11 @@ import { Box, Button, Link, Typography, useTheme, Container } from '@mui/materia
 import HeroImage from '../images/other/about-us.png'
 
 import Values from '../components/Values';
-import MandatesSection from '../components/MandatesSection';
+import Mandatos from '../components/Mandatos';
 import MapParallax from '../components/MapParallax';
+import { useMediaQuery } from 'react-responsive';
+import { tab } from '@testing-library/user-event/dist/tab';
+
 
 
 const AboutUs = () => {
@@ -20,6 +23,16 @@ const AboutUs = () => {
         }
     };
 
+
+    const smallMobile = useMediaQuery({ maxWidth: 650 });
+    const mobile = useMediaQuery({ minWidth: 651, maxWidth: 767 });
+    const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+    const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
+    const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
+    const largeDesktop = useMediaQuery({ minWidth: 1400 })
+
+
+
     return (
         <>
             {/* Hero Section */}
@@ -28,7 +41,8 @@ const AboutUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: '100vh',
+                    justifyContent: 'center',
+                    height: smallDesktop ? '50dvw' : tablet ? "55dvw" : mobile ? '62dvw' : smallMobile ? '62dvw' : '45dvw',
                     width: '100%',
                     position: 'relative',
                     overflowX: 'clip',
@@ -55,12 +69,10 @@ const AboutUs = () => {
                 <Box
                     sx={{
                         backgroundColor: 'white',
-                        borderRadius: '25px',
+                        borderRadius: '2dvw',
                         position: 'absolute',
-                        top: '55%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        width: '75%',
+                        top: largeDesktop ? '14dvw' : desktop ? '15dvw' : smallDesktop ? '17dvw' : tablet ? '20dvw' : '25dvw',
+                        width: '80dvw',
                         height: '65%',
                         zIndex: '1',
                     }}
@@ -71,29 +83,30 @@ const AboutUs = () => {
                             color: 'white',
                             borderRadius: '25px',
                             position: 'absolute',
-                            top: '0',
-                            left: '0',
-                            transform: 'translate(-40%, -50%)',
+                            top: smallDesktop ? "-4dvw" : tablet ? "-4.5dvw" : mobile ? "-5.5dvw" :smallMobile ? '-5.5dvw' : '-3.4dvw',
+                            left: '-15dvw',
                             width: '60%',
                             height: '17%',
+                            padding: '1dvw',
                             zIndex: '1',
                             textAlign: 'center',
                             justifyContent: 'center',
                             display: 'flex',
                             alignItems: 'center',
                             fontWeight: '700',
-                            fontSize: '2.5rem',
+                            fontSize: tablet ? "3dvw" : '2.5dvw',
                         }}
                     > About Us </Box>
                     <Typography
                         variant="h4"
                         sx={{
-                            textAlign: 'left',
-                            marginLeft: '5rem',
-                            marginTop: '4.5rem',
+                            position: "absolute",
+                            top: mobile ? "8dvw" :smallMobile ? '8dvw' : "6dvw",
+                            left: "4dvw",
                             color: theme.palette.secondary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '700',
+                            fontSize: mobile ? "3.5dvw" : smallMobile ? '3.5dvw' :'2.7dvw',
                         }}
                     >
                         We are
@@ -101,12 +114,13 @@ const AboutUs = () => {
                     <Typography
                         variant="h3"
                         sx={{
-                            textAlign: 'left',
-                            marginLeft: '5rem',
+                            position: "absolute",
+                            top: mobile ? "12dvw" : smallMobile ? '12dvw' :"10dvw",
+                            left: "4dvw",
                             color: theme.palette.primary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            fontSize: '3.3rem',
+                            fontSize: mobile ? "3.9dvw" : smallMobile ? '3.9dvw' :'3.3dvw',
                         }}
                     >
                         Junior Enterpreneurs.
@@ -114,14 +128,14 @@ const AboutUs = () => {
                     <Typography
                         variant="h4"
                         sx={{
-                            textAlign: 'left',
-                            marginLeft: '7rem',
-                            marginTop: '2rem',
+                            position: "absolute",
+                            top: mobile ? "17.5dvw" : smallMobile ? '17.5dvw' :"15dvw",
+                            left: "4dvw",
                             mb: '5rem',
                             color: theme.palette.secondary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Light',
-                            fontSize: '1.7rem',
+                            fontSize: mobile ? "3dvw" : smallMobile ? '3dvw' :'2.5dvw',
                         }}
                     >
                         Engineering Students <br />
@@ -132,11 +146,11 @@ const AboutUs = () => {
                     <img src={HeroImage} alt="Hero Image"
                         style={{
                             position: 'absolute',
-                            top: '6rem',
-                            right: '5rem',
+                            top: '6dvw',
+                            right: '5dvw',
                             width: '38%',
                             height: '55%',
-                            borderRadius: '25px',
+                            borderRadius: '2dvw',
                             zIndex: '1'
                         }} />
 
@@ -144,18 +158,17 @@ const AboutUs = () => {
                         sx={{
                             backgroundColor: theme.palette.secondary.main,
                             color: 'white',
-                            borderRadius: '25px',
+                            borderRadius: '2dvw',
                             position: 'absolute',
-                            bottom: '0',
-                            right: '0',
-                            transform: 'translate(25%, 50%)',
+                            bottom: tablet ? "-4.5dvw" : mobile ? "-10dvw" :smallMobile ? '-10dvw' : '-3.5dvw',
+                            left: '10dvw',
                             width: '80%',
-                            height: '20%',
+                            height: tablet ? "30%" : mobile ? "35%" :smallMobile ? '35%' : '20%',
                             zIndex: '1',
-                            pl: '5rem',
-                            pt: '1rem',
-                            pb: '0.5rem',
-                            pr: '20rem',
+                            pl: '3dvw',
+                            pt: mobile ? "3dvw" : '1dvw',
+                            pb: mobile ? "3dvw" : '1dvw',
+                            pr: '20dvw',
                             justifyContent: 'center',
                             textAlign: 'justify',
                             fontWeight: 'light',
@@ -173,16 +186,37 @@ const AboutUs = () => {
                 sx={{
                     display: 'flex',
                     flexDirection: 'row',
-                    alignItems: 'center',
+                    alignItems: 'flex-start',
                     justifyContent: 'center',
-                    height: '170vh',
+                    height: tablet ? "220vh" : mobile ? "220vh" :smallMobile ? '220vh' : '170vh',
                     width: '100%',
                     position: 'relative',
+                    overflow: "hidden", // remove this 
                 }}
             >
                 {/* Expandable boxes */}
-                <Container maxWidth="160vh" sx={{ position: "absolute", top: 75, display: 'flex', justifyContent: 'center', zIndex: "3" }}>
-                    <Box sx={{ display: 'flex', gap: 5 }}>
+                <Container
+                    sx={{
+                        position: "relative",
+                        marginTop: tablet ? "10dvw" : mobile ? "25dvw" :smallMobile ? '25dvw' : "7dvw",
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center', 
+                        alignContent: 'center', 
+                        zIndex: "3",
+                        // border: "1px solid blue",
+                    }}
+                >
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            flexDirection: tablet ? 'column' : mobile ? "column" :smallMobile ? 'column' : 'row', 
+                            gap: tablet ? 7 : mobile ? 5 :smallMobile ? 5 : 6,
+                            justifyContent: 'center',
+                            alignItems: 'center', 
+                            // border: "1px solid red",
+                        }}
+                    >
                         <Values
                             title="Mission"
                             subtitle="What impact do we <br>want to create?"
@@ -207,11 +241,12 @@ const AboutUs = () => {
                     </Box>
                 </Container>
 
+
                 <Typography
                     variant="h3"
                     sx={{
                         position: 'absolute',
-                        top: '25%',
+                        top: tablet ? "770px" : mobile ? "770px" :smallMobile ? '880px' : '350px',
                         textAlign: 'center',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
@@ -225,19 +260,20 @@ const AboutUs = () => {
                     variant="h2"
                     sx={{
                         position: 'absolute',
-                        top: '29%',
+                        top: tablet ? "50%" : mobile ? "50%" :smallMobile ? '50%' : '30%',
                         textAlign: 'center',
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Bold',
                         zIndex: '3',
+                        fontSize: tablet ? "6.5dvw" : mobile ? "8.5dvw" : smallMobile ? '8.5dvw' :"4.5dvw",
                     }}
                 >
                     Throughout the years
                 </Typography>
 
-                <Box sx={{ position: 'absolute', top: '40%', zIndex: 4 }}>
-                    <MandatesSection/>
+                <Box sx={{ position: 'absolute', top: tablet ? "57%" : mobile ? "57%" :smallMobile ? '57%' : '40%', zIndex: 4 }}>
+                    <Mandatos />
                 </Box>
 
                 <Box
@@ -256,28 +292,29 @@ const AboutUs = () => {
             <Box
                 sx={{
                     display: 'flex',
-                    flexDirection: 'row',
                     alignItems: 'flex-start',
                     justifyContent: 'center',
-                    height: '200vh',
+                    height: tablet ? '150dvw': mobile ? '150dvw' : smallMobile ? '150dvw' :'80dvw',
                     width: '100%',
                     position: 'relative',
                 }}
             >
                 <Box
                     sx={{
-                        position: 'absolute',
-                        top: '6%',
-                        left: '5%',
+                        position: 'relative',
+                        top: '4dvw',
+                        left: tablet ? '0dvw': mobile ? '0dvw' :smallMobile ? '0dvw' : '-17dvw',
                     }}
                 >
                     <Typography
                         variant="h5"
                         sx={{
+                            position: tablet ? 'relative': mobile ? 'relative' : smallMobile ? 'relative' : undefined,
+                            left: tablet ? '28dvw': mobile ? '28dvw' : smallMobile ? '28dvw' :undefined,
                             color: theme.palette.secondary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Bold',
-                            fontSize: '2.3rem',
+                            fontSize: tablet ? '4dvw': mobile ? '4.5dvw' : smallMobile ? '4,5dvw' : '2.3dvw',
                         }}
                     >
                         We're part of the
@@ -288,6 +325,7 @@ const AboutUs = () => {
                             color: theme.palette.primary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Bold',
+                            fontSize: tablet ? '7.7dvw': mobile ? '7.7dvw' : smallMobile ? '7.7dvw' :'4.7dvw',
                         }}
                     >
                         Junior Enterprise Network
@@ -297,11 +335,11 @@ const AboutUs = () => {
                     variant='h6'
                     sx={{
                         position: 'absolute',
-                        top: '20%',
+                        top:'18%',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Medium',
-                        fontSize: '1.5rem',
+                        fontSize: tablet ? '3.5dvw': mobile ? '3.5dvw' : smallMobile ? '3.5dvw' :'2.5dvw',
                     }}
                 >
                     “Europe’s future is in the hands of its young people.<br /> (…) Europe’s Junior Enterprises are leading the way.”
@@ -310,30 +348,33 @@ const AboutUs = () => {
                     variant='body2'
                     sx={{
                         position: 'absolute',
-                        top: '27%',
-                        textAlign: 'center',
+                        top: tablet ? '27%': mobile ? '27%' :smallMobile ? '27%' : '28%',
+                        right: tablet ? '10dvw' : mobile ? '10dvw' : smallMobile ? '10dvw' :undefined,
+                        textAlign: tablet ? 'right' : mobile ? 'right' : smallMobile ? 'right' :'center',
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Medium',
-                        fontSize: '1rem',
+                        fontSize: tablet ? '2.5dvw': mobile ? '2.5dvw' : smallMobile ? '2.5dvw' :'1.5dvw',
                     }}
                 >
                     Jean-Claude Juncker<br />European Comission, Former President
                 </Typography>
 
-                <MapParallax sx={{ }} />
+                <MapParallax sx={{}} />
 
 
                 {/* add a Button */}
+                
                 <Button
                     variant="contained"
+                    href='https://jeportugal.pt/en/je-network/'
                     sx={{
                         position: 'absolute',
-                        bottom: '10%',
+                        bottom: '5dvw',
                         backgroundColor: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
-                        fontSize: '2rem',
+                        fontSize: tablet ? '4dvw': mobile ? '4dvw' : smallMobile ? '4dvw' :"2dvw",
                         textTransform: 'none',
                         padding: '5px 50px',
                         borderRadius: '15px',

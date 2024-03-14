@@ -13,7 +13,7 @@ import fill from '../images/other/fill-img.png';
 import record from '../images/other/record-img.png';
 import group from '../images/other/group-img.png';
 import congrats from '../images/other/congrats-img.png';
-import interview from '../images/other/interview-img.jpg';
+import interview from '../images/other/interview-img.png';
 
 
 
@@ -109,8 +109,8 @@ const MiddleBox = ({ barheight }) => {
                 />
 
 
-
-                <CustomCircle icon={WriteIcon} posTop="12px" bgcolor={theme.palette.primary.main} fill="white" />
+                {/* <CustomCircle icon={WriteIcon} posTop="12px" bgcolor={theme.palette.primary.main} fill="white" /> */}
+                <CustomCircle icon={WriteIcon} posTop="12px" bgcolor={'#F0F0F0'} fill={theme.palette.primary.main} />  
                 <CustomCircle icon={CameraIcon} posTop="130px" bgcolor={cameraBG} fill={cameraFill} />
                 <CustomCircle icon={GroupIcon} posTop="248px" bgcolor={groupBG} fill={groupFill} />
                 <CustomCircle icon={ChatIcon} posTop="366px" bgcolor={chatBG} fill={chatFill} />
@@ -163,6 +163,7 @@ const MiddleBox = ({ barheight }) => {
                     </Typography>
                     <Button
                         variant="contained"
+                        href='https://forms.gle/NP4Eo4RUftMv4LFq7'
                         endIcon={<ArrowForwardIcon />}
                         sx={{
                             position: 'relative',

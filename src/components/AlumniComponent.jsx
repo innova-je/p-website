@@ -30,8 +30,8 @@ const CustomComponent = ({ name, description, testimony, image }) => {
   const containerStyle = {
     backgroundColor: theme.palette.primary.main,
     position: 'relative',
-    width: (desktop ? "18vw" : (tablet ? "20vw" : "35vw")),
-    height: (desktop ? "22vw" : (tablet ? "24vw" : "39vw")),
+    width: (desktop ? "18vw" : (tablet ? "25vw" : "40vw")),
+    height: (desktop ? "22vw" : (tablet ? "32vw" : "50vw")),
     overflow: 'visible',
     borderRadius: "5%",
     marginBottom: 35,
@@ -63,7 +63,7 @@ const CustomComponent = ({ name, description, testimony, image }) => {
     left: '50%',
     transform: 'translateX(-50%)',
     width: '100%',
-    height: isHovered ? '80%' : '50%',
+    height: isHovered ? '90%' : '50%',
     backgroundColor: 'white',
     padding: '5px',
     margin: 'auto',
@@ -107,7 +107,7 @@ const CustomComponent = ({ name, description, testimony, image }) => {
     height: "100%",
     zIndex: "100",
     position: "absolute",
-    top: "-30%",
+    top: desktop ? "-36%" : (tablet ? "-36%" : "-30%"),
     opacity: isHovered ? 1 : 0,
     transition: 'opacity 0.3s ease-in-out',
   };
@@ -128,7 +128,7 @@ const CustomComponent = ({ name, description, testimony, image }) => {
   };
 
   const testimonyStyle = {
-    fontSize: (desktop ? "1vw" : (tablet ? "1.7vw" : "2.5vw")),
+    fontSize: (desktop ? "1vw" : (tablet ? "1.5vw" : "2.6vw")),
     color: "#062533",
     fontFamily: theme.typography.fontFamily,
     width: "80%",
@@ -138,7 +138,8 @@ const CustomComponent = ({ name, description, testimony, image }) => {
     opacity: isHovered ? 1 : 0,    
     transition: 'height 0.3s ease-in-out, opacity 0.3s ease-in-out',
     textJustify: "auto",
-    textAlign: "justify"
+    textAlign: "justify",
+    lineHeight: "130%"
   };
 
   const handleClick = () => {
