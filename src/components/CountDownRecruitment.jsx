@@ -4,9 +4,18 @@ import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import { Box, Button, Link, Typography, useTheme } from '@mui/material';
 import Grid from '@mui/material/Grid';
+import { useMediaQuery } from 'react-responsive';
 
 const CountDownRecruitment = ({ title, year, mainAccomplishments, image, currentImageIndex, index }) => {
     const theme = useTheme();
+
+    const smallMobile = useMediaQuery({ maxWidth: 550 });
+    const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
+    const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+    const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
+    const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
+    const largeDesktop = useMediaQuery({ minWidth: 1400 })
+
     const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0 });
 
     // Calculate the remaining time until the event and update the countdown state
@@ -44,7 +53,7 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
         textAlign: 'center',
         color: theme.palette.primary.main,
         fontWeight: 400,
-        fontSize: '1.5rem',
+        fontSize: '2vw',
         opacity: 0.7,
         boxShadow: 'none'
     }));
@@ -52,65 +61,84 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
     return (<>
         <Box
             sx={{
-                width: '65%',
+                width: (mobile || smallMobile) ? "70%" : '50%',
+                height: (smallMobile || mobile) ? "25vh" : "15vh",
                 backgroundColor: '#fff',
                 borderRadius: '25px',
-                position: 'absolute',
-                top: '53%',
-                opacity: '0.85',
-                padding: '20px',
+                opacity: '0.9',
+                padding: (smallMobile || mobile) ? "0rem 3rem" : '1.5rem 4rem',
                 zIndex: '3',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
             }}
         >
-            <Grid
-                container
-                direction={['column', 'row']}
-                justifyContent="center"
-                alignItems={'center'}
-                spacing={2}
-            >
-                <Grid item xs={12} md={4}>
+            
+                <div style={{display: "flex", flexDirection: (smallMobile || mobile) ? "column" : "row", alignItems: "center", width: "100%",  gap: "10%"}}>
+                    <div style={{width: (smallMobile || mobile) ? "100%" : "40%", background: "red", height: "100%", display: "flex", alignItems:" center", justifyContent: "center"}}>
+                        
                     <Typography
                         variant="h6"
                         sx={{
-                            fontWeight: 'Light',
+                            fontWeight: 'Bold',
                             color: theme.palette.primary.main,
                             textTransform: 'uppercase',
+                            fontSize: mobile ? "4vw" : (smallMobile ? "6vw" : (desktop ? "2vw" : (largeDesktop ? "1.5vw" : "2vw"))),
+                            textAlign: !(mobile || smallMobile) ? "none" : "center"
                         }}
-                    >
-                        Recruitment <br /> Closes in
-                    </Typography>
-                </Grid>
-                <Grid item container direction="row" columnGap={12} xs={12} md={6}>
-                    <Stack spacing={2} xs={12} md={4}>
+                    >Recruitment {!(smallMobile || mobile) && (<br/>)} Closes in</Typography>   
+                        
+                    </div>                
+
+                    <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "row", gap: "10%",  alignItems: "center", justifyContent: "center"}}>
+                        <div style={{width:"20%"}}>
+                            <ItemCountDown>
+                                {countdown.days}
+                            </ItemCountDown>
+                            <ItemCountDownTitle>
+                                DAYS
+                            </ItemCountDownTitle>
+                        </div>
+                        <div style={{background: "green", display: "flex", height: "100%", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+                           <Typography sx={{textAlign: 'center',
+                            color: theme.palette.primary.main,
+                            fontWeight: 400,
+                            fontSize: '6vw',
+                            opacity: 0.7,
+                            boxShadow: 'none'
+                        }}>:</Typography> 
+                        </div>
+                        
+                        <div style={{width:"20%"}}>
                         <ItemCountDown>
-                            {countdown.days}
-                        </ItemCountDown>
-                        <ItemCountDownTitle>
-                            DAYS
-                        </ItemCountDownTitle>
-                    </Stack>
-                    <Stack spacing={2} xs={12} md={4}>
+                                {countdown.hours}
+                            </ItemCountDown>
+                            <ItemCountDownTitle>
+                                HOURS
+                            </ItemCountDownTitle>
+                        </div>
+
+                        <div style={{background: "green", display: "flex", height: "100%", flexDirection: "column", justifyContent: "center", alignItems: "flex-end"}}>
+                           <Typography sx={{textAlign: 'center',
+                            color: theme.palette.primary.main,
+                            fontWeight: 400,
+                            fontSize: '6vw',
+                            opacity: 0.7,
+                            boxShadow: 'none'
+                        }}>:</Typography> 
+                        </div>
+
+                        <div style={{width:"20%"}}>
                         <ItemCountDown>
-                            {countdown.hours}
-                        </ItemCountDown>
-                        <ItemCountDownTitle>
-                            HOURS
-                        </ItemCountDownTitle>
-                    </Stack>
-                    <Stack spacing={2} xs={12} md={4}>
-                        <ItemCountDown>
-                            {countdown.minutes}
-                        </ItemCountDown>
-                        <ItemCountDownTitle>
-                            MINUTES
-                        </ItemCountDownTitle>
-                    </Stack>
-                </Grid>
-            </Grid>
+                                {countdown.minutes}
+                            </ItemCountDown>
+                            <ItemCountDownTitle>
+                                MINUTES
+                            </ItemCountDownTitle>
+                        </div>
+                </div>
+
+                </div>
 
         </Box >
 

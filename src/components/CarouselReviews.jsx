@@ -136,10 +136,11 @@ const LogosSlider = () => {
             alignItems: 'center',
             justifyContent: 'center',
             position: 'relative',
-            top: '10%',
             width: '100%',
             height: 'auto',
             overflow: 'visible',
+            marginBottom: '5rem',
+            marginTop: '10%',
           }}>
           <Box sx={{ display: 'flex', gap: '1.5rem' }}>
             {divideIntoRows(testimonials, numColumns).map((row, rowIndex) => (
@@ -168,6 +169,8 @@ const LogosSlider = () => {
             touchAction: "none",
             display: "flex",
             justifyContent: "flex-start",
+            marginTop: mobile ?  '7rem' : "6rem",
+            marginBottom: mobile ?  '11rem' : "5rem",
           }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}

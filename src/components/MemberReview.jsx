@@ -17,7 +17,7 @@ const MemberReview = ({ image, name, department, text }) => {
             borderRadius="15px"
             overflow="hidden"
             p={1}
-            width={desktop ? '20dvw' : smallDesktop ? '20dvw' : tablet ? '25dvw' : mobile ? '55dvw' : smallMobile ? '75dvw' : '18dvw'}
+            width={desktop ? '20dvw' : smallDesktop ? '20dvw' : tablet ? '20dvw' : mobile ? '55dvw' : smallMobile ? '75dvw' : '18dvw'}
             textAlign="center"
             bgcolor="white"
             boxShadow={3}

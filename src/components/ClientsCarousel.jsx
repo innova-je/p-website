@@ -51,10 +51,7 @@ const ClientsCarousel = () => {
     marginTop: mobile ? "10%" : (tablet ? "3%" : "3%"),
     alignItems: "center",
     justifyContent: "center",
-    animation: `${slideAnimation} 25s infinite linear`,
-    '&:hover': {
-      animationPlayState: 'paused',
-    },
+    animation: `${slideAnimation} 30s infinite linear`,
     height: mobile ? "15vh" : (tablet ? "15vh" : "25vh"),
     width: mobile ? "400vw" : "200vw"
   }));
@@ -73,6 +70,18 @@ const ClientsCarousel = () => {
       <Typography style={ClientsAndPartnersStyle}>Who Trusted Us</Typography>
       <div>
         <LogosSlide className="logos-slide">
+        {clientsData.map((client, index) => (
+          <div key={index} style={{ height: '100%', width: 'auto', display: 'flex', alignItems: 'center' }}>
+            <img
+              alt={`${client.name} Logo`}
+              src={client.logoSrc}
+              style={{ width: '100%', height: 'auto', transform: mobile ? `scale(${3*client.scale})` : `scale(${client.scale})`}}
+            />
+          </div>
+        ))}
+      </LogosSlide>
+
+      <LogosSlide style={{margin: mobile ? "0 0 0 50%" : "0 0 0 20%"}} className="logos-slide">
         {clientsData.map((client, index) => (
           <div key={index} style={{ height: '100%', width: 'auto', display: 'flex', alignItems: 'center' }}>
             <img

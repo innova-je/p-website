@@ -27,8 +27,8 @@ const CustomCircle = ({ icon: IconComponent, posTop, bgcolor, fill }) => {
         <>
             <Box
                 sx={{
-                    width: tablet ? '50px' : mobile ? '50px' : smallMobile ? '40px' : '60px',
-                    height: tablet ? '50px' : mobile ? '50px' : smallMobile ? '40px' : '60px',
+                    width: tablet ? '60px' : mobile ? '50px' : smallMobile ? '40px' : '60px',
+                    height: tablet ? '60px' : mobile ? '50px' : smallMobile ? '40px' : '60px',
                     borderRadius: '50%',
                     backgroundColor: bgcolor, // F0F0F0
                     display: 'flex',
@@ -40,7 +40,7 @@ const CustomCircle = ({ icon: IconComponent, posTop, bgcolor, fill }) => {
                     transition: 'background-color 0.8s, fill 0.5s'
                 }}
             >
-                {IconComponent && <IconComponent height={tablet ? 25 : mobile ? 25 : smallMobile ? 20 : 35} style={{ fill: fill }} />}
+                {IconComponent && <IconComponent height={tablet ? 30 : mobile ? 25 : smallMobile ? 20 : 35} style={{ fill: fill }} />}
 
             </Box>
         </>
@@ -91,7 +91,7 @@ const MiddleBox = ({ barheight }) => {
             {/* First Box */}
             <Box
                 sx={{
-                    width: tablet ? '25%' : mobile ? '25%' : smallMobile ? '25%' :'20%',
+                    width: tablet ? '25%' : mobile ? '25%' : smallMobile ? '25%' : '20%',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
@@ -106,7 +106,7 @@ const MiddleBox = ({ barheight }) => {
                         backgroundColor: '#F0F0F0',
                         height: '100%',
                         width: '15px',
-                        marginTop: 2,
+                        marginTop: tablet ? 5 : mobile ? 5 : smallMobile ? 5 : 15,
                         position: 'absolute',
                     }}
                 >
@@ -127,10 +127,10 @@ const MiddleBox = ({ barheight }) => {
 
                 {/* <CustomCircle icon={WriteIcon} posTop="12px" bgcolor={theme.palette.primary.main} fill="white" /> */}
                 <CustomCircle icon={WriteIcon} posTop="2dvw" bgcolor={'#F0F0F0'} fill={theme.palette.primary.main} />
-                <CustomCircle icon={CameraIcon} posTop={tablet ? '12dvw' : mobile ? '15dvw' : smallMobile ? '18dvw' :"9dvw"} bgcolor={cameraBG} fill={cameraFill} />
-                <CustomCircle icon={GroupIcon} posTop={tablet ? '22dvw' : mobile ? '34dvw' : smallMobile ? '44dvw' :"17dvw"} bgcolor={groupBG} fill={groupFill} />
+                <CustomCircle icon={CameraIcon} posTop={tablet ? '12dvw' : mobile ? '15dvw' : smallMobile ? '18dvw' : "9dvw"} bgcolor={cameraBG} fill={cameraFill} />
+                <CustomCircle icon={GroupIcon} posTop={tablet ? '22dvw' : mobile ? '34dvw' : smallMobile ? '44dvw' : "17dvw"} bgcolor={groupBG} fill={groupFill} />
                 <CustomCircle icon={ChatIcon} posTop={tablet ? '31dvw' : mobile ? '45dvw' : smallMobile ? '59dvw' : "25dvw"} bgcolor={chatBG} fill={chatFill} />
-                <CustomCircle icon={InnovaIcon} posTop={tablet ? '40dvw' : mobile ? '55dvw' : smallMobile ? '74dvw' :"33dvw"} bgcolor={innovaBG} fill={innovaFill} />
+                <CustomCircle icon={InnovaIcon} posTop={tablet ? '40dvw' : mobile ? '55dvw' : smallMobile ? '74dvw' : "33dvw"} bgcolor={innovaBG} fill={innovaFill} />
 
             </Box>
 
@@ -150,7 +150,7 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: tablet ? '3%' : mobile ? '3%' : smallMobile ? '3%' :'5%',
+                        top: tablet ? '3%' : mobile ? '3%' : smallMobile ? '3%' : '5%',
                     }}
                 >
                     <Typography
@@ -363,13 +363,14 @@ const HowToApply = ({ progress }) => {
 
         <Box
             sx={{
-                position: 'absolute',
-                top: '25%',
-                width: tablet ? '75dvw' : mobile ? '75dvw' : smallMobile ? '80dvw' : '65dvw',
-                height: tablet ? '50dvw' : mobile ? '70dvw' : smallMobile ? '90dvw' : '41dvw',
+                position: 'relative',
+                top: '4rem',
+                width: tablet ? '75dvw' : mobile ? '75dvw' : smallMobile ? '75dvw' : '65dvw',
+                height: tablet ? '50dvw' : mobile ? '65dvw' : smallMobile ? '85dvw' : '41dvw',
                 backgroundColor: 'white',
                 borderRadius: '20px',
                 display: 'flex',
+                marginBottom: '6rem',
             }}
         >
 
