@@ -13,7 +13,7 @@ const MemberReview = ({ image, name, department, text }) => {
             borderRadius="15px"
             overflow="hidden"
             p={1}
-            width= {mobile ? '55dvw' : (smallMobile ? '75dvw' : '30dvw')}
+            width= {mobile ? '55dvw' : (smallMobile ? '75dvw' : '18dvw')}
             textAlign="center"
             bgcolor="white"
             boxShadow={3}
@@ -22,7 +22,7 @@ const MemberReview = ({ image, name, department, text }) => {
 
                 transition: 'transform 0.2s ease-in-out',
                 '&:hover': {
-                    transform: mobile ? undefined : smallMobile ? undefined : 'scale(1.1)', 
+                    transform: mobile ? undefined : smallMobile ? undefined : 'scale(1.05)', 
                 },
             }}
         >

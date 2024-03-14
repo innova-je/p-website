@@ -104,68 +104,58 @@ const LogosSlider = () => {
   const smallMobile = useMediaQuery({ maxWidth: 550 });
   const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
 
+  const testimonials = Testimonials.testimonials;
+  const [numColumns, setNumColumns] = useState(1);
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+    const desiredWidthPercentage = 0.5; // 80% of screen width
+    const columnWidth = 230; // Width of each column in pixels (adjust as needed)
+    const calculatedColumns = Math.floor(screenWidth * desiredWidthPercentage / columnWidth);
+    setNumColumns(calculatedColumns > 0 ? calculatedColumns : 1);
+  }, []);
+
+  const divideIntoRows = (testimonials, numColumns) => {
+    const rows = [];
+    const numRows = Math.ceil(testimonials.length / numColumns);
+    for (let i = 0; i < numRows; i++) {
+      rows.push(testimonials.slice(i * numColumns, (i + 1) * numColumns));
+    }
+    return rows;
+  };
+
   return (
     <>
       {isDesktopOrLaptop ? (
-        <>
         <Box
           sx={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '2.5rem',
             position: 'relative',
             top: '10%',
             width: '100%',
             height: 'auto',
             overflow: 'visible',
-          }}
-        >
-          {/* First Row */}
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '2.5rem',
-            }}
-          >
-            {Testimonials.testimonials.slice(0, Math.ceil(Testimonials.testimonials.length / 2)).map((testimonial, index) => (
-              <MemberReview
-                key={index}
-                image={testimonial.image}
-                name={testimonial.name}
-                department={testimonial.department}
-                text={testimonial.quote}
-                sx={{ position: "relative", zIndex: 2 }}
-              />
-            ))}
-          </Box>
-      
-          {/* Second Row */}
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '2.5rem',
-            }}
-          >
-            {Testimonials.testimonials.slice(Math.ceil(Testimonials.testimonials.length / 2)).map((testimonial, index) => (
-              <MemberReview
-                key={index}
-                image={testimonial.image}
-                name={testimonial.name}
-                department={testimonial.department}
-                text={testimonial.quote}
-                sx={{ position: "relative", zIndex: 2 }}
-              />
+          }}>
+          <Box sx={{ display: 'flex', gap: '1.5rem' }}>
+            {divideIntoRows(testimonials, numColumns).map((row, rowIndex) => (
+              <div key={rowIndex} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                {row.map((testimonial, index) => (
+                  <MemberReview
+                    key={index}
+                    image={testimonial.image}
+                    name={testimonial.name}
+                    department={testimonial.department}
+                    text={testimonial.quote}
+                  />
+                ))}
+              </div>
             ))}
           </Box>
         </Box>
-      </>
-      
       ) : (
-
         <div
           ref={containerRef}
           style={{
@@ -191,7 +181,7 @@ const LogosSlider = () => {
             }}
             onTransitionEnd={handleTransitionEnd}
           >
-            {Testimonials.testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial, index) => (
               <MemberReview
                 key={index}
                 image={testimonial.image}

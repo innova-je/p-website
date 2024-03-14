@@ -352,7 +352,7 @@ const JoinUs = () => {
                         flexDirection: "column",
                         justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-start',
                         alignItems: 'flex-start',
-                        height: mobile ? '80vh' : smallMobile ? '80vh' : '120vh',
+                        height: mobile ? '80vh' : smallMobile ? '80vh' : '170vh',
                         overflow: 'hidden',
                         backgroundImage: `linear-gradient(to top, ${theme.palette.primary.main} ${gradientPercentage}, rgba(255,255,255,0))`,
 
