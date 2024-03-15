@@ -52,7 +52,7 @@ const MandatesSection = () => {
             <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
                 {mandate ? (
                     <>
-                        <div style={{ marginLeft:index === 1 ? '-10px' : '-70px', flex: '0 0 auto', width: index === 1 ? '200px' : '150px' }}>
+                        <div style={{ marginLeft:index === 1 ? '-1dvw' : '-20dvw', flex: '0 0 auto', width: index === 1 ? '50dvw' : '35dvw' }}>
                             <img
                                 src={images[index]}
                                 alt={mandates[index].title}
@@ -65,14 +65,14 @@ const MandatesSection = () => {
                                 }}
                             />
                         </div>
-                        <div style={{width: '9rem', opacity: index === 1 ? 1 : 0.5,}}>
-                            <Typography variant="subtitle1"  style={{ fontSize: index === 1 ? '1.2rem' : '1rem', color:'white' }}>
+                        <div style={{width: '40dvw', opacity: index === 1 ? 1 : 0.5,}}>
+                            <Typography variant="subtitle1"  style={{ fontSize: index === 1 ? '6dvw' : '3dvw', color:'white' }}>
                                 {mandate.title}
                             </Typography>
-                            <Typography variant="body2"  style={{ fontSize: index === 1 ? '1rem' : '0.8dvw', color:'white' }}>
+                            <Typography variant="body2"  style={{ fontSize: index === 1 ? '3.5dvw' : '2dvw', color:'white' }}>
                                 Year: {mandate.year}
                             </Typography>
-                            <Typography variant="body2"  style={{ fontSize: index === 1 ? '1rem' : '1.2dvw', color:'white' }}>
+                            <Typography variant="body2"  style={{ fontSize: index === 1 ? '3.5dvw' : '1.8dvw', color:'white' }}>
                                 {mandate.mainAccomplishments}
                             </Typography>
                         </div>
