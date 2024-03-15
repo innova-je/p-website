@@ -106,10 +106,10 @@ const Technologies = () => {
     ];
 
     return (
-        <div style={{ width: "100vw", height: "auto", background: "green", display: "grid", gridTemplateColumns: "1fr", gridTemplateRows: "1fr", placeItems: "center", justifyContent: "center", alignItems: "center" }}>
+        <div style={{ width: "100vw", height:(mobile || smallMobile) ? "60vh" : "100vh",  background: "green",  display: "grid", gridTemplateColumns: "1fr", gridTemplateRows: "1fr", placeItems: "center", justifyContent: "center", alignItems: "center" }}>
             {/* Texts */}
-            <div style={{width: "100%", height: "100%", background: "purple", display: "flex", alignItems: "center", justifyContent: "center"}}>
-            <div style={{width: "100%"}}>
+            <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+            
             <Typography variant="h4"
                             sx={{
                                 color: theme.palette.secondary.main,
@@ -117,7 +117,7 @@ const Technologies = () => {
                                 fontWeight: 'Semi-Bold',
                                 width: "100%",
                                 textAlign: "center",
-                                fontSize: smallDesktop ? '4dvw' : tablet ? '4.5dvw' : mobile ? '5dvw' : smallMobile ? '5.7dvw' : '2.5dvw',
+                                fontSize: smallDesktop ? '4dvw' : tablet ? '4.5dvw' : mobile ? '6.5dvw' : smallMobile ? '7dvw' : '2.5dvw',
                                 
                             }}>
                             You will
@@ -128,7 +128,7 @@ const Technologies = () => {
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'Bold',
                                 textAlign: "center",
-                                fontSize: smallDesktop ? '5.5dvw' : tablet ? '6dvw' : mobile ? '6.5dvw' : smallMobile ? '7dvw' : '4.5dvw',
+                                fontSize: smallDesktop ? '5.5dvw' : tablet ? '6dvw' : mobile ? '8.5dvw' : smallMobile ? '8dvw' : '4.5dvw',
                             }}>
                             learn something
                         </Typography>
@@ -140,7 +140,7 @@ const Technologies = () => {
                                 fontWeight: 'bold',
                                 opacity: '0.66',
                                 textAlign: "center",
-                                fontSize: smallDesktop ? '4.5dvw' : tablet ? '5dvw' : mobile ? '5.5dvw' : smallMobile ? '6dvw' : '3.5dvw',
+                                fontSize: smallDesktop ? '4.5dvw' : tablet ? '5dvw' : mobile ? '6dvw' : smallMobile ? '7dvw' : '3.5dvw',
                             }}>
                             every.single.day
                         </Typography>
@@ -152,24 +152,24 @@ const Technologies = () => {
                                 fontFamily: theme.typography.fontFamily,
                                 opacity: '0.7',
                                 textAlign: "center",
-                                fontSize: smallDesktop ? '1.3dvw' : tablet ? '1.8dvw' : mobile ? '2.2dvw' : smallMobile ? '3dvw' : '1.2dvw',
+                                fontSize: smallDesktop ? '1.3dvw' : tablet ? '1.8dvw' : mobile ? '3dvw' : smallMobile ? '4.2dvw' : '1.2dvw',
 
                             }}>
                             These are some technologies we use.<br />
-                            If you have something new to teach us, join the team!
+                            If you have something new to teach us, {(mobile || smallMobile) && (<br/>)}  join the team!
                         </Typography>
             </div>
-            </div>
             
-            
-            <div style={{ ...circleStyle, width: '45vw', height: '40vh', zIndex: 3, gridColumn: "1 / 1", gridRow: "1 / 1", background: "blue" }}>
-                {distributeImages(700, 600, circle1Images, 60, 60)}
-            </div>
-            <div style={{ ...circleStyle, width: '65vw', height: '60vh', zIndex: 2, gridColumn: "1 / 1", gridRow: "1 / 1", background: "red" }}>
-                {distributeImages(1000, 800, circle2Images, 60, 60)}
-            </div>
-            <div style={{ ...circleStyle, width: '90vw', height: '85vh', zIndex: 1, gridColumn: "1 / 1", gridRow: "1 / 1", background: "orange"}}>
-                {distributeImages(1350, 900, circle3Images, 60, 60)}
+            <div style={{display:(mobile || smallMobile) ? "none" : "flex"}}>
+                <div style={{ ...circleStyle, width: '45vw', height: '40vh', zIndex: 3, gridColumn: "1 / 1", gridRow: "1 / 1", background: "blue" }}>
+                    {distributeImages(700, 600, circle1Images, 60, 60)}
+                </div>
+                <div style={{ ...circleStyle, width: '65vw', height: '60vh', zIndex: 2, gridColumn: "1 / 1", gridRow: "1 / 1", background: "red" }}>
+                    {distributeImages(1000, 800, circle2Images, 60, 60)}
+                </div>
+                <div style={{ ...circleStyle, width: '90vw', height: '85vh', zIndex: 1, gridColumn: "1 / 1", gridRow: "1 / 1", background: "orange"}}>
+                    {distributeImages(1350, 900, circle3Images, 60, 60)}
+                </div>
             </div>
         </div>
     );

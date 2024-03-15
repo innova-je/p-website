@@ -367,6 +367,7 @@ const HowToApply = ({ progress }) => {
                 top: '4rem',
                 width: tablet ? '75dvw' : mobile ? '75dvw' : smallMobile ? '75dvw' : '65dvw',
                 height: tablet ? '50dvw' : mobile ? '65dvw' : smallMobile ? '85dvw' : '41dvw',
+                //height: "auto",
                 backgroundColor: 'white',
                 borderRadius: '20px',
                 display: 'flex',
