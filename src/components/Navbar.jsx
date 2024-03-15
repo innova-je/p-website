@@ -43,21 +43,6 @@ const Navbar = () => {
   const [anchorElDropdown1, setAnchorElDropdown1] = React.useState(null);
   const [anchorElDropdown2, setAnchorElDropdown2] = React.useState(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (anchorElDropdown1 || anchorElDropdown2) {
-        setAnchorElDropdown1(null);
-        setAnchorElDropdown2(null);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [anchorElDropdown1, anchorElDropdown2]);
-
   const handleMenuClick = (event, dropdown) => {
     if (dropdown === 'dropdown1') {
       setAnchorElDropdown1(event.currentTarget);
