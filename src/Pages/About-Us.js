@@ -188,8 +188,8 @@ const AboutUs = () => {
             </Box>
 
 
-            <Box
-                sx={{
+            <div
+                style={{
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -264,7 +264,7 @@ const AboutUs = () => {
                     Throughout the years
                 </Typography>
 
-                <Box sx={{ position: 'relative',mt:'4rem', zIndex: 4, mb:"4dvw" }}>
+                <Box sx={{ position: 'relative',mt:'4dvw', zIndex: 4, mb:"4dvw" }}>
                     <MandatesSection />
                 </Box>
 
@@ -279,7 +279,7 @@ const AboutUs = () => {
                             'linear-gradient(to top, rgba(115,32,67,1), rgba(115,32,67,0))',
                     }}
                 />
-            </Box>
+            </div>
 
             <Box
                 sx={{

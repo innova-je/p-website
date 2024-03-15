@@ -108,9 +108,9 @@ const MandatesSection = () => {
             )}
 
             {isDesktopOrLaptop && (
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
                     {visibleMandates.map((mandate, index) => (
-                        <div key={index} style={{ textAlign: 'center', height: '100vh', margin: '0 70px' }}>
+                        <div key={index} style={{ textAlign: 'center', margin: '0 70px' }}>
                             {mandate ? (
                                 <Mandate
                                     title={mandate.title}
