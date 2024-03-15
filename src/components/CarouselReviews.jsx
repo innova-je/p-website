@@ -139,8 +139,7 @@ const LogosSlider = () => {
             width: '100%',
             height: 'auto',
             overflow: 'visible',
-            marginBottom: '5rem',
-            marginTop: '10%',
+            padding: '5% 0 5% 0'
           }}>
           <Box sx={{ display: 'flex', gap: '1.5rem' }}>
             {divideIntoRows(testimonials, numColumns).map((row, rowIndex) => (
@@ -165,12 +164,11 @@ const LogosSlider = () => {
             position: "relative",
             overflow: "visible",
             width: "50%",
-            top: mobile ? "20dvw" : smallMobile ? '15dvw' : "45%",
             touchAction: "none",
             display: "flex",
-            justifyContent: "flex-start",
-            marginTop: mobile ?  '7rem' : "6rem",
-            marginBottom: mobile ?  '11rem' : "5rem",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: '10% 0 10% 0',
           }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -193,7 +191,7 @@ const LogosSlider = () => {
                 name={testimonial.name}
                 department={testimonial.department}
                 text={testimonial.quote}
-                sx={{ position: "absolute", left: "50%", zIndex: 2 }}
+                sx={{ zIndex: 2 }}
               />
             ))}
           </div>
