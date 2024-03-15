@@ -151,77 +151,31 @@ const JoinUs = () => {
 
                 {/*----------------------------------------------------*/}
 
-                <div style={{ height: "auto", width: "100%", position: "relative", top: 0, background: "red" }}>
+                <div style={{overflow: "hidden", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", width: "100%",
+            background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))'}}>
                     {/* 2nd Section*/}
                     <Box
                         sx={{
                             position: 'relative', // Make the box a positioning context for absolute positioning inside
                             display: 'flex',
                             flexDirection: 'column',
-                            alignItems: 'center',
-                            overflow: 'hidden',
+                            alignItems: 'center',                            
+                            //overflow: 'hidden',
                         }}
                     >
+
+                        <div>
+                            
+                        </div>
+                        
+
                         {/* Circles */}
-                        {smallMobile || mobile || tablet || smallDesktop ? (
+                        {smallMobile || mobile ? (
                             <>
                             </>
                         ) : (
                             <Technologies />
                         )}
-
-                        <Technologies />
-
-                        {/* Texts */}
-                        <Typography variant="h4"
-                            sx={{
-                                color: theme.palette.secondary.main,
-                                fontFamily: theme.typography.fontFamily,
-                                fontWeight: 'Semi-Bold',
-                                width: "100%",
-                                textAlign: "center",
-                                fontSize: smallDesktop ? '4dvw' : tablet ? '4.5dvw' : mobile ? '5dvw' : smallMobile ? '5.7dvw' : '2.5dvw',
-                                marginTop: tablet ? undefined : mobile ? undefined : smallMobile ? undefined : '30px',
-                            }}>
-                            You will
-                        </Typography>
-                        <Typography variant="h2"
-                            sx={{
-                                color: theme.palette.primary.main,
-                                fontFamily: theme.typography.fontFamily,
-                                fontWeight: 'Bold',
-                                textAlign: "center",
-                                fontSize: smallDesktop ? '5.5dvw' : tablet ? '6dvw' : mobile ? '6.5dvw' : smallMobile ? '7dvw' : '4.5dvw',
-                            }}>
-                            learn something
-                        </Typography>
-                        <Typography variant="h3"
-                            sx={{
-                                marginBottom: '20px',
-                                color: theme.palette.primary.main,
-                                fontFamily: theme.typography.fontFamily,
-                                fontWeight: 'bold',
-                                opacity: '0.66',
-                                textAlign: "center",
-                                fontSize: smallDesktop ? '4.5dvw' : tablet ? '5dvw' : mobile ? '5.5dvw' : smallMobile ? '6dvw' : '3.5dvw',
-                            }}>
-                            every.single.day
-                        </Typography>
-                        <Typography variant="body1"
-                            sx={{
-                                marginBottom: '20px',
-                                textAlign: 'center',
-                                color: theme.palette.secondary.main,
-                                fontFamily: theme.typography.fontFamily,
-                                opacity: '0.7',
-                                textAlign: "center",
-                                fontSize: smallDesktop ? '1.3dvw' : tablet ? '1.8dvw' : mobile ? '2.2dvw' : smallMobile ? '3dvw' : '1.2dvw',
-
-                            }}>
-                            These are some technologies we use.<br />
-                            If you have something new to teach us, join the team!
-                        </Typography>
-
 
 
                         {/* <Button
@@ -252,19 +206,31 @@ const JoinUs = () => {
                     position: "relative",
                     flexDirection: mobile || smallMobile ? 'column' : 'row',
                     width: "100dvw",
-                    height: "auto",
+                    height: "80vh",
                     background: `linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url(${joinus_elements})`,
-                    marginTop: mobile || smallMobile ? "10%" : "0%"
+                    marginTop: mobile || smallMobile ? "10%" : "0%",
                 }}>
                     {/* 3rd Section */}
-                    <div style={{ position: "relative", padding: "0 2rem", display: "flex", flexDirection: "column", width: "100%", height: "100%", justifyContent: "center", alignItems: "center" }}>
+                    <div style={{ padding: "0 3rem", display: "flex", flexDirection: "column", width: "100%", height: (mobile || smallMobile) ? "auto" : "100%", justifyContent: "center", alignItems: "center", background: "green" }}>
+                        {(mobile || smallMobile) && (
+                            <div style={{ height: "100%"}}>
+                            <img
+                                src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
+                                alt='joinus_oof'
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                }}
+                            />
+                        </div> 
+                        )}
                         <h3
                             style={{
                                 width: "fit-content",
                                 color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'bold',
-                                fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '3.5dvw',
+                                fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '3.3dvw',
                                 textAlign: "center",
                                 whiteSpace: "nowrap"
                             }}
@@ -290,7 +256,7 @@ const JoinUs = () => {
                                 color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'bold',
-                                fontSize: mobile ? '7dvw' : smallMobile ? '7.5dvw' : '3.5dvw',
+                                fontSize: mobile ? '7dvw' : smallMobile ? '7.5dvw' : '3.3dvw',
                             }}
                         >
                             a lot of fun!
@@ -304,23 +270,25 @@ const JoinUs = () => {
                                 px: '25px',
                                 fontSize: mobile ? '3dvw' : smallMobile ? '3dvw' : '1dvw',
                                 textTransform: 'none',
-                                mt: '1.5rem'
+                                mt: '2rem'
                             }}
                         >
                             Out of Office
                         </Button>
                     </div>
-                    <div style={{ height: "auto", width: "100%", position: 'relative' }}>
-                        <img
-                            src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
-                            alt='joinus_oof'
-                            style={{
-                                width: '100%',
-                                height: 'auto',
-                            }}
-                        />
 
-                    </div>
+                    {!(mobile || smallMobile) && (
+                        <div style={{ height: "100%"}}>
+                            <img
+                                src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
+                                alt='joinus_oof'
+                                style={{
+                                    width: 'auto',
+                                    height: '100%',
+                                }}
+                            />
+                        </div> 
+                    )}                   
 
                 </div>
 

@@ -70,12 +70,13 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                 zIndex: '3',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                overflow: "hidden"
             }}
         >
             
                 <div style={{display: "flex", flexDirection: (smallMobile || mobile) ? "column" : "row", alignItems: "center", width: "100%",  gap: "10%"}}>
-                    <div style={{width: (smallMobile || mobile) ? "100%" : "40%", background: "red", height: "100%", display: "flex", alignItems:" center", justifyContent: "center"}}>
+                    <div style={{width: (smallMobile || mobile) ? "100%" : "40%", height: "100%", display: "flex", alignItems:" center", justifyContent: "center"}}>
                         
                     <Typography
                         variant="h6"
@@ -90,7 +91,7 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                         
                     </div>                
 
-                    <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "row", gap: "10%",  alignItems: "center", justifyContent: "center"}}>
+                    <div style={{width: "80%",  display: "flex", flexDirection: "row", gap: "10%",  alignItems: "center", justifyContent: (mobile || smallMobile) ? "center" : "right"}}>
                         <div style={{width:"20%"}}>
                             <ItemCountDown>
                                 {countdown.days}
@@ -99,13 +100,14 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                                 DAYS
                             </ItemCountDownTitle>
                         </div>
-                        <div style={{background: "green", display: "flex", height: "100%", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+
+                        <div style={{marginTop: "-10%"}}>
                            <Typography sx={{textAlign: 'center',
                             color: theme.palette.primary.main,
                             fontWeight: 400,
                             fontSize: '6vw',
                             opacity: 0.7,
-                            boxShadow: 'none'
+                            boxShadow: 'none',
                         }}>:</Typography> 
                         </div>
                         
@@ -118,13 +120,13 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                             </ItemCountDownTitle>
                         </div>
 
-                        <div style={{background: "green", display: "flex", height: "100%", flexDirection: "column", justifyContent: "center", alignItems: "flex-end"}}>
+                        <div style={{marginTop: "-10%"}}>
                            <Typography sx={{textAlign: 'center',
                             color: theme.palette.primary.main,
                             fontWeight: 400,
                             fontSize: '6vw',
                             opacity: 0.7,
-                            boxShadow: 'none'
+                            boxShadow: 'none',
                         }}>:</Typography> 
                         </div>
 
