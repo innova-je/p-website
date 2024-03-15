@@ -264,7 +264,7 @@ const AboutUs = () => {
                     Throughout the years
                 </Typography>
 
-                <Box sx={{ position: 'relative',mt:'4rem', zIndex: 4 }}>
+                <Box sx={{ position: 'relative',mt:'4rem', zIndex: 4, mb:"4dvw" }}>
                     <MandatesSection />
                 </Box>
 
