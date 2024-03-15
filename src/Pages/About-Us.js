@@ -203,7 +203,7 @@ const AboutUs = () => {
                 <Box
                     sx={{
                         display: 'flex',
-                        mt: '5rem',
+                        mt: smallMobile ? "20dvw" : '5dvw',
                         flexDirection: tablet ? 'column' : mobile ? "column" : smallMobile ? 'column' : 'row',
                         gap: tablet ? 7 : mobile ? 5 : smallMobile ? 5 : 6,
                         justifyContent: 'center',
