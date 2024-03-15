@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AppBar, Toolbar, Button, Menu, MenuItem, styled  } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -43,6 +43,21 @@ const Navbar = () => {
   const [anchorElDropdown1, setAnchorElDropdown1] = React.useState(null);
   const [anchorElDropdown2, setAnchorElDropdown2] = React.useState(null);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (anchorElDropdown1 || anchorElDropdown2) {
+        setAnchorElDropdown1(null);
+        setAnchorElDropdown2(null);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [anchorElDropdown1, anchorElDropdown2]);
+
   const handleMenuClick = (event, dropdown) => {
     if (dropdown === 'dropdown1') {
       setAnchorElDropdown1(event.currentTarget);
@@ -65,6 +80,7 @@ const Navbar = () => {
         color="inherit"
         onClick={(event) => handleMenuClick(event, dropdown)}
         style={{ color: '#732043', fontWeight: 'bold', textTransform: 'none', fontSize: '18px'}}
+        disableScrollLock={true} 
       >
         {label} <ArrowDropDownIcon />
       </Button>
@@ -72,6 +88,7 @@ const Navbar = () => {
         anchorEl={dropdown === 'dropdown1' ? anchorElDropdown1 : anchorElDropdown2}
         open={Boolean(dropdown === 'dropdown1' ? anchorElDropdown1 : anchorElDropdown2)}
         onClose={() => handleMenuClose(dropdown)}
+        disableScrollLock={true} 
       >
         {subPages.map((subPage) => (
           <MenuItem
@@ -128,7 +145,7 @@ const Navbar = () => {
         display: "flex",
         alignItems: "center",
         flexDirection: "row",
-        overflow: "hidden",
+        overflow: "visible",
         
       }}>
         
