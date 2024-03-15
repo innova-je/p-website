@@ -271,10 +271,10 @@ const AboutUs = () => {
                 <Box
                     sx={{
                         position: 'absolute',
-                        zIndex: '2',
+                        zIndex: '1',
                         bottom: -1,
                         width: '100%',
-                        height: '80%',
+                        height: '100%',
                         backgroundImage:
                             'linear-gradient(to top, rgba(115,32,67,1), rgba(115,32,67,0))',
                     }}

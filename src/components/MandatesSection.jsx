@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { IconButton, Typography } from '@mui/material';
@@ -11,6 +11,19 @@ const MandatesSection = () => {
     const isDesktopOrLaptop = useMediaQuery({ minWidth: 767 });
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const mandates = Mandates.mandates;
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+        const importImages = async () => {
+            const importedImages = [];
+            for (let mandate of mandates) {
+                const { default: image } = await import(`../images/Mandates/${mandate.image}`);
+                importedImages.push(image);
+            }
+            setImages(importedImages);
+        };
+        importImages();
+    }, [mandates]);
 
     const handlePrevClick = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex - 1 + mandates.length) % mandates.length);
@@ -33,49 +46,58 @@ const MandatesSection = () => {
 
     return (
         <>
-            {!isDesktopOrLaptop && (
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    {visibleMandates.map((mandate, index) => (
-                        <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-                            {mandate ? (
-                                <>
-                                    <div style={{ marginRight: '20px' }}>
-                                        <img
-                                            src={mandate.image}
-                                            alt={mandate.title}
-                                            style={{ maxWidth: '200px', maxHeight: '200px' }}
-                                        />
-                                    </div>
-                                    <div>
-                                        <Typography variant="subtitle1" gutterBottom>
-                                            {mandate.title}
-                                        </Typography>
-                                        <Typography variant="body2" gutterBottom>
-                                            Year: {mandate.year}
-                                        </Typography>
-                                        <Typography variant="body2" gutterBottom>
-                                            Main Accomplishments: {mandate.mainAccomplishments}
-                                        </Typography>
-                                    </div>
-                                </>
-                            ) : (
-                                <div style={{ width: '200px', height: '200px' }} />
-                            )}
+ {!isDesktopOrLaptop && (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        {visibleMandates.map((mandate, index) => (
+            <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                {mandate ? (
+                    <>
+                        <div style={{ marginLeft:index === 1 ? '-10px' : '-70px', flex: '0 0 auto', width: index === 1 ? '200px' : '150px' }}>
+                            <img
+                                src={images[index]}
+                                alt={mandates[index].title}
+                                style={{
+                                    maxWidth: index === 1 ? '100%' : '80%',
+                                    maxHeight: index === 1 ? '100%' : '80%',
+                                    borderRadius: index === 1 ? '10px' : '5px',
+                                    boxShadow: index === 1 ? '0px 0px 20px rgba(0, 0, 0, 0.3)' : 'none',
+                                    opacity: index === 1 ? 1 : 0.5,
+                                }}
+                            />
                         </div>
-                    ))}
+                        <div style={{width: '9rem', opacity: index === 1 ? 1 : 0.5,}}>
+                            <Typography variant="subtitle1"  style={{ fontSize: index === 1 ? '1.2rem' : '1rem', color:'white' }}>
+                                {mandate.title}
+                            </Typography>
+                            <Typography variant="body2"  style={{ fontSize: index === 1 ? '1rem' : '0.8dvw', color:'white' }}>
+                                Year: {mandate.year}
+                            </Typography>
+                            <Typography variant="body2"  style={{ fontSize: index === 1 ? '1rem' : '1.2dvw', color:'white' }}>
+                                {mandate.mainAccomplishments}
+                            </Typography>
+                        </div>
+                    </>
+                ) : (
+                    <div style={{ width: '200px', height: '200px' }} />
+                )}
+            </div>
+        ))}
+
+
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                         <IconButton
                             variant="contained"
                             onClick={handlePrevClick}
-                            disabled={currentImageIndex === 0}
-                            sx={{ marginRight: '10px' }}
+                            // disabled={currentImageIndex === 0}
+                            sx={{ marginRight: '10px',color: 'white'}}
                         >
                             <ArrowBackIosIcon />
                         </IconButton>
                         <IconButton
                             variant="contained"
                             onClick={handleNextClick}
-                            disabled={currentImageIndex === mandates.length - 1}
+                            // disabled={currentImageIndex === mandates.length - 1}
+                            sx={{color: 'white'}}
                         >
                             <ArrowForwardIosIcon />
                         </IconButton>
