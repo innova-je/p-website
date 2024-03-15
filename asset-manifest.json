@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/p-website/static/css/main.2f7ab4be.css",
-    "main.js": "/p-website/static/js/main.8b62d8ec.js",
+    "main.js": "/p-website/static/js/main.1690c79a.js",
     "static/js/3411.798ae6a9.chunk.js": "/p-website/static/js/3411.798ae6a9.chunk.js",
     "static/js/5762.81931c89.chunk.js": "/p-website/static/js/5762.81931c89.chunk.js",
     "static/js/477.78aa1b2d.chunk.js": "/p-website/static/js/477.78aa1b2d.chunk.js",
@@ -215,21 +215,21 @@
     "static/media/java-icon.png": "/p-website/static/media/java-icon.c6fd76332c2075ce76d5.png",
     "static/media/SUCEES.png": "/p-website/static/media/SUCEES.ee50486732be1df0ba82.png",
     "static/media/FUTURALIA.webp": "/p-website/static/media/FUTURALIA.c58e0b6e5e32de698416.webp",
-    "static/media/chat-icon.svg": "/p-website/static/media/chat-icon.1ed59b377c7cdf11b3b61e832c7431d1.svg",
-    "static/media/innova-icon.svg": "/p-website/static/media/innova-icon.0cad8ff151c74d07f94a01b60cc70839.svg",
-    "static/media/group-icon.svg": "/p-website/static/media/group-icon.1c55018f2837e2574bfbaa41d6ecabae.svg",
+    "static/media/chat-icon.svg": "/p-website/static/media/chat-icon.e7e1eb0ad6cdd48dda0d78468594e57d.svg",
+    "static/media/innova-icon.svg": "/p-website/static/media/innova-icon.cd84f6049f4e8618004a7112b9ce776b.svg",
+    "static/media/group-icon.svg": "/p-website/static/media/group-icon.d740f5209a36b82a89973936abdf0127.svg",
     "static/media/slick.svg": "/p-website/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/camera-icon.svg": "/p-website/static/media/camera-icon.0d574b04558bd96cd4eeee3fc4efd6b6.svg",
+    "static/media/camera-icon.svg": "/p-website/static/media/camera-icon.e9a8a4c5685d47bd3c7aa6eb3eb64aa0.svg",
     "static/media/slick.eot": "/p-website/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/p-website/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/write-icon.svg": "/p-website/static/media/write-icon.94c9151042e055f5c8790adf8f872fcf.svg",
+    "static/media/write-icon.svg": "/p-website/static/media/write-icon.b3eda716f75116d0ac8027865ef5fbe5.svg",
     "static/media/slick.woff": "/p-website/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/p-website/index.html",
     "main.2f7ab4be.css.map": "/p-website/static/css/main.2f7ab4be.css.map",
-    "main.8b62d8ec.js.map": "/p-website/static/js/main.8b62d8ec.js.map"
+    "main.1690c79a.js.map": "/p-website/static/js/main.1690c79a.js.map"
   },
   "entrypoints": [
     "static/css/main.2f7ab4be.css",
-    "static/js/main.8b62d8ec.js"
+    "static/js/main.1690c79a.js"
   ]
 }
