@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import randomLogo from '../images/OurLogos/logos-03.png'
 import { useMediaQuery } from 'react-responsive';
 
-const Accomplishments = ({ image, description, date, style1, style2 }) => {
+const Accomplishments = ({ image, description, date, link }) => {
 
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
@@ -94,8 +94,10 @@ const Accomplishments = ({ image, description, date, style1, style2 }) => {
     fontWeight: mobile || tablet ? "500" : "400",
     textAlign: "justify",
     textJustify: "center",
+    color: "#052533",
     marginTop: "0%",
-    lineHeight: desktop ? "100%" : (tablet ? "100%" : "100%")
+    lineHeight: desktop ? "100%" : (tablet ? "100%" : "100%"),
+    textOverflow: "ellipsis"
   };
 
   const dateStyle = {
@@ -107,8 +109,9 @@ const Accomplishments = ({ image, description, date, style1, style2 }) => {
 
   return (
     <Box>
+      <a href={link} style={{textDecoration: "none", color: "#052533"}}>
         {!isSelected && (
-        <AccomplishmentBox>
+        <AccomplishmentBox >
           <div style={{display: "flex", width: "100%", height: "50%"}}>
             <img src={dynamicImage} style={newsImageStyle} />
           </div>
@@ -139,6 +142,8 @@ const Accomplishments = ({ image, description, date, style1, style2 }) => {
           
         </AccomplishmentBox>
       )}
+      </a>
+        
 
       {isSelected && (
         <Box

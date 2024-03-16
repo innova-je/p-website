@@ -6,6 +6,10 @@ import MemberReview from '../components/MemberReview';
 import Testimonials from '../Testimonials.json'
 import { useMediaQuery } from 'react-responsive';
 
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 // const slideAnimation = (direction) => keyframes`
 //   0% {
 //     transform: translateX(0%);
@@ -100,109 +104,87 @@ const LogosSlider = () => {
     }
   };
 
-
   const smallMobile = useMediaQuery({ maxWidth: 550 });
   const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
+  const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+  const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
+  const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
+
+  const testimonials = Testimonials.testimonials;
+  const [numColumns, setNumColumns] = useState(1);
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+    const desiredWidthPercentage = desktop ? 0.8: smallDesktop ? 0.8 : tablet ? 1 : 0.5; // 80% of screen width
+    const columnWidth = 230; 
+    const calculatedColumns = Math.floor(screenWidth * desiredWidthPercentage / columnWidth);
+    setNumColumns(calculatedColumns > 0 ? calculatedColumns : 1);
+  }, []);
+
+  const divideIntoRows = (testimonials, numColumns) => {
+    const rows = [];
+    const numRows = Math.ceil(testimonials.length / numColumns);
+    for (let i = 0; i < numRows; i++) {
+      rows.push(testimonials.slice(i * numColumns, (i + 1) * numColumns));
+    }
+    return rows;
+  };
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
     <>
       {isDesktopOrLaptop ? (
-        <>
         <Box
           sx={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '2.5rem',
             position: 'relative',
-            top: '10%',
             width: '100%',
             height: 'auto',
             overflow: 'visible',
-          }}
-        >
-          {/* First Row */}
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '2.5rem',
-            }}
-          >
-            {Testimonials.testimonials.slice(0, Math.ceil(Testimonials.testimonials.length / 2)).map((testimonial, index) => (
-              <MemberReview
-                key={index}
-                image={testimonial.image}
-                name={testimonial.name}
-                department={testimonial.department}
-                text={testimonial.quote}
-                sx={{ position: "relative", zIndex: 2 }}
-              />
-            ))}
-          </Box>
-      
-          {/* Second Row */}
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '2.5rem',
-            }}
-          >
-            {Testimonials.testimonials.slice(Math.ceil(Testimonials.testimonials.length / 2)).map((testimonial, index) => (
-              <MemberReview
-                key={index}
-                image={testimonial.image}
-                name={testimonial.name}
-                department={testimonial.department}
-                text={testimonial.quote}
-                sx={{ position: "relative", zIndex: 2 }}
-              />
+            padding: '5% 0 5% 0'
+          }}>
+          <Box sx={{ display: 'flex', gap: '1.5rem' }}>
+            {divideIntoRows(testimonials, numColumns).map((row, rowIndex) => (
+              <div key={rowIndex} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                {row.map((testimonial, index) => (
+                  <MemberReview
+                    key={index}
+                    image={testimonial.image}
+                    name={testimonial.name}
+                    department={testimonial.department}
+                    text={testimonial.quote}
+                  />
+                ))}
+              </div>
             ))}
           </Box>
         </Box>
-      </>
-      
       ) : (
-
-        <div
-          ref={containerRef}
-          style={{
-            position: "relative",
-            overflow: "visible",
-            width: "50%",
-            top: mobile ? "20dvw" : smallMobile ? '15dvw' : "45%",
-            touchAction: "none",
-            display: "flex",
-            justifyContent: "flex-start",
-          }}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div
-            style={{
-              display: "flex",
-              transition: "transform 0.3s ease-in-out",
-              transform: `translateX(${currentX}px)`,
-              width: `${Testimonials.length * 110}%`, // Adjust spacing between reviews
-              gap: "5dvw", // Add gap between reviews
-            }}
-            onTransitionEnd={handleTransitionEnd}
-          >
-            {Testimonials.testimonials.map((testimonial, index) => (
+          <Slider {...settings}>
+          {testimonials.map((testimonial, index) => (
+            <div key={index}>
+            <div style={{width: "100vw", padding: "7% 0", height: "auto", display: "flex", justifyContent: "center", alignItems: "center"}}>
               <MemberReview
                 key={index}
                 image={testimonial.image}
                 name={testimonial.name}
                 department={testimonial.department}
                 text={testimonial.quote}
-                sx={{ position: "absolute", left: "50%", zIndex: 2 }}
               />
-            ))}
-          </div>
-        </div>
+              </div>
+              </div>
+            ))} 
+          </Slider>
       )}
     </>
   );

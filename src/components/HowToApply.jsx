@@ -27,20 +27,18 @@ const CustomCircle = ({ icon: IconComponent, posTop, bgcolor, fill }) => {
         <>
             <Box
                 sx={{
-                    width: tablet ? '50px' : mobile ? '50px' : smallMobile ? '40px' : '60px',
-                    height: tablet ? '50px' : mobile ? '50px' : smallMobile ? '40px' : '60px',
+                    width: tablet ? '6vw' : mobile ? '7vw' : smallMobile ? '9vw' : '60px',
+                    height: tablet ? '6vw' : mobile ? '7vw' : smallMobile ? '9vw' : '60px',
                     borderRadius: '50%',
                     backgroundColor: bgcolor, // F0F0F0
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    position: 'absolute',
-                    top: posTop,
-                    zIndex: '1',
+                    zIndex: 2,
                     transition: 'background-color 0.8s, fill 0.5s'
                 }}
             >
-                {IconComponent && <IconComponent height={tablet ? 25 : mobile ? 25 : smallMobile ? 20 : 35} style={{ fill: fill }} />}
+                {IconComponent && <IconComponent height={tablet ? 30 : mobile ? 25 : smallMobile ? 20 : 35} style={{ fill: fill }} />}
 
             </Box>
         </>
@@ -76,83 +74,71 @@ const MiddleBox = ({ barheight }) => {
     const smallMobile = useMediaQuery({ maxWidth: 550 });
     const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
     const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+    const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
+    const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
+    const largeDesktop = useMediaQuery({ minWidth: 1400 });
 
     const fontTitle = {
-        fontSize: tablet ? '3dvw' : mobile ? '3.5dvw' : smallMobile ? '3.8dvw' : "2dvw",
+        fontSize: largeDesktop ? "2.1dvw" : desktop ? "2.5dvw" : smallDesktop ? "2.7dvw" : tablet ? '3.7dvw' : mobile ? '3.9dvw' : smallMobile ? '5dvw' : "2dvw",
     };
 
     const fontText = {
-        fontSize: tablet ? '1.5dvw' : mobile ? '2dvw' : smallMobile ? '2.3dvw' : "1dvw",
+        fontSize: largeDesktop ? "1.1dvw" : desktop ? "2dvw" : smallDesktop ? "1.5dvw" : tablet ? '2dvw' : mobile ? '2.8dvw' : smallMobile ? '3.5dvw' : "1dvw",
     };
 
     return (
-        // console.log('asdasda', barheight),
-        <>
-            {/* First Box */}
-            <Box
-                sx={{
-                    width: tablet ? '25%' : mobile ? '25%' : smallMobile ? '25%' :'20%',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    overflow: 'hidden',
-                    position: 'relative',
-                }}
-            >
-                <Box
-                    sx={{
-                        backgroundColor: '#F0F0F0',
-                        height: '100%',
-                        width: '15px',
-                        marginTop: 2,
-                        position: 'absolute',
-                    }}
-                >
-                </Box>
+        <>                 
 
-                <Box
-                    sx={{
-                        backgroundColor: theme.palette.primary.main,
-                        height: barheight,
-                        width: '15px',
-                        top: 0,
-                        marginTop: 5,
-                        position: 'absolute',
-                        transition: 'height 0.5s ease-out', // Add transition property
-                    }}
-                />
-
-
-                {/* <CustomCircle icon={WriteIcon} posTop="12px" bgcolor={theme.palette.primary.main} fill="white" /> */}
-                <CustomCircle icon={WriteIcon} posTop="2dvw" bgcolor={'#F0F0F0'} fill={theme.palette.primary.main} />
-                <CustomCircle icon={CameraIcon} posTop={tablet ? '12dvw' : mobile ? '15dvw' : smallMobile ? '18dvw' :"9dvw"} bgcolor={cameraBG} fill={cameraFill} />
-                <CustomCircle icon={GroupIcon} posTop={tablet ? '22dvw' : mobile ? '34dvw' : smallMobile ? '44dvw' :"17dvw"} bgcolor={groupBG} fill={groupFill} />
-                <CustomCircle icon={ChatIcon} posTop={tablet ? '31dvw' : mobile ? '45dvw' : smallMobile ? '59dvw' : "25dvw"} bgcolor={chatBG} fill={chatFill} />
-                <CustomCircle icon={InnovaIcon} posTop={tablet ? '40dvw' : mobile ? '55dvw' : smallMobile ? '74dvw' :"33dvw"} bgcolor={innovaBG} fill={innovaFill} />
-
-            </Box>
+        
 
             {/* Second Box */}
             <Box
-                sx={{
-                    width: tablet ? '70%' : mobile ? '70%' : smallMobile ? '70%' : '59%',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    overflow: 'hidden',
+                 sx={{
                     position: 'relative',
+                    height: "100%",
+                    width: "100%",
+                    display: "flex",
+                    //margin: "5% 0",
+                    gap: "5%",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    //paddingTop: (smallMobile || mobile) ? "2%" : "2%"
+                }}>        
 
-                }}
-            >
+                <div style={{
+                width: "100%", 
+                height: "100%", 
+                position: "absolute", 
+                left: 0, 
+                display: "flex", 
+                justifyContent: "left"}}>
+                    <div style={{height: "100%", 
+                    width: smallMobile ? "4%" : (mobile ? "3%" : (tablet ? "3%" : (smallDesktop ? "3%" : (desktop ? "3%" : "2%")))), 
+                    position: "absolute", 
+                    marginLeft: smallMobile ? "9%" : (mobile ? "8%" : (tablet ? "7.4%" : (smallDesktop ? "8.4%" : (desktop ? "8%" : "6.5%")))), 
+                    background: "#F0F0F0", zIndex: 0}}/>                       
+                                           
+                </div>
+               
+
                 <Box
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: tablet ? '3%' : mobile ? '3%' : smallMobile ? '3%' :'5%',
-                    }}
-                >
+                        height: "auto",
+                        display: "flex",
+                        gap: "5%",
+                        alignItems: "flex-start",
+                        flexDirection: "row",
+                        
+                    }}>
+                    
+                    <div style={{ marginLeft: "5%"}}>
+                        <CustomCircle icon={WriteIcon} posTop="2dvw" bgcolor={'#F0F0F0'} fill={theme.palette.primary.main} /> 
+                    </div>                    
+
+                    <div style={{display: "flex", flexDirection: "column", background: "", width: "90%"}}>
                     <Typography
                         variant="h5"
                         sx={{
@@ -187,18 +173,18 @@ const MiddleBox = ({ barheight }) => {
                             sx={{
                                 position: 'relative',
                                 borderRadius: '10px',
-                                py: '3px',
-                                px: '25px',
+                                width: "200px",
+                                height: "3vmax",
                                 fontSize: '15px',
                                 fontWeight: 'Light',
                                 textTransform: 'none',
                                 marginTop: '1dvw',
-                                marginLeft: '15px',
                             }}
                         >
                             Apply here
                         </Button>
                     )}
+                    </div>
 
                 </Box>
 
@@ -206,10 +192,19 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: tablet ? '10%' : mobile ? '10%' : smallMobile ? '10%' : '7%',
-                    }}
-                >
-                    <Typography
+                        height: "auto",
+                        display: "flex",
+                        gap: "5%",
+                        alignItems: "flex-start",
+                        flexDirection: "row",
+                    }}>
+                    
+                    <div style={{ marginLeft: "5%"}}>
+                        <CustomCircle icon={CameraIcon} posTop="2dvw" bgcolor={'#F0F0F0'} fill={theme.palette.primary.main} /> 
+                    </div> 
+
+                <div style={{display: "flex", flexDirection: "column", padding: "0 3% 0 0", width: "80%"}}>
+                <Typography
                         variant="h5"
                         sx={{
                             color: "#101010",
@@ -232,15 +227,26 @@ const MiddleBox = ({ barheight }) => {
                         It is now the time to tell us more about yourself, your hobbies, your dreams... <br />
                         Be creative!
                     </Typography>
+                </div>
+                
                 </Box>
 
                 <Box
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: tablet ? '16%' : mobile ? '15%' : smallMobile ? '18%' : '12%',
-                    }}
-                >
+                        height: "auto",
+                        display: "flex",
+                        gap: "5%",
+                        alignItems: "flex-start",
+                        flexDirection: "row",
+                    }}>
+
+                    <div style={{ marginLeft: "5%"}}>
+                        <CustomCircle icon={GroupIcon} bgcolor={'#F0F0F0'} fill={theme.palette.primary.main} /> 
+                    </div> 
+                    
+                    <div style={{display: "flex", flexDirection: "column", padding: "0 3% 0 0", width: "80%"}}>
                     <Typography
                         variant="h5"
                         sx={{
@@ -263,15 +269,25 @@ const MiddleBox = ({ barheight }) => {
                     >
                         ... and have fun! Halfway there!
                     </Typography>
+                    </div>
                 </Box>
 
                 <Box
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: tablet ? '21%' : mobile ? '19%' : smallMobile ? '26%' : '18%',
-                    }}
-                >
+                        height: "auto",
+                        display: "flex",
+                        gap: "5%",
+                        alignItems: "flex-start",
+                        flexDirection: "row",
+                    }}>
+
+                    <div style={{ marginLeft: "5%"}}>
+                        <CustomCircle icon={ChatIcon} bgcolor={'#F0F0F0'} fill={theme.palette.primary.main} /> 
+                    </div> 
+                    
+                    <div style={{display: "flex", flexDirection: "column", padding: "0 3% 0 0", width: "80%"}}>
                     <Typography
                         variant="h5"
                         sx={{
@@ -294,15 +310,25 @@ const MiddleBox = ({ barheight }) => {
                     >
                         Now we can focus on your chosen department!
                     </Typography>
+                    </div>
                 </Box>
 
                 <Box
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        top: tablet ? '25%' : mobile ? '23%' : smallMobile ? '33%' : '25%',
-                    }}
-                >
+                        height: "auto",
+                        display: "flex",
+                        gap: "5%",
+                        alignItems: "flex-start",
+                        flexDirection: "row",
+                    }}>
+
+                    <div style={{ marginLeft: "5%"}}>
+                        <CustomCircle icon={InnovaIcon} posTop="2dvw" bgcolor={'#F0F0F0'} fill={theme.palette.primary.main} /> 
+                    </div> 
+                    
+                    <div style={{display: "flex", flexDirection: "column", padding: "0 3% 0 0", width: "80%"}}>
                     <Typography
                         variant="h5"
                         sx={{
@@ -325,6 +351,7 @@ const MiddleBox = ({ barheight }) => {
                     >
                         You are finally one of us!
                     </Typography>
+                    </div>
                 </Box>
             </Box>
 
@@ -360,16 +387,31 @@ const HowToApply = ({ progress }) => {
     const largeDesktop = useMediaQuery({ minWidth: 1400 })
 
     return (
-
+        <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "5% 0 5% 0"}}>
+            <div>
+            <Typography
+                variant="h2"
+                sx={{
+                    position: 'relative',
+                    color: theme.palette.secondary.main,
+                    fontFamily: theme.typography.fontFamily,
+                    fontWeight: 'Bold',
+                    fontSize: tablet ? "7dvw" : mobile ? "8dvw" : smallMobile ? '10dvw' : '5.5dvw',
+                }}
+            >
+                How to apply?
+            </Typography>
+        </div>
         <Box
             sx={{
-                position: 'absolute',
-                top: '25%',
-                width: tablet ? '75dvw' : mobile ? '75dvw' : smallMobile ? '80dvw' : '65dvw',
-                height: tablet ? '50dvw' : mobile ? '70dvw' : smallMobile ? '90dvw' : '41dvw',
-                backgroundColor: 'white',
+                position: 'relative',
+                marginTop: '10%',
+                width: tablet ? '60vmax' : mobile ? '75vmin' : smallMobile ? '75dvw' : "70vmax",
+                height: smallMobile ? "130vmin" : (mobile ? "85vmin" : (tablet ? "65vmax" : (smallDesktop ? "55vmax" : desktop ? "60vmax" : "45vmax"))),
                 borderRadius: '20px',
+                background: "white",
                 display: 'flex',
+                overflow: "hidden"
             }}
         >
 
@@ -377,6 +419,8 @@ const HowToApply = ({ progress }) => {
 
 
         </Box>
+        </div>
+        
     );
 };
 

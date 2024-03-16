@@ -159,7 +159,8 @@ const OurPartners = () => {
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
-                        alignItems: "center"
+                        alignItems: "center",
+                        gap: mobile ? "20px" : "none"
                     }}>
                     <Box sx={{
                         width: "100%",
@@ -167,13 +168,13 @@ const OurPartners = () => {
                         alignItems: "center",
                         justifyContent: "center",
                         flexDirection: desktop ? "row" : "column",
-                        gap: desktop ? "10%" : (tablet ? "20%" : "10%")
+                        gap: desktop ? "10%" : (tablet ? "20%" : "20px"),
                     }}>
                         <img src={Magma} alt='Magma Studios Logo' style={{width: desktop ? "35%" : (tablet ? "60%": "40%")}}/>
                         <img src={Meta} alt='Meta Consultoria Júnior Logo' style={{width: desktop ? "35%" : (tablet ? "60%": "40%")}}/>
                     </Box>
                     
-                    <img src={OpenBB} alt='OpenBB Logo' style={{width: desktop ? "40%" : (tablet ? "60%": "40%") }}/>
+                    <img src={OpenBB} alt='OpenBB Logo' style={{ width: desktop ? "40%" : (tablet ? "60%": "40%") }}/>
                     </Box>                  
                     
                 </LearningPartners>

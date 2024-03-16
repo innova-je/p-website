@@ -14,6 +14,8 @@ import Testimonials from '../Testimonials.json'
 import CountDownRecruitment from '../components/CountDownRecruitment';
 import { useMediaQuery } from 'react-responsive';
 
+import technologiesBg from '../images/other/technologies_background.webp'
+import { NavLink } from 'react-router-dom';
 
 const JoinUs = () => {
     const theme = useTheme();
@@ -77,7 +79,7 @@ const JoinUs = () => {
     const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
     const largeDesktop = useMediaQuery({ minWidth: 1400 })
 
-    const gradientPercentage = mobile ? '55%' : smallMobile ? '55%' : '0%';
+    const gradientPercentage = mobile ? '10%' : smallMobile ? '10%' : '0%';
 
     return (
         <>
@@ -87,9 +89,8 @@ const JoinUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: tablet ? "60dvw" : mobile ? "80dvw" : smallMobile ? '90dvw' : "50dvw",
+                    height: "auto",
                     width: '100%',
-                    backgroundImage: `url(${HeroImage})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -97,131 +98,82 @@ const JoinUs = () => {
                     zIndex: '0',
                 }}
             >
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        top: '0',
-                        left: '0',
-                        width: '100%',
-                        height: '100%',
-                        backgroundColor: 'rgba(255,255,255,0.6)',
-                        zIndex: '0',
+                <div style={{ width: "100vw", height: "100vh", overflow: "hidden" }}>
+                    <div style={{ width: "100%", height: "100%", zIndex: 2, background: "linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5))" }}>
+                        <div style={{ height: "100vh", width: "100vw", overflow: "hidden", zIndex: -1, position: "absolute" }}>
+                            <img src={HeroImage} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        </div>
 
-                    }}
-                />
-                <Typography
-                    variant="h2"
-                    sx={{
-                        fontWeight: '600',
-                        fontSize: tablet ? "6dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : '5dvw',
-                        position: 'relative',
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        zIndex: '1',
-                        top: "32%",
-                    }}
-                >
-                    Want to become one of us?
-                </Typography>
+                        <div style={{ height: "100%", width: "100%", display: "flex", zIndex: 1, justifyContent: "center" }}>
 
-                <Button
-                    variant="contained"
-                    href='https://forms.gle/NP4Eo4RUftMv4LFq7'
-                    sx={{
-                        marginTop: '20px',
-                        zIndex: '3',
-                        borderRadius: '20px',
-                        py: '1dvw',
-                        px: '5dvw',
-                        fontSize: tablet ? "3dvw" : mobile ? "3dvw" : smallMobile ? '3dvw' : '1.5dvw',
-                        textTransform: 'none',
-                        top: smallMobile ? "75%" : "65%",
-                        opacity: '0.9',
-                    }}
-                >
-                    Apply Now!
-                </Button>
-                <CountDownRecruitment />
+                            <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+                                <div style={{ width: (mobile || smallMobile) ? "80%" : "100%", height: "100%", display: "flex", flexDirection: "column", gap: "5%", alignItems: "center", justifyContent: "center" }}>
+                                    <Typography
+                                        variant="h2"
+                                        sx={{
+                                            fontWeight: '600',
+                                            fontSize: tablet ? "4.5dvw" : mobile ? "6dvw" : smallMobile ? '8dvw' : '4dvw',
+                                            position: 'relative',
+                                            color: theme.palette.primary.main,
+                                            fontFamily: theme.typography.fontFamily,
+                                            zIndex: '1',
+                                            textAlign: "center"
+                                        }}
+                                    >
+                                        Want to {(smallMobile) && (<br/>)} become one of us?
+                                    </Typography>
 
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        zIndex: '2',
-                        bottom: -1,
-                        width: '100%',
-                        height: '70%',
-                        backgroundImage:
-                            'linear-gradient(to top, rgba(240,240,240,1), rgba(240,240,240,0))',
-                    }}
-                />
-            </Box>
+                                    <CountDownRecruitment />
+                                 
+                                    <Button
+                                        variant="contained"
+                                        href='https://forms.gle/NP4Eo4RUftMv4LFq7'
+                                        sx={{
+                                            zIndex: '3',
+                                            borderRadius: '20px',
+                                            py: (mobile) ? "2dvw" : (smallMobile ? "3dvw" : "1dvw"),
+                                            px: (mobile) ? "8dvw" : (smallMobile ? "10dvw" : "5dvw"),
+                                            fontSize: tablet ? "3dvw" : mobile ? "3dvw" : smallMobile ? '3dvw' : '1.5dvw',
+                                            textTransform: 'none',
+                                        }}
+                                    >
+                                        Apply Now!
+                                    </Button>
 
-            {/* 2nd Section*/}
-            <Box
-                sx={{
-                    position: 'relative', // Make the box a positioning context for absolute positioning inside
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    height: smallDesktop ? '25dvw' : tablet ? '35dvw' : mobile ? '40dvw' : smallMobile ? '45dvw' : '31dvw',
-                    overflow: 'hidden',
-                }}
-            >
-                {/* Circles */}
-                {smallMobile || mobile || tablet || smallDesktop ? (
-                    <>
-                    </>
-                ) : (
-                    <Technologies />
-                )}
+                                </div>
 
-                {/* Texts */}
-                <Typography variant="h4"
-                    sx={{
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'Semi-Bold',
-                        fontSize: smallDesktop ? '4dvw' : tablet ? '4.5dvw' : mobile ? '5dvw' : smallMobile ? '5.7dvw' : '2.5dvw',
-                        marginTop: tablet ? undefined : mobile ? undefined : smallMobile ? undefined : '30px',
-                    }}>
-                    You will
-                </Typography>
-                <Typography variant="h2"
-                    sx={{
-                        color: theme.palette.primary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'Bold',
-                        fontSize: smallDesktop ? '5.5dvw' : tablet ? '6dvw' : mobile ? '6.5dvw' : smallMobile ? '7dvw' : '4.5dvw',
-                    }}>
-                    learn something
-                </Typography>
-                <Typography variant="h3"
-                    sx={{
-                        marginBottom: '20px',
-                        color: theme.palette.primary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'bold',
-                        opacity: '0.66',
-                        fontSize: smallDesktop ? '4.5dvw' : tablet ? '5dvw' : mobile ? '5.5dvw' : smallMobile ? '6dvw' : '3.5dvw',
-                    }}>
-                    every.single.day
-                </Typography>
-                <Typography variant="body1"
-                    sx={{
-                        marginBottom: '20px',
-                        textAlign: 'center',
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        opacity: '0.7',
-                        fontSize: smallDesktop ? '1.3dvw' : tablet ? '1.8dvw' : mobile ? '2.2dvw' : smallMobile ? '3dvw' : '1.2dvw',
+                            </div>
 
-                    }}>
-                    These are some technologies we use.<br />
-                    If you have something new to teach us, join the team!
-                </Typography>
+                        </div>
+                    </div>
+
+                </div>
 
 
-                {/* <Button
+                {/*----------------------------------------------------*/}
+
+                <div style={{
+                    overflow: "hidden",
+                    display: "flex",
+                    justifyContent: "center",
+                    width: "100%",
+                    height: "auto",
+                    marginBottom: "5%"
+                }}>
+                    {/* 2nd Section*/}
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                        }}
+                    >
+
+                        {/* Circles */}
+                       
+                        <Technologies />
+
+                        {/* <Button
                     variant="contained"
                     endIcon={<ArrowForwardIcon />}
                     sx={{
@@ -235,341 +187,342 @@ const JoinUs = () => {
                 >
                     See our Portfolio
                 </Button> */}
-            </Box>
+                    </Box>
 
-            {/* 3rd Section */}
-            <Box
-                sx={{
-                    position: 'relative',
-                    display: 'flex',
-                    height: mobile ? '110dvw' : smallMobile ? '110dvw' : undefined,
-                    justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-end',
-                    alignItems: mobile ? 'flex-start' : smallMobile ? 'flex-start' : 'flex-end',
-                }}
-            >
-                <Typography
-                    variant="h3"
-                    sx={{
-                        position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '5dvw',
-                        top: mobile ? '60%' : smallMobile ? '57%' : '28%',
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'bold',
-                        fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '3.5dvw',
-                    }}
-                >
-                    We don’t just work here,
-                </Typography>
-                <Typography
-                    variant="h4"
-                    sx={{
-                        position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '15dvw',
-                        top: mobile ? '67%' : smallMobile ? '65%' : '38%',
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'regular',
-                        fontSize: mobile ? '7dvw' : smallMobile ? '6dvw' : '2.5dvw',
-                    }}
-                >
-                    we also have
-                </Typography>
-                <Typography
-                    variant="h3"
-                    sx={{
-                        position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '13dvw',
-                        top: mobile ? '75%' : smallMobile ? '71%' : '47%',
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'bold',
-                        fontSize: mobile ? '7dvw' : smallMobile ? '7.5dvw' : '3.5dvw',
-                    }}
-                >
-                    a lot of fun!
-                </Typography>
-                <Button
-                    variant="contained"
-                    endIcon={<ArrowForwardIcon />}
-                    sx={{
-                        position: 'absolute',
-                        left: mobile ? undefined : smallMobile ? undefined : '17dvw',
-                        top: mobile ? '83%' : smallMobile ? '79%' : '60%',
-                        borderRadius: '10px',
-                        py: '10px',
-                        px: '25px',
-                        fontSize: mobile ? '3dvw' : smallMobile ? '3dvw' : '1dvw',
-                        textTransform: 'none',
-                        marginTop: '20px',
-                    }}
-                >
-                    Out of Office
-                </Button>
-                <div style={{ position: 'relative', maxWidth: (mobile ? '100%' : smallMobile ? '100%' : '65%'), maxHeight: '100%' }}>
-                    <img
-                        src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
-                        alt='joinus_oof'
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                        }}
-                    />
-                    <div
-                        style={{
-                            position: 'absolute',
-                            bottom: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '35%',
-                            backgroundImage: 'linear-gradient(to top, rgba(240,240,240,1), rgba(240,240,240,0))',
-                        }}
-                    />
                 </div>
 
-                <img
-                    src={joinus_elements}
-                    alt='joinus_elements'
-                    style={{
-                        border: 4,
-                        position: 'absolute',
-                        left: '2rem',
-                        top: '10%',
-                        maxWidth: '100%',
-                        maxHeight: '50%',
-                        objectFit: 'cover',
-                        opacity: mobile ? 0 : smallMobile ? 0 : 1,
-                    }}
-                />
-            </Box>
 
-            <div style={{ display: "flex", flexDirection: "column" }}>
-                {/* 4th Section */}
-                <Box
-                    sx={{
-                        position: 'relative',
-                        display: 'flex',
-                        flexDirection: "column",
-                        justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-start',
-                        alignItems: 'flex-start',
-                        height: mobile ? '80vh' : smallMobile ? '80vh' : '120vh',
-                        overflow: 'hidden',
-                        backgroundImage: `linear-gradient(to top, ${theme.palette.primary.main} ${gradientPercentage}, rgba(255,255,255,0))`,
+                {/*----------------------------------------------------*/}
 
-                    }}
-                >
-                    {smallMobile || mobile ? (
-                        <>
-                            <Typography
-                                variant="h3"
-                                sx={{
-                                    position: 'absolute',
-                                    zIndex: '1',
-                                    left: '29dvw',
-                                    top: '5dvw',
-                                    fontSize: mobile ? '6dvw' : smallMobile ? '6dvw' : '4dvw',
-                                    color: "#FFFFFF",
-                                    fontFamily: theme.typography.fontFamily,
-                                    fontWeight: 'Bold',
-                                }}
-                            >
-                                Our members
-                            </Typography>
-                            <Typography
-                                variant="h3"
-                                sx={{
-                                    position: 'absolute',
-                                    zIndex: '1',
-                                    left: '23dvw',
-                                    top: '13dvw',
-                                    fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '4dvw',
-                                    color: "#FFFFFF",
-                                    fontFamily: theme.typography.fontFamily,
-                                    fontWeight: 'Bold',
-                                }}
-                            >
-                                love being here,
-                            </Typography>
-                            <Typography
-                                variant="h3"
-                                sx={{
-                                    position: 'absolute',
-                                    zIndex: '1',
-                                    left: '17dvw',
-                                    top: '24dvw',
-                                    fontSize: mobile ? '8dvw' : smallMobile ? '9dvw' : '4dvw',
-                                    color: "#FFFFFF",
-                                    fontFamily: theme.typography.fontFamily,
-                                    fontWeight: 'Bold',
-                                }}
-                            >
-                                and so will you!
-                            </Typography>
-                        </>
-                    ) : (
+
+                <div style={{
+                    display: "flex",
+                    alignItems: "center",
+                    position: "relative",
+                    flexDirection: mobile || smallMobile || tablet ? 'column' : 'row',
+                    width: "100dvw",
+                    height: (smallMobile || mobile || tablet) ? "auto" : "60vh",
+                    overflow: "hidden",
+                    background: `linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))`
+                }}>
+                    {/* 3rd Section */}
+                    <div style={{ background: `url(${joinus_elements})`, padding: (mobile || smallMobile || tablet) ? "0% 0 2% 0%" : "0 0 0 5rem", display: "flex", flexDirection: "column", width: "100%", height: (mobile || smallMobile) ? "auto" : "100%", justifyContent: "center", alignItems: "center"}}>
+                          <h3
+                            style={{
+                                width: "fit-content",
+                                color: theme.palette.secondary.main,
+                                fontFamily: theme.typography.fontFamily,
+                                fontWeight: 'bold',
+                                fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : tablet ? "4dvw" : smallDesktop ? "4dvw" : '3.3dvw',
+                                textAlign: "center",
+                                whiteSpace: "nowrap"
+                            }}
+                        >
+                            We don’t just work here,
+                        </h3>
+                        <Typography
+                            variant="h4"
+                            sx={{
+                                position: 'relative',
+                                color: theme.palette.secondary.main,
+                                fontFamily: theme.typography.fontFamily,
+                                fontWeight: 'regular',
+                                fontSize: mobile ? '7dvw' : smallMobile ? '6dvw' : tablet ? "4dvw" : smallDesktop ? "3dvw" : '2.5dvw',
+                                textAlign: "center"
+                            }}
+                        >
+                            we also have
+                        </Typography>
                         <Typography
                             variant="h3"
                             sx={{
-                                position: 'relative',
-                                zIndex: '1',
-                                left: '6dvw',
-                                top: '5dvw',
-                                fontSize: '3.5dvw',
-                                color: "#FFFFFF",
+                                color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,
-                                fontWeight: 500,
+                                fontWeight: 'bold',
+                                fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : tablet ? "4dvw" : smallDesktop ? "4dvw" : '3.3dvw',
                             }}
                         >
-                            Our members love being here,<br />
-                            and so will you!
-                        </Typography>
-                    )}
+                            a lot of fun!
+                        </Typography>  
+                        
+                        <NavLink to="/out-of-office">
+                            <Button
 
-                    <Carousel></Carousel>
+                            variant="contained"
+                            endIcon={<ArrowForwardIcon />}
+                            sx={{
+                                borderRadius: '10px',
+                                py: '10px',
+                                px: '25px',
+                                fontSize: mobile ? '3dvw' : smallMobile ? '3dvw' : tablet ? "2dvw" : '1dvw',
+                                textTransform: 'none',
+                                mt: '2rem',
+                                mb: '2rem'
+                            }}
+                        >
+                            Out of Office
+                        </Button>
+                        </NavLink>
+                        
+                    </div>
+                    <div style={{ zIndex: 1, }}>
+                        {(mobile || smallMobile || tablet) && (
+                            <div style={{ height: "100%", marginBottom: "-5%", zIndex: -1}}>
+                            <img
+                                src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
+                                alt='joinus_oof'
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                    opacity: "0.6"
+                                }}
+                            />
+                        </div> 
+                        
+                        )}
+                        </div>
+                        
+                        
 
-                </Box>
+                    {!(mobile || smallMobile || tablet) && (
+                        <div style={{ width: "100%", height: "100%",  zIndex: "-1", display: "flex", background: "", alignItems: "flex-end", justifyContent: "right"}}>
+                            <img
+                                src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
+                                alt='joinus_oof'
+                                style={{
+                                    width: "auto",
+                                    height: "100%",
+                                }}
+                            />
+                        </div> 
+                    )}                   
 
-                {/* 5th Section */}
-                <Box
-                    // ref={sectionRef}
-                    sx={{
-                        position: 'relative',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        height: tablet ? '100dvh' : mobile ? '110vh' : smallMobile ? '80vh' : '70dvw',
+                </div>
 
-                    }}
-                >
-                    <Typography
-                        variant="h2"
+
+                {/*----------------------------------------------------*/}
+
+
+                <div style={{ display: "flex", flexDirection: "column", width:"100%" }}>
+                    {/* 4th Section */}
+                    <Box
                         sx={{
-                            position: 'absolute',
-                            top: tablet ? "5dvw" : mobile ? "8vw" : smallMobile ? '12dvw' : '3dvw',
-                            color: theme.palette.secondary.main,
-                            fontFamily: theme.typography.fontFamily,
-                            fontWeight: 'Bold',
-                            fontSize: tablet ? "7dvw" : mobile ? "10dvw" : smallMobile ? '12dvw' : '5.5dvw',
+                            position: 'relative',
+                            display: 'flex',
+                            flexDirection: "column",
+                            justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-start',
+                            height: "auto",
+                            width: "100%", // check this
+                            backgroundImage: `linear-gradient(to bottom, ${theme.palette.primary.main} ${gradientPercentage}, rgba(240,240,240,1))`,
                         }}
                     >
-                        How to apply?
-                    </Typography>
+                        <div style={{display: "flex", flexDirection: "column", marginTop: "5%", height: "auto", marginLeft: (smallMobile || mobile) ? "0%" : "5%"}}>
+                        {smallMobile || mobile ? (
+                            <div style={{height: "auto", padding: "5% 0 0 0", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+                                <Typography
+                                    variant="h3"
+                                    sx={{
+                                        fontSize: mobile ? '6dvw' : smallMobile ? '6dvw' : '4dvw',
+                                        color: "#F0F0F0",
+                                        fontFamily: theme.typography.fontFamily,
+                                        fontWeight: 'Bold',
+                                    }}
+                                >
+                                    Our members
+                                </Typography>
+                                <Typography
+                                    variant="h3"
+                                    sx={{
+                                        fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '4dvw',
+                                        color: "#F0F0F0",
+                                        fontFamily: theme.typography.fontFamily,
+                                        fontWeight: 'Bold',
+                                    }}
+                                >
+                                    love being here,
+                                </Typography>
+                                <Typography
+                                    variant="h3"
+                                    sx={{
+                                        fontSize: mobile ? '8dvw' : smallMobile ? '9dvw' : '4dvw',
+                                        color: "#F0F0F0",
+                                        fontFamily: theme.typography.fontFamily,
+                                        fontWeight: 'Bold',
+                                    }}
+                                >
+                                    and so will you!
+                                </Typography>
+                            </div>
+                        ) : (
+                            <Typography
+                                variant="h3"
+                                sx={{
+                                    position: 'relative',
+                                    zIndex: '1',
+                                    fontSize: '3.5dvw',
+                                    color: "#F0F0F0",
+                                    fontFamily: theme.typography.fontFamily,
+                                    fontWeight: 500,
+                                }}
+                            >
+                                Our members love being here,<br />
+                                and so will you!
+                            </Typography>
+                        )}
 
-                    {/* progress * 6.5 */}
-                    <HowToApply progress={0} />
+                        </div>
+                        
+                        <Carousel></Carousel>
 
-                </Box>
-            </div>
+                    </Box>
+                </div>
 
-            {/* 6th Section */}
-            <Box
-                bgcolor="white"
-                sx={{
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    height: tablet ? "65dvw" : mobile ? "70dvw" : smallMobile ? '69dvw' : '60dvw',
-                    overflow: 'visible',
 
-                }}>
-                <Typography
-                    variant="h4"
-                    sx={{
-                        position: 'relative',
-                        top: '5dvw',
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'Light',
-                        fontSize: tablet ? "3.5dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : '2.5dvw',
-                    }}
-                >
-                    One important rule...
-                </Typography>
-                <Typography
-                    variant="h2"
-                    sx={{
-                        position: 'relative',
-                        top: '6dvw',
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'bold',
-                        fontSize: tablet ? "5.5dvw" : mobile ? "7dvw" : smallMobile ? '7dvw' : '4dvw',
-                    }}
-                >
-                    Always be prepared!
-                </Typography>
-                <img src={guiadocandidato} alt='guiadocandidato' style={{
-                    position: 'relative',
-                    maxWidth: '55%',
-                    maxHeight: '100%',
-                    objectFit: 'cover',
-                    top: tablet ? "8dvw" : mobile ? "9dvw" : smallMobile ? '10dvw' : '10dvw',
-                    left: tablet ? "-9dvw" : mobile ? "-9dvw" : smallMobile ? '-15dvw' : '-9dvw',
-                }} />
+                {/*----------------------------------------------------*/}
 
-                <Typography
-                    variant="h2"
-                    sx={{
-                        position: 'absolute',
-                        right: '13dvw',
-                        top: tablet ? "24dvw" : mobile ? "28dvw" : smallMobile ? '30dvw' : '22dvw',
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'Regular',
-                        fontSize: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '4dvw',
-                        textAlign: 'center'
-                    }}
-                >
-                    Read the<br />
-                    candidate guide
-                </Typography>
-                <a href="https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
-                    <Button
-                        variant="contained"
+
+                <div style={{ height: "auto", width: "100vw" }}>
+                    {/* 5th Section */}
+                    <Box
                         sx={{
-                            position: 'absolute',
-                            right: tablet ? "20dvw" : mobile ? "19dvw" : smallMobile ? '17dvw' : '21dvw',
-                            top: tablet ? "35dvw" : mobile ? "40dvw" : smallMobile ? '42dvw' : '33dvw',
-                            borderRadius: '10px',
-                            py: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '1.5dvw' : '1dvw',
-                            px: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '4dvw',
-                            fontSize: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '2.5dvw' : '1.2dvw',
-                            textTransform: 'none',
+                            position: 'relative',
+                            // background: "blue",
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            height: '100% ',
+                            //background: "blue",
                         }}
-                    >
-                        Download
-                    </Button>
-                </a>
+                    >                        
 
-                <Typography
-                    variant="body1"
-                    sx={{
-                        position: 'absolute',
-                        bottom: '6dvw',
-                        color: theme.palette.secondary.main,
-                        fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'Light',
-                        fontSize: '3dvw',
-                    }}
-                >
-                    And if you have any further questions,
-                </Typography>
+                        {/* progress * 6.5 */}
+                        <HowToApply progress={0} />
 
-                <Link href="mailto:geral@innova.pt" variant="body1" sx={{
-                    position: 'absolute',
-                    bottom: '2.5dvw',
-                    color: theme.palette.primary.main,
-                    fontFamily: theme.typography.fontFamily,
-                    fontWeight: 'Light',
-                    fontSize: '3dvw',
-                }}>
-                    send us an-email
-                </Link>
+                    </Box>
+                </div>
+
+
+                {/*----------------------------------------------------*/}
+
+
+                <div>
+
+                    {/* 6th Section */}
+                    <div style={{ width: "100vw" }}>
+
+                        <Box
+                            bgcolor="white"
+                            sx={{
+                                position: 'relative',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                height: tablet ? "65dvw" : mobile ? "70dvw" : smallMobile ? '69dvw' : '60dvw',
+                                overflow: 'visible',
+
+                            }}>
+                            <Typography
+                                variant="h4"
+                                sx={{
+                                    position: 'relative',
+                                    top: '5dvw',
+                                    color: theme.palette.secondary.main,
+                                    fontFamily: theme.typography.fontFamily,
+                                    fontWeight: 'Light',
+                                    fontSize: tablet ? "3.5dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : '2.5dvw',
+                                }}
+                            >
+                                One important rule...
+                            </Typography>
+                            <Typography
+                                variant="h2"
+                                sx={{
+                                    position: 'relative',
+                                    top: '6dvw',
+                                    color: theme.palette.secondary.main,
+                                    fontFamily: theme.typography.fontFamily,
+                                    fontWeight: 'bold',
+                                    fontSize: tablet ? "5.5dvw" : mobile ? "7dvw" : smallMobile ? '7dvw' : '4dvw',
+                                }}
+                            >
+                                Always be prepared!
+                            </Typography>
+                            <img src={guiadocandidato} alt='guiadocandidato' style={{
+                                position: 'relative',
+                                maxWidth: '55%',
+                                maxHeight: '100%',
+                                objectFit: 'cover',
+                                top: tablet ? "8dvw" : mobile ? "9dvw" : smallMobile ? '10dvw' : '10dvw',
+                                left: tablet ? "-9dvw" : mobile ? "-9dvw" : smallMobile ? '-15dvw' : '-9dvw',
+                            }} />
+
+                            <Typography
+                                variant="h2"
+                                sx={{
+                                    position: 'absolute',
+                                    right: '13dvw',
+                                    top: tablet ? "24dvw" : mobile ? "28dvw" : smallMobile ? '30dvw' : '22dvw',
+                                    color: theme.palette.secondary.main,
+                                    fontFamily: theme.typography.fontFamily,
+                                    fontWeight: 'Regular',
+                                    fontSize: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '4dvw',
+                                    textAlign: 'center'
+                                }}
+                            >
+                                Read the<br />
+                                candidate guide
+                            </Typography>
+                            <a href="https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
+                                <Button
+                                    variant="contained"
+                                    sx={{
+                                        position: 'absolute',
+                                        right: tablet ? "20dvw" : mobile ? "19dvw" : smallMobile ? '17dvw' : '21dvw',
+                                        top: tablet ? "35dvw" : mobile ? "40dvw" : smallMobile ? '42dvw' : '33dvw',
+                                        borderRadius: '10px',
+                                        py: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '1.5dvw' : '1dvw',
+                                        px: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '4dvw',
+                                        fontSize: tablet ? "1.3dvw" : mobile ? "1.5dvw" : smallMobile ? '2.5dvw' : '1.2dvw',
+                                        textTransform: 'none',
+                                    }}
+                                >
+                                    Download
+                                </Button>
+                            </a>
+
+                            <Typography
+                                variant="body1"
+                                sx={{
+                                    position: 'absolute',
+                                    bottom: '6dvw',
+                                    color: theme.palette.secondary.main,
+                                    fontFamily: theme.typography.fontFamily,
+                                    fontWeight: 'Light',
+                                    fontSize: '3dvw',
+                                }}
+                            >
+                                And if you have any further questions,
+                            </Typography>
+
+                            <Link href="mailto:geral@innova.pt" variant="body1" sx={{
+                                position: 'absolute',
+                                bottom: '2.5dvw',
+                                color: theme.palette.primary.main,
+                                fontFamily: theme.typography.fontFamily,
+                                fontWeight: 'Light',
+                                fontSize: '3dvw',
+                            }}>
+                                send us an-email
+                            </Link>
+
+                        </Box>
+                    </div>
+
+                </div>
 
             </Box>
-        </>
 
+        </>
 
 
     );

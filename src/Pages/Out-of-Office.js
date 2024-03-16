@@ -1,9 +1,12 @@
 import { AppBar} from '@mui/material'
 import React from 'react'
+import MaintenanceSinglePage from './MaintenanceSinglePage'
 
 const OutOffice = () => {
     return (
-        <AppBar position= 'center'>Out of Office</AppBar>
+        <>
+            <MaintenanceSinglePage/>
+        </>
     )
 }
 

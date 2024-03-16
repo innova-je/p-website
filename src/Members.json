@@ -58,7 +58,7 @@
                     "name": "Marta Cunha",
                     "imgDirectory": "Comercial/marta_cunha.webp",
                     "email": "marta.cunha@innova.pt",
-                    "linkedin": "linkedin.com/in/marta-demetrion-cunha"
+                    "linkedin": "https://www.linkedin.com/in/marta-demetrion-cunha/"
                 },
                 {
                     "name": "Miguel Durão",
@@ -107,7 +107,7 @@
                     "name": "João Cristóvão",
                     "imgDirectory": "Marketing/joao_cristovao.webp",
                     "email": "joao.cristovao@innova.pt",
-                    "linkedin": "https://www.www.linkedin.com/in/joão-cristóvão"
+                    "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-crist%C3%B3v%C3%A3o/"
                 },
                 {
                     "name": "Mariana Passos",
@@ -216,7 +216,7 @@
                     "name": "João Lopes",
                     "imgDirectory": "Projetos/joao_lopes.webp",
                     "email": "joao.lopes@innova.pt",
-                    "linkedin": "linkedin.com/in/joão-ricardo-lourenço-lopes-572ab9238"
+                    "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-ricardo-louren%C3%A7o-lopes-572ab9238/"
                 },
                 {
                     "name": "Lara Antunes",
@@ -319,13 +319,13 @@
                     "name": "Rafael Abegão",
                     "imgDirectory": "Qualidade/rafael_abegao.webp",
                     "email": "rafael.abegao@innova.pt",
-                    "linkedin": "http://www.linkedin.com/in/rafael-cordeiro-abegão-2b69a926a"
+                    "linkedin": "https://www.linkedin.com/in/rafael-abeg%C3%A3o-2b69a926a/"
                 },
                 {
                     "name": "Vasco Deusdado",
                     "imgDirectory": "Qualidade/vasco_deusdado.webp",
                     "email": "vasco.deusdado@innova.pt",
-                    "linkedin": "linkedin.com/in/vasco-deusdado-24405526a"
+                    "linkedin": "https://www.linkedin.com/in/vasco-deusdado-24405526a/"
                 }
             ]
         },

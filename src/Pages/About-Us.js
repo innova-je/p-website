@@ -42,7 +42,7 @@ const AboutUs = () => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    height: smallDesktop ? '50dvw' : tablet ? "55dvw" : mobile ? '62dvw' : smallMobile ? '62dvw' : '45dvw',
+                    height: 'auto',
                     width: '100%',
                     position: 'relative',
                     overflowX: 'clip',
@@ -51,7 +51,7 @@ const AboutUs = () => {
                 {/* Blurred Image */}
                 <Box
                     sx={{
-                        position: 'relative',
+                        position: 'absolute',
                         width: '100%',
                         height: '100%',
                         backgroundImage: `url(${HeroImage})`,
@@ -62,7 +62,7 @@ const AboutUs = () => {
                         opacity: '0.7',
                         zIndex: '0',
                     }}
-                ></Box>
+                />
 
 
                 {/* White Box */}
@@ -70,10 +70,13 @@ const AboutUs = () => {
                     sx={{
                         backgroundColor: 'white',
                         borderRadius: '2dvw',
-                        position: 'absolute',
-                        top: largeDesktop ? '14dvw' : desktop ? '15dvw' : smallDesktop ? '17dvw' : tablet ? '20dvw' : '25dvw',
+                        position: 'relative',
+                        // top: largeDesktop ? '14dvw' : desktop ? '15dvw' : smallDesktop ? '17dvw' : tablet ? '20dvw' : '25dvw',
+                        // top: '2rem',
+                        marginBottom: mobile ? '10rem' : smallMobile ? '8rem' : '8rem',
+                        mt: '8rem',
                         width: '80dvw',
-                        height: '65%',
+                        height: 'auto',
                         zIndex: '1',
                     }}
                 >
@@ -81,9 +84,9 @@ const AboutUs = () => {
                         sx={{
                             backgroundColor: theme.palette.primary.main,
                             color: 'white',
-                            borderRadius: '25px',
+                            borderRadius: '2.5dvw',
                             position: 'absolute',
-                            top: smallDesktop ? "-4dvw" : tablet ? "-4.5dvw" : mobile ? "-5.5dvw" :smallMobile ? '-5.5dvw' : '-3.4dvw',
+                            top: smallDesktop ? "-4dvw" : tablet ? "-4.5dvw" : mobile ? "-5.5dvw" : smallMobile ? '-5.5dvw' : '-3.4dvw',
                             left: '-15dvw',
                             width: '60%',
                             height: '17%',
@@ -94,19 +97,21 @@ const AboutUs = () => {
                             display: 'flex',
                             alignItems: 'center',
                             fontWeight: '700',
-                            fontSize: tablet ? "3dvw" : '2.5dvw',
+                            fontSize: tablet || smallMobile ? "3dvw" : '2.5dvw',
                         }}
-                    > About Us </Box>
+                    > About Us
+                    </Box>
                     <Typography
                         variant="h4"
                         sx={{
-                            position: "absolute",
-                            top: mobile ? "8dvw" :smallMobile ? '8dvw' : "6dvw",
+                            position: "relative",
+                            // top: mobile ? "8dvw" : smallMobile ? '8dvw' : "6dvw",
                             left: "4dvw",
                             color: theme.palette.secondary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '700',
-                            fontSize: mobile ? "3.5dvw" : smallMobile ? '3.5dvw' :'2.7dvw',
+                            fontSize: mobile ? "3.5dvw" : smallMobile ? '5dvw' : '2.7dvw',
+                            marginTop: smallMobile ? '2rem' : '4rem',
                         }}
                     >
                         We are
@@ -114,13 +119,13 @@ const AboutUs = () => {
                     <Typography
                         variant="h3"
                         sx={{
-                            position: "absolute",
-                            top: mobile ? "12dvw" : smallMobile ? '12dvw' :"10dvw",
+                            position: "relative",
+                            // top: mobile ? "12dvw" : smallMobile ? '12dvw' : "10dvw",
                             left: "4dvw",
                             color: theme.palette.primary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            fontSize: mobile ? "3.9dvw" : smallMobile ? '3.9dvw' :'3.3dvw',
+                            fontSize: mobile ? "3.9dvw" : smallMobile ? '3.9dvw' : '3.3dvw',
                         }}
                     >
                         Junior Enterpreneurs.
@@ -128,20 +133,21 @@ const AboutUs = () => {
                     <Typography
                         variant="h4"
                         sx={{
-                            position: "absolute",
-                            top: mobile ? "17.5dvw" : smallMobile ? '17.5dvw' :"15dvw",
-                            left: "4dvw",
+                            position: "relative",
+                            // top: mobile ? "17.5dvw" : smallMobile ? '17.5dvw' : "15dvw",
+                            left: "6dvw",
+                            mt: '1rem',
                             mb: '5rem',
                             color: theme.palette.secondary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Light',
-                            fontSize: mobile ? "3dvw" : smallMobile ? '3dvw' :'2.5dvw',
+                            fontSize: mobile ? "3dvw" : smallMobile ? '3.3dvw' : '2dvw',
                         }}
                     >
                         Engineering Students <br />
                         Problem Solvers <br />
                         Creative Minds <br />
-                        Next-Gen Leaders 
+                        Next-Gen Leaders
                     </Typography>
                     <img src={HeroImage} alt="Hero Image"
                         style={{
@@ -158,100 +164,87 @@ const AboutUs = () => {
                         sx={{
                             backgroundColor: theme.palette.secondary.main,
                             color: 'white',
-                            borderRadius: '2dvw',
+                            borderRadius: '1.5rem',
                             position: 'absolute',
-                            bottom: tablet ? "-4.5dvw" : mobile ? "-10dvw" :smallMobile ? '-10dvw' : '-3.5dvw',
+                            bottom: smallDesktop ? '-4.5dvw' : tablet ? "-6dvw" : mobile ? "-14dvw" : smallMobile ? '-37dvw' : '-3.5dvw',
                             left: '10dvw',
                             width: '80%',
-                            height: tablet ? "30%" : mobile ? "35%" :smallMobile ? '35%' : '20%',
+                            height: tablet ? "30%" : mobile ? "35%" : smallMobile ? '60%' : '20%',
                             zIndex: '1',
-                            pl: '3dvw',
-                            pt: mobile ? "3dvw" : '1dvw',
-                            pb: mobile ? "3dvw" : '1dvw',
+                            pl: '1.5rem',
+                            pt: mobile ? "3dvw" : smallMobile ? '1.5rem' : '1dvw',
+                            pb: smallDesktop ? '2dvw' : mobile ? "3dvw" : smallMobile ? '2rem' : '1dvw',
                             pr: '20dvw',
                             justifyContent: 'center',
                             textAlign: 'justify',
                             fontWeight: 'light',
-                            fontSize: '17px',
+                            fontSize: smallDesktop ? '1.5dvw' : tablet ? '1.7dvw' : mobile ? "2dvw" : smallMobile ? "3.3dvw" : '1.2dvw',
                         }}
                     >
-                        In-Nova is the Junior Enterprise of NOVA School of Science and Technology, founded with the aim of promoting the capabilities of its students by integrating them into real projects. <br/>
-                        In-Nova is focused on creating a limitless workspace, in the most varied areas of knowledge. Specialized in robotics, full stack development, electronics, and prototyping. 
+                        In-Nova is the Junior Enterprise of NOVA School of Science and Technology, founded with the aim of promoting the capabilities of its students by integrating them into real projects.
+                        In-Nova is focused on creating a limitless workspace, in the most varied areas of knowledge. Specialized in robotics, full stack development, electronics, and prototyping.
                     </Box>
                 </Box>
             </Box>
 
 
-            <Box
-                sx={{
+            <div
+                style={{
                     display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'flex-start',
+                    flexDirection: 'column',
+                    alignItems: 'center',
                     justifyContent: 'center',
-                    height: tablet ? "220vh" : mobile ? "220vh" :smallMobile ? '220vh' : '170vh',
+                    height: 'auto',
                     width: '100%',
                     position: 'relative',
-                    overflow: "hidden", // remove this 
                 }}
             >
                 {/* Expandable boxes */}
-                <Container
+                <Box
                     sx={{
-                        position: "relative",
-                        marginTop: tablet ? "10dvw" : mobile ? "25dvw" :smallMobile ? '25dvw' : "7dvw",
                         display: 'flex',
+                        mt: smallMobile ? "20dvw" : '5dvw',
+                        flexDirection: tablet ? 'column' : mobile ? "column" : smallMobile ? 'column' : 'row',
+                        gap: tablet ? 7 : mobile ? 5 : smallMobile ? 5 : 6,
                         justifyContent: 'center',
-                        alignItems: 'center', 
-                        alignContent: 'center', 
-                        zIndex: "3",
-                        // border: "1px solid blue",
+                        alignItems: 'center',
+                        zIndex: '2',
                     }}
                 >
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            flexDirection: tablet ? 'column' : mobile ? "column" :smallMobile ? 'column' : 'row', 
-                            gap: tablet ? 7 : mobile ? 5 :smallMobile ? 5 : 6,
-                            justifyContent: 'center',
-                            alignItems: 'center', 
-                            // border: "1px solid red",
-                        }}
-                    >
-                        <Values
-                            title="Mission"
-                            subtitle="What impact do we <br>want to create?"
-                            content="Promote the interaction of students in the business environment, training them in the latest scientific and technological techniques that enable them to develop creative and innovative solutions applied to real problems."
-                            currentState={selectedButton === 'Mission' ? 'expanded' : selectedButton ? 'collapsed' : 'normal'}
-                            onButtonClick={handleButtonClick}
-                        />
-                        <Values
-                            title="Vision"
-                            subtitle="What impact do we <br>want to create?"
-                            content="In-Nova aims to involve the academic and technology communities, highlighting the quality and excellence that characterize NOVA SST and ultimately making university students more competent, entrepreneurial and critical."
-                            currentState={selectedButton === 'Vision' ? 'expanded' : selectedButton ? 'collapsed' : 'normal'}
-                            onButtonClick={handleButtonClick}
-                        />
-                        <Values
-                            title="Values"
-                            subtitle="What impact do we <br>want to create?"
-                            content="Empowering the entrepreneurial spirit, giving priority to creativity, prioritizing critical thinking and encouraging proactivity and teamwork."
-                            currentState={selectedButton === 'Values' ? 'expanded' : selectedButton ? 'collapsed' : 'normal'}
-                            onButtonClick={handleButtonClick}
-                        />
-                    </Box>
-                </Container>
+                    <Values
+                        title="Mission"
+                        subtitle="What impact do we <br>want to create?"
+                        content="Promote the interaction of students in the business environment, training them in the latest scientific and technological techniques that enable them to develop creative and innovative solutions applied to real problems."
+                        currentState={selectedButton === 'Mission' ? 'expanded' : selectedButton ? 'collapsed' : 'normal'}
+                        onButtonClick={handleButtonClick}
+                    />
+                    <Values
+                        title="Vision"
+                        subtitle="What impact do we <br>want to create?"
+                        content="In-Nova aims to involve the academic and technology communities, highlighting the quality and excellence that characterize NOVA SST and ultimately making university students more competent, entrepreneurial and critical."
+                        currentState={selectedButton === 'Vision' ? 'expanded' : selectedButton ? 'collapsed' : 'normal'}
+                        onButtonClick={handleButtonClick}
+                    />
+                    <Values
+                        title="Values"
+                        subtitle="What impact do we <br>want to create?"
+                        content="Empowering the entrepreneurial spirit, giving priority to creativity, prioritizing critical thinking and encouraging proactivity and teamwork."
+                        currentState={selectedButton === 'Values' ? 'expanded' : selectedButton ? 'collapsed' : 'normal'}
+                        onButtonClick={handleButtonClick}
+                    />
+                </Box>
 
 
                 <Typography
                     variant="h3"
                     sx={{
-                        position: 'absolute',
-                        top: tablet ? "770px" : mobile ? "770px" :smallMobile ? '880px' : '350px',
+                        position: 'relative',
                         textAlign: 'center',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Bold',
                         zIndex: '3',
+                        mt: '4rem',
                     }}
                 >
                     In-Nova
@@ -259,42 +252,41 @@ const AboutUs = () => {
                 <Typography
                     variant="h2"
                     sx={{
-                        position: 'absolute',
-                        top: tablet ? "50%" : mobile ? "50%" :smallMobile ? '50%' : '30%',
+                        position: 'relative',
                         textAlign: 'center',
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Bold',
                         zIndex: '3',
-                        fontSize: tablet ? "6.5dvw" : mobile ? "8.5dvw" : smallMobile ? '8.5dvw' :"4.5dvw",
+                        fontSize: tablet ? "6.5dvw" : mobile ? "8.5dvw" : smallMobile ? '8.5dvw' : "4.5dvw",
                     }}
                 >
                     Throughout the years
                 </Typography>
 
-                <Box sx={{ position: 'absolute', top: tablet ? "57%" : mobile ? "57%" :smallMobile ? '57%' : '40%', zIndex: 4 }}>
+                <Box sx={{ position: 'relative',mt:'4dvw', zIndex: 4, mb:"4dvw" }}>
                     <MandatesSection />
                 </Box>
 
                 <Box
                     sx={{
                         position: 'absolute',
-                        zIndex: '2',
+                        zIndex: '1',
                         bottom: -1,
                         width: '100%',
-                        height: '80%',
+                        height: '100%',
                         backgroundImage:
                             'linear-gradient(to top, rgba(115,32,67,1), rgba(115,32,67,0))',
                     }}
                 />
-            </Box>
+            </div>
 
             <Box
                 sx={{
                     display: 'flex',
                     alignItems: 'flex-start',
                     justifyContent: 'center',
-                    height: tablet ? '150dvw': mobile ? '150dvw' : smallMobile ? '150dvw' :'80dvw',
+                    height: tablet ? '150dvw' : mobile ? '150dvw' : smallMobile ? '150dvw' : '80dvw',
                     width: '100%',
                     position: 'relative',
                 }}
@@ -303,18 +295,18 @@ const AboutUs = () => {
                     sx={{
                         position: 'relative',
                         top: '4dvw',
-                        left: tablet ? '0dvw': mobile ? '0dvw' :smallMobile ? '0dvw' : '-17dvw',
+                        left: tablet ? '0dvw' : mobile ? '0dvw' : smallMobile ? '0dvw' : '-17dvw',
                     }}
                 >
                     <Typography
                         variant="h5"
                         sx={{
-                            position: tablet ? 'relative': mobile ? 'relative' : smallMobile ? 'relative' : undefined,
-                            left: tablet ? '28dvw': mobile ? '28dvw' : smallMobile ? '28dvw' :undefined,
+                            position: tablet ? 'relative' : mobile ? 'relative' : smallMobile ? 'relative' : undefined,
+                            left: tablet ? '28dvw' : mobile ? '28dvw' : smallMobile ? '28dvw' : undefined,
                             color: theme.palette.secondary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Bold',
-                            fontSize: tablet ? '4dvw': mobile ? '4.5dvw' : smallMobile ? '4,5dvw' : '2.3dvw',
+                            fontSize: tablet ? '4dvw' : mobile ? '4.5dvw' : smallMobile ? '4,5dvw' : '2.3dvw',
                         }}
                     >
                         We're part of the
@@ -325,7 +317,7 @@ const AboutUs = () => {
                             color: theme.palette.primary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Bold',
-                            fontSize: tablet ? '7.7dvw': mobile ? '7.7dvw' : smallMobile ? '7.7dvw' :'4.7dvw',
+                            fontSize: tablet ? '7.7dvw' : mobile ? '7.7dvw' : smallMobile ? '7.7dvw' : '4.7dvw',
                         }}
                     >
                         Junior Enterprise Network
@@ -335,11 +327,11 @@ const AboutUs = () => {
                     variant='h6'
                     sx={{
                         position: 'absolute',
-                        top:'18%',
+                        top: '18%',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Medium',
-                        fontSize: tablet ? '3.5dvw': mobile ? '3.5dvw' : smallMobile ? '3.5dvw' :'2.5dvw',
+                        fontSize: tablet ? '3.5dvw' : mobile ? '3.5dvw' : smallMobile ? '3.5dvw' : '2.5dvw',
                     }}
                 >
                     “Europe’s future is in the hands of its young people.<br /> (…) Europe’s Junior Enterprises are leading the way.”
@@ -348,13 +340,13 @@ const AboutUs = () => {
                     variant='body2'
                     sx={{
                         position: 'absolute',
-                        top: tablet ? '27%': mobile ? '27%' :smallMobile ? '27%' : '28%',
-                        right: tablet ? '10dvw' : mobile ? '10dvw' : smallMobile ? '10dvw' :undefined,
-                        textAlign: tablet ? 'right' : mobile ? 'right' : smallMobile ? 'right' :'center',
+                        top: tablet ? '27%' : mobile ? '27%' : smallMobile ? '27%' : '28%',
+                        right: tablet ? '10dvw' : mobile ? '10dvw' : smallMobile ? '10dvw' : undefined,
+                        textAlign: tablet ? 'right' : mobile ? 'right' : smallMobile ? 'right' : 'center',
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Medium',
-                        fontSize: tablet ? '2.5dvw': mobile ? '2.5dvw' : smallMobile ? '2.5dvw' :'1.5dvw',
+                        fontSize: tablet ? '2.5dvw' : mobile ? '2.5dvw' : smallMobile ? '2.5dvw' : '1.5dvw',
                     }}
                 >
                     Jean-Claude Juncker<br />European Comission, Former President
@@ -364,7 +356,7 @@ const AboutUs = () => {
 
 
                 {/* add a Button */}
-                
+
                 <Button
                     variant="contained"
                     href='https://jeportugal.pt/en/je-network/'
@@ -374,7 +366,7 @@ const AboutUs = () => {
                         backgroundColor: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
-                        fontSize: tablet ? '4dvw': mobile ? '4dvw' : smallMobile ? '4dvw' :"2dvw",
+                        fontSize: tablet ? '4dvw' : mobile ? '4dvw' : smallMobile ? '4dvw' : "2dvw",
                         textTransform: 'none',
                         padding: '5px 50px',
                         borderRadius: '15px',

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Box, Button, Link, Typography, useTheme } from '@mui/material';
+
 // images
 import android from '../images/Icons/android-icon.png';
 import apple from '../images/Icons/apple-icon.png';
@@ -25,37 +27,42 @@ import googlefirebase from '../images/Icons/googlefirebase-icon.png';
 import teams from '../images/Icons/teams-icon.png';
 import postman from '../images/Icons/postman-icon.png';
 import solidworks from '../images/Icons/solidworks-icon.png';
+import technologiesBg from '../images/other/technologies_background.webp'
+
+
 import { useMediaQuery } from 'react-responsive';
 
 const circleStyle = {
-    position: 'absolute',
     borderRadius: '50%',
     border: '2px solid #818080',
-    margin: '0',
+    margin: '0 auto',
 };
 
 const imageStyle = {
-    position: 'absolute',
+    position: "absolute",
     width: '60px',
     height: '60px',
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-    // backgroundColor: 'white',
     transition: 'transform 0.2s ease-in-out',
     filter: 'grayscale(100%)',
     zIndex: 1,
 };
 
 const Technologies = () => {
+    const theme = useTheme();
 
     const smallMobile = useMediaQuery({ maxWidth: 550 });
     const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
     const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
     const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
     const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
-    const largeDesktop = useMediaQuery({ minWidth: 1400 })
+    const largeDesktop = useMediaQuery({ minWidth: 1400 });
 
-    const distributeImages = (circleWidth, circleHeight, imageUrls) => {
+    const distributeImages = (circleWidth, circleHeight, imageUrls, xwidth, xheight) => {
+        const calcWidth = (circleWidth / window.innerWidth) * 100;
+        const calcHeight = (circleHeight / window.innerHeight) * 100;
+
         const imagesArray = [];
         const numImages = imageUrls.length;
         const radiusX = circleWidth / 2;
@@ -70,9 +77,11 @@ const Technologies = () => {
                     key={i}
                     style={{
                         ...imageStyle,
-                        top: `calc(50% - 25px + ${y}px)`,
-                        left: `calc(50% - 25px + ${x}px)`,
+                        //top: `calc(${calcHeight}vh + ${y}px)`,
+                        //left: `calc(${calcWidth}vw + ${x}px)`,
                         backgroundImage: `url(${imageUrls[i % numImages]})`,
+                        height: xheight,
+                        width: xwidth
                     }}
                     onMouseEnter={(e) => {
                         e.currentTarget.style.transform = 'scale(1.2)';
@@ -100,39 +109,76 @@ const Technologies = () => {
         github, excel, solidworks, postman, postman, postman, postman, postman, arduino, premier, figma, css, postman, postman, postman, postman, postman, postman, postman, android
     ];
 
-    return (
-        <>
-            <div
-                style={{
-                    ...circleStyle,
-                    width: '45dvw',
-                    height: '40dvw',
-                    top: '-11dvw',
-                }}
-            >
-                {distributeImages(700, 600, circle1Images)}
+    return (         
+
+            <div style={{
+                background: `linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8)),            
+                url(${technologiesBg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                width: "100vw",
+                height: (mobile || smallMobile) ? "40vh" : "40vh",
+                display: "flex", 
+                flexDirection: "column", 
+                alignItems: "center", 
+                justifyContent: "center", 
+                padding: largeDesktop ? "10% 0 5% 0" : smallMobile || mobile ? "5% 0 0 0" : 0
+            }}>
+
+            <div style={{ height: "100%", display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center"}}>            
+            <Typography variant="h4"
+                            sx={{
+                                color: theme.palette.secondary.main,
+                                fontFamily: theme.typography.fontFamily,
+                                fontWeight: 'Semi-Bold',
+                                width: "100%",
+                                textAlign: "center",
+                                fontSize: smallDesktop ? '4dvw' : tablet ? '4.5dvw' : mobile ? '7dvw' : smallMobile ? '8dvw' : '2.5dvw',
+                                marginTop: largeDesktop ? "-20%" : "-15%"
+                            }}>
+                            You will
+                        </Typography>
+                        <Typography variant="h2"
+                            sx={{
+                                color: theme.palette.primary.main,
+                                fontFamily: theme.typography.fontFamily,
+                                fontWeight: 'Bold',
+                                textAlign: "center",
+                                fontSize: smallDesktop ? '5.5dvw' : tablet ? '6dvw' : mobile ? '9dvw' : smallMobile ? '10dvw' : '4.5dvw',
+                            }}>
+                            learn something
+                        </Typography>
+                        <Typography variant="h3"
+                            sx={{
+                                marginBottom: '20px',
+                                color: theme.palette.primary.main,
+                                fontFamily: theme.typography.fontFamily,
+                                fontWeight: 'bold',
+                                opacity: '0.66',
+                                textAlign: "center",
+                                fontSize: smallDesktop ? '4.5dvw' : tablet ? '5dvw' : mobile ? '6.5dvw' : smallMobile ? '8.5dvw' : '3.5dvw',
+                            }}>
+                            every.single.day
+                        </Typography>
+                        <Typography variant="body1"
+                            sx={{
+                                textAlign: 'center',
+                                color: theme.palette.secondary.main,
+                                fontFamily: theme.typography.fontFamily,
+                                fontWeight: "Medium",
+                                textAlign: "center",
+                                width: "80%",
+                                fontSize: smallDesktop ? '1.3dvw' : tablet ? '1.8dvw' : mobile ? '3.5dvw' : smallMobile ? '4.6dvw' : '1.2dvw',
+
+                            }}>
+                            These are some technologies we use.<br />
+                            If you have something new to teach us,  join the team!
+                        </Typography>
             </div>
-            <div
-                style={{
-                    ...circleStyle,
-                    width: '65dvw',
-                    height: '50dvw',
-                    top: '-15dvw',
-                }}
-            >
-                {distributeImages(1000, 800, circle2Images)}
+
             </div>
-            <div
-                style={{
-                    ...circleStyle,
-                    width: '88dvw',
-                    height: '58dvw',
-                    top: '-17dvw',
-                }}
-            >
-                {distributeImages(1350, 900, circle3Images)}
-            </div>
-        </>
+     
     );
 };
 

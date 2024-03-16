@@ -50,8 +50,7 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
               description={accomplishment.description}
               image={accomplishment.imgDirectory}
               date={accomplishment.date}
-              style1={accomplishment.style1}
-              style2={accomplishment.style2}
+              link={accomplishment.link}
             />
           ))}
         </div>
@@ -68,8 +67,7 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
                 description={accomplishment.description}
                 image={accomplishment.imgDirectory}
                 date={accomplishment.date}
-                style1={accomplishment.style1}
-                style2={accomplishment.style2}
+                link={accomplishment.link}
               />
             </div>
           </div>
