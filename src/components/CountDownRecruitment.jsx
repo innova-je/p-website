@@ -75,8 +75,8 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
             }}
         >
             
-                <div style={{display: "flex", flexDirection: (smallMobile || mobile) ? "column" : "row", alignItems: "center", width: "100%",  rowGap: "10%"}}>
-                    <div style={{width: (smallMobile || mobile) ? "100%" : "40%", height: "100%", display: "flex", alignItems:" center", justifyContent: "center"}}>
+                <div style={{display: "flex", flexDirection: (smallMobile || mobile || tablet) ? "column" : "row", alignItems: "center", width: "100%",  rowGap: "10%"}}>
+                    <div style={{width: (smallMobile || mobile || tablet) ? "100%" : "40%", height: "100%", display: "flex", alignItems:" center", justifyContent: "center"}}>
                         
                     <Typography
                         variant="h6"
@@ -84,14 +84,14 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                             fontWeight: 'Bold',
                             color: theme.palette.primary.main,
                             textTransform: 'uppercase',
-                            fontSize: mobile ? "4vw" : (smallMobile ? "4.5vw" : (desktop ? "2vw" : (largeDesktop ? "1.5vw" : "2vw"))),
+                            fontSize: mobile ? "4vw" : (smallMobile ? "4.5vw" : tablet ? "3.2vw" : (desktop ? "2vw" : (largeDesktop ? "1.5vw" : "2vw"))),
                             textAlign: !(mobile || smallMobile) ? "none" : "center"
                         }}
-                    >Recruitment {!(smallMobile || mobile) && (<br/>)} Closes in</Typography>   
+                    >Recruitment {!(smallMobile || mobile || tablet) && (<br/>)} Closes in</Typography>   
                         
                     </div>                
 
-                    <div style={{marginTop: mobile || smallMobile ? "5%" : 0, width: "80%",  display: "flex", flexDirection: "row", gap: "10%",  alignItems: "center", justifyContent: (mobile || smallMobile) ? "center" : "right"}}>
+                    <div style={{marginTop: mobile || smallMobile || tablet ? "5%" : 0, width: "100%",  display: "flex", flexDirection: "row", gap: (mobile || smallMobile) ? "17%" : "10%",  alignItems: "center", justifyContent: (mobile || smallMobile || tablet) ? "center" : "right"}}>
                         <div style={{width:"auto"}}>
                             <ItemCountDown>
                                 {countdown.days}
@@ -100,8 +100,6 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                                 DAYS
                             </ItemCountDownTitle>
                         </div>
-
-            
                         
                         <div style={{width:"auto"}}>
                         <ItemCountDown>
@@ -111,8 +109,6 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                                 HOURS
                             </ItemCountDownTitle>
                         </div>
-
-                    
 
                         <div style={{width:"auto"}}>
                         <ItemCountDown>
@@ -124,7 +120,7 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                         </div>
                 </div>
 
-                </div>
+            </div>
 
         </Box >
 
