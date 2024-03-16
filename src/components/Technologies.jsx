@@ -118,16 +118,15 @@ const Technologies = () => {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 width: "100vw",
-                height: (mobile || smallMobile) ? "60vh" : "60vh",
+                height: (mobile || smallMobile) ? "40vh" : "40vh",
                 display: "flex", 
                 flexDirection: "column", 
                 alignItems: "center", 
                 justifyContent: "center", 
-                padding: "0% 5% 0",
-                //background: "red"
+                padding: largeDesktop ? "10% 0 5% 0" : smallMobile || mobile ? "5% 0 0 0" : 0
             }}>
 
-            <div style={{background: "", height: "100%", display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center"}}>            
+            <div style={{ height: "100%", display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center"}}>            
             <Typography variant="h4"
                             sx={{
                                 color: theme.palette.secondary.main,
@@ -135,8 +134,8 @@ const Technologies = () => {
                                 fontWeight: 'Semi-Bold',
                                 width: "100%",
                                 textAlign: "center",
-                                fontSize: smallDesktop ? '4dvw' : tablet ? '4.5dvw' : mobile ? '6.5dvw' : smallMobile ? '7dvw' : '2.5dvw',
-                                
+                                fontSize: smallDesktop ? '4dvw' : tablet ? '4.5dvw' : mobile ? '7dvw' : smallMobile ? '8dvw' : '2.5dvw',
+                                marginTop: largeDesktop ? "-20%" : "-15%"
                             }}>
                             You will
                         </Typography>
@@ -146,7 +145,7 @@ const Technologies = () => {
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'Bold',
                                 textAlign: "center",
-                                fontSize: smallDesktop ? '5.5dvw' : tablet ? '6dvw' : mobile ? '8.5dvw' : smallMobile ? '8dvw' : '4.5dvw',
+                                fontSize: smallDesktop ? '5.5dvw' : tablet ? '6dvw' : mobile ? '9dvw' : smallMobile ? '10dvw' : '4.5dvw',
                             }}>
                             learn something
                         </Typography>
@@ -158,23 +157,23 @@ const Technologies = () => {
                                 fontWeight: 'bold',
                                 opacity: '0.66',
                                 textAlign: "center",
-                                fontSize: smallDesktop ? '4.5dvw' : tablet ? '5dvw' : mobile ? '6dvw' : smallMobile ? '7dvw' : '3.5dvw',
+                                fontSize: smallDesktop ? '4.5dvw' : tablet ? '5dvw' : mobile ? '6.5dvw' : smallMobile ? '8.5dvw' : '3.5dvw',
                             }}>
                             every.single.day
                         </Typography>
                         <Typography variant="body1"
                             sx={{
-                                marginBottom: '20px',
                                 textAlign: 'center',
                                 color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,
-                                fontWeight: "medium",
+                                fontWeight: "Medium",
                                 textAlign: "center",
-                                fontSize: smallDesktop ? '1.3dvw' : tablet ? '1.8dvw' : mobile ? '3dvw' : smallMobile ? '4.2dvw' : '1.2dvw',
+                                width: "80%",
+                                fontSize: smallDesktop ? '1.3dvw' : tablet ? '1.8dvw' : mobile ? '3.5dvw' : smallMobile ? '4.6dvw' : '1.2dvw',
 
                             }}>
                             These are some technologies we use.<br />
-                            If you have something new to teach us, {(mobile || smallMobile) && (<br/>)}  join the team!
+                            If you have something new to teach us,  join the team!
                         </Typography>
             </div>
 

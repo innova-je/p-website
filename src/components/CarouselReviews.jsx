@@ -170,44 +170,21 @@ const LogosSlider = () => {
           </Box>
         </Box>
       ) : (
-        <div
-          ref={containerRef}
-          style={{
-            position: "relative",
-            overflow: "visible",
-            width: "50%",
-            touchAction: "none",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: '10% 0 10% 0',
-          }}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div
-            style={{
-              display: "flex",
-              transition: "transform 0.3s ease-in-out",
-              transform: `translateX(${currentX}px)`,
-              width: `${Testimonials.length * 110}%`, // Adjust spacing between reviews
-              gap: "5dvw", // Add gap between reviews
-            }}
-            onTransitionEnd={handleTransitionEnd}
-          >
-              {testimonials.map((testimonial, index) => (
+          <Slider {...settings}>
+          {testimonials.map((testimonial, index) => (
+            <div key={index}>
+            <div style={{width: "100vw", height: "30vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
               <MemberReview
                 key={index}
                 image={testimonial.image}
                 name={testimonial.name}
                 department={testimonial.department}
                 text={testimonial.quote}
-                sx={{ zIndex: 2 }}
               />
-            ))}            
-          </div>
-        </div>
+              </div>
+              </div>
+            ))} 
+          </Slider>
       )}
     </>
   );

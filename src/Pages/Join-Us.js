@@ -202,36 +202,39 @@ const JoinUs = () => {
                     display: "flex",
                     alignItems: "center",
                     position: "relative",
-                    flexDirection: mobile || smallMobile ? 'column' : 'row',
+                    flexDirection: mobile || smallMobile || tablet ? 'column' : 'row',
                     width: "100dvw",
-                    height: (smallMobile || mobile) ? "auto" : "70vh",
-                    background: `linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))`,
+                    height: (smallMobile || mobile || tablet) ? "auto" : "60vh",
+                    background: `linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))`
                 }}>
                     {/* 3rd Section */}
-                    <div style={{ background: `url(${joinus_elements})`, padding: "0 3rem", display: "flex", flexDirection: "column", width: "50%", height: (mobile || smallMobile) ? "auto" : "100%", justifyContent: "center", alignItems: "center"}}>
-                        {(mobile || smallMobile ) && (
-                            <div style={{ height: "100%", zIndex: "-1", bottom: 0, background: "linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))"}}>
+                    <div style={{ zIndex: 1, }}>
+                        {(mobile || smallMobile || tablet) && (
+                            <div style={{ height: "100%", bottom: 0, zIndex: -1}}>
                             <img
                                 src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
                                 alt='joinus_oof'
                                 style={{
                                     width: '100%',
                                     height: 'auto',
-                                    zIndex: "-1"
+                                    opacity: "0.6"
                                 }}
                             />
                         </div> 
+                        
                         )}
-                        <div style={{ padding: "5% 0", width: "100%", display: "flex", flexDirection: "column", justifyContent:"center", alignItems: "center"}}>
+                        </div>
+                        
+                        <div style={{ background: `url(${joinus_elements})`, padding: (mobile || smallMobile || tablet) ? "5% 0 0 0" : "0 0 0 5rem", display: "flex", flexDirection: "column", width: "100%", height: (mobile || smallMobile) ? "auto" : "100%", justifyContent: "center", alignItems: "center"}}>
                           <h3
                             style={{
                                 width: "fit-content",
                                 color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'bold',
-                                fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : tablet ? "4dvw" : '3.3dvw',
+                                fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : tablet ? "4dvw" : smallDesktop ? "4dvw" : '3.3dvw',
                                 textAlign: "center",
-                                whiteSpace: "nowrap",
+                                whiteSpace: "nowrap"
                             }}
                         >
                             We don’t just work here,
@@ -243,7 +246,7 @@ const JoinUs = () => {
                                 color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'regular',
-                                fontSize: mobile ? '7dvw' : smallMobile ? '6dvw' : '2.5dvw',
+                                fontSize: mobile ? '7dvw' : smallMobile ? '6dvw' : tablet ? "4dvw" : smallDesktop ? "3dvw" : '2.5dvw',
                                 textAlign: "center"
                             }}
                         >
@@ -255,12 +258,11 @@ const JoinUs = () => {
                                 color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'bold',
-                                fontSize: mobile ? '7dvw' : smallMobile ? '7.5dvw' : '3.3dvw',
+                                fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : tablet ? "4dvw" : smallDesktop ? "4dvw" : '3.3dvw',
                             }}
                         >
                             a lot of fun!
                         </Typography>  
-                        </div>
                         
                         <NavLink to="/out-of-office">
                             <Button
@@ -271,7 +273,7 @@ const JoinUs = () => {
                                 borderRadius: '10px',
                                 py: '10px',
                                 px: '25px',
-                                fontSize: mobile ? '3dvw' : smallMobile ? '3dvw' : '1dvw',
+                                fontSize: mobile ? '3dvw' : smallMobile ? '3dvw' : tablet ? "2dvw" : '1dvw',
                                 textTransform: 'none',
                                 mt: '2rem',
                                 mb: '2rem'
@@ -283,16 +285,14 @@ const JoinUs = () => {
                         
                     </div>
 
-                    {!(mobile || smallMobile) && (
-                        <div style={{ height: "100%", width: "auto", zIndex: "-1", display: "flex", background: "green", alignItems: "flex-end", justifyContent: "right"}}>
+                    {!(mobile || smallMobile || tablet) && (
+                        <div style={{ width: "100%", height: "100%",  zIndex: "-1", display: "flex", background: "", alignItems: "flex-end", justifyContent: "right"}}>
                             <img
                                 src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
                                 alt='joinus_oof'
                                 style={{
                                     width: "auto",
                                     height: "100%",
-                                    position: "absolute",
-                                    right: "-7%"
                                 }}
                             />
                         </div> 
