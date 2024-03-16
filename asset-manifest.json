@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/p-website/static/css/main.2f7ab4be.css",
-    "main.js": "/p-website/static/js/main.94c9be41.js",
+    "main.js": "/p-website/static/js/main.83a76830.js",
     "static/js/3411.798ae6a9.chunk.js": "/p-website/static/js/3411.798ae6a9.chunk.js",
     "static/js/5762.81931c89.chunk.js": "/p-website/static/js/5762.81931c89.chunk.js",
     "static/js/477.78aa1b2d.chunk.js": "/p-website/static/js/477.78aa1b2d.chunk.js",
@@ -155,9 +155,9 @@
     "static/media/accomplishment2.webp": "/p-website/static/media/accomplishment2.d2025a0477b87fde3dfd.webp",
     "static/media/beatriz_infante.webp": "/p-website/static/media/beatriz_infante.74fb2224eaaf35c802f1.webp",
     "static/media/pedro_lopes.webp": "/p-website/static/media/pedro_lopes.50114a820068653f8c90.webp",
+    "static/media/technologies_background.webp": "/p-website/static/media/technologies_background.00fc1128cabce70e7753.webp",
     "static/media/arduino-icon.png": "/p-website/static/media/arduino-icon.85910289eced97342dee.png",
     "static/media/mariana_passos.webp": "/p-website/static/media/mariana_passos.802b5fd36b90b02c5b9a.webp",
-    "static/media/technologies_background.webp": "/p-website/static/media/technologies_background.f72655468a2af00c38a0.webp",
     "static/media/mafalda_pinto.webp": "/p-website/static/media/mafalda_pinto.be19be8801a4fafce9b5.webp",
     "static/media/sofia_pereira.webp": "/p-website/static/media/sofia_pereira.753028c13903de2ef624.webp",
     "static/media/joao_mota.webp": "/p-website/static/media/joao_mota.f2ab72b70be8c2ae3548.webp",
@@ -227,10 +227,10 @@
     "static/media/slick.woff": "/p-website/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/p-website/index.html",
     "main.2f7ab4be.css.map": "/p-website/static/css/main.2f7ab4be.css.map",
-    "main.94c9be41.js.map": "/p-website/static/js/main.94c9be41.js.map"
+    "main.83a76830.js.map": "/p-website/static/js/main.83a76830.js.map"
   },
   "entrypoints": [
     "static/css/main.2f7ab4be.css",
-    "static/js/main.94c9be41.js"
+    "static/js/main.83a76830.js"
   ]
 }
