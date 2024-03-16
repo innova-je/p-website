@@ -14,6 +14,7 @@ import Testimonials from '../Testimonials.json'
 import CountDownRecruitment from '../components/CountDownRecruitment';
 import { useMediaQuery } from 'react-responsive';
 
+import technologiesBg from '../images/other/technologies_background.webp'
 
 const JoinUs = () => {
     const theme = useTheme();
@@ -151,8 +152,17 @@ const JoinUs = () => {
 
                 {/*----------------------------------------------------*/}
 
-                <div style={{overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", width: "100%",
-            background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))'}}>
+                <div style={{
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%",
+        height: (mobile || smallMobile) ? "60vh" : "60vh",
+        background: `linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url(${technologiesBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center", 
+    }}>
                     {/* 2nd Section*/}
                     <Box
                         sx={{
@@ -204,18 +214,19 @@ const JoinUs = () => {
                     {/* 3rd Section */}
                     <div style={{ padding: "0 3rem", display: "flex", flexDirection: "column", width: "100%", height: (mobile || smallMobile) ? "auto" : "100%", justifyContent: "center", alignItems: "center"}}>
                         {(mobile || smallMobile) && (
-                            <div style={{ height: "100%"}}>
+                            <div style={{ height: "100%", zIndex: "1", bottom: 0, background: "linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))"}}>
                             <img
                                 src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
                                 alt='joinus_oof'
                                 style={{
                                     width: '100%',
                                     height: 'auto',
+                                    zIndex: "-1"
                                 }}
                             />
                         </div> 
                         )}
-                        <div style={{marginTop: "5%", width: "100%", display: "flex", flexDirection: "column", justifyContent:"center", alignItems: "center"}}>
+                        <div style={{ background: "linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))", marginTop: "0%", padding: "5% 0", width: "100%", display: "flex", flexDirection: "column", justifyContent:"center", alignItems: "center"}}>
                           <h3
                             style={{
                                 width: "fit-content",
@@ -273,7 +284,7 @@ const JoinUs = () => {
                     </div>
 
                     {!(mobile || smallMobile) && (
-                        <div style={{ height: "100%"}}>
+                        <div style={{ height: "100%", zIndex: "-1"}}>
                             <img
                                 src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
                                 alt='joinus_oof'
@@ -291,7 +302,7 @@ const JoinUs = () => {
                 {/*----------------------------------------------------*/}
 
 
-                <div style={{ display: "flex", flexDirection: "column", height: (smallMobile || mobile) ? "90vh" : "auto", width:"100%" }}>
+                <div style={{ display: "flex", flexDirection: "column", width:"100%" }}>
                     {/* 4th Section */}
                     <Box
                         sx={{
@@ -305,14 +316,14 @@ const JoinUs = () => {
 
                         }}
                     >
-                        <div style={{display: "flex", flexDirection: "column", background: "green", marginTop: "5%", height: "auto", marginLeft: (smallMobile || mobile) ? "0%" : "5%"}}>
+                        <div style={{display: "flex", flexDirection: "column", marginTop: "5%", height: "auto", marginLeft: (smallMobile || mobile) ? "0%" : "5%"}}>
                         {smallMobile || mobile ? (
-                            <div style={{height: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+                            <div style={{height: "auto", padding: "5% 0 0 0", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                                 <Typography
                                     variant="h3"
                                     sx={{
                                         fontSize: mobile ? '6dvw' : smallMobile ? '6dvw' : '4dvw',
-                                        color: "#FFFFFF",
+                                        color: "#F0F0F0",
                                         fontFamily: theme.typography.fontFamily,
                                         fontWeight: 'Bold',
                                     }}
@@ -323,7 +334,7 @@ const JoinUs = () => {
                                     variant="h3"
                                     sx={{
                                         fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '4dvw',
-                                        color: "#FFFFFF",
+                                        color: "#F0F0F0",
                                         fontFamily: theme.typography.fontFamily,
                                         fontWeight: 'Bold',
                                     }}
@@ -334,7 +345,7 @@ const JoinUs = () => {
                                     variant="h3"
                                     sx={{
                                         fontSize: mobile ? '8dvw' : smallMobile ? '9dvw' : '4dvw',
-                                        color: "#FFFFFF",
+                                        color: "#F0F0F0",
                                         fontFamily: theme.typography.fontFamily,
                                         fontWeight: 'Bold',
                                     }}
@@ -349,7 +360,7 @@ const JoinUs = () => {
                                     position: 'relative',
                                     zIndex: '1',
                                     fontSize: '3.5dvw',
-                                    color: "#FFFFFF",
+                                    color: theme.palette.primary.main,
                                     fontFamily: theme.typography.fontFamily,
                                     fontWeight: 500,
                                 }}
@@ -378,25 +389,11 @@ const JoinUs = () => {
                             // background: "blue",
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: "10%",
                             alignItems: 'center',
-                            height: 'auto ',
-                            background: "blue"
+                            height: '100% ',
+                            //background: "blue",
                         }}
-                    >
-                        <Typography
-                            variant="h2"
-                            sx={{
-                                position: 'relative',
-                                top: tablet ? "5dvw" : mobile ? "8vw" : smallMobile ? '8dvw' : '3dvw',
-                                color: theme.palette.secondary.main,
-                                fontFamily: theme.typography.fontFamily,
-                                fontWeight: 'Bold',
-                                fontSize: tablet ? "7dvw" : mobile ? "10dvw" : smallMobile ? '12dvw' : '5.5dvw',
-                            }}
-                        >
-                            How to apply?
-                        </Typography>
+                    >                        
 
                         {/* progress * 6.5 */}
                         <HowToApply progress={0} />

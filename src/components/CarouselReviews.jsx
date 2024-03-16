@@ -6,6 +6,10 @@ import MemberReview from '../components/MemberReview';
 import Testimonials from '../Testimonials.json'
 import { useMediaQuery } from 'react-responsive';
 
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 // const slideAnimation = (direction) => keyframes`
 //   0% {
 //     transform: translateX(0%);
@@ -126,6 +130,14 @@ const LogosSlider = () => {
     return rows;
   };
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
       {isDesktopOrLaptop ? (
@@ -184,7 +196,7 @@ const LogosSlider = () => {
             }}
             onTransitionEnd={handleTransitionEnd}
           >
-            {testimonials.map((testimonial, index) => (
+              {testimonials.map((testimonial, index) => (
               <MemberReview
                 key={index}
                 image={testimonial.image}
@@ -193,7 +205,7 @@ const LogosSlider = () => {
                 text={testimonial.quote}
                 sx={{ zIndex: 2 }}
               />
-            ))}
+            ))}            
           </div>
         </div>
       )}

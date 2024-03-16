@@ -26,6 +26,9 @@ import googlefirebase from '../images/Icons/googlefirebase-icon.png';
 import teams from '../images/Icons/teams-icon.png';
 import postman from '../images/Icons/postman-icon.png';
 import solidworks from '../images/Icons/solidworks-icon.png';
+
+
+
 import { useMediaQuery } from 'react-responsive';
 
 const circleStyle = {
@@ -106,9 +109,13 @@ const Technologies = () => {
     ];
 
     return (
-        <div style={{ width: "100vw", height:(mobile || smallMobile) ? "60vh" : "100vh",  background: "green",  display: "grid", gridTemplateColumns: "1fr", gridTemplateRows: "1fr", placeItems: "center", justifyContent: "center", alignItems: "center" }}>
-            {/* Texts */}
-            <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+        <div style={{
+            width: "100vw",
+            height: (mobile || smallMobile) ? "50vh" : "60vh"
+        }}>
+            {/* Texts */}          
+
+            <div style={{width: "100%", background: "", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", paddingBottom: "5%"}}>
             
             <Typography variant="h4"
                             sx={{
@@ -159,8 +166,10 @@ const Technologies = () => {
                             If you have something new to teach us, {(mobile || smallMobile) && (<br/>)}  join the team!
                         </Typography>
             </div>
-            
-            <div style={{display:(mobile || smallMobile) ? "none" : "flex"}}>
+
+            {/**
+             * 
+             * <div style={{display:(mobile || smallMobile) ? "none" : "flex"}}>
                 <div style={{ ...circleStyle, width: '45vw', height: '40vh', zIndex: 3, gridColumn: "1 / 1", gridRow: "1 / 1", background: "blue" }}>
                     {distributeImages(700, 600, circle1Images, 60, 60)}
                 </div>
@@ -171,6 +180,10 @@ const Technologies = () => {
                     {distributeImages(1350, 900, circle3Images, 60, 60)}
                 </div>
             </div>
+             * 
+             */}
+            
+            
         </div>
     );
 };
