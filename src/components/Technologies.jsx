@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Button, Link, Typography, useTheme } from '@mui/material';
+
 // images
 import android from '../images/Icons/android-icon.png';
 import apple from '../images/Icons/apple-icon.png';
@@ -26,7 +27,7 @@ import googlefirebase from '../images/Icons/googlefirebase-icon.png';
 import teams from '../images/Icons/teams-icon.png';
 import postman from '../images/Icons/postman-icon.png';
 import solidworks from '../images/Icons/solidworks-icon.png';
-
+import technologiesBg from '../images/other/technologies_background.webp'
 
 
 import { useMediaQuery } from 'react-responsive';
@@ -108,15 +109,25 @@ const Technologies = () => {
         github, excel, solidworks, postman, postman, postman, postman, postman, arduino, premier, figma, css, postman, postman, postman, postman, postman, postman, postman, android
     ];
 
-    return (
-        <div style={{
-            width: "100vw",
-            height: (mobile || smallMobile) ? "50vh" : "60vh"
-        }}>
-            {/* Texts */}          
+    return (         
 
-            <div style={{width: "100%", background: "", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", paddingBottom: "5%"}}>
-            
+            <div style={{
+                background: `linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8)),            
+                url(${technologiesBg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                width: "100vw",
+                height: (mobile || smallMobile) ? "60vh" : "60vh",
+                display: "flex", 
+                flexDirection: "column", 
+                alignItems: "center", 
+                justifyContent: "center", 
+                padding: "0% 5% 0",
+                //background: "red"
+            }}>
+
+            <div style={{background: "", height: "100%", display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center"}}>            
             <Typography variant="h4"
                             sx={{
                                 color: theme.palette.secondary.main,
@@ -157,7 +168,7 @@ const Technologies = () => {
                                 textAlign: 'center',
                                 color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,
-                                opacity: '0.7',
+                                fontWeight: "medium",
                                 textAlign: "center",
                                 fontSize: smallDesktop ? '1.3dvw' : tablet ? '1.8dvw' : mobile ? '3dvw' : smallMobile ? '4.2dvw' : '1.2dvw',
 
@@ -167,24 +178,8 @@ const Technologies = () => {
                         </Typography>
             </div>
 
-            {/**
-             * 
-             * <div style={{display:(mobile || smallMobile) ? "none" : "flex"}}>
-                <div style={{ ...circleStyle, width: '45vw', height: '40vh', zIndex: 3, gridColumn: "1 / 1", gridRow: "1 / 1", background: "blue" }}>
-                    {distributeImages(700, 600, circle1Images, 60, 60)}
-                </div>
-                <div style={{ ...circleStyle, width: '65vw', height: '60vh', zIndex: 2, gridColumn: "1 / 1", gridRow: "1 / 1", background: "red" }}>
-                    {distributeImages(1000, 800, circle2Images, 60, 60)}
-                </div>
-                <div style={{ ...circleStyle, width: '90vw', height: '85vh', zIndex: 1, gridColumn: "1 / 1", gridRow: "1 / 1", background: "orange"}}>
-                    {distributeImages(1350, 900, circle3Images, 60, 60)}
-                </div>
             </div>
-             * 
-             */}
-            
-            
-        </div>
+     
     );
 };
 

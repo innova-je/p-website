@@ -91,7 +91,6 @@ const JoinUs = () => {
                     alignItems: 'center',
                     height: "auto",
                     width: '100%',
-                    //backgroundImage: `url(${HeroImage})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -154,16 +153,13 @@ const JoinUs = () => {
                 {/*----------------------------------------------------*/}
 
                 <div style={{
-        overflow: "hidden",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "100%",
-        height: (mobile || smallMobile) ? "60vh" : "60vh",
-        background: `linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url(${technologiesBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center", 
-    }}>
+                    overflow: "hidden",
+                    display: "flex",
+                    justifyContent: "center",
+                    width: "100%",
+                    height: "auto",
+                    marginBottom: "5%"
+                }}>
                     {/* 2nd Section*/}
                     <Box
                         sx={{
@@ -209,13 +205,12 @@ const JoinUs = () => {
                     flexDirection: mobile || smallMobile ? 'column' : 'row',
                     width: "100dvw",
                     height: (smallMobile || mobile) ? "auto" : "70vh",
-                    background: `linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url(${joinus_elements})`,
-                    marginTop: mobile || smallMobile ? "0%" : "0%",
+                    background: `linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))`,
                 }}>
                     {/* 3rd Section */}
-                    <div style={{ padding: "0 3rem", display: "flex", flexDirection: "column", width: "100%", height: (mobile || smallMobile) ? "auto" : "100%", justifyContent: "center", alignItems: "center"}}>
-                        {(mobile || smallMobile) && (
-                            <div style={{ height: "100%", zIndex: "1", bottom: 0, background: "linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))"}}>
+                    <div style={{ background: `url(${joinus_elements})`, padding: "0 3rem", display: "flex", flexDirection: "column", width: "50%", height: (mobile || smallMobile) ? "auto" : "100%", justifyContent: "center", alignItems: "center"}}>
+                        {(mobile || smallMobile ) && (
+                            <div style={{ height: "100%", zIndex: "-1", bottom: 0, background: "linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))"}}>
                             <img
                                 src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
                                 alt='joinus_oof'
@@ -227,14 +222,14 @@ const JoinUs = () => {
                             />
                         </div> 
                         )}
-                        <div style={{ background: "linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))", marginTop: "0%", padding: "5% 0", width: "100%", display: "flex", flexDirection: "column", justifyContent:"center", alignItems: "center"}}>
+                        <div style={{ padding: "5% 0", width: "100%", display: "flex", flexDirection: "column", justifyContent:"center", alignItems: "center"}}>
                           <h3
                             style={{
                                 width: "fit-content",
                                 color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'bold',
-                                fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '3.3dvw',
+                                fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : tablet ? "4dvw" : '3.3dvw',
                                 textAlign: "center",
                                 whiteSpace: "nowrap",
                             }}
@@ -289,13 +284,15 @@ const JoinUs = () => {
                     </div>
 
                     {!(mobile || smallMobile) && (
-                        <div style={{ height: "100%", zIndex: "-1"}}>
+                        <div style={{ height: "100%", width: "auto", zIndex: "-1", display: "flex", background: "green", alignItems: "flex-end", justifyContent: "right"}}>
                             <img
                                 src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
                                 alt='joinus_oof'
                                 style={{
-                                    width: 'auto',
-                                    height: '100%',
+                                    width: "auto",
+                                    height: "100%",
+                                    position: "absolute",
+                                    right: "-7%"
                                 }}
                             />
                         </div> 
