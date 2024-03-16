@@ -15,6 +15,7 @@ import CountDownRecruitment from '../components/CountDownRecruitment';
 import { useMediaQuery } from 'react-responsive';
 
 import technologiesBg from '../images/other/technologies_background.webp'
+import { NavLink } from 'react-router-dom';
 
 const JoinUs = () => {
     const theme = useTheme();
@@ -124,7 +125,7 @@ const JoinUs = () => {
                                     </Typography>
 
                                     <CountDownRecruitment />
-
+                                 
                                     <Button
                                         variant="contained"
                                         href='https://forms.gle/NP4Eo4RUftMv4LFq7'
@@ -266,7 +267,9 @@ const JoinUs = () => {
                         </Typography>  
                         </div>
                         
-                        <Button
+                        <NavLink to="/out-of-office">
+                            <Button
+
                             variant="contained"
                             endIcon={<ArrowForwardIcon />}
                             sx={{
@@ -281,6 +284,8 @@ const JoinUs = () => {
                         >
                             Out of Office
                         </Button>
+                        </NavLink>
+                        
                     </div>
 
                     {!(mobile || smallMobile) && (

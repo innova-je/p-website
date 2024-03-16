@@ -407,7 +407,7 @@ const HowToApply = ({ progress }) => {
                 position: 'relative',
                 marginTop: '10%',
                 width: tablet ? '75dvw' : mobile ? '75dvw' : smallMobile ? '75dvw' : '65dvw',
-                height: smallMobile ? "64vh" : (mobile ? "55vh" : (tablet ? "60vh" : (smallDesktop ? "55vh" : desktop ? "80vh" : "85vh"))),
+                height: smallMobile ? "68vh" : (mobile ? "55vh" : (tablet ? "60vh" : (smallDesktop ? "55vh" : desktop ? "80vh" : "85vh"))),
                 borderRadius: '20px',
                 background: "white",
                 display: 'flex',

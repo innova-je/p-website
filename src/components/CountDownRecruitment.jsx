@@ -62,7 +62,7 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
         <Box
             sx={{
                 width: (mobile || smallMobile) ? "70%" : '50%',
-                height: (smallMobile || mobile) ? "25vh" : "15vh",
+                height: (smallMobile || mobile) ? "20vh" : "15vh",
                 backgroundColor: '#fff',
                 borderRadius: '25px',
                 opacity: '0.9',
@@ -75,7 +75,7 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
             }}
         >
             
-                <div style={{display: "flex", flexDirection: (smallMobile || mobile) ? "column" : "row", alignItems: "center", width: "100%",  gap: "10%"}}>
+                <div style={{display: "flex", flexDirection: (smallMobile || mobile) ? "column" : "row", alignItems: "center", width: "100%",  rowGap: "10%"}}>
                     <div style={{width: (smallMobile || mobile) ? "100%" : "40%", height: "100%", display: "flex", alignItems:" center", justifyContent: "center"}}>
                         
                     <Typography
@@ -84,15 +84,15 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                             fontWeight: 'Bold',
                             color: theme.palette.primary.main,
                             textTransform: 'uppercase',
-                            fontSize: mobile ? "4vw" : (smallMobile ? "6vw" : (desktop ? "2vw" : (largeDesktop ? "1.5vw" : "2vw"))),
+                            fontSize: mobile ? "4vw" : (smallMobile ? "4.5vw" : (desktop ? "2vw" : (largeDesktop ? "1.5vw" : "2vw"))),
                             textAlign: !(mobile || smallMobile) ? "none" : "center"
                         }}
                     >Recruitment {!(smallMobile || mobile) && (<br/>)} Closes in</Typography>   
                         
                     </div>                
 
-                    <div style={{width: "80%",  display: "flex", flexDirection: "row", gap: "10%",  alignItems: "center", justifyContent: (mobile || smallMobile) ? "center" : "right"}}>
-                        <div style={{width:"20%"}}>
+                    <div style={{marginTop: mobile || smallMobile ? "5%" : 0, width: "80%",  display: "flex", flexDirection: "row", gap: "10%",  alignItems: "center", justifyContent: (mobile || smallMobile) ? "center" : "right"}}>
+                        <div style={{width:"auto"}}>
                             <ItemCountDown>
                                 {countdown.days}
                             </ItemCountDown>
@@ -101,17 +101,9 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                             </ItemCountDownTitle>
                         </div>
 
-                        <div style={{marginTop: "-10%"}}>
-                           <Typography sx={{textAlign: 'center',
-                            color: theme.palette.primary.main,
-                            fontWeight: 400,
-                            fontSize: '6vw',
-                            opacity: 0.7,
-                            boxShadow: 'none',
-                        }}>:</Typography> 
-                        </div>
+            
                         
-                        <div style={{width:"20%"}}>
+                        <div style={{width:"auto"}}>
                         <ItemCountDown>
                                 {countdown.hours}
                             </ItemCountDown>
@@ -120,17 +112,9 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                             </ItemCountDownTitle>
                         </div>
 
-                        <div style={{marginTop: "-10%"}}>
-                           <Typography sx={{textAlign: 'center',
-                            color: theme.palette.primary.main,
-                            fontWeight: 400,
-                            fontSize: '6vw',
-                            opacity: 0.7,
-                            boxShadow: 'none',
-                        }}>:</Typography> 
-                        </div>
+                    
 
-                        <div style={{width:"20%"}}>
+                        <div style={{width:"auto"}}>
                         <ItemCountDown>
                                 {countdown.minutes}
                             </ItemCountDown>
