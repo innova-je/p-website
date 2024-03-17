@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[2934],{32934:(e,t,s)=>{e.exports=s.p+"static/media/logo_je.d8a56d575f8cc8e8ed05.png"}}]);

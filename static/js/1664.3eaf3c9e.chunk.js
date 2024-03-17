@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_testing=self.webpackChunkreact_testing||[]).push([[1664],{1664:(e,t,s)=>{e.exports=s.p+"static/media/logo_uniarea.c59bfb736c8b25b2b671.png"}}]);
