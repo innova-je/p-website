@@ -24,22 +24,22 @@ const CustomDepartment = ({ department }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div style={{height: "auto", width: "100vw"}}>
-        <Box
+      <Box
         sx={{
           display: 'flex',
           alignItems: 'center',
-          paddingBottom: desktop ? 3: 10,
+          paddingBottom: desktop ? 3: !expanded ? 10 : 1,
         }}
       >
         <Typography 
           variant= {desktop ? "h4": "h5"}
           onClick={handleToggle} 
           sx={{
+            position: 'absolute',
             fontWeight: 'Bold', 
             color: theme.palette.primary.main, 
             fontFamily: theme.typography.fontFamily, 
-            background: "red"
+            left: mobile ? '20dvw': '10dvw',
           }}
         >
           {department.name + " Team"}
@@ -59,47 +59,34 @@ const CustomDepartment = ({ department }) => {
             
       <Box
         sx={{
-          
-          
-          background: "yellow",
-          
+          display: expanded || desktop ? 'flex' : 'none',
+          justifyContent: 'center',
           flexWrap: 'wrap',
-          height: "auto",
-          p: 10,
+          gap: '30px',
+          p: 5,
+          maxWidth: '800px', 
+          margin: '0 auto',
+          '@media (min-width: 1200px)': {
+            maxWidth: '1200px',
+          },
         }}
       >
-        <div style={{
-            background: "orange",
-            display: desktop ? 'flex' : (mobile || expanded) ? 'grid' : "none",
-            gridTemplateColumns:  "repeat(2, 2fr)", 
-            placeItems: "center", 
-            height: "auto",
-            alignItems: "center",
-            justifyContent: 'center',
-            gap: desktop || !expanded ? "10%" : "5%",
-          }}>
-          {/* Render CustomComponent for director only if it exists */}
+        {/* Render CustomComponent for director only if it exists */}
         {department.director && (
-          <div>
-            <CustomComponent 
+          <CustomComponent 
             title={department.director.title} 
             name={department.director.name} 
             image={department.director.imgDirectory}
             emailAddress={department.director.email}
             linkedinLink={department.director.linkedin} 
           />
-          </div>          
         )}
 
         {/* Remaining CustomComponent instances */}
         {getMembers(department).map((member, index) => (            
           <CustomComponent key={index + 1} title='' name={member.name} image={member.imgDirectory} emailAddress={member.email} linkedinLink={member.linkedin}/>
         ))}
-        </div>
-        
       </Box>
-      </div>
-      
     </ThemeProvider>
   );
 };
