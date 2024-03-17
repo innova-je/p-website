@@ -57,8 +57,8 @@ const MandatesSection = () => {
                                             src={images[(currentImageIndex + index - 1 + mandates.length) % mandates.length]}
                                             alt={mandates[index].title}
                                             style={{
-                                                maxWidth: index === 1 ? '100%' : '80%',
-                                                maxHeight: index === 1 ? '100%' : '80%',
+                                                maxWidth: index === 1 ? '90%' : '80%',
+                                                maxHeight: index === 1 ? '90%' : '80%',
                                                 borderRadius: index === 1 ? '10px' : '5px',
                                                 boxShadow: index === 1 ? '0px 0px 20px rgba(0, 0, 0, 0.3)' : 'none',
                                                 opacity: index === 1 ? 1 : 0.5,
@@ -66,13 +66,13 @@ const MandatesSection = () => {
                                         />
                                     </div>
                                     <div style={{ width: '40dvw', opacity: index === 1 ? 1 : 0.5, marginLeft: index === 1 ? "20px" : undefined }}>
-                                        <Typography variant="subtitle1" style={{ fontSize: index === 1 ? '6dvw' : '3dvw', color: 'white' }}>
+                                        <Typography variant="subtitle1" style={{ fontSize: index === 1 ? '5.5dvw' : '2.7dvw', color: 'white' }}>
                                             {mandate.title}
                                         </Typography>
-                                        <Typography variant="body2" style={{ fontSize: index === 1 ? '3.5dvw' : '2dvw', color: 'white' }}>
+                                        <Typography variant="body2" style={{ fontSize: index === 1 ? '3dvw' : '1.7dvw', color: 'white' }}>
                                             Year: {mandate.year}
                                         </Typography>
-                                        <Typography variant="body2" style={{ fontSize: index === 1 ? '3.5dvw' : '1.8dvw', color: 'white' }}>
+                                        <Typography variant="body2" style={{ fontSize: index === 1 ? '3dvw' : '1.5dvw', color: 'white' }}>
                                             {mandate.mainAccomplishments.map((accomplishment, index) => (
                                                 <><li key={index}>{accomplishment}</li></>
                                             ))}

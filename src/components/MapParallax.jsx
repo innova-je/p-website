@@ -21,9 +21,6 @@ const ParallaxComponent = () => {
 
     const mobile = useMediaQuery({ maxWidth: 767 });
     const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
-    const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
-    const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
-    const largeDesktop = useMediaQuery({ minWidth: 1400 })
 
     return (
         // <Parallax pages={3} style={parallaxStyle}>
@@ -43,7 +40,6 @@ const ParallaxComponent = () => {
             height: '51%',
             position: 'absolute',
             top: "35%",
-            border: tablet ? undefined: mobile ? undefined : "0.3px solid #732043"
             //boxShadow: '0px 0px 5px rgba(115, 32, 67, 0.3)'
         }}
         >
@@ -52,18 +48,18 @@ const ParallaxComponent = () => {
                 position: 'relative',
                 top: '12dvw',
                 left: '50%',
-                width: tablet ? '20dvw': mobile ? '30dvw' :'15dvw',
+                width: tablet ? '35%' : mobile ? '33%' : "27%",
                 padding: tablet ? '2dvw': mobile ? '2dvw' :"1dvw",
                 paddingLeft: tablet ? '2.5dvw': mobile ? '2.5dvw' :"2dvw",
                 borderRadius: '2dvw',
                 backgroundColor: 'white',
             }}>
 
-                <Typography variant="h5" sx={{ color: theme.palette.primary.main, fontWeight: "Medium", fontSize: (tablet ? '3dvw': mobile ? '3dvw' :"2dvw") }}>
+                <Typography variant="h5" sx={{ color: theme.palette.primary.main, fontWeight: "Medium", fontSize: (tablet ? '3.5dvw': mobile ? '4dvw' :"2dvw") }}>
                     Portugal
                 </Typography>
 
-                <Typography variant="body1" sx={{ color: theme.palette.secondary.main, fontWeight: "Medium", fontSize: (tablet ? '2.5dvw': mobile ? '2.5dvw' :"1.2dvw") }}>
+                <Typography variant="body1" sx={{ color: theme.palette.secondary.main, fontWeight: "Medium", fontSize: (tablet ? '2.5dvw': mobile ? '2.5dvw' :"1.5dvw"), lineHeight: tablet || mobile ? '5dvw' : "2.5dvw",marginTop:'0.7rem' }}>
                     + 1100 Junior Entrepreneurs <br />
                     24 Junior Enterprises <br />
                     421k € Volume of Business <br />

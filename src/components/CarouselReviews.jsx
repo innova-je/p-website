@@ -131,11 +131,11 @@ const LogosSlider = () => {
   };
 
   const settings = {
-    dots: false,
+    dots: true,    
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToScroll: 1
   };
 
   return (
@@ -170,10 +170,11 @@ const LogosSlider = () => {
           </Box>
         </Box>
       ) : (
+        <div style={{}}>
           <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
             <div key={index}>
-            <div style={{width: "100vw", padding: "7% 0", height: "auto", display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <div style={{width: "100vw", padding: "7% 0 2% 0", height: "auto", display: "flex", justifyContent: "center", alignItems: "center"}}>
               <MemberReview
                 key={index}
                 image={testimonial.image}
@@ -185,6 +186,8 @@ const LogosSlider = () => {
               </div>
             ))} 
           </Slider>
+        </div>
+          
       )}
     </>
   );

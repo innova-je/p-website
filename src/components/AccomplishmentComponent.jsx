@@ -3,8 +3,10 @@ import React, { useState, useEffect } from 'react';
 import randomLogo from '../images/OurLogos/logos-03.png'
 import { useMediaQuery } from 'react-responsive';
 
-const Accomplishments = ({ image, description, date, link }) => {
+const Accomplishments = ({ image, logo, description, date, link }) => {
 
+
+  
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
   const desktop = useMediaQuery({ minWidth: 1081 });
@@ -19,6 +21,7 @@ const Accomplishments = ({ image, description, date, link }) => {
       try {
         const { default: dynamicImage } = await import(`../images/HomePageImages/${image}`);
         setDynamicImage(dynamicImage);
+        
       } catch (error) {
         console.error('Error loading image:', error);
       }
@@ -26,6 +29,7 @@ const Accomplishments = ({ image, description, date, link }) => {
 
     loadImage();
   }, [image]);
+
 
   const AccomplishmentBox = styled(Box)(({ isSelected }) => ({
     display: "flex",
@@ -119,7 +123,7 @@ const Accomplishments = ({ image, description, date, link }) => {
           <div style={{height: "50%", zIndex: 10, display: "flex", flexDirection: "column", gap: "-10%"}}>
             <div style={{background: "white", width: "150%", height: "50%", marginLeft: "-20%", rotate: "-7deg", zIndex: -1, display: "flex", alignItems: "center"}}>
               <Circle>
-                <img src={randomLogo} style={{ width: "100%", transform: "scale(1)", overflow: "hidden", objectFit: "cover", display: "flex", alignItems:"center", justifyContent: "center" }} />
+                <img src={logo} style={{ width: "100%", transform: "scale(1)", overflow: "hidden", objectFit: "cover", display: "flex", alignItems:"center", justifyContent: "center" }} />
               </Circle>            
             </div>        
           
@@ -163,7 +167,7 @@ const Accomplishments = ({ image, description, date, link }) => {
           <AccomplishmentBox isSelected={isSelected}>
           <img src={image} style={newsImageStyle} />
           <Circle>
-            <img src={randomLogo} style={{ width: "100%", transform: "scale(1)", overflow: "hidden", objectFit: "cover" }} />
+            <img src={logo} style={{ width: "100%", transform: "scale(1)", overflow: "hidden", objectFit: "cover" }} />
           </Circle>
           <TextBox>
             <NewsText>

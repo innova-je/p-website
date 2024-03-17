@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import React, { useRef } from 'react';
 import { useTheme } from '@mui/material/styles';
-import HeroImage from '../images/other/TOMADA DE POSSE.png';
+import HeroImage from '../images/other/CurrentMandate.webp';
 import elements from '../images/other/Elements.png';
 import CustomComponent from '../components/MemberComponents';
 import CustomDepartment from '../components/CustomDepartment';
@@ -66,7 +66,7 @@ const OurTeam = () => {
 
     return (
         <>
-            <Box sx={{ position: "relative", top: "60px", height: '65dvw' }}>
+            <Box sx={{ position: "relative", top: "60px", height: '72dvw' }}>
                 <img
                     style={{
                         width: '100%',
@@ -82,7 +82,7 @@ const OurTeam = () => {
                         fontSize: '7dvw',
                         fontWeight: 'Medium',
                         position: 'absolute',
-                        top: desktop ? '7%' : tablet ? '6%' : '5.5%',
+                        top: desktop ? '9%' : tablet ? '6%' : '5.5%',
                         zIndex: 1,
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
@@ -112,9 +112,9 @@ const OurTeam = () => {
                     animationData={laso}
                     style={{
                         position: 'absolute',
-                        left: desktop ? '50%' : '52%',
+                        left: mobile ? '52%' : '50%',
                         transform: 'translateX(calc(50% - 20px))',
-                        top: '5%',
+                        top: desktop ? '6%' : '4%',
                         width: '27dvw',
                         zIndex: 1,
                     }}
@@ -131,7 +131,8 @@ const OurTeam = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     flexWrap: 'wrap',
-                    gap: '30px',
+                    rowGap: '10%',
+                    columnGap: "10%",
                     maxWidth: desktop ? '1200px': '800px',
                     margin: '0 auto',
                 }}
@@ -164,6 +165,12 @@ const OurTeam = () => {
                     emailAddress={cexDepartment.financialManager.email}
                     linkedinLink={cexDepartment.financialManager.linkedin}
                 />
+                <CustomComponent title={salesDepartment.director.title} name={salesDepartment.director.name} image={salesDepartment.director.imgDirectory} emailAddress={salesDepartment.director.email} linkedinLink={salesDepartment.director.linkedin}/>
+                <CustomComponent title={marketingDepartment.director.title} name={marketingDepartment.director.name} image={marketingDepartment.director.imgDirectory} emailAddress={marketingDepartment.director.email} linkedinLink={marketingDepartment.director.linkedin}/>
+                <CustomComponent title={projectsDepartment.director.title} name={projectsDepartment.director.name} image={projectsDepartment.director.imgDirectory} emailAddress={projectsDepartment.director.email} linkedinLink={projectsDepartment.director.linkedin}/>
+                <CustomComponent title={qualityDepartment.director.title} name={qualityDepartment.director.name} image={qualityDepartment.director.imgDirectory} emailAddress={qualityDepartment.director.email} linkedinLink={qualityDepartment.director.linkedin}/>
+                <CustomComponent title={humanResourcesDepartment.director.title} name={humanResourcesDepartment.director.name} image={humanResourcesDepartment.director.imgDirectory} emailAddress={humanResourcesDepartment.director.email} linkedinLink={humanResourcesDepartment.director.linkedin}/>
+
             </Box>
 
             <Box
@@ -177,37 +184,51 @@ const OurTeam = () => {
                     margin: '0 auto',
                 }}
             >
-                <CustomComponent title={salesDepartment.director.title} name={salesDepartment.director.name} image={salesDepartment.director.imgDirectory} emailAddress={salesDepartment.director.email} linkedinLink={salesDepartment.director.linkedin}/>
-                <CustomComponent title={marketingDepartment.director.title} name={marketingDepartment.director.name} image={marketingDepartment.director.imgDirectory} emailAddress={marketingDepartment.director.email} linkedinLink={marketingDepartment.director.linkedin}/>
-                <CustomComponent title={projectsDepartment.director.title} name={projectsDepartment.director.name} image={projectsDepartment.director.imgDirectory} emailAddress={projectsDepartment.director.email} linkedinLink={projectsDepartment.director.linkedin}/>
-                <CustomComponent title={qualityDepartment.director.title} name={qualityDepartment.director.name} image={qualityDepartment.director.imgDirectory} emailAddress={qualityDepartment.director.email} linkedinLink={qualityDepartment.director.linkedin}/>
-                <CustomComponent title={humanResourcesDepartment.director.title} name={humanResourcesDepartment.director.name} image={humanResourcesDepartment.director.imgDirectory} emailAddress={humanResourcesDepartment.director.email} linkedinLink={humanResourcesDepartment.director.linkedin}/>
+                
             </Box>
 
             <Box marginTop={5} marginBottom={10} textAlign="center">
                 <CustomTitle title="Our Departments" subtitle="who make the magic happen" theme={theme} />
             </Box>
 
-            {/* SALES TEAM */}
-            <CustomDepartment department={salesDepartment} /> {/*O department.name tem que estar no mesmo idioma que o site */}
+            <div style={{ display: "flex", flexDirection: "column", backgroundColor: "blue" }}>
+                {/* SALES TEAM */}
+                <div style={{ marginBottom: "5%" }}>
+                    <CustomDepartment department={salesDepartment} />
+                </div>
 
-            {/* MARKETING TEAM */}
-            <CustomDepartment department={marketingDepartment} />
+                {/* MARKETING TEAM */}
+                <div style={{ marginBottom: "5%" }}>
+                    <CustomDepartment department={marketingDepartment} />
+                </div>
 
-            {/* PROJECTS TEAM */}
-            <CustomDepartment department={projectsDepartment} />
+                {/* PROJECTS TEAM */}
+                <div style={{ marginBottom: "5%" }}>
+                    <CustomDepartment department={projectsDepartment} />
+                </div>
 
-            {/* QUALITY TEAM */}
-            <CustomDepartment department={qualityDepartment} />
+                {/* QUALITY TEAM */}
+                <div style={{ marginBottom: "5%" }}>
+                    <CustomDepartment department={qualityDepartment} />
+                </div>
 
-            {/* HUMAN RESOURCES TEAM */}
-            <CustomDepartment department={humanResourcesDepartment} />
+                {/* HUMAN RESOURCES TEAM */}
+                <div style={{ marginBottom: "5%" }}>
+                    <CustomDepartment department={humanResourcesDepartment} />
+                </div>
 
-            {/* General Assembly */}
-            <CustomDepartment department={generalAssembly} />
+                {/* General Assembly */}
+                <div style={{ marginBottom: "5%" }}>
+                    <CustomDepartment department={generalAssembly} />
+                </div>
 
-            {/* Fiscal Council */}
-            <CustomDepartment department={fiscalCouncil} />
+                {/* Fiscal Council */}
+                <div style={{ marginBottom: "5%" }}>
+                    <CustomDepartment department={fiscalCouncil} />
+                </div>
+            </div>
+
+            
 
         </>
     );

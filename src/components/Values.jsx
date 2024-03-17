@@ -95,7 +95,7 @@ const ButtonComponent = ({ title, subtitle, content, currentState, onButtonClick
           <div style={{ fontSize :(tablet ? '2dvw' : mobile ? '2.5dvw' :smallMobile ? "3.2dvw" : '1.5dvw') ,color: 'white', opacity: isSubtitleVisible ? '0.6' : '0', transition: 'opacity 0.5s', textTransform: 'none' }} dangerouslySetInnerHTML={{ __html: subtitle }} />
         )}
         {currentState === 'expanded' && isContentVisible && (
-          <div style={{ fontSize: (tablet ? '1.4dvw' : mobile ? '1.7dvw' : smallMobile ? "2.7dvw" : '1dvw') , textAlign: 'justify', marginTop: '0.5dvw', opacity: '1', transition: 'opacity 0.5s' }}>{content}</div>
+          <div style={{color:"#052533", fontSize: (tablet ? '1.4dvw' : mobile ? '1.7dvw' : smallMobile ? "2.7dvw" : '1dvw') , textAlign: 'justify', marginTop: '0.5dvw', opacity: '1', transition: 'opacity 0.5s' }}>{content}</div>
         )}
       </div>
 
