@@ -130,7 +130,7 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
               variant="body2"
               align="center"
               noWrap
-              sx={{ fontWeight: 'bold', fontSize: desktop ? '1.2dvw': '2.5dvw' }}
+              sx={{ fontWeight: 'bold', fontSize: desktop ? '1.2dvw': '2.9dvw' }}
             >
               {title}
             </Typography>
@@ -141,7 +141,7 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
             noWrap
             sx={{
               fontWeight: 'Medium',
-              fontSize: desktop ? '1.2dvw': '2.5dvw',
+              fontSize: desktop ? '1.2dvw': '2.9dvw',
               color: theme.palette.primary.main,
               fontFamily: theme.typography.fontFamily,
             }}
