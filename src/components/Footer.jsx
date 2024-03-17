@@ -285,7 +285,7 @@ const Footer = () => {
                 <div style={{ width: "25%", display: "flex", flexDirection:"column", alignItems:"center", justifyContent: "center"}}>                    
                     <NavLink to="/" style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
                         <img src={InNovaLogo1} style={{ width: "100%", transform: mobile ? "scale(0.7)" : "scale(0.6)" }} onClick={handleNavLinkClick}/>
-                    </NavLink>
+                    </NavLink>                  
                     
                 </div>
 
@@ -363,6 +363,12 @@ const Footer = () => {
                     </div>
                 )}
                 </div>
+
+                <div style={{width: "100%", position: "absolute", bottom: 5, height: "auto"}}>
+                        <Typography sx={{fontWeight: "300", fontSize: "90%", color: "white", textAlign: "center"}}>
+                    &#9426; 2024 In-Nova. All rights reserved.
+                    </Typography>
+                    </div>
                 
             </footer> 
             )

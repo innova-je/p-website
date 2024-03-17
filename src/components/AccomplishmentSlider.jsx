@@ -56,6 +56,7 @@ const AccomplishmentSlider = () => {
               logo={accomplishment.logoDirectory}
               date={accomplishment.date}
               link={accomplishment.link}
+              scale={accomplishment.scale}
             />
           ))}
         </div>
@@ -74,6 +75,7 @@ const AccomplishmentSlider = () => {
                 logo={accomplishment.logoDirectory}
                 date={accomplishment.date}
                 link={accomplishment.link}
+                scale={accomplishment.scale}
               />
             </div>
           </div>
@@ -86,12 +88,13 @@ const AccomplishmentSlider = () => {
         <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row", gap: "5%", marginTop: "5%"}}>
           {accomplishments.map((accomplishment, index) => (
             <Accomplishment
-            key={index}
-            description={accomplishment.description}
-            image={accomplishment.imgDirectory}
-            date={accomplishment.date}
-            style1={accomplishment.style1}
-            style2={accomplishment.style2}
+              key={index}
+              description={accomplishment.description}
+              image={accomplishment.imgDirectory}
+              logo={accomplishment.logoDirectory}
+              date={accomplishment.date}
+              link={accomplishment.link}
+              scale={accomplishment.scale}
             />
           ))}
         </div>

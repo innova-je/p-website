@@ -114,19 +114,22 @@ const Technologies = () => {
             <div style={{
                 background: `linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8)),            
                 url(${technologiesBg})`,
+                overflow: "hidden",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 width: "100vw",
-                height: (mobile || smallMobile) ? "40vh" : "40vh",
+                height: (mobile || smallMobile) ? "30vmax" : desktop || smallDesktop || tablet ? "30vmax" : largeDesktop ? "30vmax" : "40vw",
                 display: "flex", 
                 flexDirection: "column", 
                 alignItems: "center", 
                 justifyContent: "center", 
-                padding: largeDesktop ? "10% 0 5% 0" : smallMobile || mobile ? "5% 0 0 0" : 0
+                padding: largeDesktop ? "0% 0 0% 0" : smallMobile || mobile ? "5% 0 0 0" :  desktop || smallDesktop || tablet ? "0% 0 0 0" : 0
             }}>
 
-            <div style={{ height: "100%", display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center"}}>            
+            <div style={{
+                background: mobile || smallMobile ? "none" : `linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8))`,
+                height: "100%", position: "relative", padding: mobile || smallMobile ? "15% 0 0 0" : "12% 0 0 0", display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "flex-start"}}>            
             <Typography variant="h4"
                             sx={{
                                 color: theme.palette.secondary.main,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Link, Typography, useTheme } from '@mui/material';
+import { Box, Button, Typography, useTheme } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { theme } from '../theme'
 
@@ -18,7 +18,7 @@ import { useMediaQuery } from 'react-responsive';
 
 
 
-const CustomCircle = ({ icon: IconComponent, posTop, bgcolor, fill }) => {
+const CustomCircle = ({ icon: IconComponent, bgcolor, fill }) => {
     const smallMobile = useMediaQuery({ maxWidth: 550 });
     const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
     const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
@@ -30,7 +30,7 @@ const CustomCircle = ({ icon: IconComponent, posTop, bgcolor, fill }) => {
                     width: tablet ? '6vw' : mobile ? '7vw' : smallMobile ? '9vw' : '60px',
                     height: tablet ? '6vw' : mobile ? '7vw' : smallMobile ? '9vw' : '60px',
                     borderRadius: '50%',
-                    backgroundColor: bgcolor, // F0F0F0
+                    backgroundColor: bgcolor,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -176,7 +176,7 @@ const MiddleBox = ({ barheight }) => {
                                 borderRadius: '10px',
                                 width: "200px",
                                 height: "3vmax",
-                                fontSize: '15px',
+                                fontSize: '20px',
                                 fontWeight: 'Light',
                                 textTransform: 'none',
                                 marginTop: '1dvw',
@@ -388,7 +388,7 @@ const HowToApply = ({ progress }) => {
     const largeDesktop = useMediaQuery({ minWidth: 1400 })
 
     return (
-        <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "5% 0 5% 0"}}>
+        <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "5% 0 10% 0"}}>
             <div>
             <Typography
                 variant="h2"
@@ -406,7 +406,7 @@ const HowToApply = ({ progress }) => {
         <Box
             sx={{
                 position: 'relative',
-                marginTop: '10%',
+                marginTop: '10%',                
                 width: tablet ? '60vmax' : mobile ? '75vmin' : smallMobile ? '75dvw' : "70vmax",
                 height: smallMobile ? "140vmin" : (mobile ? "95vmin" : (tablet ? "85vmax" : (smallDesktop ? "55vmax" : desktop ? "60vmax" : "45vmax"))),
                 borderRadius: '20px',
