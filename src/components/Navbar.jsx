@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { AppBar, Toolbar, Button, Menu, MenuItem, styled  } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LogoImage from '../images/OurLogos/logos-02.png';
 import { useMediaQuery } from 'react-responsive';
 import BgMenu from './BgMenu';
-import { ReactDOM } from 'react-dom/client';
-import CustomButton from './CustomButton';
 
-//quando o dropdown menu abre, o scroll fica desativado e issso faz com que a navbar se mexa
-//TODO: dar fix nisto
 
 const JoinUsButton = styled('button')(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -29,7 +25,6 @@ const JoinUsButton = styled('button')(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
     color: 'white',
     transform: 'scale(1.05)', 
-
     cursor: "pointer"
   },
 }));
@@ -110,12 +105,6 @@ const Navbar = () => {
   function isIOS() {
     const userAgent = window.navigator.userAgent.toLowerCase();
     return /iphone|ipad|ipod/.test(userAgent);
-  }
-
-  if (isIOS()) {
-    console.log("This website is being opened on an iOS device.");
-  } else {
-    console.log("This website is not being opened on an iOS device.");
   }
 
     return (

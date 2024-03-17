@@ -119,7 +119,7 @@ const Technologies = () => {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 width: "100vw",
-                height: (mobile || smallMobile) ? "30vmax" : desktop || smallDesktop || tablet ? "30vmax" : largeDesktop ? "30vmax" : "40vw",
+                height: (mobile || smallMobile) ? "auto" : desktop || smallDesktop || tablet ? "30vmax" : largeDesktop ? "30vmax" : "40vw",
                 display: "flex", 
                 flexDirection: "column", 
                 alignItems: "center", 
@@ -172,6 +172,7 @@ const Technologies = () => {
                                 fontWeight: "Medium",
                                 textAlign: "center",
                                 width: "80%",
+                                paddingBottom: "10%",
                                 fontSize: smallDesktop ? '1.3dvw' : tablet ? '1.8dvw' : mobile ? '3.5dvw' : smallMobile ? '4.6dvw' : '1.2dvw',
 
                             }}>
