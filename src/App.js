@@ -12,6 +12,7 @@ import { Box } from "@mui/material";
 import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import React, { useState } from 'react'
 import MaintenanceSinglePage from "./Pages/MaintenanceSinglePage";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   const location = useLocation();
@@ -26,6 +27,14 @@ function App() {
       setShowFooter(true);
     }
   }, [location]);
+  
+  function NoMatch() {
+    setShowFooter(false);
+
+    return (
+       <NotFound/>
+    );
+  }
 
   return (
     <Box bgcolor="#F0F0F0" overflow="hidden">
@@ -51,11 +60,4 @@ function App() {
   );
 }
 
-function NoMatch() {
-  return (
-    <Box>
-      <h1>Page not found.</h1>
-    </Box>
-  );
-}
 export default App;
