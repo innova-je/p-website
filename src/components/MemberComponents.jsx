@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Typography } from '@mui/material';
 import { ThemeProvider, useTheme } from '@mui/material/styles';
 import { Email, LinkedIn } from '@mui/icons-material';
-
+import { useMediaQuery } from 'react-responsive';
 
 const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => {
+
+  const mobile = useMediaQuery({ maxWidth: 600 });
+  const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
+  const desktop = useMediaQuery({ minWidth: 1081 });
+
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
 
@@ -26,11 +31,10 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
   const containerStyle = {
     backgroundColor: 'white',
     position: 'relative',
-    width: '250px',
+    width: mobile ? "40vw" : '250px',
     height: '100%',
     overflow: 'visible',
     borderRadius: 15,
-    marginBottom: 35,
   };
 
   const imageContainerStyle = {

@@ -10,12 +10,16 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import AccomplishmentsData from '../Accomplishments.json'
 
-const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
+const AccomplishmentSlider = () => {
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
   const desktop = useMediaQuery({ minWidth: 1081 });
 
   const accomplishments = AccomplishmentsData.accomplishments;
+
+  {accomplishments.map((accomplishment, index) => (            
+    console.log( "logo on slider side " + accomplishment.logoDirectory)
+  ))}
 
   const settings = {
     dots: true,
@@ -44,11 +48,12 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
       {desktop && (
         <div style={{width: "300vw"}}>
         <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row", gap: "2%", marginTop: "2%"}}>
-          {accomplishments.map((accomplishment, index) => (
+          {accomplishments.map((accomplishment, index) => (            
             <Accomplishment
               key={index}
               description={accomplishment.description}
               image={accomplishment.imgDirectory}
+              logo={accomplishment.logoDirectory}
               date={accomplishment.date}
               link={accomplishment.link}
             />
@@ -66,6 +71,7 @@ const AccomplishmentSlider = ({ accomplishmentsData = [] }) => {
                 key={index}
                 description={accomplishment.description}
                 image={accomplishment.imgDirectory}
+                logo={accomplishment.logoDirectory}
                 date={accomplishment.date}
                 link={accomplishment.link}
               />
