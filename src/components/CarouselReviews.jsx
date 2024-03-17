@@ -9,6 +9,8 @@ import { useMediaQuery } from 'react-responsive';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import MagicSliderDots from 'react-magic-slider-dots';
+import 'react-magic-slider-dots/dist/magic-dots.css';
 
 // const slideAnimation = (direction) => keyframes`
 //   0% {
@@ -133,9 +135,14 @@ const LogosSlider = () => {
   const settings = {
     dots: true,    
     infinite: true,
+    autoplay: true,
+    autoplaySpeed: 15000,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    appendDots: (dots) => {
+      return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />
+    }
   };
 
   return (

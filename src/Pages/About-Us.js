@@ -151,10 +151,10 @@ const AboutUs = () => {
                     <img src={HeroImage} alt="Hero Image"
                         style={{
                             position: 'absolute',
-                            top: tablet ? '10dvw' : mobile || smallMobile ? '10dvw' :  '7dvw',
-                            right: tablet ? '5dvw' : mobile || smallMobile ? '3dvw' : '5dvw',
-                            width: smallDesktop ? '45%' : tablet ? '45%' : mobile || smallMobile ? '40%' : '38%',
-                            height: tablet ? '50%' : '60%',
+                            top:smallDesktop ? '7dvw' : tablet ? '20%' : mobile || smallMobile ? '20%' :  '7dvw',
+                            right: tablet ? '5dvw' : mobile || smallMobile ? '3dvw' : '3dvw',
+                            width: smallDesktop ? '48%' : tablet ? '45%' : mobile || smallMobile ? '40%' : '40%',
+                            height: tablet || smallMobile || mobile ? '55%' : undefined,
                             borderRadius: '2dvw',
                             zIndex: '1',
                             objectFit: 'cover',
@@ -166,7 +166,7 @@ const AboutUs = () => {
                             color: 'white',
                             borderRadius: '1.5rem',
                             position: 'absolute',
-                            bottom: smallDesktop ? '-4.5dvw' : tablet ? "-6dvw" : mobile ? "-14dvw" : smallMobile ? '-37dvw' : '-3.5dvw',
+                            bottom: smallDesktop ? '-4.5dvw' : tablet ? "-6dvw" : mobile ? "-10dvw" : smallMobile ? '-39dvw' : '-3.5dvw',
                             left: '10dvw',
                             width: '80%',
                             zIndex: '1',

@@ -117,8 +117,8 @@ const OurAdvisors = () => {
 
             
         <div className='Alumnis' style={{
-            position: "relative", 
             height: "auto", 
+            padding: "0 0 10% 0",
             margin: "5% 0 0 0", 
             zIndex: 1
             }}>
@@ -142,7 +142,8 @@ const OurAdvisors = () => {
                 marginTop: "5%",
                 columnGap: "10%",
                 height: "auto",
-                marginBottom: (mobile ? "20%" : (tablet ? "20%" : "15%")),
+                //paddingBottom: desktop ? "15%" : tablet ? "30%" : "20%",
+                marginBottom: (mobile ? "20%" : (tablet ? "30%" : "10%")),
                 gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)"))
             }}>
                 {alumniBoardData.map((alumni, index) => (

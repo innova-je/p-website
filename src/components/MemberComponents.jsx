@@ -4,16 +4,17 @@ import { ThemeProvider, useTheme } from '@mui/material/styles';
 import { Email, LinkedIn } from '@mui/icons-material';
 import { useMediaQuery } from 'react-responsive';
 
+
 const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => {
-
-  const mobile = useMediaQuery({ maxWidth: 600 });
-  const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
-  const desktop = useMediaQuery({ minWidth: 1081 });
-
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
 
   const [dynamicImage, setDynamicImage] = useState(null);
+
+
+  const mobile = useMediaQuery({ maxWidth: 600 });
+  const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
+  const desktop = useMediaQuery({ minWidth: 1081 });
 
   useEffect(() => {
     const loadImage = async () => {
@@ -31,10 +32,11 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
   const containerStyle = {
     backgroundColor: 'white',
     position: 'relative',
-    width: mobile ? "40vw" : '250px',
+    width: desktop ? '20dvw' : '35dvw',
     height: '100%',
     overflow: 'visible',
     borderRadius: 15,
+    marginBottom: 35,
   };
 
   const imageContainerStyle = {
@@ -74,7 +76,7 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
   if (title === '') {
     overlayStyle = {
       ...overlayStyle,
-      height: '40px', // Set a fixed height for the overlay when title is empty
+      height: '3dvw', // Set a fixed height for the overlay when title is empty
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -108,6 +110,7 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
+        {desktop && (
         <div style={iconsContainerStyle}>
           <a href={`mailto:${emailAddress}`} onClick={handleEmailClick}>
             <Email sx={{ color: theme.palette.primary.main }} />
@@ -116,6 +119,8 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
             <LinkedIn sx={{ color: '#0077B5' }} />
           </a>
         </div>
+
+        )}
         <div style={imageContainerStyle}>
           <img src={dynamicImage} alt="imagem de perfil" style={imageStyle} />
         </div>
@@ -125,7 +130,7 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
               variant="body2"
               align="center"
               noWrap
-              sx={{ fontWeight: 'bold', fontSize: '13px' }}
+              sx={{ fontWeight: 'bold', fontSize: desktop ? '1.2dvw': '2dvw' }}
             >
               {title}
             </Typography>
@@ -136,7 +141,7 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
             noWrap
             sx={{
               fontWeight: 'Medium',
-              fontSize: '13px',
+              fontSize: desktop ? '1.2dvw': '2dvw',
               color: theme.palette.primary.main,
               fontFamily: theme.typography.fontFamily,
             }}
