@@ -71,8 +71,6 @@ const AboutUs = () => {
                         backgroundColor: 'white',
                         borderRadius: '2dvw',
                         position: 'relative',
-                        // top: largeDesktop ? '14dvw' : desktop ? '15dvw' : smallDesktop ? '17dvw' : tablet ? '20dvw' : '25dvw',
-                        // top: '2rem',
                         marginBottom: mobile ? '10rem' : smallMobile ? '8rem' : '8rem',
                         mt: '8rem',
                         width: '80dvw',
@@ -84,7 +82,7 @@ const AboutUs = () => {
                         sx={{
                             backgroundColor: theme.palette.primary.main,
                             color: 'white',
-                            borderRadius: '2.5dvw',
+                            borderRadius: smallMobile ? '3dvw':'2.5dvw',
                             position: 'absolute',
                             top: smallDesktop ? "-4dvw" : tablet ? "-4.5dvw" : mobile ? "-5.5dvw" : smallMobile ? '-5.5dvw' : '-3.4dvw',
                             left: '-15dvw',
@@ -111,7 +109,7 @@ const AboutUs = () => {
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '700',
                             fontSize: mobile ? "3.5dvw" : smallMobile ? '5dvw' : '2.7dvw',
-                            marginTop: smallMobile ? '2rem' : '4rem',
+                            marginTop: smallMobile ? '3.5rem' : '5rem',
                         }}
                     >
                         We are
@@ -136,12 +134,13 @@ const AboutUs = () => {
                             position: "relative",
                             // top: mobile ? "17.5dvw" : smallMobile ? '17.5dvw' : "15dvw",
                             left: "6dvw",
-                            mt: '1rem',
-                            mb: '5rem',
+                            mt: smallMobile ? undefined :'1rem',
+                            mb: smallMobile ? '5rem' : '8rem',
                             color: theme.palette.secondary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Light',
-                            fontSize: mobile ? "3dvw" : smallMobile ? '3.3dvw' : '2dvw',
+                            fontSize: smallDesktop ? '2.5dvw' : tablet ? '2.5dvw' : mobile ? "3dvw" : smallMobile ? '3.3dvw' : '2dvw',
+                            lineHeight: smallMobile ? '2rem' : '3rem'
                         }}
                     >
                         Engineering Students <br />
@@ -152,12 +151,13 @@ const AboutUs = () => {
                     <img src={HeroImage} alt="Hero Image"
                         style={{
                             position: 'absolute',
-                            top: '6dvw',
-                            right: '5dvw',
-                            width: '38%',
-                            height: '55%',
+                            top: tablet ? '10dvw' : mobile || smallMobile ? '10dvw' :  '7dvw',
+                            right: tablet ? '5dvw' : mobile || smallMobile ? '3dvw' : '5dvw',
+                            width: smallDesktop ? '45%' : tablet ? '45%' : mobile || smallMobile ? '40%' : '38%',
+                            height: tablet ? '50%' : '60%',
                             borderRadius: '2dvw',
-                            zIndex: '1'
+                            zIndex: '1',
+                            objectFit: 'cover',
                         }} />
 
                     <Box
@@ -169,16 +169,15 @@ const AboutUs = () => {
                             bottom: smallDesktop ? '-4.5dvw' : tablet ? "-6dvw" : mobile ? "-14dvw" : smallMobile ? '-37dvw' : '-3.5dvw',
                             left: '10dvw',
                             width: '80%',
-                            height: tablet ? "30%" : mobile ? "35%" : smallMobile ? '60%' : '20%',
                             zIndex: '1',
-                            pl: '1.5rem',
-                            pt: mobile ? "3dvw" : smallMobile ? '1.5rem' : '1dvw',
-                            pb: smallDesktop ? '2dvw' : mobile ? "3dvw" : smallMobile ? '2rem' : '1dvw',
+                            p: '1.5rem',
                             pr: '20dvw',
                             justifyContent: 'center',
                             textAlign: 'justify',
                             fontWeight: 'light',
-                            fontSize: smallDesktop ? '1.5dvw' : tablet ? '1.7dvw' : mobile ? "2dvw" : smallMobile ? "3.3dvw" : '1.2dvw',
+                            fontSize: smallDesktop ? '1.5dvw' : tablet ? '1.8dvw' : mobile ? "2dvw" : smallMobile ? "3.5dvw" : '1.2dvw',
+                            display: 'flex',
+                            alignItems: 'center',
                         }}
                     >
                         In-Nova is the Junior Enterprise of NOVA School of Science and Technology, founded with the aim of promoting the capabilities of its students by integrating them into real projects.
@@ -220,14 +219,14 @@ const AboutUs = () => {
                     />
                     <Values
                         title="Vision"
-                        subtitle="What impact do we <br>want to create?"
+                        subtitle="What goals do we<br> hope to achieve?"
                         content="In-Nova aims to involve the academic and technology communities, highlighting the quality and excellence that characterize NOVA SST and ultimately making university students more competent, entrepreneurial and critical."
                         currentState={selectedButton === 'Vision' ? 'expanded' : selectedButton ? 'collapsed' : 'normal'}
                         onButtonClick={handleButtonClick}
                     />
                     <Values
                         title="Values"
-                        subtitle="What impact do we <br>want to create?"
+                        subtitle="What do we<br> stand by?"
                         content="Empowering the entrepreneurial spirit, giving priority to creativity, prioritizing critical thinking and encouraging proactivity and teamwork."
                         currentState={selectedButton === 'Values' ? 'expanded' : selectedButton ? 'collapsed' : 'normal'}
                         onButtonClick={handleButtonClick}
@@ -258,7 +257,7 @@ const AboutUs = () => {
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Bold',
                         zIndex: '3',
-                        fontSize: tablet ? "6.5dvw" : mobile ? "8.5dvw" : smallMobile ? '8.5dvw' : "4.5dvw",
+                        fontSize: tablet ? "6.5dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : "4.5dvw",
                     }}
                 >
                     Throughout the years
@@ -295,14 +294,16 @@ const AboutUs = () => {
                     sx={{
                         position: 'relative',
                         top: '4dvw',
-                        left: tablet ? '0dvw' : mobile ? '0dvw' : smallMobile ? '0dvw' : '-17dvw',
+                        left: tablet || mobile || smallMobile ? '0dvw' : '-17dvw',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: tablet || mobile || smallMobile ? 'center' : undefined,
                     }}
                 >
                     <Typography
                         variant="h5"
                         sx={{
-                            position: tablet ? 'relative' : mobile ? 'relative' : smallMobile ? 'relative' : undefined,
-                            left: tablet ? '28dvw' : mobile ? '28dvw' : smallMobile ? '28dvw' : undefined,
+                            position: "relative",
                             color: theme.palette.secondary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Bold',
@@ -362,11 +363,11 @@ const AboutUs = () => {
                     href='https://jeportugal.pt/en/je-network/'
                     sx={{
                         position: 'absolute',
-                        bottom: '5dvw',
+                        bottom: tablet || mobile || smallMobile ?  "15dvw": '5dvw',
                         backgroundColor: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'bold',
-                        fontSize: tablet ? '4dvw' : mobile ? '4dvw' : smallMobile ? '4dvw' : "2dvw",
+                        fontSize: tablet || mobile || smallMobile ? '4dvw' : "1.5dvw",
                         textTransform: 'none',
                         padding: '5px 50px',
                         borderRadius: '15px',
