@@ -84,10 +84,10 @@ const AboutUs = () => {
                             color: 'white',
                             borderRadius: smallMobile ? '3dvw':'2.5dvw',
                             position: 'absolute',
-                            top: smallDesktop ? "-4dvw" : tablet ? "-4.5dvw" : mobile ? "-5.5dvw" : smallMobile ? '-5.5dvw' : '-3.4dvw',
+                            top: smallDesktop ? "-4dvw" : tablet ? "-4.5dvw" : mobile ? "-5.5dvw" : smallMobile ? '-5.5dvw' : '-3dvw',
                             left: '-15dvw',
                             width: '60%',
-                            height: '17%',
+                            height: '13%',
                             padding: '1dvw',
                             zIndex: '1',
                             textAlign: 'center',
@@ -235,7 +235,7 @@ const AboutUs = () => {
 
 
                 <Typography
-                    variant="h3"
+                    variant="h4"
                     sx={{
                         position: 'relative',
                         textAlign: 'center',
@@ -257,7 +257,7 @@ const AboutUs = () => {
                         fontFamily: theme.typography.fontFamily,
                         fontWeight: 'Bold',
                         zIndex: '3',
-                        fontSize: tablet ? "6.5dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : "4.5dvw",
+                        fontSize: tablet ? "6.5dvw" : mobile ? "6dvw" : smallMobile ? '6dvw' : "3.2dvw",
                     }}
                 >
                     Throughout the years
@@ -307,7 +307,7 @@ const AboutUs = () => {
                             color: theme.palette.secondary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Bold',
-                            fontSize: tablet ? '4dvw' : mobile ? '4.5dvw' : smallMobile ? '4,5dvw' : '2.3dvw',
+                            fontSize: tablet ? '4dvw' : mobile ? '4.5dvw' : smallMobile ? '4,5dvw' : '2.0dvw',
                         }}
                     >
                         We're part of the
@@ -318,7 +318,7 @@ const AboutUs = () => {
                             color: theme.palette.primary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: 'Bold',
-                            fontSize: tablet ? '7.7dvw' : mobile ? '7.7dvw' : smallMobile ? '7.7dvw' : '4.7dvw',
+                            fontSize: tablet ? '7.7dvw' : mobile ? '7.7dvw' : smallMobile ? '7.7dvw' : '4dvw',
                         }}
                     >
                         Junior Enterprise Network
@@ -331,8 +331,8 @@ const AboutUs = () => {
                         top: '18%',
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'Medium',
-                        fontSize: tablet ? '3.5dvw' : mobile ? '3.5dvw' : smallMobile ? '3.5dvw' : '2.5dvw',
+                        fontWeight: '400',
+                        fontSize: tablet ? '3.5dvw' : mobile ? '3.5dvw' : smallMobile ? '3.5dvw' : '1.8dvw',
                     }}
                 >
                     “Europe’s future is in the hands of its young people.<br /> (…) Europe’s Junior Enterprises are leading the way.”
@@ -341,13 +341,13 @@ const AboutUs = () => {
                     variant='body2'
                     sx={{
                         position: 'absolute',
-                        top: tablet ? '27%' : mobile ? '27%' : smallMobile ? '27%' : '28%',
+                        top: tablet ? '27%' : mobile ? '27%' : smallMobile ? '27%' : '26%',
                         right: tablet ? '10dvw' : mobile ? '10dvw' : smallMobile ? '10dvw' : undefined,
                         textAlign: tablet ? 'right' : mobile ? 'right' : smallMobile ? 'right' : 'center',
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography.fontFamily,
-                        fontWeight: 'Medium',
-                        fontSize: tablet ? '2.5dvw' : mobile ? '2.5dvw' : smallMobile ? '2.5dvw' : '1.5dvw',
+                        fontWeight: '300',
+                        fontSize: tablet ? '2.5dvw' : mobile ? '2.5dvw' : smallMobile ? '2.5dvw' : '1.2dvw',
                     }}
                 >
                     Jean-Claude Juncker<br />European Comission, Former President

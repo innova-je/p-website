@@ -23,18 +23,18 @@ const Mandate = ({title, year, mainAccomplishments, image, currentImageIndex, in
             src={dynamicImage}
             alt={`Image ${currentImageIndex + index - 1}`}
             style={{
-                width: index === 1 ? '400px' : '340px',
-                opacity: index === 1 ? 1 : 0.6,
+                width: index === 1 ? '400px' : '320px',
+                opacity: index === 1 ? 1 : 0.5,
                 borderRadius: '25px',
                 transition: 'opacity 0.3s ease-in-out',
             }}
         />
         {index === 1 && (
-            <div style={{display:"flex", alignItems:"center"}}>
-                <Typography variant="h3" color="white" style={{ fontWeight: '700', marginTop: "20px" }}>
+            <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+                <Typography variant="h4" color="white" style={{ fontWeight: '600', marginTop: "20px" }}>
                     {title}
                 </Typography>
-                <Typography variant="h5" color="secondary" style={{ fontWeight: '600' }}>
+                <Typography variant="h6" color="secondary" style={{ fontWeight: '600' }}>
                     {year}
                 </Typography>
                 <Typography color="white" style={{ fontWeight: '200', marginTop: "20px", textAlign: "left"}}>

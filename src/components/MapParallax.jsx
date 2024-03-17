@@ -59,8 +59,8 @@ const ParallaxComponent = () => {
                     Portugal
                 </Typography>
 
-                <Typography variant="body1" sx={{ color: theme.palette.secondary.main, fontWeight: "Medium", fontSize: (tablet ? '2.5dvw': mobile ? '2.5dvw' :"1.5dvw"), lineHeight: tablet || mobile ? '5dvw' : "2.5dvw",marginTop:'0.7rem' }}>
-                    + 1100 Junior Entrepreneurs <br />
+                <Typography variant="body1" sx={{ color: theme.palette.secondary.main, fontWeight: "300", fontSize: (tablet ? '2.5dvw': mobile ? '2.5dvw' :"1.5dvw"), lineHeight: tablet || mobile ? '5dvw' : "2.5dvw",marginTop:'0.7rem' }}>
+                    +1100 Junior Entrepreneurs <br />
                     24 Junior Enterprises <br />
                     421k € Volume of Business <br />
                     242 Completed Products
