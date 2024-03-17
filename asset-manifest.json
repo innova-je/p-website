@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/p-website/static/css/main.c79ef137.css",
-    "main.js": "/p-website/static/js/main.1b1dd6e2.js",
+    "main.js": "/p-website/static/js/main.4aec92a1.js",
     "static/js/3411.798ae6a9.chunk.js": "/p-website/static/js/3411.798ae6a9.chunk.js",
     "static/js/5762.81931c89.chunk.js": "/p-website/static/js/5762.81931c89.chunk.js",
     "static/js/477.78aa1b2d.chunk.js": "/p-website/static/js/477.78aa1b2d.chunk.js",
@@ -82,7 +82,6 @@
     "static/js/7168.c377190e.chunk.js": "/p-website/static/js/7168.c377190e.chunk.js",
     "static/media/MandatoI.webp": "/p-website/static/media/MandatoI.f72ca33f20757732585f.webp",
     "static/media/bottom3.webp": "/p-website/static/media/bottom3.fe6536270cb65474ad97.webp",
-    "static/media/about-us.png": "/p-website/static/media/about-us.794e2d8e560848177dfa.png",
     "static/media/HomePageVideo.mp4": "/p-website/static/media/HomePageVideo.498fcc393bf628847b66.mp4",
     "static/media/maintenance_single_page.png": "/p-website/static/media/maintenance_single_page.4ce9ab34fb01ad725a5c.png",
     "static/media/joinus-outofoffice.png": "/p-website/static/media/joinus-outofoffice.80afb0661cfee1ab6d8a.png",
@@ -93,6 +92,7 @@
     "static/media/map2.png": "/p-website/static/media/map2.dd65a94c5943902fb65d.png",
     "static/media/map1.png": "/p-website/static/media/map1.72aa81d05d4815c87fa0.png",
     "static/media/map3.png": "/p-website/static/media/map3.d5aad2fb8f7d0009613e.png",
+    "static/media/about-us.png": "/p-website/static/media/about-us.8a09e5a7c2d6cb2de1d9.png",
     "static/media/MandatoIII.webp": "/p-website/static/media/MandatoIII.10e66f0a47b4f099bb23.webp",
     "static/media/Join_us_image.webp": "/p-website/static/media/Join_us_image.653d1ec3a9903db0928d.webp",
     "static/media/carolina_mendes.webp": "/p-website/static/media/carolina_mendes.6a2de1e657283712020e.webp",
@@ -233,10 +233,10 @@
     "static/media/slick.woff": "/p-website/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/p-website/index.html",
     "main.c79ef137.css.map": "/p-website/static/css/main.c79ef137.css.map",
-    "main.1b1dd6e2.js.map": "/p-website/static/js/main.1b1dd6e2.js.map"
+    "main.4aec92a1.js.map": "/p-website/static/js/main.4aec92a1.js.map"
   },
   "entrypoints": [
     "static/css/main.c79ef137.css",
-    "static/js/main.1b1dd6e2.js"
+    "static/js/main.4aec92a1.js"
   ]
 }
