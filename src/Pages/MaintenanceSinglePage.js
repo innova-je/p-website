@@ -78,6 +78,8 @@ const MaintenanceSinglePage = () => {
             width: '100%',
             height: '100%',
             backgroundImage: `url(${bgImage})`,
+            backgroundRepeat: "no-repeat",
+            objectFit: "cover",
             backgroundPosition: 'center -200px', // move the background image up by 50 pixels
             zIndex: -1,
             backgroundBlendMode: 'darken',

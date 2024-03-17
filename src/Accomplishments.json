@@ -2,22 +2,24 @@
             "accomplishments": [
                 {
                     "title": "Notícia Almadense",
-                    "imgDirectory": "Accomplishments/accomplishment2.webp",                  
+                    "imgDirectory": "Accomplishments/accomplishment2.webp",   
+                    "logoDirectory": "Accomplishments/logo_almadense.png",           
                     "description": "“Fazemos de tudo. É isso que torna este projeto interessante. Todos os dias é um assunto diferente, não há monotonia.”",
                     "date" : "fevereiro 2024",
                     "link" : "https://almadense.sapo.pt/cidade/in-nova-a-junior-empresa-que-desperta-o-interesse-dos-estudantes-da-fct-pelo-software-e-pela-robotica/"
                 },
                 {
                     "title": "Notícia Innovation Week Uniarea",
-                    
+                    "logoDirectory": "Accomplishments/logo_almadense.png",    
                     "imgDirectory": "Accomplishments/accomplishment1.webp",  
                     "description": "“Com o edifício principal da NOVA SST repleto de bancas, onde Startups e empresas se mostram aos estudantes, a In-Nova espera através da Innovation Week inspirar os estudantes a pensar mais além, deixando o espírito inovador florescer.”",
                     "date" : "fevereiro 2024",
-                    "link" : "https://uniarea.com/event/innovation-week-fct-nova/"
+                    "link" : "https://uniarea.com/event/innovation-week-in-nova-junior-empresa/"
                 },
                 {
                     "title": "Jenial",
                     "imgDirectory": "Accomplishments/accomplishment3.webp",
+                    "logoDirectory": "Accomplishments/logo_almadense.png",      
                     "description": "Last month we received very exciting news! In-Nova was nominated as Most Promising Junior Enterprise for JeniAL Awards.",
                     "date" : "fevereiro 2024",
                     "link" : ""

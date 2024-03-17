@@ -53,7 +53,7 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
         textAlign: 'center',
         color: theme.palette.primary.main,
         fontWeight: 400,
-        fontSize: '2vw',
+        fontSize: (mobile || smallMobile) ? "3.3vw" : '2vw',
         opacity: 0.7,
         boxShadow: 'none'
     }));
@@ -81,10 +81,10 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                     <Typography
                         variant="h6"
                         sx={{
-                            fontWeight: 'Bold',
+                            fontWeight: 'medium',
                             color: theme.palette.primary.main,
                             textTransform: 'uppercase',
-                            fontSize: mobile ? "4vw" : (smallMobile ? "4.5vw" : tablet ? "3.2vw" : (desktop ? "2vw" : (largeDesktop ? "1.5vw" : "2vw"))),
+                            fontSize: mobile ? "3.6vw" : (smallMobile ? "4.5vw" : tablet ? "3.2vw" : (desktop ? "2vw" : (largeDesktop ? "1.5vw" : "2vw"))),
                             textAlign: !(mobile || smallMobile) ? "none" : "center"
                         }}
                     >Recruitment {!(smallMobile || mobile || tablet) && (<br/>)} Closes in</Typography>   

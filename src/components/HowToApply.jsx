@@ -103,7 +103,8 @@ const MiddleBox = ({ barheight }) => {
                     alignItems: "center",
                     justifyContent: "center",
                     flexDirection: "column",
-                    //paddingTop: (smallMobile || mobile) ? "2%" : "2%"
+                    
+                    padding: (smallMobile || mobile) ? "0% 0 5% 0" : "2% 0 2% 0"
                 }}>        
 
                 <div style={{
@@ -407,7 +408,7 @@ const HowToApply = ({ progress }) => {
                 position: 'relative',
                 marginTop: '10%',
                 width: tablet ? '60vmax' : mobile ? '75vmin' : smallMobile ? '75dvw' : "70vmax",
-                height: smallMobile ? "130vmin" : (mobile ? "85vmin" : (tablet ? "65vmax" : (smallDesktop ? "55vmax" : desktop ? "60vmax" : "45vmax"))),
+                height: smallMobile ? "140vmin" : (mobile ? "95vmin" : (tablet ? "85vmax" : (smallDesktop ? "55vmax" : desktop ? "60vmax" : "45vmax"))),
                 borderRadius: '20px',
                 background: "white",
                 display: 'flex',
