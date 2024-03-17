@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import React, { useRef } from 'react';
 import { useTheme } from '@mui/material/styles';
-import HeroImage from '../images/other/TOMADA DE POSSE.png';
+import HeroImage from '../images/other/CurrentMandate.webp';
 import elements from '../images/other/Elements.png';
 import CustomComponent from '../components/MemberComponents';
 import CustomDepartment from '../components/CustomDepartment';
@@ -66,7 +66,7 @@ const OurTeam = () => {
 
     return (
         <>
-            <Box sx={{ position: "relative", top: "60px", height: '65dvw' }}>
+            <Box sx={{ position: "relative", top: "60px", height: '72dvw' }}>
                 <img
                     style={{
                         width: '100%',
@@ -82,7 +82,7 @@ const OurTeam = () => {
                         fontSize: '7dvw',
                         fontWeight: 'Medium',
                         position: 'absolute',
-                        top: desktop ? '7%' : tablet ? '6%' : '5.5%',
+                        top: desktop ? '9%' : tablet ? '6%' : '5.5%',
                         zIndex: 1,
                         color: theme.palette.secondary.main,
                         fontFamily: theme.typography.fontFamily,
@@ -112,9 +112,9 @@ const OurTeam = () => {
                     animationData={laso}
                     style={{
                         position: 'absolute',
-                        left: desktop ? '50%' : '52%',
+                        left: mobile ? '52%' : '50%',
                         transform: 'translateX(calc(50% - 20px))',
-                        top: '5%',
+                        top: desktop ? '6%' : '4%',
                         width: '27dvw',
                         zIndex: 1,
                     }}
