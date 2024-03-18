@@ -76,11 +76,11 @@ const MaintenanceSinglePage = () => {
             position: 'relative', // keep position as absolute
             left: 0,
             width: '100%',
-            height: '100%',
+            height: '100vh',
             backgroundImage: `url(${bgImage})`,
             backgroundRepeat: "no-repeat",
-            objectFit: "cover",
-            backgroundPosition: 'center -200px', // move the background image up by 50 pixels
+            backgroundSize: "cover",
+            backgroundPosition: 'center', // move the background image up by 50 pixels
             zIndex: -1,
             backgroundBlendMode: 'darken',
             overflow: "hidden"
@@ -119,7 +119,7 @@ const MaintenanceSinglePage = () => {
               flexDirection: "column",
               justifyContent: desktop ? "left" : "center",
               alignItems: "center",
-              marginTop: "5%",
+              marginTop: "2%",
               gap: "20px",
               width: desktop ? "auto" : "100%"
             }}>
