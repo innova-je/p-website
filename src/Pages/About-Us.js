@@ -108,7 +108,7 @@ const AboutUs = () => {
                             color: theme.palette.secondary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '700',
-                            fontSize: mobile ? "3.5dvw" : smallMobile ? '5dvw' : '2.7dvw',
+                            fontSize: mobile ? "3.9dvw" : smallMobile ? '3.9dvw' : '2.7dvw',
                             marginTop: smallMobile ? '3.5rem' : '5rem',
                         }}
                     >
@@ -123,7 +123,7 @@ const AboutUs = () => {
                             color: theme.palette.primary.main,
                             fontFamily: theme.typography.fontFamily,
                             fontWeight: '600',
-                            fontSize: mobile ? "3.9dvw" : smallMobile ? '3.9dvw' : '3.3dvw',
+                            fontSize: mobile ? "3.9dvw" : smallMobile ? '3.9dvw' : '2.7dvw',
                         }}
                     >
                         Junior Enterpreneurs.

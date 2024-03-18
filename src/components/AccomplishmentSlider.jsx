@@ -7,6 +7,8 @@ import { useMediaQuery } from 'react-responsive';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import MagicSliderDots from 'react-magic-slider-dots';
+import 'react-magic-slider-dots/dist/magic-dots.css';
 
 import AccomplishmentsData from '../Accomplishments.json'
 
@@ -17,16 +19,17 @@ const AccomplishmentSlider = () => {
 
   const accomplishments = AccomplishmentsData.accomplishments;
 
-  {accomplishments.map((accomplishment, index) => (            
-    console.log( "logo on slider side " + accomplishment.logoDirectory)
-  ))}
-
   const settings = {
-    dots: true,
+    dots: true,    
     infinite: true,
+    autoplay: true,
+    autoplaySpeed: 15000,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    appendDots: (dots) => {
+      return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />
+    }
   };
 
   return (
@@ -64,10 +67,10 @@ const AccomplishmentSlider = () => {
       )}
 
       {mobile && (
-        <Slider {...settings} style={{ width: "100%", marginTop: "5%", background: "transparent"}}>
+        <Slider {...settings} style={{ width: "100%",  padding: "7% 0 5% 0", background: "none"}}>
         {accomplishments.map((accomplishment, index) => (
           <div key={index}>
-            <div style={{width: "100%",  display: "flex", justifyContent: "center"}}>
+            <div style={{width: "100%",  display: "flex", justifyContent: "center", height: "auto", padding: "0 0 9% 0"}}>
               <Accomplishment
                 key={index}
                 description={accomplishment.description}

@@ -66,9 +66,9 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
     width: '80%',
     height: 'auto',
     backgroundColor: '#C7B7BE',
-    padding: '5px',
+    padding: desktop ? '5px' : '8px',
     margin: 'auto',
-    borderRadius: 15,
+    borderRadius: desktop ? 15: 10,
     overflow: 'hidden',
     zIndex: 2,
   };
@@ -76,7 +76,6 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
   if (title === '') {
     overlayStyle = {
       ...overlayStyle,
-      height: '3dvw', // Set a fixed height for the overlay when title is empty
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -130,7 +129,7 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
               variant="body2"
               align="center"
               noWrap
-              sx={{ fontWeight: 'bold', fontSize: desktop ? '1.2dvw': '2dvw' }}
+              sx={{ fontWeight: 'bold', fontSize: desktop ? '1.2dvw': '3dvw' }}
             >
               {title}
             </Typography>
@@ -141,7 +140,7 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
             noWrap
             sx={{
               fontWeight: 'Medium',
-              fontSize: desktop ? '1.2dvw': '2dvw',
+              fontSize: desktop ? '1.2dvw': '3dvw',
               color: theme.palette.primary.main,
               fontFamily: theme.typography.fontFamily,
             }}

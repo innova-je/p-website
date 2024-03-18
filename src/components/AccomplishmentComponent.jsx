@@ -43,8 +43,6 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
     loadImage();
   }, [image]);
 
-  console.log("Dynamic Logo :" + dynamicLogo)
-
 
   const AccomplishmentBox = styled(Box)(({ isSelected }) => ({
     display: "flex",

@@ -125,7 +125,7 @@ const OurTeam = () => {
             </Box>
 
             <Box marginTop={15} marginBottom={4} textAlign="center" position="relative" sx={{}}>
-                <CustomTitle title="Our Board" subtitle="our problem-solvers" theme={theme} />
+                <CustomTitle title="Our Board" subtitle="our problem-solvers" theme={theme} sizeTitle={desktop ? '3.5rem':'2.5rem'} sizeSubTitle={desktop ? '2.5rem':'1.5rem'}/>
             </Box>
 
             <Box
@@ -188,8 +188,8 @@ const OurTeam = () => {
 
             </Box>
 
-            <Box marginTop={5} marginBottom={10} textAlign="center">
-                <CustomTitle title="Our Departments" subtitle="who make the magic happen" theme={theme} sizeTitle='2rem' sizeSubTitle='1.5rem' />
+            <Box marginBottom={10} textAlign="center">
+                <CustomTitle title="Our Departments" subtitle="who make the magic happen" theme={theme} sizeTitle={desktop ? '3.5rem':'2rem'} sizeSubTitle={desktop ? '2rem':'1.5rem'} />
             </Box>
 
 
