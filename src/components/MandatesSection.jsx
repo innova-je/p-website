@@ -58,6 +58,7 @@ const MandatesSection = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        arrows: false,
         appendDots: (dots) => {
             return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />
         }
