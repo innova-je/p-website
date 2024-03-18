@@ -5,7 +5,6 @@ import HeroImage from '../images/other/about-us.png'
 import Values from '../components/Values';
 import MapParallax from '../components/MapParallax';
 import { useMediaQuery } from 'react-responsive';
-import { tab } from '@testing-library/user-event/dist/tab';
 import MandatesSection from '../components/MandatesSection';
 
 

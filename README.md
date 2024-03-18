@@ -10,7 +10,7 @@ This will start a development server. Open your browser and visit `http://localh
 ### Build for Deployment
 To prepare the app for deployment, run:
 ```
-npm run build
+npm run build --force
 ```
 This will create a production build of the app.
 
