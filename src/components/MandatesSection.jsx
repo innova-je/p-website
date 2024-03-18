@@ -7,6 +7,13 @@ import Mandates from '../Mandates.json';
 import Mandate from './Mandate';
 import { useMediaQuery } from 'react-responsive';
 
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import MagicSliderDots from 'react-magic-slider-dots';
+import 'react-magic-slider-dots/dist/magic-dots.css';
+import Slider from 'react-slick';
+
 const MandatesSection = () => {
     const isDesktopOrLaptop = useMediaQuery({ minWidth: 767 });
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -43,67 +50,39 @@ const MandatesSection = () => {
             mandates[(currentImageIndex + 1) % mandates.length],
         ];
     }
-
+    const settings = {
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 15000,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        appendDots: (dots) => {
+            return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />
+        }
+    };
     return (
         <>
             {!isDesktopOrLaptop && (
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    {visibleMandates.map((mandate, index) => (
-                        <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', }}>
-                            {mandate ? (
-                                <>
-                                    <div style={{ marginLeft: index === 1 ? '5dvw' : '-20dvw', flex: '0 0 auto', width: index === 1 ? '50dvw' : '35dvw' }}>
-                                        <img
-                                            src={images[(currentImageIndex + index - 1 + mandates.length) % mandates.length]}
-                                            alt={mandates[index].title}
-                                            style={{
-                                                maxWidth: index === 1 ? '90%' : '80%',
-                                                maxHeight: index === 1 ? '90%' : '80%',
-                                                borderRadius: index === 1 ? '10px' : '5px',
-                                                boxShadow: index === 1 ? '0px 0px 20px rgba(0, 0, 0, 0.3)' : 'none',
-                                                opacity: index === 1 ? 1 : 0.5,
-                                            }}
-                                        />
-                                    </div>
-                                    <div style={{ width: '40dvw', opacity: index === 1 ? 1 : 0.5, marginLeft: index === 1 ? "20px" : undefined }}>
-                                        <Typography variant="subtitle1" style={{ fontSize: index === 1 ? '5.5dvw' : '2.7dvw', color: 'white' }}>
-                                            {mandate.title}
-                                        </Typography>
-                                        <Typography variant="body2" style={{ fontSize: index === 1 ? '3dvw' : '1.7dvw', color: 'white' }}>
-                                            Year: {mandate.year}
-                                        </Typography>
-                                        <Typography variant="body2" style={{ fontSize: index === 1 ? '3dvw' : '1.5dvw', color: 'white' }}>
-                                            {mandate.mainAccomplishments.map((accomplishment, index) => (
-                                                <><li key={index}>{accomplishment}</li></>
-                                            ))}
-                                        </Typography>
-                                    </div>
-                                </>
-                            ) : (
-                                <div style={{ width: '200px', height: '200px' }} />
-                            )}
-                        </div>
-                    ))}
-
-
-                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-                        <IconButton
-                            variant="contained"
-                            onClick={handlePrevClick}
-                            // disabled={currentImageIndex === 0}
-                            sx={{ marginRight: '10px', color: 'white' }}
-                        >
-                            <ArrowBackIosIcon />
-                        </IconButton>
-                        <IconButton
-                            variant="contained"
-                            onClick={handleNextClick}
-                            // disabled={currentImageIndex === mandates.length - 1}
-                            sx={{ color: 'white' }}
-                        >
-                            <ArrowForwardIosIcon />
-                        </IconButton>
-                    </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: "auto" }}>
+                    <Slider {...settings} style={{ width: "80dvw", padding: "7% 0 5% 0", background: "none" }}>
+                        {Mandates.mandates.map((mandate, index) => (
+                            <div key={index}>
+                                <div style={{ width: "100%", display: "flex", justifyContent: "center", height: "auto", padding: "0 0 9% 0" }}>
+                                    <Mandate
+                                        title={mandate.title}
+                                        year={mandate.year}
+                                        mainAccomplishments={mandate.mainAccomplishments}
+                                        image={mandate.image}
+                                        currentImageIndex={mandate.currentImageIndex}
+                                        index={index}
+                                        isDesktop={false}
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
             )}
 
@@ -119,6 +98,7 @@ const MandatesSection = () => {
                                     image={mandate.image}
                                     currentImageIndex={mandate.currentImageIndex}
                                     index={index}
+                                    isDesktop={true}
                                 />
                             ) : (
                                 <div style={{ width: '30dvw', height: '20dvw' }} />
