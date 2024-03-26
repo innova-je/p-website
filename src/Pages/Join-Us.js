@@ -107,7 +107,7 @@ const JoinUs = () => {
                         <div style={{ height: "100%", width: "100%", display: "flex", zIndex: 1, justifyContent: "center" }}>
 
                             <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                                <div style={{ width: (mobile || smallMobile) ? "80%" : "100%", height: "100%", display: "flex", flexDirection: "column", gap: "5%", alignItems: "center", justifyContent: "flex-end" }}>
+                                <div style={{ width: (mobile || smallMobile) ? "80%" : "100%", height: "100%", display: "flex", flexDirection: "column", gap: "5%", alignItems: "center", justifyContent: "center" }}>
                                     <Typography
                                         variant="h2"
                                         sx={{
