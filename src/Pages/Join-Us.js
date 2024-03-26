@@ -107,24 +107,24 @@ const JoinUs = () => {
                         <div style={{ height: "100%", width: "100%", display: "flex", zIndex: 1, justifyContent: "center" }}>
 
                             <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                                <div style={{ width: (mobile || smallMobile) ? "80%" : "100%", height: "100%", display: "flex", flexDirection: "column", gap: "5%", alignItems: "center", justifyContent: "center" }}>
+                                <div style={{ width: (mobile || smallMobile) ? "80%" : "100%", height: "100%", display: "flex", flexDirection: "column", gap: "5%", alignItems: "center", justifyContent: "flex-end" }}>
                                     <Typography
                                         variant="h2"
                                         sx={{
                                             fontWeight: '600',
-                                            fontSize: tablet ? "4.5dvw" : mobile ? "6dvw" : smallMobile ? '8dvw' : '4dvw',
+                                            fontSize: tablet ? "5.5dvw" : mobile ? "6dvw" : smallMobile ? '8dvw' : '5dvw',
                                             position: 'relative',
-                                            color: theme.palette.primary.main,
+                                            color: theme.palette.secondary.main,
                                             fontFamily: theme.typography.fontFamily,
                                             zIndex: '1',
                                             textAlign: "center",
-                                            display: (mobile || smallMobile) ? "none" : "flex"
+                                            display:"flex",
                                         }}
                                     >
                                         Want to {(smallMobile) && (<br/>)} become one of us?
                                     </Typography>
 
-                                    <CountDownRecruitment />
+                                    {/* <CountDownRecruitment /> */}
                                  
                                     <Button
                                         variant="contained"
@@ -136,6 +136,7 @@ const JoinUs = () => {
                                             px: (mobile) ? "8dvw" : (smallMobile ? "10dvw" : "5dvw"),
                                             fontSize: tablet ? "3dvw" : mobile ? "3dvw" : smallMobile ? '3dvw' : '1.5dvw',
                                             textTransform: 'none',
+                                            mb:'4dvw'
                                         }}
                                     >
                                         Apply Now!
