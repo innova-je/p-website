@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Box, Button, Link, Typography, useTheme } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import Typography from '@mui/material/Typography';
+import { useTheme } from '@emotion/react';
 
 // images
 import android from '../images/Icons/android-icon.png';
@@ -28,117 +29,66 @@ import teams from '../images/Icons/teams-icon.png';
 import postman from '../images/Icons/postman-icon.png';
 import solidworks from '../images/Icons/solidworks-icon.png';
 import technologiesBg from '../images/other/technologies_background.webp'
-
-
 import { useMediaQuery } from 'react-responsive';
 
-const circleStyle = {
-    borderRadius: '50%',
-    border: '2px solid #818080',
-    margin: '0 auto',
-};
 
-const imageStyle = {
-    position: "absolute",
-    width: '60px',
-    height: '60px',
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    transition: 'transform 0.2s ease-in-out',
-    filter: 'grayscale(100%)',
-    zIndex: 1,
-};
+const GrayScaleImage = ({ src, width, x, y, height }) => {
+    const [hovered, setHovered] = useState(false);
 
-const Technologies = () => {
-    const theme = useTheme();
-
-    const smallMobile = useMediaQuery({ maxWidth: 550 });
-    const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
-    const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
-    const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
-    const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
-    const largeDesktop = useMediaQuery({ minWidth: 1400 });
-
-    const distributeImages = (circleWidth, circleHeight, imageUrls, xwidth, xheight) => {
-        const calcWidth = (circleWidth / window.innerWidth) * 100;
-        const calcHeight = (circleHeight / window.innerHeight) * 100;
-
-        const imagesArray = [];
-        const numImages = imageUrls.length;
-        const radiusX = circleWidth / 2;
-        const radiusY = circleHeight / 2;
-
-        for (let i = 0; i < numImages; i++) {
-            const angle = (i / numImages) * 2 * Math.PI;
-            const x = radiusX * Math.cos(angle);
-            const y = radiusY * Math.sin(angle);
-            imagesArray.push(
-                <div
-                    key={i}
-                    style={{
-                        ...imageStyle,
-                        //top: `calc(${calcHeight}vh + ${y}px)`,
-                        //left: `calc(${calcWidth}vw + ${x}px)`,
-                        backgroundImage: `url(${imageUrls[i % numImages]})`,
-                        height: xheight,
-                        width: xwidth
-                    }}
-                    onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.2)';
-                        e.currentTarget.style.filter = 'grayscale(0)';
-                    }}
-                    onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'scale(1)';
-                        e.currentTarget.style.filter = 'grayscale(100%)';
-                    }}
-                />
-            );
-        }
-        return imagesArray;
+    const handleMouseEnter = () => {
+        setHovered(true);
     };
 
-    const circle1Images = [
-        html, wordpress, teams,postman , linkedin, illustrator, react, canva, excel, excel, excel  
-    ];
+    const handleMouseLeave = () => {
+        setHovered(false);
+    };
 
-    const circle2Images = [
-        googlefirebase, photoshop, raspberrypi, javascript, javascript, excel, excel, java, notion, c, apple, excel, excel, excel, excel, excel, excel, excel, instagram,
-    ];
+    const imageStyle = {
+        filter: hovered ? 'none' : 'grayscale(100%)',
+        transition: 'filter 0.3s  ease-in-out',
+        transform: hovered ? 'scale(1.01)' : 'scale(1)',
+        transition: 'transform 0.2s  ease-in-out',
+    };
 
-    const circle3Images = [
-        github, excel, solidworks, postman, postman, postman, postman, postman, arduino, premier, figma, css, postman, postman, postman, postman, postman, postman, postman, android
-    ];
+    return (
+        <image
+            href={src}
+            width={width}
+            x={x}
+            y={y}
+            height={height}
+            style={imageStyle
 
-    return (         
+            }
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
 
-            <div style={{
-                background: `linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8)),            
-                url(${technologiesBg})`,
-                overflow: "hidden",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                width: "100vw",
-                height: (mobile || smallMobile) ? "auto" : desktop || smallDesktop || tablet ? "30vmax" : largeDesktop ? "30vmax" : "40vw",
-                display: "flex", 
-                flexDirection: "column", 
-                alignItems: "center", 
-                justifyContent: "center", 
-                padding: largeDesktop ? "0% 0 0% 0" : smallMobile || mobile ? "5% 0 0 0" :  desktop || smallDesktop || tablet ? "0% 0 0 0" : 0
-            }}>
+        />
+    );
+};
 
-            <div style={{
-                background: mobile || smallMobile ? "none" : `linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8))`,
-                height: "100%", position: "relative", padding: mobile || smallMobile ? "15% 0 0 0" : "12% 0 0 0", display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "flex-start"}}>            
-            <Typography variant="h4"
+
+const CirclesComponent = () => {
+    const tablet = useMediaQuery({ maxWidth: 1023 });
+    const theme = useTheme();
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    const centerX = screenWidth / 2;
+    const centerY = screenHeight / 10;
+
+    return (
+        <>
+            {tablet && (
+                <div>
+                    <div style={{ height: "35vw", display: "flex", alignItems: "center", flexDirection: "column", justifyContent: 'flex-start' }}>
+                        <Typography variant="h4"
                             sx={{
                                 color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'Semi-Bold',
-                                width: "100%",
                                 textAlign: "center",
-                                fontSize: smallDesktop ? '4dvw' : tablet ? '4.5dvw' : mobile ? '7dvw' : smallMobile ? '8dvw' : '2.5dvw',
-                                marginTop: largeDesktop ? "-20%" : "-15%"
+                                fontSize: '3.5dvw',
+                                mt: "2dvw"
                             }}>
                             You will
                         </Typography>
@@ -148,19 +98,18 @@ const Technologies = () => {
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'Bold',
                                 textAlign: "center",
-                                fontSize: smallDesktop ? '5.5dvw' : tablet ? '6dvw' : mobile ? '9dvw' : smallMobile ? '10dvw' : '4.5dvw',
+                                fontSize: '7dvw',
                             }}>
                             learn something
                         </Typography>
                         <Typography variant="h3"
                             sx={{
-                                marginBottom: '20px',
                                 color: theme.palette.primary.main,
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'bold',
                                 opacity: '0.66',
                                 textAlign: "center",
-                                fontSize: smallDesktop ? '4.5dvw' : tablet ? '5dvw' : mobile ? '6.5dvw' : smallMobile ? '8.5dvw' : '3.5dvw',
+                                fontSize: '5.5dvw',
                             }}>
                             every.single.day
                         </Typography>
@@ -171,19 +120,144 @@ const Technologies = () => {
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: "Medium",
                                 textAlign: "center",
-                                width: "80%",
-                                paddingBottom: "10%",
-                                fontSize: smallDesktop ? '1.3dvw' : tablet ? '1.8dvw' : mobile ? '3.5dvw' : smallMobile ? '4.6dvw' : '1.2dvw',
+                                fontSize: '2.5dvw',
+                                mt: "2.5dvw"
 
                             }}>
                             These are some technologies we use.<br />
                             If you have something new to teach us,  join the team!
                         </Typography>
-            </div>
 
-            </div>
-     
+                    </div>
+                    <div style={{ height: "35vw" }}>
+                        <svg width={screenWidth} height="100%">
+                            {/* Circles */}
+                            <circle cx={centerX} cy={'5vw'} r={"47vw"} fill="none" stroke="lightgrey" strokeWidth="1" />
+                            <circle cx={centerX} cy={'5vw'} r={"38vw"} fill="none" stroke="lightgrey" strokeWidth="1" />
+                            <circle cx={centerX} cy={'5.5vw'} r={"26vw"} fill="none" stroke="lightgrey" strokeWidth="1" />
+                            {/* PNG images */}
+                            <GrayScaleImage src={react} width="5dvw" x='22dvw' y="3dvw" height="5dvw" />
+                            <GrayScaleImage src={canva} width="5dvw" x='24dvw' y="13dvw" height="5dvw" />
+                            <GrayScaleImage src={illustrator} width="6dvw" x='31dvw' y="22dvw" height="6dvw" />
+                            <GrayScaleImage src={linkedin} width="6dvw" x='42dvw' y="27.5dvw" height="6dvw" />
+                            <GrayScaleImage src={postman} width="4dvw" x='58dvw' y="27dvw" height="4dvw" />
+                            <GrayScaleImage src={teams} width="4dvw" x='67dvw' y="20dvw" height="4dvw" />
+                            <GrayScaleImage src={wordpress} width="4dvw" x='72dvw' y="12dvw" height="4dvw" />
+                            <GrayScaleImage src={html} width="5dvw" x='73dvw' y="3dvw" height="5dvw" />
+                            <GrayScaleImage src={apple} width="7dvw" x='8.5dvw' y="3dvw" height="7dvw" />
+                            <GrayScaleImage src={c} width="4dvw" x='11.5dvw' y="13dvw" height="4dvw" />
+                            <GrayScaleImage src={notion} width="4dvw" x='15dvw' y="21dvw" height="4dvw" />
+                            <GrayScaleImage src={java} width="5dvw" x='19dvw' y="26dvw" height="5dvw" />
+                            <GrayScaleImage src={javascript} width="6dvw" x='76dvw' y="26dvw" height="6dvw" />
+                            <GrayScaleImage src={raspberrypi} width="4dvw" x='81dvw' y="21dvw" height="4dvw" />
+                            <GrayScaleImage src={photoshop} width="6dvw" x='83.5dvw' y="12dvw" height="6dvw" />
+                            <GrayScaleImage src={googlefirebase} width="5dvw" x='85.5dvw' y="4dvw" height="5dvw" />
+                            <GrayScaleImage src={css} width="4dvw" x='1dvw' y="3dvw" height="4dvw" />
+                            <GrayScaleImage src={figma} width="4dvw" x='2dvw' y="12dvw" height="4dvw" />
+                            <GrayScaleImage src={premier} width="4dvw" x='4dvw' y="19dvw" height="4dvw" />
+                            <GrayScaleImage src={arduino} width="5dvw" x='7dvw' y="26dvw" height="5dvw" />
+                            <GrayScaleImage src={solidworks} width="5dvw" x='88dvw' y="26dvw" height="5dvw" />
+                            <GrayScaleImage src={excel} width="4dvw" x='91dvw' y="20dvw" height="4dvw" />
+                            <GrayScaleImage src={github} width="4dvw" x='93.5dvw' y="13dvw" height="4dvw" />
+                            <GrayScaleImage src={android} width="5dvw" x='94dvw' y="4dvw" height="5dvw" />
+
+                            {/* Button */}
+                            {/* Filter for shadow effect */}
+                            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000000" floodOpacity="0.4" />
+                            </filter>
+                            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                                <rect x='35dvw' y="10dvw" width="30dvw" height="5.5dvw" rx="2dvw" ry="2dvw" fill={theme.palette.primary.main} filter="url(#shadow)" />
+                                <text x={centerX} y="14dvw" textAnchor="middle" fontSize="3dvw" fill="white" fontFamily={theme.typography.fontFamily}>
+                                    See our Portfolio
+                                </text>
+                            </a>
+                        </svg>
+                    </div>
+                </div>
+            )}
+
+            {!tablet && (
+                <div style={{ height: "33vw" }}>
+                    <svg width={screenWidth} height="100%">
+                        {/* Circles */}
+                        <circle cx={centerX} cy={centerY} r={"47vw"} fill="none" stroke="lightgrey" strokeWidth="1" />
+                        <circle cx={centerX} cy={centerY} r={"38vw"} fill="none" stroke="lightgrey" strokeWidth="1" />
+                        <circle cx={centerX} cy={centerY} r={"26vw"} fill="none" stroke="lightgrey" strokeWidth="1" />
+                        {/* PNG images */}
+                        <GrayScaleImage src={react} width="5dvw" x='22dvw' y="3dvw" height="5dvw" />
+                        <GrayScaleImage src={canva} width="5dvw" x='24dvw' y="13dvw" height="5dvw" />
+                        <GrayScaleImage src={illustrator} width="6dvw" x='31dvw' y="22dvw" height="6dvw" />
+                        <GrayScaleImage src={linkedin} width="6dvw" x='42dvw' y="27.5dvw" height="6dvw" />
+                        <GrayScaleImage src={postman} width="4dvw" x='58dvw' y="27dvw" height="4dvw" />
+                        <GrayScaleImage src={teams} width="4dvw" x='67dvw' y="20dvw" height="4dvw" />
+                        <GrayScaleImage src={wordpress} width="4dvw" x='72dvw' y="12dvw" height="4dvw" />
+                        <GrayScaleImage src={html} width="5dvw" x='73dvw' y="3dvw" height="5dvw" />
+                        <GrayScaleImage src={apple} width="7dvw" x='8.5dvw' y="3dvw" height="7dvw" />
+                        <GrayScaleImage src={c} width="4dvw" x='11.5dvw' y="13dvw" height="4dvw" />
+                        <GrayScaleImage src={notion} width="4dvw" x='15dvw' y="21dvw" height="4dvw" />
+                        <GrayScaleImage src={java} width="5dvw" x='19dvw' y="26dvw" height="5dvw" />
+                        <GrayScaleImage src={javascript} width="6dvw" x='76dvw' y="26dvw" height="6dvw" />
+                        <GrayScaleImage src={raspberrypi} width="4dvw" x='81dvw' y="21dvw" height="4dvw" />
+                        <GrayScaleImage src={photoshop} width="6dvw" x='83.5dvw' y="12dvw" height="6dvw" />
+                        <GrayScaleImage src={googlefirebase} width="5dvw" x='85.5dvw' y="4dvw" height="5dvw" />
+                        <GrayScaleImage src={css} width="4dvw" x='1dvw' y="3dvw" height="4dvw" />
+                        <GrayScaleImage src={figma} width="4dvw" x='2dvw' y="12dvw" height="4dvw" />
+                        <GrayScaleImage src={premier} width="4dvw" x='4dvw' y="19dvw" height="4dvw" />
+                        <GrayScaleImage src={arduino} width="5dvw" x='7dvw' y="26dvw" height="5dvw" />
+                        <GrayScaleImage src={solidworks} width="5dvw" x='88dvw' y="26dvw" height="5dvw" />
+                        <GrayScaleImage src={excel} width="4dvw" x='91dvw' y="20dvw" height="4dvw" />
+                        <GrayScaleImage src={github} width="4dvw" x='93.5dvw' y="13dvw" height="4dvw" />
+                        <GrayScaleImage src={android} width="5dvw" x='94dvw' y="4dvw" height="5dvw" />
+
+                        {/* Text */}
+                        <text x={centerX} y="5dvw" textAnchor="middle"
+                            fontSize="2.5dvw"
+                            fontWeight="400"
+                            fill={theme.palette.secondary.main}
+                        >
+                            You will
+                        </text>
+                        <text x={centerX} y="9dvw" textAnchor="middle"
+                            fontSize="4.5dvw"
+                            fontWeight="600"
+                            fill={theme.palette.primary.main}
+                        >
+                            learn something
+                        </text>
+                        <text x={centerX} y="13dvw" textAnchor="middle"
+                            fontSize="4dvw"
+                            fontWeight="600"
+                            fill={theme.palette.primary.main}
+                            opacity="0.6"
+                        >
+                            every.single.day
+                        </text>
+                        <text x={centerX} y="14dvw" textAnchor="middle"
+                            fontSize="1.5dvw"
+                            fontWeight="600"
+                            fill={theme.palette.secondary.main}
+                        >
+                            <tspan x={centerX} dy="1.2em">These are some technologies we use.</tspan>
+                            <tspan x={centerX} dy="1.2em">If you have something new to teach us, join the team!</tspan>
+                        </text>
+
+                        {/* Button */}
+                        {/* Filter for shadow effect */}
+                        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000000" floodOpacity="0.4" />
+                        </filter>
+                        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                            <rect x='41dvw' y="20.4dvw" width="18vw" height="3.5vw" rx="1dvw" ry="1dvw" fill={theme.palette.primary.main} filter="url(#shadow)" />
+                            <text x={centerX} y="22.6dvw" textAnchor="middle" fontSize="1.5dvw" fill="white" fontFamily={theme.typography.fontFamily}>
+                                See our Portfolio
+                            </text>
+                        </a>
+                    </svg>
+                </div>
+            )}
+        </>
     );
 };
 
-export default Technologies;
+export default CirclesComponent;

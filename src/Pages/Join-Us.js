@@ -118,14 +118,14 @@ const JoinUs = () => {
                                             fontFamily: theme.typography.fontFamily,
                                             zIndex: '1',
                                             textAlign: "center",
-                                            display:"flex",
+                                            display: "flex",
                                         }}
                                     >
-                                        Want to {(smallMobile) && (<br/>)} become one of us?
+                                        Want to {(smallMobile) && (<br />)} become one of us?
                                     </Typography>
 
                                     {/* <CountDownRecruitment /> */}
-                                 
+
                                     <Button
                                         variant="contained"
                                         href='https://forms.gle/NP4Eo4RUftMv4LFq7'
@@ -136,7 +136,7 @@ const JoinUs = () => {
                                             px: (mobile) ? "8dvw" : (smallMobile ? "10dvw" : "5dvw"),
                                             fontSize: tablet ? "3dvw" : mobile ? "3dvw" : smallMobile ? '3dvw' : '1.5dvw',
                                             textTransform: 'none',
-                                            mb:'4dvw'
+                                            mb: '4dvw'
                                         }}
                                     >
                                         Apply Now!
@@ -160,7 +160,7 @@ const JoinUs = () => {
                     justifyContent: "center",
                     width: "100%",
                     height: "auto",
-                    marginBottom: "5%"
+                    //marginBottom: "5%"
                 }}>
                     {/* 2nd Section*/}
                     <Box
@@ -172,23 +172,7 @@ const JoinUs = () => {
                     >
 
                         {/* Circles */}
-                       
                         <Technologies />
-
-                        {/* <Button
-                    variant="contained"
-                    endIcon={<ArrowForwardIcon />}
-                    sx={{
-                        borderRadius: '10px',
-                        // py: '5px',
-                        px: '20px',
-                        fontSize:  tablet ? '1.8dvw' : mobile ? '2.2dvw' : smallMobile ? '3dvw' : '1.2dvw',
-                        textTransform: 'none',
-                        marginBottom: '40px',
-                    }}
-                >
-                    See our Portfolio
-                </Button> */}
                     </Box>
 
                 </div>
@@ -208,8 +192,21 @@ const JoinUs = () => {
                     background: `linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))`
                 }}>
                     {/* 3rd Section */}
-                    <div style={{ padding: (mobile || smallMobile || tablet) ? "0% 0 2% 0%" : "0 0 0 5rem", display: "flex", flexDirection: "column", width: "100%", height: (mobile || smallMobile) ? "auto" : "100%", justifyContent: "center", alignItems: "center"}}>
-                          <h3
+                    <div style={{ padding: (mobile || smallMobile || tablet) ? "0% 0 2% 0%" : "0 0 0 5rem", display: "flex", flexDirection: "column", width: "100%", height: (mobile || smallMobile) ? "auto" : "100%", justifyContent: "center", alignItems: "center" }}>
+                        {(mobile || smallMobile || tablet) && (
+                            <div style={{ height: "100%", zIndex: -1, display:"flex", justifyContent:"center" }}>
+                                <img
+                                    src={joinus_oof2}
+                                    alt='joinus_oof'
+                                    style={{
+                                        width: '100%',
+                                        height: 'auto',
+                                        marginBottom: "5%"
+                                    }}
+                                />
+                            </div>
+                        )}
+                        <h3
                             style={{
                                 width: "fit-content",
                                 color: theme.palette.secondary.main,
@@ -245,59 +242,41 @@ const JoinUs = () => {
                             }}
                         >
                             a lot of fun!
-                        </Typography>  
-                        
+                        </Typography>
+
                         <NavLink to="/out-of-office">
                             <Button
 
-                            variant="contained"
-                            endIcon={<ArrowForwardIcon />}
-                            sx={{
-                                borderRadius: '10px',
-                                py: '10px',
-                                px: '25px',
-                                fontSize: mobile ? '3dvw' : smallMobile ? '3dvw' : tablet ? "2dvw" : '1dvw',
-                                textTransform: 'none',
-                                mt: '2rem',
-                                mb: '2rem'
-                            }}
-                        >
-                            Out of Office
-                        </Button>
-                        </NavLink>
-                        
-                    </div>
-                    <div style={{ zIndex: 1, }}>
-                        {(mobile || smallMobile || tablet) && (
-                            <div style={{ height: "100%", marginBottom: "-5%", zIndex: -1}}>
-                            <img
-                                src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
-                                alt='joinus_oof'
-                                style={{
-                                    width: '100%',
-                                    height: 'auto',
-                                    opacity: "0.6"
+                                variant="contained"
+                                endIcon={<ArrowForwardIcon />}
+                                sx={{
+                                    borderRadius: '10px',
+                                    py: '10px',
+                                    px: '25px',
+                                    fontSize: mobile ? '3dvw' : smallMobile ? '3dvw' : tablet ? "2dvw" : '1dvw',
+                                    textTransform: 'none',
+                                    mt: '2rem',
+                                    mb: '2rem'
                                 }}
-                            />
-                        </div> 
-                        
-                        )}
-                        </div>
-                        
-                        
+                            >
+                                Out of Office
+                            </Button>
+                        </NavLink>
+
+                    </div>
 
                     {!(mobile || smallMobile || tablet) && (
-                        <div style={{ width: "100%", height: "100%",  zIndex: "-1", display: "flex", background: "", alignItems: "flex-end", justifyContent: "right"}}>
+                        <div style={{ width: "100%", height: "100%", zIndex: "-1", display: "flex", background: "", alignItems: "flex-end", justifyContent: "right" }}>
                             <img
-                                src={mobile ? joinus_oof2 : smallMobile ? joinus_oof2 : joinus_oof}
+                                src={joinus_oof}
                                 alt='joinus_oof'
                                 style={{
                                     width: "auto",
                                     height: "100%",
                                 }}
                             />
-                        </div> 
-                    )}                   
+                        </div>
+                    )}
 
                 </div>
 
@@ -305,7 +284,7 @@ const JoinUs = () => {
                 {/*----------------------------------------------------*/}
 
 
-                <div style={{ display: "flex", flexDirection: "column", width:"100%" }}>
+                <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
                     {/* 4th Section */}
                     <Box
                         sx={{
@@ -318,62 +297,62 @@ const JoinUs = () => {
                             backgroundImage: `linear-gradient(to bottom, ${theme.palette.primary.main} ${gradientPercentage}, rgba(240,240,240,1))`,
                         }}
                     >
-                        <div style={{display: "flex", flexDirection: "column", marginTop: "5%", height: "auto", marginLeft: (smallMobile || mobile) ? "0%" : "5%"}}>
-                        {smallMobile || mobile ? (
-                            <div style={{height: "auto", padding: "5% 0 0 0", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+                        <div style={{ display: "flex", flexDirection: "column", marginTop: "5%", height: "auto", marginLeft: (smallMobile || mobile) ? "0%" : "5%" }}>
+                            {smallMobile || mobile ? (
+                                <div style={{ height: "auto", padding: "5% 0 0 0", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+                                    <Typography
+                                        variant="h3"
+                                        sx={{
+                                            fontSize: mobile ? '6dvw' : smallMobile ? '6dvw' : '4dvw',
+                                            color: "#F0F0F0",
+                                            fontFamily: theme.typography.fontFamily,
+                                            fontWeight: 'Bold',
+                                        }}
+                                    >
+                                        Our members
+                                    </Typography>
+                                    <Typography
+                                        variant="h3"
+                                        sx={{
+                                            fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '4dvw',
+                                            color: "#F0F0F0",
+                                            fontFamily: theme.typography.fontFamily,
+                                            fontWeight: 'Bold',
+                                        }}
+                                    >
+                                        love being here,
+                                    </Typography>
+                                    <Typography
+                                        variant="h3"
+                                        sx={{
+                                            fontSize: mobile ? '8dvw' : smallMobile ? '9dvw' : '4dvw',
+                                            color: "#F0F0F0",
+                                            fontFamily: theme.typography.fontFamily,
+                                            fontWeight: 'Bold',
+                                        }}
+                                    >
+                                        and so will you!
+                                    </Typography>
+                                </div>
+                            ) : (
                                 <Typography
                                     variant="h3"
                                     sx={{
-                                        fontSize: mobile ? '6dvw' : smallMobile ? '6dvw' : '4dvw',
+                                        position: 'relative',
+                                        zIndex: '1',
+                                        fontSize: '3.5dvw',
                                         color: "#F0F0F0",
                                         fontFamily: theme.typography.fontFamily,
-                                        fontWeight: 'Bold',
+                                        fontWeight: 500,
                                     }}
                                 >
-                                    Our members
-                                </Typography>
-                                <Typography
-                                    variant="h3"
-                                    sx={{
-                                        fontSize: mobile ? '7dvw' : smallMobile ? '7dvw' : '4dvw',
-                                        color: "#F0F0F0",
-                                        fontFamily: theme.typography.fontFamily,
-                                        fontWeight: 'Bold',
-                                    }}
-                                >
-                                    love being here,
-                                </Typography>
-                                <Typography
-                                    variant="h3"
-                                    sx={{
-                                        fontSize: mobile ? '8dvw' : smallMobile ? '9dvw' : '4dvw',
-                                        color: "#F0F0F0",
-                                        fontFamily: theme.typography.fontFamily,
-                                        fontWeight: 'Bold',
-                                    }}
-                                >
+                                    Our members love being here,<br />
                                     and so will you!
                                 </Typography>
-                            </div>
-                        ) : (
-                            <Typography
-                                variant="h3"
-                                sx={{
-                                    position: 'relative',
-                                    zIndex: '1',
-                                    fontSize: '3.5dvw',
-                                    color: "#F0F0F0",
-                                    fontFamily: theme.typography.fontFamily,
-                                    fontWeight: 500,
-                                }}
-                            >
-                                Our members love being here,<br />
-                                and so will you!
-                            </Typography>
-                        )}
+                            )}
 
                         </div>
-                        
+
                         <Carousel></Carousel>
 
                     </Box>
@@ -395,7 +374,7 @@ const JoinUs = () => {
                             height: '100% ',
                             //background: "blue",
                         }}
-                    >                        
+                    >
 
                         {/* progress * 6.5 */}
                         <HowToApply progress={0} />
@@ -419,7 +398,7 @@ const JoinUs = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: "center",
-                                background:"",
+                                background: "",
                                 gap: "5%",
                                 width: "100%",
                                 alignItems: 'center',
@@ -429,87 +408,87 @@ const JoinUs = () => {
 
                             }}>
 
-                            <div style={{background: ""}}>
+                            <div style={{ background: "" }}>
                                 <Typography
-                                variant="h4"
-                                sx={{
-                                    position: 'relative',
-                                    color: theme.palette.secondary.main,
-                                    fontFamily: theme.typography.fontFamily,
-                                    fontWeight: 'Light',
-                                    textAlign: "center",
-                                    fontSize: tablet ? "3.5dvw" : mobile ? "5.5dvw" : smallMobile ? '6dvw' : '2.2dvw',
-                                }}
-                            >
-                                One important rule...
-                            </Typography>
-                            <Typography
-                                variant="h2"
-                                sx={{
-                                    position: 'relative',
-                                    color: theme.palette.secondary.main,
-                                    fontFamily: theme.typography.fontFamily,
-                                    fontWeight: 'bold',
-                                    textAlign: "center",
-                                    fontSize: tablet ? "5.5dvw" : mobile ? "6.5dvw" : smallMobile ? '7dvw' : '3.5dvw',
-                                }}
-                            >
-                                Always be prepared!
-                            </Typography>
-                            </div>
-                            
-                            <div style={{background: "", overflow: "hidden", display: "flex", flexDirection: "row", justifyContent: "right", marginTop: smallMobile || mobile || tablet ? "5%" : 0}}>
-                               
-                                <img src={guiadocandidato} alt='guiadocandidato' style={{
-                                position: 'relative',
-                                left: "5%",
-                                right: 0,
-                                maxWidth: '60%',                                
-                                background: "",
-                                transform: mobile || smallMobile ? "none" : "scale(0.8)",
-                                maxHeight: '100%',
-                                objectFit: 'cover',
-                            }} /> 
-                               
-
-                            <div style={{width: "40%", background: "", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center"}}>
-                                <div style={{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}}>
-                                    <Typography
-                                variant="h2"
-                                sx={{
-                                    color: theme.palette.secondary.main,
-                                    fontFamily: theme.typography.fontFamily,
-                                    fontWeight: 'Regular',
-                                    fontSize: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '3dvw',
-                                    textAlign: 'center'
-                                }}
-                            >
-                                Read the<br />
-                                candidate guide
-                            </Typography>
-                            <a href="https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
-                                <Button
-                                    variant="contained"
+                                    variant="h4"
                                     sx={{
-                                        borderRadius: '10px',
-                                        marginTop: "20%",
-                                        py: tablet ? "0.8dvw" : mobile ? "1.5dvw" : smallMobile ? '1.5dvw' : '0.35dvw',
-                                        px: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '3dvw',
-                                        fontSize: tablet ? "1.7dvw" : mobile ? "1.5dvw" : smallMobile ? '2.5dvw' : '1.2dvw',
-                                        textTransform: 'none',
+                                        position: 'relative',
+                                        color: theme.palette.secondary.main,
+                                        fontFamily: theme.typography.fontFamily,
+                                        fontWeight: 'Light',
+                                        textAlign: "center",
+                                        fontSize: tablet ? "3.5dvw" : mobile ? "5.5dvw" : smallMobile ? '6dvw' : '2.2dvw',
                                     }}
                                 >
-                                    Download
-                                </Button>
-                            </a>
+                                    One important rule...
+                                </Typography>
+                                <Typography
+                                    variant="h2"
+                                    sx={{
+                                        position: 'relative',
+                                        color: theme.palette.secondary.main,
+                                        fontFamily: theme.typography.fontFamily,
+                                        fontWeight: 'bold',
+                                        textAlign: "center",
+                                        fontSize: tablet ? "5.5dvw" : mobile ? "6.5dvw" : smallMobile ? '7dvw' : '3.5dvw',
+                                    }}
+                                >
+                                    Always be prepared!
+                                </Typography>
+                            </div>
+
+                            <div style={{ background: "", overflow: "hidden", display: "flex", flexDirection: "row", justifyContent: "right", marginTop: smallMobile || mobile || tablet ? "5%" : 0 }}>
+
+                                <img src={guiadocandidato} alt='guiadocandidato' style={{
+                                    position: 'relative',
+                                    left: "5%",
+                                    right: 0,
+                                    maxWidth: '60%',
+                                    background: "",
+                                    transform: mobile || smallMobile ? "none" : "scale(0.8)",
+                                    maxHeight: '100%',
+                                    objectFit: 'cover',
+                                }} />
+
+
+                                <div style={{ width: "40%", background: "", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center" }}>
+                                    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+                                        <Typography
+                                            variant="h2"
+                                            sx={{
+                                                color: theme.palette.secondary.main,
+                                                fontFamily: theme.typography.fontFamily,
+                                                fontWeight: 'Regular',
+                                                fontSize: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '3dvw',
+                                                textAlign: 'center'
+                                            }}
+                                        >
+                                            Read the<br />
+                                            candidate guide
+                                        </Typography>
+                                        <a href="https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
+                                            <Button
+                                                variant="contained"
+                                                sx={{
+                                                    borderRadius: '10px',
+                                                    marginTop: "20%",
+                                                    py: tablet ? "0.8dvw" : mobile ? "1.5dvw" : smallMobile ? '1.5dvw' : '0.35dvw',
+                                                    px: tablet ? "4dvw" : mobile ? "4dvw" : smallMobile ? '4dvw' : '3dvw',
+                                                    fontSize: tablet ? "1.7dvw" : mobile ? "1.5dvw" : smallMobile ? '2.5dvw' : '1.2dvw',
+                                                    textTransform: 'none',
+                                                }}
+                                            >
+                                                Download
+                                            </Button>
+                                        </a>
+                                    </div>
+
                                 </div>
-                                
+
                             </div>
-                               
-                            </div>
-                            
-                            <div style={{background: "", display: "flex", flexDirection: "column", justifyContent: "center", marginTop: smallMobile || mobile || tablet ? "3%" : "0%"}}>
-                                    <Typography
+
+                            <div style={{ background: "", display: "flex", flexDirection: "column", justifyContent: "center", marginTop: smallMobile || mobile || tablet ? "3%" : "0%" }}>
+                                <Typography
                                     variant="body1"
                                     sx={{
                                         color: theme.palette.secondary.main,
@@ -531,7 +510,7 @@ const JoinUs = () => {
                                 }}>
                                     send us an-email
                                 </Link>
-                                </div>                           
+                            </div>
 
                         </Box>
 
