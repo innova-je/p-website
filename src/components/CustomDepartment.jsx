@@ -24,26 +24,34 @@ const CustomDepartment = ({ department }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'flez-start',
-          paddingBottom: desktop ? 3 : !expanded ? 4 : 0,
-          marginRight:"20px",
-        }}
-      >
-        {!desktop && (
-          <IconButton
-            onClick={handleToggle}
-            color="primary"
-            aria-label="toggle-list"
-            sx={{ position: 'relative', left: mobile ? '3dvw' : '4dvw' }}
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        )}
+      <div>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: "center",
+            paddingBottom: desktop ? 3 : !expanded ? 4 : 0,
+            //marginRight:"20px",
+          }}
+        >
+          <div style={{display: "flex", flexDirection: "row"}}>
+            {!desktop && (
+            <div style={{
+              display: "flex",
+              justifyContent: "center", 
+              alignItems: "center"}}>
+              <IconButton
+              onClick={handleToggle}
+              color="primary"
+              aria-label="toggle-list"
+            >
+              <ExpandMoreIcon />
+            </IconButton>
+            </div>            
+          )}     
+
         <Typography
-          variant={desktop ? "h4" : "h5"}
+          variant={desktop ? "h4" : "h6"}
           onClick={handleToggle}
           sx={{
             position: 'relative',
@@ -51,29 +59,36 @@ const CustomDepartment = ({ department }) => {
             color: theme.palette.primary.main,
             fontFamily: theme.typography.fontFamily,
             // left: mobile ? '20dvw': '10dvw',
-            marginLeft: '3dvw'
+            textAlign: "center",
+            width: "100%",
+            margin: "3dvw 0 2dvw 0"
           }}
         >
           {department.name + " Team"}
         </Typography>
 
+        
 
-      </Box>
+        </div>          
 
-      <Box
+        </Box>
+
+        <Box
         sx={{
           display: expanded || desktop ? 'flex' : 'none',
           justifyContent: 'center',
           flexWrap: 'wrap',
           gap: '30px',
           p: 5,
+          marginTop: "100px",
           maxWidth: '800px',
           margin: '0 auto',
           '@media (min-width: 1200px)': {
-            maxWidth: '1200px',
+            maxWidth: '1700px',
           },
         }}
-      >
+      >        
+
         {/* Render CustomComponent for director only if it exists */}
         {department.director && (
           <CustomComponent
@@ -90,6 +105,9 @@ const CustomDepartment = ({ department }) => {
           <CustomComponent key={index + 1} title='' name={member.name} image={member.imgDirectory} emailAddress={member.email} linkedinLink={member.linkedin} />
         ))}
       </Box>
+
+      </div>
+      
     </ThemeProvider>
   );
 };
