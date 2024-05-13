@@ -17,7 +17,7 @@ import NotFound from "./Pages/NotFound";
 function App() {
   const location = useLocation();
   const [showFooter, setShowFooter] = useState(false);
-  const maintenance_pages = ["/events", "/out-of-office", "/services"]
+  const maintenance_pages = ["/events", "/out-of-office"]
 
   // Set the showFooter state based on the current path
   React.useEffect(() => {

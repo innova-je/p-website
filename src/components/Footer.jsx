@@ -16,6 +16,7 @@ const Footer = () => {
 
     const location = useLocation();
     const isJoinUsPage = location.pathname === '/join-us';
+    const isServicesPage = location.pathname === '/services';
     const mobile = useMediaQuery({ maxWidth: 600 });
     const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
     const desktop = useMediaQuery({ minWidth: 1081 });
@@ -83,7 +84,7 @@ const Footer = () => {
                         width: "70%",
                         height: "100%",
                         backgroundColor: "#732043",
-                        borderRadius: "20px 0 0 0",
+                        borderRadius: isServicesPage ? "0" : "20px 0 0 0",
                         overflow:"hidden"
                     }}>
 
@@ -243,7 +244,7 @@ const Footer = () => {
                     <Box sx={{
                         width: "100%",
                         height: "34%",
-                        backgroundColor: isJoinUsPage ? "#FFFFFF" : "#F0F0F0",
+                        backgroundColor: isJoinUsPage ? "#FFFFFF" : (isServicesPage ? "#732043" : "#F0F0F0"),
                         borderRadius: "0 0px 20px 0"
                     }}>
                     </Box>
