@@ -1,9 +1,9 @@
 import React from 'react'
 
-import FillImage from '../images/other/maki_theatre.png'
 import WebappFuturalia from '../images/other/webapp_futuralia.png'
 import AppThirstPortugal from '../images/other/ThirstPortugal.png'
 import CheckIcon from '../images/other/simple-line-icons_check.png'
+import Industries from '../components/Industries'
 
 const Services = () => {
     return (
@@ -83,64 +83,7 @@ const Services = () => {
                 </div>
             </div>
 
-            <div style={{height: "100vh", borderRadius: "0 0 20px 20px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", rowGap: "30px"}}>
-                <div style={{ width: "80%", padding: "20px 0 40px 0"}}>
-                    <h1 style={{fontWeight: "normal"}}>WE WORK FOR DIFFERENT</h1>
-                    <h1 style={{fontSize: "60px", color: "#732043"}}>INDUSTRIES & AUDIENCES</h1>
-                </div>
-
-                <div style={{display: "grid", gridTemplateColumns: "repeat(4, 2fr)", rowGap: "30px", margin: "0 auto",
-                alignContent: "center", justifyItems: "center", alignItems: "center", width: "70%"}}>
-                    <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
-                        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
-                    }}>
-                        <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
-                    </div>
-                    <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
-                        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
-                    }}>
-                        <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
-                    </div>
-                    <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
-                        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
-                    }}>
-                        <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
-                    </div>
-                    <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
-                        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
-                    }}>
-                        <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
-                    </div>
-                    <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
-                        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
-                    }}>
-                        <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
-                    </div>
-                    <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
-                        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
-                    }}>
-                        <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
-                    </div>
-                    <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
-                        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
-                    }}>
-                        <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
-                    </div>
-                    <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
-                        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
-                    }}>
-                        <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
-                    </div>
-                </div>
-            </div>
+            <Industries></Industries>
 
             <div style={{background: "#732043", height: "auto", padding: "100px 0", display: "flex", flexDirection: "column", 
             rowGap: "50px", alignItems: "center", justifyContent: "center"}}>
