@@ -51,7 +51,7 @@ function App() {
         <Route path='/services' element={<MaintenanceSinglePage/>} />
         <Route path='/maintenance_page' element={<MaintenanceSinglePage />} />
         <Route path='*' element={<NoMatch />} />
-        <Route path='/pt/' eelement={<Home />} />
+        <Route path='/pt/' element={<Home />} />
 
       </Routes>
 
