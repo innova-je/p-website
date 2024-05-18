@@ -50,8 +50,8 @@ function App() {
         <Route path='/out-of-office' element={<OutOffice/>} />
         <Route path='/services' element={<MaintenanceSinglePage/>} />
         <Route path='/maintenance_page' element={<MaintenanceSinglePage />} />
-        <Route path='*' element={<NoMatch />} />
-        <Route path='/pt/' element={<Home />} />
+        <Route path='/pt' element={<Home />} />
+        <Route path='*' element={<NoMatch />} />       
 
       </Routes>
 
