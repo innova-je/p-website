@@ -5,6 +5,8 @@ import { Instagram, Email, LinkedIn, ArrowForward } from '@mui/icons-material';
 
 import InNovaLogo1 from '../images/OurLogos/logos-10.png'
 import InNovaLogo2 from '../images/OurLogos/logos-08.png'
+import InNovaLogoServices from '../images/OurLogos/logos-05.png'
+import InNovaLogo3 from '../images/OurLogos/logos-03.png'
 import CustomButton from './CustomButton';
 
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
@@ -22,7 +24,7 @@ const Footer = () => {
     const desktop = useMediaQuery({ minWidth: 1081 });
 
     const FooterBar = styled(AppBar)(() => ({
-        backgroundColor: isJoinUsPage ? "#FFFFFF" : "#F0F0F0",
+        backgroundColor: isJoinUsPage ? "#FFFFFF" : (isServicesPage ? "#732043" : "#F0F0F0"),
         position: "absolute",
         width: "100%",
         height: "32%",
@@ -52,7 +54,7 @@ const Footer = () => {
 
       const PagesLinkStyle = {
         fontSize: mobile ? "3.5vw" : (tablet ? "2.5vw" : "1.25vw" ),
-        color: "white",
+        color: isServicesPage ? "#732043" : "white",
         fontWeight: "400"
       };
     
@@ -83,8 +85,8 @@ const Footer = () => {
                         right: "0",
                         width: "70%",
                         height: "100%",
-                        backgroundColor: "#732043",
-                        borderRadius: isServicesPage ? "0" : "20px 0 0 0",
+                        backgroundColor: isServicesPage ? "white" : "#732043",
+                        borderRadius: isServicesPage ? "20px 0 0 0" : "20px 0 0 0",
                         overflow:"hidden"
                     }}>
 
@@ -105,9 +107,10 @@ const Footer = () => {
                       <Typography sx={{
                         position: "relative",
                         fontSize: "1.9vw",
-                        fontWeight: 200,
+                        fontWeight: isServicesPage ? "400" : "200",
                         lineHeight: "40px",
-                        textAlign: "left"
+                        textAlign: "left",
+                        color: isServicesPage ? "#732043" : "white",
                      }}>Let's discuss and bring your vision to life.</Typography>  
                     </div>                    
     
@@ -159,7 +162,7 @@ const Footer = () => {
                         justifyContent: "center",
                         alignItems: "center"
                     }}>
-                    <CustomButton href="mailto:geral@innova.pt" customBackgroundColor = "#052533" sx={{
+                    <CustomButton href="mailto:geral@innova.pt" customBackgroundColor = {isServicesPage ? "#732043" : "#052533"} sx={{
                         transition: "zIndex 0.2s ease-in-out",
                         '&:hover': {
                             zIndex: 1                            
@@ -181,21 +184,21 @@ const Footer = () => {
                         <Email sx={{
                             width: "4vw",
                             height: "5vh",
-                            color: "white"
+                            color: isServicesPage ? "#732043" : "white"
                         }}></Email>
                         </Link>
                         <Link href='https://www.instagram.com/in.nova.pt'>
                             <Instagram sx={{
                             width: "4vw",
                             height: "5vh",
-                            color: "white"
+                            color: isServicesPage ? "#732043" : "white"
                         }}></Instagram>
                         </Link>
                         <Link href='https://www.linkedin.com/company/innova-consultoria-junior'>
                         <LinkedIn sx={{
                             width: "4vw",
                             height: "5vh",
-                            color: "white"
+                            color: isServicesPage ? "#732043" : "white"
                         }}></LinkedIn>
                         </Link>
                     </SocialMedia> 
@@ -206,23 +209,25 @@ const Footer = () => {
                     }}>
                         <Typography sx={{
                         fontSize: "0.8rem",
-                        fontWeight: "100",
+                        fontWeight: isServicesPage ? "normal" : "100",
                         lineHeight: "17px",
                         display: "flex",
                         textAlign: "center",
                         flexDirection: "column",
                         position: "relative",
-                        top: "12%"
+                        top: "12%",
+                        color: isServicesPage ? "#732043" : "white"
                     }}>Faculdade de Ciências e Tecnologia
                     <br/>Universidade Nova de Lisboa</Typography>
                     <Typography sx={{
                         fontSize: "0.8rem",
-                        fontWeight: "100",
+                        fontWeight: isServicesPage ? "normal" : "100",
                         display: "flex",
                         textAlign: "center",
                         flexDirection: "column",
                         position: "relative",
-                        top: "17%"
+                        top: "17%",
+                        color: isServicesPage ? "#732043" : "white"
                     }}>Quinta da Torre, Caparica</Typography>
                     </div>
                     
@@ -236,7 +241,7 @@ const Footer = () => {
                     position: "absolute",
                     bottom: "0px",
                     left: "0px",
-                    backgroundColor: "#732043",
+                    backgroundColor: isServicesPage ? "white" : "#732043",
                     zIndex: "1000",
                     flexDirection: "row",
                     overflow: "hidden"
@@ -250,7 +255,7 @@ const Footer = () => {
                     </Box>
 
                     <NavLink to="/" onClick={handleNavLinkClick}>
-                        <img alt='In-Nova Logo' src={InNovaLogo2} style={{height: "100%", position: "relative", bottom: "20%", left: "10%"}}/>
+                        <img alt='In-Nova Logo' src={isServicesPage ? InNovaLogoServices : InNovaLogo2} style={{height: "100%", position: "relative", bottom: "20%", left: "10%"}}/>
                     </NavLink>       
                    
                     <Box
@@ -263,7 +268,7 @@ const Footer = () => {
                         bottom: "0px",
                         margin: "3vh 4vw",
                     }}>
-                    <Typography sx={{fontWeight: "300", fontSize: "80%"}}>
+                    <Typography sx={{fontWeight: isServicesPage ? "normal" : "300", fontSize: "80%", color: isServicesPage ? "#732043" : "white"}}>
                     &#9426; 2024 In-Nova. All rights reserved.
                     </Typography>
                 </Box>     
@@ -275,7 +280,7 @@ const Footer = () => {
         }else if(mobile || tablet){
             return(
                <footer style={{
-                background: "#732043",
+                background: isServicesPage ? "white" : "#732043",
                 position: "relative",
                 bottom: 0,
                 width: "100dvw",
@@ -285,7 +290,7 @@ const Footer = () => {
                 }}>
                 <div style={{ width: "25%", display: "flex", flexDirection:"column", alignItems:"center", justifyContent: "center"}}>                    
                     <NavLink to="/" style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
-                        <img src={InNovaLogo1} style={{ width: "100%", transform: mobile ? "scale(0.7)" : "scale(0.6)" }} onClick={handleNavLinkClick}/>
+                        <img src={InNovaLogo3} style={{ width: "100%", transform: mobile ? "scale(0.7)" : "scale(0.6)" }} onClick={handleNavLinkClick}/>
                     </NavLink>                  
                     
                 </div>
@@ -321,21 +326,21 @@ const Footer = () => {
                 <div style={{gap: "3%", marginTop: tablet ? "-10%" : "", width: mobile ? "40%" : "100%", height: mobile ? "100%" : "", display: "flex", flexDirection: mobile ? "column" : "row", columnGap: mobile ? "none" : "5%", alignItems: "center", justifyContent: "center"}}>
                     <Link href="mailto:geral@innova.pt">
                         <Email sx={{
-                            color: "white",
+                            color: isServicesPage ? "#732043" : "white",
                             width: mobile ? "6dvw" : "5dvw",
                             height: mobile ? "6dvw" : "5dvw",
                         }}></Email>
                         </Link>
                         <Link href='https://www.instagram.com/in.nova.pt'>
                             <Instagram sx={{
-                            color: "white",
+                            color: isServicesPage ? "#732043" : "white",
                             width: mobile ? "6dvw" : "5dvw",
                             height: mobile ? "6dvw" : "5dvw",
                         }}></Instagram>
                         </Link>
                         <Link href='https://www.linkedin.com/company/innova-consultoria-junior'>
                         <LinkedIn sx={{
-                            color: "white",
+                            color: isServicesPage ? "#732043" : "white",
                             width: mobile ? "6dvw" : "5dvw",
                             height: mobile ? "6dvw" : "5dvw",
                         }}></LinkedIn>
@@ -350,7 +355,7 @@ const Footer = () => {
                         display: "flex",
                         textAlign: "center",
                         position: "relative",
-                        color: "white"
+                        color: isServicesPage ? "#732043" : "white",
                     }}>Faculdade de Ciências e Tecnologia
                     <br/>Universidade Nova de Lisboa</Typography>
                     <Typography sx={{
@@ -359,14 +364,14 @@ const Footer = () => {
                         display: "flex",
                         textAlign: "center",
                         flexDirection: "column",
-                        color: "white"
+                        color: isServicesPage ? "#732043" : "white",
                     }}>Quinta da Torre, Caparica</Typography>
                     </div>
                 )}
                 </div>
 
                 <div style={{width: "100%", position: "absolute", bottom: 5, height: "auto"}}>
-                        <Typography sx={{fontWeight: "300", fontSize: "90%", color: "white", textAlign: "center"}}>
+                        <Typography sx={{fontWeight: isServicesPage ? "normal" : "300", fontSize: "90%", color: isServicesPage ? "#732043" : "white", textAlign: "center"}}>
                     &#9426; 2024 In-Nova. All rights reserved.
                     </Typography>
                     </div>

@@ -17,7 +17,7 @@ import NotFound from "./Pages/NotFound";
 function App() {
   const location = useLocation();
   const [showFooter, setShowFooter] = useState(false);
-  const maintenance_pages = ["/events", "/out-of-office", "/services"]
+  const maintenance_pages = ["/events", "/out-of-office"]
 
   // Set the showFooter state based on the current path
   React.useEffect(() => {
@@ -48,7 +48,7 @@ function App() {
         <Route path='/our-people/our-advisors' element={<OurAdvisors />} />
         <Route path='/our-people/our-team' element={<OurTeam />} />
         <Route path='/out-of-office' element={<OutOffice/>} />
-        <Route path='/services' element={<MaintenanceSinglePage/>} />
+        <Route path='/services' element={<Services/>} />
         <Route path='/maintenance_page' element={<MaintenanceSinglePage />} />
         <Route path='/pt' element={<Home />} />
         <Route path='*' element={<NoMatch />} />       

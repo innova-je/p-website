@@ -2,8 +2,8 @@ import React from 'react'
 
 import WebappFuturalia from '../images/other/webapp_futuralia.png'
 import AppThirstPortugal from '../images/other/ThirstPortugal.png'
-import CheckIcon from '../images/other/simple-line-icons_check.png'
 import Industries from '../components/Industries'
+import PortfolioComponent from '../components/PortfolioComponent'
 
 const Services = () => {
     return (
@@ -88,95 +88,10 @@ const Services = () => {
             <div style={{background: "#732043", height: "auto", padding: "100px 0", display: "flex", flexDirection: "column", 
             rowGap: "50px", alignItems: "center", justifyContent: "center"}}>
 
-                <div style={{background: "white", width: "80%", height: "450px", borderRadius: "25px", display: "flex", overflow: "hidden"}}>
-                    <div style={{width: "40%", padding: "0 25px", marginLeft: "30px", display: "flex", justifyContent: "center", alignItems: "flex-end", overflow: "hidden"}}>
-                        <img src={WebappFuturalia} style={{width: "110%"}}/>
-                    </div>
-                    <div style={{padding: "50px 20px", margin: "0 0 0 50px", width: "60%", display: "flex", flexDirection: "column", rowGap: "25px"}}>
-                        <h1>WEBAPP FUTURÁLIA</h1>
-                        <div style={{ padding: "0 0 20px 25px", display: "flex", flexDirection: "column", rowGap: "10px"}}>
-                            <div style={{display: "flex", flexDirection: "row", alignItems: "center",  gap: "10px"}}>
-                                <img src={CheckIcon} style={{width: "20px"}}/>
-                                <p style={{fontSize: "24px", fontWeight: "300"}}>Agenda do Evento</p>  
-                            </div>   
-                            <div style={{display: "flex", flexDirection: "row", alignItems: "center", gap: "10px"}}>
-                                <img src={CheckIcon} style={{width: "20px"}}/>
-                                <p style={{fontSize: "24px", fontWeight: "300"}}>Mapa 3D do Recinto</p>
-                            </div> 
-                            <div style={{display: "flex", flexDirection: "row", alignItems: "center", gap: "10px"}}>
-                                <img src={CheckIcon} style={{width: "20px"}}/>
-                                <p style={{fontSize: "24px", fontWeight: "300"}}>Listagem de Expositores</p>
-                            </div> 
-                            <div style={{display: "flex", flexDirection: "row", alignItems: "center", gap: "10px"}}>
-                                <img src={CheckIcon} style={{width: "20px"}}/>
-                                <p style={{fontSize: "24px", fontWeight: "300"}}>Roteiros Personalizados</p>
-                            </div> 
-                            <div style={{display: "flex", flexDirection: "row", alignItems: "center", gap: "10px"}}>
-                                <img src={CheckIcon} style={{width: "20px"}}/>
-                                <p style={{fontSize: "24px", fontWeight: "300"}}>Notificações de Eventos</p>
-                            </div> 
+                <PortfolioComponent image={WebappFuturalia} index={0}></PortfolioComponent>
+                <PortfolioComponent image={AppThirstPortugal} index={1}></PortfolioComponent>
 
-                        </div>
-                        <button style={{
-                            background: "#732043",
-                            color: "white",
-                            border: "none", 
-                            borderRadius: "50px",
-                            width: "95%",
-                            height: "40px",
-                            fontSize: "20px",
-                            cursor: "pointer"
-                        }}>Futurália - A maior feira de educação em Portugal</button>
-                        
-                    </div>
-                </div>
-
-                <div style={{background: "white", width: "80%", height: "450px", borderRadius: "25px", display: "flex", overflow: "hidden"}}>
-                    
-                    <div style={{padding: "50px 20px", margin: "0 0 0 50px", width: "60%", display: "flex", flexDirection: "column", rowGap: "25px"}}>
-                        <h1>APP THIRST PORTUGAL</h1>
-                        <div style={{ padding: "0 0 20px 25px", display: "flex", flexDirection: "column", rowGap: "10px"}}>
-                            <div style={{display: "flex", flexDirection: "row", alignItems: "center",  gap: "10px"}}>
-                                <img src={CheckIcon} style={{width: "20px"}}/>
-                                <p style={{fontSize: "24px", fontWeight: "300"}}>Intranet Organizacional</p>  
-                            </div>   
-                            <div style={{display: "flex", flexDirection: "row", alignItems: "center", gap: "10px"}}>
-                                <img src={CheckIcon} style={{width: "20px"}}/>
-                                <p style={{fontSize: "24px", fontWeight: "300"}}>Gestão de Equipas</p>
-                            </div> 
-                            <div style={{display: "flex", flexDirection: "row", alignItems: "center", gap: "10px"}}>
-                                <img src={CheckIcon} style={{width: "20px"}}/>
-                                <p style={{fontSize: "24px", fontWeight: "300"}}>Pedidos de Merchandising</p>
-                            </div> 
-                            <div style={{display: "flex", flexDirection: "row", alignItems: "center", gap: "10px"}}>
-                                <img src={CheckIcon} style={{width: "20px"}}/>
-                                <p style={{fontSize: "24px", fontWeight: "300"}}>Publicação de Notícias</p>
-                            </div> 
-                            <div style={{display: "flex", flexDirection: "row", alignItems: "center", gap: "10px"}}>
-                                <img src={CheckIcon} style={{width: "20px"}}/>
-                                <p style={{fontSize: "24px", fontWeight: "300"}}>Publicação de Eventos</p>
-                            </div> 
-
-                        </div>
-                        <button style={{
-                            background: "#732043",
-                            color: "white",
-                            border: "none", 
-                            borderRadius: "50px",
-                            width: "95%",
-                            height: "40px",
-                            fontSize: "20px",
-                            cursor: "pointer"
-                        }}>Thirst Project - A maior organização de Água</button>
-                        
-                    </div>
-                    <div style={{width: "40%", padding: "0 25px", marginRight: "30px", display: "flex", justifyContent: "center", alignItems: "flex-end", overflow: "hidden"}}>
-                        <img src={AppThirstPortugal} style={{width: "110%"}}/>
-                    </div>
-                </div>
-            </div>
-
-            
+            </div>            
 
         </div>
         
