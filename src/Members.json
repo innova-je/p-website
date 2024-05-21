@@ -195,6 +195,24 @@
                     "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-bravo-mota-051029205/"
                 },
                 {
+                    "name": "Cristiano  Alemida",
+                    "imgDirectory": "Projetos/cristiano_almeida.webp",
+                    "email": "cristiano.almeida@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/cristiano-almeida-455972253/"
+                },
+                {
+                    "name": "Diogo Castelos",
+                    "imgDirectory": "Projetos/diogo_castelos.webp",
+                    "email": "diogo.castelos@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/diogopcastelos/"
+                },
+                {
+                    "name": "Diogo Chikhi",
+                    "imgDirectory": "Projetos/diogo_chikhi.webp",
+                    "email": "diogo.chikhi@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/diogo-chikhi/"
+                },
+                {
                     "name": "Diogo Martins",
                     "imgDirectory": "Projetos/diogo_martins.webp",
                     "email": "diogo.martins@innova.pt",
@@ -205,6 +223,12 @@
                     "imgDirectory": "Projetos/diogo_pedreiro.webp",
                     "email": "diogo.pedreiro@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/diogo-pedreiro-9615051b6/"
+                },
+                {
+                    "name": "Diogo Sequeira",
+                    "imgDirectory": "Projetos/diogo_sequeira.webp",
+                    "email": "diogo.sequeira@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/diogo-sequeira-462685258/"
                 },
                 {
                     "name": "Diogo Silva",
@@ -297,10 +321,22 @@
                     "linkedin": "https://www.linkedin.com/in/mariana-rocha-a57531181/"
                 },
                 {
+                    "name": "Miguel Collaço",
+                    "imgDirectory": "Projetos/miguel_collaco.webp",
+                    "email": "miguel.collaco@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/miguel-colla%C3%A7o/"
+                },
+                {
                     "name": "Miguel Dias",
                     "imgDirectory": "Projetos/miguel_dias.webp",
                     "email": "miguel.dias@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/migueldias10/"
+                },
+                {
+                    "name": "Miguel Flor",
+                    "imgDirectory": "Projetos/miguel_flor.webp",
+                    "email": "miguel.flor@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/miguel-flor-b42b87263/"
                 },
                 {
                     "name": "Miguel Nunes",
@@ -319,6 +355,12 @@
                     "imgDirectory": "Projetos/pedro_lopes.webp",
                     "email": "pedro.lopes@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/pedromslopes22/"
+                },
+                {
+                    "name": "Rakhee Patel",
+                    "imgDirectory": "Projetos/rakhee_patel.webp",
+                    "email": "rakhee.patel@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/rakhee-patel-148b552b8/"
                 },
                 {
                     "name": "Rodrigo Loução",
@@ -417,6 +459,30 @@
                     "imgDirectory": "RH/beatriz_antunes.webp",
                     "email": "beatriz.antunes@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/beatriz-antunes-b66565222"
+                },
+                {
+                    "name": "Carolina Ferreira",
+                    "imgDirectory": "RH/carolina_ferreira.webp",
+                    "email": "carolina.ferreira@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/carolina-ferreira-3274112ba/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                },
+                {
+                    "name": "Margarida Águas",
+                    "imgDirectory": "RH/margarida_aguas.webp",
+                    "email": "margarida.aguas@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/maria-margarida-%C3%A1guas-2a53172bb/"
+                },
+                {
+                    "name": "Margarida Alberto",
+                    "imgDirectory": "RH/margarida_alberto.webp",
+                    "email": "margarida.alberto@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/margaridaalb/"
+                },
+                {
+                    "name": "Margarida Freitas",
+                    "imgDirectory": "RH/margarida_freitas.webp",
+                    "email": "margarida.freitas@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/margarida-freitas-36970b293/"
                 },
                 {
                     "name": "Pedro Bandarra",
