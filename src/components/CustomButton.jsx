@@ -1,7 +1,6 @@
 
 import { Button, styled, keyframes } from '@mui/material';
 
-
 const animate1 = keyframes`
   0% {
     transform: rotate(0deg);
