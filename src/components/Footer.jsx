@@ -19,12 +19,13 @@ const Footer = () => {
     const location = useLocation();
     const isJoinUsPage = location.pathname === '/join-us';
     const isServicesPage = location.pathname === '/services';
+    const isInnovationWeekPage = location.pathname === '/events/innovation-week';
     const mobile = useMediaQuery({ maxWidth: 600 });
     const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
     const desktop = useMediaQuery({ minWidth: 1081 });
 
     const FooterBar = styled(AppBar)(() => ({
-        backgroundColor: isJoinUsPage ? "#FFFFFF" : (isServicesPage ? "#732043" : "#F0F0F0"),
+        backgroundColor: isJoinUsPage ? "#FFFFFF" : (isServicesPage ? "#732043" : isInnovationWeekPage ? "white" : "#F0F0F0"),
         position: "absolute",
         width: "100%",
         height: "32%",
@@ -249,7 +250,7 @@ const Footer = () => {
                     <Box sx={{
                         width: "100%",
                         height: "34%",
-                        backgroundColor: isJoinUsPage ? "#FFFFFF" : (isServicesPage ? "#732043" : "#F0F0F0"),
+                        backgroundColor: isJoinUsPage ? "#FFFFFF" : (isServicesPage ? "#732043" : isInnovationWeekPage ? "white" : "#F0F0F0"),
                         borderRadius: "0 0px 20px 0"
                     }}>
                     </Box>

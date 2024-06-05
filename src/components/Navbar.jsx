@@ -148,8 +148,8 @@ const Navbar = () => {
 
           
           {renderDropdownButton("Events", [
-            { label: "Innovation Week", path: "/our-people/innovation-week" },
-            { label: "test2", path: "/our-people/test2" },
+            { label: "Innovation Week", path: "/events/innovation-week" },
+            { label: "Innovation Valley", path: "/events/innovation-valley" },
           ], 'dropdown2')}
 
           <NavLink to="/out-of-office" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>

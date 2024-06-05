@@ -11,9 +11,6 @@ import OurAdvisors from "./Pages/Our-Advisors";
 import OurTeam from "./Pages/Our-Team";
 import OutOffice from "./Pages/Out-of-Office";
 import Services from "./Pages/Services";
-import AboutUs from './Pages/About-Us'
-import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
-import React, { useState } from 'react'
 import MaintenanceSinglePage from "./Pages/MaintenanceSinglePage";
 import NotFound from "./Pages/NotFound";
 import InnovationWeek from "./Pages/InnovationWeek";
@@ -21,7 +18,7 @@ import InnovationWeek from "./Pages/InnovationWeek";
 function App() {
   const location = useLocation();
   const [showFooter, setShowFooter] = useState(false);
-  const maintenance_pages = ["/events", "/out-of-office", ""]
+  const maintenance_pages = ["/events", "/out-of-office", "/services", "/events/innovation-week", "/events/innovation-valley",]
 
   // Set the showFooter state based on the current path
   React.useEffect(() => {
@@ -52,9 +49,10 @@ function App() {
         <Route path='/our-people/our-advisors' element={<OurAdvisors />} />
         <Route path='/our-people/our-team' element={<OurTeam />} />
         <Route path='/out-of-office' element={<OutOffice/>} />
-        <Route path='/services' element={<Services/>} />
+        <Route path='/services' element={<MaintenanceSinglePage/>} />
         <Route path='/maintenance_page' element={<MaintenanceSinglePage />} />
-        <Route path='/our-people/innovation-week' element={<InnovationWeek />} />
+        <Route path='/events/innovation-week' element={<MaintenanceSinglePage />} />
+        <Route path='/events/innovation-valley' element={<MaintenanceSinglePage />} />
         <Route path='/pt' element={<Home />} />
         <Route path='*' element={<NoMatch />} />       
 
