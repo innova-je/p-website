@@ -146,16 +146,11 @@ const Navbar = () => {
             { label: "Our Advisors", path: "/our-people/our-advisors" },
           ], 'dropdown1')}
 
-          {/*
+          
           {renderDropdownButton("Events", [
-            { label: "test", path: "/our-people/test1" },
+            { label: "Innovation Week", path: "/our-people/innovation-week" },
             { label: "test2", path: "/our-people/test2" },
           ], 'dropdown2')}
-          */}          
-
-          <NavLink to="/events" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
-            <Button color="inherit" style={linkStyles}>Events</Button>
-          </NavLink>
 
           <NavLink to="/out-of-office" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
             <Button color="inherit" style={linkStyles}>Out of Office</Button>

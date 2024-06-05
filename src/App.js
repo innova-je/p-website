@@ -1,3 +1,7 @@
+import React, { useState } from 'react'
+import { Box } from "@mui/material";
+import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
+import AboutUs from './Pages/About-Us'
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Events from './Pages/Events'
@@ -12,6 +16,7 @@ import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import React, { useState } from 'react'
 import MaintenanceSinglePage from "./Pages/MaintenanceSinglePage";
 import NotFound from "./Pages/NotFound";
+import InnovationWeek from "./Pages/InnovationWeek";
 
 function App() {
   const location = useLocation();
@@ -49,6 +54,7 @@ function App() {
         <Route path='/out-of-office' element={<OutOffice/>} />
         <Route path='/services' element={<Services/>} />
         <Route path='/maintenance_page' element={<MaintenanceSinglePage />} />
+        <Route path='/our-people/innovation-week' element={<InnovationWeek />} />
         <Route path='/pt' element={<Home />} />
         <Route path='*' element={<NoMatch />} />       
 
