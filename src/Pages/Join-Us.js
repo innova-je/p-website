@@ -99,7 +99,7 @@ const JoinUs = () => {
                 }}
             >
                 <div style={{ width: "100vw", height: "100vh", overflow: "hidden" }}>
-                    <div style={{ width: "100%", height: "100%", zIndex: 2, background: "linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5))" }}>
+                    <div style={{ width: "100%", height: "100%", zIndex: 2, background: "linear-gradient(to top, rgba(240,240,240,1), rgba(240,240,240,0.5))" }}>
                         <div style={{ height: "100vh", width: "100vw", overflow: "hidden", zIndex: -1, position: "absolute" }}>
                             <img src={HeroImage} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                         </div>

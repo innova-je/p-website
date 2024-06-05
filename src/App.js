@@ -1,3 +1,7 @@
+import React, { useState } from 'react'
+import { Box } from "@mui/material";
+import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
+import AboutUs from './Pages/About-Us'
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Events from './Pages/Events'
@@ -7,17 +11,14 @@ import OurAdvisors from "./Pages/Our-Advisors";
 import OurTeam from "./Pages/Our-Team";
 import OutOffice from "./Pages/Out-of-Office";
 import Services from "./Pages/Services";
-import AboutUs from './Pages/About-Us'
-import { Box } from "@mui/material";
-import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
-import React, { useState } from 'react'
 import MaintenanceSinglePage from "./Pages/MaintenanceSinglePage";
 import NotFound from "./Pages/NotFound";
+import InnovationWeek from "./Pages/InnovationWeek";
 
 function App() {
   const location = useLocation();
   const [showFooter, setShowFooter] = useState(false);
-  const maintenance_pages = ["/events", "/out-of-office"]
+  const maintenance_pages = ["/out-of-office"]
 
   // Set the showFooter state based on the current path
   React.useEffect(() => {
@@ -50,6 +51,7 @@ function App() {
         <Route path='/out-of-office' element={<OutOffice/>} />
         <Route path='/services' element={<Services/>} />
         <Route path='/maintenance_page' element={<MaintenanceSinglePage />} />
+        <Route path='/our-people/innovation-week' element={<InnovationWeek />} />
         <Route path='/pt' element={<Home />} />
         <Route path='*' element={<NoMatch />} />       
 
