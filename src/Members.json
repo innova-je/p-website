@@ -11,14 +11,14 @@
             },
             "externalAffairsVicePresident":{
                 "name": "Leonor Almeida",
-                "title": "External Affairs Vice-President",
+                "title": "External Vice-President",
                 "imgDirectory": "Conselho Executivo/leonor_almeida.webp",
                 "email": "leonor.almeida@innova.pt",
                 "linkedin": "https://www.linkedin.com/in/leonoraalmeida"
             },
             "internalAffairsVicePresident":{
                 "name": "Carolina Maurício",
-                "title": "Internal Affairs Vice-President",
+                "title": "Internal Vice-President",
                 "imgDirectory": "Conselho Executivo/carolina_mauricio.webp",
                 "email": "carolina.mauricio@innova.pt",
                 "linkedin": "https://www.linkedin.com/in/carolina-maur%C3%ADcio-83a18b218/"
@@ -61,6 +61,12 @@
                     "linkedin": "https://www.linkedin.com/in/francisco-marques-5511282b9/"
                 },
                 {
+                    "name": "Laura Filipe",
+                    "imgDirectory": "Comercial/laura_filipe.webp",
+                    "email": "laura.filipe@innova.pt",
+                    "linkedin": "http://www.linkedin.com/in/laura-filipe"
+                },
+                {
                     "name": "Maria João Silva",
                     "imgDirectory": "Comercial/maria_joao_silva.webp",
                     "email": "maria.silva@innova.pt",
@@ -83,13 +89,7 @@
                     "imgDirectory": "Comercial/sofia_pedro.webp",
                     "email": "sofia.pedro@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/sofia-mendes-pedro-041581252/"
-                },
-                {
-                    "name": "Laura Filipe",
-                    "imgDirectory": "Comercial/laura_filipe.webp",
-                    "email": "laura.filipe@innova.pt",
-                    "linkedin": "http://www.linkedin.com/in/laura-filipe"
-                }
+                }                
             ]
         },
         {

@@ -8,7 +8,6 @@ import OurTeam from "./Pages/Our-Team";
 import OutOffice from "./Pages/Out-of-Office";
 import Services from "./Pages/Services";
 import AboutUs from './Pages/About-Us'
-import { Box } from "@mui/material";
 import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import React, { useState } from 'react'
 import MaintenanceSinglePage from "./Pages/MaintenanceSinglePage";
@@ -17,7 +16,7 @@ import NotFound from "./Pages/NotFound";
 function App() {
   const location = useLocation();
   const [showFooter, setShowFooter] = useState(false);
-  const maintenance_pages = ["/events", "/out-of-office"]
+  const maintenance_pages = ["/events", "/out-of-office", ""]
 
   // Set the showFooter state based on the current path
   React.useEffect(() => {
@@ -37,7 +36,7 @@ function App() {
   }
 
   return (
-    <Box bgcolor="#F0F0F0" overflow="hidden">
+    <div bgcolor="#F0F0F0" overflow="hidden">
       <Navbar />
 
       <Routes>
@@ -57,7 +56,7 @@ function App() {
 
       {showFooter && (<Footer/>)}
 
-    </Box>
+    </div>
   );
 }
 

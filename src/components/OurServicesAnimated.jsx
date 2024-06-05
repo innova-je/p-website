@@ -1,40 +1,44 @@
-
 import React from 'react';
-import { SoftwareSolutions, MobileDevelopment, RoboticsPrototyping } from '../components/CoreBusiness';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { SoftwareSolutions, MobileDevelopment, RoboticsPrototyping } from '../components/CoreBusinessAnimated';
 
-
-
-const OurServicesAnimated = ({id}) => {
-
-
-
+const OurServicesAnimated = ({ id }) => {
   return (
-    <div style={{ 
-      borderRadius: '0 30px 30px 0',
-      width: "95%",
-      overflow: "hidden"
-  }}>
-
-    <div style={{
-        height: "101vh",
-        overflowY: "scroll"
-    }}>
-        <section >
-          <SoftwareSolutions></SoftwareSolutions>
+    <ParallaxProvider>
+      <div style={{
+        borderRadius: '0 30px 30px 0',
+        width: "95%",
+        height: '100vh', // Full viewport height
+        overflowY: 'scroll',
+        scrollSnapType: 'y mandatory',
+        scrollBehavior: 'smooth'
+      }}>
+        <section style={{
+          height: '100vh', // Full viewport height for each section
+          scrollSnapAlign: 'start',
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          <SoftwareSolutions />
         </section>
-        <section >
-          <MobileDevelopment></MobileDevelopment>
+        <section style={{
+          height: '100vh',
+          scrollSnapAlign: 'start',
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          <MobileDevelopment />
         </section>
-        <section >
-          <RoboticsPrototyping></RoboticsPrototyping>
+        <section style={{
+          height: '100vh',
+          scrollSnapAlign: 'start',
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          <RoboticsPrototyping />
         </section>
-    </div>
-
-        
-  </div>
-
-            
-      
+      </div>
+    </ParallaxProvider>
   );
 };
 
