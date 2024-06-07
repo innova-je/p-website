@@ -51,7 +51,7 @@ function App() {
         <Route path='/out-of-office' element={<OutOffice/>} />
         <Route path='/services' element={<Services/>} />
         <Route path='/maintenance_page' element={<MaintenanceSinglePage />} />
-        <Route path='/our-people/innovation-week' element={<InnovationWeek />} />
+        <Route path='/events/innovation-week' element={<InnovationWeek />} />
         <Route path='/pt' element={<Home />} />
         <Route path='*' element={<NoMatch />} />       
 
