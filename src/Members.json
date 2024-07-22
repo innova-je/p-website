@@ -61,6 +61,12 @@
                     "linkedin": "https://www.linkedin.com/in/francisco-marques-5511282b9/"
                 },
                 {
+                    "name": "Laura Filipe",
+                    "imgDirectory": "Comercial/laura_filipe.webp",
+                    "email": "laura.filipe@innova.pt",
+                    "linkedin": "http://www.linkedin.com/in/laura-filipe"
+                },
+                {
                     "name": "Maria João Silva",
                     "imgDirectory": "Comercial/maria_joao_silva.webp",
                     "email": "maria.silva@innova.pt",
@@ -83,13 +89,7 @@
                     "imgDirectory": "Comercial/sofia_pedro.webp",
                     "email": "sofia.pedro@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/sofia-mendes-pedro-041581252/"
-                },
-                {
-                    "name": "Laura Filipe",
-                    "imgDirectory": "Comercial/laura_filipe.webp",
-                    "email": "laura.filipe@innova.pt",
-                    "linkedin": "http://www.linkedin.com/in/laura-filipe"
-                }
+                }                
             ]
         },
         {

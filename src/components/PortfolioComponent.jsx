@@ -11,7 +11,8 @@ const textContent = [
       "Roteiros Personalizados",
       "Notificações de Eventos"
     ],
-    buttonText: "Futurália - A maior feira de educação em Portugal"
+    buttonText: "Futurália - A maior feira de educação em Portugal",
+    link: "https://appfuturalia.fil.pt/"
   },
   {
     title: "APP THIRST PORTUGAL",
@@ -22,7 +23,8 @@ const textContent = [
       "Publicação de Notícias",
       "Publicação de Eventos"
     ],
-    buttonText: "Thirst Project - A maior organização de Água"
+    buttonText: "Thirst Project - A maior organização de Água",
+    link: "https://thirstproject.pt/"
   }
 ];
 
@@ -50,10 +52,13 @@ function PortfolioComponent({ image, index }) {
         border: "none",
         borderRadius: "50px",
         width: "95%",
-        height: "40px",
-        fontSize: "20px",
+        height: "40px",        
         cursor: "pointer"
-      }}>{content.buttonText}</button>
+      }}>
+        <a href={content.link} style={{textDecoration: "none", color: "white", fontSize: "20px",}}>
+          {content.buttonText}
+        </a>        
+        </button>
     </div>
   );
 

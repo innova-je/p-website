@@ -3,7 +3,6 @@ import { Box, Typography } from '@mui/material';
 import CustomButton from './CustomButton';
 import { Parallax, useParallax } from "react-scroll-parallax";
 import CircleIcon from '@mui/icons-material/Circle';
-import { interpolate } from 'react-native-reanimated';
 
 const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textWidth, innerStyle, parallax, circle1, circle2, circle3}) => {  
 

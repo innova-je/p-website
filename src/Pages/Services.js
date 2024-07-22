@@ -4,6 +4,10 @@ import WebappFuturalia from '../images/other/webapp_futuralia.png'
 import AppThirstPortugal from '../images/other/ThirstPortugal.png'
 import Industries from '../components/Industries'
 import PortfolioComponent from '../components/PortfolioComponent'
+import FigmaWorkshop from '../images/other/Formação_Figma-removebg-preview 1.png'
+import SoftwareSolutions from '../components/SoftwareSolutions'
+import MobileDevelopment from '../components/MobileDevelopment'
+import ProjectTimeline from '../components/ProjectTimeline'
 
 const Services = () => {
     return (
@@ -12,16 +16,31 @@ const Services = () => {
             <div style={{width: "100dvw", height: "100vh", top: "70px", overflow: "hidden",
                 display: "flex", flexDirection: "row"
             }}>
-                <div style={{ justifyContent: "center", alignItems: "center", display: "flex", flexDirection: "column", width: "65%"}}>
-                    <div style={{width: "80%", justifyContent: "center", display: "flex", flexDirection: "column"}}>
-                        <p style={{fontSize: "70px", width: "70%"}}>We provide the best solutions for your businnes</p>
-                        <button style={{width:"25%", height: "35px", background:"#052533", color: "white",
-                            border: "none", borderRadius: "3px"
+                <div style={{ justifyContent: "center", alignItems: "center", display: "flex", flexDirection: "column", width: "65%",  paddingLeft: "30px"}}>
+                    <div style={{width: "85%", justifyContent: "center", display: "flex", flexDirection: "column"}}>
+                    <p style={{width: "95%", lineHeight: "60px"}}>
+                        <span style={{fontSize: "5rem", width: "100%", fontWeight: "bolder", color: "#1E1E1E", marginRight: "20px"}}>
+                            We provide the <br></br>
+                        </span>
+                        <span style={{fontSize: "5rem", width: "100%", fontWeight: "bolder", color: "#732043", marginRight: "20px"}}>
+                            best solutions <br></br>
+                        </span>
+                        <span style={{fontSize: "5rem", width: "80%", fontWeight: "bolder", color: "#1E1E1E", marginRight: "20px"}}>
+                            for your 
+                        </span>
+                        <span style={{fontSize: "5rem", width: "80%", fontWeight: "bolder", color: "#732043"}}>
+                             business
+                        </span>                        
+                    </p>
+                        <button style={{width:"30%", height: "50px", background:"#052533", color: "white",
+                            border: "none", borderRadius: "8px", marginTop: "30px", fontWeight: "bolder", fontSize: "16px"
                         }}>Download Our Portfolio</button>
                     </div>
                     
                 </div>
-                <div style={{background: "#732043", width: "35%", height: "100%", borderRadius: "200px 0 0 0"}}></div>
+                <div style={{background: "#732043", width: "35%", height: "100%", borderRadius: "100px 0 0 0"}}>
+                    <img src={FigmaWorkshop} />
+                </div>
             </div>
 
             <div style={{display: "flex", justifyContent: "center"}}>
@@ -33,55 +52,9 @@ const Services = () => {
                 </button>
             </div>
 
-            <div style={{width: "100dvw", height: "100vh", overflow: "hidden",
-                display: "flex", flexDirection: "row"
-            }}>
+            <SoftwareSolutions></SoftwareSolutions>
 
-                <div style={{background: "#E591AD", width: "35%", height: "100%", position: "relative", left: "0"}}></div>
-                <div style={{ justifyContent: "center", alignItems: "center", display: "flex", flexDirection: "column", width: "65%", position: "relative"}}>
-                    <div style={{ width: "50%", justifyContent: "center", display: "flex", flexDirection: "column"}}>
-                        <h1 style={{fontSize: "70px", color: "#732043"}}>Software Solutions</h1>
-                        <p style={{fontSize: "30px"}}>Lorem ipsum LOrem ipsum Lorem ipsum</p>                       
-                    </div>
-                    
-                </div>
-                
-            </div>
-
-            <div style={{width: "100dvw", height: "100vh", overflow: "hidden",
-                display: "flex", flexDirection: "row"
-            }}>
-
-                <div style={{background: "white", width: "85%", height: "100%", position: "relative", left: "0", borderRadius: "0 150px 0 0",
-                    display: "flex", alignItems: "center", justifyContent: "center"
-                }}>
-                    <div style={{width: "auto"}}>
-                        <h1 style={{fontSize: "70px", color: "#732043", width: "60%"}}>Mobile Development</h1>
-                        <p style={{fontSize: "30px"}}>Lorem ipsum Lorem ipsum Lorem ipsum</p>
-                    </div>
-                
-                </div>
-                
-            </div>
-
-            <div style={{display: "flex", flexDirection: "row", gap: "50px", justifyContent: "center"}}>
-                <div style={{width: "240px", height: "140px", background: "#1E1E1E", borderRadius: "10px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-                    <h1 style={{color: "white"}}>1</h1>
-                    <p style={{color: "white"}}>Discussion of your needs</p>
-                </div>
-                <div style={{width: "240px", height: "140px", background: "#732043", borderRadius: "10px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-                    <h1 style={{color: "white"}}>2</h1>
-                    <p style={{color: "white"}}>Requirements & Timings</p>
-                </div>
-                <div style={{width: "240px", height: "140px", background: "#1E1E1E", borderRadius: "10px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-                    <h1 style={{color: "white"}}>3</h1>
-                    <p style={{color: "white"}}>Budget Proposal</p>
-                </div>
-                <div style={{width: "240px", height: "140px", background: "#732043", borderRadius: "10px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-                    <h1 style={{color: "white"}}>4</h1>
-                    <p style={{color: "white"}}>Project Development</p>
-                </div>
-            </div>
+            <MobileDevelopment></MobileDevelopment>
 
             <Industries></Industries>
 
@@ -90,6 +63,8 @@ const Services = () => {
 
                 <PortfolioComponent image={WebappFuturalia} index={0}></PortfolioComponent>
                 <PortfolioComponent image={AppThirstPortugal} index={1}></PortfolioComponent>
+                <button href="mailto:geral@innova.pt" style={{backgroundColor: "white", opacity: "0.6", height: "45px", width: "30%", 
+                borderRadius: "20px", border: "none", fontSize: "1.1rem", fontWeight: "600", cursor: "pointer"}}>CURIOUS ABOUT OUR LATEST WORK?</button>
 
             </div>            
 

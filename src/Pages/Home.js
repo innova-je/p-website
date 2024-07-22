@@ -305,7 +305,7 @@ const Home = () => {
         </div>
 
         <div style={{height: "auto", background:'linear-gradient(to bottom, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0))', marginTop: mobile ? "3%" : ""}}>
-            <ServicesSlider/>  
+            <OurServicesAnimated></OurServicesAnimated>
             <div style={{ marginTop: mobile ? "12%" : (tablet ? "15%" : "15%")}}>
                 <AccomplishmentSlider accomplishmentsData={accomplishmentsData}></AccomplishmentSlider>
             </div>        
