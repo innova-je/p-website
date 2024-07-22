@@ -3,11 +3,20 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/system';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { useMediaQuery } from 'react-responsive';
+
 import img1 from '../images/other/IW-png.png';
 import img2 from '../images/other/404.png';
 import img3 from '../images/other/ThirstPortugal.png';
 import img4 from '../images/other/GuiaDoCandidato.png';
 import img5 from '../images/other/joinus-outofoffice.png';
+
+// Import Slick Carousel
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import MagicSliderDots from 'react-magic-slider-dots';
+import 'react-magic-slider-dots/dist/magic-dots.css';
+import Slider from 'react-slick';
 
 const ImageBox = styled(Box)({
   display: 'flex',
@@ -61,6 +70,7 @@ const StyledButton = styled(Button)({
 });
 
 const ImageCycle = () => {
+  const isDesktopOrLaptop = useMediaQuery({ minWidth: 767 });
   const images = [
     { id: 1, src: img1, alt: 'Image 1' },
     { id: 2, src: img2, alt: 'Image 2' },
@@ -82,29 +92,59 @@ const ImageCycle = () => {
     setCurrentImages(newImages);
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 15000,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    appendDots: (dots) => {
+      return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />;
+    }
+  };
+
   return (
-    <Box display="flex" marginTop="2rem" marginBottom='2rem'>
-      <OrangeBox>
-        <img src={currentImages[0].src} alt={currentImages[0].alt} />
-        <StyledButton onClick={cycleImages}>
-          <ArrowForwardIosIcon />
-        </StyledButton>
-      </OrangeBox>
-      <Box display="flex" flexDirection="column">
-        {currentImages.slice(1, 3).map((image, index) => (
-          <BlueBox key={index}>
-            <img src={image.src} alt={image.alt} />
-          </BlueBox>
-        ))}
-      </Box>
-      <Box display="flex" flexDirection="column">
-        {currentImages.slice(3).map((image, index) => (
-          <BlueBox key={index}>
-            <img src={image.src} alt={image.alt} />
-          </BlueBox>
-        ))}
-      </Box>
-    </Box>
+    <>
+      {!isDesktopOrLaptop && (
+        <Box display="flex" alignItems="center" marginTop="2rem" marginBottom="2rem" width="80%">
+          <Slider {...settings} style={{ width: "100%", background: "none" }}>
+            {currentImages.map((image, index) => (
+              <ImageBox key={index}>
+                <img src={image.src} alt={image.alt} />
+              </ImageBox>
+            ))}
+          </Slider>
+        </Box>
+      )}
+
+      {isDesktopOrLaptop && (
+        <Box display="flex" marginTop="2rem" marginBottom='2rem'>
+          <OrangeBox>
+            <img src={currentImages[0].src} alt={currentImages[0].alt} />
+            <StyledButton onClick={cycleImages}>
+              <ArrowForwardIosIcon />
+            </StyledButton>
+          </OrangeBox>
+          <Box display="flex" flexDirection="column">
+            {currentImages.slice(1, 3).map((image, index) => (
+              <BlueBox key={index}>
+                <img src={image.src} alt={image.alt} />
+              </BlueBox>
+            ))}
+          </Box>
+          <Box display="flex" flexDirection="column">
+            {currentImages.slice(3).map((image, index) => (
+              <BlueBox key={index}>
+                <img src={image.src} alt={image.alt} />
+              </BlueBox>
+            ))}
+          </Box>
+        </Box>
+      )}
+    </>
   );
 };
 

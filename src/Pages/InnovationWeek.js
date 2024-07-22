@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 import { styled } from '@mui/system';
 import { useTheme } from '@mui/material/styles';
 import backgroundImage from '../images/other/IW-png.png';
@@ -25,8 +26,8 @@ const RedBox = styled(Box)({
   textAlign: 'flex-start',
 });
 
-const OrangeBox = styled(Box)({
-  // border: '2px solid orange',
+const noneBox = styled(Box)({
+  // border: '2px solid none',
   padding: '16px',
   margin: '6dvw 8dvw 6dvw 0',
   display: 'flex',
@@ -43,10 +44,26 @@ const BlueBox = styled(Box)({
   width: '42dvw'
 });
 
+const ImageContainer = styled(Box)({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '2dvw',
+});
+
+const CompanyLogos = ({ images }) => (
+  <ImageContainer marginBottom="2dvw" marginTop="2dvw">
+    {images.map((image, index) => (
+      <img key={index} src={image} alt={`Company logo ${index}`} style={{ width: '12dvw', height: '6dvw' }} />
+    ))}
+  </ImageContainer>
+);
 
 const InnovationWeek = () => {
   const theme = useTheme();
   const secondBlue = '#559FA2';
+  const companyLogos = [backgroundImage, backgroundImage, backgroundImage, backgroundImage, backgroundImage]; // Replace with actual image paths
 
   return (
     <>
@@ -69,7 +86,6 @@ const InnovationWeek = () => {
             <img src={IW_Hero} alt="Innovation Week 2023" style={{ width: "100%", height: "100%" }} />
           </Overlay>
         </div>
-
       </Box>
 
       <div style={{
@@ -82,7 +98,7 @@ const InnovationWeek = () => {
           <Typography variant="h4" sx={{ color: secondBlue, textShadow: '0 0 16px #559FA2', marginBottom: "0.5dvw" }}>INNOVATION</Typography>
           <Typography variant="h4" sx={{ color: "white", marginBottom: "0.5dvw" }}>EVENT OF NOVA SST</Typography>
         </RedBox>
-        <OrangeBox>
+        <noneBox>
           <BlueBox>
             <img src={backgroundImage} alt="Innovation Week 2023" style={{ width: "80px", height: "80px", borderRadius: "50%" }} />
             <Box>
@@ -106,7 +122,7 @@ const InnovationWeek = () => {
               <Typography variant="body2" sx={{ color: "white", fontWeight: 100 }}>Expand your network, forge connections, explore career opportunities, and spark collaborations that drive technological and business advancements</Typography>
             </Box>
           </BlueBox>
-        </OrangeBox>
+        </noneBox>
       </div>
       <div>
         <Speakers />
@@ -117,6 +133,21 @@ const InnovationWeek = () => {
         <IW_Images />
       </div>
 
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+        <Typography variant="h4" sx={{ color: theme.palette.secondary.main, textAlign: "center", marginTop: "3dvw" }}>COMPANIES</Typography>
+        <Box sx={{ backgroundColor: 'none', width: '100%', marginBottom:"2dvw" }}>
+          <CompanyLogos images={companyLogos} />
+          <CompanyLogos images={companyLogos} />
+          <CompanyLogos images={companyLogos} />
+        </Box>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+        <Typography variant="h4" sx={{ color: theme.palette.secondary.main, textAlign: "center", marginTop: "3dvw" }}>OUR PARTNERS</Typography>
+        <Box sx={{ backgroundColor: 'none', width: '100%', marginBottom:"2dvw"}}>
+          <CompanyLogos images={companyLogos} />
+        </Box>
+      </div>
     </>
   );
 };

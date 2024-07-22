@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import { styled } from '@mui/system';
 import img1 from '../images/other/IW-png.png';
 import img2 from '../images/other/404.png';
 import img3 from '../images/other/ThirstPortugal.png';
 import img4 from '../images/other/GuiaDoCandidato.png';
 
-import { Typography, IconButton } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useTheme } from '@emotion/react';
 
-// Example speaker data
-const speakerData = {
-    edition1: [
+const speakersData = {
+    '1st Edition': [
         { name: 'Katarina Larsson', title: 'Factory Logistics Manager', company: 'Philip Morris International', image: img1 },
         { name: 'Paulo Ferreira', title: 'Manager Adsales & Partnership', company: 'The Walt Disney Company', image: img2 },
         { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: img3 },
@@ -24,13 +22,13 @@ const speakerData = {
         { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: img3 },
         { name: 'Neuza Teixeira', title: 'Country Medical Manager', company: 'GSK', image: img4 },
     ],
-    edition2: [
+    '2nd Edition': [
         { name: 'Neuza Teixeira', title: 'Country Medical Manager', company: 'GSK', image: img4 },
         { name: 'Paulo Ferreira', title: 'Manager Adsales & Partnership', company: 'The Walt Disney Company', image: img2 },
         { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: img3 },
         { name: 'Katarina Larsson', title: 'Factory Logistics Manager', company: 'Philip Morris International', image: img1 },
     ],
-    edition3: [
+    '3rd Edition': [
         { name: 'Paulo Ferreira', title: 'Manager Adsales & Partnership', company: 'The Walt Disney Company', image: img2 },
         { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: img3 },
         { name: 'Katarina Larsson', title: 'Factory Logistics Manager', company: 'Philip Morris International', image: img1 },
@@ -38,144 +36,86 @@ const speakerData = {
     ],
 };
 
-const SpeakerContainer = styled(Box)({
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-    position: 'relative',
-    marginTop: '16px',
-    width: '100%',
-    padding: '16px',
-    boxSizing: 'border-box',
-    borderRadius: '8px',
-});
-
-const SpeakerCarousel = styled(Box)({
-    display: 'flex',
-    transition: 'transform 0.5s ease-in-out',
-    width: '100%',
-});
-
-const SpeakerCard = styled(Box)({
-    textAlign: 'center',
-    color: 'white',
-    width: '25%', // To fit 4 speakers within the container
-    position: 'relative',
-    flexShrink: 0,
-});
-
-const SpeakerImage = styled('img')({
-    width: '100%',
-    height: 'auto',
-    borderRadius: '8px',
-});
-
-const SpeakerInfo = styled(Box)({
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    width: '100%',
-    background: 'rgba(0, 0, 0, 0.7)',
-    padding: '10px',
-    boxSizing: 'border-box',
-    borderBottomLeftRadius: '8px',
-    borderBottomRightRadius: '8px',
-});
-
-const EditionButton = styled(Button)(({ active }) => ({
-    margin: '8px',
-    padding: '8px 16px',
-    backgroundColor: active ? '#3B9DFF' : '#FFFFFF',
-    color: active ? '#FFFFFF' : '#3B9DFF',
-    '&:hover': {
-        backgroundColor: active ? '#3B9DFF' : '#E0E0E0',
-    },
-    borderRadius: '20px',
-    boxShadow: active ? '0px 4px 12px rgba(59, 157, 255, 0.4)' : 'none',
-}));
-
-const InnovationWeek = () => {
+const Speakers = () => {
     const theme = useTheme();
-    const [currentEdition, setCurrentEdition] = useState('edition1');
-    const [startIndex, setStartIndex] = useState(0);
+    const [selectedEdition, setSelectedEdition] = useState('1st Edition');
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-    const speakers = speakerData[currentEdition];
-    const speakersPerPage = 4;
+    const speakers = speakersData[selectedEdition] || [];
 
-    const handleEditionChange = (edition) => {
-        setCurrentEdition(edition);
-        setStartIndex(0);
-    };
+    useEffect(() => {
+        setCurrentIndex(0); // Reset the index when edition changes
+    }, [selectedEdition]);
 
     const handleNext = () => {
-        setStartIndex((prevIndex) => (prevIndex + speakersPerPage) % speakers.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % speakers.length);
     };
 
     const handlePrev = () => {
-        setStartIndex((prevIndex) => (prevIndex - speakersPerPage + speakers.length) % speakers.length);
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + speakers.length) % speakers.length);
     };
 
-    const visibleSpeakers = () => {
-        const endIndex = startIndex + speakersPerPage;
-        if (endIndex <= speakers.length) {
-            return speakers.slice(startIndex, endIndex);
-        } else {
-            return [...speakers.slice(startIndex), ...speakers.slice(0, endIndex % speakers.length)];
+    const getDisplayedSpeakers = () => {
+        if (speakers.length <= 4) {
+            return speakers;
         }
+        return [
+            ...speakers.slice(currentIndex, currentIndex + 4),
+            ...speakers.slice(0, Math.max(0, (currentIndex + 4) - speakers.length))
+        ];
     };
 
     return (
-        <Box sx={{backgroundColor: theme.palette.secondary.main}}>
-            <Box display="flex" justifyContent="center" >
-                <EditionButton
-                    active={currentEdition === 'edition1'}
-                    onClick={() => handleEditionChange('edition1')}
-                >
-                    1st Edition
-                </EditionButton>
-                <EditionButton
-                    active={currentEdition === 'edition2'}
-                    onClick={() => handleEditionChange('edition2')}
-                >
-                    2nd Edition
-                </EditionButton>
-                <EditionButton
-                    active={currentEdition === 'edition3'}
-                    onClick={() => handleEditionChange('edition3')}
-                >
-                    3rd Edition
-                </EditionButton>
+        <Box sx={{ textAlign: 'center', backgroundColor: theme.palette.secondary.main }}>
+            <Box sx={{display: 'flex', justifyContent: 'center', gap: '3vw', marginBottom: '4vw' }}>
+                {Object.keys(speakersData).map((edition) => (
+                    <Button
+                        key={edition}
+                        variant={selectedEdition === edition ? 'contained' : 'outlined'}
+                        onClick={() => setSelectedEdition(edition)}
+                        sx={{
+                            borderRadius: '2dvw',
+                            padding: '1vw 4vw',
+                            backgroundColor: selectedEdition === edition ? '#559FA2' : 'white',
+                            color: selectedEdition === edition ? 'white' : theme.palette.secondary.main,
+                            textTransform: 'none',
+                            fontWeight:"Bold",
+                            fontSize:"1.2dvw",
+                            '&:hover': {
+                                backgroundColor: '#559FA2',
+                                color: 'white'
+                            }
+                        }}
+                    >
+                        {edition}
+                    </Button>
+                ))}
             </Box>
 
-            <Typography variant="h4" align="center" marginTop="16px" color="#FFFFFF">
-                SPEAKERS
-            </Typography>
+            <Typography variant="h3" sx={{ marginBottom: '3vw', color: 'white' }}>SPEAKERS</Typography>
 
-            <SpeakerContainer>
-                <IconButton onClick={handlePrev} disabled={speakers.length <= speakersPerPage}>
-                    <ArrowBackIosIcon style={{ color: '#FFFFFF' }} />
-                </IconButton>
-
-                <SpeakerCarousel>
-                    {visibleSpeakers().map((speaker, index) => (
-                        <SpeakerCard key={index}>
-                            <SpeakerImage src={speaker.image} alt={speaker.name} />
-                            <SpeakerInfo>
-                                <Typography variant="h6">{speaker.name}</Typography>
-                                <Typography variant="body1">{speaker.title}</Typography>
-                                <Typography variant="body2">{speaker.company}</Typography>
-                            </SpeakerInfo>
-                        </SpeakerCard>
-                    ))}
-                </SpeakerCarousel>
-
-                <IconButton onClick={handleNext} disabled={speakers.length <= speakersPerPage}>
-                    <ArrowForwardIosIcon style={{ color: '#FFFFFF' }} />
-                </IconButton>
-            </SpeakerContainer>
+            {speakers.length > 0 ? (
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1vw', width: '100%' }}>
+                    <ArrowBackIosIcon onClick={handlePrev} sx={{ position:"absolute", zIndex:1, left:30, cursor: 'pointer', color: 'white' }} />
+                    <Box sx={{ display: 'flex', gap: '0.1vw', justifyContent: 'center' }}> 
+                        {getDisplayedSpeakers().map((speaker, index) => (
+                            <Box key={index} sx={{ textAlign: 'left', position: 'relative', minWidth: '200px' }}>
+                                <img src={speaker.image} alt={speaker.name} style={{ width: '24.8dvw', height: '400px', objectFit: 'cover' }} />
+                                <Box sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(85, 159, 162, 0.24)', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start', padding: '20px', boxSizing: 'border-box' }}>
+                                    <Typography variant="h5" sx={{ fontSize:"3dvw", fontWeight:"300", lineHeight:1, marginBottom:"0.5dvw"}}>{speaker.name}</Typography>
+                                    <Typography variant="body1" sx={{ fontSize:"1dvw", fontWeight:"300" }}>{speaker.title}</Typography>
+                                    <Typography variant="body1" sx={{ fontSize:"1dvw", fontWeight:"300"}}>{speaker.company}</Typography>
+                                </Box>
+                            </Box>
+                        ))}
+                    </Box>
+                    <ArrowForwardIosIcon onClick={handleNext} sx={{position:"absolute", zIndex:1, right:30, cursor: 'pointer', color: 'white' }} />
+                </Box>
+            ) : (
+                <Typography variant="body1" sx={{ color: 'white' }}>No speakers available for this edition.</Typography>
+            )}
         </Box>
     );
 };
 
-export default InnovationWeek;
+export default Speakers;
