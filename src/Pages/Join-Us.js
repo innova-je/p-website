@@ -96,6 +96,8 @@ const JoinUs = () => {
                     backgroundPosition: 'center',
                     position: 'relative',
                     zIndex: '0',
+                    background: "#F0F0F0",
+                    overflow: "hidden"
                 }}
             >
                 <div style={{ width: "100vw", height: "100vh", overflow: "hidden" }}>
@@ -124,7 +126,7 @@ const JoinUs = () => {
                                         Want to {(smallMobile) && (<br />)} become one of us?
                                     </Typography>
 
-                                    {/* <CountDownRecruitment /> */}
+                                    <CountDownRecruitment />
 
                                     <Button
                                         variant="contained"

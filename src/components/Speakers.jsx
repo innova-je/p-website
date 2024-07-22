@@ -66,7 +66,7 @@ const Speakers = () => {
     };
 
     return (
-        <Box sx={{ textAlign: 'center', backgroundColor: theme.palette.secondary.main }}>
+        <Box sx={{ textAlign: 'center', backgroundColor: theme.palette.secondary.main, overflow: "hidden" }}>
             <Box sx={{display: 'flex', justifyContent: 'center', gap: '3vw', marginBottom: '4vw' }}>
                 {Object.keys(speakersData).map((edition) => (
                     <Button

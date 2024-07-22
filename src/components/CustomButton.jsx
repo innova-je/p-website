@@ -26,7 +26,7 @@ const CustomButton = styled(Button)(({ customBackgroundColor }) => ({
     content: '""',
     position: 'absolute',
     inset: "1px",
-    borderRadius: "16px",
+    borderRadius: "14px",
     backgroundColor: customBackgroundColor,
   },
 
@@ -36,7 +36,7 @@ const CustomButton = styled(Button)(({ customBackgroundColor }) => ({
   display: "flex",
   flexDirection: "row",
   gap: "10%",
-  borderRadius: "16px",
+  borderRadius: "14px",
   overflow: "hidden",
   backgroundColor: customBackgroundColor
 }));

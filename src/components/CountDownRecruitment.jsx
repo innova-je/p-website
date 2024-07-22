@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import { Box, Button, Link, Typography, useTheme } from '@mui/material';
-import Grid from '@mui/material/Grid';
+import { Box, Typography, useTheme } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
 
-const CountDownRecruitment = ({ title, year, mainAccomplishments, image, currentImageIndex, index }) => {
+const CountDownRecruitment = () => {
     const theme = useTheme();
 
     const smallMobile = useMediaQuery({ maxWidth: 550 });
@@ -21,7 +19,7 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
     // Calculate the remaining time until the event and update the countdown state
     const calculateCountdown = () => {
         const today = new Date();
-        const eventDate = new Date('2024-03-22 23:59:59');
+        const eventDate = new Date('2024-10-01 00:00:01');
         const timeDifference = eventDate.getTime() - today.getTime();
 
         const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
@@ -66,7 +64,7 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                 backgroundColor: '#fff',
                 borderRadius: '25px',
                 opacity: '0.9',
-                padding: (smallMobile || mobile) ? "0rem 3rem" : '1.5rem 4rem',
+                padding: (smallMobile || mobile) ? "0rem 3rem" : '1.3rem 4rem',
                 zIndex: '3',
                 display: 'flex',
                 alignItems: 'center',
@@ -87,7 +85,7 @@ const CountDownRecruitment = ({ title, year, mainAccomplishments, image, current
                             fontSize: mobile ? "3.6vw" : (smallMobile ? "4.5vw" : tablet ? "3.2vw" : (desktop ? "2vw" : (largeDesktop ? "1.5vw" : "2vw"))),
                             textAlign: !(mobile || smallMobile) ? "none" : "center"
                         }}
-                    >Recruitment {!(smallMobile || mobile || tablet) && (<br/>)} Closes in</Typography>   
+                    >Recruitment {!(smallMobile || mobile || tablet) && (<br/>)} Opens in</Typography>   
                         
                     </div>                
 

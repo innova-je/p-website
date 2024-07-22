@@ -8,8 +8,10 @@ import FigmaWorkshop from '../images/other/Formação_Figma-removebg-preview 1
 import SoftwareSolutions from '../components/SoftwareSolutions'
 import MobileDevelopment from '../components/MobileDevelopment'
 import ProjectTimeline from '../components/ProjectTimeline'
+import PortfolioButton from '../components/PortfolioButton'
 
 const Services = () => {
+
     return (
         <>
         <div style={{overflow: "hidden", background: "#F0F0F0", margin: "0 auto", marginTop: "70px"}}>
@@ -63,8 +65,7 @@ const Services = () => {
 
                 <PortfolioComponent image={WebappFuturalia} index={0}></PortfolioComponent>
                 <PortfolioComponent image={AppThirstPortugal} index={1}></PortfolioComponent>
-                <button href="mailto:geral@innova.pt" style={{backgroundColor: "white", opacity: "0.6", height: "45px", width: "30%", 
-                borderRadius: "20px", border: "none", fontSize: "1.1rem", fontWeight: "600", cursor: "pointer"}}>CURIOUS ABOUT OUR LATEST WORK?</button>
+                <PortfolioButton></PortfolioButton>
 
             </div>            
 

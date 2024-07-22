@@ -8,8 +8,8 @@ const OurServicesAnimated = ({ id }) => {
       <div style={{
         borderRadius: '0 30px 30px 0',
         width: "95%",
-        height: '100vh', // Full viewport height
-        overflowY: 'scroll',
+        height: '280vh', // Full viewport height
+        overflowY: 'none',
         scrollSnapType: 'y mandatory',
         scrollBehavior: 'smooth'
       }}>

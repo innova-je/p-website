@@ -15,49 +15,49 @@ function Industries() {
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
                     }}>
                         <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
+                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px", width: "85%", textAlign: "center"}}>Theathers</p>
                     </div>
                     <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
                     }}>
                         <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
+                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px", width: "85%", textAlign: "center"}}>Educational Fairs</p>
                     </div>
                     <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
                     }}>
                         <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
+                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px", width: "85%", textAlign: "center"}}>Glass Industry</p>
                     </div>
                     <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
                     }}>
                         <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
+                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px", width: "85%", textAlign: "center"}}>Aviation Engineering</p>
                     </div>
                     <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
                     }}>
                         <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
+                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px", width: "85%", textAlign: "center"}}>Travel Agencies</p>
                     </div>
                     <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
                     }}>
                         <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
+                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px", width: "85%", textAlign: "center"}}>ONG's</p>
                     </div>
                     <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
                     }}>
                         <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
+                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px", width: "85%", textAlign: "center"}}>Events</p>
                     </div>
                     <div style={{background: "white", width: "200px", height: "200px", borderRadius: "30px",
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px"
                     }}>
                         <img src={FillImage} style={{width: "70px"}}/>
-                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px"}}>Theathers</p>
+                        <p style={{color: "#732043", fontWeight: "bold", fontSize: "20px", width: "85%", textAlign: "center"}}>E-commerce Businesses</p>
                     </div>
                 </div>
             </div>

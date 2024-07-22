@@ -10,7 +10,6 @@ import laso from '../Animations/laso-animation.json';
 
 import Members from '../Members.json'
 import { useMediaQuery } from 'react-responsive';
-import { Desk } from '@mui/icons-material';
 
 const CustomTitle = ({ title, subtitle, theme, sizeTitle, sizeSubTitle }) => {
 
@@ -136,6 +135,7 @@ const OurTeam = () => {
                     gap: '30px',
                     maxWidth: desktop ? '100%': '80%',
                     margin: '0 auto',
+                    paddingTop: "20px"
                 }}
             >
                 <CustomComponent
