@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 import { Box } from "@mui/material";
 import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
-import AboutUs from './Pages/About-Us'
+import AboutUs from './Pages/AboutUs/About-Us'
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Events from './Pages/Events'
-import Home from "./Pages/Home";
-import JoinUs from "./Pages/Join-Us";
-import OurAdvisors from "./Pages/Our-Advisors";
-import OurTeam from "./Pages/Our-Team";
-import OutOffice from "./Pages/Out-of-Office";
-import Services from "./Pages/Services";
-import MaintenanceSinglePage from "./Pages/MaintenanceSinglePage";
-import NotFound from "./Pages/NotFound";
-import InnovationWeek from "./Pages/InnovationWeek";
-import { ContactUs } from './Pages/Services/ContactUs';
+import Events from './Pages/Events/Events'
+import Home from "./Pages/Home/Home";
+import JoinUs from "./Pages/JoinUs/Join-Us";
+import OurAdvisors from "./Pages/Team/Advisors/Our-Advisors";
+import OurTeam from "./Pages/Team/Members/Our-Team";
+import OutOffice from "./Pages/OutOfOffice/Out-of-Office";
+import Services from "./Pages/Services/Services";
+import MaintenanceSinglePage from "./Pages/Other/MaintenanceSinglePage";
+import NotFound from "./Pages/Other/NotFound";
+import InnovationWeek from "./Pages/Events/InnovationWeek/InnovationWeek";
+import { ContactUs } from './Pages/Services/Components/ContactUs';
 
 function App() {
   const location = useLocation();

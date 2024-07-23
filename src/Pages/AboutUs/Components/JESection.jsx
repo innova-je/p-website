@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button, Typography, useTheme } from "@mui/material";
-import MapParallax from "../../../components/MapParallax";
+import MapParallax from "./MapParallax";
 import { useMediaQuery } from "react-responsive";
 
 function JESection() {

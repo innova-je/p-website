@@ -2,7 +2,7 @@ import React, { useState, useM } from "react";
 import { Box } from "@mui/material";
 import { useMediaQuery } from "react-responsive";
 
-import Values from "../../../components/Values";
+import Values from "./Values";
 
 function ValuesSection() {
     
