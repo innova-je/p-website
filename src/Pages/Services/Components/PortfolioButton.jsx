@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Typography, IconButton } from "@mui/material";
 import EmailIcon from '@mui/icons-material/Email'; 
+import { ContactUs } from "./ContactUs";
 
 const PortfolioButton = () => {
   const form = useRef();
@@ -67,92 +68,7 @@ const PortfolioButton = () => {
       >
         {!emailWasSent ? (
           isFormVisible && (
-            <form
-              ref={form}
-              onSubmit={sendEmail}
-              style={{ display: "flex", flexDirection: "column", gap: "20px" }}
-            >
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <label
-                  htmlFor="from_name"
-                  style={{ marginBottom: "5px", fontWeight: "bold" }}
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="from_name"
-                  id="from_name"
-                  style={{
-                    padding: "10px",
-                    borderRadius: "5px",
-                    border: "1px solid #ccc",
-                    fontSize: "1rem",
-                    boxSizing: "border-box",
-                  }}
-                  required
-                />
-              </div>
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <label
-                  htmlFor="user_email"
-                  style={{ marginBottom: "5px", fontWeight: "bold" }}
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="user_email"
-                  id="user_email"
-                  style={{
-                    padding: "10px",
-                    borderRadius: "5px",
-                    border: "1px solid #ccc",
-                    fontSize: "1rem",
-                    boxSizing: "border-box",
-                  }}
-                  required
-                />
-              </div>
-
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <label
-                  htmlFor="message"
-                  style={{ marginBottom: "5px", fontWeight: "bold" }}
-                >
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  style={{
-                    padding: "10px",
-                    borderRadius: "5px",
-                    border: "1px solid #ccc",
-                    fontSize: "1rem",
-                    boxSizing: "border-box",
-                    resize: "vertical",
-                  }}
-                  required
-                />
-              </div>
-
-              <input
-                type="submit"
-                value="Send"
-                style={{
-                  backgroundColor: "#732043",
-                  color: "white",
-                  padding: "10px",
-                  borderRadius: "5px",
-                  border: "none",
-                  fontSize: "1.1rem",
-                  fontWeight: "600",
-                  cursor: "pointer",
-                  transition: "background-color 0.3s ease",
-                }}
-              />
-            </form>
+           <ContactUs type="newsletter"/>
           )
         ) : (
           <div
