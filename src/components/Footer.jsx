@@ -14,7 +14,7 @@ function Footer() {
   const isServicesPage = location.pathname === "/services";
   const isTeamPage = location.pathname === "/our-people/our-team";
   const isJoinUsPage = location.pathname === "/join-us";
-  const isAboutUsPage = location.pathname === "/about-us";
+  const isInnovationWeekPage = location.pathname === "/events/innovation-week";
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
   const desktop = useMediaQuery({ minWidth: 1081 });
@@ -39,14 +39,14 @@ function Footer() {
   };
 
   return (
-    <footer
+    <div
       style={{
         height: mobile || tablet ? "40dvw" : "34vh",
         display: "flex",
         flexDirection: "row",
         backgroundColor: isServicesPage
           ? "#732043"
-          : isTeamPage || isJoinUsPage || isAboutUsPage
+          : isTeamPage || isJoinUsPage || isInnovationWeekPage
           ? "white"
           : "#F0F0F0",
         overflow: "hidden",
@@ -59,14 +59,14 @@ function Footer() {
             flexDirection: "column",
             justifyContent: "flex-end",
             width: "30%",
-            backgroundColor: isServicesPage ? "white" : "#732043",
+            backgroundColor: isServicesPage ? "white" : isInnovationWeekPage ? "#052533" : "#732043",
           }}
         >
           <div
             style={{
               backgroundColor: isServicesPage
                 ? "#732043"
-                : isTeamPage || isJoinUsPage || isAboutUsPage
+                : isTeamPage || isJoinUsPage || isInnovationWeekPage
                 ? "white"
                 : "#F0F0F0",
               height: "35%",
@@ -75,7 +75,7 @@ function Footer() {
           />
           <div
             style={{
-              backgroundColor: isServicesPage ? "white" : "#732043",
+              backgroundColor: isServicesPage ? "white" : isInnovationWeekPage ? "#052533" : "#732043",
               height: "65%",
             }}
           >
@@ -100,7 +100,7 @@ function Footer() {
                 }}
               />
               <Typography
-                style={{
+                sx={{
                   fontWeight: isServicesPage ? "normal" : "300",
                   fontSize: "80%",
                   color: isServicesPage ? "#732043" : "white",
@@ -115,7 +115,7 @@ function Footer() {
 
       <div
         style={{
-          backgroundColor: isServicesPage ? "white" : "#732043",
+          backgroundColor: isServicesPage ? "white" : isInnovationWeekPage ? "#052533" : "#732043",
           height: "100%",
           width: desktop ? "70%" : "100%",
           borderRadius: desktop ? "25px 0 0 0" : "0px",
@@ -145,15 +145,13 @@ function Footer() {
           </NavLink>
         )}
 
-        <div
-          style={{ display: "flex", flexDirection: "column", width: "100%" }}
-        >
+        <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
           {desktop && (
             <div
               style={{ height: "35%", display: "flex", alignItems: "center" }}
             >
               <Typography
-                style={{
+                sx={{
                   fontSize: "1.9vw",
                   fontWeight: isServicesPage ? "400" : "200",
                   lineHeight: "40px",
@@ -171,9 +169,7 @@ function Footer() {
             <div
               style={{
                 display: "grid",
-                flexDirection: "column",
-                gridTemplateColumns:
-                  mobile || tablet ? "repeat(2, 2fr)" : "repeat(3, 3fr)",
+                gridTemplateColumns: mobile || tablet ? "repeat(2, 2fr)" : "repeat(3, 3fr)",
                 padding: "25px 0 0 50px",
                 width: mobile || tablet ? "auto" : "90%",
               }}
@@ -200,9 +196,7 @@ function Footer() {
           </div>
         </div>
 
-        <div
-          style={{ display: "flex", width: mobile || tablet ? "auto" : "45%" }}
-        >
+        <div style={{ display: "flex", width: mobile || tablet ? "auto" : "45%" }}>
           <div
             style={{
               display: "flex",
@@ -225,7 +219,8 @@ function Footer() {
               {!(mobile || tablet) && (
                 <CustomButton
                   href="mailto:geral@innova.pt"
-                  customBackgroundColor={isServicesPage ? "#732043" : "#052533"}
+                  bgColor={isServicesPage ? "#732043" : isInnovationWeekPage ? "#ffffff" : "#052533"}
+                  currPage={location.pathname}
                   sx={{
                     transition: "zIndex 0.2s ease-in-out",
                     "&:hover": {
@@ -236,9 +231,7 @@ function Footer() {
                   <Typography sx={{ fontSize: "1vw", zIndex: 1 }}>
                     Let's Talk
                   </Typography>
-                  <ArrowForward
-                    sx={{ height: "50%", zIndex: 1 }}
-                  ></ArrowForward>
+                  <ArrowForward sx={{ height: "50%", zIndex: 1 }} />
                 </CustomButton>
               )}
             </div>
@@ -264,7 +257,7 @@ function Footer() {
               >
                 <Link href="mailto:geral@innova.pt">
                   <Email
-                    style={{
+                    sx={{
                       width: mobile || tablet ? "6dvw" : "4vw",
                       height: mobile || tablet ? "6dvw" : "5vh",
                       color: isServicesPage ? "#732043" : "white",
@@ -273,7 +266,7 @@ function Footer() {
                 </Link>
                 <Link href="https://www.instagram.com/in.nova.pt">
                   <Instagram
-                    style={{
+                    sx={{
                       width: mobile || tablet ? "6dvw" : "4vw",
                       height: mobile || tablet ? "6dvw" : "5vh",
                       color: isServicesPage ? "#732043" : "white",
@@ -282,7 +275,7 @@ function Footer() {
                 </Link>
                 <Link href="https://www.linkedin.com/company/innova-consultoria-junior">
                   <LinkedIn
-                    style={{
+                    sx={{
                       width: mobile || tablet ? "6dvw" : "4vw",
                       height: mobile || tablet ? "6dvw" : "5vh",
                       color: isServicesPage ? "#732043" : "white",
@@ -295,13 +288,11 @@ function Footer() {
             {!(mobile || tablet) && (
               <div style={{ height: "100%" }}>
                 <Typography
-                  style={{
+                  sx={{
                     fontSize: "0.8rem",
                     fontWeight: isServicesPage ? "normal" : "100",
                     lineHeight: "17px",
-                    display: "flex",
                     textAlign: "center",
-                    flexDirection: "column",
                     color: isServicesPage ? "#732043" : "white",
                     padding: "10px 0",
                   }}
@@ -314,9 +305,7 @@ function Footer() {
                   sx={{
                     fontSize: "0.8rem",
                     fontWeight: isServicesPage ? "normal" : "100",
-                    display: "flex",
                     textAlign: "center",
-                    flexDirection: "column",
                     color: isServicesPage ? "#732043" : "white",
                   }}
                 >
@@ -327,7 +316,7 @@ function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 }
 
