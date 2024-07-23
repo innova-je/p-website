@@ -36,18 +36,14 @@ const ParallaxComponent = () => {
         // </Parallax>
 
         <Box sx={{
-            width: tablet ? '100%': mobile ? '100%' : '70dvw',
-            height: '51%',
-            position: 'absolute',
-            top: "35%",
-            //boxShadow: '0px 0px 5px rgba(115, 32, 67, 0.3)'
+            width: tablet ? '100%': mobile ? '100%' : '70dvw', position: "relative"
         }}
         >
-            <img src={Map1} alt="map1" style={{ position: "absolute", width: '100%' }} />
+            <img src={Map1} alt="map1" style={{objectFit: "fit", width: "100%"}} />
             <Box sx={{
-                position: 'relative',
-                top: '12dvw',
-                left: '50%',
+                position: 'absolute',
+                top: "27%",
+                left: "48%",
                 width: tablet ? '35%' : mobile ? '33%' : "27%",
                 padding: tablet ? '2dvw': mobile ? '2dvw' :"1dvw",
                 paddingLeft: tablet ? '2.5dvw': mobile ? '2.5dvw' :"2dvw",

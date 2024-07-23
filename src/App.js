@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Box } from "@mui/material";
-import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import AboutUs from './Pages/AboutUs/About-Us'
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";

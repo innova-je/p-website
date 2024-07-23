@@ -59,7 +59,7 @@ const Services = () => {
 
             <Industries></Industries>
 
-            <div style={{background: "#732043", height: "auto", padding: "100px 0", display: "flex", flexDirection: "column", 
+            <div style={{background: "#732043", padding: "75px 0", display: "flex", flexDirection: "column", 
             rowGap: "50px", alignItems: "center", justifyContent: "center"}}>
 
                 <PortfolioComponent image={WebappFuturalia} index={0}></PortfolioComponent>

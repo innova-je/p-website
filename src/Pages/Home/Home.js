@@ -16,7 +16,7 @@ const Home = () => {
   const desktop = useMediaQuery({ minWidth: 1081 });
 
   return (
-    <Box sx={{ backgroundColor: "#F0F0F0", overflow: "hidden" }}>
+    <Box sx={{ backgroundColor: "#F0F0F0", overflow: "hidden", position: "relative" }}>
       <VideoSection />
       <TechnologyConsultants />
       <StatsSection />

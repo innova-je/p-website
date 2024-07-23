@@ -13,17 +13,57 @@ function TechnologyConsultants() {
     window.scrollTo(0, 0);
   };
 
-  const InfoCard = ({ color, borderColor, textColor, gradient, message }) => (
-    <div style={{ position: "relative", right: "-5%", width: "95%", height: "50px", backgroundColor: color, borderRadius: "15px 0 0 15px", border: `4px solid ${borderColor}`, display: "flex", textAlign: "center", alignItems: "center", zIndex: 3 }}>
-      <div style={{ width: "4px", height: "60%", background: `linear-gradient(${gradient}, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))`, marginLeft: "5%", borderRadius: "5px" }}></div>
-      <Typography style={{ marginLeft: "4%", textAlign: "left", color: textColor, fontSize: "2vw", fontWeight: 300 }}>
+  const InfoCard = ({
+    color,
+    borderColor,
+    textColor,
+    gradient,
+    message,
+    index,
+  }) => (
+    <div
+      style={{
+        position: "relative",
+        width: "95%",
+        height: "50px",
+        backgroundColor: color,
+        borderRadius: "15px 0 0 15px",
+        border: `4px solid ${borderColor}`,
+        display: "flex",
+        alignItems: "center",
+        textAlign: "center",
+        zIndex: 3,
+        marginBottom: "10px",
+        right: index=="0" ? "-15%" : "-25%"
+      }}
+    >
+      <div
+        style={{
+          width: "4px",
+          height: "60%",
+          background:
+            index == "0"
+              ? `linear-gradient(${gradient}, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))`
+              : `linear-gradient(${gradient}, rgba(5, 37, 51, 1), rgba(5, 37, 51, 0))`,
+          marginLeft: "5%",
+          borderRadius: "5px",
+        }}
+      ></div>
+      <Typography
+        style={{
+          marginLeft: "4%",
+          color: textColor,
+          fontSize: "2vw",
+          fontWeight: 300,
+        }}
+      >
         {message}
       </Typography>
     </div>
   );
 
   return (
-    <div style={{ padding: desktop ? "3% 0 3% 8%" : "10% 0 0 8%" }}>
+    <div style={{ padding: desktop ? "3% 0 10% 8%" : "10% 0 0 8%", height: "auto", background: "red" }}>
       <div style={{ display: "flex", flexDirection: desktop ? "row" : "column" }}>
         <div style={{ display: "flex", flexDirection: "column", width: desktop ? "75%" : "100%" }}>
           <Typography style={{ color: "#052533", fontSize: desktop ? "3dvw" : tablet ? "3.5dvw" : "6.5dvw", fontWeight: 600 }}>
@@ -42,13 +82,53 @@ function TechnologyConsultants() {
         </div>
       </div>
 
-      <div style={{ position: "relative", height: desktop ? "auto" : tablet ? "70vh" : "50vh", marginTop: "3%", overflow: "hidden" }}>
-        <div style={{ width: "100%", height: desktop ? "auto" : tablet ? "90%" : "70%", background: "linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0))", borderRadius: "30px 0 0 30px", zIndex: 10 }}>
-          <img src={HomePageImg} style={{ borderRadius: "20px 0 0 20px", marginLeft: "auto", height: "65vh", width: "100%", objectFit: "cover", right: 0 }} />
-          <div style={{ display: "flex", flexDirection: "column", position: "absolute", width: "100%", bottom: 0, gap: "20%", height: desktop ? "auto" : "40%" }}>
-            <InfoCard color="#052533" borderColor="#F0F0F0" textColor="white" gradient="to top" message="We work to inspire people & businesses" />
-            <InfoCard color="white" borderColor="#F0F0F0" textColor="#052533" gradient="to bottom" message="And we also take pride in what we do and aim to go beyond" />
-          </div>
+      <div
+        style={{
+          position: "relative",
+          height: desktop ? "65vh" : tablet ? "70vh" : "50vh",
+          marginTop: "3%",
+          padding: "20px 0",
+          borderRadius: "30px 0 0 30px",
+        }}
+      >
+        <img
+          src={HomePageImg}
+          style={{
+            borderRadius: "20px 0 0 20px",
+            width: "100%",
+            height: "65vh",
+            objectFit: "cover",
+            position: "absolute",
+            right: 0,
+            top: 0
+          }}
+        />
+        <div
+          style={{
+            display: "flex",
+            position: "absolute",
+            bottom: "-12%", 
+            flexDirection: "column",
+            width: "100%",
+            padding: "10px 0"
+          }}
+        >
+          <InfoCard
+            index="0"
+            color="#052533"
+            borderColor="#F0F0F0"
+            textColor="white"
+            gradient="to top"
+            message="We work to inspire people & businesses"
+          />
+          <InfoCard
+            index="1"
+            color="white"
+            borderColor="#F0F0F0"
+            textColor="#052533"
+            gradient="to bottom"
+            message="And we also take pride in what we do and aim to go beyond"
+          />
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import InNovaLogo10 from "../images/OurLogos/logos-10.png";
 import InNovaLogo2 from "../images/OurLogos/logos-08.png";
 import InNovaLogoServices from "../images/OurLogos/logos-05.png";
+import InNovaLogoServicesMobile from "../images/OurLogos/logos-03.png";
 import CustomButton from "./CustomButton";
 
 function Footer() {
@@ -139,7 +140,7 @@ function Footer() {
           >
             <img
               alt="In-Nova Logo"
-              src={InNovaLogo10}
+              src={isServicesPage ? InNovaLogoServicesMobile : InNovaLogo10}
               style={{ width: "80%", padding: "20px 0", marginLeft: "15px" }}
             />
           </NavLink>
