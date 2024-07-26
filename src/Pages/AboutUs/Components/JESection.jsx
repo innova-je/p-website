@@ -29,7 +29,7 @@ function JESection() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "80px 0",
+        padding: getResponsiveValue("60px 0", "80px 0", "80px 0", "80px 0"),
         overflow: "hidden",
         background: "#F0F0F0",
       }}
@@ -62,13 +62,8 @@ function JESection() {
             sx={{
               color: theme.palette.secondary.main,
               fontWeight: "400",
-              fontSize: getResponsiveValue(
-                "3.5dvw",
-                "3.5dvw",
-                "3.5dvw",
-                "1.8dvw"
-              ),
-              textAlign: "center",
+              fontSize: (isMobile || isSmallMobile) ? "1rem" : "1.8rem",
+              textAlign: "center"
             }}
           >
             “Europe’s future is in the hands of its young people.
@@ -86,12 +81,7 @@ function JESection() {
               ),
               color: theme.palette.primary.main,
               fontWeight: "300",
-              fontSize: getResponsiveValue(
-                "2.5dvw",
-                "2.5dvw",
-                "2.5dvw",
-                "1.2dvw"
-              ),
+              fontSize: (isMobile || isSmallMobile) ? "0.8rem" : "1.2rem",
             }}
           >
             Jean-Claude Juncker

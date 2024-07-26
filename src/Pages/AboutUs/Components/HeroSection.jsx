@@ -81,7 +81,7 @@ function HeroSection() {
           <div
             style={{
               backgroundColor: "white",
-              padding: "60px",
+              padding: (smallMobile || mobile) ? "1rem" : "3.5rem",
               borderRadius: "30px",
             }}
           >
@@ -91,10 +91,10 @@ function HeroSection() {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 alignItems: "center",
-                height: "45vh"
+                height: (smallMobile || mobile) ? "30vh" : "45vh"
               }}
             >
-              <div>
+              <div style={{background: "red"}}>
                 <div>
                   <Typography
                     variant="h4"

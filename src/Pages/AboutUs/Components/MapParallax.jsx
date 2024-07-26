@@ -44,9 +44,7 @@ const ParallaxComponent = () => {
                 position: 'absolute',
                 top: "27%",
                 left: "48%",
-                width: tablet ? '35%' : mobile ? '33%' : "27%",
-                padding: tablet ? '2dvw': mobile ? '2dvw' :"1dvw",
-                paddingLeft: tablet ? '2.5dvw': mobile ? '2.5dvw' :"2dvw",
+                padding: (mobile) ? "1rem" : "1.7rem",
                 borderRadius: '2dvw',
                 backgroundColor: 'white',
             }}>
@@ -55,7 +53,7 @@ const ParallaxComponent = () => {
                     Portugal
                 </Typography>
 
-                <Typography variant="body1" sx={{ color: theme.palette.secondary.main, fontWeight: "300", fontSize: (tablet ? '2.5dvw': mobile ? '2.5dvw' :"1.5dvw"), lineHeight: tablet || mobile ? '5dvw' : "2.5dvw",marginTop:'0.7rem' }}>
+                <Typography variant="body1" sx={{ color: theme.palette.secondary.main, fontWeight: "300", fontSize: (tablet ? '2.5dvw': mobile ? '2.5dvw' :"1.5dvw"), lineHeight: tablet || mobile ? '4dvw' : "2.5dvw", marginTop:'0.25rem' }}>
                     +1100 Junior Entrepreneurs <br />
                     24 Junior Enterprises <br />
                     421k € Volume of Business <br />

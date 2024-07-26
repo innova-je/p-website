@@ -24,18 +24,17 @@ const CustomDepartment = ({ department }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <div style={{ marginBottom: notMobile ? "3rem" : "1.5rem"}}>
         <Box
           sx={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: "center",
-            paddingBottom: desktop ? 3 : !expanded ? 4 : 0,
-            //marginRight:"20px",
           }}
         >
           <div style={{display: "flex", flexDirection: "row"}}>
-            {!desktop && (
+
+          {!desktop && (
             <div style={{
               display: "flex",
               justifyContent: "center", 
@@ -48,7 +47,8 @@ const CustomDepartment = ({ department }) => {
               <ExpandMoreIcon />
             </IconButton>
             </div>            
-          )}     
+          )} 
+                
 
         <Typography
           variant={desktop ? "h4" : "h6"}
@@ -58,14 +58,25 @@ const CustomDepartment = ({ department }) => {
             fontWeight: 'Bold',
             color: theme.palette.primary.main,
             fontFamily: theme.typography.fontFamily,
-            // left: mobile ? '20dvw': '10dvw',
-            textAlign: "center",
-            width: "100%",
-            margin: "3dvw 0 2dvw 0"
           }}
         >
           {department.name + " Team"}
         </Typography>
+
+        {!desktop && (
+            <div style={{
+              display: "flex",
+              justifyContent: "center", 
+              alignItems: "center"}}>
+              <IconButton
+              onClick={handleToggle}
+              color="primary"
+              aria-label="toggle-list"
+            >
+              <ExpandMoreIcon />
+            </IconButton>
+            </div>            
+          )} 
 
         
 
