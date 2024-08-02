@@ -21,18 +21,18 @@ function Footer() {
   const desktop = useMediaQuery({ minWidth: 1081 });
 
   const PagesLinkStyle = {
-    fontSize: mobile ? "3.5vw" : tablet ? "2.5vw" : "1.25vw",
+    fontSize: mobile ? "1rem" : tablet ? "1.75rem" : "1.25rem",
     color: isServicesPage ? "#732043" : "white",
-    fontWeight: "400",
+    fontWeight: "400"
   };
 
   const linkStyles = {
     textDecoration: "none",
     color: "#732043",
     fontWeight: "bold",
-    fontSize: "18px",
+    fontSize: "1rem",
     transition: "font-weight 0.3s ease",
-    textTransform: "none",
+    textTransform: "none"
   };
 
   const handleNavLinkClick = () => {
@@ -60,7 +60,11 @@ function Footer() {
             flexDirection: "column",
             justifyContent: "flex-end",
             width: "30%",
-            backgroundColor: isServicesPage ? "white" : isInnovationWeekPage ? "#052533" : "#732043",
+            backgroundColor: isServicesPage
+              ? "white"
+              : isInnovationWeekPage
+              ? "#052533"
+              : "#732043",
           }}
         >
           <div
@@ -76,7 +80,11 @@ function Footer() {
           />
           <div
             style={{
-              backgroundColor: isServicesPage ? "white" : isInnovationWeekPage ? "#052533" : "#732043",
+              backgroundColor: isServicesPage
+                ? "white"
+                : isInnovationWeekPage
+                ? "#052533"
+                : "#732043",
               height: "65%",
             }}
           >
@@ -116,7 +124,11 @@ function Footer() {
 
       <div
         style={{
-          backgroundColor: isServicesPage ? "white" : isInnovationWeekPage ? "#052533" : "#732043",
+          backgroundColor: isServicesPage
+            ? "white"
+            : isInnovationWeekPage
+            ? "#052533"
+            : "#732043",
           height: "100%",
           width: desktop ? "70%" : "100%",
           borderRadius: desktop ? "25px 0 0 0" : "0px",
@@ -126,134 +138,155 @@ function Footer() {
           justifyContent: mobile || tablet ? "center" : "space-between",
         }}
       >
-        {(mobile || tablet) && (
-          <NavLink
-            to="/"
-            onClick={handleNavLinkClick}
-            style={{
-              height: "100%",
-              width: "35%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-          >
-            <img
-              alt="In-Nova Logo"
-              src={isServicesPage ? InNovaLogoServicesMobile : InNovaLogo10}
-              style={{ width: "80%", padding: "20px 0", marginLeft: "15px" }}
-            />
-          </NavLink>
-        )}
-
-        <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-          {desktop && (
-            <div
-              style={{ height: "35%", display: "flex", alignItems: "center" }}
-            >
-              <Typography
-                sx={{
-                  fontSize: "1.9vw",
-                  fontWeight: isServicesPage ? "400" : "200",
-                  lineHeight: "40px",
-                  textAlign: "left",
-                  color: isServicesPage ? "#732043" : "white",
-                  paddingLeft: "50px",
-                }}
-              >
-                Let's discuss and bring your vision to life.
-              </Typography>
-            </div>
-          )}
-
-          <div>
-            <div
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            width: "100%",
+            height: mobile || tablet ? "80%" : "100%",
+          }}
+        >
+          {(mobile || tablet) && (
+            <NavLink
+              to="/"
+              onClick={handleNavLinkClick}
               style={{
-                display: "grid",
-                gridTemplateColumns: mobile || tablet ? "repeat(2, 2fr)" : "repeat(3, 3fr)",
-                padding: "25px 0 0 50px",
-                width: mobile || tablet ? "auto" : "90%",
+                height: "100%",
+                width: "35%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                padding: "0 20px"
               }}
             >
-              {[
-                { to: "about-us", text: "About Us" },
-                { to: "events", text: "Events" },
-                { to: "services", text: "Services" },
-                { to: "out-of-office", text: "Out of Office" },
-                { to: "our-people/our-team", text: "Our Team" },
-                { to: "join-us", text: "Join Us" },
-                { to: "our-people/our-advisors", text: "Our Advisors" },
-              ].map(({ to, text }) => (
-                <NavLink
-                  key={to}
-                  to={to}
-                  style={linkStyles}
-                  onClick={handleNavLinkClick}
-                >
-                  <Typography style={PagesLinkStyle}>{text}</Typography>
-                </NavLink>
-              ))}
-            </div>
-          </div>
-        </div>
+              <img
+                alt="In-Nova Logo"
+                src={isServicesPage ? InNovaLogoServicesMobile : InNovaLogo10}
+                style={{ width: "100%", padding: "20px 0", marginLeft: "0px" }}
+              />
+            </NavLink>
+          )}
 
-        <div style={{ display: "flex", width: mobile || tablet ? "auto" : "45%" }}>
           <div
             style={{
               display: "flex",
-              width: "100%",
               flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: mobile || tablet ? "0 35px" : "0 50px",
+              alignItems: "flex-start",
+              width: "100%",
+              height: "100%",
+              justifyContent: "center"
             }}
           >
-            <div
-              style={{
-                position: "relative",
-                top: "10%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              {!(mobile || tablet) && (
-                <CustomButton
-                  href="mailto:geral@innova.pt"
-                  bgColor={isServicesPage ? "#732043" : isInnovationWeekPage ? "#ffffff" : "#052533"}
-                  currPage={location.pathname}
+            {desktop && (
+              <div
+                style={{ height: "35%", display: "flex", alignItems: "center" }}
+              >
+                <Typography
                   sx={{
-                    transition: "zIndex 0.2s ease-in-out",
-                    "&:hover": {
-                      zIndex: 1,
-                    },
+                    fontSize: "1.9vw",
+                    fontWeight: isServicesPage ? "400" : "200",
+                    lineHeight: "40px",
+                    textAlign: "left",
+                    color: isServicesPage ? "#732043" : "white",
+                    paddingLeft: "50px",
                   }}
                 >
-                  <Typography sx={{ fontSize: "1vw", zIndex: 1 }}>
-                    Let's Talk
-                  </Typography>
-                  <ArrowForward sx={{ height: "50%", zIndex: 1 }} />
-                </CustomButton>
-              )}
-            </div>
+                  Let's discuss and bring your vision to life.
+                </Typography>
+              </div>
+            )}
 
             <div
               style={{
-                height: "100%",
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                margin: (mobile || tablet) ? "auto 0" : "",
+                justifyContent: tablet ? "center" : "flex-end",
               }}
             >
               <div
                 style={{
+                  display: "grid",
+                  gridTemplateColumns:
+                    mobile || tablet ? "repeat(2, 2fr)" : "repeat(3, 3fr)",
+                  width: (mobile || tablet) ? "100%" : "auto",
+                  rowGap: (mobile || tablet) ? "0.25rem" : "0.7rem",
+                  columnGap: (mobile || tablet) ? "0rem" : "6rem",
+                  paddingLeft: (mobile || tablet) ? 0 : "50px",
+                }}
+              >
+                {[
+                  { to: "about-us", text: "About Us" },
+                  { to: "events", text: "Events" },
+                  { to: "services", text: "Services" },
+                  { to: "out-of-office", text: "Out of Office" },
+                  { to: "our-people/our-team", text: "Team" },
+                  { to: "join-us", text: "Join Us" },
+                  { to: "our-people/our-advisors", text: "Advisors" },
+                ].map(({ to, text }) => (
+                  <NavLink
+                    key={to}
+                    to={to}
+                    style={linkStyles}
+                    onClick={handleNavLinkClick}
+                  >
+                    <Typography style={PagesLinkStyle}>{text}</Typography>
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              width: mobile || tablet ? "auto" : "45%",
+              height: "100%",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                width: "100%",
+                flexDirection: "column",
+                gap: (mobile || tablet) ? "0%"  : "10%",
+                alignItems: "center",
+                padding: mobile || tablet ? "0 35px" : "25px 50px",
+              }}
+            >
+              <div>
+                {!(mobile || tablet) && (
+                  <CustomButton
+                    href="mailto:geral@innova.pt"
+                    bgColor={
+                      isServicesPage
+                        ? "#732043"
+                        : isInnovationWeekPage
+                        ? "#ffffff"
+                        : "#052533"
+                    }
+                    currPage={location.pathname}
+                    sx={{
+                      transition: "zIndex 0.2s ease-in-out",
+                      "&:hover": {
+                        zIndex: 1,
+                      },
+                    }}
+                  >
+                    <Typography sx={{ fontSize: "1vw", zIndex: 1 }}>
+                      Let's Talk
+                    </Typography>
+                    <ArrowForward sx={{ height: "50%", zIndex: 1 }} />
+                  </CustomButton>
+                )}
+              </div>
+
+              <div
+                style={{
                   display: "flex",
                   flexDirection: mobile || tablet ? "column" : "row",
-                  gap: mobile || tablet ? "5px" : 0,
-                  position: "relative",
-                  top: mobile || tablet ? "" : "3vh",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  justifyContent: "space-evenly",
+                  height: (mobile || tablet) ? "100%" : "auto"
                 }}
               >
                 <Link href="mailto:geral@innova.pt">
@@ -284,36 +317,36 @@ function Footer() {
                   />
                 </Link>
               </div>
-            </div>
 
-            {!(mobile || tablet) && (
-              <div style={{ height: "100%" }}>
-                <Typography
-                  sx={{
-                    fontSize: "0.8rem",
-                    fontWeight: isServicesPage ? "normal" : "100",
-                    lineHeight: "17px",
-                    textAlign: "center",
-                    color: isServicesPage ? "#732043" : "white",
-                    padding: "10px 0",
-                  }}
-                >
-                  Faculdade de Ciências e Tecnologia
-                  <br />
-                  Universidade Nova de Lisboa
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "0.8rem",
-                    fontWeight: isServicesPage ? "normal" : "100",
-                    textAlign: "center",
-                    color: isServicesPage ? "#732043" : "white",
-                  }}
-                >
-                  Quinta da Torre, Caparica
-                </Typography>
-              </div>
-            )}
+              {!(mobile || tablet) && (
+                <div style={{ height: "100%" }}>
+                  <Typography
+                    sx={{
+                      fontSize: "0.8rem",
+                      fontWeight: isServicesPage ? "normal" : "100",
+                      lineHeight: "17px",
+                      textAlign: "center",
+                      color: isServicesPage ? "#732043" : "white",
+                      padding: "10px 0",
+                    }}
+                  >
+                    Faculdade de Ciências e Tecnologia
+                    <br />
+                    Universidade Nova de Lisboa
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "0.8rem",
+                      fontWeight: isServicesPage ? "normal" : "100",
+                      textAlign: "center",
+                      color: isServicesPage ? "#732043" : "white",
+                    }}
+                  >
+                    Quinta da Torre, Caparica
+                  </Typography>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

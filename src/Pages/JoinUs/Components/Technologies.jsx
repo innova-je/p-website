@@ -164,7 +164,7 @@ const CirclesComponent = () => {
                             <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
                                 <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000000" floodOpacity="0.4" />
                             </filter>
-                            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                            <a> {/* TODO: adicionar href para download do portfólio */}
                                 <rect x='35dvw' y="10dvw" width="30dvw" height="5.5dvw" rx="2dvw" ry="2dvw" fill={theme.palette.primary.main} filter="url(#shadow)" />
                                 <text x={centerX} y="14dvw" textAnchor="middle" fontSize="3dvw" fill="white" fontFamily={theme.typography.fontFamily}>
                                     See our Portfolio
@@ -245,7 +245,7 @@ const CirclesComponent = () => {
                         <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
                             <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000000" floodOpacity="0.4" />
                         </filter>
-                        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                        <a target="_blank" rel="noopener noreferrer"> {/* TODO: adicionar href para download do portfólio */}
                             <rect x='41dvw' y="20.4dvw" width="18vw" height="3.5vw" rx="1dvw" ry="1dvw" fill={theme.palette.primary.main} filter="url(#shadow)" />
                             <text x={centerX} y="22.6dvw" textAnchor="middle" fontSize="1.5dvw" fill="white" fontFamily={theme.typography.fontFamily}>
                                 See our Portfolio

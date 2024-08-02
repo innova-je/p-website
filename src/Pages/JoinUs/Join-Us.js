@@ -85,7 +85,6 @@ const JoinUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    height: "auto",
                     width: '100%',
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
@@ -157,7 +156,6 @@ const JoinUs = () => {
                     display: "flex",
                     justifyContent: "center",
                     width: "100%",
-                    height: "auto",
                     //marginBottom: "5%"
                 }}>
                     {/* 2nd Section*/}
@@ -198,7 +196,6 @@ const JoinUs = () => {
                                     alt='joinus_oof'
                                     style={{
                                         width: '100%',
-                                        height: 'auto',
                                         marginBottom: "5%"
                                     }}
                                 />
@@ -269,7 +266,6 @@ const JoinUs = () => {
                                 src={joinus_oof}
                                 alt='joinus_oof'
                                 style={{
-                                    width: "auto",
                                     height: "100%",
                                 }}
                             />
@@ -290,14 +286,13 @@ const JoinUs = () => {
                             display: 'flex',
                             flexDirection: "column",
                             justifyContent: mobile ? 'center' : smallMobile ? 'center' : 'flex-start',
-                            height: "auto",
                             width: "100%", // check this
                             backgroundImage: `linear-gradient(to bottom, ${theme.palette.primary.main} ${gradientPercentage}, rgba(240,240,240,1))`,
                         }}
                     >
-                        <div style={{ display: "flex", flexDirection: "column", marginTop: "5%", height: "auto", marginLeft: (smallMobile || mobile) ? "0%" : "5%" }}>
+                        <div style={{ display: "flex", flexDirection: "column", marginTop: "5%", marginLeft: (smallMobile || mobile) ? "0%" : "5%" }}>
                             {smallMobile || mobile ? (
-                                <div style={{ height: "auto", padding: "5% 0 0 0", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+                                <div style={{ padding: "5% 0 0 0", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                                     <Typography
                                         variant="h3"
                                         sx={{
@@ -360,7 +355,7 @@ const JoinUs = () => {
                 {/*----------------------------------------------------*/}
 
 
-                <div style={{ height: "auto", width: "100vw", marginTop: smallMobile || mobile || tablet ? "10%" : 0 }}>
+                <div style={{ width: "100vw", marginTop: smallMobile || mobile || tablet ? "10%" : 0 }}>
                     {/* 5th Section */}
                     <Box
                         sx={{
@@ -400,7 +395,6 @@ const JoinUs = () => {
                                 gap: "5%",
                                 width: "100%",
                                 alignItems: 'center',
-                                height: "auto",
                                 overflow: 'visible',
                                 padding: "5% 0 5% 0"
 

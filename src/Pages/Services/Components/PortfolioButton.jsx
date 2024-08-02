@@ -40,11 +40,10 @@ const PortfolioButton = () => {
           backgroundColor: "white",
           opacity: "0.6",
           height: "45px",
-          width: "auto",
-          padding: "15px",
+          padding: "0px 15px",
           borderRadius: "20px",
           border: "none",
-          fontSize: "1.1rem",
+          fontSize: "1rem",
           fontWeight: "600",
           cursor: "pointer",
         }}
@@ -54,10 +53,9 @@ const PortfolioButton = () => {
 
       <div
         style={{
-          height: "auto",
           backgroundColor: "white",
           borderRadius: "20px",
-          width: "30%",
+          width: "auto",//Not sure
           padding: 40,
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
           display: isFormVisible ? "block" : "none",

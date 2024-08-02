@@ -127,7 +127,6 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        height: "auto",
                         display: "flex",
                         gap: "5%",
                         alignItems: "flex-start",
@@ -193,7 +192,6 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        height: "auto",
                         display: "flex",
                         gap: "5%",
                         alignItems: "flex-start",
@@ -236,7 +234,6 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        height: "auto",
                         display: "flex",
                         gap: "5%",
                         alignItems: "flex-start",
@@ -277,7 +274,6 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        height: "auto",
                         display: "flex",
                         gap: "5%",
                         alignItems: "flex-start",
@@ -318,7 +314,6 @@ const MiddleBox = ({ barheight }) => {
                     sx={{
                         position: 'relative',
                         width: '100%',
-                        height: "auto",
                         display: "flex",
                         gap: "5%",
                         alignItems: "flex-start",

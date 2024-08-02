@@ -13,7 +13,6 @@ const ServiceBox = ({ imgSrc, title, textWidth, description, imageStyle }) => {
       <Box  sx={{
         width: "70%",
         position: 'relative',
-        height: "auto",
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',

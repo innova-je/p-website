@@ -39,7 +39,7 @@ const NotFound = () => {
             overflow: "hidden"
           }}
         >
-          <div style={{width: "auto", height: "100%", top: "0%", overflow: "hidden"}}>
+          <div style={{ height: "100%", top: "0%", overflow: "hidden"}}>
         <Grid style={{display: "flex", flexDirection: "column", justifyContent:"center", alignItems: "center", overflow: "hidden", height: "100%"}}> 
             <div style={{display: "flex", flexDirection:"column",justifyContent: "center", zIndex: 10}}>
               <Typography variant='h3' sx={{

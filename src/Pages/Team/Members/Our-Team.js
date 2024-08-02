@@ -107,7 +107,6 @@ const OurTeam = () => {
         <img
           style={{
             width: "100%",
-            height: "auto",
             position: "absolute",
             bottom: "0",
           }}

@@ -7,7 +7,6 @@ const OurServices = () => {
     <div style={{
       display: "flex",
       flexDirection: "column",
-      height: "auto"
     }}>
         <ServicesSlider></ServicesSlider>
 

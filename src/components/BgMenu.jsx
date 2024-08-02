@@ -56,7 +56,7 @@ const BgMenu = () => {
   
   const [MenuButtonStyle, setMenuButtonStyle] = useState({
     color: 'white',
-    height: "100dvh",
+    height: "100vh",
     width: "0px",
     aspectRatio: "1/1",
     backgroundColor: "transparent",
@@ -115,7 +115,11 @@ const BgMenu = () => {
   }
 
   const NavLinkStyle = {
-    textDecoration : "none"
+    textDecoration : "none",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: "10%"
   };
 
   const PagesLinkStyle = {
@@ -136,7 +140,7 @@ const BgMenu = () => {
 
       <div style={{
           width: "100%",
-          height: "100%",
+          height: "100vh",
           overflow: "hidden",
           alignItems: "center",
           justifyContent: "center",
@@ -144,10 +148,8 @@ const BgMenu = () => {
           flexDirection: "column",
           gap: "20px",
           opacity: isMenuClicked ? "100%" : "0%",
-          //right: isMenuClicked ? "0%" : "-100%",
+          right: isMenuClicked ? "0%" : "-100%",
           transition: "opacity 0.2s ease-in-out, right 0.5s ease-in-out",
-          position: "fixed",
-          bottom: 0
       }}>
     
       <NavLink to="/about-us" style={NavLinkStyle} onClick={updateMenu}>
@@ -164,6 +166,7 @@ const BgMenu = () => {
       </NavLink>
       <NavLink to="/events" style={NavLinkStyle} onClick={updateMenu}>
           <Typography style={PagesLinkStyle}>Events</Typography>
+          <Typography style={PagesLinkStyle}>+</Typography>
       </NavLink>
       <NavLink to="/out-of-office" style={NavLinkStyle} onClick={updateMenu}>
           <Typography style={PagesLinkStyle}>Out of Office</Typography>    

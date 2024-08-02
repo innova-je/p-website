@@ -5,7 +5,6 @@ function Industries() {
   return (
     <div
       style={{
-        height: "auto",
         borderRadius: "0 0 20px 20px",
         display: "flex",
         flexDirection: "column",

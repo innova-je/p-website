@@ -141,7 +141,6 @@ const AdvisorComponent = ({ name, description, image, linkedin }) => {
             <LinkedIn sx={{
               color:'white', 
               height: mobile ? "3vh" : (tablet ? "2.8vh" : "5vh"), 
-              width: "auto",
               position: "absolute",
               top: desktop ? 15 : (tablet ? 10 : 6),
               right: desktop ? 5 : (tablet ? 0 : -4)

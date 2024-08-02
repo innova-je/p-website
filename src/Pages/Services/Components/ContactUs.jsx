@@ -27,7 +27,7 @@ export const ContactUs = ({ type }) => {
       onSubmit={sendEmail}
       style={{ display: "flex", flexDirection: "column", gap: "20px" }}
     >
-      <h1 style={{ color: "#732043" }}>Subscribe our Newsletter</h1>
+      <h1 style={{ color: "#732043" }}>Receive Our Portfolio</h1>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <label
           htmlFor="to_name"

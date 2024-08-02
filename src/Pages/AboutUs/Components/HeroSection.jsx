@@ -1,227 +1,197 @@
 import React from "react";
-import { Box, Typography, useTheme } from "@mui/material";
-import HeroImage from "../../../images/other/about-us.png";
-
+import { Typography, useTheme } from "@mui/material";
 import { useMediaQuery } from "react-responsive";
+import HeroImage from "../../../images/other/about-us.png";
 
 function HeroSection() {
   const theme = useTheme();
 
-  const smallMobile = useMediaQuery({ maxWidth: 650 });
-  const mobile = useMediaQuery({ minWidth: 651, maxWidth: 767 });
-  const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
-  const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
-  const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
-  const largeDesktop = useMediaQuery({ minWidth: 1400 });
+  const isMobile = useMediaQuery({ maxWidth: 650 });
+  const isTablet = useMediaQuery({ minWidth: 651, maxWidth: 1023 });
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
+
+  const getResponsiveValue = (mobileSize, tabletSize, defaultSize) => {
+    if (isMobile) return mobileSize;
+    if (isTablet) return tabletSize;
+    return defaultSize;
+  };
 
   return (
-    <>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          height: "100vh",
-          justifyContent: "center",
-          overflowX: "clip",
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        height: getResponsiveValue("80vh", "100vh", "100vh"),
+        justifyContent: "center",
+        overflowX: "clip",
+        position: "relative",
+      }}
+    >
+      {/* Blurred Background Image */}
+      <div
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          backgroundImage: `url(${HeroImage})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(12px)",
+          opacity: 0.7,
+        }}
+      />
+
+      {/* Main Content */}
+      <div
+        style={{
+          position: "relative",
+          width: getResponsiveValue("90vw", "90vw", "80vw"),
         }}
       >
-        {/* Blurred Image */}
-        <Box
-          sx={{
+        {/* "About Us" Tag */}
+        <div
+          style={{
+            backgroundColor: theme.palette.primary.main,
+            color: "white",
+            borderRadius: "15px",
             position: "absolute",
-            width: "100%",
-            height: "100%",
-            backgroundImage: `url(${HeroImage})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "blur(12px)",
-            opacity: "0.7",
-          }}
-        />
-
-        {/* White Box */}
-        <Box
-          sx={{
-            position: "relative",
-            width: "80dvw"
+            top:  getResponsiveValue("-1.8rem", "-2rem", "-2rem"),
+            left: "-17vw",
+            width: "60%",
+            height: "2rem",
+            padding: "1vw",
+            zIndex: 2,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontWeight: 400,
+            fontSize: getResponsiveValue("3vw", "2vw", "2vw"),
           }}
         >
-          <Box
-            sx={{
-              backgroundColor: theme.palette.primary.main,
-              color: "white",
-              borderRadius: smallMobile ? "3dvw" : "15px",
-              position: "absolute",
-              top: smallDesktop
-                ? "-4dvw"
-                : tablet
-                ? "-4.5dvw"
-                : mobile
-                ? "-5.5dvw"
-                : smallMobile
-                ? "-5.5dvw"
-                : "-2dvw",
-              left: "-17dvw",
-              width: "60%",
-              height: "7%",
-              padding: "1dvw",
-              zIndex: "1",
-              justifyContent: "center",
-              display: "flex",
-              alignItems: "center",
-              fontWeight: "400",
-              fontSize: tablet || smallMobile ? "3dvw" : "2dvw",
-            }}
-          >
-            About Us
-          </Box>
+          About Us
+        </div>
 
+        {/* White Box with Content */}
+        <div
+          style={{
+            backgroundColor: "white",
+            padding: getResponsiveValue("0rem", "0rem", "3.5rem"),
+            borderRadius: "0px 30px 0px 30px",
+            position: "relative"
+          }}
+        >
           <div
             style={{
-              backgroundColor: "white",
-              padding: (smallMobile || mobile) ? "1rem" : "3.5rem",
-              borderRadius: "30px",
+              display: "flex",
+              flexDirection: getResponsiveValue("column", "column", "row"),
+              justifyContent: getResponsiveValue("center", "center", "space-between"),
+              alignItems: getResponsiveValue("flex-start", "flex-start", "center"),
+              height: getResponsiveValue("auto", "auto", "45vh"),
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-                height: (smallMobile || mobile) ? "30vh" : "45vh"
-              }}
-            >
-              <div style={{background: "red"}}>
-                <div>
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      color: theme.palette.secondary.main,
-                      fontFamily: theme.typography.fontFamily,
-                      fontWeight: "700",
-                      fontSize: mobile
-                        ? "3.9dvw"
-                        : smallMobile
-                        ? "3.9dvw"
-                        : "2.7dvw",
-                    }}
-                  >
-                    We are
-                  </Typography>
-                  <Typography
-                    variant="h3"
-                    sx={{
-                      color: theme.palette.primary.main,
-                      fontFamily: theme.typography.fontFamily,
-                      fontWeight: "600",
-                      fontSize: mobile
-                        ? "3.9dvw"
-                        : smallMobile
-                        ? "3.9dvw"
-                        : "2.7dvw",
-                    }}
-                  >
-                    Junior Enterpreneurs.
-                  </Typography>
-                </div>
-
-                <div style={{ margin: "1rem 0rem 0rem 2rem" }}>
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      color: theme.palette.secondary.main,
-                      fontFamily: theme.typography.fontFamily,
-                      fontWeight: "Light",
-                      fontSize: smallDesktop
-                        ? "2.5dvw"
-                        : tablet
-                        ? "2.5dvw"
-                        : mobile
-                        ? "3dvw"
-                        : smallMobile
-                        ? "3.3dvw"
-                        : "1.8dvw",
-                      lineHeight: smallMobile ? "2rem" : "3rem",
-                    }}
-                  >
-                    Engineering Students <br />
-                    Problem Solvers <br />
-                    Creative Minds <br />
-                    Next-Gen Leaders
-                  </Typography>
-                </div>
-              </div>
-
+            {!isDesktop && (
               <img
                 src={HeroImage}
-                alt="Hero Image"
+                alt="Hero"
                 style={{
-                  width: smallDesktop
-                    ? "48%"
-                    : tablet
-                    ? "45%"
-                    : mobile || smallMobile
-                    ? "40%"
-                    : "53%",
+                  width: getResponsiveValue("100%", "100%", "53%"),
+                  borderRadius: "0px 30px 0px 0px",
+                  objectFit: "cover",
+                  height: getResponsiveValue("20vh", "30vh", "85%"),
+                  zIndex: 1,
+                  opacity: 0.75,
+                }}
+              />
+            )}
+
+            {/* Text Content */}
+            <div style={{ padding: "1.5rem 0rem 2.2rem 2rem"}}>
+              <Typography
+                variant="h4"
+                sx={{
+                  color: theme.palette.secondary.main,
+                  fontWeight: 500,
+                  fontSize: getResponsiveValue("1.2rem", "1.5rem", "2.2rem"),
+                }}
+              >
+                We are
+              </Typography>
+              <Typography
+                variant="h3"
+                sx={{
+                  color: theme.palette.primary.main,
+                  fontWeight: 700,
+                  fontSize: getResponsiveValue("1.2rem", "1.5rem", "2.2rem"),
+                }}
+              >
+                Junior Entrepreneurs
+              </Typography>
+              <Typography
+                variant="h4"
+                sx={{
+                  color: theme.palette.secondary.main,
+                  fontWeight: 300,
+                  fontSize: getResponsiveValue("1rem", "1.1rem", "1.6rem"),
+                  lineHeight: getResponsiveValue("1.5rem", "2.2rem", "3rem"),
+                  marginTop: getResponsiveValue("0.6rem", "0.6rem", "1rem"),
+                }}
+              >
+                Engineering Students <br />
+                Problem Solvers <br />
+                Creative Minds <br />
+                Next-Gen Leaders
+              </Typography>
+            </div>
+
+            {/* Hero Image */}
+            {isDesktop && (
+              <img
+                src={HeroImage}
+                alt="Hero"
+                style={{
+                  width: getResponsiveValue("40%", "40%", "53%"),
                   borderRadius: "30px",
                   objectFit: "cover",
                   height: "85%",
-                  zIndex: "1",
-                  opacity: "0.75"
+                  zIndex: 1,
+                  opacity: 0.75,
                 }}
               />
-            </div>
+            )}
           </div>
+        </div>
 
-          <Box
-            sx={{
-              backgroundColor: theme.palette.secondary.main,
-              color: "white",
-              borderRadius: "15px",
-              position: "absolute",
-              bottom: smallDesktop
-                ? "-4.5dvw"
-                : tablet
-                ? "-6dvw"
-                : mobile
-                ? "-10dvw"
-                : smallMobile
-                ? "-39dvw"
-                : "-4dvw",
-              left: "10dvw",
-              width: "80%",
-              zIndex: "1",
-              p: "1.5rem",
-              pr: "20dvw",
-              justifyContent: "center",
-              textAlign: "justify",
-              fontWeight: "light",
-              fontSize: smallDesktop
-                ? "1.5dvw"
-                : tablet
-                ? "1.8dvw"
-                : mobile
-                ? "2dvw"
-                : smallMobile
-                ? "3.5dvw"
-                : "1.2dvw",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            In-Nova is the Junior Enterprise of NOVA School of Science and
-            Technology, founded with the aim of promoting the capabilities of
-            its students by integrating them into real projects. In-Nova is
-            focused on creating a limitless workspace, in the most varied areas
-            of knowledge. Specialized in robotics, full stack development,
-            electronics, and prototyping.
-          </Box>
-        </Box>
-      </Box>
-    </>
+        {/* Bottom Info Box */}
+        <div
+          style={{
+            backgroundColor: theme.palette.secondary.main,
+            color: "white",
+            borderRadius: "15px",
+            position: "absolute",
+            bottom: getResponsiveValue("-9.5rem", "-9.5rem", "-5.5rem"),
+            left: "13vw",
+            width: "80%",
+            padding: "1.5rem",
+            paddingRight: "20rem",
+            textAlign: "justify",
+            fontWeight: 300,
+            fontSize: getResponsiveValue("0.8rem", "1rem", "1.2rem"),
+            display: "flex",
+            alignItems: "center",
+            zIndex: 2,
+          }}
+        >
+          In-Nova is the Junior Enterprise of NOVA School of Science and
+          Technology, founded with the aim of promoting the capabilities of its
+          students by integrating them into real projects. In-Nova is focused on
+          creating a limitless workspace, in the most varied areas of knowledge.
+          Specialized in robotics, full stack development, electronics, and
+          prototyping.
+        </div>
+      </div>
+    </div>
   );
 }
 

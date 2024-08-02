@@ -1,54 +1,90 @@
-import React from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
-import { AppBar, Toolbar, Button, Menu, MenuItem, styled, useTheme } from '@mui/material';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import LogoImage from '../images/OurLogos/logos-02.png';
-import { useMediaQuery } from 'react-responsive';
-import BgMenu from './BgMenu';
+import React, { useState, useMemo, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import {
+  AppBar,
+  Button,
+  Menu,
+  MenuItem,
+  styled,
+  useTheme,
+} from "@mui/material";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import LogoImage from "../images/OurLogos/logos-02.png";
+import { useMediaQuery } from "react-responsive";
+import BgMenu from "./BgMenu";
 
 const JoinUsButton = styled(Button)(({ theme, isActive }) => ({
-  backgroundColor: isActive ? theme.palette.secondary.main : theme.palette.primary.main,
-  color: 'white',
+  backgroundColor: isActive
+    ? theme.palette.secondary.main
+    : theme.palette.primary.main,
+  color: "white",
   fontFamily: theme.typography.fontFamily,
-  fontWeight: 'bold',
-  fontSize: '1rem',
+  fontWeight: "bold",
+  fontSize: "1rem",
   borderRadius: "20px",
   maxHeight: "40px",
   height: "40px",
   width: "150px",
-  transition: 'transform 0.3s ease-in-out',
+  transition: "transform 0.3s ease-in-out",
   textDecoration: "none",
-  '&:hover': {
-    backgroundColor: isActive ? theme.palette.secondary.main : theme.palette.primary.main,
-    transform: 'scale(1.05)',
-    cursor: "pointer"
+  "&:hover": {
+    backgroundColor: isActive
+      ? theme.palette.secondary.main
+      : theme.palette.primary.main,
+    transform: "scale(1.05)",
+    cursor: "pointer",
   },
 }));
+
+const linkStyles = (theme, isInnovationWeek) => ({
+  textDecoration: "none",
+  color: isInnovationWeek ? theme.palette.secondary.main : "#732043",
+  fontWeight: "bold",
+  fontSize: "18px",
+  transition: "font-weight 0.3s ease",
+  textTransform: "none",
+});
+
+const activeLinkStyles = {
+  fontWeight: "normal",
+};
 
 const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery({ maxWidth: 600 });
   const isTablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
   const isDesktop = useMediaQuery({ minWidth: 1081 });
-  const location = useLocation(); // Get the current path
+  const location = useLocation();
 
-  const [anchorElDropdown1, setAnchorElDropdown1] = React.useState(null);
-  const [anchorElDropdown2, setAnchorElDropdown2] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState({});
+  const [scrollDirection, setScrollDirection] = useState("up");
+
+  useEffect(() => {
+    let lastScrollTop = 0;
+
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > 250 && lastScrollTop < scrollTop) {
+        console.log("scrollTop: " + scrollTop)
+        console.log("lastScrollTop: " + lastScrollTop)
+        setScrollDirection("down");
+      } else if(lastScrollTop > scrollTop) {
+        setScrollDirection("up");
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleMenuClick = (event, dropdown) => {
-    if (dropdown === 'dropdown1') {
-      setAnchorElDropdown1(event.currentTarget);
-    } else if (dropdown === 'dropdown2') {
-      setAnchorElDropdown2(event.currentTarget);
-    }
+    setAnchorEl((prev) => ({ ...prev, [dropdown]: event.currentTarget }));
   };
 
   const handleMenuClose = (dropdown) => {
-    if (dropdown === 'dropdown1') {
-      setAnchorElDropdown1(null);
-    } else if (dropdown === 'dropdown2') {
-      setAnchorElDropdown2(null);
-    }
+    setAnchorEl((prev) => ({ ...prev, [dropdown]: null }));
   };
 
   const renderDropdownButton = (label, subPages, dropdown) => (
@@ -56,13 +92,18 @@ const Navbar = () => {
       <Button
         color="inherit"
         onClick={(event) => handleMenuClick(event, dropdown)}
-        style={{ color: isInnovationWeek ? theme.palette.secondary.main : '#732043', fontWeight: 'bold', textTransform: 'none', fontSize: '18px' }}
+        style={{
+          color: isInnovationWeek ? theme.palette.secondary.main : "#732043",
+          fontWeight: "bold",
+          textTransform: "none",
+          fontSize: "18px",
+        }}
       >
         {label} <ArrowDropDownIcon />
       </Button>
       <Menu
-        anchorEl={dropdown === 'dropdown1' ? anchorElDropdown1 : anchorElDropdown2}
-        open={Boolean(dropdown === 'dropdown1' ? anchorElDropdown1 : anchorElDropdown2)}
+        anchorEl={anchorEl[dropdown]}
+        open={Boolean(anchorEl[dropdown])}
         onClose={() => handleMenuClose(dropdown)}
       >
         {subPages.map((subPage) => (
@@ -71,7 +112,13 @@ const Navbar = () => {
             onClick={() => handleMenuClose(dropdown)}
             component={Link}
             to={subPage.path}
-            style={{ color: isInnovationWeek ? theme.palette.secondary.main : '#732043', fontSize: '18px', textAlign: "left" }}
+            style={{
+              color: isInnovationWeek
+                ? theme.palette.secondary.main
+                : "#732043",
+              fontSize: "18px",
+              textAlign: "left",
+            }}
           >
             {subPage.label}
           </MenuItem>
@@ -80,108 +127,134 @@ const Navbar = () => {
     </React.Fragment>
   );
 
-  const linkStyles = {
-    textDecoration: 'none',
-    color: '#732043',
-    fontWeight: 'bold',
-    fontSize: '18px',
-    transition: 'font-weight 0.3s ease',
-    textTransform: 'none'
-  };
-
-  const activeLinkStyles = {
-    fontWeight: 'normal',
-  };
-
   const handleNavLinkClick = () => {
     window.scrollTo(0, 0);
   };
 
-  const isIOS = React.useMemo(() => {
+  const isIOS = useMemo(() => {
     const userAgent = window.navigator.userAgent.toLowerCase();
     return /iphone|ipad|ipod/.test(userAgent);
   }, []);
 
-  // Check if the current path includes "/events/innovation-week"
-  const isInnovationWeek = location.pathname.includes("/events/innovation-week");
+  const isInnovationWeek = location.pathname.includes(
+    "/events/innovation-week"
+  );
 
   return (
-    <AppBar position="absolute" style={{ left: "0", background: isInnovationWeek ? '#FFFFFF80' : '#FFFFFF10', boxShadow: 'none', height: '70px' }}>
-      <Toolbar style={{ height: '100%', justifyContent: 'space-between' }}>
-        <div style={{
-          height: "100%",
-          width: "100%",
-          position: "absolute",
-          left: 0,
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "row",
-          overflow: "visible",
-        }}>
-          <Link to="/" style={{
-            position: "relative",
-            height: "100%",
-            zIndex: 2
-          }}>
-            <img src={LogoImage} style={{ height: "100%", width: isIOS ? "auto" : "100%", maxWidth: "100%", marginLeft: isDesktop || isTablet ? "15%" : "10%" }} />
+    <AppBar
+      style={{
+        background: isInnovationWeek ? "#FFFFFF80" : "#FFFFFF"  ,
+        boxShadow: "none",
+        opacity: scrollDirection === "down" ? 0 : 1,
+        left: 0,
+        transition: "opacity 0.4s linear",
+        height: "4rem"
+      }}
+    >
+      <div style={{ display: "flex", flexDirection: "row", height: "100%" }}>
+        <div
+          style={{
+            width: "20%",
+            display: "flex",
+            flexGrow: 1,
+          }}
+        >
+          <Link to="/">
+            <img
+              src={LogoImage}
+              style={{
+                height: "100%",
+                paddingLeft: (isMobile) ? "2rem" : "3rem",
+              }}
+            />
           </Link>
         </div>
 
-        <div style={{ display: isDesktop ? "flex" : "none", justifyContent: 'center', alignItems: 'center', flexGrow: 1, zIndex: 1 }}>
-          <NavLink to="/about-us" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
-            <Button color="inherit" style={isInnovationWeek ? { ...linkStyles, color: theme.palette.secondary.main } : linkStyles}>About Us</Button>
+        <div
+          style={{
+            display: isDesktop ? "flex" : "none",
+            justifyContent: "center",
+            alignItems: "center",
+            flexGrow: 2,
+          }}
+        >
+          <NavLink
+            to="/about-us"
+            activeClassName="activeLink"
+            style={linkStyles(theme, isInnovationWeek)}
+            activeStyle={activeLinkStyles}
+          >
+            <Button color="inherit" style={linkStyles(theme, isInnovationWeek)}>
+              About Us
+            </Button>
           </NavLink>
-          <NavLink to="/services" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
-            <Button color="inherit" style={isInnovationWeek ? { ...linkStyles, color: theme.palette.secondary.main } : linkStyles}>Services</Button>
+          <NavLink
+            to="/services"
+            activeClassName="activeLink"
+            style={linkStyles(theme, isInnovationWeek)}
+            activeStyle={activeLinkStyles}
+          >
+            <Button color="inherit" style={linkStyles(theme, isInnovationWeek)}>
+              Services
+            </Button>
           </NavLink>
 
-          {renderDropdownButton("Our People", [
-            { label: "Our Team", path: "/our-people/our-team" },
-            { label: "Our Advisors", path: "/our-people/our-advisors" },
-          ], 'dropdown1')}
+          {renderDropdownButton(
+            "Our People",
+            [
+              { label: "Our Team", path: "/our-people/our-team" },
+              { label: "Our Advisors", path: "/our-people/our-advisors" },
+            ],
+            "dropdown1"
+          )}
 
-          {renderDropdownButton("Events", [
-            { label: "Innovation Week", path: "/events/innovation-week" },
-            { label: "Innovation Valley", path: "/events/innovation-valley" },
-          ], 'dropdown2')}
+          {renderDropdownButton(
+            "Events",
+            [
+              { label: "Innovation Week", path: "/events/innovation-week" },
+              { label: "Innovation Valley", path: "/events/innovation-valley" },
+            ],
+            "dropdown2"
+          )}
 
-          <NavLink to="/out-of-office" activeClassName="activeLink" style={linkStyles} activeStyle={activeLinkStyles}>
-            <Button color="inherit" style={isInnovationWeek ? { ...linkStyles, color: theme.palette.secondary.main } : linkStyles}>Out of Office</Button>
+          <NavLink
+            to="/out-of-office"
+            activeClassName="activeLink"
+            style={linkStyles(theme, isInnovationWeek)}
+            activeStyle={activeLinkStyles}
+          >
+            <Button color="inherit" style={linkStyles(theme, isInnovationWeek)}>
+              Out of Office
+            </Button>
           </NavLink>
         </div>
 
-        <div style={{
-          position: "absolute",
-          right: 0,
-          top: 0,
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-        }}>
-          <div style={{
-            width: "100%",
-            position: "absolute",
-            right: "0",
+        <div
+          style={{
             display: "flex",
-            justifyContent: "right"
-          }}>
-            <NavLink to="/join-us" onClick={handleNavLinkClick} style={{
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "0 4rem",
+            flexGrow: 1,
+          }}
+        >
+          <NavLink
+            to="/join-us"
+            onClick={handleNavLinkClick}
+            style={{
               position: "relative",
               display: isTablet || isDesktop ? "flex" : "none",
-              marginRight: isDesktop ? "7%" : "15%",
               textDecoration: "none",
-              zIndex: 2
-            }}>
-              <JoinUsButton isActive={isInnovationWeek}>Join Us</JoinUsButton>
-            </NavLink>
-          </div>
-          <div style={{ display: isDesktop ? "none" : "flex" }}>
+              zIndex: 2,
+            }}
+          >
+            <JoinUsButton isActive={isInnovationWeek}>Join Us</JoinUsButton>
+          </NavLink>
+          <div style={{ display: isDesktop ? "none" : "flex"}}>
             <BgMenu />
           </div>
         </div>
-      </Toolbar>
+      </div>
     </AppBar>
   );
 };

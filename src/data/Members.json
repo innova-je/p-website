@@ -3,32 +3,32 @@
         {
             "name": "Conselho Executivo",
             "president": {
-                "name": "Inês Costa",
+                "name": "Inês Mendes",
                 "title": "President",
-                "imgDirectory": "Conselho Executivo/ines_costa.webp",
+                "imgDirectory": "Conselho Executivo/ines_mendes.webp",
                 "email": "ines.costa@innova.pt",
                 "linkedin": "https://www.linkedin.com/in/ineesmcosta/"
             },
             "externalAffairsVicePresident":{
-                "name": "Leonor Almeida",
+                "name": "Catarina Santos",
                 "title": "External Vice-President",
-                "imgDirectory": "Conselho Executivo/leonor_almeida.webp",
+                "imgDirectory": "Conselho Executivo/catarina_santos.webp",
                 "email": "leonor.almeida@innova.pt",
                 "linkedin": "https://www.linkedin.com/in/leonoraalmeida"
             },
             "internalAffairsVicePresident":{
-                "name": "Carolina Maurício",
+                "name": "Matilde Lopes",
                 "title": "Internal Vice-President",
-                "imgDirectory": "Conselho Executivo/carolina_mauricio.webp",
-                "email": "carolina.mauricio@innova.pt",
-                "linkedin": "https://www.linkedin.com/in/carolina-maur%C3%ADcio-83a18b218/"
+                "imgDirectory": "Conselho Executivo/matilde_lopes.webp",
+                "email": "matilde.lopes@innova.pt",
+                "linkedin": "https://www.linkedin.com/in/matilde-lopes02/"
             },
             "financialManager":{
-                "name": "Nuno Alves",
+                "name": "Bravo Mota",
                 "title": "Financial Manager",
-                "imgDirectory": "Conselho Executivo/nuno_alves.webp",
-                "email": "nuno.alves@innova.pt",
-                "linkedin": "https://www.linkedin.com/in/nuno-alves-928631211"
+                "imgDirectory": "Conselho Executivo/bravo_mota.webp",
+                "email": "bravo.mota@innova.pt",
+                "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-bravo-mota-051029205/"
             }
         },        
         {
@@ -36,18 +36,12 @@
             "director" : 
                 {
                     "title" : "Sales Director",
-                    "name": "Inês Mendes",
-                    "imgDirectory": "Comercial/ines_mendes.webp",
+                    "name": "Laura Filipe",
+                    "imgDirectory": "Comercial/laura_filipe.webp",
                     "email": "ines.mendes@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
                 },            
             "members": [
-                {
-                    "name": "Catarina Santos",
-                    "imgDirectory": "Comercial/catarina_santos.webp",
-                    "email": "catarina.santos@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/catarina-santos17"
-                },
                 {
                     "name": "Duarte Farelo",
                     "imgDirectory": "Comercial/duarte_farelo.webp",
@@ -61,28 +55,10 @@
                     "linkedin": "https://www.linkedin.com/in/francisco-marques-5511282b9/"
                 },
                 {
-                    "name": "Laura Filipe",
-                    "imgDirectory": "Comercial/laura_filipe.webp",
-                    "email": "laura.filipe@innova.pt",
-                    "linkedin": "http://www.linkedin.com/in/laura-filipe"
-                },
-                {
                     "name": "Maria João Silva",
                     "imgDirectory": "Comercial/maria_joao_silva.webp",
                     "email": "maria.silva@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/maria-jo%C3%A3o-silva-b27970238/"
-                },
-                {
-                    "name": "Marta Cunha",
-                    "imgDirectory": "Comercial/marta_cunha.webp",
-                    "email": "marta.cunha@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/marta-demetrion-cunha/"
-                },
-                {
-                    "name": "Miguel Durão",
-                    "imgDirectory": "Comercial/miguel_durao.webp",
-                    "email": "miguel.durao@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/miguel-dur%C3%A3o-925b4020a/"
                 },
                 {
                     "name": "Sofia Pedro",
@@ -97,10 +73,10 @@
             "director" : 
                 {
                     "title" : "Marketing Director",
-                    "name": "Matilde Azadinho",
-                    "imgDirectory": "Marketing/matilde_azadinho.webp",
-                    "email": "matilde.azadinho@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/matilde-azadinho-463057231"
+                    "name": "João Cristóvão",
+                    "imgDirectory": "Marketing/joao_cristovao.webp",
+                    "email": "joao.cristovao@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-crist%C3%B3v%C3%A3o/"
                 },
             "members": [
                 {
@@ -134,28 +110,10 @@
                     "linkedin": "https://www.linkedin.com/in/francisco-gouveia-227323293/"
                 },
                 {
-                    "name": "João Cristóvão",
-                    "imgDirectory": "Marketing/joao_cristovao.webp",
-                    "email": "joao.cristovao@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-crist%C3%B3v%C3%A3o/"
-                },
-                {
                     "name": "Maria João Canedo",
                     "imgDirectory": "Marketing/maria_joao_canedo.webp",
                     "email": "mariana.passos@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/maria-jo%C3%A3o-canedo-1a8579293/"
-                },
-                {
-                    "name": "Mariana Passos",
-                    "imgDirectory": "Marketing/mariana_passos.webp",
-                    "email": "mariana.passos@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/mariana-passos-585831205/"
-                },
-                {
-                    "name": "Matilde Lopes",
-                    "imgDirectory": "Marketing/matilde_lopes.webp",
-                    "email": "matilde.lopes@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/matilde-lopes02/"
                 }
             ]
         },
@@ -164,8 +122,8 @@
             "director" : 
                 {
                     "title" : "Projects Director",
-                    "name": "Vicente Santos",
-                    "imgDirectory": "Projetos/vicente_santos.webp",
+                    "name": "Luís Lamy",
+                    "imgDirectory": "Projetos/luis_lamy.webp",
                     "email": "vicente.santos@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/vicenters1/"
                 },
@@ -181,18 +139,6 @@
                     "imgDirectory": "Projetos/arthur_chaves.webp",
                     "email": "arthur.chaves@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/arthur-alexandre-lannes-de-paiva-chaves-a22661263"
-                },
-                {
-                    "name": "Beatriz Santos",
-                    "imgDirectory": "Projetos/beatriz_santos.webp",
-                    "email": "beatriz.santos@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/-beatriz-santos/"
-                },
-                {
-                    "name": "Bravo Mota",
-                    "imgDirectory": "Projetos/bravo_mota.webp",
-                    "email": "bravo.mota@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-bravo-mota-051029205/"
                 },
                 {
                     "name": "Cristiano  Almeida",
@@ -213,34 +159,10 @@
                     "linkedin": "https://www.linkedin.com/in/diogo-chikhi/"
                 },
                 {
-                    "name": "Diogo Martins",
-                    "imgDirectory": "Projetos/diogo_martins.webp",
-                    "email": "diogo.martins@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/diogo-martins-636bb1243/"
-                },
-                {
-                    "name": "Diogo Pedreiro",
-                    "imgDirectory": "Projetos/diogo_pedreiro.webp",
-                    "email": "diogo.pedreiro@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/diogo-pedreiro-9615051b6/"
-                },
-                {
                     "name": "Diogo Sequeira",
                     "imgDirectory": "Projetos/diogo_sequeira.webp",
                     "email": "diogo.sequeira@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/diogo-sequeira-462685258/"
-                },
-                {
-                    "name": "Diogo Silva",
-                    "imgDirectory": "Projetos/diogo_silva.webp",
-                    "email": "diogo.silva@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/dgnsilva/"
-                },
-                {
-                    "name": "Gil Arroteia",
-                    "imgDirectory": "Projetos/gil_arroteia.webp",
-                    "email": "gil.arroteia@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/gil-arroteia/"
                 },
                 {
                     "name": "Gonçalo Duarte",
@@ -249,64 +171,16 @@
                     "linkedin": "https://www.linkedin.com/in/gonçalo-duarte-718564293"
                 },
                 {
-                    "name": "Guilherme Pires",
-                    "imgDirectory": "Projetos/guilherme_pires.webp",
-                    "email": "guilherme.pires@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/guilhermevpires/"
-                },
-                {
-                    "name": "Jaime Saramago",
-                    "imgDirectory": "Projetos/jaime_saramago.webp",
-                    "email": "jaime.saramago@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/jaimemsaramago"
-                },
-                {
-                    "name": "João Mota",
-                    "imgDirectory": "Projetos/joao_mota.webp",
-                    "email": "joao.mota@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/joaop-mota/"
-                },
-                {
                     "name": "João Perleques",
                     "imgDirectory": "Projetos/joao_perleques.webp",
                     "email": "joao.perleques@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-perleques-3801871a2/"
                 },
                 {
-                    "name": "João Lopes",
-                    "imgDirectory": "Projetos/joao_lopes.webp",
-                    "email": "joao.lopes@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-ricardo-louren%C3%A7o-lopes-572ab9238/"
-                },
-                {
                     "name": "Lara Antunes",
                     "imgDirectory": "Projetos/lara_antunes.webp",
                     "email": "lara.antunes@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/laraantunes003/"
-                },
-                {
-                    "name": "Lucas Girotto",
-                    "imgDirectory": "Projetos/lucas_girotto.webp",
-                    "email": "lucas.girotto@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/lucas-girotto-4530b9233/"
-                },
-                {
-                    "name": "Luís Martins",
-                    "imgDirectory": "Projetos/luis_martins.webp",
-                    "email": "luis.martins@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/luís-martins-2418b2231"
-                },
-                {
-                    "name": "Mafalda Pinto",
-                    "imgDirectory": "Projetos/mafalda_pinto.webp",
-                    "email": "mafalda.pinto@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/mafalda-pinto-bb44a7257"
-                },
-                {
-                    "name": "Margarida Sacramento",
-                    "imgDirectory": "Projetos/margarida_sacramento.webp",
-                    "email": "margarida.sacramento@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/margarida-sacramento/"
                 },
                 {
                     "name": "Maria Penalva",
@@ -327,12 +201,6 @@
                     "linkedin": "https://www.linkedin.com/in/miguel-colla%C3%A7o/"
                 },
                 {
-                    "name": "Miguel Dias",
-                    "imgDirectory": "Projetos/miguel_dias.webp",
-                    "email": "miguel.dias@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/migueldias10/"
-                },
-                {
                     "name": "Miguel Flor",
                     "imgDirectory": "Projetos/miguel_flor.webp",
                     "email": "miguel.flor@innova.pt",
@@ -343,12 +211,6 @@
                     "imgDirectory": "Projetos/miguel_nunes.webp",
                     "email": "miguel.nunes@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/dev-miguel-nunes/"
-                },
-                {
-                    "name": "Nuno Rebolo",
-                    "imgDirectory": "Projetos/nuno_rebolo.webp",
-                    "email": "nuno.rebolo@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/nuno-miguel-rebolo-8712a8210/"
                 },
                 {
                     "name": "Pedro Lopes",
@@ -375,12 +237,6 @@
                     "linkedin": "https://www.linkedin.com/in/tiago-martinhoo/"
                 },
                 {
-                    "name": "Tomás Fernandes",
-                    "imgDirectory": "Projetos/tomas_fernandes.webp",
-                    "email": "tomas.fernandes@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/tomás-monteiro-fernandes-3a8576251"
-                },
-                {
                     "name": "Tomás Trinca",
                     "imgDirectory": "Projetos/tomas_trinca.webp",
                     "email": "tomas.trinca@innova.pt",
@@ -393,23 +249,23 @@
             "director" : 
                 {
                     "title" : "Quality Director",
-                    "name": "Filipa Santos",
-                    "imgDirectory": "Qualidade/filipa_santos.webp",
-                    "email": "filipa.santos@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/filipa-santos-5a949620b/"
+                    "name": "Carolina Soares",
+                    "imgDirectory": "Qualidade/maria_carolina_soares.webp",
+                    "email": "carolina.soares@innova.pt",
+                    "linkedin": "http://www.linkedin.com/in/carolina-soares-01aba2292"
                 },
             "members": [
+                {
+                    "name": "Carolina Mendes",
+                    "imgDirectory": "Qualidade/carolina_mendes.webp",
+                    "email": "liliana.teixeira@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/liliana-teixeira-500144257/"
+                },
                 {
                     "name": "Liliana Teixeira",
                     "imgDirectory": "Qualidade/liliana_teixeira.webp",
                     "email": "liliana.teixeira@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/liliana-teixeira-500144257/"
-                },
-                {
-                    "name": "Maria Carolina Soares",
-                    "imgDirectory": "Qualidade/maria_carolina_soares.webp",
-                    "email": "carolina.soares@innova.pt",
-                    "linkedin": "http://www.linkedin.com/in/carolina-soares-01aba2292"
                 },
                 {
                     "name": "Nuno Duarte",
@@ -428,12 +284,6 @@
                     "imgDirectory": "Qualidade/sofia_candeias.webp",
                     "email": "sofia.candeias@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/sofia-candeias-b147b424a/"
-                },
-                {
-                    "name": "Vasco Deusdado",
-                    "imgDirectory": "Qualidade/vasco_deusdado.webp",
-                    "email": "vasco.deusdado@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/vasco-deusdado-24405526a/"
                 }
             ]
         },
@@ -442,10 +292,10 @@
             "director" : 
                 {
                     "title" : "Human Resources Director",
-                    "name": "Maria Francisca Franco", 
-                    "imgDirectory": "RH/maria_francisca_franco.webp",
-                    "email": "francisca.franco@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/francisca-franco-a6bb14221"
+                    "name": "Pedro Bandarra", 
+                    "imgDirectory": "RH/pedro_bandarra.webp",
+                    "email": "pedro.bandarra@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/pedrobandarra/"
                 },
             "members": [
                 {
@@ -453,12 +303,6 @@
                     "imgDirectory": "RH/beatriz_infante.webp",
                     "email": "beatriz.infante@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/beatriz-infante-b5914a209"
-                },
-                {
-                    "name": "Beatriz Antunes",
-                    "imgDirectory": "RH/beatriz_antunes.webp",
-                    "email": "beatriz.antunes@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/beatriz-antunes-b66565222"
                 },
                 {
                     "name": "Carolina Ferreira",
@@ -485,12 +329,6 @@
                     "linkedin": "https://www.linkedin.com/in/margarida-freitas-36970b293/"
                 },
                 {
-                    "name": "Pedro Bandarra",
-                    "imgDirectory": "RH/pedro_bandarra.webp",
-                    "email": "pedro.bandarra@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/pedrobandarra/"
-                },
-                {
                     "name": "Sofia Pereira",
                     "imgDirectory": "RH/sofia_pereira.webp",
                     "email": "sofia.pereira@innova.pt",
@@ -502,23 +340,23 @@
             "name": "General Assembly",
             "members": [
                 {
-                    "name": "Mafalda Ribeiro", 
-                    "imgDirectory": "MAG/mafalda_ribeiro.webp",
-                    "email": "mafalda.ribeiro@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/mafalda-ribeiro-3ab905220/"
+                    "name": "Catarina Rito",
+                    "imgDirectory": "Marketing/catarina_rito.webp",
+                    "email": "catarina.rito@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/catarina-rito/"
                 },
                 {
-                    "name": "Carolina Mendes",
-                    "imgDirectory": "MAG/carolina_mendes.webp",
-                    "email": "carolina.mendes@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/carolinanmendes/"
+                    "name": "Rafael Abegão",
+                    "imgDirectory": "Qualidade/rafael_abegao.webp",
+                    "email": "rafael.abegao@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/rafael-abeg%C3%A3o-2b69a926a/"
                 },
                 {
-                    "name": "Luís Lamy",
-                    "imgDirectory": "MAG/luis_lamy.webp",
-                    "email": "luis.lamy@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/luís-lamy-553694230"
-                }             
+                    "name": "Bruna Torgal",
+                    "imgDirectory": "Marketing/bruna_torgal.webp",
+                    "email": "bruna.torgal@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/bruna-torgal-166504260/"
+                }           
             ]
         }
         ,
@@ -526,22 +364,22 @@
             "name": "Fiscal Council",
             "members": [
                 {
-                    "name": "Beatriz Rolão",
-                    "imgDirectory": "FC/beatriz_rolao.webp",
-                    "email": "beatriz.rolao@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/beatriz-varandas-rol%C3%A3o-9b9b061bb/"
+                    "name": "Mariana Rocha",
+                    "imgDirectory": "Projetos/mariana_rocha.webp",
+                    "email": "mariana.rocha@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/mariana-rocha-a57531181/"
                 },
                 {
-                    "name": "António Benoliel",
-                    "imgDirectory": "FC/antonio_benoliel.webp",
-                    "email": "antonio.benoliel@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/antónio-benoliel"
+                    "name": "Nuno Duarte",
+                    "imgDirectory": "Qualidade/nuno_duarte.webp",
+                    "email": "nuno.duarte@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/nuno-maria-duarte/"
                 },
                 {
-                    "name": "Rodrigo Rosa",
-                    "imgDirectory": "FC/rodrigo_rosa.webp",
-                    "email": "rodrigo.rosa@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/rodrigo-rosa-6b843519b/"
+                    "name": "Catarina Henriques",
+                    "imgDirectory": "Marketing/catarina_henriques.webp",
+                    "email": "catarina.henriques@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/catarina-henriques-203613252"
                 }
             ]
         }

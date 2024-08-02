@@ -59,7 +59,7 @@ function PortfolioComponent({ image, index }) {
   const renderText = (content) => (
     <div
       style={{
-        padding: mobile || smallMobile ? "5px 20px 30px 20px" : "50px 20px",
+        padding: mobile || smallMobile ? "0px 20px 30px 20px" : "50px 20px",
         margin: mobile || smallMobile ? "0 auto" : "0 0 0 50px",
         width: mobile || smallMobile ? "auto" : "60%",
         display: "flex",
@@ -70,7 +70,7 @@ function PortfolioComponent({ image, index }) {
       <h1>{content.title}</h1>
       <div
         style={{
-          padding: mobile || smallMobile ? "0" : "0 0 20px 25px",
+          padding: mobile || smallMobile ? "0px 0px 10px 0px" : "0 0 20px 25px",
           display: "flex",
           flexDirection: "column",
           rowGap: "10px",

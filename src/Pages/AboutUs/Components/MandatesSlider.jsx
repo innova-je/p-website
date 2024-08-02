@@ -14,7 +14,7 @@ function MandatesSlider() {
         justifyContent: "space-between",
       }}
     >
-      <div style={{ width: "auto", position: "relative" }}>
+      <div style={{ position: "relative" }}>
         <img src={HeroImage} style={{ width: "100%" }} />
         <div
           style={{

@@ -117,7 +117,6 @@ const OurAdvisors = () => {
 
             
         <div className='Alumnis' style={{
-            height: "auto", 
             padding: "0 0 10% 0",
             margin: "5% 0 0 0", 
             zIndex: 1
@@ -131,7 +130,6 @@ const OurAdvisors = () => {
                 alignItems: "center",
                 placeItems: "center",
                 marginTop: mobile ? "15%" : (tablet ? "5%" : "0%") ,
-                height: "auto",
                 marginBottom: mobile ? "30%" : "0%"
             }}>
             <div style={{
@@ -141,7 +139,6 @@ const OurAdvisors = () => {
                 rowGap: (mobile ? "7%" : (tablet ? "10%" : "5%")),
                 marginTop: "5%",
                 columnGap: "10%",
-                height: "auto",
                 //paddingBottom: desktop ? "15%" : tablet ? "30%" : "20%",
                 marginBottom: (mobile ? "20%" : (tablet ? "30%" : "10%")),
                 gridTemplateColumns: (desktop ? "repeat(3, 1fr)" : (tablet ? "repeat(3, 1fr)" : "repeat(2, 1fr)"))

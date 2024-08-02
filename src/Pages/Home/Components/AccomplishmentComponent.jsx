@@ -100,7 +100,6 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
 
   const newsImageStyle = {
     width: "100%", 
-    height: "auto",
     overflow: "hidden", 
     objectFit: "cover", 
     transition: "filter 0.3s ease-in-out",

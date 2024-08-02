@@ -31,7 +31,6 @@ const SocialMedia = () => {
           sx={{
             color: "#052533",
             width: mobile ? "5vh" : "7vh",
-            height: "auto",
           }} />
       </Link>
       <Link href='https://www.linkedin.com/company/innova-consultoria-junior' sx={{
@@ -43,8 +42,7 @@ const SocialMedia = () => {
         <LinkedinIcon
           sx={{
             color: "#052533",
-            width: mobile ? "5vh" : "7vh",
-            height: "auto",
+            width: mobile ? "5vh" : "7vh"
           }} />
       </Link>
     </Box>);
