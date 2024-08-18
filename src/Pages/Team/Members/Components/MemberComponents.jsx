@@ -19,7 +19,7 @@ const CustomComponent = ({ title, name, image, emailAddress, linkedinLink }) => 
   useEffect(() => {
     const loadImage = async () => {
       try {
-        const { default: dynamicImage } = await import(`../../../../images/MemberImages/${image}`);
+        const { default: dynamicImage } = await import(`../../../../Assets/Images/MemberImages/${image}`);
         setDynamicImage(dynamicImage);
       } catch (error) {
         console.error('Error loading image:', error);

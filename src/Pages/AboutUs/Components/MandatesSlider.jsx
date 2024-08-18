@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
-import HeroImage from "../../../images/other/about-us.png";
+import HeroImage from "../../../Assets/Images/other/about-us.png";
 
 function MandatesSlider() {
   return (

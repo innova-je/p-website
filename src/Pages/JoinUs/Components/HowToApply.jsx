@@ -3,17 +3,17 @@ import { Box, Button, Typography, useTheme } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { theme } from '../../../theme'
 
-import { ReactComponent as WriteIcon } from '../../../SVGs/write-icon.svg';
-import { ReactComponent as CameraIcon } from '../../../SVGs/camera-icon.svg';
-import { ReactComponent as GroupIcon } from '../../../SVGs/group-icon.svg';
-import { ReactComponent as ChatIcon } from '../../../SVGs/chat-icon.svg';
-import { ReactComponent as InnovaIcon } from '../../../SVGs/innova-icon.svg';
+import { ReactComponent as WriteIcon } from '../../../Assets/SVGs/write-icon.svg';
+import { ReactComponent as CameraIcon } from '../../../Assets/SVGs/camera-icon.svg';
+import { ReactComponent as GroupIcon } from '../../../Assets/SVGs/group-icon.svg';
+import { ReactComponent as ChatIcon } from '../../../Assets/SVGs/chat-icon.svg';
+import { ReactComponent as InnovaIcon } from '../../../Assets/SVGs/innova-icon.svg';
 
-import fill from '../../../images/other/fill-img.png';
-import record from '../../../images/other/record-img.png';
-import group from '../../../images/other/group-img.png';
-import congrats from '../../../images/other/congrats-img.png';
-import interview from '../../../images/other/interview-img.png';
+import fill from '../../../Assets/Images/other/fill-img.png';
+import record from '../../../Assets/Images/other/record-img.png';
+import group from '../../../Assets/Images/other/group-img.png';
+import congrats from '../../../Assets/Images/other/congrats-img.png';
+import interview from '../../../Assets/Images/other/interview-img.png';
 import { useMediaQuery } from 'react-responsive';
 
 
@@ -88,9 +88,6 @@ const MiddleBox = ({ barheight }) => {
 
     return (
         <>                 
-
-        
-
             {/* Second Box */}
             <Box
                  sx={{
@@ -383,8 +380,8 @@ const HowToApply = ({ progress }) => {
     const largeDesktop = useMediaQuery({ minWidth: 1400 })
 
     return (
-        <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "5% 0 10% 0"}}>
-            <div>
+        <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "3rem 0"}}>
+
             <Typography
                 variant="h2"
                 sx={{
@@ -393,15 +390,15 @@ const HowToApply = ({ progress }) => {
                     fontFamily: theme.typography.fontFamily,
                     fontWeight: 'Bold',
                     fontSize: tablet ? "7dvw" : mobile ? "8dvw" : smallMobile ? '10dvw' : '5.5dvw',
+                    marginBottom: "3rem"
                 }}
             >
                 How to apply?
             </Typography>
-        </div>
+
         <Box
             sx={{
-                position: 'relative',
-                marginTop: '10%',                
+                position: 'relative',        
                 width: tablet ? '60vmax' : mobile ? '75vmin' : smallMobile ? '75dvw' : "70vmax",
                 height: smallMobile ? "140vmin" : (mobile ? "95vmin" : (tablet ? "85vmax" : (smallDesktop ? "55vmax" : desktop ? "60vmax" : "45vmax"))),
                 borderRadius: '20px',

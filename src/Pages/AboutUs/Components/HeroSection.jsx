@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, useTheme } from "@mui/material";
 import { useMediaQuery } from "react-responsive";
-import HeroImage from "../../../images/other/about-us.png";
+import HeroImage from "../../../Assets/Images/other/about-us.png";
 
 function HeroSection() {
   const theme = useTheme();

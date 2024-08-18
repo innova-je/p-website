@@ -1,32 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@emotion/react';
 
 // images
-import android from '../../../images/Icons/android-icon.png';
-import apple from '../../../images/Icons/apple-icon.png';
-import arduino from '../../../images/Icons/arduino-icon.png';
-import canva from '../../../images/Icons/canva-icon.png';
-import excel from '../../../images/Icons/excel-icon.png';
-import figma from '../../../images/Icons/figma-icon.png';
-import github from '../../../images/Icons/github-icon.png';
-import illustrator from '../../../images/Icons/illustrator-icon.png';
-import java from '../../../images/Icons/java-icon.png';
-import javascript from '../../../images/Icons/javascript-icon.png';
-import linkedin from '../../../images/Icons/linkedin-icon.png';
-import notion from '../../../images/Icons/notion-icon.png';
-import photoshop from '../../../images/Icons/photoshop-icon.png';
-import premier from '../../../images/Icons/premier-icon.png';
-import raspberrypi from '../../../images/Icons/raspberrypi-icon.png';
-import react from '../../../images/Icons/react-icon.png';
-import wordpress from '../../../images/Icons/wordpress-icon.png';
-import html from '../../../images/Icons/html-icon.png';
-import css from '../../../images/Icons/css-icon.png';
-import c from '../../../images/Icons/c-icon.png';
-import googlefirebase from '../../../images/Icons/googlefirebase-icon.png';
-import teams from '../../../images/Icons/teams-icon.png';
-import postman from '../../../images/Icons/postman-icon.png';
-import solidworks from '../../../images/Icons/solidworks-icon.png';
+import android from '../../../Assets/Images/Icons/android-icon.png';
+import apple from '../../../Assets/Images/Icons/apple-icon.png';
+import arduino from '../../../Assets/Images/Icons/arduino-icon.png';
+import canva from '../../../Assets/Images/Icons/canva-icon.png';
+import excel from '../../../Assets/Images/Icons/excel-icon.png';
+import figma from '../../../Assets/Images/Icons/figma-icon.png';
+import github from '../../../Assets/Images/Icons/github-icon.png';
+import illustrator from '../../../Assets/Images/Icons/illustrator-icon.png';
+import java from '../../../Assets/Images/Icons/java-icon.png';
+import javascript from '../../../Assets/Images/Icons/javascript-icon.png';
+import linkedin from '../../../Assets/Images/Icons/linkedin-icon.png';
+import notion from '../../../Assets/Images/Icons/notion-icon.png';
+import photoshop from '../../../Assets/Images/Icons/photoshop-icon.png';
+import premier from '../../../Assets/Images/Icons/premier-icon.png';
+import raspberrypi from '../../../Assets/Images/Icons/raspberrypi-icon.png';
+import react from '../../../Assets/Images/Icons/react-icon.png';
+import wordpress from '../../../Assets/Images/Icons/wordpress-icon.png';
+import html from '../../../Assets/Images/Icons/html-icon.png';
+import css from '../../../Assets/Images/Icons/css-icon.png';
+import c from '../../../Assets/Images/Icons/c-icon.png';
+import googlefirebase from '../../../Assets/Images/Icons/googlefirebase-icon.png';
+import teams from '../../../Assets/Images/Icons/teams-icon.png';
+import postman from '../../../Assets/Images/Icons/postman-icon.png';
+import solidworks from '../../../Assets/Images/Icons/solidworks-icon.png';
 import { useMediaQuery } from 'react-responsive';
 
 
@@ -176,7 +176,7 @@ const CirclesComponent = () => {
             )}
 
             {!tablet && (
-                <div style={{ height: "33vw" }}>
+                <div style={{ height: "33vw", padding: "2rem 0 4rem 0" }}>
                     <svg width={screenWidth} height="100%">
                         {/* Circles */}
                         <circle cx={centerX} cy={centerY} r={"47vw"} fill="none" stroke="lightgrey" strokeWidth="1" />

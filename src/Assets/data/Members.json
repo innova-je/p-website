@@ -6,15 +6,15 @@
                 "name": "Inês Mendes",
                 "title": "President",
                 "imgDirectory": "Conselho Executivo/ines_mendes.webp",
-                "email": "ines.costa@innova.pt",
-                "linkedin": "https://www.linkedin.com/in/ineesmcosta/"
+                "email": "ines.mendes@innova.pt",
+                "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
             },
             "externalAffairsVicePresident":{
                 "name": "Catarina Santos",
                 "title": "External Vice-President",
                 "imgDirectory": "Conselho Executivo/catarina_santos.webp",
-                "email": "leonor.almeida@innova.pt",
-                "linkedin": "https://www.linkedin.com/in/leonoraalmeida"
+                "email": "catarina.santos@innova.pt",
+                "linkedin": "www.linkedin.com/in/catarina-santos17"
             },
             "internalAffairsVicePresident":{
                 "name": "Matilde Lopes",
@@ -38,8 +38,8 @@
                     "title" : "Sales Director",
                     "name": "Laura Filipe",
                     "imgDirectory": "Comercial/laura_filipe.webp",
-                    "email": "ines.mendes@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
+                    "email": "laura.filipe@innova.pt",
+                    "linkedin": "www.linkedin.com/in/laura-filipe"
                 },            
             "members": [
                 {
@@ -93,7 +93,7 @@
                 },
                 {
                     "name": "Catarina Henriques",
-                    "imgDirectory": "Marketing/catarina_henriques.webp",
+                    "imgDirectory": "Marketing/catarina_henriques.png",
                     "email": "catarina.henriques@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/catarina-henriques-203613252"
                 },
@@ -112,7 +112,7 @@
                 {
                     "name": "Maria João Canedo",
                     "imgDirectory": "Marketing/maria_joao_canedo.webp",
-                    "email": "mariana.passos@innova.pt",
+                    "email": "maria.canedo@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/maria-jo%C3%A3o-canedo-1a8579293/"
                 }
             ]
@@ -124,8 +124,8 @@
                     "title" : "Projects Director",
                     "name": "Luís Lamy",
                     "imgDirectory": "Projetos/luis_lamy.webp",
-                    "email": "vicente.santos@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/vicenters1/"
+                    "email": "luis.lamy@innova.pt",
+                    "linkedin": "linkedin.com/in/luís-lamy-553694230"
                 },
             "members": [
                 {
@@ -258,8 +258,8 @@
                 {
                     "name": "Carolina Mendes",
                     "imgDirectory": "Qualidade/carolina_mendes.webp",
-                    "email": "liliana.teixeira@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/liliana-teixeira-500144257/"
+                    "email": "carolina.mendes@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/carolinanmendes/"
                 },
                 {
                     "name": "Liliana Teixeira",
@@ -299,12 +299,6 @@
                 },
             "members": [
                 {
-                    "name": "Beatriz Infante",
-                    "imgDirectory": "RH/beatriz_infante.webp",
-                    "email": "beatriz.infante@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/beatriz-infante-b5914a209"
-                },
-                {
                     "name": "Carolina Ferreira",
                     "imgDirectory": "RH/carolina_ferreira.webp",
                     "email": "carolina.ferreira@innova.pt",
@@ -327,12 +321,6 @@
                     "imgDirectory": "RH/margarida_freitas.webp",
                     "email": "margarida.freitas@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/margarida-freitas-36970b293/"
-                },
-                {
-                    "name": "Sofia Pereira",
-                    "imgDirectory": "RH/sofia_pereira.webp",
-                    "email": "sofia.pereira@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/sofia-da-c%C3%A2mara-pereira"
                 }
             ]
         },
@@ -377,7 +365,7 @@
                 },
                 {
                     "name": "Catarina Henriques",
-                    "imgDirectory": "Marketing/catarina_henriques.webp",
+                    "imgDirectory": "Marketing/catarina_henriques.png",
                     "email": "catarina.henriques@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/catarina-henriques-203613252"
                 }

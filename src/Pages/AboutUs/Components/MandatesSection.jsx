@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { IconButton } from "@mui/material";
-import Mandates from "../../../data/Mandates.json";
+import Mandates from "../../../Assets/data/Mandates.json";
 // Import Mandate component
 import Mandate from "./Mandate";
 import { useMediaQuery } from "react-responsive";
@@ -30,7 +30,7 @@ const MandatesSection = () => {
       const importedImages = [];
       for (let mandate of mandates) {
         const { default: image } = await import(
-          `../../../images/Mandates/${mandate.image}`
+          `../../../Assets/Images/Mandates/${mandate.image}`
         );
         importedImages.push(image);
       }

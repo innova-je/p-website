@@ -4,8 +4,8 @@ import { MobileDevelopmentMobile, RoboticsPrototypingMobile, SoftwareSolutionsMo
 const ServicesSlider = () => {
 
   return (
-    <div style={{ width: "100vw" }}>
-        <div style={{ marginTop: "10%" }}>
+    <div style={{ }}>
+        <div style={{ marginTop: "5%" }}>
           <SoftwareSolutionsMobile />
         </div>
         <div style={{ marginTop: "10%" }}>

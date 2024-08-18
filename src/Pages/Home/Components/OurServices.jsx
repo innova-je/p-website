@@ -6,7 +6,7 @@ const OurServices = () => {
   return (
     <div style={{
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "column"
     }}>
         <ServicesSlider></ServicesSlider>
 

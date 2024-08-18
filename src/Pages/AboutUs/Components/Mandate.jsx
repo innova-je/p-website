@@ -7,7 +7,7 @@ const Mandate = ({ title, year, mainAccomplishments, image, currentImageIndex, i
     useEffect(() => {
         const loadImage = async () => {
             try {
-                const { default: dynamicImage } = await import(`../../../images/Mandates/${image}`);
+                const { default: dynamicImage } = await import(`../../../Assets/Images/Mandates/${image}`);
                 setDynamicImage(dynamicImage);
             } catch (error) {
                 console.error('Error loading image:', error);

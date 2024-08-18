@@ -1,8 +1,8 @@
 import React from 'react'
-import Circle1 from '../../../images/Icons/circle1.png'
-import Circle2 from '../../../images/Icons/circle2.png'
-import Circle3 from '../../../images/Icons/circle3.png'
-import Circle4 from '../../../images/Icons/circle4.png'
+import Circle1 from '../../../Assets/Images/Icons/circle1.png'
+import Circle2 from '../../../Assets/Images/Icons/circle2.png'
+import Circle3 from '../../../Assets/Images/Icons/circle3.png'
+import Circle4 from '../../../Assets/Images/Icons/circle4.png'
 
 function ProjectTimeline() {
   return (

@@ -4,10 +4,10 @@ import { Instagram, Email, LinkedIn, ArrowForward } from "@mui/icons-material";
 import { NavLink, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 
-import InNovaLogo10 from "../images/OurLogos/logos-10.png";
-import InNovaLogo2 from "../images/OurLogos/logos-08.png";
-import InNovaLogoServices from "../images/OurLogos/logos-05.png";
-import InNovaLogoServicesMobile from "../images/OurLogos/logos-03.png";
+import InNovaLogo10 from "../Assets/Images/OurLogos/logos-10.png";
+import InNovaLogo2 from "../Assets/Images/OurLogos/logos-08.png";
+import InNovaLogoServices from "../Assets/Images/OurLogos/logos-05.png";
+import InNovaLogoServicesMobile from "../Assets/Images/OurLogos/logos-03.png";
 import CustomButton from "./CustomButton";
 
 function Footer() {

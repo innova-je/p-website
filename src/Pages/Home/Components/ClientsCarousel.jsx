@@ -1,13 +1,13 @@
 import { Box, Typography, styled, keyframes} from '@mui/material'
 import { useMediaQuery } from 'react-responsive';
 
-import Futuralia from '../../../images/HomePageImages/ClientsLogos/FUTURALIA.webp'
-import Sucees from '../../../images/HomePageImages/ClientsLogos/SUCEES.png'
-import Orion from '../../../images/HomePageImages/ClientsLogos/ORION.webp'
-import NovaSST from '../../../images/HomePageImages/ClientsLogos/NOVA_SST.webp'
-import NovaID from '../../../images/HomePageImages/ClientsLogos/NOVA_ID.webp'
-import FatiasDeCa from '../../../images/HomePageImages/ClientsLogos/FATIAS_DE_CA.webp'
-import CardioLeather from '../../../images/HomePageImages/ClientsLogos/CARDIO_LEATHER.webp'
+import Futuralia from '../../../Assets/Images/HomePageImages/ClientsLogos/FUTURALIA.webp'
+import Sucees from '../../../Assets/Images/HomePageImages/ClientsLogos/SUCEES.png'
+import Orion from '../../../Assets/Images/HomePageImages/ClientsLogos/ORION.webp'
+import NovaSST from '../../../Assets/Images/HomePageImages/ClientsLogos/NOVA_SST.webp'
+import NovaID from '../../../Assets/Images/HomePageImages/ClientsLogos/NOVA_ID.webp'
+import FatiasDeCa from '../../../Assets/Images/HomePageImages/ClientsLogos/FATIAS_DE_CA.webp'
+import CardioLeather from '../../../Assets/Images/HomePageImages/ClientsLogos/CARDIO_LEATHER.webp'
 
 const clientsData = [//TODO: arranjar maneira de nao ser preciso duplicar os dados
   //Adicionar links para as páginas dos clientes

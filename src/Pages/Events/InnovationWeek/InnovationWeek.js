@@ -3,8 +3,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/system';
 import { useTheme } from '@mui/material/styles';
-import backgroundImage from '../../../images/other/IW-png.png';
-import IW_Hero from '../../../images/other/IW_Hero.png';
+import backgroundImage from '../../../Assets/Images/other/IW-png.png';
+import IW_Hero from '../../../Assets/Images/other/IW_Hero.png';
 import IW_Images from './Components/IW_Images';
 import Speakers from './Components/Speakers';
 

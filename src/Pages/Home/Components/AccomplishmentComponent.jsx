@@ -17,7 +17,7 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
   useEffect(() => {
     const loadImage = async () => {
       try {
-        const { default: dynamicImage } = await import(`../../../images/HomePageImages/${image}`);
+        const { default: dynamicImage } = await import(`../../../Assets/Images/HomePageImages/${image}`);
         setDynamicImage(dynamicImage);
         
       } catch (error) {
@@ -31,7 +31,7 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
   useEffect(() => {
     const loadImage = async () => {
       try {
-        const { default: dynamicLogo } = await import(`../../../images/HomePageImages/${logo}`);
+        const { default: dynamicLogo } = await import(`../../../Assets/Images/HomePageImages/${logo}`);
         setDynamicLogo(dynamicLogo);
         
       } catch (error) {

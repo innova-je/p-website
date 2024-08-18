@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Box } from '@mui/material';
 import MemberReview from './MemberReview';
-import Testimonials from '../../../data/Testimonials.json'
+import Testimonials from '../../../Assets/data/Testimonials.json'
 import { useMediaQuery } from 'react-responsive';
 
 import Slider from 'react-slick';
@@ -144,21 +144,16 @@ const LogosSlider = () => {
   };
 
   return (
-    <>
-      {isDesktopOrLaptop ? (
+      <div>
+        {isDesktopOrLaptop ? (
         <Box
           sx={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
-            position: 'relative',
-            width: '100%',
-            height: 'auto',
-            overflow: 'visible',
-            padding: '5% 0 5% 0'
+            padding: '5% 0%'
           }}>
-          <Box sx={{ display: 'flex', gap: '1.5rem' }}>
+          <Box sx={{ display: 'flex', gap: '1.5rem'}}>
             {divideIntoRows(testimonials, numColumns).map((row, rowIndex) => (
               <div key={rowIndex} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {row.map((testimonial, index) => (
@@ -175,11 +170,10 @@ const LogosSlider = () => {
           </Box>
         </Box>
       ) : (
-        <div style={{}}>
           <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
             <div key={index}>
-            <div style={{width: "100vw", padding: "7% 0 2% 0", display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <div style={{ padding: "7% 0 2% 0", display: "flex", justifyContent: "center", alignItems: "center", background: "red"}}>
               <MemberReview
                 key={index}
                 image={testimonial.image}
@@ -191,10 +185,9 @@ const LogosSlider = () => {
               </div>
             ))} 
           </Slider>
-        </div>
           
       )}
-    </>
+      </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import SoftwareImg from '../../../images/HomePageImages/SoftwareSolutions.png'
+import SoftwareImg from '../../../Assets/Images/HomePageImages/SoftwareSolutions.png'
 
 function SoftwareSolutions() {
   return (

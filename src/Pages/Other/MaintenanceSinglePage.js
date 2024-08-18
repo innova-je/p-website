@@ -1,6 +1,6 @@
 import { Box, Typography, Link, Grid } from '@mui/material';
 import React from 'react';
-import bgImage from '../../images/other/maintenance_single_page.png';
+import bgImage from '../../Assets/Images/other/maintenance_single_page.png';
 import { useTheme } from '@mui/material/styles';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedinIcon from '@mui/icons-material/LinkedIn';

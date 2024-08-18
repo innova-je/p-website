@@ -11,7 +11,6 @@ const AboutUs = () => {
 
       <div
         style={{
-          width: "100%",
           backgroundImage:
             "linear-gradient(to top, rgba(115,32,67,1), rgba(115,32,67,0))",
         }}

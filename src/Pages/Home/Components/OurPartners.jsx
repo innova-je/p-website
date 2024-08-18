@@ -1,11 +1,11 @@
 import { Box, Typography, styled} from '@mui/material'
 import React from 'react'
-import Fidelidade from '../../../images/HomePageImages/PartnersLogos/FidelidadeLogo.png'
-import Siemens from '../../../images/HomePageImages/PartnersLogos/SiemensLogo.png'
-import Cisco from '../../../images/HomePageImages/PartnersLogos/CiscoLogo.png'
-import Magma from '../../../images/HomePageImages/PartnersLogos/MagmaLogo.png'
-import Meta from '../../../images/HomePageImages/PartnersLogos/MetaLogo.png'
-import OpenBB from '../../../images/HomePageImages/PartnersLogos/OpenBBLogo.png'
+import Fidelidade from '../../../Assets/Images/HomePageImages/PartnersLogos/FidelidadeLogo.png'
+import Siemens from '../../../Assets/Images/HomePageImages/PartnersLogos/SiemensLogo.png'
+import Cisco from '../../../Assets/Images/HomePageImages/PartnersLogos/CiscoLogo.png'
+import Magma from '../../../Assets/Images/HomePageImages/PartnersLogos/MagmaLogo.png'
+import Meta from '../../../Assets/Images/HomePageImages/PartnersLogos/MetaLogo.png'
+import OpenBB from '../../../Assets/Images/HomePageImages/PartnersLogos/OpenBBLogo.png'
 
 import { useMediaQuery } from 'react-responsive';
 

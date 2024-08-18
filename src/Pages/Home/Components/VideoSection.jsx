@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@mui/material";
 import { useMediaQuery } from "react-responsive";
 
-import BgVideo from "../../../videos/HomePageVideo.mp4";
+import BgVideo from "../../../Assets/videos/HomePageVideo.mp4";
 
 function VideoSection() {
   const isMobile = useMediaQuery({ maxWidth: 600 });

@@ -60,7 +60,7 @@ const SoftwareSolutionsMobile = () => (
   
   <ServiceBox
     id="softwareSolutions"
-    imgSrc={require('../../../images/HomePageImages/SoftwareSolutions.png')}
+    imgSrc={require('../../../Assets/Images/HomePageImages/SoftwareSolutions.png')}
     title="Software Solutions"
     description="With tailored solutions and cutting-edge technologies, we craft impactful software that propels businesses forward."
     buttonLabel="Services"
@@ -74,7 +74,7 @@ const MobileDevelopmentMobile = () => {
   return (
   <ServiceBox
   id="MobileDevelopment"
-  imgSrc={require('../../../images/HomePageImages/MobileDevelopment.png')}
+  imgSrc={require('../../../Assets/Images/HomePageImages/MobileDevelopment.png')}
   title="Mobile Development"
   description="In-Nova creates intuitive apps that redefine user experiences and seamless interactions on various devices, empowering digital businesses."
   buttonLabel="Services"
@@ -87,7 +87,7 @@ const MobileDevelopmentMobile = () => {
 const RoboticsPrototypingMobile = () => (
   <ServiceBox
     id="roboticsPrototyping"
-    imgSrc={require('../../../images/HomePageImages/RoboticsPrototyping.png')}
+    imgSrc={require('../../../Assets/Images/HomePageImages/RoboticsPrototyping.png')}
     title="Robotics & Prototyping"
     description="Exploring the frontier of robotics and prototyping. In-Nova pioneers innovative solutions, bringing futuristic concepts to life."
     buttonLabel="Services"

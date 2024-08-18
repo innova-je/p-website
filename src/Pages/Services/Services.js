@@ -1,10 +1,10 @@
 import React from 'react'
 
-import WebappFuturalia from '../../images/other/webapp_futuralia.png'
-import AppThirstPortugal from '../../images/other/ThirstPortugal.png'
+import WebappFuturalia from '../../Assets/Images/other/webapp_futuralia.png'
+import AppThirstPortugal from '../../Assets/Images/other/ThirstPortugal.png'
 import Industries from './Components/Industries'
 import PortfolioComponent from './Components/PortfolioComponent'
-import FigmaWorkshop from '../../images/other/Formação_Figma-removebg-preview 1.png'
+import FigmaWorkshop from '../../Assets/Images/other/Formação_Figma-removebg-preview 1.png'
 import SoftwareSolutions from './Components/SoftwareSolutions'
 import MobileDevelopment from './Components/MobileDevelopment'
 import PortfolioButton from './Components/PortfolioButton'

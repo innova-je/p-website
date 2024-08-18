@@ -1,12 +1,12 @@
 import { Typography } from '@mui/material';
 import React from 'react';
 import { useTheme } from '@mui/material/styles';
-import elements from '../../../images/other/Elements.png';
+import elements from '../../../Assets/Images/other/Elements.png';
 import AdvisorComponent from './Components/AdvisorComponent';
 import AlumniComponent from './Components/AlumniComponent';
 import { useMediaQuery } from 'react-responsive';
 
-import Advisors from '../../../data/Advisors.json'
+import Advisors from '../../../Assets/data/Advisors.json'
 
 const CustomTitle = ({ title, theme }) => { 
 

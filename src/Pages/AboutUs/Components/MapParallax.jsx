@@ -1,7 +1,7 @@
 import React from 'react';
-import Map1 from '../../../images/other/map1.png';
-import Map2 from '../../../images/other/map2.png';
-import Map3 from '../../../images/other/map3.png';
+import Map1 from '../../../Assets/Images/other/map1.png';
+import Map2 from '../../../Assets/Images/other/map2.png';
+import Map3 from '../../../Assets/Images/other/map3.png';
 import { Box, Typography } from '@mui/material';
 import { theme } from '../../../theme';
 import { useMediaQuery } from 'react-responsive';

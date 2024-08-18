@@ -1,6 +1,6 @@
 import { Box, Typography, Button } from '@mui/material';
 import React from 'react';
-import bgImage from '../../images/other/404.png';
+import bgImage from '../../Assets/Images/other/404.png';
 import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 

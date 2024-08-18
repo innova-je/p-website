@@ -1,7 +1,7 @@
-import img1 from '../../../../images/other/IW-png.png';
-import img2 from '../../../../images/other/404.png';
-import img3 from '../../../../images/other/ThirstPortugal.png';
-import img4 from '../../../../images/other/GuiaDoCandidato.png';
+import img1 from '../../../../Assets/Images/other/IW-png.png';
+import img2 from '../../../../Assets/Images/other/404.png';
+import img3 from '../../../../Assets/Images/other/ThirstPortugal.png';
+import img4 from '../../../../Assets/Images/other/GuiaDoCandidato.png';
 
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';

@@ -1,5 +1,5 @@
 import React from "react";
-import CheckIcon from "../../../images/other/simple-line-icons_check.png";
+import CheckIcon from "../../../Assets/Images/other/simple-line-icons_check.png";
 import { useMediaQuery } from "react-responsive";
 
 const textContent = [

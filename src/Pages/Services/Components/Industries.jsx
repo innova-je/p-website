@@ -1,5 +1,5 @@
 import React from 'react';
-import FillImage from '../../../images/other/maki_theatre.png';
+import FillImage from '../../../Assets/Images/other/maki_theatre.png';
 
 function Industries() {
   return (

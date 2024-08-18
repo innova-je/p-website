@@ -9,7 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import MagicSliderDots from 'react-magic-slider-dots';
 import 'react-magic-slider-dots/dist/magic-dots.css';
 
-import AccomplishmentsData from '../../../data/Accomplishments.json'
+import AccomplishmentsData from '../../../Assets/data/Accomplishments.json'
 
 const AccomplishmentSlider = () => {
   const mobile = useMediaQuery({ maxWidth: 600 });

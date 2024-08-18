@@ -9,7 +9,7 @@ import {
   useTheme,
 } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import LogoImage from "../images/OurLogos/logos-02.png";
+import LogoImage from "../Assets/Images/OurLogos/logos-02.png";
 import { useMediaQuery } from "react-responsive";
 import BgMenu from "./BgMenu";
 

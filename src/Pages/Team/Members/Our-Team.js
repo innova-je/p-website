@@ -1,14 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import React, { useRef } from "react";
 import { useTheme } from "@mui/material/styles";
-import HeroImage from "../../../images/other/CurrentMandate.webp";
-import elements from "../../../images/other/Elements.png";
+import HeroImage from "../../../Assets/Images/other/CurrentMandate.webp";
+import elements from "../../../Assets/Images/other/Elements.png";
 import CustomComponent from "./Components/MemberComponents";
 import CustomDepartment from "./Components/CustomDepartment";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import laso from "../../../Animations/laso-animation.json";
 
-import Members from "../../../data/Members.json";
+import Members from "../../../Assets/data/Members.json";
 import { useMediaQuery } from "react-responsive";
 
 const CustomTitle = ({ title, subtitle, theme, sizeTitle, sizeSubTitle }) => {

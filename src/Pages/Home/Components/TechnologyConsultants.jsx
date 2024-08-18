@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import React from "react";
-import HomePageImg from "../../../images/MaintenancePageImages/In.Nova_III-JE-Portugal-224_1.webp";
+import HomePageImg from "../../../Assets/Images/MaintenancePageImages/In.Nova_III-JE-Portugal-224_1.webp";
 import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 

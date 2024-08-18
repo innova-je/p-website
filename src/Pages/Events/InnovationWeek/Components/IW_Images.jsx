@@ -5,11 +5,11 @@ import { styled } from "@mui/system";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useMediaQuery } from "react-responsive";
 
-import img1 from "../../../../images/other/IW-png.png";
-import img2 from "../../../../images/other/404.png";
-import img3 from "../../../../images/other/ThirstPortugal.png";
-import img4 from "../../../../images/other/GuiaDoCandidato.png";
-import img5 from "../../../../images/other/joinus-outofoffice.png";
+import img1 from "../../../../Assets/Images/other/IW-png.png";
+import img2 from "../../../../Assets/Images/other/404.png";
+import img3 from "../../../../Assets/Images/other/ThirstPortugal.png";
+import img4 from "../../../../Assets/Images/other/GuiaDoCandidato.png";
+import img5 from "../../../../Assets/Images/other/joinus-outofoffice.png";
 
 // Import Slick Carousel
 import "slick-carousel/slick/slick.css";
