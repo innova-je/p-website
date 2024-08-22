@@ -1,5 +1,4 @@
 import React from "react";
-
 import TechnologyConsultants from "./Components/TechnologyConsultants";
 import StatsSection from "./Components/StatsSection";
 import OurServices from "./Components/OurServices";
@@ -10,7 +9,7 @@ import VideoSection from "./Components/VideoSection";
 
 const Home = () => {
   return (
-    <div
+    <main
       style={{
         backgroundColor: "#F0F0F0",
         overflow: "hidden",
@@ -19,8 +18,7 @@ const Home = () => {
       <VideoSection />
       <TechnologyConsultants />
       <StatsSection />
-
-      <div
+      <section
         style={{
           background:
             "linear-gradient(to bottom, rgba(115, 32, 67, 1), rgba(115, 32, 67, 0))",
@@ -28,14 +26,11 @@ const Home = () => {
         }}
       >
         <OurServices />
-        <div style={{ marginTop: "12%" }}>
-          <AccomplishmentSlider />
-        </div>
-      </div>
-
+        <AccomplishmentSlider />
+      </section>
       <ClientsCarousel />
       <OurPartners />
-    </div>
+    </main>
   );
 };
 

@@ -9,45 +9,30 @@ import TestimonialsSection from "./Components/TestimonialsSection";
 import CandidateGuideSection from "./Components/CandidateGuideSection";
 
 const JoinUs = () => {
-  const smallMobile = useMediaQuery({ maxWidth: 550 });
-  const mobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
-  const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+  const isSmallMobile = useMediaQuery({ maxWidth: 550 });
+  const isMobile = useMediaQuery({ minWidth: 551, maxWidth: 767 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+
+  const marginTop = isSmallMobile || isMobile || isTablet ? "10%" : "0";
 
   return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          width: "100%",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "relative",
-          zIndex: "0",
-          background: "#F0F0F0",
-          overflow: "hidden",
-        }}
-      >
-        <HeroSection />
-
-        <Technologies />
-
-        <OutOfOfficeSection />
-
-        <TestimonialsSection />
-
-        <div
-          style={{
-            marginTop: smallMobile || mobile || tablet ? "10%" : 0,
-          }}
-        >
-          {/* progress * 6.5 */}
-          <HowToApply progress={0} />
-        </div>
-
-        <CandidateGuideSection />
-      </div>
+    <div
+      style={{
+        background: "#F0F0F0",
+        overflow: "hidden",
+        position: "relative",
+        zIndex: 0,
+      }}
+    >
+      <HeroSection />
+      <Technologies />
+      <OutOfOfficeSection />
+      <TestimonialsSection />
+      <section style={{ marginTop }}>
+        <HowToApply progress={0} />
+      </section>
+      <CandidateGuideSection />
+    </div>
   );
 };
 

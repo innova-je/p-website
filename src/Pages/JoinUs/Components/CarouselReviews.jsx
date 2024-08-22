@@ -173,7 +173,7 @@ const LogosSlider = () => {
           <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
             <div key={index}>
-            <div style={{ padding: "7% 0 2% 0", display: "flex", justifyContent: "center", alignItems: "center", background: "red"}}>
+            <div style={{ padding: "7% 0 2% 0", display: "flex", justifyContent: "center", alignItems: "center"}}>
               <MemberReview
                 key={index}
                 image={testimonial.image}

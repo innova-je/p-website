@@ -32,7 +32,7 @@ const AccomplishmentSlider = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: "12%"}}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Typography
           style={{
@@ -86,7 +86,7 @@ const AccomplishmentSlider = () => {
       )}
 
       {tablet && (
-        <div style={{width: "100vw"}}>
+        <div>
         <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row", gap: "5%", marginTop: "5%"}}>
           {accomplishments.map((accomplishment, index) => (
             <Accomplishment

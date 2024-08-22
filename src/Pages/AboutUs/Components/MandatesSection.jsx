@@ -152,7 +152,7 @@ const MandatesSection = () => {
       )}
 
       {isDesktopOrLaptop && (
-        <div style={{display: "flex", flexDirection: "column"}}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
               display: "flex",
@@ -188,33 +188,6 @@ const MandatesSection = () => {
               </div>
             ))}
           </div>
-          <div style={{display:"flex", flexDirection: "row", gap: "2rem", margin: "0 auto"}}>
-            <IconButton
-            variant="contained"
-            onClick={handlePrevClick}
-            sx={{
-              color: "primary.main",
-              "&:hover": {
-                color: "white",
-              },
-            }}
-          >
-            <ArrowBackIosIcon sx={{ fontSize: "2.5rem" }} />
-          </IconButton>
-          <IconButton
-            variant="contained"
-            onClick={handleNextClick}
-            sx={{
-              color: "primary.main",
-              "&:hover": {
-                color: "white",
-              },
-            }}
-          >
-            <ArrowForwardIosIcon sx={{ fontSize: "2.5rem" }} />
-          </IconButton>
-          </div>
-          
         </div>
       )}
     </>

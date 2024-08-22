@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Button, Typography, useTheme } from "@mui/material";
 import HeroImage from "../../../Assets/Images/other/Join_us_image.webp";
 import CountDownRecruitment from "./CountDownRecruitment";
 import { useMediaQuery } from "react-responsive";
@@ -12,7 +12,7 @@ function HeroSection() {
   const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
 
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
+    <div style={{ height: "100vh" }}>
       <div
         style={{
           height: "100%",
@@ -24,7 +24,7 @@ function HeroSection() {
         <div
           style={{
             height: "100vh",
-            width: "100vw",
+            width: "100%",
             overflow: "hidden",
             zIndex: -1,
             position: "absolute",

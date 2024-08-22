@@ -4,6 +4,8 @@ import Button from "@mui/material/Button";
 import { styled } from "@mui/system";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useMediaQuery } from "react-responsive";
+import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material/styles';
 
 import img1 from "../../../../Assets/Images/other/IW-png.png";
 import img2 from "../../../../Assets/Images/other/404.png";
@@ -106,8 +108,11 @@ const ImageCycle = () => {
     },
   };
 
+  const theme = useTheme();
+
   return (
-    <>
+    <main style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+    <Typography variant="h4" sx={{ color: theme.palette.secondary.main, textAlign: "center", marginTop: "6dvw" }}>MOMENTS THAT DEFINE INNOVATION WEEK</Typography>
       {!isDesktopOrLaptop && (
         <Box
           display="flex"
@@ -150,7 +155,7 @@ const ImageCycle = () => {
           </Box>
         </Box>
       )}
-    </>
+    </main>
   );
 };
 

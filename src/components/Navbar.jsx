@@ -66,8 +66,6 @@ const Navbar = () => {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop > 250 && lastScrollTop < scrollTop) {
-        console.log("scrollTop: " + scrollTop)
-        console.log("lastScrollTop: " + lastScrollTop)
         setScrollDirection("down");
       } else if(lastScrollTop > scrollTop) {
         setScrollDirection("up");
@@ -78,6 +76,11 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const handleMenuClick = (event, dropdown) => {
     setAnchorEl((prev) => ({ ...prev, [dropdown]: event.currentTarget }));
@@ -127,10 +130,6 @@ const Navbar = () => {
     </React.Fragment>
   );
 
-  const handleNavLinkClick = () => {
-    window.scrollTo(0, 0);
-  };
-
   const isIOS = useMemo(() => {
     const userAgent = window.navigator.userAgent.toLowerCase();
     return /iphone|ipad|ipod/.test(userAgent);
@@ -145,9 +144,9 @@ const Navbar = () => {
       style={{
         background: isInnovationWeek ? "#FFFFFF80" : "#FFFFFF"  ,
         boxShadow: "none",
-        opacity: scrollDirection === "down" ? 0 : 1,
-        left: 0,
-        transition: "opacity 0.4s linear",
+        top: scrollDirection === "up" ? 0 : "-4rem",
+        position: "fixed",
+        transition: "top 0.4s ease-in-out",
         height: "4rem"
       }}
     >
@@ -240,7 +239,6 @@ const Navbar = () => {
         >
           <NavLink
             to="/join-us"
-            onClick={handleNavLinkClick}
             style={{
               position: "relative",
               display: isTablet || isDesktop ? "flex" : "none",

@@ -61,7 +61,6 @@ const MaintenanceSinglePage = () => {
         sx={{
           opacity: 0.25, // apply opacity to the outer Box component
           height: '100vh',
-          width: '100vw',
           position: 'relative', // change position to relative
           overflow: 'hidden', // hide any overflow
         }}
@@ -84,7 +83,7 @@ const MaintenanceSinglePage = () => {
         
       </Box>
 
-      <div style={{position: "absolute", widt: "auto", height: "100%", top: "0%", overflow: "hidden"}}>
+      <div style={{position: "absolute", height: "100%", top: "0%", overflow: "hidden"}}>
         <Grid style={{display: "flex", flexDirection: "column", gap: mobile ? "5%" : "10%", justifyContent: desktop
        ? "left" : "center", alignItems: "center", overflow: "hidden", height: "100%"}}> 
           <div style={{width: "80%"}}>

@@ -6,10 +6,10 @@ import JESection from "./Components/JESection";
 
 const AboutUs = () => {
   return (
-    <>
+    <main>
       <HeroSection />
 
-      <div
+      <section
         style={{
           backgroundImage:
             "linear-gradient(to top, rgba(115,32,67,1), rgba(115,32,67,0))",
@@ -17,10 +17,10 @@ const AboutUs = () => {
       >
         <ValuesSection />
         <MandatesSection />
-      </div>
+      </section>
 
       <JESection />
-    </>
+    </main>
   );
 };
 

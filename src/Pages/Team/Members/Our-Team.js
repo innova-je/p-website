@@ -78,7 +78,7 @@ const OurTeam = () => {
   const lasoRef = useRef < LottieRefCurrentProps > null;
 
   return (
-    <>
+    <main>
       <Box sx={{ position: "relative", top: "60px", height: "72dvw" }}>
         <img
           style={{
@@ -271,7 +271,7 @@ const OurTeam = () => {
         {/* Fiscal Council */}
         <CustomDepartment department={fiscalCouncil} />
       </div>
-    </>
+    </main>
   );
 };
 
