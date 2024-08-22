@@ -16,7 +16,7 @@ const AboutUs = () => {
         }}
       >
         <ValuesSection />
-        <MandatesSection />
+        {/*<MandatesSection /> */}        
       </section>
 
       <JESection />
