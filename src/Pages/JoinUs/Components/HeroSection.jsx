@@ -48,35 +48,35 @@ function HeroSection() {
             style={{
               display: "flex",
               flexDirection: "column",
-              height: "auto",
               width: "100%",
-              alignItems: "center",
+              alignItems: "center"
             }}
           >
             <Typography
               variant="h2"
               sx={{
-                fontWeight: "600",
+                fontWeight: 700,
                 fontSize: tablet
                   ? "5.5dvw"
                   : mobile
                   ? "6dvw"
                   : smallMobile
                   ? "8dvw"
-                  : "5dvw",
+                  : "3.5rem",
                 position: "relative",
-                color: theme.palette.secondary.main,
+                color: theme.palette.primary.main,
                 fontFamily: theme.typography.fontFamily,
                 zIndex: "1",
                 textAlign: "center",
                 padding: "5rem 0 3rem 0",
               }}
             >
-              Want to {smallMobile && <br />} become one of us?
+              WANT TO {smallMobile && <br />} BECOME ONE OF US?
             </Typography>
 
             <CountDownRecruitment />
 
+            {/* 
             <div style={{ padding: "5rem 0 0 0" }}>
               <Button
                 variant="contained"
@@ -99,6 +99,9 @@ function HeroSection() {
                 Apply Now!
               </Button>
             </div>
+            
+            
+            */}
           </div>
         </div>
       </div>
