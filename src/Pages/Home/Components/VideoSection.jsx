@@ -1,10 +1,11 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import { useMediaQuery } from "react-responsive";
 
 import BgVideo from "../../../Assets/videos/HomePageVideo.mp4";
 
 function VideoSection() {
+  const theme = useTheme();
   const isMobile = useMediaQuery({ maxWidth: 600 });
   const isTablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
 
@@ -87,7 +88,7 @@ function VideoSection() {
                   fontWeight: 500,
                   fontSize: smallFontSize,
                   letterSpacing,
-                  color: "#052533",
+                  color: theme.palette.secondary.main,
                 }}
               >
                 with

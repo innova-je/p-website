@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Link, Typography, useTheme } from "@mui/material";
+import { Button, Typography, useTheme } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import joinus_oof from "../../../Assets/Images/other/joinus-outofoffice.png";
 import joinus_oof2 from "../../../Assets/Images/other/joinus-outofoffice2.png";
@@ -78,7 +78,7 @@ function OutOfOfficeSection() {
         </h3>
         <Typography
           variant="h4"
-          sx={{
+          style={{
             position: "relative",
             color: theme.palette.secondary.main,
             fontFamily: theme.typography.fontFamily,
@@ -99,7 +99,7 @@ function OutOfOfficeSection() {
         </Typography>
         <Typography
           variant="h3"
-          sx={{
+          style={{
             color: theme.palette.secondary.main,
             fontFamily: theme.typography.fontFamily,
             fontWeight: "bold",
@@ -121,7 +121,7 @@ function OutOfOfficeSection() {
           <Button
             variant="contained"
             endIcon={<ArrowForwardIcon />}
-            sx={{
+            style={{
               borderRadius: "10px",
               py: "10px",
               px: "25px",

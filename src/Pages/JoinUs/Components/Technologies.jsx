@@ -80,7 +80,7 @@ const CirclesComponent = () => {
                 <div>
                     <div style={{ height: "35vw", display: "flex", alignItems: "center", flexDirection: "column", justifyContent: 'flex-start' }}>
                         <Typography variant="h4"
-                            sx={{
+                            style={{
                                 color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'Semi-Bold',
@@ -91,7 +91,7 @@ const CirclesComponent = () => {
                             You will
                         </Typography>
                         <Typography variant="h2"
-                            sx={{
+                            style={{
                                 color: theme.palette.primary.main,
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'Bold',
@@ -101,7 +101,7 @@ const CirclesComponent = () => {
                             learn something
                         </Typography>
                         <Typography variant="h3"
-                            sx={{
+                            style={{
                                 color: theme.palette.primary.main,
                                 fontFamily: theme.typography.fontFamily,
                                 fontWeight: 'bold',
@@ -112,7 +112,7 @@ const CirclesComponent = () => {
                             every.single.day
                         </Typography>
                         <Typography variant="body1"
-                            sx={{
+                            style={{
                                 textAlign: 'center',
                                 color: theme.palette.secondary.main,
                                 fontFamily: theme.typography.fontFamily,

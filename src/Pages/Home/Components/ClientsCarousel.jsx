@@ -1,4 +1,4 @@
-import { Box, Typography, styled, keyframes} from '@mui/material'
+import { Typography, styled, keyframes, useTheme} from '@mui/material'
 import { useMediaQuery } from 'react-responsive';
 
 import Futuralia from '../../../Assets/Images/HomePageImages/ClientsLogos/FUTURALIA.webp'
@@ -22,11 +22,12 @@ const clientsData = [//TODO: arranjar maneira de nao ser preciso duplicar os dad
 
 const ClientsCarousel = () => {
 
+  const theme = useTheme();
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
   const desktop = useMediaQuery({ minWidth: 1081 });
 
-  const ClientsBox = styled(Box)(() => ({
+  const ClientsBox = styled('div')(() => ({
     position: "relative",
     marginTop: desktop ? "5%" : (tablet ? "7%" : "15%"),
     justifyContent: "center",
@@ -60,14 +61,14 @@ const ClientsCarousel = () => {
     width: "100%",
     textAlign: "center",
     justifyContent: "center",
-    color: "#732043",
+    color: theme.palette.primary.main,
     fontWeight: "700",
     fontSize: (desktop ? "3.5dvw" : (tablet ? "4dvw" : "6dvw")),
   };
 
   return (
     <ClientsBox className="clients-box">
-      <Typography style={ClientsAndPartnersStyle}>Who Trusted Us</Typography>
+      <Typography sx={ClientsAndPartnersStyle}>Who Trusted Us</Typography>
       <div>
         <LogosSlide className="logos-slide">
         {clientsData.map((client, index) => (

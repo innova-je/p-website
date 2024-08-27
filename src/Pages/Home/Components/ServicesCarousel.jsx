@@ -60,20 +60,20 @@ const ServicesCarousel = () => {
       height: "5vh"
     }}>
 
-      <div className='card' style={{ position: "absolute" }}></div>
+      <div className='card' style={{ position: "absolute" }} />
       <div className='card' style={{ position: "absolute" }}>
         <div style={{ transform: "scale(1)" }}>
-        <SoftwareSolutions></SoftwareSolutions>
+        <SoftwareSolutions />
         </div>
       </div>
       <div className='card' style={{ position: "absolute" }}>
         <div style={{ transform: "scale(1)" }}>
-          <MobileDevelopment></MobileDevelopment>
+          <MobileDevelopment />
         </div>
       </div>
       <div className='card' style={{ position: "absolute" }}>
         <div style={{ transform: "scale(1)" }}>          
-          <RoboticsPrototyping></RoboticsPrototyping>
+          <RoboticsPrototyping />
         </div>
       </div>
 

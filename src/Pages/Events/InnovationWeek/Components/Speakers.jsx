@@ -3,36 +3,42 @@ import img2 from '../../../../Assets/Images/other/404.png';
 import img3 from '../../../../Assets/Images/other/ThirstPortugal.png';
 import img4 from '../../../../Assets/Images/other/GuiaDoCandidato.png';
 
+import KatarinaLarsson from '../../../../Assets/Images/InnovationWeek/Speakers/katarina_larsson.png';
+import PauloFerreira from '../../../../Assets/Images/InnovationWeek/Speakers/paulo_ferreira.png';
+import MariaSaraiva from '../../../../Assets/Images/InnovationWeek/Speakers/maria_saraiva.png';
+import NeuzaTeixeira from '../../../../Assets/Images/InnovationWeek/Speakers/neuza_teixeira.png';
+
+
 import React, { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useTheme } from '@emotion/react';
+import { useMediaQuery } from "react-responsive";
 
 const speakersData = {
     '1st Edition': [
-        { name: 'Katarina Larsson', title: 'Factory Logistics Manager', company: 'Philip Morris International', image: img1 },
-        { name: 'Paulo Ferreira', title: 'Manager Adsales & Partnership', company: 'The Walt Disney Company', image: img2 },
-        { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: img3 },
-        { name: 'Neuza Teixeira', title: 'Country Medical Manager', company: 'GSK', image: img4 },
-        { name: 'Katarina Larsson', title: 'Factory Logistics Manager', company: 'Philip Morris International', image: img1 },
-        { name: 'Paulo Ferreira', title: 'Manager Adsales & Partnership', company: 'The Walt Disney Company', image: img2 },
-        { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: img3 },
-        { name: 'Neuza Teixeira', title: 'Country Medical Manager', company: 'GSK', image: img4 },
+        { name: 'Katarina Larsson', title: 'Factory Logistics Manager', company: 'Philip Morris International', image: KatarinaLarsson },
+        { name: 'Paulo Ferreira', title: 'Manager Adsales & Partnership', company: 'The Walt Disney Company', image: PauloFerreira },
+        { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: MariaSaraiva },
+        { name: 'Neuza Teixeira', title: 'Country Medical Manager', company: 'GSK', image: NeuzaTeixeira },
+        { name: 'Katarina Larsson', title: 'Factory Logistics Manager', company: 'Philip Morris International', image: KatarinaLarsson },
+        { name: 'Paulo Ferreira', title: 'Manager Adsales & Partnership', company: 'The Walt Disney Company', image: PauloFerreira },
+        { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: MariaSaraiva },
+        { name: 'Neuza Teixeira', title: 'Country Medical Manager', company: 'GSK', image: NeuzaTeixeira }        
     ],
     '2nd Edition': [
-        { name: 'Neuza Teixeira', title: 'Country Medical Manager', company: 'GSK', image: img4 },
-        { name: 'Paulo Ferreira', title: 'Manager Adsales & Partnership', company: 'The Walt Disney Company', image: img2 },
-        { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: img3 },
-        { name: 'Katarina Larsson', title: 'Factory Logistics Manager', company: 'Philip Morris International', image: img1 },
+        { name: 'Neuza Teixeira', title: 'Country Medical Manager', company: 'GSK', image: NeuzaTeixeira },
+        { name: 'Paulo Ferreira', title: 'Manager Adsales & Partnership', company: 'The Walt Disney Company', image: PauloFerreira },
+        { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: MariaSaraiva },
+        { name: 'Katarina Larsson', title: 'Factory Logistics Manager', company: 'Philip Morris International', image: KatarinaLarsson },
     ],
     '3rd Edition': [
-        { name: 'Paulo Ferreira', title: 'Manager Adsales & Partnership', company: 'The Walt Disney Company', image: img2 },
-        { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: img3 },
-        { name: 'Katarina Larsson', title: 'Factory Logistics Manager', company: 'Philip Morris International', image: img1 },
-        { name: 'Neuza Teixeira', title: 'Country Medical Manager', company: 'GSK', image: img4 },
+        { name: 'Paulo Ferreira', title: 'Manager Adsales & Partnership', company: 'The Walt Disney Company', image: PauloFerreira },
+        { name: 'Maria Saraiva', title: 'Strategy and Operations', company: 'Google EMEA', image: MariaSaraiva },
+        { name: 'Katarina Larsson', title: 'Factory Logistics Manager', company: 'Philip Morris International', image: KatarinaLarsson },
+        { name: 'Neuza Teixeira', title: 'Country Medical Manager', company: 'GSK', image: NeuzaTeixeira },
     ],
 };
 
@@ -55,66 +61,119 @@ const Speakers = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + speakers.length) % speakers.length);
     };
 
-    const getDisplayedSpeakers = () => {
-        if (speakers.length <= 4) {
+    const getDisplayedSpeakers = (numToShow) => {
+        if (speakers.length <= numToShow) {
             return speakers;
         }
         return [
-            ...speakers.slice(currentIndex, currentIndex + 4),
-            ...speakers.slice(0, Math.max(0, (currentIndex + 4) - speakers.length))
+            ...speakers.slice(currentIndex, currentIndex + numToShow),
+            ...speakers.slice(0, Math.max(0, (currentIndex + numToShow) - speakers.length))
         ];
     };
 
+    const isMobile = useMediaQuery({ maxWidth: 600 });
+    const isTablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
+    const isDesktop = useMediaQuery({ minWidth: 1081 });
+
+    const speakersToShow = isMobile ? 1 : isTablet ? 2 : 4;
+
     return (
-        <Box sx={{ textAlign: 'center', backgroundColor: theme.palette.secondary.main, overflow: "hidden" }}>
-            <Box sx={{display: 'flex', justifyContent: 'center', gap: '3vw', marginBottom: '4vw' }}>
+        <div style={{ textAlign: 'center', backgroundColor: theme.palette.secondary.main, overflow: "hidden", padding: '2rem 0' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '2vw', marginBottom: '2rem' }}>
                 {Object.keys(speakersData).map((edition) => (
                     <Button
-                        key={edition}
-                        variant={selectedEdition === edition ? 'contained' : 'outlined'}
-                        onClick={() => setSelectedEdition(edition)}
-                        sx={{
-                            borderRadius: '2dvw',
-                            padding: '1vw 4vw',
-                            backgroundColor: selectedEdition === edition ? '#559FA2' : 'white',
-                            color: selectedEdition === edition ? 'white' : theme.palette.secondary.main,
-                            textTransform: 'none',
-                            fontWeight:"Bold",
-                            fontSize:"1.2dvw",
-                            '&:hover': {
-                                backgroundColor: '#559FA2',
-                                color: 'white'
-                            }
-                        }}
-                    >
-                        {edition}
-                    </Button>
+                    key={edition}
+                    variant={selectedEdition === edition ? 'contained' : 'outlined'}
+                    onClick={() => setSelectedEdition(edition)}
+                    style={{
+                        borderRadius: isMobile ? "4dvw" : '2dvw',
+                        padding: isMobile ? "1vw 4vw" : '1vw 4vw',
+                        backgroundColor: selectedEdition === edition ? '#559FA2' : 'white',
+                        color: selectedEdition === edition ? 'white' : theme.palette.secondary.main,
+                        textTransform: 'none',
+                        fontWeight:"Bold",
+                        fontSize: isMobile ? "0.9rem" : "1.2dvw",
+                        '&:hover': {
+                            backgroundColor: '#559FA2',
+                            color: 'white'
+                        }
+                    }}
+                >
+                    {edition}
+                </Button>
                 ))}
-            </Box>
+            </div>
 
-            <Typography variant="h3" sx={{ marginBottom: '3vw', color: 'white' }}>SPEAKERS</Typography>
+            <Typography variant="h3" style={{ fontSize: isMobile ? "1.5rem" : isTablet ? "2.5rem" : "3rem", marginBottom: '2rem', color: 'white' }}>
+                SPEAKERS
+            </Typography>
 
             {speakers.length > 0 ? (
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1vw', width: '100%' }}>
-                    <ArrowBackIosIcon onClick={handlePrev} sx={{ position:"absolute", zIndex:1, left:30, cursor: 'pointer', color: 'white' }} />
-                    <Box sx={{ display: 'flex', gap: '0.1vw', justifyContent: 'center' }}> 
-                        {getDisplayedSpeakers().map((speaker, index) => (
-                            <Box key={index} sx={{ textAlign: 'left', position: 'relative', minWidth: '200px' }}>
-                                <img src={speaker.image} alt={speaker.name} style={{ width: '24.8dvw', height: '400px', objectFit: 'cover' }} />
-                                <Box sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(85, 159, 162, 0.24)', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start', padding: '20px', boxSizing: 'border-box' }}>
-                                    <Typography variant="h5" sx={{ fontSize:"3dvw", fontWeight:"300", lineHeight:1, marginBottom:"0.5dvw"}}>{speaker.name}</Typography>
-                                    <Typography variant="body1" sx={{ fontSize:"1dvw", fontWeight:"300" }}>{speaker.title}</Typography>
-                                    <Typography variant="body1" sx={{ fontSize:"1dvw", fontWeight:"300"}}>{speaker.company}</Typography>
-                                </Box>
-                            </Box>
+                <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <ArrowBackIosIcon
+                        onClick={handlePrev}
+                        style={{
+                            position: "absolute",
+                            zIndex: 1,
+                            left: isMobile ? 25 : 35,
+                            cursor: 'pointer',
+                            color: 'white',
+                            fontSize: isMobile ? "2rem" : "3rem"
+                        }}
+                    />
+                    <div style={{ display: 'flex', gap:'1rem', justifyContent: 'center', maxWidth: isTablet ? "70vw" : '85vw', overflow: 'hidden' }}>
+                        {getDisplayedSpeakers(speakersToShow).map((speaker, index) => (
+                            <div key={index} style={{ position: 'relative', width: isMobile ? "70vw" : "50%", border: "1px solid white", 
+                                borderRadius: '20px', }}>
+                                <img
+                                    src={speaker.image}
+                                    alt={speaker.name}
+                                    style={{
+                                        width: '100%',
+                                        height:  "400px",
+                                        objectFit: 'cover',
+                                        borderRadius: '20px',
+                                    }}
+                                />
+                                <div style={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    height: '100%',
+                                    background: 'rgba(85, 159, 162, 0.5)',
+                                    color: 'white',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'flex-end',
+                                    alignItems: 'flex-start',
+                                    padding: '1rem',
+                                    boxSizing: 'border-box',
+                                    borderRadius: '20px',
+                                }}>
+                                    <Typography variant="h5" style={{ fontSize: isMobile ? "1.2rem" : "1.5rem", fontWeight: "bold" }}>{speaker.name}</Typography>
+                                    <Typography variant="body1" style={{ fontSize: isMobile ? "0.8rem" : "1rem" }}>{speaker.title}</Typography>
+                                    <Typography variant="body1" style={{ fontSize: isMobile ? "0.8rem" : "1rem" }}>{speaker.company}</Typography>
+                                </div>
+                            </div>
                         ))}
-                    </Box>
-                    <ArrowForwardIosIcon onClick={handleNext} sx={{position:"absolute", zIndex:1, right:30, cursor: 'pointer', color: 'white' }} />
-                </Box>
+                    </div>
+                    <ArrowForwardIosIcon
+                        onClick={handleNext}
+                        style={{
+                            position: "absolute",
+                            zIndex: 1,
+                            right: isMobile ? 25 : 35,
+                            cursor: 'pointer',
+                            color: 'white',
+                            fontSize: isMobile ? "2rem" : "3rem"
+                        }}
+                    />
+                </div>
             ) : (
-                <Typography variant="body1" sx={{ color: 'white' }}>No speakers available for this edition.</Typography>
+                <Typography variant="body1" style={{ color: 'white' }}>No speakers available for this edition.</Typography>
             )}
-        </Box>
+        </div>
     );
 };
 

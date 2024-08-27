@@ -144,7 +144,7 @@ const AdvisorComponent = ({ name, description, image, linkedin }) => {
               position: "absolute",
               top: desktop ? 15 : (tablet ? 10 : 6),
               right: desktop ? 5 : (tablet ? 0 : -4)
-              }}></LinkedIn>
+              }} />
           </a>          
         </div>
         <div style={imageContainerStyle}>

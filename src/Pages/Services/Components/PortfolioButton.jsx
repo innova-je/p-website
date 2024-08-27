@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Typography, IconButton } from "@mui/material";
+import { Typography, IconButton, useTheme } from "@mui/material";
 import EmailIcon from '@mui/icons-material/Email'; 
 import { ContactUs } from "./ContactUs";
 
 const PortfolioButton = () => {
+  const theme = useTheme();
   const form = useRef();
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [emailWasSent, setEmailWasSent] = useState(false);
@@ -80,7 +81,7 @@ const PortfolioButton = () => {
           >
             <IconButton
               style={{
-                backgroundColor: "#732043",
+                backgroundColor: theme.palette.primary.main,
                 color: "white",
                 borderRadius: "50%",
                 padding: "10px",
@@ -92,7 +93,7 @@ const PortfolioButton = () => {
             <Typography
               variant="h6"
               style={{
-                color: "#732043",
+                color: theme.palette.primary.main,
                 fontWeight: "normal",
               }}
             >

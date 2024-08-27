@@ -1,8 +1,10 @@
-import { styled, Box, Typography } from '@mui/material'
+import { styled, Typography, useTheme } from '@mui/material'
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 const Accomplishments = ({ image, logo, description, date, link, scale }) => {
+
+  const theme = useTheme();
 
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({minWidth: 601, maxWidth: 1080});
@@ -43,7 +45,7 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
   }, [image]);
 
 
-  const AccomplishmentBox = styled(Box)(({ isSelected }) => ({
+  const AccomplishmentBox = styled('div')(({ isSelected }) => ({
     display: "flex",
     flexDirection: isSelected ? "row" : "column",
     width: isSelected ? "60vw" : (desktop ? "22dvw" : (tablet ? "27dvw" : "65dvw")),
@@ -60,7 +62,7 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
   }));
 
 
-  const TextBox = styled(Box)(() => ({
+  const TextBox = styled('div')(() => ({
     position:"relative",
     width: isSelected ? "150vw" : "100%",
     height: isSelected ? "70vh" : "100%",
@@ -72,7 +74,7 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
     marginTop: "-15%"
   }));
 
-  const Circle = styled(Box)(() => ({
+  const Circle = styled('div')(() => ({
     position: "relative",
     rotate: "7deg",
     top: "-50%",
@@ -88,7 +90,7 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
     alignItems: "center"
   }));
 
-  const NewsText = styled(Box)(() => ({
+  const NewsText = styled('div')(() => ({
     overflow:"hidden",
     display: "flex",
     flexDirection: "column",
@@ -111,7 +113,7 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
     fontWeight: mobile || tablet ? "500" : "400",
     textAlign: "justify",
     textJustify: "center",
-    color: "#052533",
+    color: theme.palette.secondary.main,
     marginTop: "0%",
     lineHeight: desktop ? "100%" : (tablet ? "100%" : "100%"),
     textOverflow: "ellipsis"
@@ -125,8 +127,8 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
   };
 
   return (
-    <Box>
-      <a href={link} style={{textDecoration: "none", color: "#052533"}}>
+    <div>
+      <a href={link} style={{textDecoration: "none", color: theme.palette.secondary.main}}>
         {!isSelected && (
         <AccomplishmentBox >
           <div style={{display: "flex", width: "100%", height: "50%"}}>
@@ -143,12 +145,12 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
           <TextBox>
           <NewsText>
               <div style={{ height: "100%"}}>
-                <Typography style={newsTextStyle}>{description}</Typography>
+                <Typography sx={newsTextStyle}>{description}</Typography>
               </div>
               {/**
                * 
                * <div style={{ position: "absolute", bottom: 2}}>
-                <Typography style={dateStyle}>{date}</Typography>
+                <Typography sx={dateStyle}>{date}</Typography>
               </div>    
                */}            
                         
@@ -163,8 +165,8 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
         
 
       {isSelected && (
-        <Box
-          sx={{
+        <div
+          style={{
             position: "fixed",
             top: 0,
             left: 0,
@@ -185,17 +187,17 @@ const Accomplishments = ({ image, logo, description, date, link, scale }) => {
           <TextBox>
             <NewsText>
               <div>
-                <Typography style={newsTextStyle}>{description}</Typography>
+                <Typography sx={newsTextStyle}>{description}</Typography>
               </div>              
               <div>
-                <Typography style={dateStyle}>{date}</Typography>
+                <Typography sx={dateStyle}>{date}</Typography>
               </div>              
             </NewsText>
           </TextBox>
           </AccomplishmentBox>
-        </Box>
+        </div>
       )}
-    </Box>        
+    </div>        
   )
 }
 

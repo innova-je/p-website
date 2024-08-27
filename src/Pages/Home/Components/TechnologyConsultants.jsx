@@ -1,10 +1,11 @@
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import React from "react";
 import HomePageImg from "../../../Assets/Images/MaintenancePageImages/In.Nova_III-JE-Portugal-224_1.webp";
 import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 
 function TechnologyConsultants() {
+  const theme = useTheme();
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
   const desktop = useMediaQuery({ minWidth: 1081 });
@@ -40,7 +41,7 @@ function TechnologyConsultants() {
           marginLeft: "5%",
           borderRadius: "5px",
         }}
-      ></div>
+      />
       <Typography
         style={{
           marginLeft: mobile ? "4%" : "2%",
@@ -60,16 +61,16 @@ function TechnologyConsultants() {
     <div style={{ padding: desktop ? "3% 0 3% 8%" : mobile ? "10% 0 0 4%" : "10% 0 0 8%" }}>
       <div style={{ display: "flex", flexDirection: desktop ? "row" : "column" }}>
         <div style={{ display: "flex", flexDirection: "column", width: desktop ? "75%" : "100%" }}>
-          <Typography style={{ color: "#052533", fontSize: desktop ? "3dvw" : tablet ? "3.5dvw" : "6.5dvw", fontWeight: 600 }}>
+          <Typography sx={{ color: theme.palette.secondary.main, fontSize: desktop ? "3dvw" : tablet ? "3.5dvw" : "6.5dvw", fontWeight: 600 }}>
             Your Go-To
           </Typography>
-          <Typography style={{ marginTop: "-2%", color: "#732043", fontSize: desktop ? "4.5dvw" : tablet ? "5.5dvw" : "7.5dvw", fontWeight: 700 }}>
+          <Typography sx={{ marginTop: "-2%", color: theme.palette.primary.main, fontSize: desktop ? "4.5dvw" : tablet ? "5.5dvw" : "7.5dvw", fontWeight: 700 }}>
             Technology Consultants
           </Typography>
         </div>
         <div style={{ width: desktop ? "25%" : "100%", display: "flex", justifyContent: desktop ? "center" : "flex-start", alignItems: "flex-end" }}>
           <NavLink to="/about-us" style={{ textDecoration: "none" }} onClick={handleNavLinkClick}>
-            <Typography style={{ color: "#732043", fontSize: desktop ? "1.8vw" : tablet ? "2.5vw" : "4vw", fontWeight: 400, marginBottom: "8%" }}>
+            <Typography sx={{ color: theme.palette.primary.main, fontSize: desktop ? "1.8vw" : tablet ? "2.5vw" : "4vw", fontWeight: 400, marginBottom: "8%" }}>
               Find more about us &rarr;
             </Typography>
           </NavLink>
@@ -118,7 +119,7 @@ function TechnologyConsultants() {
         >
           <InfoCard
             index="0"
-            color="#052533"
+            color={theme.palette.secondary.main}
             borderColor="#F0F0F0"
             textColor="white"
             gradient="to top"
@@ -128,7 +129,7 @@ function TechnologyConsultants() {
             index="1"
             color="white"
             borderColor="#F0F0F0"
-            textColor="#052533"
+            textColor={theme.palette.secondary.main}
             gradient="to bottom"
             message="And we also take pride in what we do and aim to go beyond"
           />

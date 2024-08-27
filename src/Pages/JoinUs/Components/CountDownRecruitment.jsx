@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Typography, useTheme } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
 
 const CountDownRecruitment = () => {
@@ -57,8 +57,8 @@ const CountDownRecruitment = () => {
     }));
 
     return (<>
-        <Box
-            sx={{
+        <div
+            style={{
                 width: (mobile || smallMobile) ? "70%" : '50%',
                 height: (smallMobile || mobile) ? "20vh" : "15vh",
                 backgroundColor: '#fff',
@@ -78,7 +78,7 @@ const CountDownRecruitment = () => {
                         
                     <Typography
                         variant="h6"
-                        sx={{
+                        style={{
                             fontWeight: 'medium',
                             color: theme.palette.primary.main,
                             textTransform: 'uppercase',
@@ -120,7 +120,7 @@ const CountDownRecruitment = () => {
 
             </div>
 
-        </Box >
+        </div>
 
     </>
     );

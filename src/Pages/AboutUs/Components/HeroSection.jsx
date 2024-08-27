@@ -110,7 +110,7 @@ function HeroSection() {
             <div style={{ padding: "1.5rem 0rem 2.2rem 2rem"}}>
               <Typography
                 variant="h4"
-                sx={{
+                style={{
                   color: theme.palette.secondary.main,
                   fontWeight: 500,
                   fontSize: getResponsiveValue("1.2rem", "1.5rem", "2.2rem"),
@@ -120,7 +120,7 @@ function HeroSection() {
               </Typography>
               <Typography
                 variant="h3"
-                sx={{
+                style={{
                   color: theme.palette.primary.main,
                   fontWeight: 700,
                   fontSize: getResponsiveValue("1.2rem", "1.5rem", "2.2rem"),
@@ -130,7 +130,7 @@ function HeroSection() {
               </Typography>
               <Typography
                 variant="h4"
-                sx={{
+                style={{
                   color: theme.palette.secondary.main,
                   fontWeight: 300,
                   fontSize: getResponsiveValue("1rem", "1.1rem", "1.6rem"),

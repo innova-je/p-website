@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Typography, useTheme } from '@mui/material';
 import CustomButton from '../../../components/CustomButton';
 import { Parallax } from 'react-scroll-parallax';
 import CircleIcon from '@mui/icons-material/Circle';
 
 const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textWidth, innerStyle, parallaxProps, circle1, circle2, circle3 }) => {
+  const theme = useTheme();
   const boxRef = useRef(null);
   const [fontSize, setFontSize] = useState('1.5vw');
 
@@ -28,9 +29,9 @@ const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textW
 
   return (
     <Parallax {...parallaxProps}>
-      <Box className="Our Services" id="canva" style={innerStyle} ref={boxRef}>
-        <Box>
-          <Box sx={{
+      <div className="Our Services" id="canva" style={innerStyle} ref={boxRef}>
+        <div>
+          <div style={{
             position: 'absolute',
             left: '0',
             width: '100%',
@@ -40,8 +41,8 @@ const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textW
             justifyContent: 'right',
           }}>
             <img src={imgSrc} style={imageStyle} alt="Service" />
-          </Box>
-          <Box sx={{
+          </div>
+          <div style={{
             width: textWidth,
             height: '100%',
             position: 'relative',
@@ -71,20 +72,20 @@ const ServiceBox = ({ imgSrc, title, description, buttonLabel, imageStyle, textW
               marginTop: '5%',
               width: '100%',
             }}>{description}</Typography>
-            <CustomButton customBackgroundColor="#732043" sx={{ marginTop: '8%' }}>
+            <CustomButton customBackgroundColor={theme.palette.primary.main} style={{ marginTop: '8%' }}>
               <Typography sx={{ zIndex: "2" }}>{buttonLabel}</Typography>
               <Typography sx={{ zIndex: "2" }}> &rarr;</Typography>
             </CustomButton>
-            <Box sx={{
+            <div style={{
               margin: "5% 0 0 0"
             }}>
-              <CircleIcon sx={{ height: "40%", color: circle1 }}></CircleIcon>
-              <CircleIcon sx={{ height: "40%", color: circle2 }}></CircleIcon>
-              <CircleIcon sx={{ height: "40%", color: circle3 }}></CircleIcon>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
+              <CircleIcon style={{ height: "40%", color: circle1 }} />
+              <CircleIcon style={{ height: "40%", color: circle2 }} />
+              <CircleIcon style={{ height: "40%", color: circle3 }} />
+            </div>
+          </div>
+        </div>
+      </div>
     </Parallax>
   );
 };

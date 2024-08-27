@@ -15,37 +15,37 @@ const SocialMedia = () => {
   const desktop = useMediaQuery({ minWidth: 1081 });
 
   return (
-    <Box sx={{
+    <div style={{
       display: "flex",
       justifyContent: desktop ? "left" : "center",
       gap: 2,
       width: "100%"
     }}>
-      <Link href='https://www.instagram.com/in.nova.pt' sx={{
+      <Link href='https://www.instagram.com/in.nova.pt' style={{
         display: "flex",
         flexDirection: "row",
         gap: "15px",
         textDecoration: "none"
       }}>
         <InstagramIcon
-          sx={{
+          style={{
             color: "#052533",
             width: mobile ? "5vh" : "7vh",
           }} />
       </Link>
-      <Link href='https://www.linkedin.com/company/innova-consultoria-junior' sx={{
+      <Link href='https://www.linkedin.com/company/innova-consultoria-junior' style={{
         display: "flex",
         flexDirection: "row",
         gap: "15px",
         textDecoration: "none"
       }}>
         <LinkedinIcon
-          sx={{
+          style={{
             color: "#052533",
             width: mobile ? "5vh" : "7vh"
           }} />
       </Link>
-    </Box>);
+    </div>);
 }
 
 const MaintenanceSinglePage = () => {
@@ -56,17 +56,17 @@ const MaintenanceSinglePage = () => {
   const desktop = useMediaQuery({ minWidth: 1081 });
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Box
-        sx={{
+    <div style={{ flexGrow: 1 }}>
+      <div
+        style={{
           opacity: 0.25, // apply opacity to the outer Box component
           height: '100vh',
           position: 'relative', // change position to relative
           overflow: 'hidden', // hide any overflow
         }}
       >
-        <Box
-          sx={{
+        <div
+          style={{
             position: 'relative', // keep position as absolute
             left: 0,
             width: '100%',
@@ -81,7 +81,7 @@ const MaintenanceSinglePage = () => {
           }}
         />
         
-      </Box>
+      </div>
 
       <div style={{position: "absolute", height: "100%", top: "0%", overflow: "hidden"}}>
         <Grid style={{display: "flex", flexDirection: "column", gap: mobile ? "5%" : "10%", justifyContent: desktop
@@ -89,7 +89,7 @@ const MaintenanceSinglePage = () => {
           <div style={{width: "80%"}}>
             <Grid item xs={8}>
             <div style={{display: "flex", justifyContent: "center", zIndex: 10}}>
-              <Typography variant='h3' sx={{
+              <Typography variant='h3' style={{
               display: "flex",
               justifyContent: desktop ? "left" : "center",
               textAlign: mobile || tablet ? "center" : 'left',
@@ -108,7 +108,7 @@ const MaintenanceSinglePage = () => {
             
           </Grid>
           <Grid item>
-            <Box sx={{
+            <div style={{
               display: "flex",
               flexDirection: "column",
               justifyContent: desktop ? "left" : "center",
@@ -118,7 +118,7 @@ const MaintenanceSinglePage = () => {
               width: desktop ? "auto" : "100%"
             }}>
               
-              <Typography variant='h3' sx={{
+              <Typography variant='h3' style={{
                 textAlign: mobile || tablet ? "center" : 'left',
                 color: "#052533",
                 fontSize: desktop ? '2dvw' : (tablet ? "3vw" : "5vw"),
@@ -132,7 +132,7 @@ const MaintenanceSinglePage = () => {
               </Typography>
               
               {SocialMedia({ theme: theme })}
-            </Box>
+            </div>
           </Grid>
           </div>
           
@@ -142,7 +142,7 @@ const MaintenanceSinglePage = () => {
       
 
       
-    </Box>
+    </div>
   )
 };
 

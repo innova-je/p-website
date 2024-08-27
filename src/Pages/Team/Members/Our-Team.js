@@ -79,7 +79,7 @@ const OurTeam = () => {
 
   return (
     <main>
-      <Box sx={{ position: "relative", top: "60px", height: "72dvw" }}>
+      <div style={{ position: "relative", top: "60px", height: "72dvw" }}>
         <img
           style={{
             width: "100%",
@@ -113,8 +113,8 @@ const OurTeam = () => {
           src={HeroImage}
           alt="Innova Tomada De Posse"
         />
-        <Box
-          sx={{
+        <div
+          style={{
             position: "absolute",
             bottom: "0",
             width: "100%",
@@ -138,7 +138,7 @@ const OurTeam = () => {
           }}
           speed={2}
         />
-      </Box>
+      </div>
 
       <Box
         marginTop={15}
@@ -156,8 +156,8 @@ const OurTeam = () => {
         />
       </Box>
 
-      <Box
-        sx={{
+      <div
+        style={{
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
@@ -231,10 +231,10 @@ const OurTeam = () => {
           emailAddress={humanResourcesDepartment.director.email}
           linkedinLink={humanResourcesDepartment.director.linkedin}
         />
-      </Box>
+      </div>
 
-      <Box
-        sx={{
+      <div
+        style={{
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
@@ -243,10 +243,10 @@ const OurTeam = () => {
           maxWidth: desktop ? "100%" : "800px",
           margin: "0 auto",
         }}
-      ></Box>
+      />
 
       <div style={{ paddingBottom: "2rem" }}>
-        <Box marginBottom={5} textAlign="center">
+        <Box marginTop={5} marginBottom={5} textAlign="center">
           <CustomTitle
             title="Our Departments"
             subtitle="who make the magic happen"

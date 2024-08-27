@@ -74,14 +74,14 @@ const Mandate = ({
             <IconButton
               variant="contained"
               onClick={handlePrevClick}
-              sx={{
+              style={{
                 color: "primary.main",
                 "&:hover": {
                   color: "white",
                 },
               }}
             >
-              <ArrowBackIosIcon sx={{ fontSize: "2.5rem" }} />
+              <ArrowBackIosIcon style={{ fontSize: "2.5rem" }} />
             </IconButton>
 
             
@@ -145,14 +145,14 @@ const Mandate = ({
             <IconButton
               variant="contained"
               onClick={handlePrevClick}
-              sx={{
+              style={{
                 color: "primary.main",
                 "&:hover": {
                   color: "white",
                 },
               }}
             >
-              <ArrowForwardIosIcon sx={{ fontSize: "2.5rem" }} />
+              <ArrowForwardIosIcon style={{ fontSize: "2.5rem" }} />
             </IconButton>
 
             

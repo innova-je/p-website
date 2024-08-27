@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Link } from "@mui/material";
+import { Typography, Link, useTheme } from "@mui/material";
 import { Instagram, Email, LinkedIn, ArrowForward } from "@mui/icons-material";
 import { NavLink, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
@@ -11,6 +11,7 @@ import InNovaLogoServicesMobile from "../Assets/Images/OurLogos/logos-03.png";
 import CustomButton from "./CustomButton";
 
 function Footer() {
+  const theme = useTheme();
   const location = useLocation();
   const isServicesPage = location.pathname === "/services";
   const isTeamPage = location.pathname === "/our-people/our-team";
@@ -22,13 +23,13 @@ function Footer() {
 
   const PagesLinkStyle = {
     fontSize: mobile ? "1rem" : tablet ? "1.75rem" : "1.25rem",
-    color: isServicesPage ? "#732043" : "white",
+    color: isServicesPage ? theme.palette.primary.main : "white",
     fontWeight: "400"
   };
 
   const linkStyles = {
     textDecoration: "none",
-    color: "#732043",
+    color: theme.palette.primary.main,
     fontWeight: "bold",
     fontSize: "1rem",
     transition: "font-weight 0.3s ease",
@@ -46,7 +47,7 @@ function Footer() {
         display: "flex",
         flexDirection: "row",
         backgroundColor: isServicesPage
-          ? "#732043"
+          ? theme.palette.primary.main
           : isTeamPage || isJoinUsPage || isInnovationWeekPage
           ? "white"
           : "#F0F0F0",
@@ -63,14 +64,14 @@ function Footer() {
             backgroundColor: isServicesPage
               ? "white"
               : isInnovationWeekPage
-              ? "#052533"
-              : "#732043",
+              ? theme.palette.secondary.main
+              : theme.palette.primary.main
           }}
         >
           <div
             style={{
               backgroundColor: isServicesPage
-                ? "#732043"
+                ? theme.palette.primary.main
                 : isTeamPage || isJoinUsPage || isInnovationWeekPage
                 ? "white"
                 : "#F0F0F0",
@@ -83,8 +84,8 @@ function Footer() {
               backgroundColor: isServicesPage
                 ? "white"
                 : isInnovationWeekPage
-                ? "#052533"
-                : "#732043",
+                ? theme.palette.secondary.main
+                : theme.palette.primary.main,
               height: "65%",
             }}
           >
@@ -109,10 +110,10 @@ function Footer() {
                 }}
               />
               <Typography
-                sx={{
+                style={{
                   fontWeight: isServicesPage ? "normal" : "300",
                   fontSize: "80%",
-                  color: isServicesPage ? "#732043" : "white",
+                  color: isServicesPage ? theme.palette.primary.main : "white",
                 }}
               >
                 &#9426; 2024 In-Nova. All rights reserved.
@@ -127,8 +128,8 @@ function Footer() {
           backgroundColor: isServicesPage
             ? "white"
             : isInnovationWeekPage
-            ? "#052533"
-            : "#732043",
+            ? theme.palette.secondary.main
+            : theme.palette.primary.main,
           height: "100%",
           width: desktop ? "70%" : "100%",
           borderRadius: desktop ? "25px 0 0 0" : "0px",
@@ -183,12 +184,12 @@ function Footer() {
                 style={{ height: "35%", display: "flex", alignItems: "center" }}
               >
                 <Typography
-                  sx={{
+                  style={{
                     fontSize: "1.9vw",
                     fontWeight: isServicesPage ? "400" : "200",
                     lineHeight: "40px",
                     textAlign: "left",
-                    color: isServicesPage ? "#732043" : "white",
+                    color: isServicesPage ? theme.palette.primary.main : "white",
                     paddingLeft: "50px",
                   }}
                 >
@@ -230,7 +231,7 @@ function Footer() {
                     style={linkStyles}
                     onClick={handleNavLinkClick}
                   >
-                    <Typography style={PagesLinkStyle}>{text}</Typography>
+                    <Typography sx={PagesLinkStyle}>{text}</Typography>
                   </NavLink>
                 ))}
               </div>
@@ -260,13 +261,13 @@ function Footer() {
                     href="mailto:geral@innova.pt"
                     bgColor={
                       isServicesPage
-                        ? "#732043"
+                        ? theme.palette.primary.main
                         : isInnovationWeekPage
                         ? "#ffffff"
-                        : "#052533"
+                        : theme.palette.secondary.main
                     }
                     currPage={location.pathname}
-                    sx={{
+                    style={{
                       transition: "zIndex 0.2s ease-in-out",
                       "&:hover": {
                         zIndex: 1,
@@ -276,7 +277,7 @@ function Footer() {
                     <Typography sx={{ fontSize: "1vw", zIndex: 1 }}>
                       Let's Talk
                     </Typography>
-                    <ArrowForward sx={{ height: "50%", zIndex: 1 }} />
+                    <ArrowForward style={{ height: "50%", zIndex: 1 }} />
                   </CustomButton>
                 )}
               </div>
@@ -291,28 +292,28 @@ function Footer() {
               >
                 <Link href="mailto:geral@innova.pt">
                   <Email
-                    sx={{
+                    style={{
                       width: mobile || tablet ? "6dvw" : "4vw",
                       height: mobile || tablet ? "6dvw" : "5vh",
-                      color: isServicesPage ? "#732043" : "white",
+                      color: isServicesPage ? theme.palette.primary.main : "white",
                     }}
                   />
                 </Link>
                 <Link href="https://www.instagram.com/in.nova.pt">
                   <Instagram
-                    sx={{
+                    style={{
                       width: mobile || tablet ? "6dvw" : "4vw",
                       height: mobile || tablet ? "6dvw" : "5vh",
-                      color: isServicesPage ? "#732043" : "white",
+                      color: isServicesPage ? theme.palette.primary.main : "white",
                     }}
                   />
                 </Link>
                 <Link href="https://www.linkedin.com/company/innova-consultoria-junior">
                   <LinkedIn
-                    sx={{
+                    style={{
                       width: mobile || tablet ? "6dvw" : "4vw",
                       height: mobile || tablet ? "6dvw" : "5vh",
-                      color: isServicesPage ? "#732043" : "white",
+                      color: isServicesPage ? theme.palette.primary.main : "white",
                     }}
                   />
                 </Link>
@@ -321,12 +322,12 @@ function Footer() {
               {!(mobile || tablet) && (
                 <div style={{ height: "100%" }}>
                   <Typography
-                    sx={{
+                    style={{
                       fontSize: "0.8rem",
                       fontWeight: isServicesPage ? "normal" : "100",
                       lineHeight: "17px",
                       textAlign: "center",
-                      color: isServicesPage ? "#732043" : "white",
+                      color: isServicesPage ? theme.palette.primary.main : "white",
                       padding: "10px 0",
                     }}
                   >
@@ -335,11 +336,11 @@ function Footer() {
                     Universidade Nova de Lisboa
                   </Typography>
                   <Typography
-                    sx={{
+                    style={{
                       fontSize: "0.8rem",
                       fontWeight: isServicesPage ? "normal" : "100",
                       textAlign: "center",
-                      color: isServicesPage ? "#732043" : "white",
+                      color: isServicesPage ? theme.palette.primary.main : "white",
                     }}
                   >
                     Quinta da Torre, Caparica

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Button, Typography, useTheme } from "@mui/material";
 import MapParallax from "./MapParallax";
 import { useMediaQuery } from "react-responsive";
 
@@ -37,7 +37,7 @@ function JESection() {
       <div style={{ width: "80dvw" }}>
         <Typography
           variant="h5"
-          sx={{
+          style={{
             color: theme.palette.secondary.main,
             fontWeight: "bold",
             fontSize: getResponsiveValue("4.5dvw", "4.5dvw", "4dvw", "2.0dvw"),
@@ -47,7 +47,7 @@ function JESection() {
         </Typography>
         <Typography
           variant="h2"
-          sx={{
+          style={{
             color: theme.palette.primary.main,
             fontWeight: "bold",
             fontSize: getResponsiveValue("7.7dvw", "7.7dvw", "7.7dvw", "4dvw"),
@@ -59,7 +59,7 @@ function JESection() {
         <div style={{ padding: "50px 0px 20px 0px" }}>
           <Typography
             variant="h6"
-            sx={{
+            style={{
               color: theme.palette.secondary.main,
               fontWeight: "400",
               fontSize: (isMobile || isSmallMobile) ? "1rem" : "1.8rem",
@@ -71,7 +71,7 @@ function JESection() {
           </Typography>
           <Typography
             variant="body2"
-            sx={{
+            style={{
               padding: "20px 0px",
               textAlign: getResponsiveValue(
                 "right",
@@ -94,17 +94,16 @@ function JESection() {
           style={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            alignItems: "center"
           }}
         >
           <MapParallax />
           <Button
             variant="contained"
             href="https://jeportugal.pt/en/je-network/"
-            sx={{
+            style={{
               backgroundColor: theme.palette.primary.main,
               fontWeight: "600",
-
               fontSize: getResponsiveValue("4dvw", "4dvw", "4dvw", "1.5dvw"),
               textTransform: "none",
               padding: "5px 50px",

@@ -1,13 +1,14 @@
-import { Box, Typography, styled } from '@mui/material';
+import { Typography, styled, useTheme } from '@mui/material';
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 function StatsSection() {
+  const theme = useTheme();
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
   const desktop = useMediaQuery({ minWidth: 1081 });
 
-  const StatsBox = styled(Box)(({ theme }) => ({
+  const StatsBox = styled('div')(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -18,21 +19,21 @@ function StatsSection() {
 
   const statsStyle = {
     fontSize: mobile ? '9vw' : tablet ? '5vw' : '4vw',
-    color: '#732043',
+    color: theme.palette.primary.main,
     fontWeight: 700,
   };
 
   const underStatsStyle = {
     fontSize: mobile ? '4vw' : tablet ? '2vw' : '1.5vw',
-    color: '#732043',
+    color: theme.palette.primary.main,
     fontWeight: 500,
     marginTop: '-5%',
   };
 
   return (
-    <Box mt={desktop ? 0 : 3}>
-      <Box
-        sx={{
+    <div mt={desktop ? 0 : 3}>
+      <div
+        style={{
           width: mobile ? '90%' : '85%',
           height: 'auto',
           display: 'flex',
@@ -45,23 +46,23 @@ function StatsSection() {
         }}
       >
         <StatsBox>
-          <Typography style={statsStyle}>3</Typography>
-          <Typography style={underStatsStyle}>Years of In-Nova</Typography>
+          <Typography sx={statsStyle}>3</Typography>
+          <Typography sx={underStatsStyle}>Years of In-Nova</Typography>
         </StatsBox>
         <StatsBox>
-          <Typography style={statsStyle}>+25</Typography>
-          <Typography style={underStatsStyle}>Projects Completed</Typography>
+          <Typography sx={statsStyle}>+25</Typography>
+          <Typography sx={underStatsStyle}>Projects Completed</Typography>
         </StatsBox>
         <StatsBox>
-          <Typography style={statsStyle}>9.5/10</Typography>
-          <Typography style={underStatsStyle}>Overall Satisfaction</Typography>
+          <Typography sx={statsStyle}>9.5/10</Typography>
+          <Typography sx={underStatsStyle}>Overall Satisfaction</Typography>
         </StatsBox>
         <StatsBox>
-          <Typography style={statsStyle}>+60</Typography>
-          <Typography style={underStatsStyle}>Members</Typography>
+          <Typography sx={statsStyle}>+60</Typography>
+          <Typography sx={underStatsStyle}>Members</Typography>
         </StatsBox>
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 }
 

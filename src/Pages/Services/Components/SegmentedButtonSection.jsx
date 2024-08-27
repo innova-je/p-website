@@ -3,35 +3,37 @@ import React, { useState } from "react";
 import SoftwareSolutions from "./SoftwareSolutions";
 import MobileDevelopment from "./MobileDevelopment";
 import Robotics from "./Robotics";
-
-const containerStyles = {
-  display: "flex",
-  justifyContent: "center"
-};
-
-const buttonStyles = {
-  cursor: "pointer",
-  width: "25%",
-  height: "4rem",
-  color: "white",
-  border: "none",
-  fontSize: "1.2rem"
-};
-
-const itButtonStyles = {
-  ...buttonStyles,
-  background: "#732043",
-  borderRadius: "10px 0 0 10px",
-};
-
-const roboticsButtonStyles = {
-  ...buttonStyles,
-  background: "#E591AD",
-  borderRadius: "0 10px 10px 0",
-};
+import { useTheme } from "@mui/material";
 
 function SegmentedButton() {
+  const theme = useTheme();
   const [selectedArea, setSelectedArea] = useState("IT Development");
+
+  const containerStyles = {
+    display: "flex",
+    justifyContent: "center",
+  };
+
+  const buttonStyles = {
+    cursor: "pointer",
+    width: "25%",
+    height: "4rem",
+    color: "white",
+    border: "none",
+    fontSize: "1.2rem",
+  };
+
+  const itButtonStyles = {
+    ...buttonStyles,
+    background: theme.palette.primary.main,
+    borderRadius: "10px 0 0 10px",
+  };
+
+  const roboticsButtonStyles = {
+    ...buttonStyles,
+    background: "#E591AD",
+    borderRadius: "0 10px 10px 0",
+  };
 
   return (
     <div>

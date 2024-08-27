@@ -54,7 +54,7 @@ function HeroSection() {
           >
             <Typography
               variant="h2"
-              sx={{
+              style={{
                 fontWeight: 700,
                 fontSize: tablet
                   ? "5.5dvw"
@@ -81,7 +81,7 @@ function HeroSection() {
               <Button
                 variant="contained"
                 href="https://forms.gle/NP4Eo4RUftMv4LFq7"
-                sx={{
+                style={{
                   zIndex: "3",
                   borderRadius: "20px",
                   py: mobile ? "2dvw" : smallMobile ? "3dvw" : "1dvw",

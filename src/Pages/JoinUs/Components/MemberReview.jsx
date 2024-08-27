@@ -37,26 +37,26 @@ const MemberReview = ({ image, name, department, text }) => {
                 flexDirection="column"
                 sx={{ margin: 1 }}
             >
-                <Box
-                    sx={{
+                <div
+                    style={{
                         display: 'flex',
                         alignItems: 'center',
                         marginBottom: 0.5,
                         paddingRight: 1.5
                     }}
                 >
-                    <Avatar src={image} alt={name} sx={{ width: 40, height: 40 }} />
-                    <Box textAlign="left" paddingLeft={1.5}>
-                        <Typography variant="body2" sx={{ fontWeight: "Medium", mb: -0.5 }}>
+                    <Avatar src={image} alt={name} style={{ width: 40, height: 40 }} />
+                    <div textAlign="left" paddingLeft={1.5}>
+                        <Typography variant="body2" style={{ fontWeight: "Medium", mb: -0.5 }}>
                             {name}
                         </Typography>
-                        <Typography variant="caption" sx={{ color: theme.palette.primary.main }}>
+                        <Typography variant="caption" style={{ color: theme.palette.primary.main }}>
                             {department}
                         </Typography>
-                    </Box>
-                </Box>
+                    </div>
+                </div>
 
-                <Typography variant="body2" align="justify" sx={{ fontSize: "12px", paddingTop: "5px" }}>
+                <Typography variant="body2" align="justify" style={{ fontSize: "12px", paddingTop: "5px" }}>
                     {text}
                 </Typography>
             </Box>

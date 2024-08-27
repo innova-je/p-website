@@ -8,7 +8,7 @@ const OurServices = () => {
       display: "flex",
       flexDirection: "column"
     }}>
-        <ServicesSlider></ServicesSlider>
+        <ServicesSlider />
 
     </div>
   );

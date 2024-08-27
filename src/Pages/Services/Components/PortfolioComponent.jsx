@@ -1,6 +1,7 @@
 import React from "react";
 import CheckIcon from "../../../Assets/Images/other/simple-line-icons_check.png";
 import { useMediaQuery } from "react-responsive";
+import { useTheme } from "@mui/material";
 
 const textContent = [
   {
@@ -32,12 +33,9 @@ const textContent = [
 ];
 
 function PortfolioComponent({ image, index }) {
+  const theme = useTheme();
   const smallMobile = useMediaQuery({ maxWidth: 650 });
   const mobile = useMediaQuery({ minWidth: 651, maxWidth: 767 });
-  const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
-  const smallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
-  const desktop = useMediaQuery({ minWidth: 1280, maxWidth: 1399 });
-  const largeDesktop = useMediaQuery({ minWidth: 1400 });
 
   const renderImage = (
     <div
@@ -93,7 +91,7 @@ function PortfolioComponent({ image, index }) {
       </div>
       <button
         style={{
-          background: "#732043",
+          background: theme.palette.primary.main,
           color: "white",
           border: "none",
           borderRadius: "50px",

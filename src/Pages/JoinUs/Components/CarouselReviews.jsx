@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Box } from '@mui/material';
 import MemberReview from './MemberReview';
 import Testimonials from '../../../Assets/data/Testimonials.json'
 import { useMediaQuery } from 'react-responsive';
@@ -146,14 +145,14 @@ const LogosSlider = () => {
   return (
       <div>
         {isDesktopOrLaptop ? (
-        <Box
-          sx={{
+        <div
+          style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             padding: '5% 0%'
           }}>
-          <Box sx={{ display: 'flex', gap: '1.5rem'}}>
+          <div style={{ display: 'flex', gap: '1.5rem'}}>
             {divideIntoRows(testimonials, numColumns).map((row, rowIndex) => (
               <div key={rowIndex} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {row.map((testimonial, index) => (
@@ -167,8 +166,8 @@ const LogosSlider = () => {
                 ))}
               </div>
             ))}
-          </Box>
-        </Box>
+          </div>
+        </div>
       ) : (
           <Slider {...settings}>
           {testimonials.map((testimonial, index) => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Typography, useTheme } from '@mui/material';
 import Accomplishment from './AccomplishmentComponent';
 import Slider from 'react-slick';
 import { useMediaQuery } from 'react-responsive';
@@ -12,6 +12,7 @@ import 'react-magic-slider-dots/dist/magic-dots.css';
 import AccomplishmentsData from '../../../Assets/data/Accomplishments.json'
 
 const AccomplishmentSlider = () => {
+  const theme = useTheme();
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
   const desktop = useMediaQuery({ minWidth: 1081 });
@@ -38,7 +39,7 @@ const AccomplishmentSlider = () => {
           style={{
             width: mobile ? '80%' : '100%',
             textAlign: 'center',
-            color: '#732043',
+            color: theme.palette.primary.main,
             fontWeight: '700',
             fontSize: desktop ? '3.5dvw' : tablet ? '4dvw' : '6.5dvw',
           }}

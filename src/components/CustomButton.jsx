@@ -1,4 +1,4 @@
-import { Button, styled, keyframes } from '@mui/material';
+import { Button, styled, keyframes, useTheme } from '@mui/material';
 
 const animate1 = keyframes`
   0% {
@@ -10,7 +10,7 @@ const animate1 = keyframes`
 `;
 
 const CustomButton = styled(Button)(({ bgColor, currPage }) => {
-  
+  const theme = useTheme();
   const isServicesPage = currPage === "/services";
   const isInnovationWeekPage = currPage === "/events/innovation-week";
 
@@ -32,7 +32,7 @@ const CustomButton = styled(Button)(({ bgColor, currPage }) => {
       borderRadius: "14px",
       backgroundColor: bgColor,
     },
-    color: isInnovationWeekPage ? "#052533" : 'white',
+    color: isInnovationWeekPage ? theme.palette.secondary.main : 'white',
     width: "10vw",
     height: "6vh",
     display: "flex",

@@ -38,7 +38,7 @@ const JoinUsButton = styled(Button)(({ theme, isActive }) => ({
 
 const linkStyles = (theme, isInnovationWeek) => ({
   textDecoration: "none",
-  color: isInnovationWeek ? theme.palette.secondary.main : "#732043",
+  color: isInnovationWeek ? theme.palette.secondary.main : theme.palette.primary.main,
   fontWeight: "bold",
   fontSize: "18px",
   transition: "font-weight 0.3s ease",
@@ -96,7 +96,7 @@ const Navbar = () => {
         color="inherit"
         onClick={(event) => handleMenuClick(event, dropdown)}
         style={{
-          color: isInnovationWeek ? theme.palette.secondary.main : "#732043",
+          color: isInnovationWeek ? theme.palette.secondary.main : theme.palette.primary.main,
           fontWeight: "bold",
           textTransform: "none",
           fontSize: "18px",
@@ -118,7 +118,7 @@ const Navbar = () => {
             style={{
               color: isInnovationWeek
                 ? theme.palette.secondary.main
-                : "#732043",
+                : theme.palette.primary.main,
               fontSize: "18px",
               textAlign: "left",
             }}

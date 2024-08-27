@@ -80,7 +80,7 @@ const MandatesSection = () => {
     <>
       <Typography
         variant="h4"
-        sx={{
+        style={{
           position: "relative",
           textAlign: "center",
           color: theme.palette.secondary.main,
@@ -94,7 +94,7 @@ const MandatesSection = () => {
       </Typography>
       <Typography
         variant="h2"
-        sx={{
+        style={{
           position: "relative",
           textAlign: "center",
           color: theme.palette.primary.main,

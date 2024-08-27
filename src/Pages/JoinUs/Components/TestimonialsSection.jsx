@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import Carousel from "./CarouselReviews";
 import { useMediaQuery } from "react-responsive";
 
@@ -11,9 +11,9 @@ function TestimonialsSection() {
   const gradientPercentage = mobile ? "10%" : smallMobile ? "10%" : "0%";
 
   return (
-    <div style={{width: "100%"}}>
-      <Box
-        sx={{
+    <div style={{ width: "100%" }}>
+      <div
+        style={{
           position: "relative",
           display: "flex",
           flexDirection: "column",
@@ -29,7 +29,7 @@ function TestimonialsSection() {
         <div
           style={{
             width: mobile || smallMobile ? "90%" : "auto",
-            margin: "0 auto"
+            margin: "0 auto",
           }}
         >
           <div
@@ -51,7 +51,7 @@ function TestimonialsSection() {
               >
                 <Typography
                   variant="h3"
-                  sx={{
+                  style={{
                     fontSize: mobile ? "6dvw" : smallMobile ? "6dvw" : "4dvw",
                     color: "#F0F0F0",
                     fontFamily: theme.typography.fontFamily,
@@ -62,7 +62,7 @@ function TestimonialsSection() {
                 </Typography>
                 <Typography
                   variant="h3"
-                  sx={{
+                  style={{
                     fontSize: mobile ? "7dvw" : smallMobile ? "7dvw" : "4dvw",
                     color: "#F0F0F0",
                     fontFamily: theme.typography.fontFamily,
@@ -73,7 +73,7 @@ function TestimonialsSection() {
                 </Typography>
                 <Typography
                   variant="h3"
-                  sx={{
+                  style={{
                     fontSize: mobile ? "8dvw" : smallMobile ? "9dvw" : "4dvw",
                     color: "#F0F0F0",
                     fontFamily: theme.typography.fontFamily,
@@ -86,7 +86,7 @@ function TestimonialsSection() {
             ) : (
               <Typography
                 variant="h3"
-                sx={{
+                style={{
                   position: "relative",
                   zIndex: "1",
                   fontSize: "3.5dvw",
@@ -103,9 +103,7 @@ function TestimonialsSection() {
           </div>
           <Carousel />
         </div>
-
-        
-      </Box>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Box, Typography, Button, Grid } from '@mui/material';
+import { Typography, Button, Grid } from '@mui/material';
 import React from 'react';
 import bgImage from '../../Assets/Images/other/404.png';
 import { useTheme } from '@mui/material/styles';
@@ -23,8 +23,8 @@ const NotFound = () => {
   };
 
   return (
-    <Box
-      sx={{
+    <div
+      style={{
         height: '100vh',
         overflow: 'hidden',
         background: "rgba(115, 32, 67, 0.2)",
@@ -37,11 +37,11 @@ const NotFound = () => {
         backgroundSize: isDesktop ? "auto" : "contain",
       }}
     >
-      <Grid container spacing={2} justifyContent="center" alignItems="center" sx={{ zIndex: 1 }}>
+      <Grid container spacing={2} justifyContent="center" alignItems="center" style={{ zIndex: 1 }}>
         <Grid item xs={12} textAlign="center">
           <Typography
             variant='h3'
-            sx={{
+            style={{
               color: '#FFFFFF',
               fontSize: getFontSize(),
               fontWeight: '600',
@@ -52,7 +52,7 @@ const NotFound = () => {
           </Typography>
           <Typography
             variant='h6'
-            sx={{
+            style={{
               color: '#732043',
               fontSize: isDesktop ? '1.5dvw' : (isTablet ? '5vw' : '4vw'),
               fontWeight: '300',
@@ -65,7 +65,7 @@ const NotFound = () => {
           <Button
             variant="contained"
             href='/'
-            sx={{
+            style={{
               backgroundColor: theme.palette.primary.main,
               opacity: 0.9,
               fontFamily: theme.typography.fontFamily,
@@ -84,7 +84,7 @@ const NotFound = () => {
           </Button>
         </Grid>
       </Grid>
-    </Box>
+    </div>
   );
 };
 

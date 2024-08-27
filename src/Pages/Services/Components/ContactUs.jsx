@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { useTheme } from "@mui/material";
 
 export const ContactUs = ({ type }) => {
   const form = useRef();
+  const theme = useTheme();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -27,7 +29,7 @@ export const ContactUs = ({ type }) => {
       onSubmit={sendEmail}
       style={{ display: "flex", flexDirection: "column", gap: "20px" }}
     >
-      <h1 style={{ color: "#732043" }}>Receive Our Portfolio</h1>
+      <h1 style={{ color: theme.palette.primary.main }}>Receive Our Portfolio</h1>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <label
           htmlFor="to_name"
@@ -71,7 +73,7 @@ export const ContactUs = ({ type }) => {
         />
       </div>
 
-      {type == "message" && (
+      {type === "message" && (
         <div style={{ display: "flex", flexDirection: "column" }}>
           <label
             htmlFor="message"
@@ -99,7 +101,7 @@ export const ContactUs = ({ type }) => {
         type="submit"
         value="Send"
         style={{
-          backgroundColor: "#732043",
+          backgroundColor: theme.palette.primary.main,
           color: "white",
           padding: "10px",
           borderRadius: "5px",

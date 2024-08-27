@@ -22,7 +22,7 @@ function CandidateGuideSection() {
     >
         <Typography
           variant="h4"
-          sx={{
+          style={{
             position: "relative",
             color: theme.palette.secondary.main,
             fontFamily: theme.typography.fontFamily,
@@ -41,7 +41,7 @@ function CandidateGuideSection() {
         </Typography>
         <Typography
           variant="h2"
-          sx={{
+          style={{
             position: "relative",
             color: theme.palette.secondary.main,
             fontFamily: theme.typography.fontFamily,
@@ -98,7 +98,7 @@ function CandidateGuideSection() {
           >
             <Typography
               variant="h2"
-              sx={{
+              style={{
                 color: theme.palette.secondary.main,
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: "Regular",
@@ -119,7 +119,7 @@ function CandidateGuideSection() {
             <a href="https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
               <Button
                 variant="contained"
-                sx={{
+                style={{
                   borderRadius: "10px",
                   marginTop: "20%",
                   py: tablet
@@ -163,7 +163,7 @@ function CandidateGuideSection() {
       >
         <Typography
           variant="body1"
-          sx={{
+          style={{
             color: theme.palette.secondary.main,
             fontFamily: theme.typography.fontFamily,
             fontWeight: "Light",
@@ -178,7 +178,7 @@ function CandidateGuideSection() {
         <Link
           href="mailto:geral@innova.pt"
           variant="body1"
-          sx={{
+          style={{
             color: theme.palette.primary.main,
             fontFamily: theme.typography.fontFamily,
             fontWeight: "Light",

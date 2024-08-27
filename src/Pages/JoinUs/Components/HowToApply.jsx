@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { theme } from "../../../theme";
 
@@ -23,8 +23,8 @@ const CustomCircle = ({ icon: IconComponent, bgcolor, fill }) => {
 
   return (
     <>
-      <Box
-        sx={{
+      <div
+        style={{
           width: tablet ? "6vw" : mobile ? "7vw" : smallMobile ? "9vw" : "60px",
           height: tablet
             ? "6vw"
@@ -48,7 +48,7 @@ const CustomCircle = ({ icon: IconComponent, bgcolor, fill }) => {
             style={{ fill: fill }}
           />
         )}
-      </Box>
+      </div>
     </>
   );
 };
@@ -120,8 +120,8 @@ const MiddleBox = ({ barheight }) => {
   return (
     <>
       {/* Second Box */}
-      <Box
-        sx={{
+      <div
+        style={{
           position: "relative",
           height: "100%",
           width: "100%",
@@ -177,8 +177,8 @@ const MiddleBox = ({ barheight }) => {
           />
         </div>
 
-        <Box
-          sx={{
+        <div
+          style={{
             position: "relative",
             width: "100%",
             display: "flex",
@@ -206,7 +206,7 @@ const MiddleBox = ({ barheight }) => {
           >
             <Typography
               variant="h5"
-              sx={{
+              style={{
                 color: "#101010",
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: "600",
@@ -217,7 +217,7 @@ const MiddleBox = ({ barheight }) => {
             </Typography>
             <Typography
               variant="body2"
-              sx={{
+              style={{
                 color: "#101010",
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: "Medium",
@@ -238,7 +238,7 @@ const MiddleBox = ({ barheight }) => {
                             variant="contained"
                             href='https://forms.gle/NP4Eo4RUftMv4LFq7' //TODO: atualizar link do forms
                             endIcon={<ArrowForwardIcon />}
-                            sx={{
+                            style={{
                                 position: 'relative',
                                 borderRadius: '10px',
                                 width: "200px",
@@ -255,10 +255,10 @@ const MiddleBox = ({ barheight }) => {
                     
                     */}
           </div>
-        </Box>
+        </div>
 
-        <Box
-          sx={{
+        <div
+          style={{
             position: "relative",
             width: "100%",
             display: "flex",
@@ -286,7 +286,7 @@ const MiddleBox = ({ barheight }) => {
           >
             <Typography
               variant="h5"
-              sx={{
+              style={{
                 color: "#101010",
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: "600",
@@ -297,7 +297,7 @@ const MiddleBox = ({ barheight }) => {
             </Typography>
             <Typography
               variant="body2"
-              sx={{
+              style={{
                 color: "#101010",
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: "Medium",
@@ -309,10 +309,10 @@ const MiddleBox = ({ barheight }) => {
               Be creative!
             </Typography>
           </div>
-        </Box>
+        </div>
 
-        <Box
-          sx={{
+        <div
+          style={{
             position: "relative",
             width: "100%",
             display: "flex",
@@ -339,7 +339,7 @@ const MiddleBox = ({ barheight }) => {
           >
             <Typography
               variant="h5"
-              sx={{
+              style={{
                 color: "#101010",
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: "600",
@@ -350,7 +350,7 @@ const MiddleBox = ({ barheight }) => {
             </Typography>
             <Typography
               variant="body2"
-              sx={{
+              style={{
                 color: "#101010",
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: "Medium",
@@ -360,10 +360,10 @@ const MiddleBox = ({ barheight }) => {
               ... and have fun! Halfway there!
             </Typography>
           </div>
-        </Box>
+        </div>
 
-        <Box
-          sx={{
+        <div
+          style={{
             position: "relative",
             width: "100%",
             display: "flex",
@@ -390,7 +390,7 @@ const MiddleBox = ({ barheight }) => {
           >
             <Typography
               variant="h5"
-              sx={{
+              style={{
                 color: "#101010",
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: "600",
@@ -401,7 +401,7 @@ const MiddleBox = ({ barheight }) => {
             </Typography>
             <Typography
               variant="body2"
-              sx={{
+              style={{
                 color: "#101010",
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: "Medium",
@@ -411,10 +411,10 @@ const MiddleBox = ({ barheight }) => {
               Now we can focus on your chosen department!
             </Typography>
           </div>
-        </Box>
+        </div>
 
-        <Box
-          sx={{
+        <div
+          style={{
             position: "relative",
             width: "100%",
             display: "flex",
@@ -442,7 +442,7 @@ const MiddleBox = ({ barheight }) => {
           >
             <Typography
               variant="h5"
-              sx={{
+              style={{
                 color: "#101010",
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: "600",
@@ -453,7 +453,7 @@ const MiddleBox = ({ barheight }) => {
             </Typography>
             <Typography
               variant="body2"
-              sx={{
+              style={{
                 color: "#101010",
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: "Medium",
@@ -463,12 +463,12 @@ const MiddleBox = ({ barheight }) => {
               You are finally one of us!
             </Typography>
           </div>
-        </Box>
-      </Box>
+        </div>
+      </div>
 
       {/* Third Box */}
-      <Box
-        sx={{
+      <div
+        style={{
           width: tablet ? "0%" : mobile ? "0%" : smallMobile ? "0%" : "21%",
           height: "100%",
           borderTopRightRadius: "20px",
@@ -479,7 +479,7 @@ const MiddleBox = ({ barheight }) => {
           opacity: "0.5",
           transition: "background-image 0.3s ease-in-out",
         }}
-      ></Box>
+      />
     </>
   );
 };
@@ -506,7 +506,7 @@ const HowToApply = ({ progress }) => {
     >
       <Typography
         variant="h2"
-        sx={{
+        style={{
           position: "relative",
           color: theme.palette.secondary.main,
           fontFamily: theme.typography.fontFamily,
@@ -524,8 +524,8 @@ const HowToApply = ({ progress }) => {
         How to apply?
       </Typography>
 
-      <Box
-        sx={{
+      <div
+        style={{
           position: "relative",
           width: tablet
             ? "60vmax"
@@ -552,7 +552,7 @@ const HowToApply = ({ progress }) => {
         }}
       >
         <MiddleBox barheight={progress} />
-      </Box>
+      </div>
     </div>
   );
 };

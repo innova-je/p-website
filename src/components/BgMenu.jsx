@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import { useMediaQuery } from "react-responsive";
 
 const BgMenu = () => {
+
+  const theme = useTheme();
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
   const desktop = useMediaQuery({ minWidth: 1081 });
@@ -21,7 +23,7 @@ const BgMenu = () => {
         ...MenuButtonStyle,
         height: "100dvh",
         width: "100dvw",
-        backgroundColor: "#732043",
+        backgroundColor: theme.palette.primary.main,
         top: 0,
         right: 0, //efeito a vir da direita
         marginRight: 0,
@@ -43,7 +45,7 @@ const BgMenu = () => {
         position: "absolute",
         right: "0%",
         borderRadius: "0%",
-        backgroundColor: "#732043",
+        backgroundColor: theme.palette.primary.main,
       });
       setBgMenuStyle({
         ...BgMenuStyle,
@@ -89,7 +91,7 @@ const BgMenu = () => {
     width: isMenuClicked ? "25px" : "20px",
     height: "3px",
     borderRadius: "5px",
-    background: isMenuClicked ? "white" : "#732043",
+    background: isMenuClicked ? "white" : theme.palette.primary.main,
     transform: isMenuClicked ? "rotate(45deg) translate(0.2em, 0.5em)" : "none",
     transition: "transform ease-in-out 0.5s, background ease-in-out 0.3s",
   };
@@ -98,7 +100,7 @@ const BgMenu = () => {
     width: "20px",
     height: "3px",
     borderRadius: "5px",
-    backgroundColor: isMenuClicked ? "white" : "#732043",
+    backgroundColor: isMenuClicked ? "white" : theme.palette.primary.main,
     opacity: isMenuClicked ? "0%" : "100%",
     transition: "opacity 0.3s ease-in-out",
   };
@@ -107,7 +109,7 @@ const BgMenu = () => {
     width: isMenuClicked ? "25px" : "20px",
     height: "3px",
     borderRadius: "5px",
-    background: isMenuClicked ? "white" : "#732043",
+    background: isMenuClicked ? "white" : theme.palette.primary.main,
     transform: isMenuClicked
       ? "rotate(-45deg) translate(0.2em, -0.5em)"
       : "none",
@@ -139,9 +141,9 @@ const BgMenu = () => {
       }}
     >
       <div className="burger-menu" onClick={updateMenu} style={BgMenuStyle}>
-        <div className={burger_class} style={BgBar1}></div>
-        <div className={burger_class} style={BgBar2}></div>
-        <div className={burger_class} style={BgBar3}></div>
+        <div className={burger_class} style={BgBar1} />
+        <div className={burger_class} style={BgBar2} />
+        <div className={burger_class} style={BgBar3} />
       </div>
 
       <div style={{ ...MenuButtonStyle, overflow: "hidden" }}>
@@ -162,38 +164,38 @@ const BgMenu = () => {
           }}
         >
           <NavLink to="/about-us" style={NavLinkStyle} onClick={updateMenu}>
-            <Typography style={PagesLinkStyle}>About Us</Typography>
+            <Typography sx={PagesLinkStyle}>About Us</Typography>
           </NavLink>
           <NavLink to="/services" style={NavLinkStyle} onClick={updateMenu}>
-            <Typography style={PagesLinkStyle}>Services</Typography>
+            <Typography sx={PagesLinkStyle}>Services</Typography>
           </NavLink>
           <NavLink
             to="/our-people/our-team"
             style={NavLinkStyle}
             onClick={updateMenu}
           >
-            <Typography style={PagesLinkStyle}>Our Team</Typography>
+            <Typography sx={PagesLinkStyle}>Our Team</Typography>
           </NavLink>
           <NavLink
             to="/our-people/our-advisors"
             style={NavLinkStyle}
             onClick={updateMenu}
           >
-            <Typography style={PagesLinkStyle}>Our Advisors</Typography>
+            <Typography sx={PagesLinkStyle}>Our Advisors</Typography>
           </NavLink>
           <NavLink to="/events" style={NavLinkStyle} onClick={updateMenu}>
-            <Typography style={PagesLinkStyle}>Events</Typography>
+            <Typography sx={PagesLinkStyle}>Events</Typography>
           </NavLink>
           <NavLink
             to="/out-of-office"
             style={NavLinkStyle}
             onClick={updateMenu}
           >
-            <Typography style={PagesLinkStyle}>Out of Office</Typography>
+            <Typography sx={PagesLinkStyle}>Out of Office</Typography>
           </NavLink>
           {mobile && (
             <NavLink to="/join-us" style={NavLinkStyle} onClick={updateMenu}>
-              <Typography style={PagesLinkStyle}>Join Us</Typography>
+              <Typography sx={PagesLinkStyle}>Join Us</Typography>
             </NavLink>
           )}
         </div>

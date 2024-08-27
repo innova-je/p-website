@@ -37,12 +37,14 @@ function HeroSection() {
           color: "white",
           zIndex: 3,
           textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)",
+          width: "90%",
+          maxWidth: "600px",
         }}
       >
         <img
           src={IW_Hero}
           alt="Innovation Week 2023"
-          style={{ width: "100%", maxWidth: "600px" }}
+          style={{ width: "100%", maxWidth: "90%", height: "auto" }}
         />
       </div>
     </div>

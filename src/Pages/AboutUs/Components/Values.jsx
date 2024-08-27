@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '@mui/material';
+import { Button, useTheme } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
 
 const ButtonComponent = ({ title, subtitle, content, currentState, onButtonClick }) => {
+  const theme = useTheme();
   const [isTitleVisible, setIsTitleVisible] = useState(false);
   const [isSubtitleVisible, setIsSubtitleVisible] = useState(false);
   const [isContentVisible, setIsContentVisible] = useState(false);
@@ -57,7 +58,7 @@ const ButtonComponent = ({ title, subtitle, content, currentState, onButtonClick
       }}
       onClick={handleButtonClick}
     >
-      <div style={{}}>
+      <div>
         <strong style={{
           fontSize: currentState === 'normal' ? (tablet ? '3dvw' : mobile ? '3.5dvw' : smallMobile ? "4.5dvw" : '2.2dvw') : currentState === 'collapsed' ? (tablet ? '3dvw' : mobile ? '3.5dvw' : smallMobile ? "4.5dvw" : '3dvw') : currentState === 'expanded' ? (tablet ? '2dvw' : mobile ? '2.5dvw' : smallMobile ? "3.5dvw" : '1.7dvw') : 'inherit',
         }}>
@@ -67,7 +68,7 @@ const ButtonComponent = ({ title, subtitle, content, currentState, onButtonClick
           <div style={{ fontSize: (tablet ? '2dvw' : mobile ? '2.5dvw' : smallMobile ? "3.2dvw" : '1.5dvw'), color: 'white', opacity:'0.6', textTransform: 'none' }} dangerouslySetInnerHTML={{ __html: subtitle }} />
         )}
         {currentState === 'expanded' && isContentVisible && (
-          <div style={{ textTransform:"none", color: "#052533", fontSize: (tablet ? '1.4dvw' : mobile ? '1.7dvw' : smallMobile ? "2.7dvw" : '1dvw'), textAlign: 'justify', opacity: '1' }}>{content}</div>
+          <div style={{ textTransform:"none", color: theme.palette.secondary.main, fontSize: (tablet ? '1.4dvw' : mobile ? '1.7dvw' : smallMobile ? "2.7dvw" : '1dvw'), textAlign: 'justify', opacity: '1' }}>{content}</div>
         )}
       </div>
     </Button>
