@@ -7,8 +7,6 @@ const BgMenu = () => {
 
   const theme = useTheme();
   const mobile = useMediaQuery({ maxWidth: 600 });
-  const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
-  const desktop = useMediaQuery({ minWidth: 1081 });
 
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
   const [menu_class, setMenuClass] = useState("menu hidden");
@@ -163,6 +161,9 @@ const BgMenu = () => {
             transition: "opacity 0.2s ease-in-out, right 0.6s ease-in-out",
           }}
         >
+          <NavLink to="/" style={NavLinkStyle} onClick={updateMenu}>
+            <Typography sx={PagesLinkStyle}>Home</Typography>
+          </NavLink>
           <NavLink to="/about-us" style={NavLinkStyle} onClick={updateMenu}>
             <Typography sx={PagesLinkStyle}>About Us</Typography>
           </NavLink>
@@ -183,9 +184,12 @@ const BgMenu = () => {
           >
             <Typography sx={PagesLinkStyle}>Our Advisors</Typography>
           </NavLink>
+          {/* 
           <NavLink to="/events" style={NavLinkStyle} onClick={updateMenu}>
             <Typography sx={PagesLinkStyle}>Events</Typography>
-          </NavLink>
+          </NavLink>          
+          */}
+          
           <NavLink
             to="/out-of-office"
             style={NavLinkStyle}

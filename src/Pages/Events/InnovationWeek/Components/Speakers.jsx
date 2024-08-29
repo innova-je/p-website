@@ -1,14 +1,3 @@
-import img1 from '../../../../Assets/Images/other/IW-png.png';
-import img2 from '../../../../Assets/Images/other/404.png';
-import img3 from '../../../../Assets/Images/other/ThirstPortugal.png';
-import img4 from '../../../../Assets/Images/other/GuiaDoCandidato.png';
-
-import KatarinaLarsson from '../../../../Assets/Images/InnovationWeek/Speakers/katarina_larsson.png';
-import PauloFerreira from '../../../../Assets/Images/InnovationWeek/Speakers/paulo_ferreira.png';
-import MariaSaraiva from '../../../../Assets/Images/InnovationWeek/Speakers/maria_saraiva.png';
-import NeuzaTeixeira from '../../../../Assets/Images/InnovationWeek/Speakers/neuza_teixeira.png';
-
-
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -16,6 +5,11 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useTheme } from '@emotion/react';
 import { useMediaQuery } from "react-responsive";
+
+import KatarinaLarsson from '../../../../Assets/Images/InnovationWeek/Speakers/katarina_larsson.png';
+import PauloFerreira from '../../../../Assets/Images/InnovationWeek/Speakers/paulo_ferreira.png';
+import MariaSaraiva from '../../../../Assets/Images/InnovationWeek/Speakers/maria_saraiva.png';
+import NeuzaTeixeira from '../../../../Assets/Images/InnovationWeek/Speakers/neuza_teixeira.png';
 
 const speakersData = {
     '1st Edition': [
