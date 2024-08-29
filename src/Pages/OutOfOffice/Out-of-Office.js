@@ -1,10 +1,14 @@
 import React from 'react'
-import MaintenanceSinglePage from '../Other/MaintenanceSinglePage'
+import HeroSection from './Components/HeroSection'
+import EventsCarousel from './Components/EventsCarousel'
 
 const OutOffice = () => {
     return (
         <>
-            <MaintenanceSinglePage/>
+
+            <HeroSection />
+
+            <EventsCarousel />
         </>
     )
 }
