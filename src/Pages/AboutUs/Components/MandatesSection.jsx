@@ -10,8 +10,6 @@ import { Typography, useTheme } from "@mui/material";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MagicSliderDots from "react-magic-slider-dots";
-import "react-magic-slider-dots/dist/magic-dots.css";
 import Slider from "react-slick";
 
 const MandatesSection = () => {
@@ -39,30 +37,6 @@ const MandatesSection = () => {
     importImages();
   }, [mandates]);
 
-  const handlePrevClick = () => {
-    setCurrentImageIndex(
-      (prevIndex) => (prevIndex - 1 + mandates.length) % mandates.length
-    );
-  };
-
-  const handleNextClick = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % mandates.length);
-  };
-
-  let visibleMandates;
-  if (mandates.length === 2) {
-    visibleMandates = [
-      null,
-      mandates[currentImageIndex],
-      mandates[(currentImageIndex + 1) % mandates.length],
-    ];
-  } else {
-    visibleMandates = [
-      mandates[(currentImageIndex - 1 + mandates.length) % mandates.length],
-      mandates[currentImageIndex],
-      mandates[(currentImageIndex + 1) % mandates.length],
-    ];
-  }
   const settings = {
     dots: true,
     infinite: true,
@@ -71,10 +45,7 @@ const MandatesSection = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
-    appendDots: (dots) => {
-      return <MagicSliderDots dots={dots} numDotsToShow={5} dotWidth={30} />;
-    },
+    arrows: false
   };
   return (
     <>

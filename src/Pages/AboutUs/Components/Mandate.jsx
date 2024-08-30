@@ -3,7 +3,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { IconButton } from "@mui/material";
 import Mandates from "../../../Assets/data/Mandates.json";
-import { Typography, useTheme } from "@mui/material";
+import { Typography } from "@mui/material";
 
 const Mandate = ({
   title,
