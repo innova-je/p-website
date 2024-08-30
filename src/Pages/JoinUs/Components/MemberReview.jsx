@@ -23,7 +23,7 @@ const MemberReview = ({ image, name, department, text }) => {
             boxShadow={3}
             height="auto"
             sx={{
-
+                
                 transition: 'transform 0.2s ease-in-out',
                 '&:hover': {
                     transform: mobile ? undefined : smallMobile ? undefined : 'scale(1.05)',
@@ -33,7 +33,6 @@ const MemberReview = ({ image, name, department, text }) => {
             <Box
                 display="flex"
                 alignItems="center"
-                justifyContent="center"
                 flexDirection="column"
                 sx={{ margin: 1 }}
             >
@@ -41,12 +40,13 @@ const MemberReview = ({ image, name, department, text }) => {
                     style={{
                         display: 'flex',
                         alignItems: 'center',
+                        gap: "1rem",
                         marginBottom: 0.5,
                         paddingRight: 1.5
                     }}
                 >
                     <Avatar src={image} alt={name} style={{ width: 40, height: 40 }} />
-                    <div textAlign="left" paddingLeft={1.5}>
+                    <div style={{textAlign: "left"}} paddingLeft={1.5}>
                         <Typography variant="body2" style={{ fontWeight: "Medium", mb: -0.5 }}>
                             {name}
                         </Typography>

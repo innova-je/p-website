@@ -1,5 +1,6 @@
 import React from "react";
 import { useTheme } from "@mui/material";
+import PhotosSection from "./PhotosSection";
 
 
 const HeaderStyle = {
@@ -53,7 +54,7 @@ function HeroSection() {
           justifyContent: "center",
         }}
       >
-        Fotos
+        <PhotosSection />
       </div>
     </div>
   );

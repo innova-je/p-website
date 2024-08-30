@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useTheme } from "@mui/material";
-import { Height } from '@mui/icons-material';
 
 function EventCard({ title, image }) {
   const theme = useTheme();
@@ -11,7 +10,7 @@ function EventCard({ title, image }) {
     height: "150px",
     borderRadius: "20px",
     transition: "transform 0.3s ease-in-out",
-    transform: isHovered ? "scale(1.05)" : "scale(1)", 
+    transform: isHovered ? "scale(1.05)" : "scale(1)",
     overflow: "hidden"
   };
 

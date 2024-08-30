@@ -63,17 +63,19 @@ const Navbar = () => {
     let lastScrollTop = 0;
 
     const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = document.documentElement.scrollTop;
       if (scrollTop > 250 && lastScrollTop < scrollTop) {
         setScrollDirection("down");
+        console.log(scrollDirection)
       } else if(lastScrollTop > scrollTop) {
         setScrollDirection("up");
+        //console.log(scrollDirection)
       }
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     };
 
     window.addEventListener("scroll", handleScroll);
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -120,7 +122,7 @@ const Navbar = () => {
                 ? theme.palette.secondary.main
                 : theme.palette.primary.main,
               fontSize: "18px",
-              textAlign: "left",
+              textAlign: "center",
             }}
           >
             {subPage.label}
@@ -142,7 +144,8 @@ const Navbar = () => {
   return (
     <AppBar
       style={{
-        background: isInnovationWeek ? "#FFFFFF80" : "#FFFFFF"  ,
+        background: "#FFFFFF60",
+        backdropFilter: "blur(10px)",
         boxShadow: "none",
         top: scrollDirection === "up" ? 0 : "-4rem",
         position: "fixed",
