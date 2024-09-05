@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { IconButton } from "@mui/material";
-import Mandates from "../../../Assets/data/Mandates.json";
-import { Typography } from "@mui/material";
+import { useTheme } from "@mui/material";
+
+
+
 
 const Mandate = ({
   title,
@@ -11,199 +10,117 @@ const Mandate = ({
   mainAccomplishments,
   image,
   currentImageIndex,
-  index,
-  isDesktop,
+  index
 }) => {
-  const [currImageIndex, setCurrentImageIndex] = useState(0);
-  const mandates = Mandates.mandates;
 
-  const handlePrevClick = () => {
-    setCurrentImageIndex(
-      (prevIndex) => (prevIndex - 1 + mandates.length) % mandates.length
-    );
-  };
-
-  const handleNextClick = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % mandates.length);
-  };
-
-  let visibleMandates;
-  if (mandates.length === 2) {
-    visibleMandates = [
-      null,
-      mandates[currentImageIndex],
-      mandates[(currentImageIndex + 1) % mandates.length],
-    ];
-  } else {
-    visibleMandates = [
-      mandates[(currentImageIndex - 1 + mandates.length) % mandates.length],
-      mandates[currentImageIndex],
-      mandates[(currentImageIndex + 1) % mandates.length],
-    ];
-  }
+  const theme = useTheme();
 
   const [dynamicImage, setDynamicImage] = useState(null);
 
-  useEffect(() => {
-    const loadImage = async () => {
-      try {
-        const { default: dynamicImage } = await import(
-          `../../../Assets/Images/Mandates/${image}`
-        );
-        setDynamicImage(dynamicImage);
-      } catch (error) {
-        console.error("Error loading image:", error);
-      }
-    };
+    useEffect(() => {
+      const loadImage = async () => {
+        try {
+          const { default: dynamicImage } = await import(
+            `../../../Assets/Images/Mandates/${image}`
+          );
+          setDynamicImage(dynamicImage);
+        } catch (error) {
+          console.error("Error loading image:", error);
+        }
+      };
 
-    loadImage();
-  }, [image]);
+      loadImage();
+    }, [image]);
 
   return (
     <>
-      {isDesktop ? (
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "2rem",
-              margin: "0 auto",
-            }}
-          >
-            <IconButton
-              variant="contained"
-              onClick={handlePrevClick}
-              style={{
-                color: "primary.main",
-                "&:hover": {
-                  color: "white",
-                },
-              }}
-            >
-              <ArrowBackIosIcon style={{ fontSize: "2.5rem" }} />
-            </IconButton>
-
-            
-          </div>
-          <div style={{ background: "red" }}>
-            <img
-              src={dynamicImage}
-              alt={`Image ${currentImageIndex + index - 1}`}
-              style={{
-                width: index === 1 ? "400px" : "320px",
-                opacity: index === 1 ? 1 : 0.5,
-                borderRadius: "25px",
-                transition: "opacity 0.3s ease-in-out",
-              }}
-            />
-            {index === 1 && (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <Typography
-                  variant="h4"
-                  color="white"
-                  style={{ fontWeight: "600", marginTop: "20px" }}
-                >
-                  {title}
-                </Typography>
-                <Typography
-                  variant="h6"
-                  color="secondary"
-                  style={{ fontWeight: "600" }}
-                >
-                  {year}
-                </Typography>
-                <Typography
-                  color="white"
-                  style={{
-                    fontWeight: "200",
-                    marginTop: "20px",
-                    textAlign: "left",
-                  }}
-                >
-                  {mainAccomplishments.map((accomplishment, index) => (
-                    <li key={index}>{accomplishment}</li>
-                  ))}
-                </Typography>
-              </div>
-            )}
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "2rem",
-              margin: "0 auto",
-            }}
-          >
-            <IconButton
-              variant="contained"
-              onClick={handlePrevClick}
-              style={{
-                color: "primary.main",
-                "&:hover": {
-                  color: "white",
-                },
-              }}
-            >
-              <ArrowForwardIosIcon style={{ fontSize: "2.5rem" }} />
-            </IconButton>
-
-            
-          </div>
-        </div>
-      ) : (
+      <div // Container
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          maxHeight: "500px",
+          padding: "4rem 4rem 1.5rem 4rem",
+          maxWidth: "",
+        }}
+      >
         <div>
-          <img
+          <img // Image
             src={dynamicImage}
             alt={`Image ${currentImageIndex + index - 1}`}
             style={{
+              maxHeight: "500px",
               width: "100%",
-              borderRadius: "25px",
+              objectFit: "cover",
+              over: "hidden",
+              zIndex: -1,
+              borderRadius: "20px 0 0 20px",
             }}
           />
+          {/*
           <div
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
+              position: "absolute",
+              bottom: "0",
+              width: "100%",
+              height: "25%",
+              backgroundImage:
+                "linear-gradient(to top, rgba(240,240,240,1), rgba(214, 199, 206, 0) )",
+            }}
+          />
+        */}
+        </div>
+
+        <div // Text
+          style={{
+            display: "flex",
+            flex: 1,
+            width: "60%",
+            flexDirection: "column",
+            maxHeight: "500px",
+            textAlign: "left",
+            padding: "3rem 6rem 6rem 3rem",
+            zIndex: 1,
+            backgroundColor: "white",
+            borderRadius: " 0 20px 20px 0",
+          }}
+        >
+          <p // Title / Mandate
+            style={{
+              variant: "h4",
+              color: theme.palette.primary.main,
+              fontWeight: "600",
+              fontSize: "3.5rem",
             }}
           >
-            <Typography
-              variant="h4"
-              color="white"
-              style={{ fontWeight: "600", marginTop: "20px" }}
-            >
-              {title}
-            </Typography>
-            <Typography
-              variant="h6"
-              color="secondary"
-              style={{ fontWeight: "600" }}
-            >
-              {year}
-            </Typography>
-            <Typography
-              color="white"
-              style={{
-                fontWeight: "200",
-                marginTop: "20px",
-                textAlign: "left",
-              }}
-            >
-              {mainAccomplishments.map((accomplishment, index) => (
-                <li key={index}>{accomplishment}</li>
-              ))}
-            </Typography>
-          </div>
+            {title}
+          </p>
+          <p // Year
+            style={{
+              variant: "h6",
+              color: theme.palette.secondary.main,
+              fontWeight: "600",
+              marginTop: "20px",
+              fontSize: "2rem",
+            }}
+          >
+            {year}
+          </p>
+          <p // Accomplishments / Description
+            style={{
+              color: "primary",
+              fontWeight: "600",
+              marginTop: "20px",
+              fontSize: "1rem",
+              color: theme.palette.primary.main,
+              fontFamily: theme.typography.fontFamily,
+            }}
+          >
+            {mainAccomplishments.map((accomplishment, index) => (
+              <p key={index}>{accomplishment}</p>
+            ))}
+          </p>
         </div>
-      )}
+      </div>
     </>
   );
 };
