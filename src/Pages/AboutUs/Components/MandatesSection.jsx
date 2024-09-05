@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { IconButton } from "@mui/material";
+
 import Mandates from "../../../Assets/data/Mandates.json";
 // Import Mandate component
 import Mandate from "./Mandate";
@@ -13,10 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 const MandatesSection = () => {
-  const isDesktopOrLaptop = useMediaQuery({ minWidth: 767 });
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const mandates = Mandates.mandates;
-  const [images, setImages] = useState([]);
+  const [image, setImages] = useState([]);
   const theme = useTheme();
 
   const smallMobile = useMediaQuery({ maxWidth: 650 });
@@ -48,7 +44,9 @@ const MandatesSection = () => {
     arrows: false
   };
   return (
-    <>
+    <div
+      
+    >
       <Typography
         variant="h4"
         style={{
@@ -83,85 +81,43 @@ const MandatesSection = () => {
       >
         Throughout the years
       </Typography>
-      {!isDesktopOrLaptop && (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            zIndex: 4,
-          }}
-        >
-          <Slider
-            {...settings}
-            style={{ width: "80dvw", padding: "7% 0 5% 0", background: "none" }}
-          >
-            {Mandates.mandates.map((mandate, index) => (
-              <div key={index}>
-                <div
-                  style={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    padding: "0 0 9% 0",
-                  }}
-                >
-                  <Mandate
-                    title={mandate.title}
-                    year={mandate.year}
-                    mainAccomplishments={mandate.mainAccomplishments}
-                    image={mandate.image}
-                    currentImageIndex={mandate.currentImageIndex}
-                    index={index}
-                    isDesktop={false}
-                  />
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
-      )}
 
-      {isDesktopOrLaptop && (
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "flex-start",
-              padding: "3rem 0",
-              zIndex: 4,
-              overflow: "hidden",
-            }}
-          >
-            {visibleMandates.map((mandate, index) => (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          zIndex: 4,
+        }}
+      >
+        <Slider
+          {...settings}
+          style={{ width: "100dvw", padding: "0 0 2rem 0", background: "none" }}
+        >
+          {Mandates.mandates.map((mandate, index) => (
+            <div key={index}>
               <div
-                key={index}
                 style={{
-                  textAlign: "center",
-                  margin: "0 70px",
-                  alignItems: "center",
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
                 }}
               >
-                {mandate ? (
-                  <Mandate
-                    title={mandate.title}
-                    year={mandate.year}
-                    mainAccomplishments={mandate.mainAccomplishments}
-                    image={mandate.image}
-                    currentImageIndex={mandate.currentImageIndex}
-                    index={index}
-                    isDesktop={true}
-                  />
-                ) : (
-                  <div style={{ width: "30dvw", height: "20dvw" }} />
-                )}
+                <Mandate
+                  title={mandate.title}
+                  year={mandate.year}
+                  mainAccomplishments={mandate.mainAccomplishments}
+                  image={mandate.image}
+                  currentImageIndex={mandate.currentImageIndex}
+                  index={index}
+                  isDesktop={false}
+                />
               </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
   );
 };
 

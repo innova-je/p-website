@@ -13,10 +13,11 @@ const AboutUs = () => {
         style={{
           backgroundImage:
             "linear-gradient(to top, rgba(115,32,67,1), rgba(115,32,67,0))",
+          
         }}
       >
         <ValuesSection />
-        {/*<MandatesSection /> */}        
+        <MandatesSection />        
       </section>
 
       <JESection />
