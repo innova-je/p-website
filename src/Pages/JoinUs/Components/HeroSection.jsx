@@ -76,7 +76,7 @@ function HeroSection() {
 
             <CountDownRecruitment />
 
-            {/* 
+            
             <div style={{ padding: "5rem 0 0 0" }}>
               <Button
                 variant="contained"
@@ -100,8 +100,6 @@ function HeroSection() {
               </Button>
             </div>
             
-            
-            */}
           </div>
         </div>
       </div>
