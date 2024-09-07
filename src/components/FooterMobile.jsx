@@ -86,7 +86,6 @@ function FooterMobile() {
         >
           {[
             { to: "about-us", text: "About Us" },
-            { to: "events", text: "Events" },
             { to: "services", text: "Services" },
             { to: "out-of-office", text: "Out of Office" },
             { to: "our-people/our-team", text: "Team" },

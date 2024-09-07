@@ -78,6 +78,8 @@ function HeroSection() {
 
             
             <div style={{ padding: "5rem 0 0 0" }}>
+              {/*
+              
               <Button
                 variant="contained"
                 href="https://forms.gle/NP4Eo4RUftMv4LFq7"
@@ -98,6 +100,8 @@ function HeroSection() {
               >
                 Apply Now!
               </Button>
+              */}
+              
             </div>
             
           </div>

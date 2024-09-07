@@ -116,6 +116,11 @@ function CandidateGuideSection() {
               <br />
               candidate guide
             </Typography>
+
+            <p style={{padding: "1rem", color: theme.palette.secondary.main}}>Available Soon</p>
+
+            {/*
+            
             <a href="https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
               <Button
                 variant="contained"
@@ -149,6 +154,9 @@ function CandidateGuideSection() {
                 Download
               </Button>
             </a>
+            
+            */}
+            
           </div>
         </div>
       </div>
@@ -176,7 +184,7 @@ function CandidateGuideSection() {
         </Typography>
 
         <Link
-          href="mailto:geral@innova.pt"
+          href="mailto:geral@innova.pt" //TODO: isto aqui devia ser o mail de RH
           variant="body1"
           style={{
             color: theme.palette.primary.main,

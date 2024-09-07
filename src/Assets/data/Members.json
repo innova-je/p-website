@@ -135,12 +135,6 @@
                     "linkedin": "https://www.linkedin.com/in/rita-galhardo-003794203"
                 },
                 {
-                    "name": "Arthur Chaves",
-                    "imgDirectory": "Projetos/arthur_chaves.webp",
-                    "email": "arthur.chaves@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/arthur-alexandre-lannes-de-paiva-chaves-a22661263"
-                },
-                {
                     "name": "Cristiano  Almeida",
                     "imgDirectory": "Projetos/cristiano_almeida.webp",
                     "email": "cristiano.almeida@innova.pt",
@@ -235,12 +229,6 @@
                     "imgDirectory": "Projetos/tiago_martinho.webp",
                     "email": "tiago.martinho@innova.pt",
                     "linkedin": "https://www.linkedin.com/in/tiago-martinhoo/"
-                },
-                {
-                    "name": "Tomás Trinca",
-                    "imgDirectory": "Projetos/tomas_trinca.webp",
-                    "email": "tomas.trinca@innova.pt",
-                    "linkedin": "https://www.linkedin.com/in/tomastrinca/"
                 }
             ]
         },
