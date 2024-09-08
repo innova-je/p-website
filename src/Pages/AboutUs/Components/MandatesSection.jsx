@@ -41,12 +41,10 @@ const MandatesSection = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false
+    arrows: false,
   };
   return (
-    <div
-      
-    >
+    <div>
       <Typography
         variant="h4"
         style={{
