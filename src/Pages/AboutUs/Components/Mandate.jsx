@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "@mui/material";
 
-
-
-
 const Mandate = ({
   title,
   year,
@@ -40,7 +37,7 @@ const Mandate = ({
           flexDirection: "row",
           maxHeight: "500px",
           padding: "4rem 4rem 1.5rem 4rem",
-          maxWidth: "",
+          width: "80vw",
         }}
       >
         <div>
