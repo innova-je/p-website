@@ -34,6 +34,7 @@ function OutOfOfficeSection() {
           width: "100%",    
           justifyContent: "center",
           alignItems: "center",
+          gap: "0.5rem"
         }}
       >
         {(mobile || smallMobile || tablet) && (

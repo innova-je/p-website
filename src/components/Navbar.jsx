@@ -210,6 +210,7 @@ const Navbar = () => {
             "dropdown1"
           )}
 
+          {/*
           {renderDropdownButton(
             "Events",
             [
@@ -217,7 +218,9 @@ const Navbar = () => {
               { label: "Innovation Valley", path: "/events/innovation-valley" },
             ],
             "dropdown2"
-          )}
+          )}          
+          */}
+          
 
           <NavLink
             to="/out-of-office"

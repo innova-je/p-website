@@ -19,7 +19,7 @@ const CountDownRecruitment = () => {
     // Calculate the remaining time until the event and update the countdown state
     const calculateCountdown = () => {
         const today = new Date();
-        const eventDate = new Date('2024-09-16 00:00:01');
+        const eventDate = new Date('2024-09-13 00:00:01');
         const timeDifference = eventDate.getTime() - today.getTime();
 
         const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
