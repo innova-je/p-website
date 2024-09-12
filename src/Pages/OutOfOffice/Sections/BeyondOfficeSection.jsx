@@ -14,6 +14,7 @@ const BeyondOfficeSection = () => {
     fontWeight: "500",
     fontSize: isMobile ? "13dvw" : "4rem",
     textAlign: "center",
+    margin: isMobile ? "10% 0 0 0" : "0",
   };
 
   const HeaderDescriptionStyle = {
