@@ -167,9 +167,11 @@ const BgMenu = () => {
           <NavLink to="/about-us" style={NavLinkStyle} onClick={updateMenu}>
             <Typography sx={PagesLinkStyle}>About Us</Typography>
           </NavLink>
+          {/*
           <NavLink to="/services" style={NavLinkStyle} onClick={updateMenu}>
             <Typography sx={PagesLinkStyle}>Services</Typography>
           </NavLink>
+          */}
           <NavLink
             to="/our-people/our-team"
             style={NavLinkStyle}

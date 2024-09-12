@@ -32,10 +32,9 @@ const BeyondOfficeSection = () => {
         Because having fun is the secret ingredient
       </p>
 
-      <BeyondOffice element={"Right"} />
+      <BeyondOffice element={"1"} image={"1"} text={"1"} />
       <BeyondOffice />
-      <BeyondOffice element={"Right"} />
-      <BeyondOffice />
+
     </>
   );
 };

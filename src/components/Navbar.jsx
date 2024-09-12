@@ -196,9 +196,11 @@ const Navbar = () => {
             style={linkStyles(theme, isInnovationWeek)}
             activeStyle={activeLinkStyles}
           >
+            {/*
             <Button color="inherit" style={linkStyles(theme, isInnovationWeek)}>
               Services
             </Button>
+            */}
           </NavLink>
 
           {renderDropdownButton(

@@ -1,15 +1,17 @@
 import React from "react";
 import img5 from "../../../Assets/Images/Mandates/MandatoIV.webp";
+import groupImage from "../../../Assets/Images/OutOfOffice/IMG_4099.png";
 import { useTheme } from "@emotion/react";
 import { useMediaQuery } from "react-responsive";
 
-{/* COM PROBLEMAS ENTRE OS 1200PX E OS 750PX */}
+{
+  /* COM PROBLEMAS ENTRE OS 1200PX E OS 750PX */
+}
 
-
-const BeyondOffice = ({ element }) => {
+const BeyondOffice = ({ element, image, text}) => {
   const theme = useTheme();
 
-  const isMobile = useMediaQuery({ maxWidth: 750 });
+  const isMobile = useMediaQuery({ maxWidth: 1300 });
 
   const BigBoxStyle = {
     display: "flex",
@@ -36,23 +38,24 @@ const BeyondOffice = ({ element }) => {
     padding: isMobile ? "0 2rem 3rem 2rem" : "0 2rem 0 2rem",
   };
 
-  const ImageStyle = {
-    width: isMobile ? "80%" : "100%",
-    height: "90%",
-    maxHeight: "1400px",
-    objectFit: "cover",
-    over: "hidden",
-    zIndex: 0,
-    border: isMobile ? "5px solid rgba(5, 37, 51, 0.7)" : "none",
-  };
-
-  const ImageDivStyle = {
+   const ImageDivStyle = {
     display: "flex",
     flexDirection: "column",
     margin: "0 0 0 0",
     alignItems: isMobile ? "center" : "",
+    position: "relative",
   };
-
+  
+   const ImageStyle = {
+     width: isMobile ? "90%" : "",
+     maxWidth: "700px",
+     maxHeight: "400px",
+     objectFit: "cover",
+     overflow: "hidden",
+     zIndex: 0,
+     border: isMobile ? "5px solid rgba(5, 37, 51, 0.7)" : "none",
+  };
+  
   const ComboRightImageStyle = {
     ...ImageStyle,
     borderRadius: isMobile ? "10px" : "0 10px 10px 0",
@@ -68,10 +71,9 @@ const BeyondOffice = ({ element }) => {
     backgroundColor: "#052533",
     alignItems: "center",
     justifyContent: "center",
-    borderTop: "5px solid white",
-    borderBottom: "5px solid white",
+    borderTop: "5px solid #F0F0F0",
+    borderBottom: "5px solid #F0F0F0",
     zIndex: 1,
-    width: isMobile ? "70%" : "33%",
     minHeight: isMobile ? "30px" : "40px",
     display: "flex",
     flex: 1,
@@ -79,16 +81,21 @@ const BeyondOffice = ({ element }) => {
 
   const ComboRightTextDiv = {
     ...ImageDescDivStyle,
-    margin: isMobile ? "51vw 0 0 1vw" : "24vw 0 0 0",
-    borderRight: "5px solid white",
-    borderLeft: isMobile ? "5px solid white" : "none",
+    width: isMobile ? "70%" : "80%",
+    bottom: "-6%",
+    left: isMobile ? "" : "-0",
+    borderRight: "5px solid #F0F0F0",
+    borderLeft: isMobile ? "5px solid #F0F0F0" : "none",
     borderRadius: isMobile ? "10px" : "0 10px 10px 0",
   };
 
   const ComboLeftTextDiv = {
     ...ImageDescDivStyle,
-    margin: "22.5vw 0 0 8vw",
-    borderLeft: "5px solid white",
+    width: isMobile ? "70%" : "75%",
+    overflow: "hidden",
+    bottom: "-6%",
+    right: "-0",
+    borderLeft: "5px solid #F0F0F0",
     borderRadius: "10px 0 0 10px",
   };
 
@@ -107,7 +114,7 @@ const BeyondOffice = ({ element }) => {
           <div style={ImageDivStyle}>
             <img
               style={ComboRightImageStyle}
-              src={img5}
+              src={image ? img5 : groupImage}
               alt="Beyond Office Hours"
             />
             <div style={ComboRightTextDiv}>
@@ -116,38 +123,58 @@ const BeyondOffice = ({ element }) => {
               </p>
             </div>
           </div>
-          <div style={{ margin: "1% 2% 0 2%" }}>
-            <p style={TitleStyle}>Junior Enterprises Network National Events</p>
-            <p style={BodyTextStyle}>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Suscipit, animi! Error laborum animi voluptas vitae excepturi
-              itaque nihil obcaecati fugiat facilis, quod, consequatur tempora
-              corrupti. Exercitationem, hic omnis similique rerum eligendi qui
-              esse dolore labore iusto corporis, dignissimos a commodi! Minus
-              consequuntur culpa sunt cupiditate voluptatem molestias nulla, a
-              omnis.
-            </p>
-          </div>
+
+          {text ? (
+            <div style={{ margin: "1% 2% 0 2%" }}>
+              <p style={TitleStyle}>
+                Junior Enterprises Network National Events
+              </p>
+              <p style={BodyTextStyle}>
+                On 28-29 of October 2023 , +300 national Junior Entrepreneurs
+                came to FCT NOVA for the III Junior Enterprises National
+                Congress. Carefully organized by In-Nova under the motto
+                "Balance to Success", we brought together an interesting lineup
+                of speakers with extensive knowledge on this topic and the
+                participants reflected about the best decisions for a successful
+                and meaningful life. Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Suscipit, animi! Error laborum animi voluptas
+                vitae excepturi itaque nihil obcaecati fugiat facilis, quod,
+                consequatur tempora corrupti. Exercitationem, hic omnis
+                similique rerum eligendi qui esse dolore labore iusto corporis,
+                dignissimos a commodi! Minus consequuntur culpa sunt cupiditate
+                voluptatem molestias nulla, a omnis.
+              </p>
+            </div>
+          ) : (
+            <div style={{ margin: "1% 2% 0 2%" }}>
+              <p style={TitleStyle}>Team Weekend 2024</p>
+              <p style={BodyTextStyle}>
+                On June 19-20, 2024, In-Nova gathered for its annual Team
+                Weekend! Over these two days, the team enjoyed a perfect blend
+                of relaxation, fun, and camaraderie. This well-spent weekend was
+                filled with laughter and memorable moments, showcasing the
+                vibrant spirit of our team.
+              </p>
+            </div>
+          )}
         </div>
       ) : (
         <div style={BigBoxStyle}>
           <div style={{ margin: "2% 2% 0 2%" }}>
-            <p style={TitleStyle}>Junior Enterprises Network National Events</p>
+            <p style={TitleStyle}>Team Weekend 2024</p>
             <p style={BodyTextStyle}>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Suscipit, animi! Error laborum animi voluptas vitae excepturi
-              itaque nihil obcaecati fugiat facilis, quod, consequatur tempora
-              corrupti. Exercitationem, hic omnis similique rerum eligendi qui
-              esse dolore labore iusto corporis, dignissimos a commodi! Minus
-              consequuntur culpa sunt cupiditate voluptatem molestias nulla, a
-              omnis.
+              On June 19-20, 2024, In-Nova gathered for its annual Team Weekend!
+              Over these two days, the team enjoyed a perfect blend of
+              relaxation, fun, and camaraderie. This well-spent weekend was
+              filled with laughter and memorable moments, showcasing the vibrant
+              spirit of our team.
             </p>
           </div>
 
           <div style={ImageDivStyle}>
             <img
               style={ComboLeftImageStyle}
-              src={img5}
+              src={groupImage}
               alt="Beyond Office Hours"
             />
             <div style={ComboLeftTextDiv}>

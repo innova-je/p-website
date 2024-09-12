@@ -18,7 +18,7 @@ import FerrisWheel from './components/FerrisWheel';
 function App() {
   const location = useLocation();
   const [showFooter, setShowFooter] = useState(false);
-  const maintenance_pages = ["/events", "/events/innovation-valley", "/events/innovation-week", "/services", "/out-of-office"]
+  const maintenance_pages = ["/events", "/events/innovation-valley", "/events/innovation-week"]
 
   // Set the showFooter state based on the current path
   React.useEffect(() => {
@@ -48,8 +48,8 @@ function App() {
         <Route path='/join-us' element={<JoinUs />} />
         <Route path='/our-people/our-advisors' element={<OurAdvisors />} />
         <Route path='/our-people/our-team' element={<OurTeam />} />
-        <Route path='/out-of-office' element={<MaintenanceSinglePage/>} />
-        <Route path='/services' element={<MaintenanceSinglePage/>} />
+        <Route path='/out-of-office' element={<OutOffice />} />
+        <Route path='/services' element={<Services />} />
         <Route path='/maintenance_page' element={<MaintenanceSinglePage />} />
         <Route path='/events/innovation-week' element={<MaintenanceSinglePage />} />
         <Route path='/events/innovation-valley' element={<MaintenanceSinglePage />} />
