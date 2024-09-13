@@ -20,44 +20,44 @@ function CandidateGuideSection() {
         padding: "3% 0 5% 0",
       }}
     >
-        <Typography
-          variant="h4"
-          style={{
-            position: "relative",
-            color: theme.palette.secondary.main,
-            fontFamily: theme.typography.fontFamily,
-            fontWeight: "Light",
-            textAlign: "center",
-            fontSize: tablet
-              ? "3.5dvw"
-              : mobile
-              ? "5.5dvw"
-              : smallMobile
-              ? "6dvw"
-              : "2.2dvw",
-          }}
-        >
-          One important rule...
-        </Typography>
-        <Typography
-          variant="h2"
-          style={{
-            position: "relative",
-            color: theme.palette.secondary.main,
-            fontFamily: theme.typography.fontFamily,
-            fontWeight: "bold",
-            textAlign: "center",
-            fontSize: tablet
-              ? "5.5dvw"
-              : mobile
-              ? "6.5dvw"
-              : smallMobile
-              ? "7dvw"
-              : "3.5dvw",
-          }}
-        >
-          Always be prepared!
-        </Typography>
+      <Typography
+        variant="h4"
+        style={{
+          position: "relative",
+          color: theme.palette.secondary.main,
+          fontFamily: theme.typography.fontFamily,
+          fontWeight: "Light",
+          textAlign: "center",
+          fontSize: tablet
+            ? "3.5dvw"
+            : mobile
+            ? "5.5dvw"
+            : smallMobile
+            ? "6dvw"
+            : "2.2dvw",
+        }}
+      >
+        One important rule...
+      </Typography>
+      <Typography
+        variant="h2"
+        style={{
+          position: "relative",
+          color: theme.palette.secondary.main,
+          fontFamily: theme.typography.fontFamily,
+          fontWeight: "bold",
+          textAlign: "center",
+          fontSize: tablet
+            ? "5.5dvw"
+            : mobile
+            ? "6.5dvw"
+            : smallMobile
+            ? "7dvw"
+            : "3.5dvw",
+        }}
+      >
+        Always be prepared!
+      </Typography>
 
       <div
         style={{
@@ -117,46 +117,41 @@ function CandidateGuideSection() {
               candidate guide
             </Typography>
 
-            <p style={{padding: "1rem", color: theme.palette.secondary.main}}>Available Soon</p>
-
-            {/*
-            
-            <a href="https://drive.google.com/file/d/1lbokKLp2KkgnjYC9C2w44hUzAumKWFRi/view">
-              <Button
-                variant="contained"
-                style={{
-                  borderRadius: "10px",
-                  marginTop: "20%",
-                  py: tablet
-                    ? "0.8dvw"
-                    : mobile
-                    ? "1.5dvw"
-                    : smallMobile
-                    ? "1.5dvw"
-                    : "0.35dvw",
-                  px: tablet
-                    ? "4dvw"
-                    : mobile
-                    ? "4dvw"
-                    : smallMobile
-                    ? "4dvw"
-                    : "3dvw",
-                  fontSize: tablet
-                    ? "1.7dvw"
-                    : mobile
-                    ? "1.5dvw"
-                    : smallMobile
-                    ? "2.5dvw"
-                    : "1.2dvw",
-                  textTransform: "none",
-                }}
-              >
-                Download
-              </Button>
-            </a>
-            
-            */}
-            
+            {
+              <a href="https://drive.google.com/file/d/1Rj1NgGbQcouHk9uTygxk8N0rGcIANw9L/view?usp=sharing">
+                <Button
+                  variant="contained"
+                  style={{
+                    borderRadius: "10px",
+                    marginTop: "20%",
+                    py: tablet
+                      ? "0.8dvw"
+                      : mobile
+                      ? "1.5dvw"
+                      : smallMobile
+                      ? "1.5dvw"
+                      : "0.35dvw",
+                    px: tablet
+                      ? "4dvw"
+                      : mobile
+                      ? "4dvw"
+                      : smallMobile
+                      ? "4dvw"
+                      : "3dvw",
+                    fontSize: tablet
+                      ? "1.7dvw"
+                      : mobile
+                      ? "1.5dvw"
+                      : smallMobile
+                      ? "2.5dvw"
+                      : "1.2dvw",
+                    textTransform: "none",
+                  }}
+                >
+                  Download
+                </Button>
+              </a>
+            }
           </div>
         </div>
       </div>

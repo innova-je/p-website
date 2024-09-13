@@ -26,7 +26,11 @@ function EventsCarousel() {
       {mobile ? (
         <></>
       ) : (
-        <div style={{ display: "flex", padding: "5rem", gap: "4rem" }}>
+        <div
+          style={{
+            display: "flex",
+          }}
+        >
           {events.map((event, index) => (
             <EventCard key={index} title={event.title} image={event.image} />
           ))}

@@ -49,7 +49,7 @@ function HeroSection() {
               display: "flex",
               flexDirection: "column",
               width: "100%",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             <Typography
@@ -74,36 +74,30 @@ function HeroSection() {
               WANT TO {smallMobile && <br />} BECOME ONE OF US?
             </Typography>
 
-            <CountDownRecruitment />
-
-            
             <div style={{ padding: "5rem 0 0 0" }}>
-              {/*
-              
-              <Button
-                variant="contained"
-                href="https://forms.gle/NP4Eo4RUftMv4LFq7"
-                style={{
-                  zIndex: "3",
-                  borderRadius: "20px",
-                  py: mobile ? "2dvw" : smallMobile ? "3dvw" : "1dvw",
-                  px: mobile ? "8dvw" : smallMobile ? "10dvw" : "5dvw",
-                  fontSize: tablet
-                    ? "3dvw"
-                    : mobile
-                    ? "3dvw"
-                    : smallMobile
-                    ? "3dvw"
-                    : "1.5dvw",
-                  textTransform: "none",
-                }}
-              >
-                Apply Now!
-              </Button>
-              */}
-              
+              {
+                <Button
+                  variant="contained"
+                  href="https://forms.gle/1Ky4jEHHuXEwUyXr9"
+                  style={{
+                    zIndex: "3",
+                    borderRadius: "20px",
+                    py: mobile ? "2dvw" : smallMobile ? "3dvw" : "1dvw",
+                    px: mobile ? "8dvw" : smallMobile ? "10dvw" : "5dvw",
+                    fontSize: tablet
+                      ? "3dvw"
+                      : mobile
+                      ? "3dvw"
+                      : smallMobile
+                      ? "3dvw"
+                      : "1.5dvw",
+                    textTransform: "none",
+                  }}
+                >
+                  Apply Now!
+                </Button>
+              }
             </div>
-            
           </div>
         </div>
       </div>
