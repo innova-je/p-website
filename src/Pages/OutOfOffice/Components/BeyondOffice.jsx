@@ -8,7 +8,7 @@ import { useMediaQuery } from "react-responsive";
   /* COM PROBLEMAS ENTRE OS 1200PX E OS 750PX */
 }
 
-const BeyondOffice = ({ element, image, text}) => {
+const BeyondOffice = ({ element, image, text }) => {
   const theme = useTheme();
 
   const isMobile = useMediaQuery({ maxWidth: 1300 });
@@ -38,24 +38,24 @@ const BeyondOffice = ({ element, image, text}) => {
     padding: isMobile ? "0 2rem 3rem 2rem" : "0 2rem 0 2rem",
   };
 
-   const ImageDivStyle = {
+  const ImageDivStyle = {
     display: "flex",
     flexDirection: "column",
     margin: "0 0 0 0",
     alignItems: isMobile ? "center" : "",
     position: "relative",
   };
-  
-   const ImageStyle = {
-     width: isMobile ? "90%" : "",
-     maxWidth: "700px",
-     maxHeight: "400px",
-     objectFit: "cover",
-     overflow: "hidden",
-     zIndex: 0,
-     border: isMobile ? "5px solid rgba(5, 37, 51, 0.7)" : "none",
+
+  const ImageStyle = {
+    width: isMobile ? "90%" : "",
+    maxWidth: "700px",
+    maxHeight: "400px",
+    objectFit: "cover",
+    overflow: "hidden",
+    zIndex: 0,
+    border: isMobile ? "5px solid rgba(5, 37, 51, 0.7)" : "none",
   };
-  
+
   const ComboRightImageStyle = {
     ...ImageStyle,
     borderRadius: isMobile ? "10px" : "0 10px 10px 0",
@@ -178,9 +178,7 @@ const BeyondOffice = ({ element, image, text}) => {
               alt="Beyond Office Hours"
             />
             <div style={ComboLeftTextDiv}>
-              <p style={ImageLegendStyle}>
-                III Nacional Congress - October 2023
-              </p>
+              <p style={ImageLegendStyle}>Team Weekend 2024</p>
             </div>
           </div>
         </div>
