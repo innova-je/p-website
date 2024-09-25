@@ -19,14 +19,15 @@ const CountDownRecruitment = () => {
     // Calculate the remaining time until the event and update the countdown state
     const calculateCountdown = () => {
         const today = new Date();
-        const eventDate = new Date('2024-09-13 00:00:01');
+        const eventDate = new Date('2024-09-24 23:59:59');
         const timeDifference = eventDate.getTime() - today.getTime();
 
         const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60 * 60 * 60)) / (1000 * 60));
 
-        setCountdown({ days, hours, minutes });
+        setCountdown({ days, hours, minutes, seconds });
     };
 
     // Calculate the countdown on component mount and then update it every minute
@@ -85,7 +86,7 @@ const CountDownRecruitment = () => {
                             fontSize: mobile ? "3.6vw" : (smallMobile ? "4.5vw" : tablet ? "3.2vw" : (desktop ? "2vw" : (largeDesktop ? "1.5vw" : "2vw"))),
                             textAlign: !(mobile || smallMobile) ? "none" : "center"
                         }}
-                    >Recruitment {!(smallMobile || mobile || tablet) && (<br/>)} Opens in</Typography>   
+                    >Recruitment {!(smallMobile || mobile || tablet) && (<br/>)} Closes in</Typography>   
                         
                     </div>                
 

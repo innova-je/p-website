@@ -74,6 +74,8 @@ function HeroSection() {
               WANT TO {smallMobile && <br />} BECOME ONE OF US?
             </Typography>
 
+            <CountDownRecruitment />
+
             <div style={{ padding: "5rem 0 0 0" }}>
               {
                 <Button
