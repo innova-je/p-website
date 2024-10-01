@@ -1,8 +1,9 @@
 import { Typography, styled, useTheme } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import { useMediaQuery } from 'react-responsive';
+import languages from "../../../Assets/data/languages.json";
 
-function StatsSection() {
+function StatsSection({ language }) {
   const theme = useTheme();
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
@@ -30,6 +31,16 @@ function StatsSection() {
     marginTop: '-5%',
   };
 
+  const [selectedLanguage, setSelectedLanguage] = useState(languages.en);
+  const [sectionData, setSectionData] = useState(languages.en.HomePage.Stats);
+
+  useEffect(() => {
+    const newLanguage =
+      language.language === "EN" ? languages.en : languages.pt;
+    setSelectedLanguage(newLanguage);
+    setSectionData(newLanguage.HomePage.Stats);
+  }, [language]);
+
   return (
     <div mt={desktop ? 0 : 3}>
       <div
@@ -46,20 +57,20 @@ function StatsSection() {
         }}
       >
         <StatsBox>
-          <Typography sx={statsStyle}>3</Typography>
-          <Typography sx={underStatsStyle}>Years of In-Nova</Typography>
+          <Typography sx={statsStyle}>{sectionData.stat1}</Typography>
+          <Typography sx={underStatsStyle}>{sectionData.statdescription1}</Typography>
         </StatsBox>
         <StatsBox>
-          <Typography sx={statsStyle}>+25</Typography>
-          <Typography sx={underStatsStyle}>Projects Completed</Typography>
+          <Typography sx={statsStyle}>{sectionData.stat2}</Typography>
+          <Typography sx={underStatsStyle}>{sectionData.statdescription2}</Typography>
         </StatsBox>
         <StatsBox>
-          <Typography sx={statsStyle}>9.5/10</Typography>
-          <Typography sx={underStatsStyle}>Overall Satisfaction</Typography>
+          <Typography sx={statsStyle}>{sectionData.stat3}</Typography>
+          <Typography sx={underStatsStyle}>{sectionData.statdescription3}</Typography>
         </StatsBox>
         <StatsBox>
-          <Typography sx={statsStyle}>+60</Typography>
-          <Typography sx={underStatsStyle}>Members</Typography>
+          <Typography sx={statsStyle}>{sectionData.stat4}</Typography>
+          <Typography sx={underStatsStyle}>{sectionData.statdescription4}</Typography>
         </StatsBox>
       </div>
     </div>

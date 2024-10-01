@@ -1,0 +1,567 @@
+{
+  "en": {
+    "Components": {
+      "footer": {},
+      "navbar": {},
+      "bgMenu": {}
+    },
+    "HomePage": {
+      "TechnologyConsultants": {
+        "headline1": "Your Go-To",
+        "headline2": "Technology Consultants",
+        "buttonText": "Find more about us →",
+        "infoCard1": "We work to inspire people & businesses",
+        "infoCard2": "And we also take pride in what we do and aim to go beyond"
+      },
+      "Stats": {
+        "stat1": "3",
+        "statdescription1": "Years of In-Nova",
+        "stat2": "+25",
+        "statdescription2": "Projects Completed",
+        "stat3": "9.1/10",
+        "statdescription3": "Overall Satisfaction",
+        "stat4": "+60",
+        "statdescription4": "Members"
+      },
+      "CoreBusiness": {
+        "softwareSolutions": {
+          "title": "Software Solutions",
+          "description": "With tailored solutions and cutting-edge technologies, we craft impactful software that propels businesses forward."
+        },
+        "mobileDevelopment": {
+          "title": "Mobile Development",
+          "description": "In-Nova creates intuitive apps that redefine user experiences and seamless interactions on various devices, empowering digital businesses."
+        },
+        "roboticsPrototyping": {
+          "title": "Robotics & Prototyping",
+          "description": "Exploring the frontier of robotics and prototyping. In-Nova pioneers innovative solutions, bringing futuristic concepts to life."
+        }
+      },
+      "Clients": {
+        "header": "Who Trusted Us"
+      },
+      "Partners": {
+        "header": "Meet Our Partners",
+        "subheader": "Alone, we go fast. Together, we go further.",
+        "types": {
+          "gold": "Gold Sponsor",
+          "silver": "Silver Sponsor",
+          "learning": "Learning Partners"
+        }
+      }
+    },
+    "AboutUs": {
+      "HeroSection": {
+        "aboutUsTag": "About Us",
+        "headline1": "We are",
+        "headline2": "Junior Entrepreneurs",
+        "description": [
+          "Engineering Students",
+          "Problem Solvers",
+          "Creative Minds",
+          "Next-Gen Leaders"
+        ],
+        "bottomInfoBox": "In-Nova is the Junior Enterprise of NOVA School of Science and Technology, founded with the aim of promoting the capabilities of its students by integrating them into real projects. In-Nova is focused on creating a limitless workspace, in the most varied areas of knowledge. Specialized in robotics, full stack development, electronics, and prototyping."
+      },
+      "ValuesSection": [
+        {
+          "title": "Mission",
+          "question": "What impact do we want to create?",
+          "description": "Promote the interaction of students in the business environment, training them in the latest scientific and technological techniques that enable them to develop creative and innovative solutions applied to real problems."
+        },
+        {
+          "title": "Vision",
+          "question": "What goals do we hope do achieve?",
+          "description": "In-Nova aims to involve the academic and technology communities, highlighting the quality and excellence that characterize NOVA SST and ultimately making university students more competent, entrepreneurial and critical."
+        },
+        {
+          "title": "Values",
+          "question": "What do we stand by?",
+          "description": "Empowering the entrepreneurial spirit, giving priority to creativity, prioritizing critical thinking and encouraging proactivity and teamwork."
+        }
+      ],
+
+      "MandatesSection": {
+        "headline1": "In-Nova",
+        "headline2": "Throughout the Years",
+        "Mandates": {}
+      },
+      "JESection": {
+        "headline1": "We're part of the",
+        "headline2": "Junior Enterprise Network",
+        "citation": "Europe’s future is in the hands of its young people. (…) Europe’s Junior Enterprises are leading the way.",
+        "author": "Jean-Claude Juncker European Commission, Former President",
+        "Map": {
+          "location": "Portugal",
+          "stats": {
+            "stat1": "+1100 Junior Entrepreneurs",
+            "stat2": "25 Junior Enterprises",
+            "stat3": "421k € Volume of Business",
+            "stat4": "242 Completed Products"
+          },
+          "buttonText": "Learn More"
+        }
+      }
+    },
+    "OurTeam": {
+      "header": "We are made of people",
+      "boardTitle": "Our Board",
+      "boardSubtitle": "our problem-solvers",
+      "departmentsTitle": "Our Departments",
+      "departmentsSubtitle": "who make the magic happen",
+      "departments": [
+        {
+          "name": "Executive Council",
+          "president": {
+            "name": "Inês Mendes",
+            "title": "President",
+            "imgDirectory": "Conselho Executivo/ines_mendes.webp",
+            "email": "ines.mendes@innova.pt",
+            "linkedin": "https://www.linkedin.com/in/in%C3%AAs-mendes-8216a8206/"
+          },
+          "externalAffairsVicePresident": {
+            "name": "Catarina Santos",
+            "title": "External Vice-President",
+            "imgDirectory": "Conselho Executivo/catarina_santos.webp",
+            "email": "catarina.santos@innova.pt",
+            "linkedin": "https://www.linkedin.com/in/catarina-santos17"
+          },
+          "internalAffairsVicePresident": {
+            "name": "Matilde Lopes",
+            "title": "Internal Vice-President",
+            "imgDirectory": "Conselho Executivo/matilde_lopes.webp",
+            "email": "matilde.lopes@innova.pt",
+            "linkedin": "https://www.linkedin.com/in/matilde-lopes02/"
+          },
+          "financialManager": {
+            "name": "Bravo Mota",
+            "title": "Financial Manager",
+            "imgDirectory": "Conselho Executivo/bravo_mota.webp",
+            "email": "bravo.mota@innova.pt",
+            "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-bravo-mota-051029205/"
+          }
+        },
+        {
+          "name": "Sales",
+          "director": {
+            "title": "Sales Director",
+            "name": "Laura Filipe",
+            "imgDirectory": "Comercial/laura_filipe.webp",
+            "email": "laura.filipe@innova.pt",
+            "linkedin": "https://www.linkedin.com/in/laura-filipe"
+          },
+          "members": [
+            {
+              "name": "Duarte Farelo",
+              "imgDirectory": "Comercial/duarte_farelo.webp",
+              "email": "duarte.farelo@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/duarte-farelo-9a5502250/"
+            },
+            {
+              "name": "Francisco Marques",
+              "imgDirectory": "Comercial/francisco_marques.webp",
+              "email": "francisco.marques@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/francisco-marques-5511282b9/"
+            },
+            {
+              "name": "Maria João Silva",
+              "imgDirectory": "Comercial/maria_joao_silva.webp",
+              "email": "maria.silva@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/maria-jo%C3%A3o-silva-b27970238/"
+            },
+            {
+              "name": "Sofia Pedro",
+              "imgDirectory": "Comercial/sofia_pedro.webp",
+              "email": "sofia.pedro@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/sofia-mendes-pedro-041581252/"
+            }
+          ]
+        },
+        {
+          "name": "Marketing",
+          "director": {
+            "title": "Marketing Director",
+            "name": "João Cristóvão",
+            "imgDirectory": "Marketing/joao_cristovao.webp",
+            "email": "joao.cristovao@innova.pt",
+            "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-crist%C3%B3v%C3%A3o/"
+          },
+          "members": [
+            {
+              "name": "Bruna Torgal",
+              "imgDirectory": "Marketing/bruna_torgal.webp",
+              "email": "bruna.torgal@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/bruna-torgal-166504260/"
+            },
+            {
+              "name": "Catarina Aboim",
+              "imgDirectory": "Marketing/catarina_aboim.webp",
+              "email": "catarina.aboim@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/catarina-aboim-29600a188/"
+            },
+            {
+              "name": "Catarina Henriques",
+              "imgDirectory": "Marketing/catarina_henriques.png",
+              "email": "catarina.henriques@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/catarina-henriques-203613252"
+            },
+            {
+              "name": "Catarina Rito",
+              "imgDirectory": "Marketing/catarina_rito.webp",
+              "email": "catarina.rito@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/catarina-rito/"
+            },
+            {
+              "name": "Francisco Gouveia",
+              "imgDirectory": "Marketing/francisco_gouveia.webp",
+              "email": "francisco.gouveia@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/francisco-gouveia-227323293/"
+            },
+            {
+              "name": "Maria João Canedo",
+              "imgDirectory": "Marketing/maria_joao_canedo.webp",
+              "email": "maria.canedo@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/maria-jo%C3%A3o-canedo-1a8579293/"
+            }
+          ]
+        },
+        {
+          "name": "Projects",
+          "director": {
+            "title": "Projects Director",
+            "name": "Luís Lamy",
+            "imgDirectory": "Projetos/luis_lamy.webp",
+            "email": "luis.lamy@innova.pt",
+            "linkedin": "https://linkedin.com/in/luís-lamy-553694230"
+          },
+          "members": [
+            {
+              "name": "Cristiano  Almeida",
+              "imgDirectory": "Projetos/cristiano_almeida.webp",
+              "email": "cristiano.almeida@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/cristiano-almeida-455972253/"
+            },
+            {
+              "name": "Diogo Castelos",
+              "imgDirectory": "Projetos/diogo_castelos.webp",
+              "email": "diogo.castelos@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/diogopcastelos/"
+            },
+            {
+              "name": "Diogo Chikhi",
+              "imgDirectory": "Projetos/diogo_chikhi.webp",
+              "email": "diogo.chikhi@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/diogo-chikhi/"
+            },
+            {
+              "name": "Diogo Sequeira",
+              "imgDirectory": "Projetos/diogo_sequeira.webp",
+              "email": "diogo.sequeira@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/diogo-sequeira-462685258/"
+            },
+            {
+              "name": "Gonçalo Duarte",
+              "imgDirectory": "Projetos/goncalo_duarte.webp",
+              "email": "goncalo.duarte@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/gonçalo-duarte-718564293"
+            },
+            {
+              "name": "João Perleques",
+              "imgDirectory": "Projetos/joao_perleques.webp",
+              "email": "joao.perleques@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-perleques-3801871a2/"
+            },
+            {
+              "name": "Lara Antunes",
+              "imgDirectory": "Projetos/lara_antunes.webp",
+              "email": "lara.antunes@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/laraantunes003/"
+            },
+            {
+              "name": "Maria Penalva",
+              "imgDirectory": "Projetos/maria_penalva.webp",
+              "email": "maria.penalva@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/maria-penalva-218001232/"
+            },
+            {
+              "name": "Mariana Rocha",
+              "imgDirectory": "Projetos/mariana_rocha.webp",
+              "email": "mariana.rocha@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/mariana-rocha-a57531181/"
+            },
+            {
+              "name": "Miguel Collaço",
+              "imgDirectory": "Projetos/miguel_collaco.webp",
+              "email": "miguel.collaco@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/miguel-colla%C3%A7o/"
+            },
+            {
+              "name": "Miguel Flor",
+              "imgDirectory": "Projetos/miguel_flor.webp",
+              "email": "miguel.flor@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/miguel-flor-b42b87263/"
+            },
+            {
+              "name": "Miguel Nunes",
+              "imgDirectory": "Projetos/miguel_nunes.webp",
+              "email": "miguel.nunes@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/dev-miguel-nunes/"
+            },
+            {
+              "name": "Pedro Lopes",
+              "imgDirectory": "Projetos/pedro_lopes.webp",
+              "email": "pedro.lopes@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/pedromslopes22/"
+            },
+            {
+              "name": "Rakhee Patel",
+              "imgDirectory": "Projetos/rakhee_patel.webp",
+              "email": "rakhee.patel@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/rakhee-patel-148b552b8/"
+            },
+            {
+              "name": "Rodrigo Loução",
+              "imgDirectory": "Projetos/rodrigo_loucao.webp",
+              "email": "rodrigo.loucao@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/rodrigo-lou%C3%A7%C3%A3o-347666268/"
+            },
+            {
+              "name": "Tiago Martinho",
+              "imgDirectory": "Projetos/tiago_martinho.webp",
+              "email": "tiago.martinho@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/tiago-martinhoo/"
+            }
+          ]
+        },
+        {
+          "name": "Quality",
+          "director": {
+            "title": "Quality Director",
+            "name": "Carolina Soares",
+            "imgDirectory": "Qualidade/maria_carolina_soares.webp",
+            "email": "carolina.soares@innova.pt",
+            "linkedin": "https://www.linkedin.com/in/carolina-soares-01aba2292"
+          },
+          "members": [
+            {
+              "name": "Carolina Mendes",
+              "imgDirectory": "Qualidade/carolina_mendes.webp",
+              "email": "carolina.mendes@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/carolinanmendes/"
+            },
+            {
+              "name": "Liliana Teixeira",
+              "imgDirectory": "Qualidade/liliana_teixeira.webp",
+              "email": "liliana.teixeira@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/liliana-teixeira-500144257/"
+            },
+            {
+              "name": "Nuno Duarte",
+              "imgDirectory": "Qualidade/nuno_duarte.webp",
+              "email": "nuno.duarte@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/nuno-maria-duarte/"
+            },
+            {
+              "name": "Rafael Abegão",
+              "imgDirectory": "Qualidade/rafael_abegao.webp",
+              "email": "rafael.abegao@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/rafael-abeg%C3%A3o-2b69a926a/"
+            },
+            {
+              "name": "Sofia Candeias",
+              "imgDirectory": "Qualidade/sofia_candeias.webp",
+              "email": "sofia.candeias@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/sofia-candeias-b147b424a/"
+            }
+          ]
+        },
+        {
+          "name": "Human Resources",
+          "director": {
+            "title": "Human Resources Director",
+            "name": "Pedro Bandarra",
+            "imgDirectory": "RH/pedro_bandarra.webp",
+            "email": "pedro.bandarra@innova.pt",
+            "linkedin": "https://www.linkedin.com/in/pedrobandarra/"
+          },
+          "members": [
+            {
+              "name": "Carolina Ferreira",
+              "imgDirectory": "RH/carolina_ferreira.webp",
+              "email": "carolina.ferreira@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/carolina-ferreira-3274112ba/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            },
+            {
+              "name": "Margarida Águas",
+              "imgDirectory": "RH/margarida_aguas.webp",
+              "email": "margarida.aguas@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/maria-margarida-%C3%A1guas-2a53172bb/"
+            },
+            {
+              "name": "Margarida Alberto",
+              "imgDirectory": "RH/margarida_alberto.webp",
+              "email": "margarida.alberto@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/margaridaalb/"
+            },
+            {
+              "name": "Margarida Freitas",
+              "imgDirectory": "RH/margarida_freitas.webp",
+              "email": "margarida.freitas@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/margarida-freitas-36970b293/"
+            }
+          ]
+        },
+        {
+          "name": "General Assembly",
+          "members": [
+            {
+              "name": "Catarina Rito",
+              "imgDirectory": "Marketing/catarina_rito.webp",
+              "email": "catarina.rito@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/catarina-rito/"
+            },
+            {
+              "name": "Rafael Abegão",
+              "imgDirectory": "Qualidade/rafael_abegao.webp",
+              "email": "rafael.abegao@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/rafael-abeg%C3%A3o-2b69a926a/"
+            },
+            {
+              "name": "Bruna Torgal",
+              "imgDirectory": "Marketing/bruna_torgal.webp",
+              "email": "bruna.torgal@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/bruna-torgal-166504260/"
+            }
+          ]
+        },
+        {
+          "name": "Fiscal Council",
+          "members": [
+            {
+              "name": "Mariana Rocha",
+              "imgDirectory": "Projetos/mariana_rocha.webp",
+              "email": "mariana.rocha@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/mariana-rocha-a57531181/"
+            },
+            {
+              "name": "Nuno Duarte",
+              "imgDirectory": "Qualidade/nuno_duarte.webp",
+              "email": "nuno.duarte@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/nuno-maria-duarte/"
+            },
+            {
+              "name": "Catarina Henriques",
+              "imgDirectory": "Marketing/catarina_henriques.png",
+              "email": "catarina.henriques@innova.pt",
+              "linkedin": "https://www.linkedin.com/in/catarina-henriques-203613252"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "pt": {
+    "Components": {
+      "footer": {},
+      "navbar": {},
+      "bgMenu": {}
+    },
+    "HomePage": {
+      "TechnologyConsultants": {
+        "headline1": "Testeee",
+        "headline2": "Consultores Tecnológicos",
+        "buttonText": "Descobre mais sobre nós →",
+        "infoCard1": "Trabalhamos para inspirar pessoas e negócios",
+        "infoCard2": "And we also take pride in what we do and aim to go beyond"
+      },
+      "Stats": {
+        "stat1": "3",
+        "statdescription1": "Ano de In-Nova",
+        "stat2": "+25",
+        "statdescription2": "Projetos Desenvolvidos",
+        "stat3": "9.1/10",
+        "statdescription3": "Satisfação Geral",
+        "stat4": "+60",
+        "statdescription4": "Membros"
+      },
+      "CoreBusiness": {
+        "softwareSolutions": {
+          "title": "Software Solutions",
+          "description": "With tailored solutions and cutting-edge technologies, we craft impactful software that propels businesses forward."
+        },
+        "mobileDevelopment": {
+          "title": "Mobile Development",
+          "description": "In-Nova creates intuitive apps that redefine user experiences and seamless interactions on various devices, empowering digital businesses."
+        },
+        "roboticsPrototyping": {
+          "title": "Robotics & Prototyping",
+          "description": "Exploring the frontier of robotics and prototyping. In-Nova pioneers innovative solutions, bringing futuristic concepts to life."
+        }
+      },
+      "Clients": {
+        "header": "Who Trusted Us"
+      },
+      "Partners": {
+        "header": "Meet Our Partners",
+        "subheader": "Alone, we go fast. Together, we go further.",
+        "types": {
+          "gold": "Gold Sponsor",
+          "silver": "Silver Sponsor",
+          "learning": "Learning Partners"
+        }
+      }
+    },
+    "AboutUs": {
+      "HeroSection": {
+        "aboutUsTag": "Sobre Nós",
+        "headline1": "Nós somos",
+        "headline2": "Empreendedores Juniores",
+        "description": [
+          "Estudantes de Engenharia",
+          "Resolutores de Problemas",
+          "Mentes Criativas",
+          "Líderes da Próxima Geração"
+        ],
+        "bottomInfoBox": "A In-Nova é a Junior Enterprise da NOVA School of Science and Technology, fundada com o objetivo de promover as capacidades dos seus estudantes, integrando-os em projetos reais. A In-Nova é focada na criação de um espaço de trabalho ilimitado, nas mais variadas áreas do conhecimento. Especializada em robótica, desenvolvimento full stack, eletrónica e prototipagem."
+      },
+      "ValuesSection": [
+        {
+          "title": "Missão",
+          "question": "Que impacto queremos criar?",
+          "description": "Promover a interação dos estudantes no ambiente empresarial, formando-os nas mais recentes técnicas científicas e tecnológicas que lhes permitem desenvolver soluções criativas e inovadoras aplicadas a problemas reais."
+        },
+        {
+          "title": "Visão",
+          "question": "Que objetivos esperamos alcançar?",
+          "description": "A In-Nova pretende envolver as comunidades académica e tecnológica, destacando a qualidade e a excelência que caracterizam a NOVA SST e, em última análise, tornando os estudantes universitários mais competentes, empreendedores e críticos."
+        },
+        {
+          "title": "Valores",
+          "question": "Por que nos pautamos?",
+          "description": "Empoderar o espírito empreendedor, dando prioridade à criatividade, priorizando o pensamento crítico e encorajando a proatividade e o trabalho em equipa."
+        }
+      ],
+      "MandatesSection": {
+        "headline1": "In-Nova",
+        "headline2": "Ao Longo dos Anos",
+        "Mandates": {}
+      },
+      "JESection": {
+        "headline1": "Fazemos parte da",
+        "headline2": "Rede de Empresas Juniores",
+        "citation": "O futuro da Europa está nas mãos dos seus jovens. (…) As Empresas Juniores da Europa estão a liderar o caminho.",
+        "author": "Jean-Claude Juncker, Comissão Europeia, Ex-Presidente",
+        "Map": {
+          "location": "Portugal",
+          "stats": {
+            "stat1": "+1100 Empreendedores Juniores",
+            "stat2": "25 Empresas Juniores",
+            "stat3": "421k € Volume de Negócios",
+            "stat4": "242 Produtos Concluídos"
+          },
+          "buttonText": "Saber Mais"
+        }
+      }
+    }
+  }
+}

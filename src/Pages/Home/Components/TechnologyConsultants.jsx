@@ -1,10 +1,11 @@
 import { Typography, useTheme } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HomePageImg from "../../../Assets/Images/MaintenancePageImages/In.Nova_III-JE-Portugal-224_1.webp";
 import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import languages from "../../../Assets/data/languages.json";
 
-function TechnologyConsultants() {
+function TechnologyConsultants({ language }) {
   const theme = useTheme();
   const mobile = useMediaQuery({ maxWidth: 600 });
   const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
@@ -14,7 +15,24 @@ function TechnologyConsultants() {
     window.scrollTo(0, 0);
   };
 
-  const InfoCard = ({ color, borderColor, textColor, gradient, message, index }) => (
+  const [selectedLanguage, setSelectedLanguage] = useState(languages.en);
+  const [sectionData, setSectionData] = useState(languages.en.HomePage.TechnologyConsultants);
+
+  useEffect(() => {
+    const newLanguage =
+      language.language === "EN" ? languages.en : languages.pt;
+    setSelectedLanguage(newLanguage);
+    setSectionData(newLanguage.HomePage.TechnologyConsultants);
+  }, [language]);
+
+  const InfoCard = ({
+    color,
+    borderColor,
+    textColor,
+    gradient,
+    message,
+    index,
+  }) => (
     <div
       style={{
         position: "relative",
@@ -28,16 +46,18 @@ function TechnologyConsultants() {
         zIndex: 3,
         marginBottom: "0%",
         padding: "10px 10px 10px 5px",
-        right: index === "0" ? (mobile ? "-5%" : "-35%") : (mobile ? "-15%" : "-45%")
+        right:
+          index === "0" ? (mobile ? "-5%" : "-35%") : mobile ? "-15%" : "-45%",
       }}
     >
       <div
         style={{
           width: "4px",
           height: "2rem",
-          background: index === "0"
-            ? `linear-gradient(${gradient}, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))`
-            : `linear-gradient(${gradient}, rgba(5, 37, 51, 1), rgba(5, 37, 51, 0))`,
+          background:
+            index === "0"
+              ? `linear-gradient(${gradient}, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))`
+              : `linear-gradient(${gradient}, rgba(5, 37, 51, 1), rgba(5, 37, 51, 0))`,
           marginLeft: "5%",
           borderRadius: "5px",
         }}
@@ -58,20 +78,63 @@ function TechnologyConsultants() {
   );
 
   return (
-    <div style={{ padding: desktop ? "3% 0 3% 8%" : mobile ? "10% 0 0 4%" : "10% 0 0 8%" }}>
-      <div style={{ display: "flex", flexDirection: desktop ? "row" : "column" }}>
-        <div style={{ display: "flex", flexDirection: "column", width: desktop ? "75%" : "100%" }}>
-          <Typography sx={{ color: theme.palette.secondary.main, fontSize: desktop ? "3dvw" : tablet ? "3.5dvw" : "6.5dvw", fontWeight: 600 }}>
-            Your Go-To
+    <div
+      style={{
+        padding: desktop ? "3% 0 3% 8%" : mobile ? "10% 0 0 4%" : "10% 0 0 8%",
+      }}
+    >
+      <div
+        style={{ display: "flex", flexDirection: desktop ? "row" : "column" }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: desktop ? "75%" : "100%",
+          }}
+        >
+          <Typography
+            sx={{
+              color: theme.palette.secondary.main,
+              fontSize: desktop ? "3dvw" : tablet ? "3.5dvw" : "6.5dvw",
+              fontWeight: 600,
+            }}
+          >
+            {sectionData.headline1}
           </Typography>
-          <Typography sx={{ marginTop: "-2%", color: theme.palette.primary.main, fontSize: desktop ? "4.5dvw" : tablet ? "5.5dvw" : "7.5dvw", fontWeight: 700 }}>
-            Technology Consultants
+          <Typography
+            sx={{
+              marginTop: "-2%",
+              color: theme.palette.primary.main,
+              fontSize: desktop ? "4.5dvw" : tablet ? "5.5dvw" : "7.5dvw",
+              fontWeight: 700,
+            }}
+          >
+            {sectionData.headline2}
           </Typography>
         </div>
-        <div style={{ width: desktop ? "25%" : "100%", display: "flex", justifyContent: desktop ? "center" : "flex-start", alignItems: "flex-end" }}>
-          <NavLink to="/about-us" style={{ textDecoration: "none" }} onClick={handleNavLinkClick}>
-            <Typography sx={{ color: theme.palette.primary.main, fontSize: desktop ? "1.8vw" : tablet ? "2.5vw" : "4vw", fontWeight: 400, marginBottom: "8%" }}>
-              Find more about us &rarr;
+        <div
+          style={{
+            width: desktop ? "25%" : "100%",
+            display: "flex",
+            justifyContent: desktop ? "center" : "flex-start",
+            alignItems: "flex-end",
+          }}
+        >
+          <NavLink
+            to="/about-us"
+            style={{ textDecoration: "none" }}
+            onClick={handleNavLinkClick}
+          >
+            <Typography
+              sx={{
+                color: theme.palette.primary.main,
+                fontSize: desktop ? "1.8vw" : tablet ? "2.5vw" : "4vw",
+                fontWeight: 400,
+                marginBottom: "8%",
+              }}
+            >
+              {sectionData.buttonText}
             </Typography>
           </NavLink>
         </div>
@@ -90,7 +153,7 @@ function TechnologyConsultants() {
           style={{
             borderRadius: "20px 0 0 20px",
             width: "100%",
-            height: (mobile) ? "40vh" : "63vh",
+            height: mobile ? "40vh" : "63vh",
             objectFit: "cover",
             position: "relative",
           }}
@@ -101,8 +164,9 @@ function TechnologyConsultants() {
             top: 0,
             left: 0,
             width: "100%",
-            height: (mobile) ? "40vh" : "63vh",
-            backgroundImage: "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.5))",
+            height: mobile ? "40vh" : "63vh",
+            backgroundImage:
+              "linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.5))",
             borderRadius: "20px 0 0 20px",
             zIndex: 1, // Make sure the overlay is above the image
           }}
@@ -123,7 +187,7 @@ function TechnologyConsultants() {
             borderColor="#F0F0F0"
             textColor="white"
             gradient="to top"
-            message="We work to inspire people & businesses"
+            message={sectionData.infoCard1}
           />
           <InfoCard
             index="1"
@@ -131,7 +195,7 @@ function TechnologyConsultants() {
             borderColor="#F0F0F0"
             textColor={theme.palette.secondary.main}
             gradient="to bottom"
-            message="And we also take pride in what we do and aim to go beyond"
+            message={sectionData.infoCard2}
           />
         </div>
       </div>

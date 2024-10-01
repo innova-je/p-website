@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import Values from "./Values";
+import languages from "../../../Assets/data/languages.json";
 
-function ValuesSection() {
+function ValuesSection({language}) {
   const [selectedButton, setSelectedButton] = useState(null);
 
   const handleButtonClick = (title) => {
@@ -32,6 +33,16 @@ function ValuesSection() {
     },
   ];
 
+  const [selectedLanguage, setSelectedLanguage] = useState(languages.en);
+  const [sectionData, setSectionData] = useState(languages.en.AboutUs.ValuesSection);
+
+  useEffect(() => {
+    const newLanguage =
+      language.language === "EN" ? languages.en : languages.pt;
+    setSelectedLanguage(newLanguage);
+    setSectionData(newLanguage.AboutUs.ValuesSection);
+  }, [language]);
+
   return (
     <div
       style={{
@@ -44,12 +55,12 @@ function ValuesSection() {
         zIndex: 2,
       }}
     >
-      {valuesInfo.map(({ title, subtitle, content }) => (
+      {sectionData.map(({ title, question, description }) => (
         <Values
           key={title}
           title={title}
-          subtitle={subtitle}
-          content={content}
+          subtitle={question}
+          content={description}
           currentState={
             selectedButton === title
               ? "expanded"

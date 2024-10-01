@@ -6,8 +6,11 @@ import AccomplishmentSlider from "./Components/AccomplishmentSlider";
 import ClientsCarousel from "./Components/ClientsCarousel";
 import OurPartners from "./Components/OurPartners";
 import VideoSection from "./Components/VideoSection";
+import { useLanguage } from "../../LanguageContext";
 
 const Home = () => {
+  const language  = useLanguage();
+
   return (
     <main
       style={{
@@ -15,9 +18,9 @@ const Home = () => {
         overflow: "hidden",
       }}
     >
-      <VideoSection />
-      <TechnologyConsultants />
-      <StatsSection />
+      <VideoSection language={language} />
+      <TechnologyConsultants language={language} />
+      <StatsSection language={language} />
       <section
         style={{
           background:
@@ -25,11 +28,11 @@ const Home = () => {
           marginTop: "5%",
         }}
       >
-        <OurServices />
-        <AccomplishmentSlider />
+        <OurServices language={language} />
+        <AccomplishmentSlider language={language} />
       </section>
-      <ClientsCarousel />
-      <OurPartners />
+      <ClientsCarousel language={language} />
+      <OurPartners language={language} />
     </main>
   );
 };

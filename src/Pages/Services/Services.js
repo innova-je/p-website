@@ -4,6 +4,7 @@ import Industries from "./Components/Industries";
 import HeroSection from "./Components/HeroSection";
 import SegmentedButton from "./Components/SegmentedButtonSection";
 import PortfolioSection from "./Components/PortfolioSection";
+import ProjectTimeline from "./Components/ProjectTimeline";
 
 const Services = () => {
   return (
@@ -15,6 +16,7 @@ const Services = () => {
     >
       <HeroSection />
       <SegmentedButton />
+      <ProjectTimeline />
       <Industries />
       <PortfolioSection />
     </main>

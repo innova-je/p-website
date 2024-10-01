@@ -3,11 +3,14 @@ import MandatesSection from "./Components/MandatesSection";
 import HeroSection from "./Components/HeroSection";
 import ValuesSection from "./Components/ValuesSection";
 import JESection from "./Components/JESection";
+import { useLanguage } from "../../LanguageContext";
 
 const AboutUs = () => {
+  const language  = useLanguage();
+
   return (
     <main>
-      <HeroSection />
+      <HeroSection language={language}/>
 
       <section
         style={{
@@ -16,13 +19,13 @@ const AboutUs = () => {
           
         }}
       >
-        <ValuesSection />
+        <ValuesSection language={language}/>
         
-        <MandatesSection />
+        <MandatesSection language={language}/>
         
       </section>
 
-      <JESection />
+      <JESection language={language}/>
     </main>
   );
 };
