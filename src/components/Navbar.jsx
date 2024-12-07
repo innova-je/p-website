@@ -13,7 +13,6 @@ import LogoImage from "../Assets/Images/OurLogos/logos-02.png";
 import { useMediaQuery } from "react-responsive";
 import BgMenu from "./BgMenu";
 import { useLanguage } from "../LanguageContext";
-import languages from "../Assets/data/languages.json";
 
 const JoinUsButton = styled(Button)(({ theme, isActive }) => ({
   backgroundColor: isActive
@@ -62,22 +61,8 @@ const Navbar = () => {
 
   const [anchorEl, setAnchorEl] = useState({});
   const [scrollDirection, setScrollDirection] = useState("up");
-
   const { language, setLanguage } = useLanguage();
-  const [sectionData, setSectionData] = useState(languages.en.Components.navbar);
 
-  // Update navbar section data when language changes
-  useEffect(() => {
-    const newLanguageData = language === "EN" ? languages.en : languages.pt;
-    setSectionData(newLanguageData.Components.navbar);
-  }, [language]);
-
-  const handleLanguageChange = (newLanguage) => {
-    setLanguage(newLanguage); // Set the language directly as a string ("EN" or "PT")
-    console.log(`Selected language: ${newLanguage}`);
-  };
-
-  // Scroll behavior logic
   useEffect(() => {
     let lastScrollTop = 0;
 
@@ -106,6 +91,11 @@ const Navbar = () => {
 
   const handleMenuClose = (dropdown) => {
     setAnchorEl((prev) => ({ ...prev, [dropdown]: null }));
+  };
+
+  const handleLanguageChange = (newLanguage) => {
+    setLanguage(newLanguage);
+    console.log(`Selected language: ${newLanguage}`);
   };
 
   const renderDropdownButton = (label, subPages, dropdown) => (
@@ -150,6 +140,11 @@ const Navbar = () => {
     </React.Fragment>
   );
 
+  const isIOS = useMemo(() => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test(userAgent);
+  }, []);
+
   const isInnovationWeek = location.pathname.includes(
     "/events/innovation-week"
   );
@@ -169,7 +164,7 @@ const Navbar = () => {
       <div style={{ display: "flex", flexDirection: "row", height: "100%" }}>
         <div
           style={{
-            width: "10%",
+            width: "20%",
             display: "flex",
             flexGrow: 1,
           }}
@@ -191,7 +186,7 @@ const Navbar = () => {
             display: isDesktop ? "flex" : "none",
             justifyContent: "center",
             alignItems: "center",
-            flexGrow: 2
+            flexGrow: 2,
           }}
         >
           <NavLink
@@ -201,7 +196,7 @@ const Navbar = () => {
             activeStyle={activeLinkStyles}
           >
             <Button color="inherit" style={linkStyles(theme, isInnovationWeek)}>
-              {sectionData["about-us"]}
+              About Us
             </Button>
           </NavLink>
           <NavLink
@@ -211,42 +206,40 @@ const Navbar = () => {
             activeStyle={activeLinkStyles}
           >
             <Button color="inherit" style={linkStyles(theme, isInnovationWeek)}>
-              {sectionData.services}
+              Services
             </Button>
           </NavLink>
 
           {renderDropdownButton(
-            sectionData["our-people"],
+            "Our People",
             [
-              { label: sectionData["our-team"], path: "/our-people/our-team" },
-              { label: sectionData["our-advisors"], path: "/our-people/our-advisors" },
+              { label: "Our Team", path: "/our-people/our-team" },
+              { label: "Our Advisors", path: "/our-people/our-advisors" },
             ],
             "dropdown1"
           )}
 
           {renderDropdownButton(
-            sectionData.events,
+            "Events",
             [
-              { label: sectionData["innovation-week"], path: "/events/innovation-week" },
-              { label: sectionData["innovation-valley"], path: "/events/innovation-valley" },
+              { label: "Innovation Week", path: "/events/innovation-week" },
+              { label: "Innovation Valley", path: "/events/innovation-valley" },
             ],
             "dropdown2"
           )}
 
-          {/*<NavLink
+          <NavLink
             to="/out-of-office"
             activeClassName="activeLink"
             style={linkStyles(theme, isInnovationWeek)}
             activeStyle={activeLinkStyles}
           >
             <Button color="inherit" style={linkStyles(theme, isInnovationWeek)}>
-              {sectionData["out-of-office"]}
+              Out of Office
             </Button>
-          </NavLink> */}
-          
+          </NavLink>
         </div>
 
-        {/* */}
         <div
           style={{
             display: "flex",
@@ -255,7 +248,7 @@ const Navbar = () => {
             flex: 1,
           }}
         >
-           <NavLink
+          <NavLink
             to="/join-us"
             style={{
               position: "relative",
@@ -266,8 +259,7 @@ const Navbar = () => {
           >
             <JoinUsButton isActive={isInnovationWeek}>Join Us</JoinUsButton>
           </NavLink>
-          
-          <div style={{ display: isDesktop ? "none" : "flex"}}>
+          <div style={{ display: isDesktop ? "none" : "flex" }}>
             <BgMenu />
           </div>
 
