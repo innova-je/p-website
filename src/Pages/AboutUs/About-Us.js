@@ -9,7 +9,7 @@ const AboutUs = () => {
   const language  = useLanguage();
 
   return (
-    <main>
+    <main style={{overflow: "hidden"}}>
       <HeroSection language={language}/>
 
       <section

@@ -80,7 +80,7 @@ function TechnologyConsultants({ language }) {
   return (
     <div
       style={{
-        padding: desktop ? "3% 0 3% 8%" : mobile ? "10% 0 0 4%" : "10% 0 0 8%",
+        padding: desktop ? "3% 0 3% 8%" : mobile ? "10% 0 0 4%" : "10% 0 0 8%"
       }}
     >
       <div

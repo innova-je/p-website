@@ -2,7 +2,18 @@
   "en": {
     "Components": {
       "footer": {},
-      "navbar": {},
+      "navbar": {
+        "about-us": "About Us",
+        "services": "Services",
+        "our-people": "Our People",
+        "our-team": "Our Team",
+        "our-advisors": "Our Advisors",
+        "events": "Events",
+        "innovation-week": "Innovation Week",
+        "innovation-valley": "Innovation Valley",
+        "out-of-office": "Out of Office",
+        "join-us": "Join Us"
+      },
       "bgMenu": {}
     },
     "HomePage": {
@@ -463,7 +474,18 @@
   "pt": {
     "Components": {
       "footer": {},
-      "navbar": {},
+      "navbar": {
+        "about-us": "Sobre Nós",
+        "services": "Serviços",
+        "our-people": "Our People",
+        "our-team": "Equipa",
+        "our-advisors": "Our Advisors",
+        "events": "Eventos",
+        "innovation-week": "Innovation Week",
+        "innovation-valley": "Innovation Valley",
+        "out-of-office": "Out of Office",
+        "join-us": "Junta-te a Nós"
+      },
       "bgMenu": {}
     },
     "HomePage": {
@@ -502,11 +524,11 @@
         "header": "Who Trusted Us"
       },
       "Partners": {
-        "header": "Meet Our Partners",
+        "header": "Os Nossos Parceiros",
         "subheader": "Alone, we go fast. Together, we go further.",
         "types": {
-          "gold": "Gold Sponsor",
-          "silver": "Silver Sponsor",
+          "gold": "Parceiro Gold",
+          "silver": "Parceiro Silver",
           "learning": "Learning Partners"
         }
       }
@@ -515,14 +537,14 @@
       "HeroSection": {
         "aboutUsTag": "Sobre Nós",
         "headline1": "Nós somos",
-        "headline2": "Empreendedores Juniores",
+        "headline2": "Júnior Empresários",
         "description": [
           "Estudantes de Engenharia",
           "Resolutores de Problemas",
           "Mentes Criativas",
           "Líderes da Próxima Geração"
         ],
-        "bottomInfoBox": "A In-Nova é a Junior Enterprise da NOVA School of Science and Technology, fundada com o objetivo de promover as capacidades dos seus estudantes, integrando-os em projetos reais. A In-Nova é focada na criação de um espaço de trabalho ilimitado, nas mais variadas áreas do conhecimento. Especializada em robótica, desenvolvimento full stack, eletrónica e prototipagem."
+        "bottomInfoBox": "A In-Nova é a Júnior Empresa da NOVA School of Science and Technology, fundada com o objetivo de promover as capacidades dos seus estudantes, integrando-os em projetos reais. A In-Nova é focada na criação de um espaço de trabalho ilimitado, nas mais variadas áreas do conhecimento. Especializada em robótica, desenvolvimento full stack, eletrónica e prototipagem."
       },
       "ValuesSection": [
         {
@@ -548,20 +570,21 @@
       },
       "JESection": {
         "headline1": "Fazemos parte da",
-        "headline2": "Rede de Empresas Juniores",
-        "citation": "O futuro da Europa está nas mãos dos seus jovens. (…) As Empresas Juniores da Europa estão a liderar o caminho.",
+        "headline2": "Rede de Júnior Empresas",
+        "citation": "O futuro da Europa está nas mãos dos seus jovens. (…) As Júnior Empresas da Europa estão a liderar o caminho.",
         "author": "Jean-Claude Juncker, Comissão Europeia, Ex-Presidente",
         "Map": {
           "location": "Portugal",
           "stats": {
-            "stat1": "+1100 Empreendedores Juniores",
-            "stat2": "25 Empresas Juniores",
-            "stat3": "421k € Volume de Negócios",
+            "stat1": "+1250 Júnior Empresários",
+            "stat2": "25 Júnior Empresas",
+            "stat3": "+578k € Volume de Negócios",
             "stat4": "242 Produtos Concluídos"
           },
           "buttonText": "Saber Mais"
         }
       }
-    }
+    },
+    "Services": {}
   }
 }

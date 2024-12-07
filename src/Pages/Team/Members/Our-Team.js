@@ -75,7 +75,7 @@ const OurTeam = () => {
   const tablet = useMediaQuery({ minWidth: 601, maxWidth: 1080 });
   const desktop = useMediaQuery({ minWidth: 1081 });
 
-  const lasoRef = useRef < LottieRefCurrentProps > null;
+  const lasoRef = useRef <LottieRefCurrentProps> null;
 
   return (
     <main>
@@ -105,6 +105,7 @@ const OurTeam = () => {
           We are made of people
         </Typography>
         <img
+        loading="lazy"
           style={{
             width: "100%",
             position: "absolute",

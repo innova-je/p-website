@@ -8,6 +8,7 @@ import Meta from "../../../Assets/Images/HomePageImages/PartnersLogos/MetaLogo.p
 import OpenBB from "../../../Assets/Images/HomePageImages/PartnersLogos/OpenBBLogo.png";
 
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 
 const partnerData = {
   goldSponsors: [{ name: "Fidelidade", logoSrc: Fidelidade, width: "80%" }],
@@ -131,24 +132,26 @@ const OurPartners = () => {
           <SponsorBoxTitle>
             <Typography sx={SponsorTitleStyle}>Gold Sponsor</Typography>
           </SponsorBoxTitle>
-          <div
-            style={{
-              width: desktop ? "100%" : tablet ? "100%" : "90%",
-              height: desktop ? "20vh" : tablet ? "30vh" : "35vh",
-              marginTop: "5%",
-              borderRadius: "30px",
-              backgroundColor: "#FFFFFF29",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={Fidelidade}
-              alt="Fidelidade Logo"
-              style={{ width: "80%" }}
-            />
-          </div>
+          <Link to="https://www.fidelidade.pt/PT/particulares/Paginas/default.aspx">
+            <div
+              style={{
+                width: desktop ? "100%" : tablet ? "100%" : "90%",
+                height: desktop ? "20vh" : tablet ? "30vh" : "35vh",
+                marginTop: "5%",
+                borderRadius: "30px",
+                backgroundColor: "#FFFFFF29",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={Fidelidade}
+                alt="Fidelidade Logo"
+                style={{ width: "80%" }}
+              />
+            </div>
+          </Link>
         </SponsorBox>
         <SponsorBox className="Silver Sponsors">
           <SponsorBoxTitle>
@@ -169,16 +172,25 @@ const OurPartners = () => {
               rowGap: "10%",
             }}
           >
-            <img
-              src={Siemens}
-              alt="Siemens Energy Logo"
-              style={{ width: desktop ? "50%" : tablet ? "60%" : "40%" }}
-            />
-            <img
-              src={Cisco}
-              alt="Cisco Systems Logo"
-              style={{ width: desktop ? "50%" : tablet ? "60%" : "40%" }}
-            />
+            <Link to='https://www.siemens-energy.com/global/en/home.html'>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <img
+                  src={Siemens}
+                  alt="Siemens Energy Logo"
+                  style={{ width: desktop ? "50%" : tablet ? "60%" : "40%" }}
+                />
+              </div>
+            </Link>
+
+            <Link to='https://www.cisco.com/c/pt_pt/index.html'>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <img
+                  src={Cisco}
+                  alt="Cisco Systems Logo"
+                  style={{ width: desktop ? "50%" : tablet ? "60%" : "40%" }}
+                />
+              </div>
+            </Link>
           </div>
         </SponsorBox>
         <LearningPartners className="Learning Partners">

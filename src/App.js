@@ -50,6 +50,8 @@ function App() {
         <Route path='/our-people/our-team' element={<OurTeam />} />
         <Route path='/out-of-office' element={<OutOffice />} />
         <Route path='/services' element={<Services />} />
+        <Route path='/out-of-office' element={<OutOffice />} /> 
+        <Route path='/services' element={<MaintenanceSinglePage />} />
         <Route path='/maintenance_page' element={<MaintenanceSinglePage />} />
         <Route path='/events/innovation-week' element={<InnovationWeek />} />
         <Route path='/events/innovation-valley' element={<MaintenanceSinglePage />} />
