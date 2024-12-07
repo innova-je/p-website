@@ -13,7 +13,10 @@ function MobileDevelopment() {
                     <h1 style={{fontSize: "70px", color: theme.palette.primary.main}}>Mobile <br/> Development</h1>
                     <p style={{fontSize: "30px"}}>Lorem ipsum Lorem ipsum Lorem ipsum</p>
                 </div> 
-            </div>                 
+            </div>
+            <div style={{marginTop: "-100px", zIndex: "2"}}>
+                <ProjectTimeline />
+            </div>                   
                     
         </div>
     )

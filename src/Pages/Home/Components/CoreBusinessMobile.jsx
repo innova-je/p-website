@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { useMediaQuery } from "react-responsive";
+import { Height } from "@mui/icons-material";
 
 const ServiceBox = ({ imgSrc, title, description, imageStyle }) => {
   const mobile = useMediaQuery({ maxWidth: 600 });
@@ -12,7 +13,8 @@ const ServiceBox = ({ imgSrc, title, description, imageStyle }) => {
       style={{
         display: "flex",
         alignItems: "center",
-        flexDirection: "row"
+        flexDirection: "row",
+        //background: "yellow",
         //transform: "scale(0.5)"
       }}
     >
@@ -23,7 +25,6 @@ const ServiceBox = ({ imgSrc, title, description, imageStyle }) => {
           flexDirection: "row",
           justifyContent: "flex-start",
           margin: "0 0 0 6%",
-          padding: "2rem 0"
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", width: "50%" }}>
@@ -65,8 +66,8 @@ const ServiceBox = ({ imgSrc, title, description, imageStyle }) => {
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
-            flex: 1
+            //background: "red",
+            width: "50%"
           }}
         >
           {<img src={imgSrc} style={imageStyle} />}
@@ -95,7 +96,7 @@ const MobileDevelopmentMobile = () => {
       title="Mobile Development"
       description="In-Nova creates intuitive apps that redefine user experiences and seamless interactions on various devices, empowering digital businesses."
       buttonLabel="Services"
-      imageStyle={{ width: "80%", height: "80%", maxHeight: "80vh", objectFit: "contain" }}
+      imageStyle={{ width: "100%", height: "80%", maxHeight: "80vh", objectFit: "contain" }}
     />
   );
 };

@@ -6,13 +6,12 @@ import {
   Menu,
   MenuItem,
   styled,
-  useTheme
+  useTheme,
 } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import LogoImage from "../Assets/Images/OurLogos/logos-02.png";
 import { useMediaQuery } from "react-responsive";
 import BgMenu from "./BgMenu";
-import { useLanguage } from "../LanguageContext";
 
 const JoinUsButton = styled(Button)(({ theme, isActive }) => ({
   backgroundColor: isActive
@@ -39,9 +38,7 @@ const JoinUsButton = styled(Button)(({ theme, isActive }) => ({
 
 const linkStyles = (theme, isInnovationWeek) => ({
   textDecoration: "none",
-  color: isInnovationWeek
-    ? theme.palette.secondary.main
-    : theme.palette.primary.main,
+  color: isInnovationWeek ? theme.palette.secondary.main : theme.palette.primary.main,
   fontWeight: "bold",
   fontSize: "18px",
   transition: "font-weight 0.3s ease",
@@ -61,7 +58,6 @@ const Navbar = () => {
 
   const [anchorEl, setAnchorEl] = useState({});
   const [scrollDirection, setScrollDirection] = useState("up");
-  const { language, setLanguage } = useLanguage();
 
   useEffect(() => {
     let lastScrollTop = 0;
@@ -70,18 +66,21 @@ const Navbar = () => {
       const scrollTop = document.documentElement.scrollTop;
       if (scrollTop > 250 && lastScrollTop < scrollTop) {
         setScrollDirection("down");
-      } else if (lastScrollTop > scrollTop) {
+        console.log(scrollDirection)
+      } else if(lastScrollTop > scrollTop) {
         setScrollDirection("up");
+        //console.log(scrollDirection)
       }
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     };
 
     window.addEventListener("scroll", handleScroll);
-
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
+    // Scroll to top on route change
     window.scrollTo(0, 0);
   }, [location]);
 
@@ -93,20 +92,13 @@ const Navbar = () => {
     setAnchorEl((prev) => ({ ...prev, [dropdown]: null }));
   };
 
-  const handleLanguageChange = (newLanguage) => {
-    setLanguage(newLanguage);
-    console.log(`Selected language: ${newLanguage}`);
-  };
-
   const renderDropdownButton = (label, subPages, dropdown) => (
     <React.Fragment>
       <Button
         color="inherit"
         onClick={(event) => handleMenuClick(event, dropdown)}
         style={{
-          color: isInnovationWeek
-            ? theme.palette.secondary.main
-            : theme.palette.primary.main,
+          color: isInnovationWeek ? theme.palette.secondary.main : theme.palette.primary.main,
           fontWeight: "bold",
           textTransform: "none",
           fontSize: "18px",
@@ -158,7 +150,7 @@ const Navbar = () => {
         top: scrollDirection === "up" ? 0 : "-4rem",
         position: "fixed",
         transition: "top 0.4s ease-in-out",
-        height: "4rem",
+        height: "4rem"
       }}
     >
       <div style={{ display: "flex", flexDirection: "row", height: "100%" }}>
@@ -174,9 +166,8 @@ const Navbar = () => {
               src={LogoImage}
               style={{
                 height: "100%",
-                paddingLeft: isMobile ? "2rem" : "3rem",
+                paddingLeft: (isMobile) ? "2rem" : "3rem",
               }}
-              alt="Logo"
             />
           </Link>
         </div>
@@ -205,9 +196,11 @@ const Navbar = () => {
             style={linkStyles(theme, isInnovationWeek)}
             activeStyle={activeLinkStyles}
           >
+            {/*
             <Button color="inherit" style={linkStyles(theme, isInnovationWeek)}>
               Services
             </Button>
+            */}
           </NavLink>
 
           {renderDropdownButton(
@@ -219,6 +212,7 @@ const Navbar = () => {
             "dropdown1"
           )}
 
+          {/*
           {renderDropdownButton(
             "Events",
             [
@@ -226,7 +220,9 @@ const Navbar = () => {
               { label: "Innovation Valley", path: "/events/innovation-valley" },
             ],
             "dropdown2"
-          )}
+          )}          
+          */}
+          
 
           <NavLink
             to="/out-of-office"
@@ -244,8 +240,9 @@ const Navbar = () => {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "1.5rem",
-            flex: 1,
+            justifyContent: "center",
+            padding: "0 4rem",
+            flexGrow: 1,
           }}
         >
           <NavLink
@@ -259,36 +256,8 @@ const Navbar = () => {
           >
             <JoinUsButton isActive={isInnovationWeek}>Join Us</JoinUsButton>
           </NavLink>
-          <div style={{ display: isDesktop ? "none" : "flex" }}>
+          <div style={{ display: isDesktop ? "none" : "flex"}}>
             <BgMenu />
-          </div>
-
-          <div style={{ display: "flex", gap: "8px", marginRight: "2.5rem" }}>
-            <button
-              style={{
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                color: language === "PT" ? theme.palette.primary.main : "white",
-                fontWeight: language === "PT" ? "bold" : "normal"
-              }}
-              onClick={() => handleLanguageChange("PT")}
-            >
-              PT
-            </button>
-            |
-            <button
-              style={{
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                color: language === "EN" ? theme.palette.primary.main : "white",
-                fontWeight: language === "EN" ? "bold" : "normal"
-              }}
-              onClick={() => handleLanguageChange("EN")}
-            >
-              EN
-            </button>
           </div>
         </div>
       </div>

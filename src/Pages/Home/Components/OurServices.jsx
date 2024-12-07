@@ -1,21 +1,15 @@
-import React from "react";
-import {
-  MobileDevelopmentMobile,
-  RoboticsPrototypingMobile,
-  SoftwareSolutionsMobile,
-} from "./CoreBusinessMobile";
+import React from 'react';
+import ServicesSlider from './ServicesSlider';
 
 const OurServices = () => {
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <SoftwareSolutionsMobile />
-      <MobileDevelopmentMobile />
-      <RoboticsPrototypingMobile />
+    <div style={{
+      display: "flex",
+      flexDirection: "column"
+    }}>
+        <ServicesSlider />
+
     </div>
   );
 };

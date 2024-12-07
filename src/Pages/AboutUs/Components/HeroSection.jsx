@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Typography, useTheme } from "@mui/material";
 import { useMediaQuery } from "react-responsive";
 import HeroImage from "../../../Assets/Images/other/about-us.png";
-import languages from "../../../Assets/data/languages.json";
 
-function HeroSection({language}) {
+function HeroSection() {
   const theme = useTheme();
+
   const isMobile = useMediaQuery({ maxWidth: 650 });
   const isTablet = useMediaQuery({ minWidth: 651, maxWidth: 1023 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -15,16 +15,6 @@ function HeroSection({language}) {
     if (isTablet) return tabletSize;
     return defaultSize;
   };
-
-  const [selectedLanguage, setSelectedLanguage] = useState(languages.en);
-  const [sectionData, setSectionData] = useState(languages.en.AboutUs.HeroSection);
-
-  useEffect(() => {
-    const newLanguage =
-      language.language === "EN" ? languages.en : languages.pt;
-    setSelectedLanguage(newLanguage);
-    setSectionData(newLanguage.AboutUs.HeroSection);
-  }, [language]);
 
   return (
     <div
@@ -38,6 +28,7 @@ function HeroSection({language}) {
         position: "relative",
       }}
     >
+      {/* Blurred Background Image */}
       <div
         style={{
           position: "absolute",
@@ -52,19 +43,21 @@ function HeroSection({language}) {
         }}
       />
 
+      {/* Main Content */}
       <div
         style={{
           position: "relative",
           width: getResponsiveValue("90vw", "90vw", "80vw"),
         }}
       >
+        {/* "About Us" Tag */}
         <div
           style={{
             backgroundColor: theme.palette.primary.main,
             color: "white",
             borderRadius: "15px",
             position: "absolute",
-            top: getResponsiveValue("-1.8rem", "-2rem", "-2rem"),
+            top:  getResponsiveValue("-1.8rem", "-2rem", "-2rem"),
             left: "-17vw",
             width: "60%",
             height: "2rem",
@@ -77,31 +70,24 @@ function HeroSection({language}) {
             fontSize: getResponsiveValue("3vw", "2vw", "2vw"),
           }}
         >
-          {sectionData.aboutUsTag}
+          About Us
         </div>
 
+        {/* White Box with Content */}
         <div
           style={{
             backgroundColor: "white",
             padding: getResponsiveValue("0rem", "0rem", "3.5rem"),
             borderRadius: "0px 30px 0px 30px",
-            position: "relative",
+            position: "relative"
           }}
         >
           <div
             style={{
               display: "flex",
               flexDirection: getResponsiveValue("column", "column", "row"),
-              justifyContent: getResponsiveValue(
-                "center",
-                "center",
-                "space-between"
-              ),
-              alignItems: getResponsiveValue(
-                "flex-start",
-                "flex-start",
-                "center"
-              ),
+              justifyContent: getResponsiveValue("center", "center", "space-between"),
+              alignItems: getResponsiveValue("flex-start", "flex-start", "center"),
               height: getResponsiveValue("auto", "auto", "45vh"),
             }}
           >
@@ -120,7 +106,8 @@ function HeroSection({language}) {
               />
             )}
 
-            <div style={{ padding: "1.5rem 0rem 2.2rem 2rem" }}>
+            {/* Text Content */}
+            <div style={{ padding: "1.5rem 0rem 2.2rem 2rem"}}>
               <Typography
                 variant="h4"
                 style={{
@@ -129,7 +116,7 @@ function HeroSection({language}) {
                   fontSize: getResponsiveValue("1.2rem", "1.5rem", "2.2rem"),
                 }}
               >
-                {sectionData.title}
+                We are
               </Typography>
               <Typography
                 variant="h3"
@@ -139,7 +126,7 @@ function HeroSection({language}) {
                   fontSize: getResponsiveValue("1.2rem", "1.5rem", "2.2rem"),
                 }}
               >
-                {sectionData.subtitle}
+                Junior Entrepreneurs
               </Typography>
               <Typography
                 variant="h4"
@@ -151,14 +138,14 @@ function HeroSection({language}) {
                   marginTop: getResponsiveValue("0.6rem", "0.6rem", "1rem"),
                 }}
               >
-                {sectionData.description.map((item, index) => (
-                  <React.Fragment key={index}>
-                    {item} <br />
-                  </React.Fragment>
-                ))}
+                Engineering Students <br />
+                Problem Solvers <br />
+                Creative Minds <br />
+                Next-Gen Leaders
               </Typography>
             </div>
 
+            {/* Hero Image */}
             {isDesktop && (
               <img
                 src={HeroImage}
@@ -176,6 +163,7 @@ function HeroSection({language}) {
           </div>
         </div>
 
+        {/* Bottom Info Box */}
         <div
           style={{
             backgroundColor: theme.palette.secondary.main,
@@ -195,7 +183,12 @@ function HeroSection({language}) {
             zIndex: 2,
           }}
         >
-          {sectionData.bottomInfoBox}
+          In-Nova is the Junior Enterprise of NOVA School of Science and
+          Technology, founded with the aim of promoting the capabilities of its
+          students by integrating them into real projects. In-Nova is focused on
+          creating a limitless workspace, in the most varied areas of knowledge.
+          Specialized in robotics, full stack development, electronics, and
+          prototyping.
         </div>
       </div>
     </div>
