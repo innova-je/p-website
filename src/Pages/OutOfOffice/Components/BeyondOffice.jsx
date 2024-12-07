@@ -119,7 +119,7 @@ const BeyondOffice = ({ element, image, text }) => {
             />
             <div style={ComboRightTextDiv}>
               <p style={ImageLegendStyle}>
-                III National Congress - October 2023
+                III Nacional Congress - October 2023
               </p>
             </div>
           </div>

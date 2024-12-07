@@ -129,6 +129,12 @@
                 },
             "members": [
                 {
+                    "name": "Ana Rita Galhardo",
+                    "imgDirectory": "Projetos/ana_rita_galhardo.webp",
+                    "email": "rita.galhardo@innova.pt",
+                    "linkedin": "https://www.linkedin.com/in/rita-galhardo-003794203"
+                },
+                {
                     "name": "Cristiano  Almeida",
                     "imgDirectory": "Projetos/cristiano_almeida.webp",
                     "email": "cristiano.almeida@innova.pt",
