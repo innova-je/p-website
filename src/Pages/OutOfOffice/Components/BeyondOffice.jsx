@@ -136,13 +136,7 @@ const BeyondOffice = ({ element, image, text }) => {
                 "Balance to Success", we brought together an interesting lineup
                 of speakers with extensive knowledge on this topic and the
                 participants reflected about the best decisions for a successful
-                and meaningful life. Lorem ipsum dolor, sit amet consectetur
-                adipisicing elit. Suscipit, animi! Error laborum animi voluptas
-                vitae excepturi itaque nihil obcaecati fugiat facilis, quod,
-                consequatur tempora corrupti. Exercitationem, hic omnis
-                similique rerum eligendi qui esse dolore labore iusto corporis,
-                dignissimos a commodi! Minus consequuntur culpa sunt cupiditate
-                voluptatem molestias nulla, a omnis.
+                and meaningful life.
               </p>
             </div>
           ) : (
