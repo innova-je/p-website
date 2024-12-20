@@ -12,7 +12,8 @@
         "innovation-week": "Innovation Week",
         "innovation-valley": "Innovation Valley",
         "out-of-office": "Out of Office",
-        "join-us": "Join Us"
+        "join-us": "Join Us",
+        "contact-us" : "Contact Us"
       },
       "bgMenu": {}
     },
@@ -484,7 +485,8 @@
         "innovation-week": "Innovation Week",
         "innovation-valley": "Innovation Valley",
         "out-of-office": "Out of Office",
-        "join-us": "Junta-te a Nós"
+        "join-us": "Junta-te a Nós",
+        "contact-us" : "Contacta-nos"
       },
       "bgMenu": {}
     },
