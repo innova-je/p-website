@@ -52,11 +52,14 @@ function ContactUsForm(){
   return(
 
       <div style={{padding: "5%",
-                  maxWidth:"500px",
+                  maxWidth: isMobile? "500px" : isTablet? "700px" : "",
                   backgroundColor:"white",
                   display: "flex",          
                   justifyContent: "center", 
-                  alignItems: "center"
+                  alignItems: "center",
+                  borderTopRightRadius: (isMobile | isTablet)? "0px" : "30px", 
+                  borderBottomRightRadius: "30px", 
+                  borderBottomLeftRadius : (isMobile | isTablet)? "30px" : "0px"
                 }}>
 
 
