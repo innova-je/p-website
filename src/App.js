@@ -14,6 +14,7 @@ import MaintenanceSinglePage from "./Pages/Other/MaintenanceSinglePage";
 import NotFound from "./Pages/Other/NotFound";
 import InnovationWeek from "./Pages/Events/InnovationWeek/InnovationWeek";
 import FerrisWheel from './components/FerrisWheel';
+import ContactUs from './Pages/ContactUs/ContactUs'
 
 function App() {
   const location = useLocation();
@@ -43,6 +44,7 @@ function App() {
 
       <Routes>
         <Route path='/about-us' element={<AboutUs />} />
+        <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/events' element={<MaintenanceSinglePage/>} />
         <Route path='/' element={<Home />} />
         <Route path='/join-us' element={<JoinUs />} />

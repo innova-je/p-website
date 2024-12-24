@@ -204,6 +204,19 @@ const Navbar = () => {
               {sectionData["about-us"]}
             </Button>
           </NavLink>
+
+          <NavLink
+            to="/contact-us"
+            activeClassName="activeLink"
+            style={linkStyles(theme, isInnovationWeek)}
+            activeStyle={activeLinkStyles}
+          >
+            <Button color="inherit" style={linkStyles(theme, isInnovationWeek)}>
+              {sectionData["contact-us"]}
+            </Button>
+          </NavLink>
+
+
           <NavLink
             to="/services"
             activeClassName="activeLink"
